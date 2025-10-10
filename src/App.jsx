@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
+import HeroPage from "./pages/HeroPage";
 import Dashboard from "./pages/Dashboard";
 import ContentDetail from "./pages/ContentDetail";
 import Section from "./pages/Section";
@@ -13,23 +14,22 @@ import HoerenCompleteTest from "./pages/HoerenCompleteTest";
 
 function App() {
   return (
-    <Layout>
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/section/:sectionId" element={<Section />} />
-        <Route path="/theme/:themeId" element={<Theme />} />
-        <Route path="/content/:contentId" element={<ContentDetail />} />
-        <Route path="/bookmarks" element={<Bookmarks />} />
-        <Route path="/tests" element={<Tests />} />
-        <Route path="/tests/hoeren-komplett" element={<HoerenCompleteTest />} />
-        <Route path="/test/:id" element={<TestDetail />} />
-        <Route
-          path="/synchronized-test/:id"
-          element={<SynchronizedTestDetail />}
-        />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </Layout>
+    <Routes>
+      {/* Hero page without layout */}
+      <Route path="/" element={<HeroPage />} />
+      
+      {/* All other pages with layout */}
+      <Route path="/dashboard" element={<Layout><Dashboard /></Layout>} />
+      <Route path="/section/:sectionId" element={<Layout><Section /></Layout>} />
+      <Route path="/theme/:themeId" element={<Layout><Theme /></Layout>} />
+      <Route path="/content/:contentId" element={<Layout><ContentDetail /></Layout>} />
+      <Route path="/bookmarks" element={<Layout><Bookmarks /></Layout>} />
+      <Route path="/tests" element={<Layout><Tests /></Layout>} />
+      <Route path="/tests/hoeren-komplett" element={<Layout><HoerenCompleteTest /></Layout>} />
+      <Route path="/test/:id" element={<Layout><TestDetail /></Layout>} />
+      <Route path="/synchronized-test/:id" element={<Layout><SynchronizedTestDetail /></Layout>} />
+      <Route path="/about" element={<Layout><About /></Layout>} />
+    </Routes>
   );
 }
 

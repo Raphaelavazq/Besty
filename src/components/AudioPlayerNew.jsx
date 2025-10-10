@@ -195,7 +195,11 @@ export default function AudioPlayer({
             className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-2xl flex items-center justify-center transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
           >
             {isPlaying ? (
-              <svg className="w-6 h-6 sm:w-7 sm:h-7" fill="currentColor" viewBox="0 0 24 24">
+              <svg
+                className="w-6 h-6 sm:w-7 sm:h-7"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
                 <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
               </svg>
             ) : (
@@ -295,9 +299,7 @@ export default function AudioPlayer({
                   {index + 1}
                 </div>
                 {isAnswered && (
-                  <div className="text-xs opacity-90 -mt-1">
-                    ✓
-                  </div>
+                  <div className="text-xs opacity-90 -mt-1">✓</div>
                 )}
               </button>
             );

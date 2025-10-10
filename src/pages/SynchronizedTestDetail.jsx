@@ -56,7 +56,9 @@ export default function SynchronizedTestDetail() {
               <h1 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4">
                 {test.title}
               </h1>
-              <p className="text-slate-600 mb-6 text-sm sm:text-base">{test.subtitle}</p>
+              <p className="text-slate-600 mb-6 text-sm sm:text-base">
+                {test.subtitle}
+              </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-8">
                 <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/50">
@@ -64,7 +66,9 @@ export default function SynchronizedTestDetail() {
                     <Clock className="w-6 h-6 text-white" />
                   </div>
                   <p className="text-sm text-slate-600">Dauer</p>
-                  <p className="font-semibold text-slate-800">{test.duration}</p>
+                  <p className="font-semibold text-slate-800">
+                    {test.duration}
+                  </p>
                 </div>
 
                 <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/50">
@@ -72,7 +76,9 @@ export default function SynchronizedTestDetail() {
                     <Play className="w-6 h-6 text-white" />
                   </div>
                   <p className="text-sm text-slate-600">Fragen</p>
-                  <p className="font-semibold text-slate-800">{test.questions.length}</p>
+                  <p className="font-semibold text-slate-800">
+                    {test.questions.length}
+                  </p>
                 </div>
 
                 <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/50">
@@ -95,7 +101,9 @@ export default function SynchronizedTestDetail() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-amber-500 mr-2 flex-shrink-0">•</span>
-                    <span>Fragen erscheinen automatisch zur richtigen Zeit</span>
+                    <span>
+                      Fragen erscheinen automatisch zur richtigen Zeit
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-amber-500 mr-2 flex-shrink-0">•</span>
