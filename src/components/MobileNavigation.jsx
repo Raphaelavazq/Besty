@@ -16,7 +16,7 @@ export default function MobileNavigation() {
   const location = useLocation();
 
   const navigation = [
-    { name: "Dashboard", href: "/", icon: Home },
+    { name: "Dashboard", href: "/dashboard", icon: Home },
     { name: "Tests", href: "/tests", icon: FileText },
     { name: "Lesezeichen", href: "/bookmarks", icon: Bookmark },
     { name: "Über uns", href: "/about", icon: Info },

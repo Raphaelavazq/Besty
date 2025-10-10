@@ -1,285 +1,266 @@
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import {
+  BookOpen,
+  Play,
+  FileText,
   Headphones,
-  Eye,
-  PenTool,
   MessageSquare,
-  PlayCircle,
-  Briefcase,
-  Heart,
-  Plane,
-  Home,
-  Leaf,
-  Banknote,
+  PenTool,
   Users,
-  Building,
-  ShoppingCart,
-  Smartphone,
-  Zap,
-  GraduationCap,
-  ArrowRight,
+  Menu,
+  Home,
+  Star,
+  Settings,
+  LogOut,
+  Eye,
+  Target,
+  TrendingUp,
+  BarChart3,
+  Calendar,
+  Clock,
+  Award,
+  HelpCircle,
+  User,
+  Bell,
+  Download,
+  Share2,
 } from "lucide-react";
+import { useState } from "react";
 
 export default function Dashboard() {
-  const [themes, setThemes] = useState([]);
-  const [selectedTheme, setSelectedTheme] = useState("all");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  useEffect(() => {
-    fetch("/data/themes.json")
-      .then((r) => r.json())
-      .then(setThemes)
-      .catch(() => setThemes([]));
-  }, []);
-
-  const user = {
-    name: "Maria Schmidt",
-  };
-
-  const subjects = [
+  const examParts = [
     {
-      id: "hoeren",
-      name: "Hören",
+      title: "Hörverstehen",
+      subtitle: "Teil 1-3",
+      description: "Listening comprehension exercises",
       icon: Headphones,
-      description: "Verstehen von Gesprächen",
-      gradient: "from-purple-500 to-indigo-600",
+      color: "from-purple-500 to-indigo-600",
+      progress: 75,
     },
     {
-      id: "lesen",
-      name: "Lesen",
+      title: "Leseverstehen", 
+      subtitle: "Teil 1-3",
+      description: "Reading comprehension practice",
       icon: Eye,
-      description: "Verstehen von Texten",
-      gradient: "from-indigo-500 to-purple-600",
+      color: "from-indigo-500 to-purple-600",
+      progress: 60,
     },
     {
-      id: "schreiben",
-      name: "Schreiben",
+      title: "Sprachliche Strukturen",
+      subtitle: "Teil 1-3", 
+      description: "Grammar and vocabulary",
       icon: PenTool,
-      description: "E-Mails und Texte",
-      gradient: "from-purple-600 to-pink-600",
+      color: "from-purple-600 to-violet-600",
+      progress: 85,
     },
     {
-      id: "sprechen",
-      name: "Sprechen",
+      title: "Schriftlicher Ausdruck",
+      subtitle: "Brief schreiben",
+      description: "Writing practice",
       icon: MessageSquare,
-      description: "Mündliche Kommunikation",
-      gradient: "from-indigo-600 to-blue-600",
+      color: "from-indigo-600 to-purple-700",
+      progress: 45,
     },
   ];
 
-  const getThemeIcon = (iconName) => {
-    const icons = {
-      briefcase: Briefcase,
-      heart: Heart,
-      plane: Plane,
-      home: Home,
-      leaf: Leaf,
-      banknote: Banknote,
-      users: Users,
-      building: Building,
-      "shopping-cart": ShoppingCart,
-      smartphone: Smartphone,
-    };
-    return icons[iconName] || Briefcase;
-  };
+  const mainActions = [
+    {
+      title: "Lernen",
+      subtitle: "Study Mode",
+      description: "Review materials and practice",
+      icon: BookOpen,
+      color: "from-purple-500 to-indigo-600",
+      href: "/study",
+    },
+    {
+      title: "Test",
+      subtitle: "Exam Mode", 
+      description: "Take timed practice tests",
+      icon: Play,
+      color: "from-indigo-500 to-purple-600",
+      href: "/tests",
+    },
+  ];
+
+  const themes = [
+    { name: "Familie & Beziehungen", count: 15, color: "from-purple-400 to-indigo-500" },
+    { name: "Arbeit & Beruf", count: 22, color: "from-indigo-400 to-purple-500" },
+    { name: "Gesundheit", count: 18, color: "from-purple-500 to-violet-500" },
+    { name: "Wohnen", count: 12, color: "from-violet-400 to-purple-500" },
+    { name: "Freizeit", count: 16, color: "from-indigo-500 to-purple-600" },
+    { name: "Einkaufen", count: 14, color: "from-purple-600 to-indigo-600" },
+  ];
+
+  const sidebarItems = [
+    { name: "Dashboard", icon: Home, href: "/dashboard", active: true },
+    { name: "Tests", icon: Play, href: "/tests" },
+    { name: "Study", icon: BookOpen, href: "/study" },
+    { name: "Progress", icon: BarChart3, href: "/progress" },
+    { name: "Schedule", icon: Calendar, href: "/schedule" },
+    { name: "Bookmarks", icon: Star, href: "/bookmarks" },
+    { name: "Achievements", icon: Award, href: "/achievements" },
+    { name: "Profile", icon: User, href: "/profile" },
+    { name: "Notifications", icon: Bell, href: "/notifications" },
+    { name: "Downloads", icon: Download, href: "/downloads" },
+    { name: "Help", icon: HelpCircle, href: "/help" },
+    { name: "Settings", icon: Settings, href: "/settings" },
+  ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-fuchsia-50 to-cyan-50 overflow-auto relative pt-24">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-purple-200/30 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute top-3/4 right-1/4 w-24 h-24 bg-indigo-200/30 rounded-full blur-xl animate-pulse delay-1000"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-20 h-20 bg-pink-200/30 rounded-full blur-xl animate-pulse delay-500"></div>
+    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 flex">
+      {/* Sidebar */}
+      <div className={`fixed inset-y-0 left-0 z-50 w-64 bg-white/90 backdrop-blur-md shadow-2xl transform transition-transform duration-300 ease-in-out ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 lg:static lg:inset-0 border-r border-purple-100`}>
+        <div className="flex flex-col h-full">
+          {/* Logo */}
+          <div className="flex items-center justify-center h-20 px-6 border-b border-purple-100">
+            <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <DotLottieReact
+                src="https://lottie.host/fd1c3021-0a8e-4b3e-8c5b-6b9c4d2a8f7e/9XzKQs8bkC.lottie"
+                autoplay
+                loop
+                className="w-8 h-8"
+              />
+            </div>
+            <span className="ml-3 text-xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">B1 Bestie</span>
+          </div>
+
+          {/* Navigation */}
+          <nav className="flex-1 px-4 py-6 space-y-1">
+            {sidebarItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.href}
+                className={`flex items-center px-3 py-2 text-sm font-medium rounded-xl transition-all duration-200 ${
+                  item.active
+                    ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg'
+                    : 'text-gray-600 hover:bg-purple-50 hover:text-purple-700'
+                }`}
+              >
+                <item.icon size={18} className="mr-3" />
+                {item.name}
+              </Link>
+            ))}
+          </nav>
+
+          {/* User Section */}
+          <div className="px-4 py-4 border-t border-purple-100">
+            <div className="flex items-center px-3 py-2 mb-2">
+              <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full flex items-center justify-center mr-3">
+                <User size={16} className="text-white" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-medium text-gray-900 truncate">Maria Schmidt</p>
+                <p className="text-xs text-purple-500">Premium</p>
+              </div>
+            </div>
+            <button className="flex items-center w-full px-3 py-2 text-sm font-medium text-gray-600 rounded-xl hover:bg-purple-50 hover:text-purple-700 transition-all duration-200">
+              <LogOut size={18} className="mr-3" />
+              Logout
+            </button>
+          </div>
+        </div>
       </div>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-8 relative z-10">
-        {/* Mobile-Optimized Header */}
-        <header className="mb-6 sm:mb-12">
-          <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-            <div className="w-12 h-12 sm:w-16 sm:h-16 relative">
-              {/* Circle background for logo */}
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-indigo-600/20 rounded-full backdrop-blur-sm border border-white/30"></div>
-              <div className="relative z-10 p-2 sm:p-3">
-                <DotLottieReact
-                  src="https://lottie.host/e625cdca-0dac-4776-a55e-0b437f54c0a7/diw9hO8Z3c.lottie"
-                  loop
-                  autoplay
-                  className="w-full h-full"
-                />
-              </div>
-            </div>
-            <div>
-              <h1 className="text-2xl sm:text-4xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-                B1 Bestie
-              </h1>
-              <p className="text-slate-600 text-sm sm:text-lg">
-                DTZ Prüfungsvorbereitung
-              </p>
-            </div>
+
+      {/* Mobile overlay */}
+      {sidebarOpen && (
+        <div className="fixed inset-0 z-40 bg-black bg-opacity-50 lg:hidden" onClick={() => setSidebarOpen(false)} />
+      )}
+
+      {/* Main Content */}
+      <div className="flex-1 lg:ml-0">
+        {/* Mobile Header */}
+        <div className="lg:hidden flex items-center justify-between p-6 bg-white/80 backdrop-blur-md shadow-sm border-b border-purple-100">
+          <button
+            onClick={() => setSidebarOpen(true)}
+            className="p-3 rounded-2xl text-purple-600 hover:bg-purple-50 transition-colors"
+          >
+            <Menu size={24} />
+          </button>
+          <h1 className="text-xl font-semibold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Dashboard</h1>
+          <div className="w-12"></div>
+        </div>
+
+        {/* Dashboard Content */}
+        <div className="p-6 lg:p-8 h-screen overflow-hidden flex flex-col">
+          {/* Welcome */}
+          <div className="mb-6 flex-shrink-0">
+            <h1 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-2">
+              Willkommen zurück! 👋
+            </h1>
           </div>
 
-          <div className="bg-gradient-to-br from-white/90 via-purple-50/80 to-indigo-50/80 backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl border border-white/60 hover:shadow-2xl hover:scale-105 transition-all duration-500 hover:-translate-y-2 group">
-            <div className="text-center">
-              <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-700 bg-clip-text text-transparent mb-3 group-hover:from-purple-500 group-hover:via-indigo-500 group-hover:to-purple-600 transition-all duration-300">
-                Willkommen zurück
-              </h2>
-              <p className="text-slate-700 text-base sm:text-lg font-medium leading-relaxed group-hover:text-slate-800 transition-colors duration-300">
-                Bereit für deine nächste <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent font-semibold group-hover:from-purple-500 group-hover:to-indigo-500 transition-all duration-300">Lerneinheit</span>?
-              </p>
-            </div>
-          </div>
-        </header>
-
-        {/* Mobile-Scrollable Content Container */}
-        <div className="space-y-6 sm:space-y-12 pb-8">
-          {/* Test Start Section */}
-          <section>
-            <h3 className="text-lg sm:text-xl font-semibold text-slate-800 mb-4 sm:mb-6 px-1">
-              Prüfung starten
-            </h3>
-            <div className="grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2">
-              <Link
-                to="/tests"
-                className="group bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
-              >
-                <PlayCircle
-                  size={28}
-                  className="mb-3 group-hover:scale-110 transition-transform sm:hidden text-white"
-                />
-                <PlayCircle
-                  size={32}
-                  className="mb-4 group-hover:scale-110 transition-transform hidden sm:block text-white"
-                />
-                <h4 className="text-xl sm:text-2xl font-bold mb-2 text-purple-50">
-                  Volltest
-                </h4>
-                <p className="text-purple-50 mb-3 sm:mb-4 text-sm sm:text-base">
-                  Komplette DTZ B1 Simulation mit allen Prüfungsteilen
-                </p>
-                <div className="flex items-center text-purple-50 text-sm sm:text-base">
-                  <span className="mr-2">Jetzt starten</span>
-                  <ArrowRight
-                    size={14}
-                    className="group-hover:translate-x-1 transition-transform sm:w-4 sm:h-4"
-                  />
-                </div>
-              </Link>
-
-              <Link
-                to="/tests?mode=quick"
-                className="group bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
-              >
-                <Zap
-                  size={28}
-                  className="mb-3 group-hover:scale-110 transition-transform sm:hidden text-white"
-                />
-                <Zap
-                  size={32}
-                  className="mb-4 group-hover:scale-110 transition-transform hidden sm:block text-white"
-                />
-                <h4 className="text-xl sm:text-2xl font-bold mb-2 text-purple-50">
-                  Schnelltest
-                </h4>
-                <p className="text-purple-50 mb-3 sm:mb-4 text-sm sm:text-base">
-                  Kurze Übungsrunden für zwischendurch
-                </p>
-                <div className="flex items-center text-purple-50 text-sm sm:text-base">
-                  <span className="mr-2">Schnell üben</span>
-                  <ArrowRight
-                    size={14}
-                    className="group-hover:translate-x-1 transition-transform sm:w-4 sm:h-4"
-                  />
-                </div>
-              </Link>
-            </div>
-          </section>
-
-          {/* Subject Cards Section */}
-          <section>
-            <h3 className="text-lg sm:text-xl font-semibold text-slate-800 mb-4 sm:mb-6 px-1">
-              Prüfungsteile
-            </h3>
-            <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
-              {subjects.map((subject) => {
-                const Icon = subject.icon;
-                return (
-                  <Link
-                    key={subject.id}
-                    to={`/tests?filter=${subject.id}`}
-                    className="group bg-white/80 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50 hover:scale-105"
-                  >
-                    <div
-                      className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${subject.gradient} rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 shadow-lg group-hover:scale-110 transition-transform`}
-                    >
-                      <Icon size={18} className="text-white sm:hidden" />
-                      <Icon size={20} className="text-white hidden sm:block" />
-                    </div>
-                    <h4 className="font-bold text-slate-800 mb-1 sm:mb-2 text-sm sm:text-base">
-                      {subject.name}
-                    </h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                      {subject.description}
-                    </p>
-                  </Link>
-                );
-              })}
-            </div>
-          </section>
-
-          {/* Themes Section */}
-          <section className="pb-6">
-            <h3 className="text-lg sm:text-xl font-semibold text-slate-800 mb-4 sm:mb-6 px-1">
-              Themen
-            </h3>
-            <div className="bg-white/80 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border border-white/50">
-              <div className="grid grid-cols-2 gap-3 sm:gap-3 md:grid-cols-4">
-                {themes.slice(0, 8).map((theme, index) => {
-                  const Icon = getThemeIcon(theme.icon);
-                  const gradients = [
-                    "from-purple-400 to-indigo-500",
-                    "from-indigo-400 to-purple-500",
-                    "from-purple-500 to-pink-500",
-                    "from-indigo-500 to-blue-500",
-                  ];
-                  const gradient = gradients[index % gradients.length];
-
-                  return (
-                    <button
-                      key={theme.id}
-                      onClick={() => setSelectedTheme(theme.id)}
-                      className={`p-3 rounded-lg sm:rounded-xl transition-all duration-300 border text-left ${
-                        selectedTheme === theme.id
-                          ? "bg-purple-50 border-purple-300 ring-2 ring-purple-200"
-                          : "bg-white/60 border-white/50 hover:bg-purple-50"
-                      }`}
-                    >
-                      <div
-                        className={`w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br ${gradient} rounded-md sm:rounded-lg flex items-center justify-center mb-2 shadow-md`}
-                      >
-                        <Icon size={12} className="text-white sm:hidden" />
-                        <Icon
-                          size={14}
-                          className="text-white hidden sm:block"
-                        />
-                      </div>
-                      <h4 className="text-xs sm:text-sm font-medium text-slate-800 truncate">
-                        {theme.name}
-                      </h4>
-                    </button>
-                  );
-                })}
-              </div>
-
-              {themes.length > 8 && (
+          {/* Scrollable Content */}
+          <div className="flex-1 overflow-y-auto space-y-6 pr-2">
+            {/* Main Action Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {mainActions.map((action) => (
                 <Link
-                  to="/themes"
-                  className="block text-center text-purple-600 hover:text-purple-700 font-medium mt-4 p-2 text-sm sm:text-base"
+                  key={action.title}
+                  to={action.href}
+                  className="group bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-sm border border-purple-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:scale-105"
                 >
-                  Alle Themen anzeigen
+                  <div className={`w-12 h-12 bg-gradient-to-r ${action.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                    <action.icon size={24} className="text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">
+                    {action.title}
+                  </h3>
+                  <p className="text-sm text-purple-600 mb-1">{action.subtitle}</p>
+                  <p className="text-gray-600 text-sm">{action.description}</p>
                 </Link>
-              )}
+              ))}
             </div>
-          </section>
+
+            {/* Exam Parts */}
+            <div>
+              <h2 className="text-lg font-bold text-gray-900 mb-4">Prüfungsteile</h2>
+              <div className="grid grid-cols-2 xl:grid-cols-4 gap-3">
+                {examParts.map((part) => (
+                  <div
+                    key={part.title}
+                    className="bg-white/80 backdrop-blur-md rounded-2xl p-4 shadow-sm border border-purple-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
+                  >
+                    <div className={`w-10 h-10 bg-gradient-to-r ${part.color} rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                      <part.icon size={20} className="text-white" />
+                    </div>
+                    <h3 className="text-sm font-bold text-gray-900 mb-1">
+                      {part.title}
+                    </h3>
+                    <p className="text-xs text-purple-600 mb-2">{part.subtitle}</p>
+                    <div className="w-full bg-purple-100 rounded-full h-2 mb-2">
+                      <div 
+                        className={`h-2 bg-gradient-to-r ${part.color} rounded-full transition-all duration-500`}
+                        style={{ width: `${part.progress}%` }}
+                      ></div>
+                    </div>
+                    <p className="text-xs font-medium text-gray-700">{part.progress}%</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Themes */}
+            <div className="pb-6">
+              <h2 className="text-lg font-bold text-gray-900 mb-4">Themen</h2>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {themes.map((theme) => (
+                  <div
+                    key={theme.name}
+                    className="bg-white/80 backdrop-blur-md rounded-2xl p-4 shadow-sm border border-purple-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
+                  >
+                    <div className={`w-8 h-8 bg-gradient-to-r ${theme.color} rounded-lg mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg`}></div>
+                    <h3 className="text-sm font-bold text-gray-900 mb-1">
+                      {theme.name}
+                    </h3>
+                    <p className="text-purple-600 text-xs">{theme.count} Übungen</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
