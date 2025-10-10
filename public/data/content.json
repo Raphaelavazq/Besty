@@ -1,0 +1,600 @@
+[
+  {
+    "id": "l001",
+    "section": "lesen",
+    "theme": "arbeit",
+    "title": "Stellenanzeigen verstehen",
+    "subtitle": "Wie liest man Jobangebote in Deutschland?",
+    "level": "B1",
+    "duration": "10 min",
+    "content": {
+      "introduction": "Stellenanzeigen in Deutschland folgen einem typischen Aufbau. Wer diesen kennt, kann schnell entscheiden, ob eine Stelle passt. Hier lernen Sie die wichtigsten Begriffe und Abkürzungen.",
+      "keyPoints": [
+        {
+          "heading": "Typischer Aufbau einer Stellenanzeige",
+          "text": "**1. Arbeitgeber/Firma**\nName, Branche, kurze Vorstellung\n\n**2. Stellenbezeichnung**\nz.B. 'Verkäufer/in (m/w/d)' oder 'Lagerist (m/w/d)'\n\n**3. Aufgaben und Tätigkeiten**\n- Was Sie machen werden\n- Verantwortungsbereiche\n\n**4. Anforderungen**\n- Qualifikationen (Ausbildung, Studium)\n- Erfahrung\n- Sprachkenntnisse\n- Soft Skills\n\n**5. Was wird geboten**\n- Gehalt oder Gehaltsrahmen\n- Arbeitszeiten (Vollzeit/Teilzeit)\n- Benefits (Urlaub, Weiterbildung, etc.)\n\n**6. Bewerbungsweg**\n- Wo und wie bewerben\n- Kontaktdaten\n- Bewerbungsfrist"
+        },
+        {
+          "heading": "Wichtige Abkürzungen",
+          "text": "**m/w/d** = männlich/weiblich/divers (für alle Geschlechter)\n**VZ/TZ** = Vollzeit/Teilzeit\n**unbefristet** = kein Enddatum, feste Stelle\n**befristet** = zeitlich begrenzt (z.B. 1 Jahr)\n**zum nächstmöglichen Zeitpunkt** = so bald wie möglich\n**ab sofort** = sofortiger Start möglich\n**Kennziffer** = Referenznummer für die Bewerbung"
+        },
+        {
+          "heading": "Beispiel: Verkäufer/in Supermarkt",
+          "text": "**REWE Markt München sucht**\n**Verkäufer/in (m/w/d) Teilzeit 20 Std./Woche**\n\n**Ihre Aufgaben:**\n• Freundliche Kundenberatung\n• Kassieren und Abrechnung\n• Warenverräumung und Regalpflege\n• Frischekon trolle bei Obst und Gemüse\n\n**Ihr Profil:**\n• Freundliches Auftreten\n• Deutschkenntnisse mind. B1\n• Bereitschaft zu flexiblen Arbeitszeiten (auch samstags)\n• Idealerweise Erfahrung im Einzelhandel\n\n**Wir bieten:**\n• 14,50 € pro Stunde\n• 30 Tage Urlaub\n• 10% Mitarbeiterrabatt\n• Weiterbildungsmöglichkeiten\n• Unbefristeter Vertrag\n\n**Bewerbung:**\nPer E-Mail an: bewerbung.muenchen@rewe.de\nBetreff: Verkäufer TZ - Kennziffer VK-2024-89"
+        },
+        {
+          "heading": "Was bedeuten die Anforderungen?",
+          "text": "**'Muss-Kriterien'** (ohne diese geht es nicht):\n- 'Abgeschlossene Ausbildung als...'\n- 'Deutschkenntnisse B2 erforderlich'\n- 'Führerschein Klasse B notwendig'\n\n**'Kann-Kriterien'** (wünschenswert, aber nicht zwingend):\n- 'Idealerweise mit Berufserfahrung'\n- 'Von Vorteil sind Kenntnisse in...'\n- 'Wünschenswert sind...'\n\n➜ **Tipp:** Bewerben Sie sich auch, wenn Sie nicht alle Kann-Kriterien erfüllen!"
+        }
+      ],
+      "tips": [
+        "Lesen Sie die Anzeige genau - erfüllen Sie die MUSS-Kriterien?",
+        "Notieren Sie sich die Kennziffer/Referenznummer",
+        "Bereiten Sie alle geforderten Unterlagen vor",
+        "Bewerbungsfristen unbedingt einhalten",
+        "Im Anschreiben auf die Stellennummer beziehen",
+        "Bei Fragen vor der Bewerbung anrufen - zeigt Interesse"
+      ],
+      "vocabulary": [
+        {
+          "word": "die Stelle",
+          "meaning": "der Arbeitsplatz, der Job"
+        },
+        {
+          "word": "unbefristet",
+          "meaning": "ohne zeitliche Begrenzung, fest"
+        },
+        {
+          "word": "befristet",
+          "meaning": "zeitlich begrenzt (z.B. 1 Jahr)"
+        },
+        {
+          "word": "die Vergütung",
+          "meaning": "das Gehalt, die Bezahlung"
+        },
+        {
+          "word": "die Bewerbungsunterlagen",
+          "meaning": "alle Dokumente (Lebenslauf, Zeugnisse, Anschreiben)"
+        },
+        {
+          "word": "die Kennziffer",
+          "meaning": "Referenznummer der Stellenanzeige"
+        },
+        {
+          "word": "der Arbeitgeber",
+          "meaning": "die Firma, die einstellt"
+        },
+        {
+          "word": "die Berufserfahrung",
+          "meaning": "Erfahrung in einem Beruf"
+        }
+      ]
+    }
+  },
+  {
+    "id": "l002",
+    "section": "lesen",
+    "theme": "wohnen",
+    "title": "Wohnungsanzeigen richtig lesen",
+    "subtitle": "Abkürzungen und Begriffe bei der Wohnungssuche",
+    "level": "B1",
+    "duration": "12 min",
+    "content": {
+      "introduction": "Wohnungsanzeigen in Deutschland enthalten viele Abkürzungen. Wer sie versteht, kann schneller die passende Wohnung finden und unangenehme Überraschungen vermeiden.",
+      "keyPoints": [
+        {
+          "heading": "Die wichtigsten Abkürzungen",
+          "text": "**Größe und Zimmer:**\n• **qm / m²** = Quadratmeter (Wohnfläche)\n• **Zi** = Zimmer\n• **1-Zi-Whg** = 1-Zimmer-Wohnung (= Studio/Einzimmerwohnung)\n• **3-Zi-Whg** = 3 Zimmer (meist Wohnzimmer + 2 Schlafzimmer)\n\n**Kosten:**\n• **KM** = Kaltmiete (nur die Wohnung, ohne Nebenkosten)\n• **NK** = Nebenkosten (Wasser, Heizung, Müll, Hausmeister)\n• **WM** = Warmmiete (KM + NK zusammen)\n• **KT** = Kaution (Sicherheit, meist 2-3 Monatsmieten)\n• **MM** = Monatsmiete\n\n**Ausstattung:**\n• **EBK** = Einbauküche (Küche ist schon da)\n• **BK** = Balkon\n• **TG** = Tiefgarage\n• **KFZ-Stellplatz** = Parkplatz\n• **HZG** = Heizung\n• **ZH** = Zentralheizung"
+        },
+        {
+          "heading": "Beispiel-Anzeige verstehen",
+          "text": "**München-Schwabing: 3-Zi-Whg, 75 qm, EBK, BK, 2. OG**\n\n**Was bedeutet das?**\n• München-Schwabing = Stadtteil\n• 3-Zi-Whg = 3 Zimmer (ca. Wohnzimmer + 2 Schlafzimmer)\n• 75 qm = 75 Quadratmeter Wohnfläche\n• EBK = Einbauküche vorhanden\n• BK = Balkon vorhanden\n• 2. OG = 2. Obergeschoss (2. Stock)\n\n**Kosten:**\nKM: 1.200 €\nNK: 280 €\nWM: 1.480 € (Das zahlen Sie monatlich)\nKT: 3.600 € (3 MM, einmalig bei Einzug)\n\n**Verfügbar ab:** 01.12.2025"
+        },
+        {
+          "heading": "Warmmiete vs. Kaltmiete",
+          "text": "**Kaltmiete (KM):**\n= Nur die reine Miete für die Wohnung\nBeispiel: 850 €\n\n**Nebenkosten (NK):**\n= Zusätzliche Kosten für:\n• Heizung\n• Wasser/Abwasser\n• Müllabfuhr\n• Hausmeister\n• Treppenhausreinigung\n• Grundsteuer\nBeispiel: 200 €\n\n**Warmmiete (WM):**\n= Kaltmiete + Nebenkosten\nBeispiel: 850 € + 200 € = 1.050 €\n\n➜ **Das zahlen Sie jeden Monat!**\n\n**Wichtig:** Die Nebenkosten werden jährlich abgerechnet. Wenn Sie mehr verbraucht haben, müssen Sie nachzahlen. Wenn Sie weniger verbraucht haben, bekommen Sie Geld zurück."
+        },
+        {
+          "heading": "Die Kaution",
+          "text": "**Was ist die Kaution?**\nEine Sicherheitszahlung bei Mietbeginn.\n\n**Wie viel?**\nMaximal 3 Monatsmieten (Kaltmiete)\nBeispiel: Kaltmiete 850 € → Kaution max. 2.550 €\n\n**Wofür?**\n• Schutz für Vermieter bei Schäden\n• Schutz bei unbezahlter Miete\n\n**Rückzahlung:**\nBei Auszug bekommen Sie die Kaution zurück, wenn:\n• Keine Schäden in der Wohnung\n• Alle Mieten bezahlt\n• Keine Mietschulden\n\n➜ **Tipp:** Kaution kann in 3 Raten gezahlt werden!"
+        },
+        {
+          "heading": "Was Sie zur Wohnungsbesichtigung mitbringen",
+          "text": "**Pflicht-Dokumente:**\n1. Personalausweis/Reisepass\n2. Einkommensnachweise (letzte 3 Gehaltszetteln)\n3. Schufa-Auskunft (Bonitätsnachweis)\n4. Mietschuldenfreiheitsbescheinigung (vom alten Vermieter)\n\n**Optional, aber gut:**\n• Arbeitsvertrag\n• Selbstauskunft (ausgefüllt)\n• Kurzes Bewerbungsschreiben\n\n➜ Bereiten Sie eine \"Bewerbungsmappe\" vor - die besten Chancen haben vorbereitete Mieter!"
+        }
+      ],
+      "tips": [
+        "Warmmiete berechnen: Kaltmiete + Nebenkosten = was Sie zahlen",
+        "Kaution kann in 3 Monatsraten gezahlt werden (fragen Sie!)",
+        "Schufa-Auskunft 2 Wochen vorher beantragen (www.meineschufa.de)",
+        "Bei Besichtigung: Mängel fotografieren und notieren",
+        "Übergabeprotokoll beim Einzug unterschreiben",
+        "Nebenkosten: Strom zahlen Sie extra (nicht in NK enthalten)"
+      ],
+      "vocabulary": [
+        {
+          "word": "die Kaltmiete",
+          "meaning": "Miete ohne Nebenkosten"
+        },
+        {
+          "word": "die Nebenkosten",
+          "meaning": "zusätzliche Kosten (Heizung, Wasser, Müll)"
+        },
+        {
+          "word": "die Warmmiete",
+          "meaning": "Kaltmiete + Nebenkosten"
+        },
+        {
+          "word": "die Kaution",
+          "meaning": "Sicherheitszahlung bei Mietbeginn"
+        },
+        {
+          "word": "der Vermieter",
+          "meaning": "Person, die die Wohnung vermietet"
+        },
+        {
+          "word": "der Mieter",
+          "meaning": "Person, die die Wohnung mietet"
+        },
+        {
+          "word": "die Schufa",
+          "meaning": "Bonitätsprüfung, Kreditauskunft"
+        },
+        {
+          "word": "die Einbauküche",
+          "meaning": "fertige Küche mit Schränken und Geräten"
+        },
+        {
+          "word": "das Obergeschoss (OG)",
+          "meaning": "Stockwerk über dem Erdgeschoss"
+        }
+      ]
+    }
+  },
+  {
+    "id": "l003",
+    "section": "lesen",
+    "theme": "gesundheit",
+    "title": "Arztbriefe und Rezepte verstehen",
+    "subtitle": "Medizinische Dokumente richtig lesen",
+    "level": "B1",
+    "duration": "10 min",
+    "content": {
+      "introduction": "In Deutschland erhalten Sie vom Arzt verschiedene Dokumente: Arztbriefe, Rezepte, Überweisungen. Diese Dokumente sind wichtig für Ihre Gesundheit und für die Krankenkasse.",
+      "keyPoints": [
+        {
+          "heading": "Das Rezept (die Verordnung)",
+          "text": "**Aufbau eines Rezepts:**\n\n**1. Kopf:**\n• Name und Adresse der Arztpraxis\n• Datum der Ausstellung\n\n**2. Patientendaten:**\n• Name, Geburtsdatum\n• Versichertennummer (Krankenkasse)\n\n**3. Medikament:**\n• Name des Medikaments\n• Dosierung (z.B. '500 mg')\n• Menge/Packungsgröße (N1, N2, N3)\n\n**4. Hinweise:**\n• Anzahl der Packungen\n• aut idem (Apotheke darf ähnliches Medikament geben)\n\n**5. Unterschrift:**\n• Stempel und Unterschrift der Ärztin/des Arztes"
+        },
+        {
+          "heading": "Wichtige Begriffe auf Rezepten",
+          "text": "**'aut idem'** = Apotheke darf ein gleichwertiges Medikament geben\n**'aut idem' durchgestrichen** = Nur dieses Medikament!\n**N1, N2, N3** = Packungsgrößen (N1 = klein, N3 = groß)\n**1-1-1** = dreimal täglich eine Tablette (morgens-mittags-abends)\n**bei Bedarf** = nur wenn nötig nehmen\n**vor dem Essen/nach dem Essen** = wichtig für die Wirkung"
+        },
+        {
+          "heading": "Der Arztbrief",
+          "text": "**Nach einem Krankenhausaufenthalt oder einer Untersuchung erhalten Sie einen Arztbrief.**\n\n**Wichtige Teile:**\n\n**Anamnese** = Was Sie erzählt haben (Beschwerden)\n**Befund** = Was der Arzt gefunden hat\n**Diagnose** = Die Krankheit/das Problem\n**Therapie** = Die Behandlung\n**Prozedere/Weiteres Vorgehen** = Was als Nächstes passiert\n**Medikation** = Welche Medikamente Sie nehmen sollen\n\n**Beispiel:**\nDiagnose: *Akute Bronchitis*\nTherapie: *Antibiotikum 7 Tage*\nProzedere: *Wiedervorstellung in 1 Woche*"
+        },
+        {
+          "heading": "Die Arbeitsunfähigkeitsbescheinigung (AU/Krankschreibung)",
+          "text": "**Was ist das?**\nEin Dokument, das bestätigt, dass Sie krank sind und nicht arbeiten können.\n\n**Wichtig:**\n• **Arbeitsunfähig von** ... **bis** ... = Zeitraum\n• **Erstbescheinigung** = erste Krankschreibung\n• **Folgebescheinigung** = Verlängerung\n• Ein Teil für Sie, ein Teil für den Arbeitgeber, ein Teil für die Krankenkasse\n\n**Pflichten:**\n• Am 1. Krankheitstag: Arbeitgeber telefonisch informieren\n• Ab dem 3. Tag: AU beim Arbeitgeber abgeben\n• Bei längerer Krankheit: Folgebescheinigung holen"
+        }
+      ],
+      "tips": [
+        "Rezepte sind nur begrenzt gültig: rosa (Kassenrezept) 28 Tage",
+        "Nehmen Sie Medikamente genau nach Anweisung ein",
+        "Fragen Sie in der Apotheke nach, wenn Sie etwas nicht verstehen",
+        "Bewahren Sie Arztbriefe gut auf - beim nächsten Arztbesuch mitnehmen",
+        "AU sofort an Arbeitgeber schicken (per Post oder elektronisch)",
+        "Bei Privatrezept (blau) müssen Sie selbst bezahlen"
+      ],
+      "vocabulary": [
+        {
+          "word": "die Verordnung",
+          "meaning": "das Rezept"
+        },
+        {
+          "word": "die Dosierung",
+          "meaning": "wie viel man nehmen soll"
+        },
+        {
+          "word": "die Packungsgröße",
+          "meaning": "wie viele Tabletten in der Packung sind"
+        },
+        {
+          "word": "die Anamnese",
+          "meaning": "Krankengeschichte, was der Patient erzählt"
+        },
+        {
+          "word": "der Befund",
+          "meaning": "Ergebnis der Untersuchung"
+        },
+        {
+          "word": "die Diagnose",
+          "meaning": "die festgestellte Krankheit"
+        },
+        {
+          "word": "die Therapie",
+          "meaning": "die Behandlung"
+        },
+        {
+          "word": "arbeitsunfähig",
+          "meaning": "zu krank zum Arbeiten, krankgeschrieben"
+        }
+      ]
+    }
+  },
+  {
+    "id": "s001",
+    "section": "schreiben",
+    "theme": "aemter",
+    "title": "Formelle E-Mails und Briefe schreiben",
+    "subtitle": "Kommunikation mit Behörden und Ämtern",
+    "level": "B1",
+    "duration": "15 min",
+    "content": {
+      "introduction": "In Deutschland müssen Sie oft mit Ämtern, Versicherungen oder Firmen schreiben. Diese Briefe und E-Mails sollten formell und höflich sein.",
+      "keyPoints": [
+        {
+          "heading": "Aufbau eines formellen Briefes/E-Mail",
+          "text": "**1. Absender** (bei Brief oben links, bei E-Mail im Feld 'Von')\nIhr Name\nIhre Straße und Hausnummer\nPLZ und Stadt\n\n**2. Empfänger** (bei Brief links, bei E-Mail im Feld 'An')\nName der Behörde/Firma\nStraße\nPLZ und Stadt\n\n**3. Betreff** (wichtig!)\nz.B. 'Antrag auf Wohngeld' oder 'Kündigung Vertrag Nr. 12345'\n\n**4. Anrede**\n• 'Sehr geehrte Damen und Herren,' (wenn Sie keinen Namen kennen)\n• 'Sehr geehrte Frau Müller,' (wenn Sie den Namen kennen)\n• 'Sehr geehrter Herr Schmidt,'\n\n**5. Einleitung**\nWarum schreiben Sie?\n\n**6. Hauptteil**\nIhr Anliegen, Fragen, Informationen\n\n**7. Schluss**\nWas erwarten Sie? (Antwort, Termin, etc.)\n\n**8. Grußformel**\n'Mit freundlichen Grüßen'\n\n**9. Unterschrift**\nIhr Name"
+        },
+        {
+          "heading": "Nützliche Formulierungen",
+          "text": "**Einleitung:**\n• ich beziehe mich auf ...\n• hiermit beantrage ich ...\n• ich möchte Sie um Folgendes bitten: ...\n• ich schreibe Ihnen, weil ...\n\n**Hauptteil:**\n• ich benötige Informationen über ...\n• könnten Sie mir bitte mitteilen, ...\n• leider muss ich Ihnen mitteilen, dass ...\n• ich möchte Sie darüber informieren, dass ...\n\n**Schluss:**\n• ich wäre Ihnen dankbar, wenn ...\n• für eine baldige Antwort wäre ich Ihnen dankbar\n• ich freue mich auf Ihre Rückmeldung\n• bei Fragen stehe ich gerne zur Verfügung"
+        },
+        {
+          "heading": "Beispiel: E-Mail an das Ausländeramt",
+          "text": "**Betreff:** Terminanfrage für Verlängerung Aufenthaltstitel\n\nSehr geehrte Damen und Herren,\n\nmein Aufenthaltstitel läuft am 30. November 2025 ab (Kundennummer: AB123456). Ich möchte gerne einen Termin zur Verlängerung vereinbaren.\n\nIch arbeite seit zwei Jahren als Krankenschwester im Städtischen Krankenhaus und habe einen unbefristeten Arbeitsvertrag. Alle erforderlichen Unterlagen (Arbeitsvertrag, Gehaltsnachweise, Mietvertrag) kann ich bei dem Termin vorlegen.\n\nKönnten Sie mir bitte einen Termin in der Woche vom 4. bis 8. November geben? Ich bin flexibel und kann auch vormittags kommen.\n\nFür eine baldige Rückmeldung wäre ich Ihnen sehr dankbar.\n\nMit freundlichen Grüßen\nMaria Schmidt"
+        }
+      ],
+      "tips": [
+        "Betreffzeile immer ausfüllen - zeigt sofort, worum es geht",
+        "Kurze Sätze verwenden - klar und verständlich",
+        "Höflich, aber nicht unterwürfig schreiben",
+        "Wichtige Nummern angeben (Kundennummer, Vertragsnummer, etc.)",
+        "Bei E-Mails: professionelle E-Mail-Adresse verwenden",
+        "Korrekturlesen vor dem Absenden!"
+      ],
+      "vocabulary": [
+        {
+          "word": "der Absender",
+          "meaning": "wer den Brief schickt"
+        },
+        {
+          "word": "der Empfänger",
+          "meaning": "wer den Brief bekommt"
+        },
+        {
+          "word": "der Betreff",
+          "meaning": "Thema des Briefes (Subject)"
+        },
+        {
+          "word": "die Anrede",
+          "meaning": "Begrüßung am Anfang"
+        },
+        {
+          "word": "die Grußformel",
+          "meaning": "Verabschiedung am Ende"
+        },
+        {
+          "word": "die Rückmeldung",
+          "meaning": "die Antwort"
+        },
+        {
+          "word": "vorlegen",
+          "meaning": "zeigen, präsentieren (Dokumente)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "l004",
+    "section": "lesen",
+    "theme": "reisen",
+    "title": "Fahrpläne und Reiseinformationen",
+    "subtitle": "Deutsche Bahn, Flüge und öffentliche Verkehrsmittel",
+    "level": "B1",
+    "duration": "8 min",
+    "content": {
+      "introduction": "In Deutschland reisen Sie oft mit der Bahn, dem Bus oder der U-Bahn. Fahrpläne zu lesen ist wichtig, um pünktlich anzukommen.",
+      "keyPoints": [
+        {
+          "heading": "Fahrplan-Abkürzungen",
+          "text": "**Züge:**\n• **ICE** = InterCity Express (schnellster Fernzug)\n• **IC** = InterCity (Fernzug)\n• **RE** = RegionalExpress (regionaler Zug)\n• **RB** = RegionalBahn (hält oft)\n• **S-Bahn** = Stadtschnellbahn\n• **U-Bahn** = Untergrundbahn (Metro)\n\n**Zeiten:**\n• **Ab** = Abfahrt\n• **An** = Ankunft\n• **Gl.** = Gleis (Platform)\n• **ca.** = circa (ungefähr)\n\n**Informationen:**\n• **tägl.** = täglich\n• **Mo-Fr** = Montag bis Freitag\n• **Sa+So** = Samstag und Sonntag\n• **ausgen.** = ausgenommen (außer)"
+        },
+        {
+          "heading": "Tickets kaufen",
+          "text": "**Ticketarten:**\n\n**1. Normalpreis/Flexpreis**\n• Teuer, aber flexibel\n• Stornierung möglich\n• Alle Züge nutzbar\n\n**2. Sparpreis**\n• Günstiger (ab 17,90 €)\n• Nur für bestimmten Zug\n• Früh buchen = billiger\n• Begrenzte Stornierung\n\n**3. Deutschlandticket (49 €)**\n• Monatskarte für ganz Deutschland\n• Alle Regionalzüge, S-Bahn, U-Bahn, Bus\n• Nicht im ICE/IC gültig\n\n**4. BahnCard**\n• 25% oder 50% Rabatt\n• Lohnt sich bei häufigem Reisen"
+        },
+        {
+          "heading": "Wichtige Durchsagen verstehen",
+          "text": "**Häufige Ansagen:**\n\n'*Wegen einer technischen Störung* ...'\n= Problem mit dem Zug\n\n'*Der Zug fällt heute aus*'\n= Der Zug kommt nicht\n\n'*Verspätung von ca. 15 Minuten*'\n= Zug kommt später\n\n'*Umsteigen in ...*'\n= Sie müssen den Zug wechseln\n\n'*Ersatzverkehr mit Bussen*'\n= Statt Zug fahren Busse\n\n'*Gleiswechsel auf Gleis 7*'\n= Zug fährt von anderem Gleis ab"
+        }
+      ],
+      "tips": [
+        "DB Navigator App herunterladen - zeigt Verspätungen in Echtzeit",
+        "Sparpreis-Tickets früh buchen (3-6 Monate vorher)",
+        "Bei Verspätung ab 60 Min: Geld zurück möglich",
+        "Im Nahverkehr: Ticket vor Fahrt kaufen!",
+        "Deutschlandticket digital im Handy - kein Papier nötig"
+      ],
+      "vocabulary": [
+        {
+          "word": "die Abfahrt",
+          "meaning": "wann der Zug losfährt"
+        },
+        {
+          "word": "die Ankunft",
+          "meaning": "wann der Zug ankommt"
+        },
+        {
+          "word": "das Gleis",
+          "meaning": "Platform (wo der Zug hält)"
+        },
+        {
+          "word": "umsteigen",
+          "meaning": "den Zug/Bus wechseln"
+        },
+        {
+          "word": "die Verspätung",
+          "meaning": "zu spät (Delay)"
+        },
+        {
+          "word": "ausfallen",
+          "meaning": "nicht kommen, abgesagt werden"
+        },
+        {
+          "word": "die Durchsage",
+          "meaning": "Ansage, Announcement"
+        }
+      ]
+    }
+  },
+  {
+    "id": "l005",
+    "section": "lesen",
+    "theme": "geld",
+    "title": "Bankdokumente und Kontoauszüge",
+    "subtitle": "Überweisungen, Lastschriften und Gebühren verstehen",
+    "level": "B1",
+    "duration": "10 min",
+    "content": {
+      "introduction": "Das deutsche Bankensystem hat eigene Begriffe. Wer seine Kontoauszüge versteht, behält die Kontrolle über sein Geld.",
+      "keyPoints": [
+        {
+          "heading": "Wichtige Bankbegriffe",
+          "text": "**Kontoarten:**\n• **Girokonto** = normales Konto für den Alltag\n• **Sparkonto** = Konto zum Sparen (Zinsen!)\n• **Tagesgeldkonto** = flexibles Sparkonto\n\n**Transaktionen:**\n• **Überweisung** = Sie senden Geld an jemanden\n• **Lastschrift** = Jemand zieht Geld von Ihrem Konto ab\n• **Dauerauftrag** = automatische monatliche Überweisung\n• **Abbuchung** = Geld wird abgebucht\n• **Gutschrift** = Geld kommt auf Ihr Konto\n\n**Saldo:**\n• **Haben** = positiv, Geld auf dem Konto\n• **Soll** = negativ, Schulden (Dispo)"
+        },
+        {
+          "heading": "Kontoauszug lesen",
+          "text": "**Typischer Kontoauszug:**\n\n```\nDatum    | Buchungstext          | Betrag\n---------|----------------------|----------\n01.10.   | Gehalt Schmidt GmbH  | +2.400,00 €\n05.10.   | Miete LASTSCHRIFT    | -950,00 €\n08.10.   | REWE 1234 EC-Karte   | -45,80 €\n10.10.   | Strom EON            | -85,00 €\n15.10.   | Überweisung an Max   | -50,00 €\n---------|----------------------|----------\nSaldo:                          | 1.269,20 €\n```\n\n**Was bedeutet das?**\n• **+** = Geld bekommen (Gutschrift)\n• **-** = Geld ausgegeben (Abbuchung)\n• **Saldo** = wie viel Geld noch auf dem Konto ist"
+        },
+        {
+          "heading": "IBAN und BIC",
+          "text": "**IBAN (International Bank Account Number)**\n= Ihre Kontonummer für Überweisungen\n\n**Aufbau:**\nDE89 3704 0044 0532 0130 00\n• **DE** = Land (Deutschland)\n• **89** = Prüfziffer\n• **37040044** = Bankleitzahl (BLZ)\n• **0532013000** = Kontonummer\n\n**BIC/SWIFT-Code**\n= Code der Bank (z.B. COBADEFFXXX)\n• Wird seltener gebraucht\n• Bei Auslandsüberweisungen wichtig"
+        },
+        {
+          "heading": "Gebühren und Kosten",
+          "text": "**Häufige Bankgebühren:**\n\n• **Kontoführungsgebühr:** 0-10 € pro Monat\n• **Girocard (EC-Karte):** oft kostenlos\n• **Kreditkarte:** 0-50 € pro Jahr\n• **Bargeld abheben (Fremdbank):** 2-5 € pro Abhebung\n• **Dispo-Zinsen:** 6-15% pro Jahr (teuer!)\n• **Rücklastschrift:** 5-10 € (wenn Lastschrift nicht funktioniert)\n\n**💡 Tipp:** Viele Direktbanken sind komplett kostenlos (N26, DKB, ING, etc.)"
+        }
+      ],
+      "tips": [
+        "Online-Banking nutzen - sehen Sie sofort alle Buchungen",
+        "Dauerauftrag für Miete einrichten - nie vergessen!",
+        "Lastschriften kontrollieren - können zurückgebucht werden (8 Wochen)",
+        "Dispo vermeiden - sehr hohe Zinsen",
+        "IBAN immer doppelt prüfen vor Überweisung"
+      ],
+      "vocabulary": [
+        {
+          "word": "das Girokonto",
+          "meaning": "normales Bankkonto für den Alltag"
+        },
+        {
+          "word": "die Überweisung",
+          "meaning": "Geld an jemanden senden"
+        },
+        {
+          "word": "die Lastschrift",
+          "meaning": "automatische Abbuchung"
+        },
+        {
+          "word": "der Dauerauftrag",
+          "meaning": "regelmäßige automatische Überweisung"
+        },
+        {
+          "word": "die Gutschrift",
+          "meaning": "Geld, das auf Ihr Konto kommt"
+        },
+        {
+          "word": "die Abbuchung",
+          "meaning": "Geld, das vom Konto abgeht"
+        },
+        {
+          "word": "der Saldo",
+          "meaning": "Kontostand, wie viel Geld auf dem Konto ist"
+        },
+        {
+          "word": "der Dispo",
+          "meaning": "Überziehungskredit (ins Minus gehen)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "h001",
+    "section": "hoeren",
+    "theme": "familie",
+    "title": "Telefongespräche verstehen",
+    "subtitle": "Alltägliche Gespräche und Vereinbarungen am Telefon",
+    "level": "B1",
+    "duration": "8 min",
+    "content": {
+      "introduction": "Am Telefon müssen Sie schnell reagieren und verstehen. Hier lernen Sie typische Situationen und Formulierungen.",
+      "keyPoints": [
+        {
+          "heading": "Telefongespräch beginnen",
+          "text": "**Sie rufen an:**\n• 'Guten Tag, hier ist Maria Schmidt. Ich möchte gerne ...'\n• 'Hallo, ich bin's, Maria. Hast du kurz Zeit?'\n\n**Sie nehmen ab:**\n• 'Schmidt, guten Tag.' (formell)\n• 'Hallo?' oder 'Ja?' (informell)\n• 'Praxis Dr. Müller, guten Tag. Was kann ich für Sie tun?'\n\n**Jemanden verlangen:**\n• 'Könnte ich bitte Frau Müller sprechen?'\n• 'Ist Herr Schmidt zu sprechen?'\n• 'Kann ich bitte mit ... sprechen?'"
+        },
+        {
+          "heading": "Termine vereinbaren",
+          "text": "**Nach einem Termin fragen:**\n• 'Ich hätte gerne einen Termin bei ...'\n• 'Wann hätten Sie Zeit?'\n• 'Hätten Sie nächste Woche noch etwas frei?'\n\n**Termin bestätigen:**\n• 'Passt Ihnen Dienstag, der 5. November, um 14 Uhr?'\n• 'Ja, das passt mir gut.'\n• 'Einverstanden, ich komme am ...'\n\n**Termin absagen/verschieben:**\n• 'Leider muss ich den Termin absagen.'\n• 'Können wir den Termin verschieben?'\n• 'Hätten Sie einen alternativen Termin?'"
+        },
+        {
+          "heading": "Häufige Telefon-Phrasen",
+          "text": "**Verstehen:**\n• 'Entschuldigung, könnten Sie das bitte wiederholen?'\n• 'Ich habe Sie nicht verstanden. Könnten Sie langsamer sprechen?'\n• 'Wie war die Nummer nochmal?'\n\n**Warten:**\n• 'Einen Moment bitte, ich verbinde Sie.'\n• 'Bleiben Sie bitte am Apparat.'\n• 'Frau Müller ist gerade nicht da. Kann ich etwas ausrichten?'\n\n**Verabschieden:**\n• 'Vielen Dank für den Anruf.'\n• 'Auf Wiederhören!'\n• 'Bis dann!'"
+        }
+      ],
+      "tips": [
+        "Notieren Sie Namen und Informationen während des Gesprächs",
+        "Bei wichtigen Anrufen: Termin wiederholen zur Bestätigung",
+        "In lauter Umgebung: Gespräch verschieben",
+        "Mailbox-Nachricht: Name, Grund, Rückrufnummer nennen"
+      ],
+      "vocabulary": [
+        {
+          "word": "abnehmen",
+          "meaning": "ans Telefon gehen"
+        },
+        {
+          "word": "auflegen",
+          "meaning": "Telefongespräch beenden"
+        },
+        {
+          "word": "verbinden",
+          "meaning": "jemanden am Telefon weitergeben"
+        },
+        {
+          "word": "ausrichten",
+          "meaning": "eine Nachricht weitergeben"
+        },
+        {
+          "word": "am Apparat bleiben",
+          "meaning": "warten, nicht auflegen"
+        },
+        {
+          "word": "zurückrufen",
+          "meaning": "später wieder anrufen"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sp001",
+    "section": "sprechen",
+    "theme": "arbeit",
+    "title": "Sich vorstellen im Vorstellungsgespräch",
+    "subtitle": "Über Beruf, Ausbildung und Erfahrung sprechen",
+    "level": "B1",
+    "duration": "10 min",
+    "content": {
+      "introduction": "Bei Bewerbungen müssen Sie über sich selbst sprechen. Eine gute Vorbereitung hilft Ihnen, selbstsicher aufzutreten.",
+      "keyPoints": [
+        {
+          "heading": "Typische Fragen im Vorstellungsgespräch",
+          "text": "**Einstiegsfragen:**\n• 'Erzählen Sie etwas über sich.'\n• 'Warum interessieren Sie sich für diese Stelle?'\n• 'Was sind Ihre Stärken und Schwächen?'\n\n**Beruflicher Hintergrund:**\n• 'Welche Erfahrungen haben Sie in diesem Bereich?'\n• 'Was haben Sie in Ihrer letzten Stelle gemacht?'\n• 'Warum haben Sie Ihre letzte Stelle verlassen?'\n\n**Zukunft:**\n• 'Wo sehen Sie sich in 5 Jahren?'\n• 'Warum sollten wir gerade Sie einstellen?'\n• 'Wann könnten Sie anfangen?'"
+        },
+        {
+          "heading": "Über die Ausbildung sprechen",
+          "text": "**Nützliche Formulierungen:**\n\n'Ich habe ... gelernt/studiert.'\n'Ich habe eine Ausbildung als ... gemacht.'\n'Ich habe einen Abschluss in ... '\n'Während meiner Ausbildung habe ich ...'\n'Ich habe Berufserfahrung als ...'\n\n**Beispiel:**\n'Ich komme aus Syrien und habe dort als Krankenschwester gearbeitet. In Deutschland habe ich zuerst einen Deutschkurs gemacht, dann die Anerkennung meines Abschlusses beantragt. Seit zwei Jahren arbeite ich im Krankenhaus und jetzt möchte ich mich weiterentwickeln.'"
+        },
+        {
+          "heading": "Stärken und Schwächen nennen",
+          "text": "**Stärken (Beispiele):**\n• 'Ich bin sehr zuverlässig und pünktlich.'\n• 'Ich arbeite gerne im Team.'\n• 'Ich lerne schnell und bin flexibel.'\n• 'Ich bin belastbar und kann auch unter Stress arbeiten.'\n\n**Schwächen (ehrlich, aber positiv):**\n• 'Manchmal bin ich zu perfektionistisch, aber ich arbeite daran.'\n• 'Mein Deutsch ist noch nicht perfekt, aber ich lerne jeden Tag.'\n• 'Ich möchte noch mehr über ... lernen.'"
+        }
+      ],
+      "tips": [
+        "Üben Sie Ihre Antworten vorher laut",
+        "Bereiten Sie Fragen für den Arbeitgeber vor",
+        "Kleidung: gepflegt und passend zur Branche",
+        "Pünktlichkeit ist sehr wichtig! 5-10 Min. vorher da sein",
+        "Augenkontakt halten und selbstbewusst sprechen"
+      ],
+      "vocabulary": [
+        {
+          "word": "die Ausbildung",
+          "meaning": "berufliche Lehre (3 Jahre)"
+        },
+        {
+          "word": "die Berufserfahrung",
+          "meaning": "Erfahrung im Beruf"
+        },
+        {
+          "word": "zuverlässig",
+          "meaning": "man kann sich auf die Person verlassen"
+        },
+        {
+          "word": "belastbar",
+          "meaning": "kann auch schwierige Situationen meistern"
+        },
+        {
+          "word": "flexibel",
+          "meaning": "anpassungsfähig"
+        },
+        {
+          "word": "der Abschluss",
+          "meaning": "Diplom, Zertifikat am Ende der Ausbildung"
+        }
+      ]
+    }
+  },
+  {
+    "id": "l006",
+    "section": "lesen",
+    "theme": "einkaufen",
+    "title": "Produktbeschreibungen und Garantien",
+    "subtitle": "Online-Shopping und Rückgaberecht verstehen",
+    "level": "B1",
+    "duration": "9 min",
+    "content": {
+      "introduction": "Beim Online-Einkauf sollten Sie die Produktbeschreibungen und Ihre Rechte kennen. In Deutschland gibt es klare Regeln für Käufer.",
+      "keyPoints": [
+        {
+          "heading": "Wichtige Kaufinformationen",
+          "text": "**In Produktbeschreibungen finden Sie:**\n\n• **Lieferzeit**: z.B. '2-3 Werktage', 'sofort lieferbar'\n• **Versandkosten**: oft 'ab 29 € versandkostenfrei'\n• **Zahlungsmethoden**: PayPal, Kreditkarte, Rechnung, etc.\n• **Größentabelle**: bei Kleidung sehr wichtig!\n• **Bewertungen**: Was sagen andere Kunden?"
+        },
+        {
+          "heading": "Das Widerrufsrecht (14 Tage)",
+          "text": "**Was ist das?**\nBei Online-Käufen können Sie 14 Tage lang ohne Grund zurückschicken.\n\n**Wie funktioniert es?**\n1. Innerhalb 14 Tagen nach Erhalt: Widerruf erklären\n2. Ware zurückschicken (oft kostenlos)\n3. Geld zurück (innerhalb 14 Tagen)\n\n**Ausnahmen (kein Widerrufsrecht):**\n• Lebensmittel, Unterwäsche\n• Individuell angefertigte Produkte\n• Ware mit geöffneter Versiegelung (z.B. Software)\n• Schnell verderbliche Waren"
+        },
+        {
+          "heading": "Garantie und Gewährleistung",
+          "text": "**Gesetzliche Gewährleistung (2 Jahre):**\n• Gilt automatisch\n• Bei Mängeln: Reparatur oder Austausch\n• Erste 6 Monate: Verkäufer muss beweisen, dass Ware OK war\n• Nach 6 Monaten: Sie müssen Mangel nachweisen\n\n**Garantie (freiwillig):**\n• Hersteller gibt zusätzliche Garantie\n• Bedingungen beachten!\n• Oft bei Elektronik (z.B. 5 Jahre auf Waschmaschine)"
+        }
+      ],
+      "tips": [
+        "Screenshot von Angebot machen - Preis kann sich ändern",
+        "Kundenbewertungen lesen - oft sehr hilfreich",
+        "Seriennummer/Kaufbeleg aufbewahren (für Garantie)",
+        "Bei Problemen: erst Verkäufer kontaktieren",
+        "Verbraucherzentrale hilft bei Streit"
+      ],
+      "vocabulary": [
+        {
+          "word": "die Lieferzeit",
+          "meaning": "wie lange es dauert, bis Ware ankommt"
+        },
+        {
+          "word": "das Widerrufsrecht",
+          "meaning": "Recht, Kauf rückgängig zu machen"
+        },
+        {
+          "word": "die Gewährleistung",
+          "meaning": "gesetzliches Recht bei Mängeln (2 Jahre)"
+        },
+        {
+          "word": "die Garantie",
+          "meaning": "freiwillige Zusage des Herstellers"
+        },
+        {
+          "word": "der Mangel",
+          "meaning": "Fehler, Defekt"
+        },
+        {
+          "word": "umtauschen",
+          "meaning": "zurückgeben und anderes Produkt nehmen"
+        }
+      ]
+    }
+  }
+]

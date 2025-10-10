@@ -1,0 +1,124 @@
+[
+  {
+    "id": "l001",
+    "section": "lesen",
+    "theme": "arbeit",
+    "title": "Stellenanzeigen verstehen",
+    "subtitle": "Wie liest man Jobangebote in Deutschland?",
+    "level": "B1",
+    "duration": "10 min",
+    "content": {
+      "introduction": "Stellenanzeigen in Deutschland folgen einem typischen Aufbau. Wer diesen kennt, kann schnell entscheiden, ob eine Stelle passt. Hier lernen Sie die wichtigsten Begriffe und Abkürzungen.",
+      "keyPoints": [
+        {
+          "heading": "Typischer Aufbau einer Stellenanzeige",
+          "text": "**1. Arbeitgeber/Firma**\nName, Branche, kurze Vorstellung\n\n**2. Stellenbezeichnung**\nz.B. 'Verkäufer/in (m/w/d)' oder 'Lagerist (m/w/d)'\n\n**3. Aufgaben und Tätigkeiten**\n- Was Sie machen werden\n- Verantwortungsbereiche\n\n**4. Anforderungen**\n- Qualifikationen (Ausbildung, Studium)\n- Erfahrung\n- Sprachkenntnisse\n- Soft Skills\n\n**5. Was wird geboten**\n- Gehalt oder Gehaltsrahmen\n- Arbeitszeiten (Vollzeit/Teilzeit)\n- Benefits (Urlaub, Weiterbildung, etc.)\n\n**6. Bewerbungsweg**\n- Wo und wie bewerben\n- Kontaktdaten\n- Bewerbungsfrist"
+        },
+        {
+          "heading": "Wichtige Abkürzungen",
+          "text": "**m/w/d** = männlich/weiblich/divers (für alle Geschlechter)\n**VZ/TZ** = Vollzeit/Teilzeit\n**unbefristet** = kein Enddatum, feste Stelle\n**befristet** = zeitlich begrenzt (z.B. 1 Jahr)\n**zum nächstmöglichen Zeitpunkt** = so bald wie möglich\n**ab sofort** = sofortiger Start möglich\n**Kennziffer** = Referenznummer für die Bewerbung"
+        },
+        {
+          "heading": "Beispiel: Verkäufer/in Supermarkt",
+          "text": "**REWE Markt München sucht**\n**Verkäufer/in (m/w/d) Teilzeit 20 Std./Woche**\n\n**Ihre Aufgaben:**\n• Freundliche Kundenberatung\n• Kassieren und Abrechnung\n• Warenverräumung und Regalpflege\n• Frischekon trolle bei Obst und Gemüse\n\n**Ihr Profil:**\n• Freundliches Auftreten\n• Deutschkenntnisse mind. B1\n• Bereitschaft zu flexiblen Arbeitszeiten (auch samstags)\n• Idealerweise Erfahrung im Einzelhandel\n\n**Wir bieten:**\n• 14,50 € pro Stunde\n• 30 Tage Urlaub\n• 10% Mitarbeiterrabatt\n• Weiterbildungsmöglichkeiten\n• Unbefristeter Vertrag\n\n**Bewerbung:**\nPer E-Mail an: bewerbung.muenchen@rewe.de\nBetreff: Verkäufer TZ - Kennziffer VK-2024-89"
+        },
+        {
+          "heading": "Was bedeuten die Anforderungen?",
+          "text": "**'Muss-Kriterien'** (ohne diese geht es nicht):\n- 'Abgeschlossene Ausbildung als...'\n- 'Deutschkenntnisse B2 erforderlich'\n- 'Führerschein Klasse B notwendig'\n\n**'Kann-Kriterien'** (wünschenswert, aber nicht zwingend):\n- 'Idealerweise mit Berufserfahrung'\n- 'Von Vorteil sind Kenntnisse in...'\n- 'Wünschenswert sind...'\n\n➜ **Tipp:** Bewerben Sie sich auch, wenn Sie nicht alle Kann-Kriterien erfüllen!"
+        }
+      ],
+      "tips": [
+        "Lesen Sie die Anzeige genau - erfüllen Sie die MUSS-Kriterien?",
+        "Notieren Sie sich die Kennziffer/Referenznummer",
+        "Bereiten Sie alle geforderten Unterlagen vor",
+        "Bewerbungsfristen unbedingt einhalten",
+        "Im Anschreiben auf die Stellennummer beziehen",
+        "Bei Fragen vor der Bewerbung anrufen - zeigt Interesse"
+      ],
+      "vocabulary": [
+        { "word": "die Stelle", "meaning": "der Arbeitsplatz, der Job" },
+        { "word": "unbefristet", "meaning": "ohne zeitliche Begrenzung, fest" },
+        { "word": "befristet", "meaning": "zeitlich begrenzt (z.B. 1 Jahr)" },
+        { "word": "die Vergütung", "meaning": "das Gehalt, die Bezahlung" },
+        {
+          "word": "die Bewerbungsunterlagen",
+          "meaning": "alle Dokumente (Lebenslauf, Zeugnisse, Anschreiben)"
+        },
+        {
+          "word": "die Kennziffer",
+          "meaning": "Referenznummer der Stellenanzeige"
+        },
+        { "word": "der Arbeitgeber", "meaning": "die Firma, die einstellt" },
+        { "word": "die Berufserfahrung", "meaning": "Erfahrung in einem Beruf" }
+      ]
+    }
+  },
+  {
+    "id": "l002",
+    "section": "lesen",
+    "theme": "wohnen",
+    "title": "Wohnungsanzeigen richtig lesen",
+    "subtitle": "Abkürzungen und Begriffe bei der Wohnungssuche",
+    "level": "B1",
+    "duration": "12 min",
+    "content": {
+      "introduction": "Wohnungsanzeigen in Deutschland enthalten viele Abkürzungen. Wer sie versteht, kann schneller die passende Wohnung finden und unangenehme Überraschungen vermeiden.",
+      "keyPoints": [
+        {
+          "heading": "Die wichtigsten Abkürzungen",
+          "text": "**Größe und Zimmer:**\n• **qm / m²** = Quadratmeter (Wohnfläche)\n• **Zi** = Zimmer\n• **1-Zi-Whg** = 1-Zimmer-Wohnung (= Studio/Einzimmerwohnung)\n• **3-Zi-Whg** = 3 Zimmer (meist Wohnzimmer + 2 Schlafzimmer)\n\n**Kosten:**\n• **KM** = Kaltmiete (nur die Wohnung, ohne Nebenkosten)\n• **NK** = Nebenkosten (Wasser, Heizung, Müll, Hausmeister)\n• **WM** = Warmmiete (KM + NK zusammen)\n• **KT** = Kaution (Sicherheit, meist 2-3 Monatsmieten)\n• **MM** = Monatsmiete\n\n**Ausstattung:**\n• **EBK** = Einbauküche (Küche ist schon da)\n• **BK** = Balkon\n• **TG** = Tiefgarage\n• **KFZ-Stellplatz** = Parkplatz\n• **HZG** = Heizung\n• **ZH** = Zentralheizung"
+        },
+        {
+          "heading": "Beispiel-Anzeige verstehen",
+          "text": "**München-Schwabing: 3-Zi-Whg, 75 qm, EBK, BK, 2. OG**\n\n**Was bedeutet das?**\n• München-Schwabing = Stadtteil\n• 3-Zi-Whg = 3 Zimmer (ca. Wohnzimmer + 2 Schlafzimmer)\n• 75 qm = 75 Quadratmeter Wohnfläche\n• EBK = Einbauküche vorhanden\n• BK = Balkon vorhanden\n• 2. OG = 2. Obergeschoss (2. Stock)\n\n**Kosten:**\nKM: 1.200 €\nNK: 280 €\nWM: 1.480 € (Das zahlen Sie monatlich)\nKT: 3.600 € (3 MM, einmalig bei Einzug)\n\n**Verfügbar ab:** 01.12.2025"
+        },
+        {
+          "heading": "Warmmiete vs. Kaltmiete",
+          "text": "**Kaltmiete (KM):**\n= Nur die reine Miete für die Wohnung\nBeispiel: 850 €\n\n**Nebenkosten (NK):**\n= Zusätzliche Kosten für:\n• Heizung\n• Wasser/Abwasser\n• Müllabfuhr\n• Hausmeister\n• Treppenhausreinigung\n• Grundsteuer\nBeispiel: 200 €\n\n**Warmmiete (WM):**\n= Kaltmiete + Nebenkosten\nBeispiel: 850 € + 200 € = 1.050 €\n\n➜ **Das zahlen Sie jeden Monat!**\n\n**Wichtig:** Die Nebenkosten werden jährlich abgerechnet. Wenn Sie mehr verbraucht haben, müssen Sie nachzahlen. Wenn Sie weniger verbraucht haben, bekommen Sie Geld zurück."
+        },
+        {
+          "heading": "Die Kaution",
+          "text": "**Was ist die Kaution?**\nEine Sicherheitszahlung bei Mietbeginn.\n\n**Wie viel?**\nMaximal 3 Monatsmieten (Kaltmiete)\nBeispiel: Kaltmiete 850 € → Kaution max. 2.550 €\n\n**Wofür?**\n• Schutz für Vermieter bei Schäden\n• Schutz bei unbezahlter Miete\n\n**Rückzahlung:**\nBei Auszug bekommen Sie die Kaution zurück, wenn:\n• Keine Schäden in der Wohnung\n• Alle Mieten bezahlt\n• Keine Mietschulden\n\n➜ **Tipp:** Kaution kann in 3 Raten gezahlt werden!"
+        },
+        {
+          "heading": "Was Sie zur Wohnungsbesichtigung mitbringen",
+          "text": "**Pflicht-Dokumente:**\n1. Personalausweis/Reisepass\n2. Einkommensnachweise (letzte 3 Gehaltszetteln)\n3. Schufa-Auskunft (Bonitätsnachweis)\n4. Mietschuldenfreiheitsbescheinigung (vom alten Vermieter)\n\n**Optional, aber gut:**\n• Arbeitsvertrag\n• Selbstauskunft (ausgefüllt)\n• Kurzes Bewerbungsschreiben\n\n➜ Bereiten Sie eine \"Bewerbungsmappe\" vor - die besten Chancen haben vorbereitete Mieter!"
+        }
+      ],
+      "tips": [
+        "Warmmiete berechnen: Kaltmiete + Nebenkosten = was Sie zahlen",
+        "Kaution kann in 3 Monatsraten gezahlt werden (fragen Sie!)",
+        "Schufa-Auskunft 2 Wochen vorher beantragen (www.meineschufa.de)",
+        "Bei Besichtigung: Mängel fotografieren und notieren",
+        "Übergabeprotokoll beim Einzug unterschreiben",
+        "Nebenkosten: Strom zahlen Sie extra (nicht in NK enthalten)"
+      ],
+      "vocabulary": [
+        { "word": "die Kaltmiete", "meaning": "Miete ohne Nebenkosten" },
+        {
+          "word": "die Nebenkosten",
+          "meaning": "zusätzliche Kosten (Heizung, Wasser, Müll)"
+        },
+        { "word": "die Warmmiete", "meaning": "Kaltmiete + Nebenkosten" },
+        {
+          "word": "die Kaution",
+          "meaning": "Sicherheitszahlung bei Mietbeginn"
+        },
+        {
+          "word": "der Vermieter",
+          "meaning": "Person, die die Wohnung vermietet"
+        },
+        { "word": "der Mieter", "meaning": "Person, die die Wohnung mietet" },
+        { "word": "die Schufa", "meaning": "Bonitätsprüfung, Kreditauskunft" },
+        {
+          "word": "die Einbauküche",
+          "meaning": "fertige Küche mit Schränken und Geräten"
+        },
+        {
+          "word": "das Obergeschoss (OG)",
+          "meaning": "Stockwerk über dem Erdgeschoss"
+        }
+      ]
+    }
+  }
+]

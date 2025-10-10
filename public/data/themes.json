@@ -1,0 +1,12 @@
+[
+  { "id": "arbeit", "name": "Arbeit", "icon": "briefcase" },
+  { "id": "gesundheit", "name": "Gesundheit", "icon": "heart" },
+  { "id": "reisen", "name": "Reisen/Verkehr", "icon": "plane" },
+  { "id": "wohnen", "name": "Wohnen", "icon": "home" },
+  { "id": "umwelt", "name": "Umwelt", "icon": "leaf" },
+  { "id": "geld", "name": "Geld/Bank", "icon": "banknote" },
+  { "id": "familie", "name": "Familie/Kinder", "icon": "users" },
+  { "id": "aemter", "name": "Ämter/Behörden", "icon": "building" },
+  { "id": "einkaufen", "name": "Einkaufen/Service", "icon": "shopping-cart" },
+  { "id": "digitales", "name": "Digitales/Medien", "icon": "smartphone" }
+]

@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import "./animations.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand colors */
+  --brand-50: #f5f2ff;
+  --brand-100: #e9e1ff;
+  --brand-500: #7a36e8;
+  --brand-600: #6417e0;
+  --brand-700: #5413bf;
+  --accent-100: #d5eef1;
+  --accent-600: #17838e;
+
+  /* Neutrals */
+  --ink: #0f172a;
+  --text: #1f2937;
+  --muted: #64748b;
+  --line: #e5e7eb;
+  --surface: #ffffff;
+  --canvas: #f8fafc;
+
+  /* Feedback states */
+  --success: #16a34a;
+  --success-100: #dcfce7;
+  --warning: #d97706;
+  --warning-100: #fef3c7;
+  --error: #dc2626;
+  --error-100: #fee2e2;
+  --info: #2563eb;
+  --info-100: #dbeafe;
+
+  /* Radii & spacing */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --gap-1: 4px;
+  --gap-2: 8px;
+  --gap-3: 12px;
+  --gap-4: 16px;
+  --gap-6: 24px;
+  --gap-8: 32px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: #0b1020;
+    --canvas: #050814;
+    --text: #e5e7eb;
+    --muted: #a3aec2;
+    --line: #233048;
+    --brand-600: #7a36e8;
+    --brand-700: #9a6cff;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-line;
+  }
+
+  body {
+    @apply bg-canvas text-text antialiased font-sans;
+    font-family:
+      "Inter",
+      system-ui,
+      -apple-system,
+      sans-serif;
+  }
+
+  h1 {
+    @apply text-2xl font-bold text-ink;
+  }
+
+  h2 {
+    @apply text-xl font-semibold text-ink;
+  }
+
+  h3 {
+    @apply text-lg font-medium text-ink;
+  }
+
+  h4 {
+    @apply text-base font-medium text-text;
+  }
+
+  p {
+    @apply text-base text-text leading-relaxed;
+  }
+
+  .text-muted {
+    color: #64748b;
+  }
+}
+
+@layer components {
+  /* Modern Cards */
+  .card {
+    @apply bg-surface rounded-md shadow-elevation-2 hover:shadow-elevation-4 transition-all duration-enter ease-enter;
+  }
+
+  .card-interactive {
+    @apply card hover:shadow-elevation-8 cursor-pointer transform hover:-translate-y-0.5 transition-all duration-enter ease-enter;
+  }
+
+  /* Button System */
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-3 min-h-[44px] rounded-sm font-medium text-sm transition-all duration-enter ease-enter focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-brand-600 text-surface hover:bg-brand-700 focus:ring-brand-100 shadow-elevation-2 hover:shadow-elevation-4;
+  }
+
+  .btn-secondary {
+    @apply bg-surface border-2 border-brand-600 text-brand-700 hover:bg-brand-50 focus:ring-brand-100;
+  }
+
+  .btn-tertiary {
+    @apply text-brand-700 hover:underline focus:ring-brand-100 px-2 py-1 min-h-0;
+  }
+
+  .btn-ghost {
+    @apply text-text hover:bg-canvas focus:ring-line;
+  }
+
+  /* Input System */
+  .input {
+    @apply w-full min-h-[44px] px-3 py-2 bg-surface border border-line rounded-sm text-text placeholder-muted focus:border-brand-600 focus:ring-2 focus:ring-brand-100 transition-all duration-enter ease-enter;
+  }
+
+  .input-error {
+    @apply border-error focus:border-error focus:ring-error-tint;
+  }
+
+  /* Chips/Tags */
+  .chip {
+    @apply inline-flex items-center px-3 py-1 rounded-xs text-xs font-medium;
+  }
+
+  .chip-default {
+    @apply bg-brand-50 text-brand-700;
+  }
+
+  .chip-success {
+    @apply bg-success-tint text-success;
+  }
+
+  .chip-warning {
+    @apply bg-warning-tint text-warning;
+  }
+
+  .chip-error {
+    @apply bg-error-tint text-error;
+  }
+
+  .chip-info {
+    @apply bg-info-tint text-info;
+  }
+
+  /* Navigation */
+  .nav-link {
+    @apply text-text hover:text-brand-700 px-3 py-2 rounded-sm transition-colors duration-enter ease-enter;
+  }
+
+  .nav-link-active {
+    @apply text-brand-700 bg-brand-50;
+  }
+
+  /* Progress indicators */
+  .progress-bar {
+    @apply w-full h-2 bg-line rounded-xs overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply h-full bg-brand-600 transition-all duration-300 ease-enter;
+  }
+
+  /* Audio controls */
+  .audio-control {
+    @apply inline-flex items-center justify-center w-10 h-10 rounded-sm bg-surface border border-line hover:bg-canvas hover:border-brand-600 focus:ring-2 focus:ring-brand-100 transition-all duration-enter ease-enter;
+  }
+
+  .audio-control-primary {
+    @apply bg-brand-600 text-surface border-brand-600 hover:bg-brand-700;
+  }
+
+  /* Question containers */
+  .question-card {
+    @apply card p-6 mb-6;
+  }
+
+  .question-active {
+    @apply ring-2 ring-brand-600 border-brand-600;
+  }
+
+  /* Answer options */
+  .answer-option {
+    @apply flex items-start p-4 rounded-sm border border-line hover:border-brand-600 hover:bg-brand-50 cursor-pointer transition-all duration-enter ease-enter;
+  }
+
+  .answer-selected {
+    @apply border-brand-600 bg-brand-50;
+  }
+
+  .answer-correct {
+    @apply border-success bg-success-tint;
+  }
+
+  .answer-incorrect {
+    @apply border-error bg-error-tint;
+  }
+}

@@ -1,0 +1,243 @@
+[
+  {
+    "id": "dtz-b1-hoeren-komplett",
+    "section": "hoeren",
+    "title": "DTZ B1 Hörprüfung - Kompletter Test",
+    "subtitle": "Alle vier Teile des Hörverstehens - Teil 1 bis Teil 4",
+    "level": "B1",
+    "duration": "25 min",
+    "type": "synchronized-audio",
+    "audioUrl": "/audio/sync-test.mp3",
+    "instructions": "Sie hören die komplette DTZ B1 Hörprüfung. Die Fragen erscheinen automatisch zur richtigen Zeit. Beantworten Sie jede Frage, wenn sie erscheint.",
+    "questions": [
+      {
+        "id": "teil1-q1",
+        "timestamp": 23,
+        "duration": 48,
+        "questionText": "Arztpraxis: Terminabsage wegen Krankheit",
+        "options": [
+          "Der Termin wird verschoben",
+          "Der Arzt ist krank",
+          "Die Praxis ist geschlossen"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "id": "teil1-q2",
+        "timestamp": 71,
+        "duration": 46,
+        "questionText": "Sarah bittet Erik, sie vom Bahnhof abzuholen",
+        "options": [
+          "Erik soll Sarah abholen",
+          "Sarah holt Erik ab",
+          "Sie treffen sich am Bahnhof"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "id": "teil1-q3",
+        "timestamp": 117,
+        "duration": 60,
+        "questionText": "Öffnungszeiten der Stadtbibliothek München",
+        "options": [
+          "Montag bis Freitag geöffnet",
+          "Auch am Wochenende geöffnet",
+          "Nur vormittags geöffnet"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "id": "teil1-q4",
+        "timestamp": 177,
+        "duration": 69,
+        "questionText": "Poststelle mit Paketinformationen",
+        "options": [
+          "Paket ist angekommen",
+          "Paket wird heute zugestellt",
+          "Paket muss abgeholt werden"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "id": "teil2-q1",
+        "timestamp": 246,
+        "duration": 59,
+        "questionText": "Theateraufführung abgesagt, Konzert findet statt",
+        "options": [
+          "Beide Veranstaltungen finden statt",
+          "Nur das Konzert findet statt",
+          "Beide Veranstaltungen sind abgesagt"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "id": "teil2-q2",
+        "timestamp": 305,
+        "duration": 75,
+        "questionText": "Wetterbericht für Berlin-Brandenburg",
+        "options": ["Sonnig und warm", "Regen möglich", "Sehr windig"],
+        "correctAnswer": 1
+      },
+      {
+        "id": "teil2-q3",
+        "timestamp": 362,
+        "duration": 48,
+        "questionText": "Worum geht es heute in der Sendung?",
+        "options": [
+          "Um gesunde Ernährung",
+          "Um Stressbewältigung",
+          "Um mehr Bewegung im Alltag"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "id": "teil2-q4",
+        "timestamp": 410,
+        "duration": 60,
+        "questionText": "Kinderbecken im Schwimmbad wieder geöffnet",
+        "options": [
+          "Das Schwimmbad ist geschlossen",
+          "Nur für Erwachsene geöffnet",
+          "Kinderbecken ist wieder verfügbar"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "id": "teil2-q5",
+        "timestamp": 470,
+        "duration": 69,
+        "questionText": "Straßenbau: Gehwegseite wechseln",
+        "options": [
+          "Straße ist gesperrt",
+          "Fußgänger müssen Umweg nehmen",
+          "Nur Anwohner dürfen passieren"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "id": "teil3-q1",
+        "timestamp": 539,
+        "duration": 51,
+        "questionText": "Der Patient möchte einen früheren Termin.",
+        "type": "richtig-falsch",
+        "options": ["Richtig", "Falsch"],
+        "correctAnswer": 0
+      },
+      {
+        "id": "teil3-q2",
+        "timestamp": 539,
+        "duration": 51,
+        "questionText": "Was schlägt die Rezeption vor?",
+        "type": "multiple-choice",
+        "options": [
+          "Eine Untersuchung am Nachmittag",
+          "Ein Rezept für Augentropfen",
+          "Einen Termin in einer Woche"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "id": "teil3-q3",
+        "timestamp": 630,
+        "duration": 102,
+        "questionText": "Herr Keller ist nächste Woche auf Geschäftsreise.",
+        "type": "richtig-falsch",
+        "options": ["Richtig", "Falsch"],
+        "correctAnswer": 0
+      },
+      {
+        "id": "teil3-q4",
+        "timestamp": 630,
+        "duration": 102,
+        "questionText": "Was soll Frau Blum tun?",
+        "type": "multiple-choice",
+        "options": [
+          "Die Fenster geschlossen halten",
+          "Der Katze Futter geben",
+          "Die Zeitung abbestellen"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "id": "teil3-q5",
+        "timestamp": 732,
+        "duration": 86,
+        "questionText": "Der Kunde möchte eine Rückgabe machen.",
+        "type": "richtig-falsch",
+        "options": ["Richtig", "Falsch"],
+        "correctAnswer": 0
+      },
+      {
+        "id": "teil3-q6",
+        "timestamp": 732,
+        "duration": 86,
+        "questionText": "Der Kunde",
+        "type": "multiple-choice",
+        "options": [
+          "bekommt eine Gutschrift",
+          "hat die Jacke bereits getragen",
+          "erhält sein Geld sofort zurück"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "id": "teil3-q7",
+        "timestamp": 818,
+        "duration": 54,
+        "questionText": "Ben und Lukas sind befreundet.",
+        "type": "richtig-falsch",
+        "options": ["Richtig", "Falsch"],
+        "correctAnswer": 0
+      },
+      {
+        "id": "teil3-q8",
+        "timestamp": 818,
+        "duration": 54,
+        "questionText": "Wird Ben am Fußballspiel teilnehmen?",
+        "type": "multiple-choice",
+        "options": [
+          "Nein, er hat eine Verletzung",
+          "Ja, aber nur zum Zuschauen",
+          "Er ist sich noch nicht sicher"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "id": "teil4-q1",
+        "timestamp": 1019,
+        "duration": 45,
+        "questionText": "Wochenplanung & gesunde Ernährung",
+        "options": [
+          "Spontan entscheiden",
+          "Alles vorher planen",
+          "Nur am Wochenende planen"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "id": "teil4-q2",
+        "timestamp": 1064,
+        "duration": 97,
+        "questionText": "Preise & Qualität beim Einkaufen",
+        "options": [
+          "Nur auf den Preis achten",
+          "Qualität ist wichtiger",
+          "Beides ist wichtig"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "id": "teil4-q3",
+        "timestamp": 1161,
+        "duration": 60,
+        "questionText": "Familienentscheidungen beim Essen",
+        "options": [
+          "Kinder entscheiden mit",
+          "Eltern entscheiden allein",
+          "Jeder isst was er will"
+        ],
+        "correctAnswer": 0
+      }
+    ]
+  }
+]
