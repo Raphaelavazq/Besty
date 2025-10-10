@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Tests from "./pages/Tests";
 import TestDetail from "./pages/TestDetail";
 import SynchronizedTestDetail from "./pages/SynchronizedTestDetail";
+import HoerenCompleteTest from "./pages/HoerenCompleteTest";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/content/:contentId" element={<ContentDetail />} />
         <Route path="/bookmarks" element={<Bookmarks />} />
         <Route path="/tests" element={<Tests />} />
+        <Route path="/tests/hoeren-komplett" element={<HoerenCompleteTest />} />
         <Route path="/test/:id" element={<TestDetail />} />
         <Route
           path="/synchronized-test/:id"

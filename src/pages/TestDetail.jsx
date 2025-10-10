@@ -9,7 +9,7 @@ import {
   XCircle,
   Volume2,
 } from "lucide-react";
-import AudioPlayer from "../components/AudioPlayer";
+import AudioPlayerNew from "../components/AudioPlayerNew";
 
 export default function TestDetail() {
   const { id } = useParams();
@@ -44,11 +44,13 @@ export default function TestDetail() {
 
   if (!test) {
     return (
-      <div className="max-w-4xl mx-auto">
-        <div className="card">
-          <div className="text-center">
-            <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-            <p className="text-gray-500">Test wird geladen...</p>
+      <div className="h-full overflow-auto">
+        <div className="max-w-4xl mx-auto p-6">
+          <div className="card">
+            <div className="text-center">
+              <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+              <p className="text-gray-500">Test wird geladen...</p>
+            </div>
           </div>
         </div>
       </div>
@@ -66,96 +68,98 @@ export default function TestDetail() {
 
   if (!started) {
     return (
-      <div className="max-w-4xl mx-auto">
-        <div className="card">
-          <div className="text-center mb-8">
-            <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-              <FileText className="w-8 h-8 text-white" />
+      <div className="h-full overflow-auto">
+        <div className="max-w-4xl mx-auto p-6">
+          <div className="card">
+            <div className="text-center mb-8">
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <FileText className="w-8 h-8 text-white" />
+              </div>
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">
+                {test.title}
+              </h1>
+              <p className="text-xl text-gray-600 mb-6">{test.subtitle}</p>
+
+              {test.officialTest && (
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                  <div className="flex items-center justify-center mb-2">
+                    <CheckCircle className="w-5 h-5 text-blue-600 mr-2" />
+                    <span className="font-semibold text-blue-800">
+                      Offizieller DTZ Übungstest
+                    </span>
+                  </div>
+                  <p className="text-blue-700 text-sm">
+                    Basiert auf authentischen telc Prüfungsmaterialien
+                  </p>
+                </div>
+              )}
             </div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">
-              {test.title}
-            </h1>
-            <p className="text-xl text-gray-600 mb-6">{test.subtitle}</p>
 
-            {test.officialTest && (
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
-                <div className="flex items-center justify-center mb-2">
-                  <CheckCircle className="w-5 h-5 text-blue-600 mr-2" />
-                  <span className="font-semibold text-blue-800">
-                    Offizieller DTZ Übungstest
-                  </span>
-                </div>
-                <p className="text-blue-700 text-sm">
-                  Basiert auf authentischen telc Prüfungsmaterialien
-                </p>
-              </div>
-            )}
-          </div>
-
-          <div className="bg-gray-50 rounded-xl p-6 mb-8">
-            <h2 className="font-semibold text-lg mb-4">Prüfungshinweise</h2>
-            <div className="grid md:grid-cols-2 gap-4 mb-6">
-              <div className="flex items-center">
-                <Clock className="w-5 h-5 text-primary mr-3" />
-                <div>
-                  <div className="font-medium">Bearbeitungszeit</div>
-                  <div className="text-gray-600">{test.duration}</div>
-                </div>
-              </div>
-              <div className="flex items-center">
-                <FileText className="w-5 h-5 text-primary mr-3" />
-                <div>
-                  <div className="font-medium">Aufgaben</div>
-                  <div className="text-gray-600">
-                    {test.totalQuestions} Fragen
+            <div className="bg-gray-50 rounded-xl p-6 mb-8">
+              <h2 className="font-semibold text-lg mb-4">Prüfungshinweise</h2>
+              <div className="grid md:grid-cols-2 gap-4 mb-6">
+                <div className="flex items-center">
+                  <Clock className="w-5 h-5 text-primary mr-3" />
+                  <div>
+                    <div className="font-medium">Bearbeitungszeit</div>
+                    <div className="text-gray-600">{test.duration}</div>
                   </div>
                 </div>
-              </div>
-              {test.audioRequired && (
                 <div className="flex items-center">
-                  <Volume2 className="w-5 h-5 text-primary mr-3" />
+                  <FileText className="w-5 h-5 text-primary mr-3" />
                   <div>
-                    <div className="font-medium">Audio erforderlich</div>
+                    <div className="font-medium">Aufgaben</div>
                     <div className="text-gray-600">
-                      Stellen Sie sicher, dass der Ton funktioniert
+                      {test.totalQuestions} Fragen
                     </div>
                   </div>
                 </div>
-              )}
-              <div className="flex items-center">
-                <CheckCircle className="w-5 h-5 text-primary mr-3" />
-                <div>
-                  <div className="font-medium">Niveau</div>
-                  <div className="text-gray-600">{test.level}</div>
+                {test.audioRequired && (
+                  <div className="flex items-center">
+                    <Volume2 className="w-5 h-5 text-primary mr-3" />
+                    <div>
+                      <div className="font-medium">Audio erforderlich</div>
+                      <div className="text-gray-600">
+                        Stellen Sie sicher, dass der Ton funktioniert
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <div className="flex items-center">
+                  <CheckCircle className="w-5 h-5 text-primary mr-3" />
+                  <div>
+                    <div className="font-medium">Niveau</div>
+                    <div className="text-gray-600">{test.level}</div>
+                  </div>
                 </div>
+              </div>
+
+              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
+                <h3 className="font-medium text-yellow-800 mb-2">
+                  Wichtige Regeln:
+                </h3>
+                <ul className="text-sm text-yellow-700 space-y-1">
+                  <li>• Lesen Sie alle Anweisungen sorgfältig</li>
+                  <li>• Hören Sie bei Audio-Aufgaben genau zu</li>
+                  <li>• Sie können nicht zur vorherigen Frage zurückkehren</li>
+                  <li>• Nutzen Sie die Zeit effektiv</li>
+                </ul>
+              </div>
+
+              <div className="border-t pt-4">
+                <p className="text-gray-600 mb-4">{test.instructions}</p>
               </div>
             </div>
 
-            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
-              <h3 className="font-medium text-yellow-800 mb-2">
-                Wichtige Regeln:
-              </h3>
-              <ul className="text-sm text-yellow-700 space-y-1">
-                <li>• Lesen Sie alle Anweisungen sorgfältig</li>
-                <li>• Hören Sie bei Audio-Aufgaben genau zu</li>
-                <li>• Sie können nicht zur vorherigen Frage zurückkehren</li>
-                <li>• Nutzen Sie die Zeit effektiv</li>
-              </ul>
+            <div className="text-center">
+              <button
+                onClick={handleStart}
+                className="bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:bg-primary/90 transition-colors inline-flex items-center text-lg"
+              >
+                <Play className="w-5 h-5 mr-2" />
+                Test starten
+              </button>
             </div>
-
-            <div className="border-t pt-4">
-              <p className="text-gray-600 mb-4">{test.instructions}</p>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <button
-              onClick={handleStart}
-              className="bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:bg-primary/90 transition-colors inline-flex items-center text-lg"
-            >
-              <Play className="w-5 h-5 mr-2" />
-              Test starten
-            </button>
           </div>
         </div>
       </div>
@@ -589,106 +593,108 @@ export default function TestDetail() {
   // Regular question test (multiple choice / matching)
 
   return (
-    <div className="max-w-4xl mx-auto">
-      {/* Progress bar */}
-      <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 mb-6">
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-sm text-gray-600">
-            Frage {currentQuestion + 1} von {test.questions.length}
-          </span>
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4 text-gray-500" />
-              <span className="font-mono font-bold">
-                {formatTime(timeElapsed)}
-              </span>
-            </div>
-            <span className="badge badge-primary">{test.level}</span>
-          </div>
-        </div>
-        <div className="w-full bg-gray-200 rounded-full h-2">
-          <div
-            className="bg-indigo-600 h-2 rounded-full transition-all"
-            style={{
-              width: `${((currentQuestion + 1) / test.questions.length) * 100}%`,
-            }}
-          />
-        </div>
-      </div>
-
-      <div className="card">
-        <h2 className="text-2xl font-bold mb-6">{test.title}</h2>
-
-        {/* Context for reading */}
-        {test.context && currentQuestion === 0 && (
-          <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
-            <h3 className="font-semibold mb-3">Lesen Sie den Text:</h3>
-            <div className="prose prose-sm max-w-none whitespace-pre-line">
-              {test.context}
-            </div>
-          </div>
-        )}
-
-        {/* Question */}
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
-          {currentQ.audioFile && (
-            <div className="mb-4">
-              <AudioPlayer audioFile={currentQ.audioFile} />
-            </div>
-          )}
-          <p className="font-medium text-lg">{currentQ.questionText}</p>
-        </div>
-
-        {/* Options */}
-        <div className="space-y-3 mb-6">
-          {currentQ.options.map((option, idx) => (
-            <button
-              key={idx}
-              onClick={() => handleAnswer(currentQ.id, idx)}
-              className={`w-full text-left p-4 rounded-lg border-2 transition-all ${
-                answers[currentQ.id] === idx
-                  ? "border-indigo-600 bg-indigo-50"
-                  : "border-gray-200 hover:border-indigo-300"
-              }`}
-            >
-              <div className="flex items-center gap-3">
-                <div
-                  className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
-                    answers[currentQ.id] === idx
-                      ? "border-indigo-600 bg-indigo-600 text-white"
-                      : "border-gray-300"
-                  }`}
-                >
-                  {answers[currentQ.id] === idx && "✓"}
-                </div>
-                <span>{option}</span>
+    <div className="h-full overflow-auto">
+      <div className="max-w-4xl mx-auto p-6">
+        {/* Progress bar */}
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 mb-6">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-sm text-gray-600">
+              Frage {currentQuestion + 1} von {test.questions.length}
+            </span>
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2">
+                <Clock className="w-4 h-4 text-gray-500" />
+                <span className="font-mono font-bold">
+                  {formatTime(timeElapsed)}
+                </span>
               </div>
-            </button>
-          ))}
+              <span className="badge badge-primary">{test.level}</span>
+            </div>
+          </div>
+          <div className="w-full bg-gray-200 rounded-full h-2">
+            <div
+              className="bg-indigo-600 h-2 rounded-full transition-all"
+              style={{
+                width: `${((currentQuestion + 1) / test.questions.length) * 100}%`,
+              }}
+            />
+          </div>
         </div>
 
-        {/* Navigation */}
-        <div className="flex justify-between">
-          <button
-            onClick={() => setCurrentQuestion((prev) => prev - 1)}
-            disabled={currentQuestion === 0}
-            className="btn-secondary disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            ← Zurück
-          </button>
+        <div className="card">
+          <h2 className="text-2xl font-bold mb-6">{test.title}</h2>
 
-          {currentQuestion === test.questions.length - 1 ? (
-            <button onClick={handleSubmit} className="btn-primary">
-              Test abschließen
-            </button>
-          ) : (
-            <button
-              onClick={() => setCurrentQuestion((prev) => prev + 1)}
-              className="btn-primary"
-            >
-              Weiter →
-            </button>
+          {/* Context for reading */}
+          {test.context && currentQuestion === 0 && (
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
+              <h3 className="font-semibold mb-3">Lesen Sie den Text:</h3>
+              <div className="prose prose-sm max-w-none whitespace-pre-line">
+                {test.context}
+              </div>
+            </div>
           )}
+
+          {/* Question */}
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+            {currentQ.audioFile && (
+              <div className="mb-4">
+                <AudioPlayerNew audioFile={currentQ.audioFile} />
+              </div>
+            )}
+            <p className="font-medium text-lg">{currentQ.questionText}</p>
+          </div>
+
+          {/* Options */}
+          <div className="space-y-3 mb-6">
+            {currentQ.options.map((option, idx) => (
+              <button
+                key={idx}
+                onClick={() => handleAnswer(currentQ.id, idx)}
+                className={`w-full text-left p-4 rounded-lg border-2 transition-all ${
+                  answers[currentQ.id] === idx
+                    ? "border-indigo-600 bg-indigo-50"
+                    : "border-gray-200 hover:border-indigo-300"
+                }`}
+              >
+                <div className="flex items-center gap-3">
+                  <div
+                    className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
+                      answers[currentQ.id] === idx
+                        ? "border-indigo-600 bg-indigo-600 text-white"
+                        : "border-gray-300"
+                    }`}
+                  >
+                    {answers[currentQ.id] === idx && "✓"}
+                  </div>
+                  <span>{option}</span>
+                </div>
+              </button>
+            ))}
+          </div>
+
+          {/* Navigation */}
+          <div className="flex justify-between">
+            <button
+              onClick={() => setCurrentQuestion((prev) => prev - 1)}
+              disabled={currentQuestion === 0}
+              className="btn-secondary disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              ← Zurück
+            </button>
+
+            {currentQuestion === test.questions.length - 1 ? (
+              <button onClick={handleSubmit} className="btn-primary">
+                Test abschließen
+              </button>
+            ) : (
+              <button
+                onClick={() => setCurrentQuestion((prev) => prev + 1)}
+                className="btn-primary"
+              >
+                Weiter →
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </div>

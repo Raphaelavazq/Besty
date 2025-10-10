@@ -21,10 +21,12 @@ export default function Theme() {
 
   if (!theme) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-purple-50 to-indigo-100 flex items-center justify-center">
-        <div className="text-center">
-          <div className="w-16 h-16 border-4 border-purple-200 border-t-purple-600 rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-slate-600">Lade Thema...</p>
+      <div className="h-full overflow-auto">
+        <div className="max-w-6xl mx-auto p-6 flex items-center justify-center h-full">
+          <div className="text-center">
+            <div className="w-16 h-16 border-4 border-purple-200 border-t-purple-600 rounded-full animate-spin mx-auto mb-4"></div>
+            <p className="text-slate-600">Lade Thema...</p>
+          </div>
         </div>
       </div>
     );
@@ -44,9 +46,8 @@ export default function Theme() {
   const Icon = getIcon(theme.icon);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-purple-50 to-indigo-100">
+    <div className="h-full overflow-auto">
       <div className="max-w-6xl mx-auto p-6">
-        
         {/* Navigation */}
         <Link
           to="/"
@@ -74,7 +75,9 @@ export default function Theme() {
           <div className="text-center py-16">
             <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-12 shadow-xl border border-white/50 max-w-md mx-auto">
               <BookOpen size={48} className="text-slate-300 mx-auto mb-6" />
-              <h3 className="text-xl font-semibold text-slate-800 mb-2">Keine Inhalte verfügbar</h3>
+              <h3 className="text-xl font-semibold text-slate-800 mb-2">
+                Keine Inhalte verfügbar
+              </h3>
               <p className="text-slate-600 mb-6">
                 Für dieses Thema sind noch keine Lerninhalte vorhanden.
               </p>
@@ -104,17 +107,17 @@ export default function Theme() {
                     <span>{item.duration || "15 min"}</span>
                   </div>
                 </div>
-                
+
                 <h3 className="text-lg font-semibold text-slate-800 mb-2 group-hover:text-purple-700 transition-colors line-clamp-2">
                   {item.title}
                 </h3>
-                
+
                 {item.subtitle && (
                   <p className="text-sm text-slate-600 mb-4 line-clamp-3">
                     {item.subtitle}
                   </p>
                 )}
-                
+
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded">
                     {item.type || "Übung"}

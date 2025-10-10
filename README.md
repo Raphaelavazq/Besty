@@ -10,18 +10,21 @@ A modern, viewport-locked web application for preparing for the DTZ (Deutsch-Tes
 ## ✨ Features
 
 ### 🎨 Modern Design
+
 - **Viewport-locked** single-page application
 - **Purple/Indigo gradient** theme with glass-morphism effects
 - **Responsive design** optimized for all devices
 - **Smooth animations** and micro-interactions
 
 ### 📚 Comprehensive Content
+
 - Complete **DTZ B1 exam preparation** materials
 - **Four skill areas**: Hören (Listening), Lesen (Reading), Schreiben (Writing), Sprechen (Speaking)
 - **Thematic organization** with subject-specific content
 - **Test simulations** with full and quick test modes
 
 ### 🛠️ Technical Excellence
+
 - **React 18** with modern hooks and patterns
 - **React Router** with v7 future flags
 - **Tailwind CSS** for consistent styling
@@ -31,23 +34,27 @@ A modern, viewport-locked web application for preparing for the DTZ (Deutsch-Tes
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+ 
+
+- Node.js 18+
 - npm or yarn
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/Raphaelavazq/Besty.git
    cd Besty
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Start development server**
+
    ```bash
    npm run dev
    ```
@@ -83,16 +90,19 @@ Besty/
 ## 🎯 Usage
 
 ### Dashboard
+
 - **Quick access** to full tests and practice sessions
 - **Subject selection** (Hören, Lesen, Schreiben, Sprechen)
 - **Theme browsing** for focused study
 
 ### Test Modes
+
 - **Volltest**: Complete DTZ B1 simulation
 - **Schnelltest**: Quick practice rounds
 - **Subject-specific**: Focus on individual skills
 
 ### Navigation
+
 - **Fixed header** with responsive navigation
 - **Mobile-optimized** menu for smaller screens
 - **Smooth transitions** between sections
@@ -100,6 +110,7 @@ Besty/
 ## 🔧 Development
 
 ### Scripts
+
 ```bash
 npm run dev          # Start development server
 npm run build        # Build for production
@@ -108,16 +119,19 @@ npm run lint         # Run ESLint
 ```
 
 ### Environment Setup
+
 The app uses Vite for development with hot module replacement (HMR).
 
 ## 📦 Build & Deployment
 
 ### Production Build
+
 ```bash
 npm run build
 ```
 
 ### Deployment Options
+
 - **Vercel** (recommended) - includes vercel.json config
 - **Netlify** - static site deployment
 - **GitHub Pages** - for demo versions
@@ -127,6 +141,7 @@ npm run build
 > **Note**: Audio files are excluded from the repository due to size constraints.
 
 To add audio content locally:
+
 1. Create `public/audio/hoeren/` directory
 2. Add MP3 files for listening exercises
 3. Update audio references in JSON data files
