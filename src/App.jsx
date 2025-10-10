@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout";
+import BareShell from "./components/layouts/BareShell";
 import HeroPage from "./pages/HeroPage";
 import Dashboard from "./pages/Dashboard";
 import ContentDetail from "./pages/ContentDetail";
@@ -35,85 +35,80 @@ function App() {
       {/* Hero page without layout */}
       <Route path="/" element={<HeroPage />} />
 
-      {/* All other pages with layout */}
-      <Route
-        path="/dashboard"
-        element={
-          <Layout>
-            <Dashboard />
-          </Layout>
-        }
-      />
+      {/* Dashboard with its own layout shell */}
+      <Route path="/dashboard" element={<Dashboard />} />
+
+      {/* All other pages with bare layout shell */}
       <Route
         path="/section/:sectionId"
         element={
-          <Layout>
+          <BareShell>
             <Section />
-          </Layout>
+          </BareShell>
         }
       />
       <Route
         path="/theme/:themeId"
         element={
-          <Layout>
+          <BareShell>
             <Theme />
-          </Layout>
+          </BareShell>
         }
       />
       <Route
         path="/content/:contentId"
         element={
-          <Layout>
+          <BareShell>
             <ContentDetail />
-          </Layout>
+          </BareShell>
         }
       />
       <Route
         path="/bookmarks"
         element={
-          <Layout>
+          <BareShell>
             <Bookmarks />
-          </Layout>
+          </BareShell>
         }
       />
       <Route
         path="/tests"
         element={
-          <Layout>
+          <BareShell>
             <Tests />
-          </Layout>
+          </BareShell>
         }
       />
       <Route
         path="/tests/hoeren-komplett"
         element={
-          <Layout>
+          <BareShell>
             <HoerenCompleteTest />
-          </Layout>
+          </BareShell>
         }
       />
       <Route
         path="/test/:id"
         element={
-          <Layout>
+          <BareShell>
             <TestDetail />
-          </Layout>
+          </BareShell>
         }
       />
       <Route
         path="/synchronized-test/:id"
         element={
-          <Layout>
+          <BareShell>
             <SynchronizedTestDetail />
-          </Layout>
+          </BareShell>
         }
       />
       <Route
         path="/about"
         element={
-          <Layout>
+          <BareShell>
             <About />
-          </Layout>
+          </BareShell>
         }
       />
 
@@ -121,41 +116,41 @@ function App() {
       <Route
         path="/study"
         element={
-          <Layout>
+          <BareShell>
             <ComingSoon title="Study Mode" />
-          </Layout>
+          </BareShell>
         }
       />
       <Route
         path="/progress"
         element={
-          <Layout>
+          <BareShell>
             <ComingSoon title="Progress Tracking" />
-          </Layout>
+          </BareShell>
         }
       />
       <Route
         path="/achievements"
         element={
-          <Layout>
+          <BareShell>
             <ComingSoon title="Achievements" />
-          </Layout>
+          </BareShell>
         }
       />
       <Route
         path="/profile"
         element={
-          <Layout>
+          <BareShell>
             <ComingSoon title="Profile" />
-          </Layout>
+          </BareShell>
         }
       />
       <Route
         path="/settings"
         element={
-          <Layout>
+          <BareShell>
             <ComingSoon title="Settings" />
-          </Layout>
+          </BareShell>
         }
       />
     </Routes>
