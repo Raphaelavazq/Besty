@@ -35,9 +35,9 @@ export default function HeroPage() {
       </div>
 
       {/* Logo in Top Right - Responsive Sizing */}
-      <div 
+      <div
         className={`absolute top-4 xs:top-6 sm:top-8 md:top-10 lg:top-12 right-4 xs:right-6 sm:right-8 md:right-10 lg:right-12 z-20 transform transition-all duration-1000 delay-200 ${
-          showContent ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'
+          showContent ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
         }`}
       >
         <img
@@ -48,9 +48,9 @@ export default function HeroPage() {
       </div>
 
       {/* Arrow Button in Bottom Right with Question Above - Responsive */}
-      <div 
+      <div
         className={`absolute bottom-4 xs:bottom-6 sm:bottom-8 md:bottom-10 lg:bottom-12 right-4 xs:right-6 sm:right-8 md:right-10 lg:right-12 z-20 transform transition-all duration-1000 delay-400 ${
-          showContent ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+          showContent ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
         }`}
       >
         {/* Question Text Above Button - Hidden on Mobile */}
@@ -59,7 +59,7 @@ export default function HeroPage() {
             Bereit für deine DTZ Prüfung?
           </p>
         </div>
-        
+
         {/* Arrow Button - Responsive Sizing */}
         <button
           onClick={handleEnterApp}
