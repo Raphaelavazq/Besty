@@ -7,10 +7,11 @@ import Section from "./pages/Section";
 import Theme from "./pages/Theme";
 import Bookmarks from "./pages/Bookmarks";
 import About from "./pages/About";
-import Tests from "./pages/Tests";
-import TestDetail from "./pages/TestDetail";
-import SynchronizedTestDetail from "./pages/SynchronizedTestDetail";
-import HoerenCompleteTest from "./pages/HoerenCompleteTest";
+
+// New unified test system
+import TestHub from "./pages/TestHub";
+import HoerenHub from "./pages/HoerenHub";
+import ExercisePlayer from "./pages/hoeren/ExercisePlayer";
 
 // Placeholder component for coming soon pages
 const ComingSoon = ({ title }) => (
@@ -71,35 +72,76 @@ function App() {
           </BareShell>
         }
       />
+      {/* New Unified Test System */}
       <Route
         path="/tests"
         element={
           <BareShell>
-            <Tests />
+            <TestHub />
+          </BareShell>
+        }
+      />
+
+      {/* Hören Test Area */}
+      <Route
+        path="/tests/hoeren"
+        element={
+          <BareShell>
+            <HoerenHub />
+          </BareShell>
+        }
+      />
+
+      {/* Hören Training and Test Routes */}
+      <Route
+        path="/tests/hoeren/training"
+        element={
+          <BareShell>
+            <ExercisePlayer />
           </BareShell>
         }
       />
       <Route
-        path="/tests/hoeren-komplett"
+        path="/tests/hoeren/test"
         element={
           <BareShell>
-            <HoerenCompleteTest />
+            <ExercisePlayer />
+          </BareShell>
+        }
+      />
+
+      {/* Original detailed route pattern */}
+      <Route
+        path="/tests/hoeren/:mode/:type"
+        element={
+          <BareShell>
+            <ExercisePlayer />
+          </BareShell>
+        }
+      />
+
+      {/* Other test areas - Coming Soon */}
+      <Route
+        path="/tests/lesen"
+        element={
+          <BareShell>
+            <ComingSoon title="Lesen Training" />
           </BareShell>
         }
       />
       <Route
-        path="/test/:id"
+        path="/tests/schreiben"
         element={
           <BareShell>
-            <TestDetail />
+            <ComingSoon title="Schreiben Training" />
           </BareShell>
         }
       />
       <Route
-        path="/synchronized-test/:id"
+        path="/tests/sprechen"
         element={
           <BareShell>
-            <SynchronizedTestDetail />
+            <ComingSoon title="Sprechen Training" />
           </BareShell>
         }
       />
@@ -156,5 +198,4 @@ function App() {
     </Routes>
   );
 }
-
 export default App;

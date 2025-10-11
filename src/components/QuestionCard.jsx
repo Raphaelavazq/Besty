@@ -1,135 +1,174 @@
-import React from "react";
+import { useState } from "react";
+import { CheckCircle, XCircle, Clock, Volume2 } from "lucide-react";
 
 const QuestionCard = ({
   question,
-  questionNumber,
-  answers,
-  onAnswer,
-  variant = "default",
+  onAnswerSelect,
+  selectedAnswer,
+  showFeedback = false,
+  correctAnswer,
   compact = false,
+  mode = "training",
+  disabled = false,
+  className = "",
 }) => {
-  const getVariantStyles = () => {
-    switch (variant) {
-      case "primary":
-        return {
-          card: "bg-gradient-to-br from-purple-50 to-indigo-50 border-purple-200",
-          badge: "bg-purple-100 text-purple-800",
-          questionBg: "bg-white/80",
-        };
-      case "secondary":
-        return {
-          card: "bg-gradient-to-br from-blue-50 to-cyan-50 border-blue-200",
-          badge: "bg-blue-100 text-blue-800",
-          questionBg: "bg-white/80",
-        };
-      default:
-        return {
-          card: "bg-white/90 border-slate-200",
-          badge: "bg-slate-100 text-slate-800",
-          questionBg: "bg-slate-50/80",
-        };
+  const [localSelectedAnswer, setLocalSelectedAnswer] =
+    useState(selectedAnswer);
+
+  const handleAnswerClick = (answer) => {
+    if (disabled) return;
+
+    setLocalSelectedAnswer(answer);
+    if (onAnswerSelect) {
+      onAnswerSelect(answer);
     }
   };
 
-  const styles = getVariantStyles();
-  const isRichtigFalsch = question.type === "richtig-falsch";
+  const isCorrect = showFeedback && localSelectedAnswer === correctAnswer;
+  const isIncorrect =
+    showFeedback &&
+    localSelectedAnswer &&
+    localSelectedAnswer !== correctAnswer;
 
   return (
     <div
-      className={`${styles.card} backdrop-blur-sm rounded-xl shadow-sm border p-4 transition-all duration-200 hover:shadow-md ${compact ? "space-y-3" : "space-y-4"}`}
+      className={`backdrop-blur-sm rounded-xl shadow-sm border p-4 transition-all duration-200 hover:shadow-md ${
+        isCorrect
+          ? "border-green-200 bg-green-50/50"
+          : isIncorrect
+            ? "border-red-200 bg-red-50/50"
+            : "border-purple-100 bg-white/80"
+      } ${compact ? "space-y-3" : "space-y-4"} ${className}`}
     >
-      {/* Header */}
-      <div className="flex justify-between items-center">
-        <h3
-          className={`font-semibold text-slate-700 ${compact ? "text-sm" : "text-base"}`}
-        >
-          Frage {questionNumber}
-        </h3>
-        <span
-          className={`hidden sm:inline-block text-xs px-2 py-1 rounded font-medium ${styles.badge}`}
-        >
-          {isRichtigFalsch ? "R/F" : "MC"}
-        </span>
-      </div>
-
-      {/* Question Text */}
-      <div
-        className={`${styles.questionBg} rounded-lg p-3 border border-white/50`}
-      >
-        <p
-          className={`text-slate-800 font-medium leading-relaxed ${compact ? "text-sm" : "text-base"}`}
-        >
-          {question.questionText}
-        </p>
-      </div>
-
-      {/* Answer Options */}
-      <div
-        className={`space-y-2 ${isRichtigFalsch && !compact ? "flex gap-3 justify-center space-y-0" : ""}`}
-      >
-        {isRichtigFalsch ? (
-          <div className={compact ? "flex gap-2" : "flex gap-4 justify-center"}>
-            {question.options.map((option, index) => (
-              <button
-                key={index}
-                onClick={() => onAnswer(question.id, index)}
-                className={`${compact ? "flex-1 py-2 px-3 text-sm" : "px-6 py-3 text-base"} font-semibold rounded-lg border-2 transition-all duration-200 ${
-                  answers[question.id] === index
-                    ? index === 0
-                      ? "border-emerald-500 bg-emerald-50 text-emerald-800 shadow-sm"
-                      : "border-red-500 bg-red-50 text-red-800 shadow-sm"
-                    : "border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50 text-slate-700"
-                }`}
-              >
-                {option}
-              </button>
-            ))}
-          </div>
-        ) : (
-          question.options.map((option, index) => (
-            <button
-              key={index}
-              onClick={() => onAnswer(question.id, index)}
-              className={`w-full ${compact ? "p-2 text-sm" : "p-3 text-base"} text-left rounded-lg border-2 transition-all duration-200 ${
-                answers[question.id] === index
-                  ? "border-purple-500 bg-purple-50 text-purple-800 shadow-sm"
-                  : "border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50 text-slate-700"
-              }`}
-            >
-              <span
-                className={`inline-flex items-center justify-center ${compact ? "w-4 h-4 text-xs mr-2" : "w-5 h-5 text-sm mr-3"} bg-slate-100 rounded-full font-bold`}
-              >
-                {String.fromCharCode(65 + index)}
+      {/* Question Header */}
+      <div className="flex items-start justify-between gap-4">
+        <div className="flex-1">
+          <div className="flex items-center gap-2 mb-2">
+            {question.type === "audio" && (
+              <Volume2 className="w-4 h-4 text-purple-600" />
+            )}
+            <span className="text-sm font-medium text-purple-600">
+              {question.type === "audio" ? "Hören" : "Lesen"}
+            </span>
+            {question.timestamp && (
+              <span className="text-xs text-gray-500 flex items-center gap-1">
+                <Clock className="w-3 h-3" />
+                {Math.floor(question.timestamp / 60)}:
+                {(question.timestamp % 60).toString().padStart(2, "0")}
               </span>
-              {option}
-            </button>
-          ))
+            )}
+          </div>
+          <h3
+            className={`font-medium text-gray-900 ${compact ? "text-base" : "text-lg"}`}
+          >
+            {question.question}
+          </h3>
+          {question.context && (
+            <p className="text-sm text-gray-600 mt-2">{question.context}</p>
+          )}
+        </div>
+
+        {/* Feedback Icon */}
+        {showFeedback && localSelectedAnswer && (
+          <div className="flex-shrink-0">
+            {isCorrect ? (
+              <CheckCircle className="w-6 h-6 text-green-600" />
+            ) : (
+              <XCircle className="w-6 h-6 text-red-600" />
+            )}
+          </div>
         )}
       </div>
 
-      {/* Answer Confirmation */}
-      {answers[question.id] !== undefined && (
+      {/* Answer Options */}
+      <div className={`space-y-2 ${compact ? "space-y-2" : "space-y-3"}`}>
+        {question.options.map((option, index) => {
+          const isSelected = localSelectedAnswer === option;
+          const isThisCorrect = showFeedback && option === correctAnswer;
+
+          let optionStyles =
+            "flex items-center gap-3 p-3 rounded-xl border transition-all duration-200 cursor-pointer ";
+
+          if (disabled) {
+            optionStyles += "cursor-not-allowed opacity-50";
+          } else if (isSelected) {
+            if (showFeedback) {
+              optionStyles += isThisCorrect
+                ? "border-green-400 bg-green-100 text-green-800"
+                : "border-red-400 bg-red-100 text-red-800";
+            } else {
+              optionStyles += "border-purple-400 bg-purple-100 text-purple-800";
+            }
+          } else if (showFeedback && isThisCorrect && !isSelected) {
+            optionStyles += "border-green-300 bg-green-50 text-green-700";
+          } else {
+            optionStyles +=
+              "border-gray-200 hover:border-purple-200 hover:bg-purple-50/50";
+          }
+
+          let radioStyles =
+            "w-5 h-5 rounded-full border-2 flex items-center justify-center ";
+
+          if (isSelected) {
+            if (showFeedback) {
+              radioStyles += isThisCorrect
+                ? "border-green-600 bg-green-600"
+                : "border-red-600 bg-red-600";
+            } else {
+              radioStyles += "border-purple-600 bg-purple-600";
+            }
+          } else {
+            radioStyles += "border-gray-300";
+          }
+
+          return (
+            <div
+              key={index}
+              className={optionStyles}
+              onClick={() => handleAnswerClick(option)}
+            >
+              <div className="flex-shrink-0">
+                <div className={radioStyles}>
+                  {isSelected && (
+                    <div className="w-2 h-2 rounded-full bg-white" />
+                  )}
+                </div>
+              </div>
+              <span className="flex-1 text-sm">{option}</span>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Feedback Section */}
+      {showFeedback && mode === "training" && (
         <div
-          className={`${compact ? "p-2" : "p-3"} bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-200 rounded-lg flex items-center gap-2`}
+          className={`mt-4 p-3 rounded-lg ${isCorrect ? "bg-green-50 border border-green-200" : "bg-red-50 border border-red-200"}`}
         >
-          <svg
-            className={`${compact ? "w-3 h-3" : "w-4 h-4"} text-emerald-600`}
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M5 13l4 4L19 7"
-            />
-          </svg>
-          <span
-            className={`text-emerald-800 font-medium ${compact ? "text-xs" : "text-sm"}`}
-          >
-            Antwort gespeichert
-          </span>
+          <div className="flex items-start gap-2">
+            {isCorrect ? (
+              <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+            ) : (
+              <XCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+            )}
+            <div className="flex-1">
+              <p
+                className={`text-sm font-medium ${isCorrect ? "text-green-800" : "text-red-800"}`}
+              >
+                {isCorrect ? "Richtig!" : "Nicht richtig"}
+              </p>
+              {!isCorrect && (
+                <p className="text-sm text-red-700 mt-1">
+                  Die richtige Antwort ist: <strong>{correctAnswer}</strong>
+                </p>
+              )}
+              {question.explanation && (
+                <p className="text-sm text-gray-700 mt-2">
+                  {question.explanation}
+                </p>
+              )}
+            </div>
+          </div>
         </div>
       )}
     </div>

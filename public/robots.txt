@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /tests
+Disallow: /audio
+Disallow: /data
+Allow: /
+
+# Privacy protection for portfolio project
+# Audio materials and test content are for personal study only

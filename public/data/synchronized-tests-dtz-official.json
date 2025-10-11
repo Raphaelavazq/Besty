@@ -17,27 +17,31 @@
         "text": "Sie wollen zum Rosengarten. Was müssen Sie tun?",
         "options": [
           "An der Haltestelle \"Friedrichring\" umsteigen",
-          "Mit der Straßenbahn 78 fahren",
+          "Mit der Straßenbahn 78 fahren", 
           "Mit der U-Bahn-Linie 1 oder 2 fahren"
         ],
         "correctAnswer": 2,
         "points": 1
       },
       {
-        "id": "teil1_q2",
+        "id": "teil1_q2", 
         "part": "Teil 1",
         "type": "multiple-choice",
         "timestamp": 45,
         "duration": 25,
         "audioFile": "/audio/hoeren/telcDB1_Track02.mp3",
         "text": "Wer ruft an?",
-        "options": ["Eine Apotheke", "Eine Arztpraxis", "Eine Versicherung"],
+        "options": [
+          "Eine Apotheke",
+          "Eine Arztpraxis",
+          "Eine Versicherung"
+        ],
         "correctAnswer": 1,
         "points": 1
       },
       {
         "id": "teil1_q3",
-        "part": "Teil 1",
+        "part": "Teil 1", 
         "type": "multiple-choice",
         "timestamp": 85,
         "duration": 30,
@@ -54,14 +58,14 @@
       {
         "id": "teil1_q4",
         "part": "Teil 1",
-        "type": "multiple-choice",
+        "type": "multiple-choice", 
         "timestamp": 130,
         "duration": 25,
         "audioFile": "/audio/hoeren/telcDB1_Track04.mp3",
         "text": "Wo wohnt Henrik?",
         "options": [
           "An einem Park",
-          "Bei einer Schule",
+          "Bei einer Schule", 
           "Neben dem Busbahnhof"
         ],
         "correctAnswer": 2,
@@ -107,7 +111,11 @@
         "duration": 25,
         "audioFile": "/audio/hoeren/telcDB1_Track07.mp3",
         "text": "Was läuft in der \"Lichtburg\"?",
-        "options": ["Ein Kinderfilm", "Ein Krimi", "Eine Komödie"],
+        "options": [
+          "Ein Kinderfilm",
+          "Ein Krimi",
+          "Eine Komödie"
+        ],
         "correctAnswer": 1,
         "points": 1
       },
@@ -119,7 +127,11 @@
         "duration": 30,
         "audioFile": "/audio/hoeren/telcDB1_Track08.mp3",
         "text": "Wo können Sie Musik hören?",
-        "options": ["Auf WDR 2", "Auf WDR 3", "Auf WDR 5"],
+        "options": [
+          "Auf WDR 2",
+          "Auf WDR 3",
+          "Auf WDR 5"
+        ],
         "correctAnswer": 1,
         "points": 1
       },
@@ -131,7 +143,11 @@
         "duration": 35,
         "audioFile": "/audio/hoeren/telcDB1_Track09.mp3",
         "text": "Wann kann man nach Würzburg weiterfahren?",
-        "options": ["Um 09:36 Uhr", "Um 09:58 Uhr", "Um 10:00 Uhr"],
+        "options": [
+          "Um 09:36 Uhr",
+          "Um 09:58 Uhr",
+          "Um 10:00 Uhr"
+        ],
         "correctAnswer": 1,
         "points": 1
       },
@@ -143,7 +159,10 @@
         "duration": 60,
         "audioFile": "/audio/hoeren/telcDB1_Track10.mp3",
         "text": "Die Frau ist Ärztin.",
-        "options": ["richtig", "falsch"],
+        "options": [
+          "richtig",
+          "falsch"
+        ],
         "correctAnswer": 1,
         "points": 1
       },
@@ -171,7 +190,10 @@
         "duration": 60,
         "audioFile": "/audio/hoeren/telcDB1_Track11.mp3",
         "text": "Maria ist unglücklich in ihrem neuen Job.",
-        "options": ["richtig", "falsch"],
+        "options": [
+          "richtig",
+          "falsch"
+        ],
         "correctAnswer": 0,
         "points": 1
       },
@@ -199,7 +221,10 @@
         "duration": 60,
         "audioFile": "/audio/hoeren/telcDB1_Track12.mp3",
         "text": "Günter kommt zum Sommerfest.",
-        "options": ["richtig", "falsch"],
+        "options": [
+          "richtig",
+          "falsch"
+        ],
         "correctAnswer": 0,
         "points": 1
       },
@@ -227,7 +252,10 @@
         "duration": 60,
         "audioFile": "/audio/hoeren/telcDB1_Track13.mp3",
         "text": "Die Frau möchte das Kleid kaufen.",
-        "options": ["richtig", "falsch"],
+        "options": [
+          "richtig",
+          "falsch"
+        ],
         "correctAnswer": 1,
         "points": 1
       },
@@ -259,7 +287,7 @@
         "options": [
           "Es gibt schon viele Geschäfte, die sonntags offen haben",
           "Im Ausland sind die Geschäfte sonntags geschlossen",
-          "In der Zukunft werden die Geschäfte länger offen sein",
+          "In der Zukunft werden die Geschäfte länger offen sein", 
           "Man kann sonntags seine Freizeit nicht mehr zusammen verbringen",
           "Schon jetzt haben die Leute zu viel Hektik",
           "Sonntags sollten auch Banken offen haben"
@@ -279,7 +307,7 @@
         "options": [
           "Es gibt schon viele Geschäfte, die sonntags offen haben",
           "Im Ausland sind die Geschäfte sonntags geschlossen",
-          "In der Zukunft werden die Geschäfte länger offen sein",
+          "In der Zukunft werden die Geschäfte länger offen sein", 
           "Man kann sonntags seine Freizeit nicht mehr zusammen verbringen",
           "Schon jetzt haben die Leute zu viel Hektik",
           "Sonntags sollten auch Banken offen haben"
@@ -295,7 +323,7 @@
         "duration": 180,
         "audioFile": "/audio/hoeren/telcDB1_Track14.mp3",
         "text": "Person 3 sagt:",
-        "topic": "Geschäfte sonntags öffnen",
+        "topic": "Geschäfte sonntags öffnen", 
         "options": [
           "Es gibt schon viele Geschäfte, die sonntags offen haben",
           "Im Ausland sind die Geschäfte sonntags geschlossen",

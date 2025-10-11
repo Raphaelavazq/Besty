@@ -3,6 +3,7 @@ import AudioPlayerNew from "./AudioPlayerNew";
 import QuestionCard from "./QuestionCard";
 
 export default function HoerenTeilComplete() {
+  const [testData, setTestData] = useState(null);
   const [questions, setQuestions] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(null);
   const [answers, setAnswers] = useState({});
@@ -17,6 +18,7 @@ export default function HoerenTeilComplete() {
       .then((data) => {
         const test = data.find((t) => t.id === "dtz-b1-hoeren-komplett");
         if (test) {
+          setTestData(test);
           setQuestions(test.questions);
         }
         setIsLoading(false);
@@ -225,8 +227,10 @@ export default function HoerenTeilComplete() {
           {/* Left Side - Audio Player (1/3 width) */}
           <div className="lg:col-span-1">
             <AudioPlayerNew
-              audioFile="/audio/sync-test.mp3"
-              title="DTZ B1 Hörprüfung"
+              audioFile={
+                testData?.audioFile || "/audio/hoeren/telcDB1_Track01.mp3"
+              }
+              title={testData?.name || "DTZ B1 Hörprüfung"}
               onTimeUpdate={handleTimeUpdate}
               seekTime={seekTime}
               autoPlayOnSeek={autoPlayOnSeek}
@@ -234,7 +238,7 @@ export default function HoerenTeilComplete() {
               currentQuestion={currentQuestion}
               answers={answers}
               onQuestionJump={jumpToTime}
-              totalDuration={1300}
+              totalDuration={testData?.duration || 1500}
             />
           </div>
 

@@ -1,4 +1,5 @@
 import { Bookmark, Heart } from "lucide-react";
+import { EmptyStateAnimation } from "../components/LottieAnimations";
 
 export default function Bookmarks() {
   return (
@@ -15,14 +16,12 @@ export default function Bookmarks() {
             Speichere deine Lieblingsinhalte für später
           </p>
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/50">
-            <Heart size={40} className="text-purple-400 mx-auto mb-4" />
-            <h3 className="text-lg font-semibold text-slate-700 mb-2">
-              Noch keine Lesezeichen
-            </h3>
-            <p className="text-slate-500">
-              Beginne damit, Inhalte zu markieren, die du später wiederfinden
-              möchtest.
-            </p>
+            <EmptyStateAnimation
+              size="lg"
+              title="Noch keine Lesezeichen"
+              description="Beginne damit, Inhalte zu markieren, die du später wiederfinden möchtest."
+              className="py-8"
+            />
           </div>
         </div>
       </div>
