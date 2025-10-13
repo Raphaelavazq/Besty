@@ -30,35 +30,39 @@ export default function DashboardContent() {
   const examParts = [
     {
       title: "Hörverstehen",
-      subtitle: "Teil 1-3",
-      description: "Listening comprehension exercises",
+      subtitle: "4 Teile • 25 Minuten",
+      description: "Ansagen, Gespräche & Diskussionen verstehen",
       icon: Headphones,
       color: "from-purple-500 to-indigo-600",
       progress: 75,
+      href: "/tests/hoeren",
     },
     {
       title: "Leseverstehen",
-      subtitle: "Teil 1-3",
-      description: "Reading comprehension practice",
+      subtitle: "3 Teile • 45 Minuten",
+      description: "Texte lesen und verstehen",
       icon: Eye,
       color: "from-indigo-500 to-purple-600",
       progress: 60,
+      href: "/tests/lesen",
     },
     {
       title: "Sprachbausteine",
-      subtitle: "Teil 1-2",
-      description: "Grammar and vocabulary exercises",
+      subtitle: "2 Teile • 15 Minuten",
+      description: "Grammatik & Wortschatz",
       icon: PenTool,
       color: "from-purple-600 to-pink-600",
       progress: 40,
+      href: "/tests/sprachbausteine",
     },
     {
       title: "Schriftlicher Ausdruck",
-      subtitle: "Brief schreiben",
-      description: "Letter writing practice",
+      subtitle: "1 Brief • 30 Minuten",
+      description: "Formeller oder informeller Brief schreiben",
       icon: FileText,
       color: "from-pink-500 to-purple-600",
       progress: 30,
+      href: "/tests/schreiben",
     },
   ];
 
@@ -116,8 +120,9 @@ export default function DashboardContent() {
           </h2>
           <div className="grid grid-cols-2 xl:grid-cols-4 gap-3">
             {examParts.map((part) => (
-              <div
+              <Link
                 key={part.title}
+                to={part.href}
                 className="bg-white/80 backdrop-blur-md rounded-2xl p-4 shadow-sm border border-purple-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
               >
                 <div
@@ -129,6 +134,9 @@ export default function DashboardContent() {
                   {part.title}
                 </h3>
                 <p className="text-xs text-purple-600 mb-2">{part.subtitle}</p>
+                <p className="text-xs text-gray-600 mb-2 line-clamp-2">
+                  {part.description}
+                </p>
                 <div className="w-full bg-purple-100 rounded-full h-2 mb-2">
                   <div
                     className={`h-2 bg-gradient-to-r ${part.color} rounded-full transition-all duration-500`}
@@ -136,9 +144,9 @@ export default function DashboardContent() {
                   ></div>
                 </div>
                 <p className="text-xs font-medium text-gray-700">
-                  {part.progress}%
+                  {part.progress}% abgeschlossen
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
