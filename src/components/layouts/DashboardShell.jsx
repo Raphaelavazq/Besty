@@ -102,7 +102,7 @@ export default function DashboardShell({ children }) {
           </div>
 
           {/* Navigation */}
-          <nav className="px-4 space-y-1 pb-6">
+          <nav className="px-4 space-y-1 pb-3">
             {sidebarItems.map((item) => (
               <Link
                 key={item.name}
@@ -118,6 +118,15 @@ export default function DashboardShell({ children }) {
               </Link>
             ))}
           </nav>
+
+          {/* Attribution Footer */}
+          <div className="px-4 pb-3 pt-3 border-t border-white/10">
+            <p className="text-[11px] text-white/60 text-center leading-snug">
+              Made with <span className="text-white/80">♥</span> for German learners
+              <br />
+              <span className="text-white/40">© Raphaella 2025</span>
+            </p>
+          </div>
         </div>
       </div>
 
