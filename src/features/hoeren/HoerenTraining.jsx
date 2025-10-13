@@ -4,12 +4,12 @@
  * Allows replay and shows immediate feedback
  */
 
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Shuffle, RefreshCw } from 'lucide-react';
-import HoerenPlayer from './HoerenPlayer';
-import { useHoerenEngine } from './useHoerenEngine';
-import { triggerHaptic } from '../../utils/haptics';
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { ArrowLeft, Shuffle, RefreshCw } from "lucide-react";
+import HoerenPlayer from "./HoerenPlayer";
+import { useHoerenEngine } from "./useHoerenEngine";
+import { triggerHaptic } from "../../utils/haptics";
 
 export default function HoerenTraining() {
   const navigate = useNavigate();
@@ -20,14 +20,14 @@ export default function HoerenTraining() {
 
   // Load all Prüfung tests and extract questions
   useEffect(() => {
-    fetch('/data/dtz/hoeren-tests.json')
-      .then(res => res.json())
-      .then(data => {
+    fetch("/data/dtz/hoeren-tests.json")
+      .then((res) => res.json())
+      .then((data) => {
         const questions = [];
-        
+
         // Extract all questions from all tests
-        Object.values(data).forEach(test => {
-          test.parts.forEach(part => {
+        Object.values(data).forEach((test) => {
+          test.parts.forEach((part) => {
             if (part.teil === 3) {
               // Teil 3: Group questions in pairs
               for (let i = 0; i < part.items.length; i += 2) {
@@ -35,44 +35,46 @@ export default function HoerenTraining() {
                   ...part.items[i],
                   teil: part.teil,
                   audioFile: part.items[i].track,
-                  pairedItem: part.items[i + 1] ? {
-                    ...part.items[i + 1],
-                    audioFile: part.items[i + 1].track
-                  } : null,
-                  testName: test.title
+                  pairedItem: part.items[i + 1]
+                    ? {
+                        ...part.items[i + 1],
+                        audioFile: part.items[i + 1].track,
+                      }
+                    : null,
+                  testName: test.title,
                 });
               }
             } else if (part.teil === 4) {
               // Teil 4: Include statements
-              part.items.forEach(item => {
+              part.items.forEach((item) => {
                 questions.push({
                   ...item,
                   teil: part.teil,
                   audioFile: item.track,
                   statements: part.statements,
-                  testName: test.title
+                  testName: test.title,
                 });
               });
             } else {
               // Other parts: regular questions
-              part.items.forEach(item => {
+              part.items.forEach((item) => {
                 questions.push({
                   ...item,
                   teil: part.teil,
                   audioFile: item.track,
-                  testName: test.title
+                  testName: test.title,
                 });
               });
             }
           });
         });
-        
+
         setAllQuestions(questions);
         selectRandomQuestions(questions, questionCount);
         setLoading(false);
       })
-      .catch(err => {
-        console.error('Error loading tests:', err);
+      .catch((err) => {
+        console.error("Error loading tests:", err);
         setLoading(false);
       });
   }, []);
@@ -91,7 +93,7 @@ export default function HoerenTraining() {
     actions.resetEngine();
   };
 
-  const [state, actions] = useHoerenEngine('uebung', trainingQuestions);
+  const [state, actions] = useHoerenEngine("uebung", trainingQuestions);
 
   if (loading) {
     return (
@@ -112,7 +114,7 @@ export default function HoerenTraining() {
           <button
             onClick={() => {
               triggerHaptic();
-              navigate('/tests/hoeren');
+              navigate("/tests/hoeren");
             }}
             className="px-6 py-3 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transition-all"
           >
@@ -136,25 +138,25 @@ export default function HoerenTraining() {
               <div className="w-24 h-24 rounded-full mx-auto mb-6 bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center">
                 <span className="text-4xl">🎯</span>
               </div>
-              
+
               <h1 className="text-4xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4">
                 Training abgeschlossen!
               </h1>
-              
+
               <div className="text-6xl font-black text-gray-900 mb-4">
                 {score.correct}/{score.total}
               </div>
-              
+
               <p className="text-2xl text-gray-700 mb-2">
                 {Math.round(score.percentage)}% richtig
               </p>
-              
+
               <p className="text-lg text-gray-600">
-                {score.percentage >= 75 
-                  ? '🎉 Sehr gut! Weiter so!' 
-                  : score.percentage >= 50 
-                    ? '👍 Gut gemacht! Übe weiter!'
-                    : '📚 Übe noch ein bisschen mehr!'}
+                {score.percentage >= 75
+                  ? "🎉 Sehr gut! Weiter so!"
+                  : score.percentage >= 50
+                    ? "👍 Gut gemacht! Übe weiter!"
+                    : "📚 Übe noch ein bisschen mehr!"}
               </p>
             </div>
 
@@ -169,7 +171,7 @@ export default function HoerenTraining() {
                 <Shuffle className="w-5 h-5" />
                 Neue Fragen
               </button>
-              
+
               <button
                 onClick={() => {
                   triggerHaptic();
@@ -180,11 +182,11 @@ export default function HoerenTraining() {
                 <RefreshCw className="w-5 h-5" />
                 Wiederholen
               </button>
-              
+
               <button
                 onClick={() => {
                   triggerHaptic();
-                  navigate('/tests/hoeren');
+                  navigate("/tests/hoeren");
                 }}
                 className="px-8 py-4 rounded-xl bg-gray-100 text-gray-700 font-bold hover:bg-gray-200 transition-all hover:scale-105 active:scale-95"
               >
@@ -207,21 +209,22 @@ export default function HoerenTraining() {
             <button
               onClick={() => {
                 triggerHaptic();
-                navigate('/tests/hoeren');
+                navigate("/tests/hoeren");
               }}
               className="flex items-center gap-2 text-purple-600 hover:text-purple-700 transition-colors"
             >
               <ArrowLeft className="w-5 h-5" />
               <span className="font-medium">Zurück</span>
             </button>
-            
+
             <div className="text-center flex-1">
               <h1 className="text-2xl font-bold text-gray-900">Training</h1>
               <p className="text-sm text-gray-600">
-                Frage {state.currentItemIndex + 1} von {trainingQuestions.length} • Teil {currentQuestion.teil}
+                Frage {state.currentItemIndex + 1} von{" "}
+                {trainingQuestions.length} • Teil {currentQuestion.teil}
               </p>
             </div>
-            
+
             <button
               onClick={handleShuffle}
               className="flex items-center gap-2 px-4 py-2 bg-purple-100 text-purple-700 rounded-xl hover:bg-purple-200 transition-all font-medium"
@@ -242,15 +245,16 @@ export default function HoerenTraining() {
         pairedItem={currentQuestion.pairedItem || null}
         onAnswer={(answer) => actions.submitAnswer(currentQuestion.no, answer)}
         onAnswerPaired={
-          currentQuestion.pairedItem 
-            ? (answer) => actions.submitAnswer(currentQuestion.pairedItem.no, answer) 
+          currentQuestion.pairedItem
+            ? (answer) =>
+                actions.submitAnswer(currentQuestion.pairedItem.no, answer)
             : null
         }
         onNext={actions.nextItem}
         selectedAnswer={state.answers[currentQuestion.no]}
         selectedAnswerPaired={
-          currentQuestion.pairedItem 
-            ? state.answers[currentQuestion.pairedItem.no] 
+          currentQuestion.pairedItem
+            ? state.answers[currentQuestion.pairedItem.no]
             : null
         }
         showFeedback={state.showFeedback[currentQuestion.no]}

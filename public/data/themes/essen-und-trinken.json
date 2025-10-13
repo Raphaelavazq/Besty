@@ -1,0 +1,184 @@
+{
+  "id": "essen-und-trinken",
+  "name": "Essen und Trinken",
+  "description": "Wortschatz und Grammatik zum Thema: Essen und Trinken",
+  "questionCount": 16,
+  "questions": [
+    {
+      "id": 1,
+      "type": "fill-in-blank",
+      "question": "Obst, Gemüse, Fleisch sind <b>...</b> .",
+      "options": [
+        "frische Lebensmittel",
+        "getrocknete Früchte",
+        "günstige Angebote"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 2,
+      "type": "fill-in-blank",
+      "question": "Auf der Verpackung steht ein Datum. Bis dahin ist der Joghurt mindestens <b>...</b> und man kann ihn essen.",
+      "options": [
+        "gekocht",
+        "haltbar",
+        "reif"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 3,
+      "type": "fill-in-blank",
+      "question": "Zucker schmeckt nicht salzig, sondern <b>...</b> .",
+      "options": [
+        "bitter",
+        "sauer",
+        "süß"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 4,
+      "type": "fill-in-blank",
+      "question": "Wir <b>...</b> zweimal am Tag, das Mittagessen und das Abendessen.",
+      "options": [
+        "backen",
+        "frühstücken",
+        "kochen"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 5,
+      "type": "fill-in-blank",
+      "question": "Das Essen hat mir leider gar nicht <b>...</b> . Es war viel zu salzig.",
+      "options": [
+        "gekocht",
+        "gekostet",
+        "geschmeckt"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 6,
+      "type": "fill-in-blank",
+      "question": "Ich habe heute gebacken. Möchtest du <b>...</b> Kuchen?",
+      "options": [
+        "ein Stück",
+        "eine Portion",
+        "einen Teller"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 7,
+      "type": "fill-in-blank",
+      "question": "Kannst du die Soße bitte <b>...</b> ? Schmeckt die Soße oder fehlt noch etwas?",
+      "options": [
+        "kochen",
+        "probieren",
+        "schmecken"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 8,
+      "type": "fill-in-blank",
+      "question": "Morgens zum <b>...</b> esse ich gern Brötchen mit Marmelade.",
+      "options": [
+        "Abendessen",
+        "Frühstück",
+        "Mittagessen"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 9,
+      "type": "fill-in-blank",
+      "question": "Ich habe Durst. Ich muss etwas <b>...</b> .",
+      "options": [
+        "essen",
+        "trinken",
+        "waschen"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 10,
+      "type": "fill-in-blank",
+      "question": "Limonade, Mineralwasser, Saft sind <b>...</b> .",
+      "options": [
+        "Diäten",
+        "Gebäck",
+        "Getränke"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 11,
+      "type": "fill-in-blank",
+      "question": "Hast du gebacken? Es <b>...</b> hier so gut nach Apfelkuchen.",
+      "options": [
+        "kocht",
+        "riecht",
+        "schmeckt"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 12,
+      "type": "fill-in-blank",
+      "question": "Sie <b>...</b> kein Fleisch? Sind Sie Vegetarier?",
+      "options": [
+        "braten",
+        "essen",
+        "schneiden"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 13,
+      "type": "fill-in-blank",
+      "question": "Karotten muss man nicht kochen, man kann Karotten auch <b>...</b> essen, also nicht gekocht.",
+      "options": [
+        "roh",
+        "ungewaschen",
+        "verbrannt"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 14,
+      "type": "fill-in-blank",
+      "question": "Salz und Pfeffer sind <b>...</b> .",
+      "options": [
+        "Gewürze",
+        "Speisen",
+        "Vitamine"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 15,
+      "type": "fill-in-blank",
+      "question": "Ich esse später. Im Moment habe ich noch keinen <b>...</b> .",
+      "options": [
+        "Durst",
+        "Geschmack",
+        "Hunger"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 16,
+      "type": "fill-in-blank",
+      "question": "Ich habe keinen Hunger mehr, ich bin <b>...</b> .",
+      "options": [
+        "frisch",
+        "betrunken",
+        "satt"
+      ],
+      "correctAnswer": 2
+    }
+  ]
+}

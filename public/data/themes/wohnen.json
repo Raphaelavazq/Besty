@@ -1,0 +1,228 @@
+{
+  "id": "wohnen",
+  "name": "Wohnen",
+  "description": "Wortschatz und Grammatik zum Thema: Wohnen",
+  "questionCount": 20,
+  "questions": [
+    {
+      "id": 1,
+      "type": "fill-in-blank",
+      "question": "Straße, Hausnummer, Wohnort – das ist <b>...</b> .",
+      "options": [
+        "der Geburtsort",
+        "die Adresse",
+        "die Wohnung"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 2,
+      "type": "fill-in-blank",
+      "question": "Ihr habt eine neue Wohnung? Brauchst du noch Hilfe beim <b>...</b> ?",
+      "options": [
+        "Aufzug",
+        "Umzug",
+        "Zug"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 3,
+      "type": "fill-in-blank",
+      "question": "In die Wohnung nebenan ist letzte Woche ein neuer Nachbar <b>...</b> .",
+      "options": [
+        "ausgezogen (ausziehen)",
+        "eingezogen (einziehen)",
+        "umgezogen (umziehen)"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 4,
+      "type": "fill-in-blank",
+      "question": "Ich nehme nie die Treppe, sondern fahre immer mit dem <b>...</b> .",
+      "options": [
+        "Anzug",
+        "Aufzug / Fahrstuhl / Lift",
+        "Flugzeug"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 5,
+      "type": "fill-in-blank",
+      "question": "In einer Wohnung wohnen und jeden Monat Geld an den Wohnungsbesitzer bezahlen nennt man: eine Wohnung <b>...</b> .",
+      "options": [
+        "kaufen",
+        "mieten",
+        "vermieten"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 6,
+      "type": "fill-in-blank",
+      "question": "Uns gehört die Wohnung nicht, wir sind nur die <b>...</b> und wohnen hier.",
+      "options": [
+        "Besitzer",
+        "Mieter",
+        "Vermieter"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 7,
+      "type": "fill-in-blank",
+      "question": "In der Wohnung sind schon Möbel, die Wohnung ist <b>...</b> .",
+      "options": [
+        "möbliert",
+        "renoviert",
+        "vermietet"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 8,
+      "type": "fill-in-blank",
+      "question": "Wie <b>...</b> ist die Wohnung? Wie viele Quadratmeter hat sie?",
+      "options": [
+        "alt",
+        "groß",
+        "teuer"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 9,
+      "type": "fill-in-blank",
+      "question": "Die Wohnung ist im 4. Stock, sie hat drei Zimmer und <b>...</b> an der Küche.",
+      "options": [
+        "einen Balkon",
+        "einen Garten",
+        "einen Hof"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 10,
+      "type": "fill-in-blank",
+      "question": "Ich zahle viel Miete und die <b>...</b> für Strom, Heizung usw. sind auch hoch. Wohnen ist sehr teuer.",
+      "options": [
+        "Kaution",
+        "Beiträge",
+        "Nebenkosten"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 11,
+      "type": "fill-in-blank",
+      "question": "Für die Wohnung müssen Sie als <b>...</b> drei Monatsmieten hinterlegen.",
+      "options": [
+        "Garantie",
+        "Kaution",
+        "Vertrag"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 12,
+      "type": "fill-in-blank",
+      "question": "Die Familie in der Wohnung links ist sehr nett. Die anderen <b>...</b> im Hause kenne ich leider nicht.",
+      "options": [
+        "Angehörigen",
+        "Freunde",
+        "Nachbarn"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 13,
+      "type": "fill-in-blank",
+      "question": "Die Wohnung hat viele Fenster und es gibt viel Licht, die Wohnung ist <b>...</b> .",
+      "options": [
+        "dunkel",
+        "hell",
+        "isoliert"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 14,
+      "type": "fill-in-blank",
+      "question": "Wir müssen die Wohnung <b>...</b>, also die Wände tapezieren und streichen, einen neuen Fußboden legen.",
+      "options": [
+        "einrichten",
+        "renovieren",
+        "reparieren"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 15,
+      "type": "fill-in-blank",
+      "question": "Die Heizung ist kaputt. Am besten rufen wir <b>...</b> an.",
+      "options": [
+        "den Hausmeister",
+        "die Nachbarn",
+        "die Werkstatt"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 16,
+      "type": "fill-in-blank",
+      "question": "Das Zimmer mit einem Waschbecken, einer Dusche oder Badewanne ist <b>...</b> .",
+      "options": [
+        "das Bad",
+        "die Küche",
+        "die Toilette"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 17,
+      "type": "fill-in-blank",
+      "question": "In <b>...</b> stehen z. B. Informationen zu der Mietdauer, der Kaltmiete und den Nebenkosten.",
+      "options": [
+        "dem Mietvertrag",
+        "der Bewerbung",
+        "der Nebenkostenabrechnung"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 18,
+      "type": "fill-in-blank",
+      "question": "Meine Wohnung ist warm, sauber und schön, also sehr <b>...</b> . Ich fühle mich sehr wohl hier.",
+      "options": [
+        "feucht",
+        "gemütlich",
+        "schmutzig"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 19,
+      "type": "fill-in-blank",
+      "question": "Tom wohnt mit zwei Freunden in <b>...</b> zusammen.",
+      "options": [
+        "einem Wohnort",
+        "einer Gegend",
+        "einer Wohngemeinschaft (WG)"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 20,
+      "type": "fill-in-blank",
+      "question": "Die Wohnung <b>...</b> zentral und es gibt Geschäfte, Haltestellen und Schulen in der Nähe.",
+      "options": [
+        "liegt",
+        "sitzt",
+        "steht"
+      ],
+      "correctAnswer": 0
+    }
+  ]
+}

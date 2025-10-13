@@ -1,0 +1,129 @@
+{
+  "id": "arbeitssuche",
+  "name": "Arbeitssuche",
+  "description": "Wortschatz und Grammatik zum Thema: Arbeitssuche",
+  "questionCount": 11,
+  "questions": [
+    {
+      "id": 1,
+      "type": "fill-in-blank",
+      "question": "Ich <b>...</b> eine Arbeit im Bereich Pflege.",
+      "options": [
+        "suche",
+        "vermisse",
+        "versuche"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 2,
+      "type": "fill-in-blank",
+      "question": "Ich habe einen Beruf gelernt und lasse meinen Berufsabschluss <b>...</b> .",
+      "options": [
+        "anbieten",
+        "ändern",
+        "anerkennen"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 3,
+      "type": "fill-in-blank",
+      "question": "Haben Sie <b>...</b> ? Dann dürfen Sie arbeiten.",
+      "options": [
+        "eine Arbeitserlaubnis",
+        "einen Beruf",
+        "Zeugnisse"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 4,
+      "type": "fill-in-blank",
+      "question": "Ich habe schon fünf <b>...</b> geschrieben und an verschiedene Firmen geschickt.",
+      "options": [
+        "Bewerbungen",
+        "Informationen",
+        "Stellenanzeigen"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 5,
+      "type": "fill-in-blank",
+      "question": "Informationen über die Schulbildung, die Ausbildung und die Berufserfahrung schreibt man in <b>...</b> .",
+      "options": [
+        "eine E-Mail",
+        "einen Brief",
+        "den Lebenslauf"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 6,
+      "type": "fill-in-blank",
+      "question": "Ich möchte mich auf Ihre <b>...</b> bewerben.",
+      "options": [
+        "Arbeit",
+        "Stellenanzeige",
+        "Werbung"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 7,
+      "type": "fill-in-blank",
+      "question": "Was haben Sie gelernt oder studiert? Welche <b>...</b> haben Sie?",
+      "options": [
+        "Berufe",
+        "Schule",
+        "Qualifikationen"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 8,
+      "type": "fill-in-blank",
+      "question": "Haben Sie schon in dem Bereich gearbeitet? Wie viel <b>...</b> haben Sie?",
+      "options": [
+        "Berufserfahrung",
+        "Fachleute",
+        "Tätigkeiten"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 9,
+      "type": "fill-in-blank",
+      "question": "Sprechen Sie gut Deutsch? Wir suchen Mitarbeiter mit guten <b>...</b> .",
+      "options": [
+        "Computerprogrammen",
+        "Fremdsprachen",
+        "Kenntnissen"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 10,
+      "type": "fill-in-blank",
+      "question": "Wir möchten Sie gern zu <b>...</b> in unsere Firma einladen.",
+      "options": [
+        "dem Feierabend",
+        "einem Bewerbungsgespräch",
+        "Ihrem Vertrag"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 11,
+      "type": "fill-in-blank",
+      "question": "Lesen Sie Ihren <b>...</b> gut durch. Hier stehen wichtige Informationen zu Ihren Arbeitszeiten und anderen Arbeitsbedingungen.",
+      "options": [
+        "Antrag",
+        "Arbeitsvertrag",
+        "Lebenslauf"
+      ],
+      "correctAnswer": 1
+    }
+  ]
+}

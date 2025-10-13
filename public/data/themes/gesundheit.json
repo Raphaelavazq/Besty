@@ -1,0 +1,228 @@
+{
+  "id": "gesundheit",
+  "name": "Gesundheit",
+  "description": "Wortschatz und Grammatik zum Thema: Gesundheit",
+  "questionCount": 20,
+  "questions": [
+    {
+      "id": 1,
+      "type": "fill-in-blank",
+      "question": "Ich habe hohes Fieber und gehe jetzt <b>...</b> in die Sprechstunde.",
+      "options": [
+        "zum Arzt",
+        "in die Apotheke",
+        "zur Arbeit"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 2,
+      "type": "fill-in-blank",
+      "question": "Die Ärztin <b>...</b> ein Medikament gegen das Fieber.",
+      "options": [
+        "bestellt",
+        "verkauft",
+        "verschreibt"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 3,
+      "type": "fill-in-blank",
+      "question": "Das Medikament ist verschreibungspflichtig. Sie brauchen <b>...</b> vom Arzt.",
+      "options": [
+        "einen Brief",
+        "ein Rezept",
+        "einen Termin"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 4,
+      "type": "fill-in-blank",
+      "question": "„Mein Bauch tut sehr weh“ oder „Ich habe <b>...</b>“.",
+      "options": [
+        "hohes Fieber",
+        "starke Schmerzen",
+        "neue Tabletten"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 5,
+      "type": "fill-in-blank",
+      "question": "Mir geht es schlecht. Ich muss mich leider <b>...</b> für heute.",
+      "options": [
+        "anmelden",
+        "krankmelden",
+        "vertreten"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 6,
+      "type": "fill-in-blank",
+      "question": "Die Ärztin hat Ihnen ein Medikament verschrieben. Sie müssen es in der <b>...</b> holen.",
+      "options": [
+        "Apotheke",
+        "Drogerie",
+        "Praxis"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 7,
+      "type": "fill-in-blank",
+      "question": "Kann ich bitte einen anderen <b>...</b> für meine Untersuchung haben? Montag um 17 Uhr passt nicht.",
+      "options": [
+        "Arzt",
+        "Termin",
+        "Verband"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 8,
+      "type": "fill-in-blank",
+      "question": "Unsere <b>...</b> in der Praxis sind: Montag bis Donnerstag von 7:30 Uhr bis 15:30 Uhr.",
+      "options": [
+        "Sprechzeiten",
+        "Termine",
+        "Urlaubszeiten"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 9,
+      "type": "fill-in-blank",
+      "question": "Du arbeitest zu viel. Viel <b>...</b> ist ungesund.",
+      "options": [
+        "Bewegung",
+        "Entspannung",
+        "Stress"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 10,
+      "type": "fill-in-blank",
+      "question": "Sie sollten sich besser <b>...</b> , also mehr Gemüse essen und weniger Fett und Zucker.",
+      "options": [
+        "erholen",
+        "ernähren",
+        "essen"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 11,
+      "type": "fill-in-blank",
+      "question": "Mein Großvater ist alt und wohnt bei uns zu Hause. Wir <b>...</b> ihn.",
+      "options": [
+        "besuchen",
+        "pflegen",
+        "untersuchen"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 12,
+      "type": "fill-in-blank",
+      "question": "Ich bin <b>...</b> bei Dr. Büttner und habe einen Kontroll-Termin.",
+      "options": [
+        "Gast",
+        "Kunde / Kundin",
+        "Patient / Patientin"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 13,
+      "type": "fill-in-blank",
+      "question": "Haben Sie die Versichertenkarte von Ihrer <b>...</b> dabei?",
+      "options": [
+        "Krankenkasse",
+        "Praxis",
+        "Überweisung"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 14,
+      "type": "fill-in-blank",
+      "question": "Ich mache viel Sport und ernähre mich gesund. Deshalb bin ich <b>...</b> .",
+      "options": [
+        "faul",
+        "fett",
+        "fit"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 15,
+      "type": "fill-in-blank",
+      "question": "Ich möchte mich gegen Grippe <b>...</b> lassen.",
+      "options": [
+        "beruhigen",
+        "impfen",
+        "verschreiben"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 16,
+      "type": "fill-in-blank",
+      "question": "Du <b>...</b> ja! Hast du dich verletzt? Brauchst du ein Pflaster?",
+      "options": [
+        "blutest",
+        "hustest",
+        "läufst"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 17,
+      "type": "fill-in-blank",
+      "question": "Machen Sie am besten <b>...</b> Sport, z. B. immer zweimal in der Woche.",
+      "options": [
+        "manchmal",
+        "nie",
+        "regelmäßig"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 18,
+      "type": "fill-in-blank",
+      "question": "Wir schreiben Ihnen eine <b>...</b> , damit gehen Sie bitte zum Augenarzt.",
+      "options": [
+        "Brille",
+        "Überweisung",
+        "Untersuchung"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 19,
+      "type": "fill-in-blank",
+      "question": "Salbe oder Creme muss man einreiben oder auftragen. Tropfen oder Tabletten muss man <b>...</b> .",
+      "options": [
+        "(ein)nehmen",
+        "fühlen",
+        "trinken"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 20,
+      "type": "fill-in-blank",
+      "question": "Mir ist <b>...</b> , ich friere.",
+      "options": [
+        "heiß",
+        "kalt",
+        "warm"
+      ],
+      "correctAnswer": 1
+    }
+  ]
+}

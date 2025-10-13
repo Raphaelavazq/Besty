@@ -1,0 +1,173 @@
+{
+  "id": "familie-und-co",
+  "name": "Familie und Co",
+  "description": "Wortschatz und Grammatik zum Thema: Familie und Co",
+  "questionCount": 15,
+  "questions": [
+    {
+      "id": 1,
+      "type": "fill-in-blank",
+      "question": "Familie, Verwandtschaft oder <b>...</b> .",
+      "options": [
+        "Angehörige",
+        "Freunde",
+        "Nachbarn"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 2,
+      "type": "fill-in-blank",
+      "question": "Magnus Gökdal? Nein, den Mann <b>...</b> ich nicht. Wer ist das?",
+      "options": [
+        "heiße",
+        "kenne",
+        "weiß"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 3,
+      "type": "fill-in-blank",
+      "question": "Du und Nic, ihr habt denselben Nachnamen. Seid ihr <b>...</b> ?",
+      "options": [
+        "befreundet",
+        "verlobt",
+        "verwandt"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 4,
+      "type": "fill-in-blank",
+      "question": "Mein Vater und meine Mutter sind <b>...</b> .",
+      "options": [
+        "mein Alter",
+        "meine Eltern",
+        "meine Kinder"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 5,
+      "type": "fill-in-blank",
+      "question": "Ich habe zwei <b>...</b> : einen älteren Bruder und eine jüngere Schwester.",
+      "options": [
+        "Bekannte",
+        "Geschwister",
+        "Kinder"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 6,
+      "type": "fill-in-blank",
+      "question": "Der Sohn von meinem Onkel und meiner Tante ist mein <b>...</b> .",
+      "options": [
+        "Bruder",
+        "Cousin",
+        "Neffe"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 7,
+      "type": "fill-in-blank",
+      "question": "Ich bin die Mutter von Nala. Nala ist meine <b>...</b> .",
+      "options": [
+        "Schwester",
+        "Tante",
+        "Tochter"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 8,
+      "type": "fill-in-blank",
+      "question": "Die Großeltern sind Opa und <b>...</b> .",
+      "options": [
+        "Großtante",
+        "Nichte",
+        "Oma"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 9,
+      "type": "fill-in-blank",
+      "question": "Mein Mann und ich haben uns getrennt. Seit einem Jahr sind wir nicht mehr verheiratet, sondern <b>...</b> .",
+      "options": [
+        "geschieden",
+        "ledig",
+        "verlobt"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 10,
+      "type": "fill-in-blank",
+      "question": "Wir <b>...</b>: Am 5.5. feiern wir unsere Hochzeit.",
+      "options": [
+        "heiraten",
+        "lassen uns scheiden",
+        "trennen uns"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 11,
+      "type": "fill-in-blank",
+      "question": "Meine Schwester ist <b>...</b> . Sie bekommt bald ein Baby.",
+      "options": [
+        "krank",
+        "schwanger",
+        "schwierig"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 12,
+      "type": "fill-in-blank",
+      "question": "Die Geschwister von meiner Frau, meinem Mann sind <b>...</b> .",
+      "options": [
+        "mein Schwager und meine Schwägerin",
+        "meine Schwester und mein Bruder",
+        "meine Schwiegereltern"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 13,
+      "type": "fill-in-blank",
+      "question": "Meine Kinder <b>...</b> sich oft und dann vertragen sie sich wieder. Das ist doch normal.",
+      "options": [
+        "sehen",
+        "spielen",
+        "streiten"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 14,
+      "type": "fill-in-blank",
+      "question": "Ich mag meine Geschwister sehr, wir haben eine gute <b>...</b> und verstehen uns gut.",
+      "options": [
+        "Beratung",
+        "Beschäftigung",
+        "Beziehung"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 15,
+      "type": "fill-in-blank",
+      "question": "Meine Tante wohnt in Schweden. Aber wir telefonieren oft und schreiben uns über soziale Medien. Wir haben also <b>...</b> .",
+      "options": [
+        "häufig Besuch",
+        "oft Kontakt",
+        "viele Briefe"
+      ],
+      "correctAnswer": 1
+    }
+  ]
+}

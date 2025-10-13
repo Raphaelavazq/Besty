@@ -1,0 +1,206 @@
+{
+  "id": "fuehlen-und-gefuehle",
+  "name": "Fühlen und Gefühle",
+  "description": "Wortschatz und Grammatik zum Thema: Fühlen und Gefühle",
+  "questionCount": 18,
+  "questions": [
+    {
+      "id": 1,
+      "type": "fill-in-blank",
+      "question": "Wie <b>...</b> es Ihnen?",
+      "options": [
+        "fühlt",
+        "geht",
+        "läuft"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 2,
+      "type": "fill-in-blank",
+      "question": "Mir geht es nicht gut. Ich <b>...</b> mich schlecht.",
+      "options": [
+        "fühle",
+        "gehe",
+        "laufe"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 3,
+      "type": "fill-in-blank",
+      "question": "Heute ist die Prüfung. Ich bin sehr nervös und <b>...</b> .",
+      "options": [
+        "aufgeregt",
+        "entspannt",
+        "ruhig"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 4,
+      "type": "fill-in-blank",
+      "question": "<b>...</b> geht es Ihnen bald wieder besser!",
+      "options": [
+        "Glücklich",
+        "Hoffentlich",
+        "Möglichst"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 5,
+      "type": "fill-in-blank",
+      "question": "Vielen Dank für das Geschenk. Ich habe mich sehr <b>...</b> .",
+      "options": [
+        "gefallen",
+        "gefehlt",
+        "gefreut"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 6,
+      "type": "fill-in-blank",
+      "question": "Schade, dass du nicht da bist. Ich <b>...</b> dich sehr.",
+      "options": [
+        "vermisse",
+        "verpasse",
+        "wünsche"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 7,
+      "type": "fill-in-blank",
+      "question": "Es gibt so viel zu tun, ich habe heute zu viele Aufgaben und deshalb sehr viel <b>...</b> .",
+      "options": [
+        "Freude",
+        "Schreck",
+        "Stress"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 8,
+      "type": "fill-in-blank",
+      "question": "Ewa hatte einen Unfall. Aber es war nicht <b>...</b> . Ewa geht es gut.",
+      "options": [
+        "kaputt",
+        "schade",
+        "schlimm"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 9,
+      "type": "fill-in-blank",
+      "question": "Ich erzähle deine Probleme nicht weiter. Du kannst <b>...</b> .",
+      "options": [
+        "mich vergessen",
+        "mir vertrauen",
+        "mir zuhören"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 10,
+      "type": "fill-in-blank",
+      "question": "Ich sitze gern in der Sonne, das finde ich sehr <b>...</b> .",
+      "options": [
+        "angenehm",
+        "unangenehm",
+        "üblich"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 11,
+      "type": "fill-in-blank",
+      "question": "Du bist krank? Das tut mir sehr <b>...</b> . Gute Besserung!",
+      "options": [
+        "gut",
+        "leid",
+        "weh"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 12,
+      "type": "fill-in-blank",
+      "question": "<b>...</b>, das war nicht meine Absicht. Das wollte ich nicht.",
+      "options": [
+        "Bitte",
+        "Danke",
+        "Entschuldigung"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 13,
+      "type": "fill-in-blank",
+      "question": "Tom hat Angst vor Tieren. Tom ist sehr <b>...</b> .",
+      "options": [
+        "ängstlich",
+        "freundlich",
+        "verliebt"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 14,
+      "type": "fill-in-blank",
+      "question": "Der Film war lustig. Wir haben <b>...</b> .",
+      "options": [
+        "oft geweint",
+        "uns sehr geärgert",
+        "viel gelacht"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 15,
+      "type": "fill-in-blank",
+      "question": "<b>...</b> du lieber süßes oder salziges Essen?",
+      "options": [
+        "Gefällt",
+        "Hast",
+        "Magst"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 16,
+      "type": "fill-in-blank",
+      "question": "Was soll ich dir zum Geburtstag schenken? Was <b>...</b> du dir?",
+      "options": [
+        "bekommst",
+        "träumst",
+        "wünschst"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 17,
+      "type": "fill-in-blank",
+      "question": "Mein neuer Kollege ist sehr sympathisch. Ein ganz <b>...</b> Mann.",
+      "options": [
+        "netter",
+        "schrecklicher",
+        "unfreundlicher"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 18,
+      "type": "fill-in-blank",
+      "question": "Manchmal fühle ich mich sehr <b>...</b> , weil ich nicht viele Leute kenne und oft allein bin.",
+      "options": [
+        "anders",
+        "einsam",
+        "erfolgreich"
+      ],
+      "correctAnswer": 1
+    }
+  ]
+}

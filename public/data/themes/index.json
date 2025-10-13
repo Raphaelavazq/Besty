@@ -1,0 +1,104 @@
+{
+  "themes": [
+    {
+      "id": "aemter-und-behoerden",
+      "name": "Aemter und Behörden",
+      "questionCount": 15
+    },
+    {
+      "id": "arbeit",
+      "name": "Arbeit",
+      "questionCount": 20
+    },
+    {
+      "id": "arbeitssuche",
+      "name": "Arbeitssuche",
+      "questionCount": 11
+    },
+    {
+      "id": "aus--und-weiterbildung",
+      "name": "Aus- und Weiterbildung",
+      "questionCount": 14
+    },
+    {
+      "id": "banken-und-versicherungen",
+      "name": "Banken und Versicherungen",
+      "questionCount": 15
+    },
+    {
+      "id": "betreuung-und-ausbildung-der-kinder",
+      "name": "Betreuung und Ausbildung der Kinder",
+      "questionCount": 15
+    },
+    {
+      "id": "einkaufen",
+      "name": "Einkaufen",
+      "questionCount": 20
+    },
+    {
+      "id": "essen-und-trinken",
+      "name": "Essen und Trinken",
+      "questionCount": 16
+    },
+    {
+      "id": "familie-und-co",
+      "name": "Familie und Co",
+      "questionCount": 15
+    },
+    {
+      "id": "freizeit",
+      "name": "Freizeit",
+      "questionCount": 18
+    },
+    {
+      "id": "fuehlen-und-gefuehle",
+      "name": "Fühlen und Gefühle",
+      "questionCount": 18
+    },
+    {
+      "id": "gesundheit",
+      "name": "Gesundheit",
+      "questionCount": 20
+    },
+    {
+      "id": "koerper",
+      "name": "Körper",
+      "questionCount": 15
+    },
+    {
+      "id": "mediennutzung",
+      "name": "Mediennutzung",
+      "questionCount": 11
+    },
+    {
+      "id": "mobilitaet",
+      "name": "Mobilität",
+      "questionCount": 15
+    },
+    {
+      "id": "moebel-und-einrichtung",
+      "name": "Möbel und Einrichtung",
+      "questionCount": 15
+    },
+    {
+      "id": "natur",
+      "name": "Natur",
+      "questionCount": 16
+    },
+    {
+      "id": "unterricht",
+      "name": "Unterricht",
+      "questionCount": 14
+    },
+    {
+      "id": "wohnen",
+      "name": "Wohnen",
+      "questionCount": 20
+    },
+    {
+      "id": "zeit",
+      "name": "Zeit",
+      "questionCount": 13
+    }
+  ]
+}

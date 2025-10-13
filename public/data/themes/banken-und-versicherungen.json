@@ -1,0 +1,173 @@
+{
+  "id": "banken-und-versicherungen",
+  "name": "Banken und Versicherungen",
+  "description": "Wortschatz und Grammatik zum Thema: Banken und Versicherungen",
+  "questionCount": 15,
+  "questions": [
+    {
+      "id": 1,
+      "type": "fill-in-blank",
+      "question": "Meine Versicherung hat den Beitrag <b>...</b> . Wir bezahlen jetzt jeden Monat mehr Geld.",
+      "options": [
+        "erfüllt",
+        "erhöht",
+        "ermäßigt"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 2,
+      "type": "fill-in-blank",
+      "question": "Bitte <b>…</b> Sie Ihren Termin am 25.03. per E-Mail. Oder sagen Sie ab.",
+      "options": [
+        "bestätigen",
+        "kontrollieren",
+        "vereinbaren"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 3,
+      "type": "fill-in-blank",
+      "question": "Bitte teilen Sie uns mit, bei welcher Krankenkasse Sie <b>…</b> sind.",
+      "options": [
+        "angemeldet",
+        "sicher",
+        "versichert"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 4,
+      "type": "fill-in-blank",
+      "question": "Sie haben keine Haftpflichtversicherung? Dann sollten Sie eine Versicherung <b>…</b> ! Das ist wichtig.",
+      "options": [
+        "abschließen",
+        "anmelden",
+        "sichern"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 5,
+      "type": "fill-in-blank",
+      "question": "Ich hatte einen Autounfall. Ich muss den Schaden der Versicherung <b>…</b> .",
+      "options": [
+        "aufpassen",
+        "melden",
+        "schicken"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 6,
+      "type": "fill-in-blank",
+      "question": "Bei welcher <b>…</b> hast du dein Giro-Konto?",
+      "options": [
+        "Bank",
+        "Firma",
+        "Versicherung"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 7,
+      "type": "fill-in-blank",
+      "question": "Wir möchten Sie über die geänderten Beiträge und Bedingungen <b>…</b> .",
+      "options": [
+        "anbieten",
+        "fragen",
+        "informieren"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 8,
+      "type": "fill-in-blank",
+      "question": "Geben Sie uns bitte <b>…</b> , wann Sie für ein Kundengespräch Zeit haben.",
+      "options": [
+        "Beschäftigung",
+        "Bescheid",
+        "Bescheinigung"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 9,
+      "type": "fill-in-blank",
+      "question": "Bitte <b>…</b> Sie die Kursgebühr spätestens bis zum 1. Juni auf unser Konto.",
+      "options": [
+        "überlegen",
+        "übernehmen",
+        "überweisen"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 10,
+      "type": "fill-in-blank",
+      "question": "Ich möchte ein neues Konto <b>…</b> .",
+      "options": [
+        "einzahlen",
+        "eröffnen",
+        "öffnen"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 11,
+      "type": "fill-in-blank",
+      "question": "Sie können bar, mit Kreditkarte oder per <b>…</b> zahlen.",
+      "options": [
+        "Einschreiben",
+        "Mahnung",
+        "Überweisung"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 12,
+      "type": "fill-in-blank",
+      "question": "Sie können heute leider nur mit Bargeld bezahlen. Das Gerät für <b>…</b> funktioniert nicht.",
+      "options": [
+        "die Giro-Karte",
+        "Geldscheine",
+        "in bar"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 13,
+      "type": "fill-in-blank",
+      "question": "Ich <b>…</b> einen neuen Computer. Bald habe ich genug Geld.",
+      "options": [
+        "spare für",
+        "warte auf",
+        "zahle für"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 14,
+      "type": "fill-in-blank",
+      "question": "Das Gegenteil von „Geld auf das Konto einzahlen“ ist „Geld vom Konto <b>…</b> “.",
+      "options": [
+        "abheben",
+        "abholen",
+        "abnehmen"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 15,
+      "type": "fill-in-blank",
+      "question": "Sie möchten sich Geld von der Bank leihen? Dann nehmen Sie einen <b>…</b> auf.",
+      "options": [
+        "Karte",
+        "Kredit",
+        "Zinsen"
+      ],
+      "correctAnswer": 1
+    }
+  ]
+}

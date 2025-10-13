@@ -1,0 +1,173 @@
+{
+  "id": "mobilitaet",
+  "name": "Mobilität",
+  "description": "Wortschatz und Grammatik zum Thema: Mobilität",
+  "questionCount": 15,
+  "questions": [
+    {
+      "id": 1,
+      "type": "fill-in-blank",
+      "question": "Fährst du mit dem Auto zum Kurs oder gehst du <b>...</b> ?",
+      "options": [
+        "mit dem Fahrrad",
+        "mit der Fähre",
+        "zu Fuß"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 2,
+      "type": "fill-in-blank",
+      "question": "Bus, Straßenbahn, U-Bahn sind <b>...</b> .",
+      "options": [
+        "kostenloser Transport",
+        "öffentliche Verkehrsmittel",
+        "zuverlässige Fahrzeuge"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 3,
+      "type": "fill-in-blank",
+      "question": "Das Zentrum von einer Stadt heißt <b>...</b> .",
+      "options": [
+        "Hauptstadt",
+        "Innenstadt",
+        "Marktplatz"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 4,
+      "type": "fill-in-blank",
+      "question": "Man darf hier nicht mit dem Auto stehen. Das ist eine Einfahrt. Bitte <b>...</b> Sie weiter.",
+      "options": [
+        "fahren",
+        "gehen",
+        "parken"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 5,
+      "type": "fill-in-blank",
+      "question": "Hier steigt man in den Bus ein und aus: <b>...</b> .",
+      "options": [
+        "das Gleis",
+        "die Haltestelle",
+        "der Parkplatz"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 6,
+      "type": "fill-in-blank",
+      "question": "Aus einem Verkehrsmittel „rausgehen“ oder „<b>...</b>„.",
+      "options": [
+        "aussteigen",
+        "einsteigen",
+        "umsteigen"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 7,
+      "type": "fill-in-blank",
+      "question": "An welchem <b>...</b> kommt der ICE aus Fulda an?",
+      "options": [
+        "Bahnhof",
+        "Gleis",
+        "Zug"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 8,
+      "type": "fill-in-blank",
+      "question": "Der Regionalexpress nach Dresden <b>...</b> heute um 17:23 Uhr von Gleis 3 <b>...</b> .",
+      "options": [
+        "fährt ... ab",
+        "geht … los",
+        "hält … an"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 9,
+      "type": "fill-in-blank",
+      "question": "Leider sind wir 10 Minuten <b>...</b> und kommen erst um 19:20 Uhr an.",
+      "options": [
+        "verspätet",
+        "zu früh",
+        "zu langsam"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 10,
+      "type": "fill-in-blank",
+      "question": "Wir erreichen in Kürze Leipzig Hauptbahnhof. Sie haben <b>...</b> an die Regionalbahn in Richtung Görlitz, heute von Gleis 6.",
+      "options": [
+        "Abfahrt",
+        "Anschluss",
+        "Umstieg"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 11,
+      "type": "fill-in-blank",
+      "question": "Halt an, <b>...</b> ist rot!",
+      "options": [
+        "das Schild",
+        "die Ampel",
+        "die Kreuzung"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 12,
+      "type": "fill-in-blank",
+      "question": "Erst wenn man einen <b>...</b> hat, darf man mit dem Auto auf der Straße fahren.",
+      "options": [
+        "Fahrplan",
+        "Führerschein",
+        "Stadtplan"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 13,
+      "type": "fill-in-blank",
+      "question": "Ich bin <b>...</b> und in 5 Minuten bei dir.",
+      "options": [
+        "gestoppt",
+        "im Stau",
+        "unterwegs"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 14,
+      "type": "fill-in-blank",
+      "question": "Fahr nicht so schnell. Das ist <b>...</b> .",
+      "options": [
+        "erlaubt",
+        "gefährlich",
+        "üblich"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 15,
+      "type": "fill-in-blank",
+      "question": "Da stehen die Polizei und ein Krankenwagen – da ist bestimmt <b>...</b> passiert.",
+      "options": [
+        "ein Unfall",
+        "ein Stau",
+        "eine Baustelle"
+      ],
+      "correctAnswer": 0
+    }
+  ]
+}

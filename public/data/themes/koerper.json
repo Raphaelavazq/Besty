@@ -1,0 +1,173 @@
+{
+  "id": "koerper",
+  "name": "Körper",
+  "description": "Wortschatz und Grammatik zum Thema: Körper",
+  "questionCount": 15,
+  "questions": [
+    {
+      "id": 1,
+      "type": "fill-in-blank",
+      "question": "Von Kopf bis Fuß, diese Creme können Sie für <b>...</b> verwenden.",
+      "options": [
+        "den ganzen Körper",
+        "die Zähne",
+        "Ihre Gesundheit"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 2,
+      "type": "fill-in-blank",
+      "question": "Oben auf dem Kopf sind <b>...</b> .",
+      "options": [
+        "der Bart",
+        "die Haare",
+        "die Zähne"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 3,
+      "type": "fill-in-blank",
+      "question": "Am Fuß sind Zehen, an der Hand sind <b>...</b> .",
+      "options": [
+        "Beine",
+        "Finger",
+        "Knie"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 4,
+      "type": "fill-in-blank",
+      "question": "Das hat man im Gesicht, braucht man zum Essen und zum Sprechen: <b>...</b> .",
+      "options": [
+        "das Auge",
+        "die Nase",
+        "der Mund"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 5,
+      "type": "fill-in-blank",
+      "question": "Mit der Nase <b>...</b> man.",
+      "options": [
+        "hört",
+        "läuft",
+        "riecht"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 6,
+      "type": "fill-in-blank",
+      "question": "Mir tut der <b>...</b> weh, weil ich zu viel gegessen habe.",
+      "options": [
+        "Bauch",
+        "Kopf",
+        "Rücken"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 7,
+      "type": "fill-in-blank",
+      "question": "Ich brauche eine Brille, meine Augen sind <b>...</b> und ich sehe nicht gut.",
+      "options": [
+        "offen",
+        "schlecht",
+        "weh"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 8,
+      "type": "fill-in-blank",
+      "question": "Wie viel <b>...</b> Sie? 70 Kilogramm?",
+      "options": [
+        "bringen",
+        "haben",
+        "wiegen"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 9,
+      "type": "fill-in-blank",
+      "question": "Wie <b>...</b> bist du? 1,70 m?",
+      "options": [
+        "klein",
+        "groß",
+        "schmal"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 10,
+      "type": "fill-in-blank",
+      "question": "Sie sind zu <b>...</b> . Sie sollten mehr essen.",
+      "options": [
+        "dick",
+        "dünn",
+        "fett"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 11,
+      "type": "fill-in-blank",
+      "question": "„Körpergewicht reduzieren“ oder „<b>...</b>“",
+      "options": [
+        "abnehmen",
+        "aussehen",
+        "zunehmen"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 12,
+      "type": "fill-in-blank",
+      "question": "„größer werden“ oder „<b>...</b>“",
+      "options": [
+        "wachsen",
+        "wechseln",
+        "weinen"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 13,
+      "type": "fill-in-blank",
+      "question": "Schläfst du schon oder bist du noch <b>...</b> ?",
+      "options": [
+        "geschlafen",
+        "erholt",
+        "wach"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 14,
+      "type": "fill-in-blank",
+      "question": "Ich habe nicht genug geschlafen, deshalb bin ich heute so <b>...</b> .",
+      "options": [
+        "durstig",
+        "hungrig",
+        "müde"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 15,
+      "type": "fill-in-blank",
+      "question": "Ihr Körper braucht <b>...</b> Schlaf. Das ist wichtig.",
+      "options": [
+        "genug",
+        "zu viel",
+        "zu wenig"
+      ],
+      "correctAnswer": 0
+    }
+  ]
+}

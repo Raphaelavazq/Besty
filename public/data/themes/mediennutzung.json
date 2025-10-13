@@ -1,0 +1,129 @@
+{
+  "id": "mediennutzung",
+  "name": "Mediennutzung",
+  "description": "Wortschatz und Grammatik zum Thema: Mediennutzung",
+  "questionCount": 11,
+  "questions": [
+    {
+      "id": 1,
+      "type": "fill-in-blank",
+      "question": "Ich lese gern <b>...</b> wie Romane oder Science-Fiction.",
+      "options": [
+        "Bücher",
+        "Filme",
+        "Musik"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 2,
+      "type": "fill-in-blank",
+      "question": "Wir haben einen Fernseher, aber ich <b>...</b> nicht oft <b>...</b> .",
+      "options": [
+        "höre … zu",
+        "mache … mit",
+        "sehe … fern"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 3,
+      "type": "fill-in-blank",
+      "question": "Wir haben keine Zeitung abonniert. Ich <b>...</b> Nachrichten im Internet.",
+      "options": [
+        "empfange",
+        "lese",
+        "schreibe"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 4,
+      "type": "fill-in-blank",
+      "question": "Kannst du bitte mal das Radio <b>...</b> ? Ich möchte die Nachrichten hören.",
+      "options": [
+        "ansehen",
+        "ausmachen",
+        "einschalten"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 5,
+      "type": "fill-in-blank",
+      "question": "Geld, das man für Radio und Fernsehen bezahlen muss, sind die <b>...</b> .",
+      "options": [
+        "Anschlussgebühren",
+        "Rundfunkgebühren",
+        "Werbungskosten"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 6,
+      "type": "fill-in-blank",
+      "question": "Bei welchem Mobilfunkanbieter hast du <b>...</b> für dein Handy abgeschlossen?",
+      "options": [
+        "das Angebot",
+        "die Bestellung",
+        "den Vertrag"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 7,
+      "type": "fill-in-blank",
+      "question": "Wie können wir Sie bei Fragen <b>...</b> ? Telefonisch oder per Mail?",
+      "options": [
+        "anrufen",
+        "erreichen",
+        "fragen"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 8,
+      "type": "fill-in-blank",
+      "question": "Sie möchten unser Filmangebot auf vier Geräten nutzen? Dann <b>...</b> Sie bitte das „Familienpaket“ für 11,99 € im Monat.",
+      "options": [
+        "abmelden",
+        "abonnieren",
+        "senden"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 9,
+      "type": "fill-in-blank",
+      "question": "Sie können Ihr Abonnement bei uns <b>...</b> . Bitte denken Sie an die Frist.",
+      "options": [
+        "erlauben",
+        "kennenlernen",
+        "kündigen"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 10,
+      "type": "fill-in-blank",
+      "question": "Das Gegenteil von „eine Datei löschen“ ist „eine Datei <b>...</b> “.",
+      "options": [
+        "notieren",
+        "speichern",
+        "stehlen"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 11,
+      "type": "fill-in-blank",
+      "question": "Im Internet gibt es viele Gefahren für Kinder. Man muss Kinder davor <b>...</b> .",
+      "options": [
+        "schimpfen",
+        "schützen",
+        "stürzen"
+      ],
+      "correctAnswer": 1
+    }
+  ]
+}

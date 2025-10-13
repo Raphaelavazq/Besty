@@ -2,7 +2,8 @@
 
 **Date:** October 12, 2025  
 **Status:** Clean Slate - Old implementation deleted  
-**Source Materials:** 
+**Source Materials:**
+
 - Britta Weber et al - Mit Erfolg zum Deutsch-Test für Zuwanderer (2023)
 - 78 official audio tracks (MEz_DTZ_Track_01-78.mp3)
 - Official DTZ Modelltest 1 PDF with questions and solutions
@@ -271,9 +272,10 @@ src/features/hoeren/
 ### B. Player Specification (`HoerenPlayer.tsx`)
 
 **Props:**
+
 ```typescript
 interface HoerenPlayerProps {
-  mode: 'uebung' | 'pruefung';
+  mode: "uebung" | "pruefung";
   trackId: string;
   currentItem: HoerenItem;
   transcriptText?: string;
@@ -287,6 +289,7 @@ interface HoerenPlayerProps {
 ```
 
 **Features:**
+
 - ✅ Keyboard controls (Space, ←/→, 1/2/3 for options)
 - ✅ Transcript toggle (visible in Übung, hidden in Prüfung)
 - ✅ Mode-aware behavior (replay allowed in Übung only)
@@ -297,7 +300,7 @@ interface HoerenPlayerProps {
 
 ```typescript
 interface HoerenEngineState {
-  mode: 'uebung' | 'pruefung';
+  mode: "uebung" | "pruefung";
   currentTeil: number;
   currentItemIndex: number;
   items: HoerenItem[];
@@ -314,7 +317,7 @@ interface HoerenEngineActions {
 }
 
 export function useHoerenEngine(
-  mode: 'uebung' | 'pruefung',
+  mode: "uebung" | "pruefung",
   content: TestOrUebungContent
 ): [HoerenEngineState, HoerenEngineActions];
 ```
@@ -322,13 +325,10 @@ export function useHoerenEngine(
 ### D. Scoring Logic (`scoring.ts`)
 
 ```typescript
-export function scoreItem(
-  item: HoerenItem,
-  userAnswer: string
-): ItemResult {
+export function scoreItem(item: HoerenItem, userAnswer: string): ItemResult {
   return {
     correct: userAnswer === item.correct,
-    points: userAnswer === item.correct ? 1 : 0
+    points: userAnswer === item.correct ? 1 : 0,
   };
 }
 
@@ -336,15 +336,13 @@ export function scoreTest(
   items: HoerenItem[],
   answers: Record<number, string>
 ): TestScore {
-  const results = items.map(item => 
-    scoreItem(item, answers[item.no])
-  );
-  
+  const results = items.map((item) => scoreItem(item, answers[item.no]));
+
   return {
     total: items.length,
-    correct: results.filter(r => r.correct).length,
+    correct: results.filter((r) => r.correct).length,
     percentage: (correct / total) * 100,
-    passed: percentage >= 60
+    passed: percentage >= 60,
   };
 }
 ```
@@ -355,21 +353,23 @@ export function scoreTest(
 
 ### A. New Routes
 
-| Route | Component | Purpose |
-|-------|-----------|---------|
-| `/tests/hoeren` | `HoerenHub.jsx` | Landing page (keep existing) |
-| `/tests/hoeren/uebung/:teil` | `HoerenUebung.tsx` | Practice Teil 1-4 |
-| `/tests/hoeren/pruefung/:testId` | `HoerenPruefung.tsx` | Full model test |
+| Route                            | Component            | Purpose                      |
+| -------------------------------- | -------------------- | ---------------------------- |
+| `/tests/hoeren`                  | `HoerenHub.jsx`      | Landing page (keep existing) |
+| `/tests/hoeren/uebung/:teil`     | `HoerenUebung.tsx`   | Practice Teil 1-4            |
+| `/tests/hoeren/pruefung/:testId` | `HoerenPruefung.tsx` | Full model test              |
 
 ### B. Route Parameters
 
 **Übung:** `/tests/hoeren/uebung/teil1`
+
 - `teil` = 1, 2, 3, or 4
 - Loads exercises from `uebung.json`
 - Shows immediate feedback
 - Allows replay
 
 **Prüfung:** `/tests/hoeren/pruefung/modelltest-1`
+
 - `testId` = modelltest-1, modelltest-2, etc.
 - Loads test from `tests.json`
 - No feedback during test
@@ -441,6 +441,7 @@ Test complete → Show Antwortbogen + Score + Review
 ### A. Local State (React hooks)
 
 Use `useHoerenEngine` hook for:
+
 - Current item tracking
 - Answer collection
 - Feedback display
@@ -451,6 +452,7 @@ Use `useHoerenEngine` hook for:
 ### B. Optional Persistence
 
 Use `localStorage` for:
+
 - Practice progress (which exercises completed)
 - Last visited Teil
 - User preferences (transcript default visibility)
@@ -465,19 +467,19 @@ Use `localStorage` for:
 
 ```typescript
 export async function getTest(testId: string): Promise<HoerenTest> {
-  const data = await fetch('/content/dtz/hoeren/tests.json');
+  const data = await fetch("/content/dtz/hoeren/tests.json");
   const json = await data.json();
-  return json.tests.find(t => t.id === testId);
+  return json.tests.find((t) => t.id === testId);
 }
 
 export async function getUebungTeil(teil: number): Promise<UebungTeil> {
-  const data = await fetch('/content/dtz/hoeren/uebung.json');
+  const data = await fetch("/content/dtz/hoeren/uebung.json");
   const json = await data.json();
   return json.uebung[`teil${teil}`];
 }
 
 export async function getTranscript(ref: string): Promise<Transcript> {
-  const data = await fetch('/content/dtz/hoeren/transcripts.json');
+  const data = await fetch("/content/dtz/hoeren/transcripts.json");
   const json = await data.json();
   return json.transcripts[ref];
 }
@@ -492,16 +494,16 @@ export function getAudioUrl(trackId: string): string {
 Use Zod schemas to validate loaded content:
 
 ```typescript
-import { z } from 'zod';
+import { z } from "zod";
 
 const HoerenItemSchema = z.object({
   no: z.number().min(1).max(20),
   track: z.string(),
-  type: z.enum(['mc3', 'tf', 'match6']),
+  type: z.enum(["mc3", "tf", "match6"]),
   question: z.string(),
   options: z.array(z.string()),
   correct: z.string(),
-  transcript_ref: z.string()
+  transcript_ref: z.string(),
 });
 ```
 
@@ -511,16 +513,16 @@ const HoerenItemSchema = z.object({
 
 ### A. Keyboard Navigation
 
-| Key | Action | Context |
-|-----|--------|---------|
-| Space | Play/Pause | Always |
-| ← | Seek -5s | Übung only |
-| → | Seek +5s | Übung only |
-| 1/2/3 | Select option | MC questions |
-| R | Replay track | Übung only |
-| T | Toggle transcript | Übung only |
-| Enter | Submit answer | Always |
-| Esc | Close modal | Always |
+| Key   | Action            | Context      |
+| ----- | ----------------- | ------------ |
+| Space | Play/Pause        | Always       |
+| ←     | Seek -5s          | Übung only   |
+| →     | Seek +5s          | Übung only   |
+| 1/2/3 | Select option     | MC questions |
+| R     | Replay track      | Übung only   |
+| T     | Toggle transcript | Übung only   |
+| Enter | Submit answer     | Always       |
+| Esc   | Close modal       | Always       |
 
 ### B. Screen Reader Support
 
@@ -555,11 +557,13 @@ const HoerenItemSchema = z.object({
 ### C. Content Validation
 
 Script to verify:
+
 ```bash
 npm run validate:hoeren
 ```
 
 Checks:
+
 - ✅ All 20 test items present (no gaps)
 - ✅ All referenced tracks exist in `public/audio/hoeren/`
 - ✅ All transcript refs resolve
@@ -571,24 +575,28 @@ Checks:
 ## 9. Migration Path (Safe Cutover)
 
 ### Phase 1: Parallel Implementation (Week 1)
+
 - ✅ Old code deleted (done)
 - Build new components under `src/features/hoeren/`
 - New routes don't conflict with old ones
 - Test in isolation
 
 ### Phase 2: Content Import (Week 2)
+
 - Map all 78 tracks to semantic IDs
 - Extract transcripts from PDF
 - Create tests.json, uebung.json, transcripts.json
 - Validate with integrity script
 
 ### Phase 3: Route Activation (Week 3)
+
 - Update HoerenHub to link to new routes
 - Deploy behind feature flag (optional)
 - QA full flows
 - Monitor for issues
 
 ### Phase 4: Cleanup
+
 - Remove any temporary scaffolding
 - Optimize bundle size
 - Add analytics events

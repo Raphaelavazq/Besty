@@ -1,0 +1,206 @@
+{
+  "id": "freizeit",
+  "name": "Freizeit",
+  "description": "Wortschatz und Grammatik zum Thema: Freizeit",
+  "questionCount": 18,
+  "questions": [
+    {
+      "id": 1,
+      "type": "fill-in-blank",
+      "question": "Was machst du gern in deiner Freizeit? Welche <b>...</b> hast du?",
+      "options": [
+        "Alltag",
+        "Hobbys",
+        "Themen"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 2,
+      "type": "fill-in-blank",
+      "question": "Ich <b>...</b> Klavier. Machst du auch gern Musik?",
+      "options": [
+        "singe",
+        "spiele",
+        "tanze"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 3,
+      "type": "fill-in-blank",
+      "question": "Welche Band <b>...</b> heute bei dem Konzert <b>...</b> ?",
+      "options": [
+        "gibt … auf (aufgeben)",
+        "nimmt ... auf (aufnehmen)",
+        "tritt … auf (auftreten)"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 4,
+      "type": "fill-in-blank",
+      "question": "Wie viel kostet <b>...</b> für den Film?",
+      "options": [
+        "eine Einladung",
+        "eine Karte",
+        "ein Programm"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 5,
+      "type": "fill-in-blank",
+      "question": "Der Film war super! Ich bin total <b>...</b> .",
+      "options": [
+        "begeistert",
+        "berühmt",
+        "erschöpft"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 6,
+      "type": "fill-in-blank",
+      "question": "Am Samstag fahre ich mit meiner Familie nach Hamburg. Wir <b>...</b> uns schon sehr.",
+      "options": [
+        "erinnern",
+        "feiern",
+        "freuen"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 7,
+      "type": "fill-in-blank",
+      "question": "Essen kocht man, Kuchen <b>...</b> man.",
+      "options": [
+        "backt",
+        "brät",
+        "packt"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 8,
+      "type": "fill-in-blank",
+      "question": "Meine Freizeit <b>...</b> ich gern mit meinen Freunden oder im Garten.",
+      "options": [
+        "arbeite",
+        "verbinde",
+        "verbringe"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 9,
+      "type": "fill-in-blank",
+      "question": "Gartenarbeit mag ich sehr, die finde ich sehr <b>...</b> .",
+      "options": [
+        "entspannend",
+        "furchtbar",
+        "laut"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 10,
+      "type": "fill-in-blank",
+      "question": "Deniz spielt Fußball, er joggt und er macht Yoga. Deniz ist sehr <b>...</b> .",
+      "options": [
+        "freundlich",
+        "gemütlich",
+        "sportlich"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 11,
+      "type": "fill-in-blank",
+      "question": "Ich bin <b>...</b> im Sportverein und spiele Tischtennis in der Mannschaft.",
+      "options": [
+        "Freund",
+        "Mitarbeiter",
+        "Mitglied"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 12,
+      "type": "fill-in-blank",
+      "question": "Den Computerkurs mache ich nicht für die Arbeit, sondern <b>...</b> in meiner Freizeit.",
+      "options": [
+        "privat",
+        "offiziell",
+        "praktisch"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 13,
+      "type": "fill-in-blank",
+      "question": "Möchtest du am Wochenende etwas mit mir <b>...</b> ? Wir könnten spazieren gehen oder schwimmen.",
+      "options": [
+        "unternehmen",
+        "unterrichten",
+        "unterhalten"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 14,
+      "type": "fill-in-blank",
+      "question": "Am Wochenende bin ich mit Toni <b>...</b> . Wir wollen ein Eis essen.",
+      "options": [
+        "geredet",
+        "verabredet",
+        "versprochen"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 15,
+      "type": "fill-in-blank",
+      "question": "Ich bin müde, ich brauche <b>...</b> und möchte schlafen.",
+      "options": [
+        "Erholung",
+        "Erfahrung",
+        "Unterhaltung"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 16,
+      "type": "fill-in-blank",
+      "question": "Wir könnten das Schloss besichtigen. Das ist eine berühmte <b>...</b> in dieser Stadt.",
+      "options": [
+        "Sehenswürdigkeit",
+        "Souvenir",
+        "Spezialität"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 17,
+      "type": "fill-in-blank",
+      "question": "Wollen wir am Sonntagnachmittag <b>...</b> in die Natur machen? Nur für ein paar Stunden?",
+      "options": [
+        "eine Reise",
+        "einen Ausflug",
+        "einen Flug"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 18,
+      "type": "fill-in-blank",
+      "question": "Am Donnerstag habe ich Geburtstag, aber ich <b>...</b> nicht. Das ist bei uns nicht üblich.",
+      "options": [
+        "feiere",
+        "treffe",
+        "unternehme"
+      ],
+      "correctAnswer": 0
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "id": "zeit",
+  "name": "Zeit",
+  "description": "Wortschatz und Grammatik zum Thema: Zeit",
+  "questionCount": 13,
+  "questions": [
+    {
+      "id": 1,
+      "type": "fill-in-blank",
+      "question": "10:15 Uhr, das ist zehn Uhr fünfzehn oder: Viertel <b>...</b> zehn.",
+      "options": [
+        "bis",
+        "nach",
+        "vor"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 2,
+      "type": "fill-in-blank",
+      "question": "01.05., das ist der <b>...</b> Mai.",
+      "options": [
+        "ein",
+        "eins",
+        "erste"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 3,
+      "type": "fill-in-blank",
+      "question": "Ich gehe jedes Jahr einmal, also <b>...</b>, zum Zahnarzt.",
+      "options": [
+        "jährlich",
+        "monatlich",
+        "nie"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 4,
+      "type": "fill-in-blank",
+      "question": "Der Frühling, der Sommer, der Herbst und der Winter sind <b>...</b> .",
+      "options": [
+        "Feiertage",
+        "Jahreszeiten",
+        "Uhrzeiten"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 5,
+      "type": "fill-in-blank",
+      "question": "Der siebte <b>...</b> im Jahr ist der Juli.",
+      "options": [
+        "Das zweite Quartal",
+        "Der letzte Tag",
+        "Der siebte Monat"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 6,
+      "type": "fill-in-blank",
+      "question": "Eine Stunde hat sechzig <b>...</b> .",
+      "options": [
+        "Minuten",
+        "Stunden",
+        "Tage"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 7,
+      "type": "fill-in-blank",
+      "question": "Weihnachten und Ostern sind wichtige <b>...</b> in Deutschland.",
+      "options": [
+        "Arbeitstage",
+        "Feiertage",
+        "Freitage"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 8,
+      "type": "fill-in-blank",
+      "question": "Jeden Sonntag oder: <b>...</b>",
+      "options": [
+        "dieses Wochenende",
+        "jeder Werktag",
+        "sonntags"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 9,
+      "type": "fill-in-blank",
+      "question": "Bekommst du deine Zeitung täglich? Nein, nur einmal <b>...</b>, jede Woche am Freitag.",
+      "options": [
+        "feiertags",
+        "monatlich",
+        "wöchentlich"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 10,
+      "type": "fill-in-blank",
+      "question": "Eine zweitägige Reise <b>...</b> zwei Tage lang.",
+      "options": [
+        "dauert (dauern)",
+        "misst (messen)",
+        "verlängert (verlängern)"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 11,
+      "type": "fill-in-blank",
+      "question": "Wir arbeiten nur <b>...</b>, also Montag bis Freitag.",
+      "options": [
+        "ganztags",
+        "nachmittags",
+        "werktags"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 12,
+      "type": "fill-in-blank",
+      "question": "Ich komme nicht zu spät und nicht zu früh, ich bin sehr <b>...</b>",
+      "options": [
+        "pünktlich",
+        "rechtzeitig",
+        "ständig"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 13,
+      "type": "fill-in-blank",
+      "question": "Samstag und Sonntag sind <b>...</b> .",
+      "options": [
+        "das Wochenende",
+        "der Wochenanfang",
+        "ein"
+      ],
+      "correctAnswer": 0
+    }
+  ]
+}

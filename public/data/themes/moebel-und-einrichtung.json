@@ -1,0 +1,173 @@
+{
+  "id": "moebel-und-einrichtung",
+  "name": "Möbel und Einrichtung",
+  "description": "Wortschatz und Grammatik zum Thema: Möbel und Einrichtung",
+  "questionCount": 15,
+  "questions": [
+    {
+      "id": 1,
+      "type": "fill-in-blank",
+      "question": "Deine Wohnung ist sehr schön <b>...</b> . Ich mag deine Möbel.",
+      "options": [
+        "eingeräumt",
+        "eingerichtet",
+        "geputzt"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 2,
+      "type": "fill-in-blank",
+      "question": "Ich brauche noch einen <b>...</b> für meine Kleidung.",
+      "options": [
+        "Balkon",
+        "Sessel",
+        "Schrank"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 3,
+      "type": "fill-in-blank",
+      "question": "In meinem Bett habe ich eine Decke und zwei weiche <b>...</b> .",
+      "options": [
+        "Kissen",
+        "Lampen",
+        "Wände"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 4,
+      "type": "fill-in-blank",
+      "question": "Hier sollen mehrere Personen gemütlich sitzen, wir brauchen eine Couch oder <b>...</b> .",
+      "options": [
+        "ein Sofa",
+        "einen Stuhl",
+        "einen Tisch"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 5,
+      "type": "fill-in-blank",
+      "question": "Messer, Löffel und <b>...</b> sind: Besteck.",
+      "options": [
+        "Gabel",
+        "Glas",
+        "Tasse"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 6,
+      "type": "fill-in-blank",
+      "question": "Hilfst du mir nach dem Essen bitte, die Küche <b>...</b> ?",
+      "options": [
+        "abzuwaschen",
+        "aufzuräumen",
+        "zu spülen"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 7,
+      "type": "fill-in-blank",
+      "question": "Hast du das gehört? Ich glaube, jemand <b>...</b> an der Tür.",
+      "options": [
+        "klingelt",
+        "öffnet",
+        "schließt"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 8,
+      "type": "fill-in-blank",
+      "question": "Ein Gerät, das Teller, Tassen, Gläser und Besteck wäscht: die <b>...</b> .",
+      "options": [
+        "Klimaanlage",
+        "Spülmaschine",
+        "Waschmaschine"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 9,
+      "type": "fill-in-blank",
+      "question": "In meiner Küche stehen ein Tisch und vier <b>...</b> zum Sitzen.",
+      "options": [
+        "Herde",
+        "Kühlschränke",
+        "Stühle"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 10,
+      "type": "fill-in-blank",
+      "question": "Auf dem Boden <b>...</b> .",
+      "options": [
+        "hängt eine Lampe.",
+        "ist ein großes Fenster",
+        "liegt ein Teppich"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 11,
+      "type": "fill-in-blank",
+      "question": "Wo kann ich die Kaffeemaschine <b>...</b> ? Wo ist genug Platz dafür?",
+      "options": [
+        "aufhängen",
+        "einstellen",
+        "hinstellen"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 12,
+      "type": "fill-in-blank",
+      "question": "Da drüben ist eine <b>...</b> , dort kannst du dein Handy laden.",
+      "options": [
+        "Leitung",
+        "Steckdose",
+        "Wand"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 13,
+      "type": "fill-in-blank",
+      "question": "Die Waschmaschine ist kaputt. Wir müssen sie <b>...</b> lassen.",
+      "options": [
+        "herstellen",
+        "renovieren",
+        "reparieren"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 14,
+      "type": "fill-in-blank",
+      "question": "Wir wollen die Wände im Wohnzimmer in einer anderen Farbe <b>...</b> .",
+      "options": [
+        "malen",
+        "streichen",
+        "streiken"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 15,
+      "type": "fill-in-blank",
+      "question": "Wir haben noch keine Möbel und Geräte in der Küche. Die Küche ist <b>...</b> .",
+      "options": [
+        "eingerichtet",
+        "leer",
+        "möbliert"
+      ],
+      "correctAnswer": 1
+    }
+  ]
+}

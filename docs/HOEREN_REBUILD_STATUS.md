@@ -8,13 +8,16 @@
 ## ✅ Completed
 
 ### 1. Deep Audit (AUDIT_HOEREN.md)
+
 - Mapped all old components and data flows
 - Identified critical defects and root causes
 - Documented missing features vs. official DTZ structure
 - Analyzed 78 audio tracks from Britta Weber materials
 
 ### 2. Clean Slate
+
 **Deleted (old/broken):**
+
 - `src/pages/hoeren/` - Old implementation folder
 - `src/pages/Hoeren.jsx` - Broken selector page
 - `src/pages/HoerenCompleteTest.jsx` - Duplicate test logic
@@ -24,17 +27,20 @@
 - `content/hoeren/*.md` - Orphaned transcripts
 
 **Preserved:**
+
 - `src/pages/HoerenHub.jsx` - Video library (separate feature)
 - `src/components/AudioPlayerNew.jsx` - Will be enhanced
 - `src/components/QuestionCard.jsx` - Will be reused
 
 ### 3. Official Audio Import
+
 - ✅ **78 audio tracks** copied from Britta Weber materials
 - ✅ Files named `MEz_DTZ_Track_01.mp3` through `MEz_DTZ_Track_78.mp3`
 - ✅ All tracks in `public/audio/hoeren/`
 - ✅ Ready for manifest mapping
 
 ### 4. Re-Architecture Plan (PLAN_HOEREN_REBUILD.md)
+
 - Defined new data model (tests.json, uebung.json, transcripts.json, audio_manifest.json)
 - Designed component architecture (HoerenPlayer, HoerenUebung, HoerenPruefung)
 - Specified routing structure (`/tests/hoeren/uebung/:teil`, `/tests/hoeren/pruefung/:testId`)
@@ -47,6 +53,7 @@
 ## 🔄 In Progress
 
 ### 5. Implementation Notes (Next)
+
 - Detailed file tree with all components
 - Player technical spec (props, state, methods)
 - Content seeding strategy from PDFs
@@ -57,6 +64,7 @@
 ## 📋 Upcoming
 
 ### 6. Infrastructure (PR1)
+
 - Build `HoerenPlayer.tsx` with keyboard controls
 - Create `useHoerenEngine.ts` hook
 - Implement `scoring.ts` functions
@@ -64,12 +72,14 @@
 - Add TypeScript types
 
 ### 7. Content Import (PR2)
+
 - Map 78 tracks to official structure
 - Extract transcripts from PDF
 - Create all 4 JSON files
 - Validate with integrity script
 
 ### 8. Routes & QA (PR3)
+
 - Implement Übung routes
 - Implement Prüfung routes
 - Connect to new engine
@@ -86,6 +96,7 @@
 **Location:** `public/audio/hoeren/`
 
 **Estimated Structure (to be verified):**
+
 - Tracks 01-09: Übung Teil 1 (instruction + examples + exercises)
 - Tracks 10-19: Modelltest 1 Teil 1 (instruction + example + items 1-4)
 - Tracks 20-29: Modelltest 1 Teil 2 (instruction + example + items 5-9)

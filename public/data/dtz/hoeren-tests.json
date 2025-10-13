@@ -18,7 +18,11 @@
             "track": "MEz_DTZ_Track_03.mp3",
             "type": "mc3",
             "question": "Was sollen Reisende nach Frankfurt tun?",
-            "options": ["Am Flughafen umsteigen", "Auf den Zug aus Hamburg warten", "Den Zug von Gleis 3 nehmen"],
+            "options": [
+              "Am Flughafen umsteigen",
+              "Auf den Zug aus Hamburg warten",
+              "Den Zug von Gleis 3 nehmen"
+            ],
             "correct": "c"
           },
           {
@@ -27,7 +31,11 @@
             "startTime": 0,
             "type": "mc3",
             "question": "Wen soll Frau Jäger anrufen?",
-            "options": ["Den Kursleiter", "Die anderen Kursteilnehmer", "Die Projektleiterin"],
+            "options": [
+              "Den Kursleiter",
+              "Die anderen Kursteilnehmer",
+              "Die Projektleiterin"
+            ],
             "correct": "c"
           },
           {
@@ -45,7 +53,11 @@
             "startTime": 134,
             "type": "mc3",
             "question": "Es ist Montagnachmittag, Ihr Baby ist sehr krank. Was können Sie tun?",
-            "options": ["Den Bereitschaftsdienst anrufen", "Die Notfallnummer anrufen", "In die Praxis kommen"],
+            "options": [
+              "Den Bereitschaftsdienst anrufen",
+              "Die Notfallnummer anrufen",
+              "In die Praxis kommen"
+            ],
             "correct": "b"
           }
         ]
@@ -63,7 +75,11 @@
             "track": "MEz_DTZ_Track_06.mp3",
             "type": "mc3",
             "question": "Was können Sie gewinnen?",
-            "options": ["Einen Gutschein", "Eine Reise nach Italien", "Eintausend Euro in bar"],
+            "options": [
+              "Einen Gutschein",
+              "Eine Reise nach Italien",
+              "Eintausend Euro in bar"
+            ],
             "correct": "a"
           },
           {
@@ -81,7 +97,11 @@
             "startTime": 60,
             "type": "mc3",
             "question": "Die Tabletten kann man ...",
-            "options": ["gegen Magenschmerzen nehmen", "in der Apotheke kaufen", "vom Arzt bekommen"],
+            "options": [
+              "gegen Magenschmerzen nehmen",
+              "in der Apotheke kaufen",
+              "vom Arzt bekommen"
+            ],
             "correct": "b"
           },
           {
@@ -99,7 +119,11 @@
             "startTime": 179,
             "type": "mc3",
             "question": "Wo findet das Stadtfest statt?",
-            "options": ["Auf dem Marktplatz", "In der Schiller-Allee", "Vor dem Rathaus"],
+            "options": [
+              "Auf dem Marktplatz",
+              "In der Schiller-Allee",
+              "Vor dem Rathaus"
+            ],
             "correct": "b"
           }
         ]
@@ -127,7 +151,11 @@
             "startTime": 0,
             "type": "mc3",
             "question": "Mesut Kaptan ...",
-            "options": ["kann nicht kochen", "muss den Deutschkurs beenden", "pflegt seine kranke Frau"],
+            "options": [
+              "kann nicht kochen",
+              "muss den Deutschkurs beenden",
+              "pflegt seine kranke Frau"
+            ],
             "correct": "b"
           },
           {
@@ -145,7 +173,11 @@
             "startTime": 0,
             "type": "mc3",
             "question": "Der Mitarbeiter soll ...",
-            "options": ["die Maschine anschließen", "ein neues Teil bestellen", "heute noch liefern"],
+            "options": [
+              "die Maschine anschließen",
+              "ein neues Teil bestellen",
+              "heute noch liefern"
+            ],
             "correct": "c"
           },
           {
@@ -163,7 +195,11 @@
             "startTime": 97,
             "type": "mc3",
             "question": "Ana will zuerst ...",
-            "options": ["den Vermieter anrufen", "mit den Nachbarn sprechen", "mit dem Mieterverein telefonieren"],
+            "options": [
+              "den Vermieter anrufen",
+              "mit den Nachbarn sprechen",
+              "mit dem Mieterverein telefonieren"
+            ],
             "correct": "b"
           },
           {
@@ -181,7 +217,11 @@
             "startTime": 192,
             "type": "mc3",
             "question": "Was soll Herr Vogel tun?",
-            "options": ["Ein wichtiges Papier unterschreiben", "Mit seinem Chef sprechen", "Seine Tochter früher bringen"],
+            "options": [
+              "Ein wichtiges Papier unterschreiben",
+              "Mit seinem Chef sprechen",
+              "Seine Tochter früher bringen"
+            ],
             "correct": "c"
           }
         ]

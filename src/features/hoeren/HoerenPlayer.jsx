@@ -4,12 +4,24 @@
  * Mode-aware: Übung allows replay, Prüfung doesn't
  */
 
-import { useState, useRef, useEffect } from 'react';
-import { Play, Pause, RotateCcw, Volume2, CheckCircle, XCircle, AlertCircle } from 'lucide-react';
-import { triggerHaptic, triggerSuccessHaptic, triggerErrorHaptic } from '../../utils/haptics';
+import { useState, useRef, useEffect } from "react";
+import {
+  Play,
+  Pause,
+  RotateCcw,
+  Volume2,
+  CheckCircle,
+  XCircle,
+  AlertCircle,
+} from "lucide-react";
+import {
+  triggerHaptic,
+  triggerSuccessHaptic,
+  triggerErrorHaptic,
+} from "../../utils/haptics";
 
 export default function HoerenPlayer({
-  mode = 'pruefung',
+  mode = "pruefung",
   audioFile,
   item,
   pairedItem = null, // For Teil 3: second question in the pair
@@ -22,7 +34,7 @@ export default function HoerenPlayer({
   allowReplay = false,
   totalItems = 20,
   currentItemNumber = 1,
-  statements = null // For Teil 4 matching questions
+  statements = null, // For Teil 4 matching questions
 }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasPlayed, setHasPlayed] = useState(false);
@@ -39,42 +51,44 @@ export default function HoerenPlayer({
     if (audioRef.current) {
       setIsLoadingAudio(true);
       setAudioError(false);
-      
+
       const handleCanPlay = () => {
         setIsLoadingAudio(false);
         setAudioError(false);
       };
-      
+
       const handleError = () => {
         setIsLoadingAudio(false);
         setAudioError(true);
         triggerErrorHaptic();
       };
-      
-      audioRef.current.addEventListener('canplay', handleCanPlay);
-      audioRef.current.addEventListener('error', handleError);
-      
+
+      audioRef.current.addEventListener("canplay", handleCanPlay);
+      audioRef.current.addEventListener("error", handleError);
+
       // Seek to startTime if specified
       if (item.startTime !== undefined && item.startTime > 0) {
         audioRef.current.currentTime = item.startTime;
       }
 
-      if (mode === 'pruefung') {
+      if (mode === "pruefung") {
         const playPromise = audioRef.current.play();
         if (playPromise !== undefined) {
-          playPromise.then(() => {
-            setIsPlaying(true);
-            setHasPlayed(true);
-          }).catch(err => {
-            console.log('Autoplay prevented:', err);
-          });
+          playPromise
+            .then(() => {
+              setIsPlaying(true);
+              setHasPlayed(true);
+            })
+            .catch((err) => {
+              console.log("Autoplay prevented:", err);
+            });
         }
       }
-      
+
       return () => {
         if (audioRef.current) {
-          audioRef.current.removeEventListener('canplay', handleCanPlay);
-          audioRef.current.removeEventListener('error', handleError);
+          audioRef.current.removeEventListener("canplay", handleCanPlay);
+          audioRef.current.removeEventListener("error", handleError);
         }
       };
     }
@@ -84,7 +98,7 @@ export default function HoerenPlayer({
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
         // Scrolling down & past threshold
         setHideAudioPlayer(true);
@@ -92,17 +106,17 @@ export default function HoerenPlayer({
         // Scrolling up
         setHideAudioPlayer(false);
       }
-      
+
       lastScrollY.current = currentScrollY;
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const togglePlay = () => {
     if (!audioRef.current) return;
-    
+
     if (isPlaying) {
       audioRef.current.pause();
       setIsPlaying(false);
@@ -149,18 +163,19 @@ export default function HoerenPlayer({
   const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
-    return `${mins}:${secs.toString().padStart(2, '0')}`;
+    return `${mins}:${secs.toString().padStart(2, "0")}`;
   };
 
   const getOptionLabel = (index) => {
-    if (item.type === 'tf') {
-      return index === 0 ? 'Richtig' : 'Falsch';
+    if (item.type === "tf") {
+      return index === 0 ? "Richtig" : "Falsch";
     }
     return String.fromCharCode(97 + index); // a, b, c, d, e, f
   };
 
   const isCorrect = showFeedback && selectedAnswer === item.correct;
-  const isWrong = showFeedback && selectedAnswer && selectedAnswer !== item.correct;
+  const isWrong =
+    showFeedback && selectedAnswer && selectedAnswer !== item.correct;
 
   return (
     <div className="max-w-4xl mx-auto">
@@ -180,9 +195,13 @@ export default function HoerenPlayer({
       )}
 
       {/* Audio Player - Hides on scroll down, shows on scroll up */}
-      <div className={`sticky top-0 z-20 bg-white/95 backdrop-blur-md rounded-2xl lg:rounded-3xl shadow-lg p-4 lg:p-8 mb-4 lg:mb-6 border transition-all duration-300 ${
-        isPlaying ? 'border-purple-400 shadow-purple-200 shadow-xl' : 'border-purple-100'
-      } ${hideAudioPlayer ? '-translate-y-full opacity-0 pointer-events-none' : 'translate-y-0 opacity-100'}`}>
+      <div
+        className={`sticky top-0 z-20 bg-white/95 backdrop-blur-md rounded-2xl lg:rounded-3xl shadow-lg p-4 lg:p-8 mb-4 lg:mb-6 border transition-all duration-300 ${
+          isPlaying
+            ? "border-purple-400 shadow-purple-200 shadow-xl"
+            : "border-purple-100"
+        } ${hideAudioPlayer ? "-translate-y-full opacity-0 pointer-events-none" : "translate-y-0 opacity-100"}`}
+      >
         {/* Compact Header - Mobile */}
         <div className="flex items-center justify-between mb-3 lg:mb-6">
           <div className="flex items-center gap-2 lg:gap-3 min-w-0 flex-1">
@@ -196,8 +215,8 @@ export default function HoerenPlayer({
               </p>
             </div>
           </div>
-          
-          {mode === 'uebung' && (
+
+          {mode === "uebung" && (
             <span className="px-2 lg:px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs lg:text-sm font-medium flex-shrink-0">
               Übung
             </span>
@@ -212,7 +231,7 @@ export default function HoerenPlayer({
               onClick={togglePlay}
               disabled={isLoadingAudio}
               className={`w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white flex items-center justify-center hover:shadow-lg transition-all hover:scale-105 flex-shrink-0 ${
-                isLoadingAudio ? 'opacity-50 cursor-wait' : ''
+                isLoadingAudio ? "opacity-50 cursor-wait" : ""
               }`}
             >
               {isLoadingAudio ? (
@@ -229,14 +248,16 @@ export default function HoerenPlayer({
               <div className="text-xs lg:text-sm text-gray-600 mb-1">
                 {formatTime(currentTime)} / {formatTime(duration)}
               </div>
-              
+
               {/* Progress Bar - Inline */}
               <div className="w-full h-1.5 lg:h-2 bg-purple-100 rounded-full overflow-hidden">
-                <div 
+                <div
                   className={`h-full bg-gradient-to-r from-purple-600 to-indigo-600 transition-all ${
-                    isPlaying ? 'animate-pulse' : ''
+                    isPlaying ? "animate-pulse" : ""
                   }`}
-                  style={{ width: `${duration > 0 ? (currentTime / duration) * 100 : 0}%` }}
+                  style={{
+                    width: `${duration > 0 ? (currentTime / duration) * 100 : 0}%`,
+                  }}
                 />
               </div>
             </div>
@@ -265,7 +286,7 @@ export default function HoerenPlayer({
       </div>
 
       {/* Statements Box (Teil 4 only) - Interactive & Compact */}
-      {statements && item.type === 'match' && (
+      {statements && item.type === "match" && (
         <div className="bg-purple-50/80 backdrop-blur-md rounded-2xl lg:rounded-3xl shadow-lg p-4 lg:p-6 mb-4 lg:mb-6 border border-purple-200">
           <h3 className="text-base lg:text-lg font-bold text-gray-900 mb-2 lg:mb-4">
             Aussagen zum Thema "Kinder und Internet"
@@ -277,27 +298,38 @@ export default function HoerenPlayer({
             {statements.map((statement, index) => {
               const optionValue = String.fromCharCode(97 + index); // a, b, c, d, e, f
               const isSelected = selectedAnswer === optionValue;
-              const isCorrectOption = showFeedback && item.correct === optionValue;
-              
+              const isCorrectOption =
+                showFeedback && item.correct === optionValue;
+
               return (
                 <button
                   key={index}
                   onClick={() => handleAnswerSelect(optionValue)}
                   disabled={showFeedback}
                   className={`w-full flex gap-2 lg:gap-3 p-3 lg:p-4 rounded-xl border-2 text-left text-sm lg:text-base transition-all break-words ${
-                    isSelected && isCorrectOption ? 'border-green-500 bg-green-50' :
-                    isSelected && !isCorrectOption && showFeedback ? 'border-red-500 bg-red-50' :
-                    isSelected ? 'border-purple-600 bg-purple-100' :
-                    isCorrectOption && showFeedback ? 'border-green-500 bg-green-50' :
-                    'border-purple-200 bg-white/60 hover:border-purple-400 hover:bg-purple-50'
-                  } ${showFeedback ? 'cursor-default' : 'cursor-pointer'}`}
+                    isSelected && isCorrectOption
+                      ? "border-green-500 bg-green-50"
+                      : isSelected && !isCorrectOption && showFeedback
+                        ? "border-red-500 bg-red-50"
+                        : isSelected
+                          ? "border-purple-600 bg-purple-100"
+                          : isCorrectOption && showFeedback
+                            ? "border-green-500 bg-green-50"
+                            : "border-purple-200 bg-white/60 hover:border-purple-400 hover:bg-purple-50"
+                  } ${showFeedback ? "cursor-default" : "cursor-pointer"}`}
                 >
-                  <span className={`w-7 h-7 lg:w-8 lg:h-8 rounded-full flex items-center justify-center font-bold text-xs lg:text-sm flex-shrink-0 ${
-                    isSelected ? 'bg-purple-600 text-white' : 'bg-purple-200 text-purple-900'
-                  }`}>
+                  <span
+                    className={`w-7 h-7 lg:w-8 lg:h-8 rounded-full flex items-center justify-center font-bold text-xs lg:text-sm flex-shrink-0 ${
+                      isSelected
+                        ? "bg-purple-600 text-white"
+                        : "bg-purple-200 text-purple-900"
+                    }`}
+                  >
                     {optionValue}
                   </span>
-                  <p className="text-gray-800 leading-snug flex-1 break-words line-clamp-3">{statement}</p>
+                  <p className="text-gray-800 leading-snug flex-1 break-words line-clamp-3">
+                    {statement}
+                  </p>
                   {showFeedback && isCorrectOption && (
                     <CheckCircle className="w-5 h-5 lg:w-6 lg:h-6 text-green-600 flex-shrink-0" />
                   )}
@@ -308,18 +340,24 @@ export default function HoerenPlayer({
               );
             })}
           </div>
-          
+
           {/* Feedback Message for Teil 4 */}
           {showFeedback && (
-            <div className={`p-4 rounded-xl mt-4 ${
-              isCorrect ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
-            }`}>
+            <div
+              className={`p-4 rounded-xl mt-4 ${
+                isCorrect
+                  ? "bg-green-100 text-green-800"
+                  : "bg-red-100 text-red-800"
+              }`}
+            >
               <p className="font-medium">
-                {isCorrect ? '✓ Richtig!' : `✗ Falsch. Die richtige Antwort ist "${statements[item.correct.charCodeAt(0) - 97]}"`}
+                {isCorrect
+                  ? "✓ Richtig!"
+                  : `✗ Falsch. Die richtige Antwort ist "${statements[item.correct.charCodeAt(0) - 97]}"`}
               </p>
             </div>
           )}
-          
+
           {/* Next Button for Teil 4 */}
           {selectedAnswer && (
             <div className="sticky bottom-0 bg-gradient-to-t from-white via-white to-transparent pt-4 pb-2 -mx-4 px-4 sm:-mx-6 sm:px-6">
@@ -327,7 +365,7 @@ export default function HoerenPlayer({
                 onClick={onNext}
                 className="w-full py-3 lg:py-4 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold hover:shadow-lg transition-all hover:scale-105 active:scale-95"
               >
-                {currentItemNumber >= totalItems ? 'Abschließen' : 'Weiter →'}
+                {currentItemNumber >= totalItems ? "Abschließen" : "Weiter →"}
               </button>
             </div>
           )}
@@ -339,127 +377,88 @@ export default function HoerenPlayer({
         <button
           onClick={() => {
             setHideAudioPlayer(false);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: "smooth" });
           }}
           className="fixed top-4 right-4 z-30 w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-xl flex items-center justify-center hover:scale-110 transition-all active:scale-95"
           aria-label="Audio Player anzeigen"
         >
-          {isPlaying ? <Pause className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+          {isPlaying ? (
+            <Pause className="w-5 h-5" />
+          ) : (
+            <Volume2 className="w-5 h-5" />
+          )}
         </button>
       )}
 
       {/* Question Card(s) - Hide for Teil 4 matching (statements shown above) */}
-      {item.type !== 'match' && (
-      <div className={`bg-white/80 backdrop-blur-md rounded-2xl lg:rounded-3xl shadow-lg p-4 sm:p-6 lg:p-8 border ${
-        hideAudioPlayer ? 'max-h-[calc(100vh-120px)]' : 'max-h-[calc(100vh-200px)]'
-      } overflow-y-auto ${
-        isCorrect ? 'border-green-300 bg-green-50/50' : 
-        isWrong ? 'border-red-300 bg-red-50/50' : 
-        'border-purple-100'
-      }`}>
-        {/* Teil 3 Pairing Indicator */}
-        {pairedItem && (
-          <div className="mb-4 px-3 py-2 bg-purple-50 border border-purple-200 rounded-xl">
-            <p className="text-xs lg:text-sm text-purple-700 font-medium text-center">
-              📎 Beide Fragen zu einem Audio • {item.no} & {pairedItem.no}
-            </p>
-          </div>
-        )}
-        
-        {/* First Question (or single question) */}
-        <div className={pairedItem ? 'mb-6 pb-6 border-b-2 border-purple-100' : ''}>
-          <h2 className="text-base lg:text-xl font-bold text-gray-900 mb-4 leading-snug">
-            {pairedItem && <span className="text-purple-600 mr-2">{item.no}.</span>}
-            {item.question}
-          </h2>
-
-          {/* Answer Options - Compact on Mobile */}
-          <div className="flex gap-2 lg:gap-3">
-            {item.options.map((option, index) => {
-              const optionValue = getOptionLabel(index);
-              const isSelected = selectedAnswer === optionValue;
-              const isCorrectOption = showFeedback && item.correct === optionValue;
-              
-              return (
-                <button
-                  key={index}
-                  onClick={() => handleAnswerSelect(optionValue)}
-                  disabled={showFeedback}
-                  className={`flex-1 px-4 py-4 lg:px-6 lg:py-5 rounded-xl border-2 text-sm lg:text-base font-medium transition-all ${
-                    isSelected && isCorrectOption ? 'border-green-500 bg-green-50 text-green-900' :
-                    isSelected && showFeedback && !isCorrectOption ? 'border-red-500 bg-red-50 text-red-900' :
-                    isSelected ? 'border-purple-600 bg-gradient-to-r from-purple-600 to-indigo-600 text-white' :
-                    isCorrectOption && showFeedback ? 'border-green-500 bg-green-50 text-green-900' :
-                    'border-gray-300 bg-white text-gray-700 hover:border-purple-400 hover:bg-purple-50'
-                  } ${showFeedback ? 'cursor-default' : 'cursor-pointer'}`}
-                >
-                  <div className="flex items-center justify-center gap-2">
-                    <span>{option}</span>
-                    {showFeedback && isCorrectOption && (
-                      <CheckCircle className="w-5 h-5" />
-                    )}
-                    {showFeedback && isSelected && !isCorrectOption && (
-                      <XCircle className="w-5 h-5" />
-                    )}
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Feedback Message for first question */}
-          {showFeedback && (
-            <div className={`p-3 lg:p-4 rounded-xl mt-3 lg:mt-4 ${
-              isCorrect ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
-            }`}>
-              <p className="text-sm lg:text-base font-medium">
-                {isCorrect ? '✓ Richtig!' : '✗ Falsch. Die richtige Antwort ist ' + item.correct}
+      {item.type !== "match" && (
+        <div
+          className={`bg-white/80 backdrop-blur-md rounded-2xl lg:rounded-3xl shadow-lg p-4 sm:p-6 lg:p-8 border ${
+            hideAudioPlayer
+              ? "max-h-[calc(100vh-120px)]"
+              : "max-h-[calc(100vh-200px)]"
+          } overflow-y-auto ${
+            isCorrect
+              ? "border-green-300 bg-green-50/50"
+              : isWrong
+                ? "border-red-300 bg-red-50/50"
+                : "border-purple-100"
+          }`}
+        >
+          {/* Teil 3 Pairing Indicator */}
+          {pairedItem && (
+            <div className="mb-4 px-3 py-2 bg-purple-50 border border-purple-200 rounded-xl">
+              <p className="text-xs lg:text-sm text-purple-700 font-medium text-center">
+                📎 Beide Fragen zu einem Audio • {item.no} & {pairedItem.no}
               </p>
             </div>
           )}
-        </div>
 
-        {/* Second Question (Teil 3 paired questions only) */}
-        {pairedItem && (
-          <div>
+          {/* First Question (or single question) */}
+          <div
+            className={
+              pairedItem ? "mb-6 pb-6 border-b-2 border-purple-100" : ""
+            }
+          >
             <h2 className="text-base lg:text-xl font-bold text-gray-900 mb-4 leading-snug">
-              <span className="text-purple-600 mr-2">{pairedItem.no}.</span>
-              {pairedItem.question}
+              {pairedItem && (
+                <span className="text-purple-600 mr-2">{item.no}.</span>
+              )}
+              {item.question}
             </h2>
 
-            {/* Answer Options for second question - Compact */}
-            <div className="space-y-2 lg:space-y-3">
-              {pairedItem.options.map((option, index) => {
-                const optionValue = index === 0 ? 'a' : index === 1 ? 'b' : 'c';
-                const isSelected = selectedAnswerPaired === optionValue;
-                const isCorrectOption = showFeedback && pairedItem.correct === optionValue;
-                
+            {/* Answer Options - Compact on Mobile */}
+            <div className="flex gap-2 lg:gap-3">
+              {item.options.map((option, index) => {
+                const optionValue = getOptionLabel(index);
+                const isSelected = selectedAnswer === optionValue;
+                const isCorrectOption =
+                  showFeedback && item.correct === optionValue;
+
                 return (
                   <button
                     key={index}
-                    onClick={() => onAnswerPaired && onAnswerPaired(optionValue)}
+                    onClick={() => handleAnswerSelect(optionValue)}
                     disabled={showFeedback}
-                    className={`w-full p-3 lg:p-4 rounded-xl border-2 text-left text-sm lg:text-base font-medium transition-all ${
-                      isSelected && showFeedback && isCorrectOption ? 'border-green-500 bg-green-50 text-green-900' :
-                      isSelected && showFeedback && !isCorrectOption ? 'border-red-500 bg-red-50 text-red-900' :
-                      isSelected ? 'border-purple-600 bg-gradient-to-r from-purple-600 to-indigo-600 text-white' :
-                      isCorrectOption && showFeedback ? 'border-green-500 bg-green-50 text-green-900' :
-                      'border-gray-300 bg-white text-gray-700 hover:border-purple-400 hover:bg-purple-50'
-                    } ${showFeedback ? 'cursor-default' : 'cursor-pointer'}`}
+                    className={`flex-1 px-4 py-4 lg:px-6 lg:py-5 rounded-xl border-2 text-sm lg:text-base font-medium transition-all ${
+                      isSelected && isCorrectOption
+                        ? "border-green-500 bg-green-50 text-green-900"
+                        : isSelected && showFeedback && !isCorrectOption
+                          ? "border-red-500 bg-red-50 text-red-900"
+                          : isSelected
+                            ? "border-purple-600 bg-gradient-to-r from-purple-600 to-indigo-600 text-white"
+                            : isCorrectOption && showFeedback
+                              ? "border-green-500 bg-green-50 text-green-900"
+                              : "border-gray-300 bg-white text-gray-700 hover:border-purple-400 hover:bg-purple-50"
+                    } ${showFeedback ? "cursor-default" : "cursor-pointer"}`}
                   >
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2 lg:gap-3 min-w-0 flex-1">
-                        <span className={`text-xs lg:text-sm font-bold min-w-[18px] lg:min-w-[20px] flex-shrink-0 ${isSelected ? 'text-white/80' : 'text-gray-500'}`}>
-                          {optionValue})
-                        </span>
-                        <span className="break-words">{option}</span>
-                      </div>
-                      
+                    <div className="flex items-center justify-center gap-2">
+                      <span>{option}</span>
                       {showFeedback && isCorrectOption && (
-                        <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5" />
                       )}
                       {showFeedback && isSelected && !isCorrectOption && (
-                        <XCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
+                        <XCircle className="w-5 h-5" />
                       )}
                     </div>
                   </button>
@@ -467,31 +466,116 @@ export default function HoerenPlayer({
               })}
             </div>
 
-            {/* Feedback Message for second question */}
+            {/* Feedback Message for first question */}
             {showFeedback && (
-              <div className={`p-3 lg:p-4 rounded-xl mt-3 lg:mt-4 ${
-                selectedAnswerPaired === pairedItem.correct ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
-              }`}>
+              <div
+                className={`p-3 lg:p-4 rounded-xl mt-3 lg:mt-4 ${
+                  isCorrect
+                    ? "bg-green-100 text-green-800"
+                    : "bg-red-100 text-red-800"
+                }`}
+              >
                 <p className="text-sm lg:text-base font-medium">
-                  {selectedAnswerPaired === pairedItem.correct ? '✓ Richtig!' : '✗ Falsch. Die richtige Antwort ist ' + pairedItem.correct}
+                  {isCorrect
+                    ? "✓ Richtig!"
+                    : "✗ Falsch. Die richtige Antwort ist " + item.correct}
                 </p>
               </div>
             )}
           </div>
-        )}
 
-        {/* Next Button - only show when both questions are answered (if paired) */}
-        {((pairedItem && selectedAnswer && selectedAnswerPaired) || (!pairedItem && selectedAnswer) || showFeedback) && (
-          <div className="sticky bottom-0 bg-gradient-to-t from-white via-white to-transparent pt-4 pb-1 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
-            <button
-              onClick={onNext}
-              className="w-full py-3 lg:py-4 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm lg:text-base font-bold hover:shadow-lg transition-all hover:scale-105 active:scale-95"
-            >
-              {currentItemNumber >= totalItems ? 'Abschließen' : 'Weiter →'}
-            </button>
-          </div>
-        )}
-      </div>
+          {/* Second Question (Teil 3 paired questions only) */}
+          {pairedItem && (
+            <div>
+              <h2 className="text-base lg:text-xl font-bold text-gray-900 mb-4 leading-snug">
+                <span className="text-purple-600 mr-2">{pairedItem.no}.</span>
+                {pairedItem.question}
+              </h2>
+
+              {/* Answer Options for second question - Compact */}
+              <div className="space-y-2 lg:space-y-3">
+                {pairedItem.options.map((option, index) => {
+                  const optionValue =
+                    index === 0 ? "a" : index === 1 ? "b" : "c";
+                  const isSelected = selectedAnswerPaired === optionValue;
+                  const isCorrectOption =
+                    showFeedback && pairedItem.correct === optionValue;
+
+                  return (
+                    <button
+                      key={index}
+                      onClick={() =>
+                        onAnswerPaired && onAnswerPaired(optionValue)
+                      }
+                      disabled={showFeedback}
+                      className={`w-full p-3 lg:p-4 rounded-xl border-2 text-left text-sm lg:text-base font-medium transition-all ${
+                        isSelected && showFeedback && isCorrectOption
+                          ? "border-green-500 bg-green-50 text-green-900"
+                          : isSelected && showFeedback && !isCorrectOption
+                            ? "border-red-500 bg-red-50 text-red-900"
+                            : isSelected
+                              ? "border-purple-600 bg-gradient-to-r from-purple-600 to-indigo-600 text-white"
+                              : isCorrectOption && showFeedback
+                                ? "border-green-500 bg-green-50 text-green-900"
+                                : "border-gray-300 bg-white text-gray-700 hover:border-purple-400 hover:bg-purple-50"
+                      } ${showFeedback ? "cursor-default" : "cursor-pointer"}`}
+                    >
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2 lg:gap-3 min-w-0 flex-1">
+                          <span
+                            className={`text-xs lg:text-sm font-bold min-w-[18px] lg:min-w-[20px] flex-shrink-0 ${isSelected ? "text-white/80" : "text-gray-500"}`}
+                          >
+                            {optionValue})
+                          </span>
+                          <span className="break-words">{option}</span>
+                        </div>
+
+                        {showFeedback && isCorrectOption && (
+                          <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                        )}
+                        {showFeedback && isSelected && !isCorrectOption && (
+                          <XCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
+                        )}
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Feedback Message for second question */}
+              {showFeedback && (
+                <div
+                  className={`p-3 lg:p-4 rounded-xl mt-3 lg:mt-4 ${
+                    selectedAnswerPaired === pairedItem.correct
+                      ? "bg-green-100 text-green-800"
+                      : "bg-red-100 text-red-800"
+                  }`}
+                >
+                  <p className="text-sm lg:text-base font-medium">
+                    {selectedAnswerPaired === pairedItem.correct
+                      ? "✓ Richtig!"
+                      : "✗ Falsch. Die richtige Antwort ist " +
+                        pairedItem.correct}
+                  </p>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Next Button - only show when both questions are answered (if paired) */}
+          {((pairedItem && selectedAnswer && selectedAnswerPaired) ||
+            (!pairedItem && selectedAnswer) ||
+            showFeedback) && (
+            <div className="sticky bottom-0 bg-gradient-to-t from-white via-white to-transparent pt-4 pb-1 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+              <button
+                onClick={onNext}
+                className="w-full py-3 lg:py-4 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm lg:text-base font-bold hover:shadow-lg transition-all hover:scale-105 active:scale-95"
+              >
+                {currentItemNumber >= totalItems ? "Abschließen" : "Weiter →"}
+              </button>
+            </div>
+          )}
+        </div>
       )}
     </div>
   );

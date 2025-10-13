@@ -13,23 +13,27 @@ The Training Mode randomly selects questions from all available Prüfung tests, 
 ## Features
 
 ### 🎲 Random Question Selection
+
 - **Pulls from all Prüfung tests** in `hoeren-tests.json`
 - **Randomizes order** every session
 - **Default: 10 questions** per training session
 - **Mix of all Teile** (Teil 1-4) for comprehensive practice
 
 ### 🔄 Shuffle & Reset
+
 - **"Neu mischen" button** - Get completely new random questions
 - **"Wiederholen" button** - Restart with same questions (on results screen)
 - **Haptic feedback** on all interactions
 
 ### 📊 Immediate Feedback
+
 - **Practice mode** (`uebung`) - shows correct answers immediately
 - **Replay allowed** - listen to audio multiple times
 - **Teil indicators** - shows which Teil each question is from
 - **Progress tracking** - shows current question number
 
 ### 🎯 Results Screen
+
 - **Score display** - X/Y correct answers
 - **Percentage** - Visual percentage score
 - **Encouragement** - Motivational messages based on score:
@@ -47,22 +51,23 @@ The Training Mode randomly selects questions from all available Prüfung tests, 
 **Lines:** 271 lines
 
 #### Data Loading
+
 ```javascript
 // Loads all Prüfung tests from hoeren-tests.json
-fetch('/data/dtz/hoeren-tests.json')
-  .then(data => {
-    // Extracts all questions from all tests
-    Object.values(data).forEach(test => {
-      test.parts.forEach(part => {
-        // Handles Teil 3 pairing
-        // Handles Teil 4 statements
-        // Regular questions for other Teile
-      });
+fetch("/data/dtz/hoeren-tests.json").then((data) => {
+  // Extracts all questions from all tests
+  Object.values(data).forEach((test) => {
+    test.parts.forEach((part) => {
+      // Handles Teil 3 pairing
+      // Handles Teil 4 statements
+      // Regular questions for other Teile
     });
   });
+});
 ```
 
 #### Randomization
+
 ```javascript
 const selectRandomQuestions = (questions, count) => {
   const shuffled = [...questions].sort(() => Math.random() - 0.5);
@@ -72,7 +77,9 @@ const selectRandomQuestions = (questions, count) => {
 ```
 
 #### Question Structure
+
 Each training question includes:
+
 - `no`: Question number
 - `teil`: Teil number (1-4)
 - `audioFile`: Audio track filename
@@ -89,11 +96,13 @@ Each training question includes:
 ## User Flow
 
 ### 1. Start Training
+
 ```
 User clicks "Zufälliges Training" → Navigate to /tests/hoeren/training
 ```
 
 ### 2. Random Selection
+
 ```
 System loads all Prüfung tests
 ↓
@@ -107,6 +116,7 @@ Displays first question
 ```
 
 ### 3. Answer Question
+
 ```
 User listens to audio
 ↓
@@ -120,6 +130,7 @@ User clicks "Weiter" to next question
 ```
 
 ### 4. Complete Training
+
 ```
 All 10 questions answered
 ↓
@@ -138,19 +149,20 @@ Show results screen:
 ## UI Components
 
 ### Header
+
 ```jsx
 <div className="flex items-center justify-between">
   {/* Back button */}
-  <button onClick={() => navigate('/tests/hoeren')}>
+  <button onClick={() => navigate("/tests/hoeren")}>
     <ArrowLeft /> Zurück
   </button>
-  
+
   {/* Title & Progress */}
   <div className="text-center">
     <h1>Training</h1>
     <p>Frage X von 10 • Teil Y</p>
   </div>
-  
+
   {/* Shuffle button */}
   <button onClick={handleShuffle}>
     <Shuffle /> Neu mischen
@@ -159,24 +171,31 @@ Show results screen:
 ```
 
 ### Results Screen
+
 ```jsx
 <div className="results">
   {/* Score circle */}
   <div className="gradient-circle">🎯</div>
-  
+
   {/* Title */}
   <h1>Training abgeschlossen!</h1>
-  
+
   {/* Score */}
-  <div className="text-6xl">{score.correct}/{score.total}</div>
+  <div className="text-6xl">
+    {score.correct}/{score.total}
+  </div>
   <p>{Math.round(score.percentage)}% richtig</p>
-  
+
   {/* Encouragement */}
   <p>{encouragementMessage}</p>
-  
+
   {/* Action buttons */}
-  <button><Shuffle /> Neue Fragen</button>
-  <button><RefreshCw /> Wiederholen</button>
+  <button>
+    <Shuffle /> Neue Fragen
+  </button>
+  <button>
+    <RefreshCw /> Wiederholen
+  </button>
   <button>Zurück</button>
 </div>
 ```
@@ -186,7 +205,9 @@ Show results screen:
 ## Integration Points
 
 ### Route Configuration
+
 **File:** `src/App.jsx`
+
 ```jsx
 <Route
   path="/tests/hoeren/training"
@@ -199,7 +220,9 @@ Show results screen:
 ```
 
 ### Hub Link
+
 **File:** `src/pages/HoerenHub.jsx`
+
 ```javascript
 {
   id: "random-training",
@@ -212,6 +235,7 @@ Show results screen:
 ```
 
 ### Shared Components
+
 - **HoerenPlayer.jsx** - Audio player with question display
 - **useHoerenEngine.js** - State management hook
 - **haptics.js** - Haptic feedback utility
@@ -221,32 +245,38 @@ Show results screen:
 ## Design Standards Compliance
 
 ### ✅ Glass-Morphism
+
 - Header: `bg-white/80 backdrop-blur-md`
 - Results card: `bg-white/80 backdrop-blur-md`
 - Border: `border-purple-100`
 
 ### ✅ Purple Gradient
+
 - Primary buttons: `from-purple-600 to-indigo-600`
 - Gradient circle: `from-purple-600 to-indigo-600`
 - Hover effects maintained
 
 ### ✅ Rounded Corners
+
 - Header: `rounded-2xl`
 - Results card: `rounded-3xl`
 - Buttons: `rounded-xl`
 
 ### ✅ Touch Targets
+
 - All buttons: `py-4` = 44px+ height
 - Shuffle button: `px-4 py-2` with adequate sizing
 - Back button: Proper touch area
 
 ### ✅ Haptic Feedback
+
 - Shuffle button: `triggerHaptic()`
 - Back button: `triggerHaptic()`
 - Answer selection: Inherited from HoerenPlayer
 - All result buttons: `triggerHaptic()`
 
 ### ✅ Simple German (B1 Level)
+
 - "Zufälliges Training" - Clear, direct
 - "Neue Fragen" - Simple action
 - "Wiederholen" - Common verb
@@ -254,6 +284,7 @@ Show results screen:
 - Encouragement messages: Simple, positive
 
 ### ✅ Responsive Design
+
 - Mobile-first layout
 - Flex columns on mobile, rows on desktop
 - Hidden labels on mobile (icon-only shuffle button)
@@ -290,6 +321,7 @@ Next question or Complete
 ## Future Enhancements
 
 ### Priority: Medium
+
 1. **Configurable question count**
    - Add selector: 5, 10, 15, 20 questions
    - Save preference to localStorage
@@ -312,6 +344,7 @@ Next question or Complete
    - Focus on weak areas
 
 ### Priority: Low
+
 6. **Custom training sets**
    - User creates own question lists
    - Save favorite questions
@@ -325,6 +358,7 @@ Next question or Complete
 ## Testing Checklist
 
 ### Functionality
+
 - [ ] Questions load from all Prüfung tests
 - [ ] Randomization works correctly
 - [ ] Teil 3 pairs stay together
@@ -335,6 +369,7 @@ Next question or Complete
 - [ ] All 4 Teile are represented in pool
 
 ### UI/UX
+
 - [ ] Header shows correct progress
 - [ ] Teil indicator updates
 - [ ] Results screen displays correctly
@@ -344,6 +379,7 @@ Next question or Complete
 - [ ] Error state handles missing data
 
 ### Mobile
+
 - [ ] Touch targets are 44px+
 - [ ] Haptic feedback works
 - [ ] Shuffle button visible on mobile
@@ -351,6 +387,7 @@ Next question or Complete
 - [ ] Responsive layout works (375px-1920px)
 
 ### Integration
+
 - [ ] Route works from HoerenHub
 - [ ] HoerenPlayer integrates correctly
 - [ ] Audio playback functions
@@ -362,16 +399,19 @@ Next question or Complete
 ## Performance
 
 ### Load Time
+
 - **Initial load:** <500ms (loads all tests)
 - **Randomization:** <50ms (client-side shuffle)
 - **Question transition:** Instant
 
 ### Data Size
+
 - **hoeren-tests.json:** ~50KB
 - **Full question pool:** ~100-150 questions
 - **Selected session:** 10 questions
 
 ### Optimization
+
 - Questions loaded once per session
 - Shuffle reuses loaded data (no refetch)
 - Minimal re-renders with React hooks
@@ -381,13 +421,15 @@ Next question or Complete
 ## Error Handling
 
 ### No Tests Found
+
 ```jsx
 if (allQuestions.length === 0) {
-  return <div>Keine Fragen gefunden</div>
+  return <div>Keine Fragen gefunden</div>;
 }
 ```
 
 ### Fetch Error
+
 ```javascript
 .catch(err => {
   console.error('Error loading tests:', err);
@@ -396,6 +438,7 @@ if (allQuestions.length === 0) {
 ```
 
 ### Missing Audio
+
 - Handled by HoerenPlayer audio error state
 - Red banner shows: "Audio konnte nicht geladen werden"
 
@@ -404,12 +447,14 @@ if (allQuestions.length === 0) {
 ## Success Metrics
 
 ### User Engagement
+
 - **Training sessions started:** Track usage
 - **Completion rate:** % who finish all 10 questions
 - **Shuffle usage:** How often users get new questions
 - **Repeat usage:** How often users restart
 
 ### Learning Effectiveness
+
 - **Average score:** Track improvement over time
 - **Teil difficulty:** Which Teile have lower scores
 - **Question difficulty:** Identify hardest questions
@@ -423,7 +468,7 @@ if (allQuestions.length === 0) {
 
 ---
 
-*Created: 13 October 2025*  
-*Implementation time: ~30 minutes*  
-*Lines of code: 271*  
-*Dependencies: HoerenPlayer, useHoerenEngine, haptics*
+_Created: 13 October 2025_  
+_Implementation time: ~30 minutes_  
+_Lines of code: 271_  
+_Dependencies: HoerenPlayer, useHoerenEngine, haptics_

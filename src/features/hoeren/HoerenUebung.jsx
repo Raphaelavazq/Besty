@@ -3,11 +3,11 @@
  * Allows replay and shows correct answers
  */
 
-import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
-import HoerenPlayer from './HoerenPlayer';
-import { useHoerenEngine } from './useHoerenEngine';
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+import HoerenPlayer from "./HoerenPlayer";
+import { useHoerenEngine } from "./useHoerenEngine";
 
 export default function HoerenUebung() {
   const { teil } = useParams();
@@ -18,29 +18,29 @@ export default function HoerenUebung() {
 
   // Load practice data
   useEffect(() => {
-    fetch('/data/dtz/hoeren-uebung.json')
-      .then(res => res.json())
-      .then(data => {
+    fetch("/data/dtz/hoeren-uebung.json")
+      .then((res) => res.json())
+      .then((data) => {
         const teilKey = `teil${teil}`;
         const teilData = data[teilKey];
         setUebungData(teilData);
-        
+
         // Map exercises to include audioFile
-        const items = teilData.exercises.map(ex => ({
+        const items = teilData.exercises.map((ex) => ({
           ...ex,
-          no: parseInt(ex.id.split('_').pop()),
-          audioFile: ex.track
+          no: parseInt(ex.id.split("_").pop()),
+          audioFile: ex.track,
         }));
         setExercises(items);
         setLoading(false);
       })
-      .catch(err => {
-        console.error('Error loading exercises:', err);
+      .catch((err) => {
+        console.error("Error loading exercises:", err);
         setLoading(false);
       });
   }, [teil]);
 
-  const [state, actions] = useHoerenEngine('uebung', exercises);
+  const [state, actions] = useHoerenEngine("uebung", exercises);
 
   if (loading) {
     return (
@@ -61,7 +61,7 @@ export default function HoerenUebung() {
             Noch keine Übungen für Teil {teil} verfügbar
           </p>
           <button
-            onClick={() => navigate('/tests/hoeren')}
+            onClick={() => navigate("/tests/hoeren")}
             className="px-6 py-3 bg-purple-600 text-white rounded-xl hover:bg-purple-700"
           >
             Zurück
@@ -76,17 +76,17 @@ export default function HoerenUebung() {
   // Completion screen
   if (state.isComplete) {
     const score = actions.calculateScore();
-    
+
     return (
       <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50 py-12 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl p-12 text-center border border-purple-100">
             <div className="text-6xl mb-6">🎉</div>
-            
+
             <h1 className="text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4">
               Gut gemacht!
             </h1>
-            
+
             <p className="text-2xl text-gray-600 mb-8">
               Du hast {score.correct} von {score.total} richtig beantwortet
             </p>
@@ -98,9 +98,9 @@ export default function HoerenUebung() {
               >
                 Nochmal üben
               </button>
-              
+
               <button
-                onClick={() => navigate('/tests/hoeren')}
+                onClick={() => navigate("/tests/hoeren")}
                 className="px-8 py-4 rounded-xl bg-white text-purple-600 font-bold border-2 border-purple-600 hover:bg-purple-50 transition-colors"
               >
                 Zurück zur Übersicht
@@ -118,13 +118,13 @@ export default function HoerenUebung() {
       {/* Header */}
       <div className="max-w-4xl mx-auto mb-6">
         <button
-          onClick={() => navigate('/tests/hoeren')}
+          onClick={() => navigate("/tests/hoeren")}
           className="flex items-center gap-2 text-purple-600 hover:text-purple-700 mb-4"
         >
           <ArrowLeft className="w-5 h-5" />
           Zurück
         </button>
-        
+
         <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-lg p-6 border border-purple-100">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
             {uebungData.title}

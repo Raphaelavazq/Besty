@@ -1,0 +1,162 @@
+{
+  "id": "unterricht",
+  "name": "Unterricht",
+  "description": "Wortschatz und Grammatik zum Thema: Unterricht",
+  "questionCount": 14,
+  "questions": [
+    {
+      "id": 1,
+      "type": "fill-in-blank",
+      "question": "A, B, C – das sind die <b>...</b> im Alphabet.",
+      "options": [
+        "Buchstaben",
+        "Mengen",
+        "Zahlen"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 2,
+      "type": "fill-in-blank",
+      "question": "„Ausnahme“? Was bedeutet das? Ich <b>...</b> das Wort nicht.",
+      "options": [
+        "frage",
+        "überlege",
+        "verstehe"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 3,
+      "type": "fill-in-blank",
+      "question": "Bitte machen Sie <b>...</b> Nummer 5 auf Seite 27 im Arbeitsbuch.",
+      "options": [
+        "die Aufgabe",
+        "die Lösung",
+        "den Text"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 4,
+      "type": "fill-in-blank",
+      "question": "Ich habe das nicht verstanden. Können Sie bitte die Aufgabe noch einmal <b>...</b> ?",
+      "options": [
+        "erklären",
+        "herstellen",
+        "vorschlagen"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 5,
+      "type": "fill-in-blank",
+      "question": "Wie <b>...</b> man das Wort „gucken“ <b>...</b> ?",
+      "options": [
+        "bespricht (besprechen)",
+        "schreibt … auf (aufschreiben)",
+        "spricht … aus (aussprechen)"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 6,
+      "type": "fill-in-blank",
+      "question": "Der Unterricht <b>...</b> um 8:30 Uhr und geht bis 12:30 Uhr.",
+      "options": [
+        "beginnt",
+        "endet",
+        "läuft"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 7,
+      "type": "fill-in-blank",
+      "question": "Frau Paulsen ist Deutschlehrerin, sie <b>...</b> Deutsch.",
+      "options": [
+        "lernt",
+        "unterrichtet",
+        "unterstützt"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 8,
+      "type": "fill-in-blank",
+      "question": "Der Kurs wird morgen ausnahmsweise nicht <b>...</b>, weil die Kursleiterin krank ist.",
+      "options": [
+        "beginnen",
+        "stattfinden",
+        "teilnehmen"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 9,
+      "type": "fill-in-blank",
+      "question": "Bitte <b>...</b> Sie alle Verben mit einem grünen Stift und Lineal.",
+      "options": [
+        "sprechen",
+        "unterschreiben",
+        "unterstreichen"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 10,
+      "type": "fill-in-blank",
+      "question": "Neue Wörter muss man oft <b>...</b>, dann lernt man sie besser.",
+      "options": [
+        "merken",
+        "verstehen",
+        "wiederholen"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 11,
+      "type": "fill-in-blank",
+      "question": "Nächste Woche ist die Prüfung. Wir haben viel geübt, denn <b>...</b> ist wichtig.",
+      "options": [
+        "besondere Vorsicht",
+        "ein guter Vorschlag",
+        "eine gute Vorbereitung"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 12,
+      "type": "fill-in-blank",
+      "question": "Wenn du nicht weißt, wie das Wort geschrieben wird, dann kannst du es im Wörterbuch <b>...</b> .",
+      "options": [
+        "nachholen",
+        "nachschlagen",
+        "vorschlagen"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 13,
+      "type": "fill-in-blank",
+      "question": "Einen Text überfliegen bedeutet, den Text schnell, nicht gründlich <b>...</b> .",
+      "options": [
+        "lesen",
+        "wiederholen",
+        "zusammenfassen"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 14,
+      "type": "fill-in-blank",
+      "question": "Wir haben die Aufgaben gestern im Kurs gemacht und besprochen. Das müssen Sie bitte <b>...</b> und zu Hause machen.",
+      "options": [
+        "abholen",
+        "beschreiben",
+        "nachholen"
+      ],
+      "correctAnswer": 2
+    }
+  ]
+}

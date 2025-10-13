@@ -1,0 +1,228 @@
+{
+  "id": "arbeit",
+  "name": "Arbeit",
+  "description": "Wortschatz und Grammatik zum Thema: Arbeit",
+  "questionCount": 20,
+  "questions": [
+    {
+      "id": 1,
+      "type": "fill-in-blank",
+      "question": "Wo arbeiten Sie? Was sind Sie von <b>...</b> ?",
+      "options": [
+        "Arbeit",
+        "Beruf",
+        "Tätigkeit"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 2,
+      "type": "fill-in-blank",
+      "question": "Ani ist Verkäuferin. Sie ist in einem Supermarkt <b>...</b> .",
+      "options": [
+        "angestellt",
+        "beruflich",
+        "berufstätig"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 3,
+      "type": "fill-in-blank",
+      "question": "Wo arbeiten Sie? Wer ist <b>...</b> ?",
+      "options": [
+        "Ihre Arbeit",
+        "Ihr Arbeitgeber",
+        "Ihre Firma"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 4,
+      "type": "fill-in-blank",
+      "question": "Fatih sucht <b>...</b> als Verkäufer.",
+      "options": [
+        "eine neue Arbeitszeit",
+        "eine neue Stelle",
+        "einen neuen Vertrag"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 5,
+      "type": "fill-in-blank",
+      "question": "Latha erledigt alle Aufgaben pünktlich und sehr gut, sie ist sehr <b>...</b> .",
+      "options": [
+        "verlassen",
+        "zurechtgekommen",
+        "zuverlässig"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 6,
+      "type": "fill-in-blank",
+      "question": "Wie viel verdienst du pro Monat? Bist du mit deinem <b>...</b> zufrieden?",
+      "options": [
+        "Arbeitsplatz",
+        "Gehalt",
+        "Urlaub"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 7,
+      "type": "fill-in-blank",
+      "question": "Hier kann man in einer Firma oder einem Betrieb Essen und Getränke kaufen und Mittagspause machen: <b>...</b> .",
+      "options": [
+        "das Esszimmer",
+        "das Restaurant",
+        "die Kantine"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 8,
+      "type": "fill-in-blank",
+      "question": "In der Firma arbeite ich mit Nico zusammen. Er ist <b>...</b> .",
+      "options": [
+        "der Nachbar",
+        "mein Kollege",
+        "meine Freundin"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 9,
+      "type": "fill-in-blank",
+      "question": "Vlad ist erkältet und hat sich für heute bei der Chefin <b>...</b> .",
+      "options": [
+        "angemeldet",
+        "krankgemeldet",
+        "umgemeldet"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 10,
+      "type": "fill-in-blank",
+      "question": "Semi <b>...</b> 15 Euro pro Stunde. Das ist ein guter Stundenlohn für ihn.",
+      "options": [
+        "verdient",
+        "vereinbart",
+        "verliert"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 11,
+      "type": "fill-in-blank",
+      "question": "Ich möchte gern <b>...</b> bei einem Frisör machen. Der Beruf interessiert mich.",
+      "options": [
+        "einen Ausflug",
+        "einen Besuch",
+        "ein Praktikum"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 12,
+      "type": "fill-in-blank",
+      "question": "Wenn man z. B. 15 Stunden in der Woche arbeitet, dann arbeitet man in <b>...</b> .",
+      "options": [
+        "Arbeitszeit",
+        "Teilzeit",
+        "Vollzeit"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 13,
+      "type": "fill-in-blank",
+      "question": "Alina arbeitet mehr Stunden als in ihrem Vertrag steht. Diesen Monat hat sie viele <b>...</b> gemacht.",
+      "options": [
+        "Überstunden",
+        "Verspätung",
+        "Zeitarbeit"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 14,
+      "type": "fill-in-blank",
+      "question": "Ich war mit meinem Job nicht mehr zufrieden. Deshalb habe ich gestern <b>...</b> .",
+      "options": [
+        "angefangen",
+        "gearbeitet",
+        "gekündigt"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 15,
+      "type": "fill-in-blank",
+      "question": "Ich habe zurzeit keine Arbeitsstelle, ich bin <b>...</b> .",
+      "options": [
+        "arbeitslos",
+        "ausgebildet",
+        "eingestellt"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 16,
+      "type": "fill-in-blank",
+      "question": "Heidi hört auf zu arbeiten. Sie ist jetzt 65 Jahre alt und geht <b>...</b> .",
+      "options": [
+        "in die Kantine",
+        "in den Urlaub",
+        "in Rente"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 17,
+      "type": "fill-in-blank",
+      "question": "Wir arbeiten in <b>...</b>, manchmal von 6 bis 14 Uhr, manchmal von 14 bis 22 Uhr, manchmal von 22 bis 6 Uhr.",
+      "options": [
+        "Dienst",
+        "Schicht",
+        "Vertretung"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 18,
+      "type": "fill-in-blank",
+      "question": "Ich bin mein eigener Chef. Ich bin <b>...</b> und habe eine kleine Firma.",
+      "options": [
+        "angestellt",
+        "frei",
+        "selbstständig"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 19,
+      "type": "fill-in-blank",
+      "question": "Meine <b>...</b> sind flexibel. Ich kann z. B. zwischen 8 und 10 Uhr anfangen.",
+      "options": [
+        "Arbeitsvertrag",
+        "Arbeitszeiten",
+        "Aufgaben"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 20,
+      "type": "fill-in-blank",
+      "question": "Meine Kollegin ist krank. Ich <b>...</b> sie heute und übernehme ihre Aufgaben.",
+      "options": [
+        "trete",
+        "vergesse",
+        "vertrete"
+      ],
+      "correctAnswer": 2
+    }
+  ]
+}

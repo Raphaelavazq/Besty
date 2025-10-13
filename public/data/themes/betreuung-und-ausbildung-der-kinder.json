@@ -1,0 +1,173 @@
+{
+  "id": "betreuung-und-ausbildung-der-kinder",
+  "name": "Betreuung und Ausbildung der Kinder",
+  "description": "Wortschatz und Grammatik zum Thema: Betreuung und Ausbildung der Kinder",
+  "questionCount": 15,
+  "questions": [
+    {
+      "id": 1,
+      "type": "fill-in-blank",
+      "question": "Ich habe einen dreijährigen Sohn. Er geht vormittags in <b>...</b> .",
+      "options": [
+        "den Kindergarten",
+        "die Schule",
+        "die Volkshochschule"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 2,
+      "type": "fill-in-blank",
+      "question": "Eine Person, die tagsüber auf kleine Kinder von berufstätigen Eltern aufpasst, nennt man <b>...</b> .",
+      "options": [
+        "Erzieherin",
+        "Lehrerin",
+        "Tagesmutter"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 3,
+      "type": "fill-in-blank",
+      "question": "Wer <b>…</b> deine Kinder, wenn du arbeitest?",
+      "options": [
+        "kümmert sich um",
+        "macht sich Sorgen um",
+        "verabredet sich mit"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 4,
+      "type": "fill-in-blank",
+      "question": "Mit 6 Jahren kommen viele Kinder in die erste Klasse in <b>…</b> .",
+      "options": [
+        "den Kindergarten",
+        "die Grundschule",
+        "die Realschule"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 5,
+      "type": "fill-in-blank",
+      "question": "Kita ist die Abkürzung für <b>…</b> .",
+      "options": [
+        "Hort",
+        "Kindertagesstätte",
+        "Mittagsbetreuung"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 6,
+      "type": "fill-in-blank",
+      "question": "Hat deine Tochter schon <b>…</b> im Kindergarten? Oder sucht ihr noch?",
+      "options": [
+        "eine Möglichkeit",
+        "einen Platz",
+        "eine Stelle"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 7,
+      "type": "fill-in-blank",
+      "question": "Im Sommer haben Schulkinder sechs Wochen lang <b>…</b> .",
+      "options": [
+        "Ferien",
+        "Pause",
+        "Schulstunden"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 8,
+      "type": "fill-in-blank",
+      "question": "Meine Kinder haben Probleme in der Schule. Ich mache mir <b>…</b> .",
+      "options": [
+        "Mühe",
+        "Sorgen",
+        "Spaß"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 9,
+      "type": "fill-in-blank",
+      "question": "Deutsch, Mathe, Kunst, Sport, Biologie, Chemie, Physik sind <b>…</b> in der Schule.",
+      "options": [
+        "Arbeiten",
+        "Räume",
+        "Schulfächer"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 10,
+      "type": "fill-in-blank",
+      "question": "Zweimal im Jahr bekommen Schulkinder <b>…</b> mit Noten.",
+      "options": [
+        "ein Zeugnis",
+        "eine Bescheinigung",
+        "einen Vorschlag"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 11,
+      "type": "fill-in-blank",
+      "question": "Was hast du heute in Deutsch auf? Hast du <b>…</b> schon gemacht?",
+      "options": [
+        "die Fragen",
+        "die Hausaufgaben",
+        "den Test"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 12,
+      "type": "fill-in-blank",
+      "question": "Tom macht eine Ausbildung. Er lernt und arbeitet in einer Bäckerei. Unterricht hat er <b>…</b> .",
+      "options": [
+        "am Gymnasium",
+        "an der Berufsschule",
+        "an der Universität"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 13,
+      "type": "fill-in-blank",
+      "question": "1 + 3 = ? Eins plus drei? Das kann ich leicht <b>…</b> ! Eins plus drei gleich vier.",
+      "options": [
+        "denken",
+        "rechnen",
+        "zeichnen"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 14,
+      "type": "fill-in-blank",
+      "question": "Eltern sind für Ihre Kinder <b>…</b> . Die Eltern müssen auf die Kinder aufpassen.",
+      "options": [
+        "entschlossen",
+        "überzeugt",
+        "verantwortlich"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 15,
+      "type": "fill-in-blank",
+      "question": "Was macht Ihr Sohn gern? Was <b>…</b> ihn? Musik? Mode? Sprachen?",
+      "options": [
+        "interessant",
+        "Interesse",
+        "interessiert"
+      ],
+      "correctAnswer": 2
+    }
+  ]
+}

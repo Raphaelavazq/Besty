@@ -15,10 +15,10 @@ export function scoreItem(item, userAnswer) {
   }
 
   const isCorrect = userAnswer.toLowerCase() === item.correct.toLowerCase();
-  
+
   return {
     correct: isCorrect,
-    points: isCorrect ? 1 : 0
+    points: isCorrect ? 1 : 0,
   };
 }
 
@@ -30,12 +30,12 @@ export function scoreItem(item, userAnswer) {
  * @returns {Object} { total, correct, percentage, passed }
  */
 export function scoreTest(items, answers) {
-  const results = items.map(item => {
-    const itemNo = item.no || parseInt(item.id?.split('_').pop() || '0');
+  const results = items.map((item) => {
+    const itemNo = item.no || parseInt(item.id?.split("_").pop() || "0");
     return scoreItem(item, answers[itemNo]);
   });
-  
-  const correct = results.filter(r => r.correct).length;
+
+  const correct = results.filter((r) => r.correct).length;
   const total = items.length;
   const percentage = Math.round((correct / total) * 100);
   const passed = percentage >= 60;
@@ -44,7 +44,7 @@ export function scoreTest(items, answers) {
     total,
     correct,
     percentage,
-    passed
+    passed,
   };
 }
 
@@ -53,10 +53,10 @@ export function scoreTest(items, answers) {
  * DTZ: 60-69% = B1, 70%+ = very good B1
  */
 export function calculateLevel(percentage) {
-  if (percentage >= 90) return 'Sehr gut (B1)';
-  if (percentage >= 70) return 'Gut (B1)';
-  if (percentage >= 60) return 'Bestanden (B1)';
-  return 'Nicht bestanden';
+  if (percentage >= 90) return "Sehr gut (B1)";
+  if (percentage >= 70) return "Gut (B1)";
+  if (percentage >= 60) return "Bestanden (B1)";
+  return "Nicht bestanden";
 }
 
 /**
@@ -66,16 +66,16 @@ export function getFeedbackMessage(score) {
   const { percentage, passed } = score;
 
   if (!passed) {
-    return 'Weiter üben! Du schaffst das!';
+    return "Weiter üben! Du schaffst das!";
   }
-  
+
   if (percentage >= 90) {
-    return 'Ausgezeichnet! Perfekte Leistung!';
+    return "Ausgezeichnet! Perfekte Leistung!";
   }
-  
+
   if (percentage >= 70) {
-    return 'Sehr gut! Du bist gut vorbereitet!';
+    return "Sehr gut! Du bist gut vorbereitet!";
   }
-  
-  return 'Bestanden! Weiter so!';
+
+  return "Bestanden! Weiter so!";
 }

@@ -1,0 +1,173 @@
+{
+  "id": "aemter-und-behoerden",
+  "name": "Aemter und Behörden",
+  "description": "Wortschatz und Grammatik zum Thema: Aemter und Behörden",
+  "questionCount": 15,
+  "questions": [
+    {
+      "id": 1,
+      "type": "fill-in-blank",
+      "question": "Bitte tragen Sie Ihre persönlichen Daten in das <b>...</b> ein: Name, Vorname, Geburtsdatum, Geburtsort, Familienstand und Adresse.",
+      "options": [
+        "Bescheinigung",
+        "Formular",
+        "Vertrag"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 2,
+      "type": "fill-in-blank",
+      "question": "In dem Formular fehlen ein paar Informationen. Wir brauchen noch ein paar <b>...</b> von Ihnen.",
+      "options": [
+        "Angaben",
+        "Aufgaben",
+        "Unterschriften"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 3,
+      "type": "fill-in-blank",
+      "question": "Bitte <b>...</b> Sie das Formular komplett <b>...</b> .",
+      "options": [
+        "buchen … ab (abbuchen)",
+        "füllen … aus (ausfüllen)",
+        "melden … um (ummelden)"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 4,
+      "type": "fill-in-blank",
+      "question": "Sind Sie ledig, verheiratet, getrennt lebend, geschieden, verwitwet? Wie ist Ihr <b>...</b>?",
+      "options": [
+        "Einkommen",
+        "Familienstand",
+        "Wohnort"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 5,
+      "type": "fill-in-blank",
+      "question": "Bitte <b>...</b> Sie hier bei „Unterschrift“.",
+      "options": [
+        "aufschreiben",
+        "umschreiben",
+        "unterschreiben"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 6,
+      "type": "fill-in-blank",
+      "question": "einen Antrag auf Wohngeld stellen oder Wohngeld <b>...</b> .",
+      "options": [
+        "beantragen",
+        "beantworten",
+        "versichern"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 7,
+      "type": "fill-in-blank",
+      "question": "Ihr Antrag auf Wohngeld wurde <b>...</b> . Das heißt: Sie bekommen kein Wohngeld.",
+      "options": [
+        "abgelehnt (ablehnen)",
+        "angenommen (annehmen)",
+        "erhöht"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 8,
+      "type": "fill-in-blank",
+      "question": "Bitte zeigen Sie ein amtliches Dokument vor, z. B. Ihren Ausweis oder <b>...</b> .",
+      "options": [
+        "alle Unterlagen",
+        "ein Zeugnis",
+        "Ihren Pass"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 9,
+      "type": "fill-in-blank",
+      "question": "Das Bürgerbüro ist zu folgenden <b>...</b> für Sie geöffnet: Montag bis Freitag von 8 Uhr bis 13 Uhr.",
+      "options": [
+        "Feiertagen, Urlaubszeiten",
+        "Öffnungszeiten, Sprechzeiten",
+        "Ruhetagen, Schließzeiten"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 10,
+      "type": "fill-in-blank",
+      "question": "Ich habe am 12.02. um 15 Uhr <b>...</b> bei Frau Pellegrini im Jobcenter.",
+      "options": [
+        "eine Absage",
+        "eine Einladung",
+        "einen Termin"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 11,
+      "type": "fill-in-blank",
+      "question": "Wir brauchen noch folgende <b>...</b> von Ihnen: Geburtsurkunde, Antragsformular, Versicherungsnachweis.",
+      "options": [
+        "Gebühren",
+        "Unterlagen",
+        "Zeugnisse"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 12,
+      "type": "fill-in-blank",
+      "question": "„Hier müssen Sie noch unterschreiben.“ Oder: „Ihre Unterschrift ist <b>...</b> .“",
+      "options": [
+        "erfolgreich",
+        "erforderlich",
+        "erlaubt"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 13,
+      "type": "fill-in-blank",
+      "question": "Geben Sie Ihren Antrag bitte bis zum 31.01. ab, das ist <b>...</b> .",
+      "options": [
+        "die Abgabefrist",
+        "der Abgabeort",
+        "die Öffnungszeit"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 14,
+      "type": "fill-in-blank",
+      "question": "Ihr Rechtsanwalt <b>...</b> Sie in rechtlichen Fragen.",
+      "options": [
+        "begrüßt",
+        "behandelt",
+        "berät"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 15,
+      "type": "fill-in-blank",
+      "question": "Einen Brief, eine E-Mail oder eine andere schriftliche Information nennt man auch: <b>...</b> .",
+      "options": [
+        "ein Schreiben",
+        "Einschreiben",
+        "Entscheidung"
+      ],
+      "correctAnswer": 0
+    }
+  ]
+}

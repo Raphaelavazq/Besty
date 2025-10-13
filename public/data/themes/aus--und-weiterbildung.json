@@ -1,0 +1,162 @@
+{
+  "id": "aus--und-weiterbildung",
+  "name": "Aus- und Weiterbildung",
+  "description": "Wortschatz und Grammatik zum Thema: Aus- und Weiterbildung",
+  "questionCount": 14,
+  "questions": [
+    {
+      "id": 1,
+      "type": "fill-in-blank",
+      "question": "Sam möchte Erzieher werden. Er macht <b>...</b> als Erzieher.",
+      "options": [
+        "eine Arbeit",
+        "eine Ausbildung",
+        "einen Beruf"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 2,
+      "type": "fill-in-blank",
+      "question": "Semra ist seit zwei Jahren <b>...</b> in einem Krankenhaus und lernt alles über den Beruf Pflegefachkraft.",
+      "options": [
+        "Auszubildende",
+        "Chefin",
+        "Patientin"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 3,
+      "type": "fill-in-blank",
+      "question": "Sie haben fünfmal in der Woche 6 Stunden pro Tag. Das sind <b>...</b> 30 Stunden pro Woche.",
+      "options": [
+        "genug",
+        "insgesamt",
+        "wenigstens"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 4,
+      "type": "fill-in-blank",
+      "question": "Ich möchte wissen, wie die Arbeit als Bäcker ist. Kann ich in Ihrer Bäckerei <b>…</b> für drei Wochen machen?",
+      "options": [
+        "ein Praktikum",
+        "ein Studium",
+        "einen Kurs"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 5,
+      "type": "fill-in-blank",
+      "question": "Wenn man die Schule fertig gemacht hat, hat man <b>…</b> .",
+      "options": [
+        "eine Berufsausbildung",
+        "einen Schulabschluss",
+        "ein Studium"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 6,
+      "type": "fill-in-blank",
+      "question": "Sie möchten in Ihrem Beruf weiterlernen und sich spezialisieren? Dann machen Sie <b>…</b> bei uns.",
+      "options": [
+        "einen Berufsabschluss",
+        "eine Stelle",
+        "eine Weiterbildung"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 7,
+      "type": "fill-in-blank",
+      "question": "Wir sind mit unserem Praktikanten sehr zufrieden. Er ist sehr <b>…</b> und erledigt viele Aufgaben.",
+      "options": [
+        "anstrengend",
+        "faul",
+        "fleißig"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 8,
+      "type": "fill-in-blank",
+      "question": "Das Material ist in den Kursgebühren <b>…</b> , also 240 Euro inklusive Material.",
+      "options": [
+        "behalten",
+        "enthalten",
+        "erhalten"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 9,
+      "type": "fill-in-blank",
+      "question": "Wenn Sie regelmäßig am Unterricht <b>…</b> , bekommen Sie am Ende der Weiterbildung eine Bescheinigung.",
+      "options": [
+        "mitnehmen",
+        "teilen",
+        "teilnehmen"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 10,
+      "type": "fill-in-blank",
+      "question": "Tanja versteht die Aufgaben sehr schnell und sie hat viele Ideen. Tanja ist sehr <b>…</b> .",
+      "options": [
+        "intelligent",
+        "fleißig",
+        "freundlich"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 11,
+      "type": "fill-in-blank",
+      "question": "Ich möchte ein neues Computerprogramm lernen. Deshalb werde ich mich für eine Fortbildung <b>…</b> .",
+      "options": [
+        "anmelden",
+        "abmelden",
+        "anbieten"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 12,
+      "type": "fill-in-blank",
+      "question": "Der Kursleiter ist krank, deshalb <b>…</b> der Kurs heute und morgen <b>…</b> .",
+      "options": [
+        "fällt ... auf (auffallen)",
+        "fällt … aus (ausfallen)",
+        "fällt ... ein (einfallen)"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 13,
+      "type": "fill-in-blank",
+      "question": "In diesem Kurs lernen Sie sehr viel in kurzer Zeit, der Kurs ist <b>…</b> .",
+      "options": [
+        "intelligent",
+        "intensiv",
+        "international"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 14,
+      "type": "fill-in-blank",
+      "question": "Corin <b>…</b> Medizin an der Universität.",
+      "options": [
+        "braucht",
+        "lernt",
+        "studiert"
+      ],
+      "correctAnswer": 2
+    }
+  ]
+}

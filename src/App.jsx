@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import BareShell from "./components/layouts/BareShell";
+import HoverSidebarShell from "./components/layouts/HoverSidebarShell";
 import HeroPage from "./pages/HeroPage";
 import Dashboard from "./pages/Dashboard";
 import ContentDetail from "./pages/ContentDetail";
@@ -16,6 +16,10 @@ import HoerenHub from "./pages/HoerenHub";
 import HoerenPruefung from "./features/hoeren/HoerenPruefung";
 import HoerenUebung from "./features/hoeren/HoerenUebung";
 import HoerenTraining from "./features/hoeren/HoerenTraining";
+
+// Theme/Wortschatz system
+import ThemeDetail from "./features/themes/ThemeDetail";
+import ThemeQuiz from "./features/themes/ThemeQuiz";
 
 // Placeholder component for coming soon pages
 const ComingSoon = ({ title }) => (
@@ -40,49 +44,49 @@ function App() {
       {/* Hero page without layout */}
       <Route path="/" element={<HeroPage />} />
 
-      {/* Dashboard with its own layout shell */}
+      {/* Dashboard with always-visible sidebar (DashboardShell applied in component) */}
       <Route path="/dashboard" element={<Dashboard />} />
 
-      {/* All other pages with bare layout shell */}
+      {/* All other pages with hover sidebar */}
       <Route
         path="/section/:sectionId"
         element={
-          <BareShell>
+          <HoverSidebarShell>
             <Section />
-          </BareShell>
+          </HoverSidebarShell>
         }
       />
       <Route
         path="/theme/:themeId"
         element={
-          <BareShell>
+          <HoverSidebarShell>
             <Theme />
-          </BareShell>
+          </HoverSidebarShell>
         }
       />
       <Route
         path="/content/:contentId"
         element={
-          <BareShell>
+          <HoverSidebarShell>
             <ContentDetail />
-          </BareShell>
+          </HoverSidebarShell>
         }
       />
       <Route
         path="/bookmarks"
         element={
-          <BareShell>
+          <HoverSidebarShell>
             <Bookmarks />
-          </BareShell>
+          </HoverSidebarShell>
         }
       />
       {/* New Unified Test System */}
       <Route
         path="/tests"
         element={
-          <BareShell>
+          <HoverSidebarShell>
             <TestHub />
-          </BareShell>
+          </HoverSidebarShell>
         }
       />
 
@@ -90,9 +94,9 @@ function App() {
       <Route
         path="/tests/hoeren"
         element={
-          <BareShell>
+          <HoverSidebarShell>
             <HoerenHub />
-          </BareShell>
+          </HoverSidebarShell>
         }
       />
 
@@ -100,9 +104,9 @@ function App() {
       <Route
         path="/tests/hoeren/training"
         element={
-          <BareShell>
+          <HoverSidebarShell>
             <HoerenTraining />
-          </BareShell>
+          </HoverSidebarShell>
         }
       />
 
@@ -110,9 +114,9 @@ function App() {
       <Route
         path="/tests/hoeren/uebung/:teil"
         element={
-          <BareShell>
+          <HoverSidebarShell>
             <HoerenUebung />
-          </BareShell>
+          </HoverSidebarShell>
         }
       />
 
@@ -120,17 +124,35 @@ function App() {
       <Route
         path="/tests/hoeren/pruefung/:testId"
         element={
-          <BareShell>
+          <HoverSidebarShell>
             <HoerenPruefung />
-          </BareShell>
+          </HoverSidebarShell>
         }
       />
       <Route
         path="/tests/hoeren/pruefung"
         element={
-          <BareShell>
+          <HoverSidebarShell>
             <HoerenPruefung />
-          </BareShell>
+          </HoverSidebarShell>
+        }
+      />
+
+      {/* Theme/Wortschatz Routes */}
+      <Route
+        path="/themes/:themeId"
+        element={
+          <HoverSidebarShell>
+            <ThemeDetail />
+          </HoverSidebarShell>
+        }
+      />
+      <Route
+        path="/themes/:themeId/quiz"
+        element={
+          <HoverSidebarShell>
+            <ThemeQuiz />
+          </HoverSidebarShell>
         }
       />
 
@@ -138,33 +160,33 @@ function App() {
       <Route
         path="/tests/lesen"
         element={
-          <BareShell>
+          <HoverSidebarShell>
             <ComingSoon title="Lesen Training" />
-          </BareShell>
+          </HoverSidebarShell>
         }
       />
       <Route
         path="/tests/schreiben"
         element={
-          <BareShell>
+          <HoverSidebarShell>
             <ComingSoon title="Schreiben Training" />
-          </BareShell>
+          </HoverSidebarShell>
         }
       />
       <Route
         path="/tests/sprechen"
         element={
-          <BareShell>
+          <HoverSidebarShell>
             <ComingSoon title="Sprechen Training" />
-          </BareShell>
+          </HoverSidebarShell>
         }
       />
       <Route
         path="/about"
         element={
-          <BareShell>
+          <HoverSidebarShell>
             <About />
-          </BareShell>
+          </HoverSidebarShell>
         }
       />
 
@@ -172,41 +194,41 @@ function App() {
       <Route
         path="/study"
         element={
-          <BareShell>
+          <HoverSidebarShell>
             <ComingSoon title="Study Mode" />
-          </BareShell>
+          </HoverSidebarShell>
         }
       />
       <Route
         path="/progress"
         element={
-          <BareShell>
+          <HoverSidebarShell>
             <ComingSoon title="Progress Tracking" />
-          </BareShell>
+          </HoverSidebarShell>
         }
       />
       <Route
         path="/achievements"
         element={
-          <BareShell>
+          <HoverSidebarShell>
             <ComingSoon title="Achievements" />
-          </BareShell>
+          </HoverSidebarShell>
         }
       />
       <Route
         path="/profile"
         element={
-          <BareShell>
+          <HoverSidebarShell>
             <ComingSoon title="Profile" />
-          </BareShell>
+          </HoverSidebarShell>
         }
       />
       <Route
         path="/settings"
         element={
-          <BareShell>
+          <HoverSidebarShell>
             <ComingSoon title="Settings" />
-          </BareShell>
+          </HoverSidebarShell>
         }
       />
     </Routes>

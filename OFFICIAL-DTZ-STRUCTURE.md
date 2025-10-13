@@ -1,13 +1,112 @@
 # Official DTZ Practice Test Structure
 
-## 🎯 Based on g.a.s.t DTZ Übungssatz 1 (Official Practice Test)
+## 🎯 BASE STRUCTURE FOR ENTIRE APP - ALL FEATURES BUILT ON THIS
 
-### Test Format (Total: 25 minutes)
+This is the official DTZ (Deutsch-Test für Zuwanderer) exam structure.
+**Every feature in the app follows this exact structure.**
 
-**Hören Teil 1:** 4 Ansagen (4 Multiple-Choice questions)
-**Hören Teil 2:** 5 Radio-Ansagen (5 Multiple-Choice questions)  
-**Hören Teil 3:** 4 Gespräche (8 questions: 4 Richtig/Falsch + 4 Multiple-Choice)
-**Hören Teil 4:** 3 Meinungen zu einem Thema (3 Zuordnungsaufgaben)
+---
+
+## Complete DTZ Exam Format
+
+### **Written Exam** (Schriftliche Prüfung)
+
+#### 1. **Hören** (Listening) - 25 minutes - 20 points
+
+- **Teil 1**: Ansagen am Telefon & öffentliche Durchsagen (4 Multiple-Choice)
+- **Teil 2**: Radio-Ansagen (5 Multiple-Choice)
+- **Teil 3**: Gespräche (8 questions: 4 Richtig/Falsch + 4 Multiple-Choice)
+- **Teil 4**: Meinungen zu einem Thema (3 Zuordnungsaufgaben)
+
+#### 2. **Lesen** (Reading) - 45 minutes - 20 points
+
+- **Teil 1**: Kataloge, Anzeigen (Reading catalogs & advertisements)
+- **Teil 2**: Zeitungsartikel (Reading newspaper articles)
+- **Teil 3**: Formelle Briefe/Mitteilungen (Reading formal letters/notices)
+
+#### 3. **Schreiben** (Writing) - 30 minutes - 15 points
+
+- **1 Aufgabe**: Formeller oder informeller Brief schreiben (Write formal or informal letter)
+
+### **Oral Exam** (Mündliche Prüfung)
+
+#### 4. **Sprechen** (Speaking) - ~15 minutes - 15 points
+
+- **Teil 1**: Sich vorstellen (Introduce yourself)
+- **Teil 2**: Über Erfahrungen sprechen (Talk about experiences)
+- **Teil 3**: Etwas aushandeln (Negotiate/discuss something)
+
+---
+
+## App Implementation Structure
+
+### For EACH of the 4 main areas (Hören, Lesen, Schreiben, Sprechen):
+
+#### **Hub Page** (e.g., /tests/hoeren)
+
+Shows overview of all Teile with 2 modes:
+
+1. **Training Mode** - Practice with immediate feedback
+2. **Test Mode** - Timed exam simulation
+
+#### **Training Mode** (e.g., /tests/hoeren/training)
+
+- Random questions from all Teile
+- Immediate feedback after each answer
+- Can replay audio/review
+- No time limit
+- Score tracking
+
+#### **Test Mode** (e.g., /tests/hoeren/pruefung/:testId)
+
+- Full timed exam (25/45/30/15 minutes)
+- No feedback until end
+- Can't go back
+- Official scoring
+- Results summary
+
+---
+
+## Dashboard Cards Structure
+
+### 4 Main Cards (Prüfungsteile):
+
+1. **Hören** → `/tests/hoeren`
+   - Teil 1: Ansagen & Durchsagen
+   - Teil 2: Radio-Ansagen
+   - Teil 3: Gespräche
+   - Teil 4: Meinungen
+
+2. **Lesen** → `/tests/lesen`
+   - Teil 1: Kataloge & Anzeigen
+   - Teil 2: Zeitungsartikel
+   - Teil 3: Formelle Briefe
+
+3. **Schreiben** → `/tests/schreiben`
+   - 1 Brief: Formell oder informell
+
+4. **Sprechen** → `/tests/sprechen`
+   - Teil 1: Sich vorstellen
+   - Teil 2: Über Erfahrungen
+   - Teil 3: Aushandeln
+
+---
+
+## Navigation Structure
+
+### Dashboard
+
+- **Sidebar**: Always visible (DashboardShell)
+- **Cards**: 4 main exam areas
+
+### Other Pages (Test execution, hubs, etc.)
+
+- **Sidebar**: Hover-activated (HoverSidebarShell)
+- **Quick access**: Without taking space
+
+---
+
+## Hören Detailed Structure (Reference for other areas)
 
 ---
 

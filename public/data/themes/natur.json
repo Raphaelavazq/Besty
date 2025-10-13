@@ -1,0 +1,184 @@
+{
+  "id": "natur",
+  "name": "Natur",
+  "description": "Wortschatz und Grammatik zum Thema: Natur",
+  "questionCount": 16,
+  "questions": [
+    {
+      "id": 1,
+      "type": "fill-in-blank",
+      "question": "Menschen essen, Tiere <b>...</b> .",
+      "options": [
+        "füttern",
+        "fressen",
+        "frieren"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 2,
+      "type": "fill-in-blank",
+      "question": "Wir machen Urlaub <b>...</b> , weil meine Kinder Tiere so gern mögen.",
+      "options": [
+        "auf dem Bauernhof",
+        "auf der Baustelle",
+        "im Garten"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 3,
+      "type": "fill-in-blank",
+      "question": "Das Gegenteil von „im Haus, in der Wohnung, drinnen“ ist „<b>...</b> in der Natur“.",
+      "options": [
+        "außen",
+        "außerhalb",
+        "draußen"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 4,
+      "type": "fill-in-blank",
+      "question": "<b>...</b> geben Holz für Möbel oder Papier.",
+      "options": [
+        "Bananen",
+        "Bäume",
+        "Blumen"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 5,
+      "type": "fill-in-blank",
+      "question": "Pflanzen brauchen Wasser, man muss sie <b>...</b> .",
+      "options": [
+        "gießen",
+        "trocknen",
+        "waschen"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 6,
+      "type": "fill-in-blank",
+      "question": "Wir haben zwei <b>...</b> : einen Hund und eine Katze.",
+      "options": [
+        "Haustiere",
+        "Vögel",
+        "Zootiere"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 7,
+      "type": "fill-in-blank",
+      "question": "Wir wohnen an der Küste, das Meer und der Strand sind ganz <b>...</b> .",
+      "options": [
+        "lange weg",
+        "nah",
+        "weit entfernt"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 8,
+      "type": "fill-in-blank",
+      "question": "Blitze, Regen, starker Wind und Donner, das ist <b>...</b> .",
+      "options": [
+        "der Winter",
+        "Donnerstag",
+        "ein Gewitter"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 9,
+      "type": "fill-in-blank",
+      "question": "Schnee fällt vom Himmel, es <b>...</b> .",
+      "options": [
+        "regnet",
+        "scheint",
+        "schneit"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 10,
+      "type": "fill-in-blank",
+      "question": "Das Gegenteil von Hitze ist: <b>...</b> .",
+      "options": [
+        "das Klima",
+        "die Kälte",
+        "die Wärme"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 11,
+      "type": "fill-in-blank",
+      "question": "„umweltfreundlich“ bedeutet: das ist <b>...</b> für die Umwelt.",
+      "options": [
+        "biologisch",
+        "gut",
+        "schlecht"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 12,
+      "type": "fill-in-blank",
+      "question": "<b>...</b> gibt es viele Bäume und man kann im Schatten spazieren gehen.",
+      "options": [
+        "Auf der Wiese",
+        "Im Wald",
+        "In den Bergen"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 13,
+      "type": "fill-in-blank",
+      "question": "Ich liebe <b>...</b> in den Bergen, dort kann ich besser atmen.",
+      "options": [
+        "das schöne Licht",
+        "das warme Wasser",
+        "die frische Luft"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 14,
+      "type": "fill-in-blank",
+      "question": "Es ist bewölkt, <b>...</b> sind am Himmel.",
+      "options": [
+        "dichte Wolken",
+        "die Sonne",
+        "viele Sterne"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 15,
+      "type": "fill-in-blank",
+      "question": "Es hat lange nicht geregnet, es ist viel zu <b>...</b> .",
+      "options": [
+        "feucht",
+        "nass",
+        "trocken"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 16,
+      "type": "fill-in-blank",
+      "question": "Wie wird das <b>...</b> morgen? Kalt oder warm, sonnig oder bewölkt?",
+      "options": [
+        "das Wetter",
+        "die Natur",
+        "meine Laune"
+      ],
+      "correctAnswer": 0
+    }
+  ]
+}

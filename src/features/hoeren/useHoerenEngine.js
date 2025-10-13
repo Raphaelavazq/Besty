@@ -3,8 +3,8 @@
  * Manages state for both Übung and Prüfung modes
  */
 
-import { useState, useCallback, useEffect } from 'react';
-import { scoreTest } from './scoring';
+import { useState, useCallback, useEffect } from "react";
+import { scoreTest } from "./scoring";
 
 /**
  * Custom hook for managing Hören test/practice state
@@ -23,9 +23,14 @@ export function useHoerenEngine(mode, items, timeLimit = null) {
 
   // Timer for Prüfung mode
   useEffect(() => {
-    if (mode === 'pruefung' && timeRemaining && timeRemaining > 0 && !isComplete) {
+    if (
+      mode === "pruefung" &&
+      timeRemaining &&
+      timeRemaining > 0 &&
+      !isComplete
+    ) {
       const timer = setInterval(() => {
-        setTimeRemaining(prev => {
+        setTimeRemaining((prev) => {
           if (!prev || prev <= 1) {
             setIsComplete(true);
             return 0;
@@ -38,35 +43,38 @@ export function useHoerenEngine(mode, items, timeLimit = null) {
     }
   }, [mode, timeRemaining, isComplete]);
 
-  const submitAnswer = useCallback((itemNo, answer) => {
-    setAnswers(prev => ({ ...prev, [itemNo]: answer }));
-    
-    // In Übung mode, show immediate feedback
-    if (mode === 'uebung') {
-      setShowFeedback(true);
-    }
-  }, [mode]);
+  const submitAnswer = useCallback(
+    (itemNo, answer) => {
+      setAnswers((prev) => ({ ...prev, [itemNo]: answer }));
+
+      // In Übung mode, show immediate feedback
+      if (mode === "uebung") {
+        setShowFeedback(true);
+      }
+    },
+    [mode]
+  );
 
   const nextItem = useCallback(() => {
     setShowFeedback(false);
     setReplayRequested(false);
-    
+
     if (currentItemIndex < items.length - 1) {
-      setCurrentItemIndex(prev => prev + 1);
+      setCurrentItemIndex((prev) => prev + 1);
     } else {
       setIsComplete(true);
     }
   }, [currentItemIndex, items.length]);
 
   const previousItem = useCallback(() => {
-    if (currentItemIndex > 0 && mode === 'uebung') {
-      setCurrentItemIndex(prev => prev - 1);
+    if (currentItemIndex > 0 && mode === "uebung") {
+      setCurrentItemIndex((prev) => prev - 1);
       setShowFeedback(false);
     }
   }, [currentItemIndex, mode]);
 
   const replayTrack = useCallback(() => {
-    if (mode === 'uebung') {
+    if (mode === "uebung") {
       setReplayRequested(true);
     }
   }, [mode]);
@@ -93,7 +101,7 @@ export function useHoerenEngine(mode, items, timeLimit = null) {
     showFeedback,
     isComplete,
     timeRemaining,
-    replayRequested
+    replayRequested,
   };
 
   const actions = {
@@ -102,7 +110,7 @@ export function useHoerenEngine(mode, items, timeLimit = null) {
     previousItem,
     replayTrack,
     calculateScore,
-    resetEngine
+    resetEngine,
   };
 
   return [state, actions];

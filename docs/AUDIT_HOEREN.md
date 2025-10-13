@@ -34,13 +34,14 @@ The current Hören implementation is **partially functional** but suffers from:
 
 ### A. Data Files
 
-| File | Purpose | Issues |
-|------|---------|--------|
-| `public/data/synchronized-tests-dtz-official.json` | Full DTZ test (20 items) | ✅ Complete but uses weak audio references |
-| `public/data/synchronized-tests.json` | Copy/fallback | ⚠️ Redundant, unclear purpose |
-| `content/hoeren/telcdb1_track*.md` | Track metadata + transcripts | ⚠️ Not consumed by app, orphaned |
+| File                                               | Purpose                      | Issues                                     |
+| -------------------------------------------------- | ---------------------------- | ------------------------------------------ |
+| `public/data/synchronized-tests-dtz-official.json` | Full DTZ test (20 items)     | ✅ Complete but uses weak audio references |
+| `public/data/synchronized-tests.json`              | Copy/fallback                | ⚠️ Redundant, unclear purpose              |
+| `content/hoeren/telcdb1_track*.md`                 | Track metadata + transcripts | ⚠️ Not consumed by app, orphaned           |
 
 **Data Model Issues:**
+
 - Questions store `audioFile` as path string instead of track reference
 - No `transcriptRef` field to link questions to transcript content
 - Missing `instructionTracks` for Teil-level intro audio
@@ -49,17 +50,18 @@ The current Hören implementation is **partially functional** but suffers from:
 
 ### B. Components
 
-| Component | Location | Responsibility | Issues |
-|-----------|----------|----------------|--------|
-| `AudioPlayerNew.jsx` | `src/components/` | Play audio, emit time updates | ❌ No transcript support, no keyboard nav, hardcoded seeking |
-| `ExercisePlayer.jsx` | `src/pages/hoeren/` | Question flow, answer collection | ⚠️ Tightly coupled to JSON structure, no Übung mode |
-| `HoerenTeilComplete.jsx` | `src/components/` | Teil-specific renderer | ⚠️ Purpose unclear, may be dead code |
-| `Hoeren.jsx` | `src/pages/` | Landing/hub page | ✅ Navigation only, not part of data flow |
-| `HoerenHub.jsx` | `src/pages/` | Video library hub | ✅ Separate feature, no conflict |
-| `HoerenCompleteTest.jsx` | `src/pages/` | Full test flow | ⚠️ Duplicates ExercisePlayer logic |
-| `ExamAudio.jsx` | `src/components/` | Unknown | ❓ Needs investigation |
+| Component                | Location            | Responsibility                   | Issues                                                       |
+| ------------------------ | ------------------- | -------------------------------- | ------------------------------------------------------------ |
+| `AudioPlayerNew.jsx`     | `src/components/`   | Play audio, emit time updates    | ❌ No transcript support, no keyboard nav, hardcoded seeking |
+| `ExercisePlayer.jsx`     | `src/pages/hoeren/` | Question flow, answer collection | ⚠️ Tightly coupled to JSON structure, no Übung mode          |
+| `HoerenTeilComplete.jsx` | `src/components/`   | Teil-specific renderer           | ⚠️ Purpose unclear, may be dead code                         |
+| `Hoeren.jsx`             | `src/pages/`        | Landing/hub page                 | ✅ Navigation only, not part of data flow                    |
+| `HoerenHub.jsx`          | `src/pages/`        | Video library hub                | ✅ Separate feature, no conflict                             |
+| `HoerenCompleteTest.jsx` | `src/pages/`        | Full test flow                   | ⚠️ Duplicates ExercisePlayer logic                           |
+| `ExamAudio.jsx`          | `src/components/`   | Unknown                          | ❓ Needs investigation                                       |
 
 **Component Architecture Issues:**
+
 - Overlapping responsibilities between `ExercisePlayer` and `HoerenCompleteTest`
 - No reusable "Übung engine" separate from "Prüfung engine"
 - Player doesn't accept `mode` prop to differentiate Übung vs Prüfung behavior
@@ -69,35 +71,38 @@ The current Hören implementation is **partially functional** but suffers from:
 
 **Location:** `public/audio/hoeren/`  
 **Naming:** `telcDB1_TrackNN.mp3` (N=01-39)  
-**Coverage:**  
+**Coverage:**
+
 - ✅ Tracks 01-39 present (full official test + extras)
 - ❌ No integrity check to verify tracks match official durations
 - ❌ No manifest mapping track numbers to semantic IDs
 
 **Track Mapping (Official DTZ Modelltest 1):**
 
-| Teil | Items | Tracks | Notes |
-|------|-------|--------|-------|
-| Teil 1 | 1-4 | Track 01-04 | 4 announcements, 1 track each |
-| Teil 2 | 5-9 | Track 05-09 | 5 radio clips, 1 track each |
-| Teil 3 | 10-17 | Track 10-13 | 4 dialogues, 2 questions per dialogue |
-| Teil 4 | 18-20 | Track 14 | 1 track, 3 opinion statements to match |
+| Teil   | Items | Tracks      | Notes                                  |
+| ------ | ----- | ----------- | -------------------------------------- |
+| Teil 1 | 1-4   | Track 01-04 | 4 announcements, 1 track each          |
+| Teil 2 | 5-9   | Track 05-09 | 5 radio clips, 1 track each            |
+| Teil 3 | 10-17 | Track 10-13 | 4 dialogues, 2 questions per dialogue  |
+| Teil 4 | 18-20 | Track 14    | 1 track, 3 opinion statements to match |
 
 **Missing:**
+
 - Instruction tracks (Beispiel/example) for each Teil
 - Practice exercise tracks from "Übung Teil 1-4" sections
 
 ### D. Routes
 
-| Route | Component | Mode | Issues |
-|-------|-----------|------|--------|
-| `/tests/hoeren` | `HoerenHub.jsx` | Navigation | ✅ Works |
-| `/tests/hoeren/training` | `Hoeren.jsx` | Exercise selector | ⚠️ Only shows test options, no Übung |
-| `/tests/hoeren/test` | `Hoeren.jsx` | Test selector | ⚠️ Same as training |
-| `/tests/hoeren/:mode/:type` | `ExercisePlayer.jsx` | Exercise player | ⚠️ Type="full" only, no Teil selection |
-| `/tests/hoeren/complete` | `HoerenCompleteTest.jsx` | Full test | ⚠️ Duplicate logic |
+| Route                       | Component                | Mode              | Issues                                 |
+| --------------------------- | ------------------------ | ----------------- | -------------------------------------- |
+| `/tests/hoeren`             | `HoerenHub.jsx`          | Navigation        | ✅ Works                               |
+| `/tests/hoeren/training`    | `Hoeren.jsx`             | Exercise selector | ⚠️ Only shows test options, no Übung   |
+| `/tests/hoeren/test`        | `Hoeren.jsx`             | Test selector     | ⚠️ Same as training                    |
+| `/tests/hoeren/:mode/:type` | `ExercisePlayer.jsx`     | Exercise player   | ⚠️ Type="full" only, no Teil selection |
+| `/tests/hoeren/complete`    | `HoerenCompleteTest.jsx` | Full test         | ⚠️ Duplicate logic                     |
 
 **Routing Issues:**
+
 - No `/hoeren/uebung/:teil` route for practice exercises
 - No `/hoeren/pruefung/:testId` route for model tests
 - Mode/type parameters are ambiguous (`training/single` vs `test/full`)
@@ -123,6 +128,7 @@ User → HoerenHub → Hoeren → ExercisePlayer
 ```
 
 **Problems:**
+
 1. **Timestamp-based seeking** - Player jumps to `question.timestamp`, but timestamps are relative to a continuous test recording, not individual tracks
 2. **No track validation** - If `audioFile` path is wrong, player silently fails
 3. **No transcript display** - Transcripts in markdown never reach the UI
@@ -201,11 +207,13 @@ User → /hoeren/pruefung/modelltest-1
 
 **Root Cause:**  
 The data model conflates **tracks** (audio files) with **items** (questions). Official DTZ structure has:
+
 - **Tracks** = Audio recordings (may contain multiple items)
 - **Items** = Individual questions (1-20 on Antwortbogen)
 - **Nummern** = Subdivisions within a track (e.g., "Nummer 1", "Nummer 2")
 
 Current JSON treats each question as if it has its own track, when in reality:
+
 - Teil 1 Track 01 contains "Nummer 1-4" (but our JSON splits this into 4 questions)
 - Teil 3 Track 10 contains dialogue for questions 10 AND 11 (but JSON duplicates the audioFile)
 
@@ -235,19 +243,20 @@ Data was modeled for full tests only. Practice exercises from "Üben Hören Teil
 
 ### Against Official DTZ Structure
 
-| Feature | Status | Notes |
-|---------|--------|-------|
-| Full test (20 items) | ✅ Exists | Works but needs refactor |
-| Practice exercises by Teil | ❌ Missing | Critical for learning |
-| Instruction/Beispiel tracks | ❌ Missing | Teil intros not played |
-| Transcript display | ❌ Missing | Transcripts orphaned in markdown |
-| Answer sheet (Antwortbogen) view | ❌ Missing | No way to see official layout |
-| Keyboard controls | ❌ Missing | Player not accessible |
-| Replay controls | ⚠️ Partial | Exists but not mode-aware |
+| Feature                          | Status     | Notes                            |
+| -------------------------------- | ---------- | -------------------------------- |
+| Full test (20 items)             | ✅ Exists  | Works but needs refactor         |
+| Practice exercises by Teil       | ❌ Missing | Critical for learning            |
+| Instruction/Beispiel tracks      | ❌ Missing | Teil intros not played           |
+| Transcript display               | ❌ Missing | Transcripts orphaned in markdown |
+| Answer sheet (Antwortbogen) view | ❌ Missing | No way to see official layout    |
+| Keyboard controls                | ❌ Missing | Player not accessible            |
+| Replay controls                  | ⚠️ Partial | Exists but not mode-aware        |
 
 ### Against Britta Weber Book Content
 
 The book provides:
+
 1. **Übung Teil 1** - Practice announcements with Beispiel
 2. **Übung Teil 2** - Practice radio clips with Beispiel
 3. **Übung Teil 3** - Practice dialogues with Beispiel
@@ -262,14 +271,14 @@ The book provides:
 
 ## 6. A11y Issues
 
-| Issue | Impact | Fix |
-|-------|--------|-----|
-| No keyboard navigation | ⚠️ High | Add Space (play/pause), ←/→ (seek), Tab (focus) |
-| Missing ARIA labels | ⚠️ High | Add `aria-label` to player controls |
-| No focus management | ⚠️ Medium | Move focus to current question on track change |
-| Poor color contrast | ⚠️ Medium | Audit text/background colors |
-| No screen reader announcements | ⚠️ High | Announce track changes, question updates |
-| Transcript not togglable | ⚠️ Medium | Add show/hide toggle for Übung mode |
+| Issue                          | Impact    | Fix                                             |
+| ------------------------------ | --------- | ----------------------------------------------- |
+| No keyboard navigation         | ⚠️ High   | Add Space (play/pause), ←/→ (seek), Tab (focus) |
+| Missing ARIA labels            | ⚠️ High   | Add `aria-label` to player controls             |
+| No focus management            | ⚠️ Medium | Move focus to current question on track change  |
+| Poor color contrast            | ⚠️ Medium | Audit text/background colors                    |
+| No screen reader announcements | ⚠️ High   | Announce track changes, question updates        |
+| Transcript not togglable       | ⚠️ Medium | Add show/hide toggle for Übung mode             |
 
 ---
 
@@ -382,6 +391,7 @@ Teil 4: Meinungen (Items 18-20)
 ### Übung Sections (from book, NOT IN CURRENT DATA)
 
 Each Teil has its own Übung section with:
+
 - Beispiel (worked example)
 - Practice items (count varies by Teil)
 - Separate tracks for each practice item
@@ -415,6 +425,7 @@ AudioPlayerNew
 ```
 
 **Issues:**
+
 - Two components load different JSON files for same content
 - No shared engine between ExercisePlayer and HoerenCompleteTest
 - AudioPlayerNew is dumb component but should be smart about modes
@@ -431,11 +442,11 @@ AudioPlayerNew
   "questions": [
     {
       "id": "teil1_q1",
-      "audioFile": "/audio/hoeren/telcDB1_Track01.mp3",  // ❌ Weak reference
-      "timestamp": 0,                                     // ❌ Relative to what?
+      "audioFile": "/audio/hoeren/telcDB1_Track01.mp3", // ❌ Weak reference
+      "timestamp": 0, // ❌ Relative to what?
       "text": "Question text",
       "options": ["a", "b", "c"],
-      "correctAnswer": 2                                  // ❌ Index not ID
+      "correctAnswer": 2 // ❌ Index not ID
     }
   ]
 }
@@ -451,17 +462,17 @@ AudioPlayerNew
       "teil": 1,
       "title": "Ansagen am Telefon",
       "instructions": "Sie hören vier Ansagen...",
-      "instructionTracks": ["mt1_t1_beispiel"],       // ✅ Instruction audio
+      "instructionTracks": ["mt1_t1_beispiel"], // ✅ Instruction audio
       "items": [
         {
-          "no": 1,                                     // ✅ Official item number
-          "type": "mc3",                               // ✅ Semantic type
-          "track": "mt1_t1_trk01",                     // ✅ Stable track ID
-          "nummer": 1,                                 // ✅ Nummer within track
+          "no": 1, // ✅ Official item number
+          "type": "mc3", // ✅ Semantic type
+          "track": "mt1_t1_trk01", // ✅ Stable track ID
+          "nummer": 1, // ✅ Nummer within track
           "text": "Question text",
           "options": ["a", "b", "c"],
-          "correct": "c",                              // ✅ Value not index
-          "transcriptRef": "mt1.t1.trk01.n1"           // ✅ Link to transcript
+          "correct": "c", // ✅ Value not index
+          "transcriptRef": "mt1.t1.trk01.n1" // ✅ Link to transcript
         }
       ]
     }

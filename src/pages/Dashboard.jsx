@@ -1,7 +1,7 @@
 /**
  * Dashboard
  * Main dashboard route component.
- * Uses DashboardShell layout with DashboardContent.
+ * Uses DashboardShell for always-visible sidebar.
  * Preserves existing visual design exactly.
  */
 import DashboardShell from "../components/layouts/DashboardShell";

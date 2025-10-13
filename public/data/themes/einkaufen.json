@@ -1,0 +1,228 @@
+{
+  "id": "einkaufen",
+  "name": "Einkaufen",
+  "description": "Wortschatz und Grammatik zum Thema: Einkaufen",
+  "questionCount": 20,
+  "questions": [
+    {
+      "id": 1,
+      "type": "fill-in-blank",
+      "question": "Ich kaufe Schuhe lieber <b>...</b> und nicht online im Internet.",
+      "options": [
+        "in bar",
+        "in einem Geschäft",
+        "mit Kreditkarte"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 2,
+      "type": "fill-in-blank",
+      "question": "Im Supermarkt kann man z. B. Gemüse, Getränke und Brot <b>...</b> .",
+      "options": [
+        "anprobieren",
+        "ausgeben",
+        "einkaufen"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 3,
+      "type": "fill-in-blank",
+      "question": "Das macht dann 12,95 €. Möchten Sie bar oder mit Karte <b>...</b> ?",
+      "options": [
+        "bedienen",
+        "bekommen",
+        "(be)zahlen"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 4,
+      "type": "fill-in-blank",
+      "question": "Bitte <b>...</b> Sie die Rechnung gut <b>...</b> . Das ist für die Garantie wichtig!",
+      "options": [
+        "heben…ab (abheben)",
+        "heben…auf (aufheben)",
+        "räumen…auf (aufräumen)"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 5,
+      "type": "fill-in-blank",
+      "question": "Ich habe die Hose anprobiert – sie <b>…</b> mir sehr gut.",
+      "options": [
+        "geht",
+        "passt",
+        "schmeckt"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 6,
+      "type": "fill-in-blank",
+      "question": "In der <b>…</b> lesen Sie, wie Sie das Gerät benutzen.",
+      "options": [
+        "Bedienungsanleitung",
+        "Bestellung",
+        "Rezept"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 7,
+      "type": "fill-in-blank",
+      "question": "Welches <b>…</b> magst du am liebsten? Ich mag Gurken und Tomaten.",
+      "options": [
+        "Lebensmittel",
+        "Obst",
+        "Gemüse"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 8,
+      "type": "fill-in-blank",
+      "question": "Die Tomate ist noch grün, sie ist noch nicht <b>…</b> .",
+      "options": [
+        "fertig",
+        "frisch",
+        "reif"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 9,
+      "type": "fill-in-blank",
+      "question": "Heute können Sie sparen: Es gibt 20% <b>…</b> auf alle Möbel.",
+      "options": [
+        "Rabatt",
+        "Angebot",
+        "Preis"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 10,
+      "type": "fill-in-blank",
+      "question": "Ein anderes Wort für „kaufen“: Ich <b>…</b> Brötchen.",
+      "options": [
+        "besorge",
+        "entsorge",
+        "versorge"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 11,
+      "type": "fill-in-blank",
+      "question": "Ein anderes Wort für „billig“, „preiswert“: <b>…</b> .",
+      "options": [
+        "gebraucht",
+        "günstig",
+        "teuer"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 12,
+      "type": "fill-in-blank",
+      "question": "Tina <b>…</b> Angebote, weil sie wissen will: Wo ist was günstig?",
+      "options": [
+        "besorgt",
+        "macht",
+        "vergleicht"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 13,
+      "type": "fill-in-blank",
+      "question": "Apfel, Aprikose, Banane, Birne sind <b>…</b> .",
+      "options": [
+        "Gemüse",
+        "Gewürze",
+        "Obst"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 14,
+      "type": "fill-in-blank",
+      "question": "Wir <b>…</b> bei Lebensmitteln auf gute Qualität und den Preis. Das ist wichtig für uns.",
+      "options": [
+        "achten",
+        "ändern",
+        "kaufen"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 15,
+      "type": "fill-in-blank",
+      "question": "Mein neuer Computer ist kaputt. Ich möchte ihn im Geschäft <b>…</b> .",
+      "options": [
+        "kaufen",
+        "umtauschen",
+        "verkaufen"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 16,
+      "type": "fill-in-blank",
+      "question": "Sie haben Ihre Rechnung nicht bezahlt, deshalb erhalten Sie eine <b>…</b> .",
+      "options": [
+        "Antwort",
+        "Mahnung",
+        "Mitteilung"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 17,
+      "type": "fill-in-blank",
+      "question": "Ein Kilogramm Bananen <b>…</b> heute 1,49 Euro.",
+      "options": [
+        "klebt",
+        "kostet",
+        "kocht"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 18,
+      "type": "fill-in-blank",
+      "question": "Bitte <b>…</b> Sie das Obst und Gemüse hier an der Waage.",
+      "options": [
+        "bezahlen",
+        "waschen",
+        "wiegen"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 19,
+      "type": "fill-in-blank",
+      "question": "Wann <b>…</b> das Geschäft? Um halb zehn?",
+      "options": [
+        "aufmacht",
+        "geschlossen",
+        "öffnet"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 20,
+      "type": "fill-in-blank",
+      "question": "Joghurt kann man oft auch nach <b>…</b> noch essen.",
+      "options": [
+        "der Frist",
+        "den Öffnungszeiten",
+        "dem Verfallsdatum"
+      ],
+      "correctAnswer": 2
+    }
+  ]
+}
