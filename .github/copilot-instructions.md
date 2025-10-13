@@ -35,6 +35,20 @@ Goal: help an AI coding agent be productive quickly in this repo. Focus on concr
   - Prefer existing hooks and helper utilities found under `src/hooks/` and `src/utils/` rather than adding ad-hoc utilities.
   - Logging: components occasionally use `console.debug(...)` for audio lifecycle — keep or upgrade to minimal structured logs if needed.
 
+- **CRITICAL: Design & UX Standards** (ALWAYS follow these - see DEVELOPMENT_STANDARDS.md and docs/DESIGN_SYSTEM.md):
+  - **Visual Consistency**: All similar elements MUST use identical styling (typography, spacing, colors, animations)
+  - **Glass-morphism**: `bg-white/80 backdrop-blur-md` with subtle borders (`border-purple-100`)
+  - **Gradients**: Purple/indigo combinations (`from-purple-600 to-indigo-600`) for buttons and headings
+  - **Rounded Corners**: Generous use of `rounded-2xl` and `rounded-3xl` for cards and containers
+  - **Shadows**: Layered shadows (`shadow-lg`, `shadow-xl`) with hover enhancements
+  - **Hover Effects**: Smooth transitions with `hover:-translate-y-1`, `hover:scale-105`, `transition-all duration-200`
+  - **Typography**: Bold gradient headings (`text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent`)
+  - **Mobile-First**: Minimum 44px touch targets, proper spacing, responsive breakpoints
+  - **Accessibility**: WCAG AA contrast ratios (4.5:1 text, 3:1 interactive), focus states with `focus:ring-2 focus:ring-purple-500`
+  - **Brand Voice**: Simple German (B1 level), direct communication, encouraging tone. No "bla bla bla" - short, clear, action-oriented.
+  - **Animation Timing**: Fast (150ms) for micro-interactions, normal (200ms) for standard transitions, slow (300ms) for layout changes
+  - **Consistency = Bug**: Treat styling inconsistencies as bugs that MUST be fixed. Never vary font properties for similar elements.
+
 - When adding or modifying content/data:
   - Run `npm run prepare-content` to regenerate JSON and ensure `data/` stays in sync.
   - Validate with `npm run validate-questions` and visually smoke-test the relevant route (e.g. `/tests/hoeren` or `dtz-hoeren-training`).

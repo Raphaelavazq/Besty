@@ -1,26 +1,118 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, Target, Brain, Trophy, Award } from "lucide-react";
+import {
+  ArrowLeft,
+  Target,
+  Brain,
+  Trophy,
+  Award,
+  Play,
+  Clock,
+  Eye,
+  Users,
+  ChevronRight,
+  Bookmark,
+  X,
+} from "lucide-react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { useState } from "react";
 
 export default function HoerenHub() {
+  const [selectedVideo, setSelectedVideo] = useState(null);
+
   const practiceOptions = [
     {
       id: "training",
       title: "Training",
-      description: "Practice with immediate feedback",
+      description: "Zufällige Fragen üben",
       icon: Brain,
       color: "from-purple-500 to-indigo-600",
       path: "/tests/hoeren/training",
     },
     {
       id: "test",
-      title: "Test",
-      description: "Full exam simulation",
+      title: "Prüfung",
+      description: "Modelltest (25 Min)",
       icon: Trophy,
       color: "from-pink-500 to-purple-600",
-      path: "/tests/hoeren/test",
+      path: "/tests/hoeren/pruefung/modelltest-1",
     },
   ];
+
+  // Video gallery data extracted from YouTube URLs
+  const videoGallery = [
+    {
+      id: "cWMwrsCITzY",
+      title: "DTZ Hören",
+      subtitle: "Probetest 1",
+      category: "Hören Teil 1",
+      difficulty: "B1",
+      thumbnail: "https://img.youtube.com/vi/cWMwrsCITzY/maxresdefault.jpg",
+    },
+    {
+      id: "TAd0wgrPzLE",
+      title: "DTZ Hören",
+      subtitle: "Probetest 2",
+      category: "Hören Teil 1",
+      difficulty: "B1",
+      thumbnail: "https://img.youtube.com/vi/TAd0wgrPzLE/maxresdefault.jpg",
+    },
+    {
+      id: "Y3ZOPYk6krQ",
+      title: "DTZ Hören",
+      subtitle: "Probetest 3",
+      category: "Hören Teil 1",
+      difficulty: "B1",
+      thumbnail: "https://img.youtube.com/vi/Y3ZOPYk6krQ/maxresdefault.jpg",
+    },
+    {
+      id: "m5xwgGUu5qA",
+      title: "DTZ Hören",
+      subtitle: "Probetest 4",
+      category: "Hören Teil 1",
+      difficulty: "B1",
+      thumbnail: "https://img.youtube.com/vi/m5xwgGUu5qA/maxresdefault.jpg",
+    },
+    {
+      id: "6lDEKYFhPy0",
+      title: "DTZ Hören",
+      subtitle: "Probetest 5",
+      category: "Hören Teil 1",
+      difficulty: "B1",
+      thumbnail: "https://img.youtube.com/vi/6lDEKYFhPy0/maxresdefault.jpg",
+    },
+    {
+      id: "uoxZqoLVY0o",
+      title: "DTZ Hören",
+      subtitle: "Probetest 6",
+      category: "Hören Teil 1",
+      difficulty: "B1",
+      thumbnail: "https://img.youtube.com/vi/uoxZqoLVY0o/maxresdefault.jpg",
+    },
+    {
+      id: "hIzmW8qQsDg",
+      title: "DTZ Hören",
+      subtitle: "Probetest 7",
+      category: "Hören Teil 1",
+      difficulty: "B1",
+      thumbnail: "https://img.youtube.com/vi/hIzmW8qQsDg/maxresdefault.jpg",
+    },
+    {
+      id: "pLtMtvcfKX8",
+      title: "DTZ Hören",
+      subtitle: "Probetest 8",
+      category: "Hören Teil 1",
+      difficulty: "B1",
+      thumbnail: "https://img.youtube.com/vi/pLtMtvcfKX8/maxresdefault.jpg",
+    },
+  ];
+
+  const handleVideoClick = (video) => {
+    setSelectedVideo(video);
+  };
+
+  const closeVideo = () => {
+    setSelectedVideo(null);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50">
@@ -37,21 +129,13 @@ export default function HoerenHub() {
           <span className="font-semibold">Zurück zu Tests</span>
         </Link>
 
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="w-32 h-32 mx-auto mb-8 flex items-center justify-center">
-            <DotLottieReact
-              src="https://lottie.host/df4c6eaa-b74d-4587-a196-fb9379541445/4SAvaM4Szg.lottie"
-              loop
-              autoplay
-              className="w-full h-full"
-            />
-          </div>
-          <h1 className="text-7xl font-black bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-600 bg-clip-text text-transparent mb-6 leading-none tracking-tight">
-            Hören Training
+        {/* Main Title */}
+        <div className="text-center mb-8">
+          <h1 className="text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4 tracking-tight">
+            Hören üben
           </h1>
-          <p className="text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light tracking-wide">
-            Verbessern Sie Ihre deutschen Hörfertigkeiten mit interaktiven Übungen
+          <p className="text-slate-600 text-xl leading-relaxed max-w-3xl mx-auto font-light">
+            Deutsche Hörtexte verstehen und DTZ bestehen
           </p>
         </div>
 
@@ -63,73 +147,205 @@ export default function HoerenHub() {
               <Link
                 key={option.id}
                 to={option.path}
-                className={`group block bg-gradient-to-br ${option.color} rounded-3xl p-10 shadow-2xl hover:shadow-3xl border border-white/30 text-white transition-all duration-500 hover:-translate-y-2 hover:scale-[1.03] relative overflow-hidden`}
+                className="group block bg-white/80 backdrop-blur-md rounded-3xl overflow-hidden shadow-xl border border-white/50 hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 hover:scale-105 relative"
               >
-                {/* Animated background overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                {/* Glass-morphism card with gradient overlay */}
+                <div
+                  className={`relative bg-gradient-to-br ${option.color} p-10 overflow-hidden`}
+                >
+                  {/* Glassmorphism Bubble Decorations */}
+                  <div className="absolute -top-8 -right-8 w-24 h-24 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 group-hover:scale-110 transition-transform duration-700"></div>
+                  <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-white/15 backdrop-blur-sm rounded-full border border-white/20 group-hover:scale-125 transition-transform duration-500"></div>
+                  <div className="absolute top-1/2 -right-6 w-12 h-12 bg-white/8 backdrop-blur-sm rounded-full border border-white/20 group-hover:scale-105 transition-transform duration-600"></div>
+                  <div className="absolute -top-4 left-1/4 w-8 h-8 bg-white/12 backdrop-blur-sm rounded-full border border-white/20 group-hover:scale-115 transition-transform duration-800"></div>
+                  <div className="absolute bottom-1/4 -left-2 w-6 h-6 bg-white/20 backdrop-blur-sm rounded-full border border-white/20 group-hover:scale-120 transition-transform duration-400"></div>
 
-                <div className="relative z-10">
-                  <div className="flex items-start gap-8 mb-8">
-                    <Icon size={48} className="text-white drop-shadow-lg mt-2 group-hover:scale-110 transition-transform duration-300" />
-                    <div className="flex-1">
-                      <h3 className="text-4xl font-extrabold text-white mb-4 drop-shadow-lg tracking-tight leading-tight">
-                        {option.title}
-                      </h3>
-                      <p className="text-white/90 text-xl font-medium leading-relaxed drop-shadow-sm">
-                        {option.description}
-                      </p>
+                  {/* Animated background overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                  <div className="relative z-10">
+                    <div className="flex items-start gap-6 mb-6">
+                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/20 group-hover:scale-110 group-hover:bg-white/30 transition-all duration-500">
+                        <Icon size={32} className="text-white drop-shadow-lg" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-3xl font-bold text-white mb-3 drop-shadow-lg tracking-tight leading-tight">
+                          {option.title}
+                        </h3>
+                        <p className="text-white/90 text-lg font-medium leading-relaxed drop-shadow-sm">
+                          {option.description}
+                        </p>
+                      </div>
                     </div>
                   </div>
+
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
               </Link>
             );
           })}
         </div>
 
-        {/* Info Section */}
-        <div className="bg-white/70 backdrop-blur-xl rounded-3xl p-12 shadow-2xl hover:shadow-3xl border border-white/30 transition-all duration-500 hover:-translate-y-1 max-w-5xl mx-auto relative overflow-hidden">
-          {/* Decorative gradient overlay */}
-          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-purple-500 via-pink-500 to-indigo-500"></div>
-
-          <div className="text-center mb-12">
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-xl">
-                <Award size={28} className="text-white" />
-              </div>
-            </div>
-            <h2 className="text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-8 tracking-tight leading-tight">
-              DTZ Hören Prüfung
+        {/* Video Gallery Section */}
+        <div className="mb-16">
+          <div className="text-center mb-8">
+            <h2 className="text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4 tracking-tight">
+              🎧 Probetests
             </h2>
-            <p className="text-slate-600 text-2xl leading-relaxed max-w-4xl mx-auto font-light tracking-wide">
-              Die offizielle telc DTZ B1 Hörprüfung besteht aus vier verschiedenen Teilen mit insgesamt 20 Fragen
+            <p className="text-slate-600 text-xl leading-relaxed max-w-3xl mx-auto font-light">
+              Echte DTZ Videos mit Lösungen
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="group bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-8 border border-purple-100/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                  <Brain size={24} className="text-white" />
-                </div>
-                <h4 className="text-3xl font-bold text-slate-800 tracking-tight">
-                  Training Mode
-                </h4>
-              </div>
-              <p className="text-slate-600 text-xl leading-relaxed font-light">
-                Practice with instant feedback and explanations to improve your skills progressively.
-              </p>
-            </div>
+          {/* Responsive Video Gallery */}
+          <div className="relative py-8 px-4 -mx-4">
+            <div className="flex gap-8 overflow-x-auto pb-16 pt-8 px-8 scrollbar-hide snap-x snap-mandatory scroll-smooth touch-pan-x md:grid md:grid-cols-2 md:overflow-visible lg:grid-cols-4 lg:gap-6">
+              {videoGallery.map((video, index) => (
+                <div
+                  key={video.id}
+                  onClick={() => handleVideoClick(video)}
+                  className="flex-none w-80 md:w-auto md:flex-auto group cursor-pointer snap-center md:snap-align-none transform-gpu"
+                >
+                  {/* Clean Video Card */}
+                  <div className="bg-white/80 backdrop-blur-md rounded-3xl overflow-hidden shadow-xl border border-white/50 hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 hover:scale-105 group-hover:opacity-95">
+                    {/* Video Cover */}
+                    <div className="relative aspect-video overflow-hidden">
+                      {/* Background thumbnail (completely hidden) */}
+                      <img
+                        src={video.thumbnail}
+                        alt={video.title}
+                        className="w-full h-full object-cover opacity-0"
+                        onError={(e) => {
+                          const videoId = video.id;
+                          const fallbacks = [
+                            `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
+                            `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`,
+                            `https://img.youtube.com/vi/${videoId}/sddefault.jpg`,
+                            "https://via.placeholder.com/480x270/8B5CF6/FFFFFF?text=📺+Video",
+                          ];
 
-            <div className="group bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl p-8 border border-pink-100/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                  <Trophy size={24} className="text-white" />
+                          const currentSrc = e.target.src;
+                          const currentIndex = fallbacks.findIndex((fb) =>
+                            currentSrc.includes(
+                              fb.split("/").pop().split(".")[0]
+                            )
+                          );
+                          const nextIndex = currentIndex + 1;
+
+                          if (nextIndex < fallbacks.length) {
+                            e.target.src = fallbacks[nextIndex];
+                          }
+                        }}
+                      />
+
+                      {/* Modern Glass Cover Design */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-indigo-600 to-purple-800 group-hover:from-purple-700 group-hover:via-indigo-700 group-hover:to-purple-900 transition-all duration-700">
+                        {/* Glassmorphism Bubble - Bottom Left Corner (partially hidden) */}
+                        <div className="absolute -bottom-3 -left-3 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full border border-white/15 group-hover:scale-110 group-hover:bg-white/15 transition-all duration-500"></div>
+
+                        {/* B1 Badge - Top Right */}
+                        <div className="absolute top-5 right-5">
+                          <div className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-bold text-purple-600 shadow-lg group-hover:bg-white group-hover:scale-105 transition-all duration-500">
+                            {video.difficulty}
+                          </div>
+                        </div>
+
+                        {/* Center Play Button */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="w-24 h-24 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center transform group-hover:scale-125 group-hover:bg-white transition-all duration-500 shadow-2xl border border-white/20 group-hover:shadow-3xl">
+                            <Play className="w-10 h-10 text-purple-600 fill-current ml-1 group-hover:text-purple-700 transition-colors duration-300" />
+                          </div>
+                        </div>
+
+                        {/* Hover overlay with fade effect */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                      </div>
+                    </div>
+
+                    {/* Clean Title Section */}
+                    <div className="p-6">
+                      <div className="text-center">
+                        <h3 className="text-lg font-bold text-slate-800 leading-tight group-hover:text-purple-600 transition-colors duration-500">
+                          {video.title}
+                        </h3>
+                        <p className="text-base font-semibold text-slate-600 mt-1 group-hover:text-purple-500 transition-colors duration-500">
+                          {video.subtitle}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h4 className="text-3xl font-bold text-slate-800 tracking-tight">Test Mode</h4>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Video Modal */}
+        {selectedVideo && (
+          <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 md:p-8">
+            <div className="relative bg-white rounded-2xl overflow-hidden max-w-5xl w-full max-h-[95vh] shadow-2xl">
+              {/* Close Button */}
+              <button
+                onClick={closeVideo}
+                className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-600 hover:text-slate-800 hover:bg-white transition-all duration-300 shadow-lg"
+              >
+                ✕
+              </button>
+
+              {/* Video Header */}
+              <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-6">
+                <h3 className="text-2xl font-bold mb-1">
+                  {selectedVideo.title}
+                </h3>
+                <p className="text-xl font-semibold text-purple-100">
+                  {selectedVideo.subtitle}
+                </p>
               </div>
-              <p className="text-slate-600 text-xl leading-relaxed font-light">
-                Experience the real exam conditions with full timing and scoring simulation.
-              </p>
+
+              {/* Embedded Video with Proper Spacing */}
+              <div className="relative bg-black">
+                <div className="aspect-video">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${selectedVideo.id}?autoplay=1&rel=0&modestbranding=1&controls=1&showinfo=1`}
+                    title={`${selectedVideo.title} ${selectedVideo.subtitle}`}
+                    className="w-full h-full"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+                {/* Extra space for YouTube controls */}
+                <div className="h-2 bg-black"></div>
+              </div>
+
+              {/* Video Info Footer */}
+              <div className="p-6 bg-slate-50">
+                <div className="flex items-center gap-4">
+                  <span className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    {selectedVideo.category}
+                  </span>
+                  <span className="text-slate-600 flex items-center gap-1">
+                    <span className="font-medium">
+                      {selectedVideo.difficulty} Level
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Bottom Animation */}
+        <div className="text-center mt-16 mb-8">
+          <div className="w-full h-96 flex items-center justify-center">
+            <div className="w-full h-full">
+              <DotLottieReact
+                src="https://lottie.host/df4c6eaa-b74d-4587-a196-fb9379541445/4SAvaM4Szg.lottie"
+                loop
+                autoplay
+                className="w-full h-full"
+              />
             </div>
           </div>
         </div>

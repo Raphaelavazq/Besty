@@ -11,7 +11,11 @@ import About from "./pages/About";
 // New unified test system
 import TestHub from "./pages/TestHub";
 import HoerenHub from "./pages/HoerenHub";
-import ExercisePlayer from "./pages/hoeren/ExercisePlayer";
+
+// New Hören system (rebuilt)
+import HoerenPruefung from "./features/hoeren/HoerenPruefung";
+import HoerenUebung from "./features/hoeren/HoerenUebung";
+import HoerenTraining from "./features/hoeren/HoerenTraining";
 
 // Placeholder component for coming soon pages
 const ComingSoon = ({ title }) => (
@@ -92,30 +96,40 @@ function App() {
         }
       />
 
-      {/* Hören Training and Test Routes */}
+      {/* NEW: Hören Training Mode (Random Questions) */}
       <Route
         path="/tests/hoeren/training"
         element={
           <BareShell>
-            <ExercisePlayer />
-          </BareShell>
-        }
-      />
-      <Route
-        path="/tests/hoeren/test"
-        element={
-          <BareShell>
-            <ExercisePlayer />
+            <HoerenTraining />
           </BareShell>
         }
       />
 
-      {/* Original detailed route pattern */}
+      {/* NEW: Hören Practice Mode */}
       <Route
-        path="/tests/hoeren/:mode/:type"
+        path="/tests/hoeren/uebung/:teil"
         element={
           <BareShell>
-            <ExercisePlayer />
+            <HoerenUebung />
+          </BareShell>
+        }
+      />
+
+      {/* NEW: Hören Test Mode */}
+      <Route
+        path="/tests/hoeren/pruefung/:testId"
+        element={
+          <BareShell>
+            <HoerenPruefung />
+          </BareShell>
+        }
+      />
+      <Route
+        path="/tests/hoeren/pruefung"
+        element={
+          <BareShell>
+            <HoerenPruefung />
           </BareShell>
         }
       />

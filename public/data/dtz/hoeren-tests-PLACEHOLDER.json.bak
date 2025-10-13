@@ -1,0 +1,214 @@
+{
+  "modelltest-1": {
+    "id": "modelltest-1",
+    "title": "DTZ Modelltest 1",
+    "description": "Offizieller Modelltest - Hören (25 Minuten)",
+    "duration": 1500,
+    "parts": [
+      {
+        "teil": 1,
+        "title": "Teil 1: Ansagen am Telefon, öffentliche Durchsagen",
+        "instruction": "Sie hören vier Ansagen. Zu jedem Text gibt es eine Aufgabe. Kreuzen Sie an: a, b oder c. Sie hören jeden Text einmal.",
+        "tracks": {
+          "instruction": "MEz_DTZ_Track_10.mp3",
+          "beispiel": "MEz_DTZ_Track_11.mp3"
+        },
+        "items": [
+          {
+            "no": 1,
+            "track": "MEz_DTZ_Track_12.mp3",
+            "type": "mc3",
+            "question": "Aufgabe 1",
+            "options": ["a", "b", "c"],
+            "correct": "c"
+          },
+          {
+            "no": 2,
+            "track": "MEz_DTZ_Track_13.mp3",
+            "type": "mc3",
+            "question": "Aufgabe 2",
+            "options": ["a", "b", "c"],
+            "correct": "b"
+          },
+          {
+            "no": 3,
+            "track": "MEz_DTZ_Track_14.mp3",
+            "type": "mc3",
+            "question": "Aufgabe 3",
+            "options": ["a", "b", "c"],
+            "correct": "a"
+          },
+          {
+            "no": 4,
+            "track": "MEz_DTZ_Track_15.mp3",
+            "type": "mc3",
+            "question": "Aufgabe 4",
+            "options": ["a", "b", "c"],
+            "correct": "c"
+          }
+        ]
+      },
+      {
+        "teil": 2,
+        "title": "Teil 2: Radiodurchsagen",
+        "instruction": "Sie hören fünf Informationen aus dem Radio. Zu jedem Text gibt es eine Aufgabe. Kreuzen Sie an: a, b oder c. Sie hören jeden Text zweimal.",
+        "tracks": {
+          "instruction": "MEz_DTZ_Track_20.mp3",
+          "beispiel": "MEz_DTZ_Track_21.mp3"
+        },
+        "items": [
+          {
+            "no": 5,
+            "track": "MEz_DTZ_Track_22.mp3",
+            "type": "mc3",
+            "question": "Aufgabe 5",
+            "options": ["a", "b", "c"],
+            "correct": "c"
+          },
+          {
+            "no": 6,
+            "track": "MEz_DTZ_Track_23.mp3",
+            "type": "mc3",
+            "question": "Aufgabe 6",
+            "options": ["a", "b", "c"],
+            "correct": "a"
+          },
+          {
+            "no": 7,
+            "track": "MEz_DTZ_Track_24.mp3",
+            "type": "mc3",
+            "question": "Aufgabe 7",
+            "options": ["a", "b", "c"],
+            "correct": "b"
+          },
+          {
+            "no": 8,
+            "track": "MEz_DTZ_Track_25.mp3",
+            "type": "mc3",
+            "question": "Aufgabe 8",
+            "options": ["a", "b", "c"],
+            "correct": "c"
+          },
+          {
+            "no": 9,
+            "track": "MEz_DTZ_Track_26.mp3",
+            "type": "mc3",
+            "question": "Aufgabe 9",
+            "options": ["a", "b", "c"],
+            "correct": "a"
+          }
+        ]
+      },
+      {
+        "teil": 3,
+        "title": "Teil 3: Gespräche",
+        "instruction": "Sie hören vier Gespräche. Zu jedem Gespräch gibt es zwei Aufgaben. Kreuzen Sie an: richtig oder falsch. Sie hören jeden Text zweimal.",
+        "tracks": {
+          "instruction": "MEz_DTZ_Track_30.mp3",
+          "beispiel": "MEz_DTZ_Track_31.mp3"
+        },
+        "items": [
+          {
+            "no": 10,
+            "track": "MEz_DTZ_Track_32.mp3",
+            "type": "tf",
+            "question": "Aufgabe 10",
+            "options": ["richtig", "falsch"],
+            "correct": "falsch"
+          },
+          {
+            "no": 11,
+            "track": "MEz_DTZ_Track_32.mp3",
+            "type": "mc3",
+            "question": "Aufgabe 11",
+            "options": ["a", "b", "c"],
+            "correct": "c"
+          },
+          {
+            "no": 12,
+            "track": "MEz_DTZ_Track_33.mp3",
+            "type": "tf",
+            "question": "Aufgabe 12",
+            "options": ["richtig", "falsch"],
+            "correct": "richtig"
+          },
+          {
+            "no": 13,
+            "track": "MEz_DTZ_Track_33.mp3",
+            "type": "mc3",
+            "question": "Aufgabe 13",
+            "options": ["a", "b", "c"],
+            "correct": "a"
+          },
+          {
+            "no": 14,
+            "track": "MEz_DTZ_Track_34.mp3",
+            "type": "tf",
+            "question": "Aufgabe 14",
+            "options": ["richtig", "falsch"],
+            "correct": "falsch"
+          },
+          {
+            "no": 15,
+            "track": "MEz_DTZ_Track_34.mp3",
+            "type": "mc3",
+            "question": "Aufgabe 15",
+            "options": ["a", "b", "c"],
+            "correct": "b"
+          },
+          {
+            "no": 16,
+            "track": "MEz_DTZ_Track_35.mp3",
+            "type": "tf",
+            "question": "Aufgabe 16",
+            "options": ["richtig", "falsch"],
+            "correct": "richtig"
+          },
+          {
+            "no": 17,
+            "track": "MEz_DTZ_Track_35.mp3",
+            "type": "mc3",
+            "question": "Aufgabe 17",
+            "options": ["a", "b", "c"],
+            "correct": "c"
+          }
+        ]
+      },
+      {
+        "teil": 4,
+        "title": "Teil 4: Meinungen zu einem Thema",
+        "instruction": "Sie hören drei Meinungen zu einem Thema. Welche Aussage passt? Ordnen Sie zu. Sie hören die Meinungen einmal.",
+        "tracks": {
+          "instruction": "MEz_DTZ_Track_40.mp3",
+          "beispiel": "MEz_DTZ_Track_41.mp3"
+        },
+        "items": [
+          {
+            "no": 18,
+            "track": "MEz_DTZ_Track_42.mp3",
+            "type": "match",
+            "question": "Person 1",
+            "options": ["a", "b", "c", "d", "e", "f"],
+            "correct": "d"
+          },
+          {
+            "no": 19,
+            "track": "MEz_DTZ_Track_43.mp3",
+            "type": "match",
+            "question": "Person 2",
+            "options": ["a", "b", "c", "d", "e", "f"],
+            "correct": "a"
+          },
+          {
+            "no": 20,
+            "track": "MEz_DTZ_Track_44.mp3",
+            "type": "match",
+            "question": "Person 3",
+            "options": ["a", "b", "c", "d", "e", "f"],
+            "correct": "e"
+          }
+        ]
+      }
+    ]
+  }
+}

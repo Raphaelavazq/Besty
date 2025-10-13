@@ -1,0 +1,55 @@
+{
+  "teil1": {
+    "title": "Teil 1: Ansagen üben",
+    "description": "Ansagen am Telefon und öffentliche Durchsagen",
+    "tracks": {
+      "instruction": "MEz_DTZ_Track_01.mp3",
+      "beispiel": "MEz_DTZ_Track_02.mp3"
+    },
+    "exercises": [
+      {
+        "id": "ueb_t1_01",
+        "track": "MEz_DTZ_Track_03.mp3",
+        "type": "mc3",
+        "question": "Übung 1",
+        "options": ["a", "b", "c"],
+        "correct": "a"
+      },
+      {
+        "id": "ueb_t1_02",
+        "track": "MEz_DTZ_Track_04.mp3",
+        "type": "mc3",
+        "question": "Übung 2",
+        "options": ["a", "b", "c"],
+        "correct": "b"
+      }
+    ]
+  },
+  "teil2": {
+    "title": "Teil 2: Radio üben",
+    "description": "Radiodurchsagen",
+    "tracks": {
+      "instruction": "MEz_DTZ_Track_15.mp3",
+      "beispiel": "MEz_DTZ_Track_16.mp3"
+    },
+    "exercises": []
+  },
+  "teil3": {
+    "title": "Teil 3: Gespräche üben",
+    "description": "Alltagsgespräche",
+    "tracks": {
+      "instruction": "MEz_DTZ_Track_25.mp3",
+      "beispiel": "MEz_DTZ_Track_26.mp3"
+    },
+    "exercises": []
+  },
+  "teil4": {
+    "title": "Teil 4: Meinungen üben",
+    "description": "Meinungsäußerungen",
+    "tracks": {
+      "instruction": "MEz_DTZ_Track_50.mp3",
+      "beispiel": "MEz_DTZ_Track_51.mp3"
+    },
+    "exercises": []
+  }
+}

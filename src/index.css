@@ -399,3 +399,14 @@
 }
 
 /* Utility classes for mobile touch */
+
+/* Custom scrollbar for video gallery */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+  scroll-behavior: smooth;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
