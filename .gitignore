@@ -115,5 +115,8 @@ content/**/*.mp3
 content/**/*.wav
 content/**/*.mp4
 
+# Audio backups (original high-quality files)
+public/audio/hoeren/original_backups/
+
 # Keep PDFs but exclude large ones if needed
 # *.pdf
