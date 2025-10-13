@@ -1,0 +1,5260 @@
+{
+  "meta": {
+    "version": "1.0",
+    "level": "B1",
+    "tags": ["DTZ", "Teil 3", "Planen"]
+  },
+  "scenarios": [
+    {
+      "id": "1",
+      "number": 1,
+      "title": "Hausfest mit Partner/in planen",
+      "theme": "Feiern & Veranstaltungen",
+      "leitpunkte": ["Ort", "Zeit", "Essen/Trinken", "Einladungen", "Aufgaben"],
+      "greeting": "A: Hallo! Wie geht’s? Planen wir unser Hausfest?",
+      "closing": "A: Perfekt, dann schreibe ich die Einladungen und du kümmerst dich um Musik und Getränke.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Zuerst: Wo feiern wir?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Draußen im Garten wäre super, da haben wir genug Platz.",
+              "partner": "B: Klingt gut. Falls es regnet, nehmen wir den Gemeinschaftsraum."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Drinnen lieber nicht, das ist zu eng und zu warm.",
+              "partner": "B: Verstehe. Dann reserviere ich den Hof, ok?"
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Ist der Gemeinschaftsraum im Keller noch frei?",
+              "partner": "B: Ich frage nach, aber der Garten wäre wahrscheinlich schöner."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Wie wäre es, wenn wir im Hof feiern und bei Regen wechseln?",
+              "partner": "B: Gute Idee, so sind wir flexibel."
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Und wann passt es dir?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag ab 18 Uhr ist perfekt – dann können alle kommen.",
+              "partner": "B: Super, dann blocke ich den Termin im Kalender."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht bei mir gar nicht. Sonntag wäre mir lieber.",
+              "partner": "B: Okay, dann Sonntag 17 Uhr?"
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Sollen wir früher anfangen, z.B. um 16 Uhr?",
+              "partner": "B: Gern, dann haben Familien mit Kindern mehr Zeit."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Lass uns 18 Uhr nehmen – das passt den meisten.",
+              "partner": "B: Einverstanden, ich schreibe das in die Einladung."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Essen, Einladungen, Aufgaben – wie machen wir das?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ein Mitbring-Buffet ist am besten. Ich schreibe die Einladungen.",
+              "partner": "B: Perfekt, ich organisiere Musik und Getränke."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Grillen geht leider nicht – das ist auf dem Balkon verboten.",
+              "partner": "B: Schade. Dann machen wir kalte Platten und Salate."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer bringt vegetarische Optionen? Sollen wir eine Liste machen?",
+              "partner": "B: Ja, ich lege eine Liste an und frage die Nachbarn."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich mache die Gästeliste und du die Musik – ok?",
+              "partner": "B: Einverstanden, ich erstelle sofort eine Playlist."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "number": 2,
+      "title": "Überraschungsessen für Bekannte",
+      "theme": "Feiern & Veranstaltungen",
+      "leitpunkte": ["Menü", "Einkaufen", "Getränke", "Nach dem Essen"],
+      "greeting": "A: Hallo! Schön, dass du da bist. Planen wir das Überraschungsessen?",
+      "closing": "A: Super, ich kaufe morgen ein und du deckst den Tisch.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Was kochen wir?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Lachs mit Ofengemüse klingt lecker und ist schnell gemacht.",
+              "partner": "B: Einverstanden – dazu frische Kräuter und Zitronen."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Pasta lieber nicht, das ist zu alltäglich.",
+              "partner": "B: Verstanden. Dann nehmen wir Ofengemüse mit Hähnchen?"
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Gibt es Allergien oder Unverträglichkeiten?",
+              "partner": "B: Keine, aber sie mögen nichts Scharfes."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Wie wäre es mit Bruschetta, Lachs und Panna Cotta?",
+              "partner": "B: Klingt toll. Ich kümmere mich ums Dessert."
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Wann kaufen wir ein und welche Getränke?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Morgen früh einkaufen; Wasser und Saft reichen.",
+              "partner": "B: Okay, ich hole zusätzlich Mineralwasser."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Heute schaffe ich es nicht, erst morgen.",
+              "partner": "B: Alles gut. Dann treffen wir uns um 10 Uhr vorm Supermarkt."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Brauchen wir auch Wein?",
+              "partner": "B: Ja, eine Flasche Weißwein wäre gut."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Lass uns Apfelschorle und stilles Wasser nehmen.",
+              "partner": "B: Gern, ich schreibe es auf die Liste."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Und nach dem Essen – was machen wir?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ein kurzer Spaziergang wäre schön.",
+              "partner": "B: Gute Idee, frische Luft und danach Kaffee."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Kino heute nicht, das wird zu spät.",
+              "partner": "B: Stimmt. Dann spielen wir lieber ein Brettspiel."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wollen wir Musik hören oder ein Spiel spielen?",
+              "partner": "B: Lass uns mit Musik anfangen und später ein Spiel."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Wir könnten ein kleines Quiz vorbereiten.",
+              "partner": "B: Super, ich denke mir Fragen aus."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "number": 3,
+      "title": "Hausparty nach Umzug",
+      "theme": "Wohnen & Nachbarn",
+      "leitpunkte": ["Termin", "Gästezahl", "Essen/Trinken", "Nachbarn"],
+      "greeting": "A: Hallo! Endlich eingerichtet – machen wir eine Einweihungsparty?",
+      "closing": "A: Klasse, ich informiere die Nachbarn und du bestellst das Fingerfood.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Wann passt die Party?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Nächsten Freitag ab 19 Uhr – das passt vielen.",
+              "partner": "B: Super, ich reserviere den Gemeinschaftsraum ab 18 Uhr."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Freitag ist schlecht, ich muss arbeiten.",
+              "partner": "B: Kein Problem. Wie wäre es mit Samstag?"
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Geht auch Sonntag Nachmittag?",
+              "partner": "B: Ja, dann stören wir die Nachbarn weniger."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schlage Samstag 18 Uhr vor – einverstanden?",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Wie viele Gäste laden wir ein?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Maximal 20 Personen, dann bleibt es gemütlich.",
+              "partner": "B: Gut, ich erstelle die Liste."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: 30 Leute sind zu viel, das wird zu laut.",
+              "partner": "B: Stimmt, dann reduzieren wir auf 15–20."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Sollen wir auch Kollegen einladen?",
+              "partner": "B: Lieber nur enge Freunde und Nachbarn."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Wir laden 18 Personen ein und informieren die Nachbarn vorab.",
+              "partner": "B: Gute Idee, ich drucke Zettel."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Essen & Getränke? Informieren wir die Nachbarn?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Fingerfood und alkoholfreie Getränke; ich hänge eine Info im Flur aus.",
+              "partner": "B: Perfekt, ich bestelle das Essen."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Grillen geht nicht, das stört die Nachbarn.",
+              "partner": "B: Verstanden, dann nur kalte Snacks."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Brauchen wir Musik oder reicht eine Playlist?",
+              "partner": "B: Eine Playlist reicht – leise ab 22 Uhr."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Du machst die Playlist, ich schreibe die Infozettel – passt?",
+              "partner": "B: Passt!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "number": 4,
+      "title": "Gemeinschaftsfest mit Nachbarn",
+      "theme": "Wohnen & Nachbarn",
+      "leitpunkte": ["Datum", "Potluck", "Kosten", "Unterhaltung"],
+      "greeting": "A: Hallo! Sollen wir gemeinschaftsfest mit nachbarn?",
+      "closing": "A: Super, dann schreibe ich eine kurze Zusammenfassung und wir legen los.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Erster Punkt – was schlägst du vor?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Das klingt für mich gut, ich bin dabei.",
+              "partner": "B: Prima, dann halte ich das fest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das passt mir leider nicht, lieber eine Alternative.",
+              "partner": "B: Kein Problem, dann nehmen wir Option B."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt: wir machen es Schritt für Schritt."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Wie wäre es mit einem einfachen Plan in drei Teilen?",
+              "partner": "B: Gute Idee, das ist übersichtlich."
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr wäre ideal.",
+              "partner": "B: Einverstanden, ich trage es ein."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht, lieber Sonntag.",
+              "partner": "B: Okay, dann Sonntag 15 Uhr."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche abends?",
+              "partner": "B: Ja, Mittwoch 18 Uhr wäre möglich."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: in zwei Wochen, dann haben alle Zeit.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben/Material?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen und Getränke.",
+              "partner": "B: Danke, ich kümmere mich um Technik und Raum."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Technik kann ich nicht machen.",
+              "partner": "B: Alles gut, ich frage noch jemanden."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer bringt vegetarische Optionen?",
+              "partner": "B: Ich frage die Gruppe und mache eine Liste."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich mache die Liste, du machst Musik – einverstanden?",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "number": 5,
+      "title": "Nachbarschaftsausflug planen",
+      "theme": "Ausflüge & Reisen",
+      "leitpunkte": ["Ziel", "Dauer", "Abfahrt", "Verpflegung"],
+      "greeting": "A: Hallo! Sollen wir nachbarschaftsausflug planen?",
+      "closing": "A: Super, dann schreibe ich eine kurze Zusammenfassung und wir legen los.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Erster Punkt – was schlägst du vor?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Das klingt für mich gut, ich bin dabei.",
+              "partner": "B: Prima, dann halte ich das fest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das passt mir leider nicht, lieber eine Alternative.",
+              "partner": "B: Kein Problem, dann nehmen wir Option B."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt: wir machen es Schritt für Schritt."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Wie wäre es mit einem einfachen Plan in drei Teilen?",
+              "partner": "B: Gute Idee, das ist übersichtlich."
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr wäre ideal.",
+              "partner": "B: Einverstanden, ich trage es ein."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht, lieber Sonntag.",
+              "partner": "B: Okay, dann Sonntag 15 Uhr."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche abends?",
+              "partner": "B: Ja, Mittwoch 18 Uhr wäre möglich."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: in zwei Wochen, dann haben alle Zeit.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben/Material?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen und Getränke.",
+              "partner": "B: Danke, ich kümmere mich um Technik und Raum."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Technik kann ich nicht machen.",
+              "partner": "B: Alles gut, ich frage noch jemanden."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer bringt vegetarische Optionen?",
+              "partner": "B: Ich frage die Gruppe und mache eine Liste."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich mache die Liste, du machst Musik – einverstanden?",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "number": 6,
+      "title": "Sommerfest mit allen Nachbarn",
+      "theme": "Feiern & Veranstaltungen",
+      "leitpunkte": ["Ort", "Datum", "Essen", "Unterhaltung"],
+      "greeting": "A: Hallo! Sollen wir sommerfest mit allen nachbarn?",
+      "closing": "A: Super, dann schreibe ich eine kurze Zusammenfassung und wir legen los.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Erster Punkt – was schlägst du vor?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Das klingt für mich gut, ich bin dabei.",
+              "partner": "B: Prima, dann halte ich das fest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das passt mir leider nicht, lieber eine Alternative.",
+              "partner": "B: Kein Problem, dann nehmen wir Option B."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt: wir machen es Schritt für Schritt."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Wie wäre es mit einem einfachen Plan in drei Teilen?",
+              "partner": "B: Gute Idee, das ist übersichtlich."
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr wäre ideal.",
+              "partner": "B: Einverstanden, ich trage es ein."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht, lieber Sonntag.",
+              "partner": "B: Okay, dann Sonntag 15 Uhr."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche abends?",
+              "partner": "B: Ja, Mittwoch 18 Uhr wäre möglich."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: in zwei Wochen, dann haben alle Zeit.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben/Material?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen und Getränke.",
+              "partner": "B: Danke, ich kümmere mich um Technik und Raum."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Technik kann ich nicht machen.",
+              "partner": "B: Alles gut, ich frage noch jemanden."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer bringt vegetarische Optionen?",
+              "partner": "B: Ich frage die Gruppe und mache eine Liste."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich mache die Liste, du machst Musik – einverstanden?",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "number": 7,
+      "title": "Gemeinsame Geburtstagsfeier für Kinder",
+      "theme": "Familie & Kinder",
+      "leitpunkte": ["Uhrzeit", "Gäste", "Unterhaltung", "Geschenk"],
+      "greeting": "A: Hallo! Sollen wir gemeinsame geburtstagsfeier für kinder?",
+      "closing": "A: Super, dann schreibe ich eine kurze Zusammenfassung und wir legen los.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Erster Punkt – was schlägst du vor?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Das klingt für mich gut, ich bin dabei.",
+              "partner": "B: Prima, dann halte ich das fest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das passt mir leider nicht, lieber eine Alternative.",
+              "partner": "B: Kein Problem, dann nehmen wir Option B."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt: wir machen es Schritt für Schritt."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Wie wäre es mit einem einfachen Plan in drei Teilen?",
+              "partner": "B: Gute Idee, das ist übersichtlich."
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr wäre ideal.",
+              "partner": "B: Einverstanden, ich trage es ein."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht, lieber Sonntag.",
+              "partner": "B: Okay, dann Sonntag 15 Uhr."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche abends?",
+              "partner": "B: Ja, Mittwoch 18 Uhr wäre möglich."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: in zwei Wochen, dann haben alle Zeit.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben/Material?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen und Getränke.",
+              "partner": "B: Danke, ich kümmere mich um Technik und Raum."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Technik kann ich nicht machen.",
+              "partner": "B: Alles gut, ich frage noch jemanden."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer bringt vegetarische Optionen?",
+              "partner": "B: Ich frage die Gruppe und mache eine Liste."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich mache die Liste, du machst Musik – einverstanden?",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "number": 8,
+      "title": "Geschenk für Nachbars Hochzeit",
+      "theme": "Feiern & Geschenke",
+      "leitpunkte": ["Geschenkidee", "Kosten", "Sammeln", "Karte"],
+      "greeting": "A: Hallo! Sollen wir geschenk für nachbars hochzeit?",
+      "closing": "A: Super, dann schreibe ich eine kurze Zusammenfassung und wir legen los.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Erster Punkt – was schlägst du vor?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Das klingt für mich gut, ich bin dabei.",
+              "partner": "B: Prima, dann halte ich das fest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das passt mir leider nicht, lieber eine Alternative.",
+              "partner": "B: Kein Problem, dann nehmen wir Option B."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt: wir machen es Schritt für Schritt."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Wie wäre es mit einem einfachen Plan in drei Teilen?",
+              "partner": "B: Gute Idee, das ist übersichtlich."
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr wäre ideal.",
+              "partner": "B: Einverstanden, ich trage es ein."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht, lieber Sonntag.",
+              "partner": "B: Okay, dann Sonntag 15 Uhr."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche abends?",
+              "partner": "B: Ja, Mittwoch 18 Uhr wäre möglich."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: in zwei Wochen, dann haben alle Zeit.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben/Material?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen und Getränke.",
+              "partner": "B: Danke, ich kümmere mich um Technik und Raum."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Technik kann ich nicht machen.",
+              "partner": "B: Alles gut, ich frage noch jemanden."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer bringt vegetarische Optionen?",
+              "partner": "B: Ich frage die Gruppe und mache eine Liste."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich mache die Liste, du machst Musik – einverstanden?",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "number": 9,
+      "title": "Sportlicher Nachmittag mit Nachbarn",
+      "theme": "Freizeit & Sport",
+      "leitpunkte": ["Aktivitäten", "Teams", "Snacks", "Treffpunkt"],
+      "greeting": "A: Hallo! Sollen wir sportlicher nachmittag mit nachbarn?",
+      "closing": "A: Super, dann schreibe ich eine kurze Zusammenfassung und wir legen los.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Erster Punkt – was schlägst du vor?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Das klingt für mich gut, ich bin dabei.",
+              "partner": "B: Prima, dann halte ich das fest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das passt mir leider nicht, lieber eine Alternative.",
+              "partner": "B: Kein Problem, dann nehmen wir Option B."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt: wir machen es Schritt für Schritt."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Wie wäre es mit einem einfachen Plan in drei Teilen?",
+              "partner": "B: Gute Idee, das ist übersichtlich."
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr wäre ideal.",
+              "partner": "B: Einverstanden, ich trage es ein."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht, lieber Sonntag.",
+              "partner": "B: Okay, dann Sonntag 15 Uhr."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche abends?",
+              "partner": "B: Ja, Mittwoch 18 Uhr wäre möglich."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: in zwei Wochen, dann haben alle Zeit.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben/Material?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen und Getränke.",
+              "partner": "B: Danke, ich kümmere mich um Technik und Raum."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Technik kann ich nicht machen.",
+              "partner": "B: Alles gut, ich frage noch jemanden."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer bringt vegetarische Optionen?",
+              "partner": "B: Ich frage die Gruppe und mache eine Liste."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich mache die Liste, du machst Musik – einverstanden?",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "number": 10,
+      "title": "Lärm durch Renovierung",
+      "theme": "Wohnen & Nachbarn",
+      "leitpunkte": ["Problem", "Kontakt", "Vermieter", "Lösung"],
+      "greeting": "A: Hallo! Sollen wir lärm durch renovierung?",
+      "closing": "A: Super, dann schreibe ich eine kurze Zusammenfassung und wir legen los.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Erster Punkt – was schlägst du vor?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Das klingt für mich gut, ich bin dabei.",
+              "partner": "B: Prima, dann halte ich das fest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das passt mir leider nicht, lieber eine Alternative.",
+              "partner": "B: Kein Problem, dann nehmen wir Option B."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt: wir machen es Schritt für Schritt."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Wie wäre es mit einem einfachen Plan in drei Teilen?",
+              "partner": "B: Gute Idee, das ist übersichtlich."
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr wäre ideal.",
+              "partner": "B: Einverstanden, ich trage es ein."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht, lieber Sonntag.",
+              "partner": "B: Okay, dann Sonntag 15 Uhr."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche abends?",
+              "partner": "B: Ja, Mittwoch 18 Uhr wäre möglich."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: in zwei Wochen, dann haben alle Zeit.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben/Material?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen und Getränke.",
+              "partner": "B: Danke, ich kümmere mich um Technik und Raum."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Technik kann ich nicht machen.",
+              "partner": "B: Alles gut, ich frage noch jemanden."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer bringt vegetarische Optionen?",
+              "partner": "B: Ich frage die Gruppe und mache eine Liste."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich mache die Liste, du machst Musik – einverstanden?",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "number": 11,
+      "title": "Party am Wochenende",
+      "theme": "Feiern & Veranstaltungen",
+      "leitpunkte": ["Termin", "Essen", "Gäste", "Nachbarn"],
+      "greeting": "A: Hallo! Sollen wir party am wochenende?",
+      "closing": "A: Super, dann schreibe ich eine kurze Zusammenfassung und wir legen los.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Erster Punkt – was schlägst du vor?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Das klingt für mich gut, ich bin dabei.",
+              "partner": "B: Prima, dann halte ich das fest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das passt mir leider nicht, lieber eine Alternative.",
+              "partner": "B: Kein Problem, dann nehmen wir Option B."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt: wir machen es Schritt für Schritt."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Wie wäre es mit einem einfachen Plan in drei Teilen?",
+              "partner": "B: Gute Idee, das ist übersichtlich."
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr wäre ideal.",
+              "partner": "B: Einverstanden, ich trage es ein."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht, lieber Sonntag.",
+              "partner": "B: Okay, dann Sonntag 15 Uhr."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche abends?",
+              "partner": "B: Ja, Mittwoch 18 Uhr wäre möglich."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: in zwei Wochen, dann haben alle Zeit.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben/Material?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen und Getränke.",
+              "partner": "B: Danke, ich kümmere mich um Technik und Raum."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Technik kann ich nicht machen.",
+              "partner": "B: Alles gut, ich frage noch jemanden."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer bringt vegetarische Optionen?",
+              "partner": "B: Ich frage die Gruppe und mache eine Liste."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich mache die Liste, du machst Musik – einverstanden?",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "number": 12,
+      "title": "Ausstellung zum Kursabschluss",
+      "theme": "Kurse & Lernen",
+      "leitpunkte": ["Fotos", "Ort/Zeit", "Einladungen", "Getränke"],
+      "greeting": "A: Hallo! Sollen wir ausstellung zum kursabschluss?",
+      "closing": "A: Super, dann schreibe ich eine kurze Zusammenfassung und wir legen los.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Erster Punkt – was schlägst du vor?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Das klingt für mich gut, ich bin dabei.",
+              "partner": "B: Prima, dann halte ich das fest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das passt mir leider nicht, lieber eine Alternative.",
+              "partner": "B: Kein Problem, dann nehmen wir Option B."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt: wir machen es Schritt für Schritt."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Wie wäre es mit einem einfachen Plan in drei Teilen?",
+              "partner": "B: Gute Idee, das ist übersichtlich."
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr wäre ideal.",
+              "partner": "B: Einverstanden, ich trage es ein."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht, lieber Sonntag.",
+              "partner": "B: Okay, dann Sonntag 15 Uhr."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche abends?",
+              "partner": "B: Ja, Mittwoch 18 Uhr wäre möglich."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: in zwei Wochen, dann haben alle Zeit.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben/Material?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen und Getränke.",
+              "partner": "B: Danke, ich kümmere mich um Technik und Raum."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Technik kann ich nicht machen.",
+              "partner": "B: Alles gut, ich frage noch jemanden."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer bringt vegetarische Optionen?",
+              "partner": "B: Ich frage die Gruppe und mache eine Liste."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich mache die Liste, du machst Musik – einverstanden?",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "number": 13,
+      "title": "Abschiedsparty Deutschkurs",
+      "theme": "Kurse & Lernen",
+      "leitpunkte": ["Ort", "Zeit", "Essen/Trinken", "Musik"],
+      "greeting": "A: Hallo! Sollen wir abschiedsparty deutschkurs?",
+      "closing": "A: Super, dann schreibe ich eine kurze Zusammenfassung und wir legen los.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Erster Punkt – was schlägst du vor?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Das klingt für mich gut, ich bin dabei.",
+              "partner": "B: Prima, dann halte ich das fest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das passt mir leider nicht, lieber eine Alternative.",
+              "partner": "B: Kein Problem, dann nehmen wir Option B."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt: wir machen es Schritt für Schritt."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Wie wäre es mit einem einfachen Plan in drei Teilen?",
+              "partner": "B: Gute Idee, das ist übersichtlich."
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr wäre ideal.",
+              "partner": "B: Einverstanden, ich trage es ein."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht, lieber Sonntag.",
+              "partner": "B: Okay, dann Sonntag 15 Uhr."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche abends?",
+              "partner": "B: Ja, Mittwoch 18 Uhr wäre möglich."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: in zwei Wochen, dann haben alle Zeit.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben/Material?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen und Getränke.",
+              "partner": "B: Danke, ich kümmere mich um Technik und Raum."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Technik kann ich nicht machen.",
+              "partner": "B: Alles gut, ich frage noch jemanden."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer bringt vegetarische Optionen?",
+              "partner": "B: Ich frage die Gruppe und mache eine Liste."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich mache die Liste, du machst Musik – einverstanden?",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "number": 14,
+      "title": "Heimatland im Kurs vorstellen",
+      "theme": "Kurse & Lernen",
+      "leitpunkte": ["Treffen", "Materialien", "Infos", "Essen/Trinken"],
+      "greeting": "A: Hallo! Sollen wir heimatland im kurs vorstellen?",
+      "closing": "A: Super, dann schreibe ich eine kurze Zusammenfassung und wir legen los.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Erster Punkt – was schlägst du vor?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Das klingt für mich gut, ich bin dabei.",
+              "partner": "B: Prima, dann halte ich das fest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das passt mir leider nicht, lieber eine Alternative.",
+              "partner": "B: Kein Problem, dann nehmen wir Option B."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt: wir machen es Schritt für Schritt."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Wie wäre es mit einem einfachen Plan in drei Teilen?",
+              "partner": "B: Gute Idee, das ist übersichtlich."
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr wäre ideal.",
+              "partner": "B: Einverstanden, ich trage es ein."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht, lieber Sonntag.",
+              "partner": "B: Okay, dann Sonntag 15 Uhr."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche abends?",
+              "partner": "B: Ja, Mittwoch 18 Uhr wäre möglich."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: in zwei Wochen, dann haben alle Zeit.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben/Material?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen und Getränke.",
+              "partner": "B: Danke, ich kümmere mich um Technik und Raum."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Technik kann ich nicht machen.",
+              "partner": "B: Alles gut, ich frage noch jemanden."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer bringt vegetarische Optionen?",
+              "partner": "B: Ich frage die Gruppe und mache eine Liste."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich mache die Liste, du machst Musik – einverstanden?",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "number": 15,
+      "title": "B1-Prüfungsvorbereitung organisieren",
+      "theme": "Kurse & Lernen",
+      "leitpunkte": ["Wann", "Wo", "Häufigkeit", "Material"],
+      "greeting": "A: Hallo! Sollen wir b1-prüfungsvorbereitung organisieren?",
+      "closing": "A: Super, dann schreibe ich eine kurze Zusammenfassung und wir legen los.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Erster Punkt – was schlägst du vor?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Das klingt für mich gut, ich bin dabei.",
+              "partner": "B: Prima, dann halte ich das fest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das passt mir leider nicht, lieber eine Alternative.",
+              "partner": "B: Kein Problem, dann nehmen wir Option B."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt: wir machen es Schritt für Schritt."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Wie wäre es mit einem einfachen Plan in drei Teilen?",
+              "partner": "B: Gute Idee, das ist übersichtlich."
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr wäre ideal.",
+              "partner": "B: Einverstanden, ich trage es ein."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht, lieber Sonntag.",
+              "partner": "B: Okay, dann Sonntag 15 Uhr."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche abends?",
+              "partner": "B: Ja, Mittwoch 18 Uhr wäre möglich."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: in zwei Wochen, dann haben alle Zeit.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben/Material?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen und Getränke.",
+              "partner": "B: Danke, ich kümmere mich um Technik und Raum."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Technik kann ich nicht machen.",
+              "partner": "B: Alles gut, ich frage noch jemanden."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer bringt vegetarische Optionen?",
+              "partner": "B: Ich frage die Gruppe und mache eine Liste."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich mache die Liste, du machst Musik – einverstanden?",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "number": 16,
+      "title": "Wochenende verreisen (Kursabschluss)",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir wochenende verreisen (kursabschluss)?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "number": 17,
+      "title": "Klassentreffen planen",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir klassentreffen planen?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "number": 18,
+      "title": "Freund krank – Testvorbereitung",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir freund krank – testvorbereitung?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "number": 19,
+      "title": "Dreitägige Kursreise",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir dreitägige kursreise?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "number": 20,
+      "title": "Kurs-Party – Aufgaben verteilen",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir kurs-party – aufgaben verteilen?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "number": 21,
+      "title": "Test Umwelt – Hilfe organisieren",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir test umwelt – hilfe organisieren?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "number": 22,
+      "title": "Vortrag Umwelt & Klimawandel",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir vortrag umwelt & klimawandel?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "23",
+      "number": 23,
+      "title": "Ausbildung nach B1 – Beratung",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir ausbildung nach b1 – beratung?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "24",
+      "number": 24,
+      "title": "Ganztägiger Kursausflug",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir ganztägiger kursausflug?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "25",
+      "number": 25,
+      "title": "Lernabend mit Bekannten",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir lernabend mit bekannten?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "26",
+      "number": 26,
+      "title": "Beitrag für große Schulfeier",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir beitrag für große schulfeier?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "27",
+      "number": 27,
+      "title": "Gemeinsamer VHS-Kurs auswählen",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir gemeinsamer vhs-kurs auswählen?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "28",
+      "number": 28,
+      "title": "Gesünder leben mit Partner/in",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir gesünder leben mit partner/in?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "29",
+      "number": 29,
+      "title": "Gemeinsamer Kurs planen",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir gemeinsamer kurs planen?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "30",
+      "number": 30,
+      "title": "Kollegin 50 – Überraschung",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir kollegin 50 – überraschung?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "31",
+      "number": 31,
+      "title": "Hochzeit Neuburg – Anreise",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir hochzeit neuburg – anreise?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "32",
+      "number": 32,
+      "title": "Katzenbetreuung organisieren",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir katzenbetreuung organisieren?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "33",
+      "number": 33,
+      "title": "Firmenbesprechung organisieren",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir firmenbesprechung organisieren?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "34",
+      "number": 34,
+      "title": "Aufpassen auf Philip (6)",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir aufpassen auf philip (6)?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "35",
+      "number": 35,
+      "title": "Wochenendausflug zu zweit",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir wochenendausflug zu zweit?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "36",
+      "number": 36,
+      "title": "Radausflug planen",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir radausflug planen?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "37",
+      "number": 37,
+      "title": "Grillen mit Freunden",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir grillen mit freunden?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "38",
+      "number": 38,
+      "title": "Überraschungsparty bei Rückkehr",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir überraschungsparty bei rückkehr?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "39",
+      "number": 39,
+      "title": "Reise nach London",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir reise nach london?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "40",
+      "number": 40,
+      "title": "Picknick mit der Familie",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir picknick mit der familie?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "41",
+      "number": 41,
+      "title": "Samstagabend planen",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir samstagabend planen?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "42",
+      "number": 42,
+      "title": "Möbelkauf planen",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir möbelkauf planen?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "43",
+      "number": 43,
+      "title": "Kindergeburtstag organisieren",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir kindergeburtstag organisieren?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "44",
+      "number": 44,
+      "title": "Umzug organisieren",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir umzug organisieren?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "45",
+      "number": 45,
+      "title": "Hausaufgabenraum einrichten",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir hausaufgabenraum einrichten?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "46",
+      "number": 46,
+      "title": "Umweltschutz im Alltag",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir umweltschutz im alltag?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "47",
+      "number": 47,
+      "title": "Bericht zum Umweltschutz",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir bericht zum umweltschutz?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "48",
+      "number": 48,
+      "title": "Elternabend: Ausflug Umwelt",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir elternabend: ausflug umwelt?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "49",
+      "number": 49,
+      "title": "Ehrenamt für die Umwelt",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir ehrenamt für die umwelt?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "50",
+      "number": 50,
+      "title": "Klassenfest für Kinder",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir klassenfest für kinder?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "51",
+      "number": 51,
+      "title": "Ausflug für Kursleiterin",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir ausflug für kursleiterin?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "52",
+      "number": 52,
+      "title": "Ausflug (Rollstuhl – barrierefrei)",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir ausflug (rollstuhl – barrierefrei)?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "53",
+      "number": 53,
+      "title": "Eröffnungsfeier für ein Geschäft",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir eröffnungsfeier für ein geschäft?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "54",
+      "number": 54,
+      "title": "Nachhilfe organisieren",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir nachhilfe organisieren?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "55",
+      "number": 55,
+      "title": "Beratung: Stadt oder Land",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir beratung: stadt oder land?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "56",
+      "number": 56,
+      "title": "Auto kaufen: Planung",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir auto kaufen: planung?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "57",
+      "number": 57,
+      "title": "Beratung beim Autokauf",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir beratung beim autokauf?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "58",
+      "number": 58,
+      "title": "Oktoberfest besuchen",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir oktoberfest besuchen?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "59",
+      "number": 59,
+      "title": "Versicherung für neues Auto",
+      "theme": "Verschiedenes",
+      "leitpunkte": ["Punkt 1", "Punkt 2", "Punkt 3"],
+      "greeting": "A: Hallo! Sollen wir versicherung für neues auto?",
+      "closing": "A: Super, wir haben einen Plan. Ich schreibe die Zusammenfassung.",
+      "steps": [
+        {
+          "step": 1,
+          "examinerPrompt": "B: Fangen wir mit dem ersten Punkt an.",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Klingt gut, ich bin einverstanden.",
+              "partner": "B: Prima, dann notiere ich das."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: So passt es mir nicht, lieber anders.",
+              "partner": "B: Kein Problem, wir ändern das."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wie genau stellst du dir das vor?",
+              "partner": "B: Kurz erklärt …"
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Mein Vorschlag: wir machen es in zwei Schritten.",
+              "partner": "B: Gute Idee!"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "examinerPrompt": "B: Zweiter Punkt – Termin/Zeit?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Samstag 16 Uhr ist gut.",
+              "partner": "B: Einverstanden."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Samstag geht nicht.",
+              "partner": "B: Okay, dann Sonntag."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Passt auch unter der Woche?",
+              "partner": "B: Mittwoch 18 Uhr ginge."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Vorschlag: nächstes Wochenende.",
+              "partner": "B: Klingt vernünftig."
+            }
+          }
+        },
+        {
+          "step": 3,
+          "examinerPrompt": "B: Dritter Punkt – Aufgaben?",
+          "choices": {
+            "positive": {
+              "label": "positiv",
+              "learner": "A: Ich übernehme Einladungen.",
+              "partner": "B: Danke, ich mache den Rest."
+            },
+            "negative": {
+              "label": "negativ",
+              "learner": "A: Das kann ich nicht.",
+              "partner": "B: Alles gut, ich frage wen anders."
+            },
+            "question": {
+              "label": "nachfragen",
+              "learner": "A: Wer macht was?",
+              "partner": "B: Ich teile die Aufgaben zu."
+            },
+            "suggestion": {
+              "label": "vorschlag",
+              "learner": "A: Ich schreibe die Liste, du Musik.",
+              "partner": "B: Einverstanden!"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

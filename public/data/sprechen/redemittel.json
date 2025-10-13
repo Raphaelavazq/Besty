@@ -1,0 +1,51 @@
+{
+  "teil1": {
+    "personal_info": [
+      "Ich heiße {name}.",
+      "Ich komme aus {country}, aus {city}.",
+      "Ich wohne in {city}.",
+      "Ich bin {profession} von Beruf.",
+      "Ich habe {number} Kinder."
+    ]
+  },
+  "teil3": {
+    "vorschlag_machen": [
+      "Wie wäre es, wenn wir {activity}?",
+      "Wir könnten {activity}. Was meinst du?",
+      "Ich schlage vor, dass wir {activity}.",
+      "Vielleicht sollten wir {activity}?"
+    ],
+    "vorschlag_annehmen": [
+      "Ja, das ist eine gute Idee!",
+      "Das finde ich super!",
+      "In Ordnung, das machen wir so.",
+      "Ich bin einverstanden."
+    ],
+    "vorschlag_ablehnen": [
+      "Das finde ich nicht so gut. Vielleicht sollten wir lieber {alternative}.",
+      "Ich weiß nicht, das ist keine gute Idee. Besser wäre es, wenn {alternative}.",
+      "Nein, ich denke, wir sollten {alternative}."
+    ],
+    "meinung_äußern": [
+      "Ich finde, dass {opinion}.",
+      "Ich denke, {opinion}.",
+      "Meiner Meinung nach {opinion}."
+    ],
+    "zustimmen": [
+      "Das finde ich auch.",
+      "Ja, das stimmt.",
+      "Da hast du recht."
+    ],
+    "widersprechen": [
+      "Nein, das finde ich nicht.",
+      "Das kommt darauf an.",
+      "Ich denke nicht, dass {reason}."
+    ],
+    "nachfragen": [
+      "Was denkst du?",
+      "Was meinst du?",
+      "Wie findest du das?",
+      "Was hältst du davon?"
+    ]
+  }
+}

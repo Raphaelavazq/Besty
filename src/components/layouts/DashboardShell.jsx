@@ -122,7 +122,8 @@ export default function DashboardShell({ children }) {
           {/* Attribution Footer */}
           <div className="px-4 pb-3 pt-3 border-t border-white/10">
             <p className="text-[11px] text-white/60 text-center leading-snug">
-              Made with <span className="text-white/80">♥</span> for German learners
+              Made with <span className="text-white/80">♥</span> for German
+              learners
               <br />
               <span className="text-white/40">© Raphaella 2025</span>
             </p>

@@ -1,0 +1,366 @@
+[
+  {
+    "id": "geburtstagsparty_ext",
+    "title": "Eine große Geburtstagsparty organisieren",
+    "description": "Planen Sie gemeinsam eine große Party mit vielen Details.",
+    "leitpunkte": [
+      "Wann?",
+      "Wo?",
+      "Essen/Getränke?",
+      "Wer kommt?",
+      "Dekoration?",
+      "Musik?",
+      "Spiele?",
+      "Budget?",
+      "Einladungen?",
+      "Aufräumen?"
+    ],
+    "dialogueFlow": [
+      {
+        "step": 1,
+        "examinerPrompt": "Wann wollen wir die Party machen?",
+        "redemittelOptions": [
+          {
+            "category": "vorschlag_machen",
+            "text": "Wie wäre es am Freitagabend?"
+          },
+          { "category": "nachfragen", "text": "Wann passt es dir am besten?" },
+          { "category": "meinung_äußern", "text": "Ich finde Samstag besser." },
+          { "category": "zustimmen", "text": "Freitag klingt gut!" }
+        ]
+      },
+      {
+        "step": 2,
+        "examinerPrompt": "Wo wollen wir feiern?",
+        "redemittelOptions": [
+          {
+            "category": "vorschlag_machen",
+            "text": "Wir könnten im Park feiern."
+          },
+          {
+            "category": "vorschlag_ablehnen",
+            "text": "Im Park ist es zu kalt."
+          },
+          { "category": "meinung_äußern", "text": "Zu Hause wäre gemütlich." },
+          { "category": "nachfragen", "text": "Was denkst du?" }
+        ]
+      },
+      {
+        "step": 3,
+        "examinerPrompt": "Was wollen wir essen und trinken?",
+        "redemittelOptions": [
+          { "category": "vorschlag_machen", "text": "Pizza und Cola?" },
+          {
+            "category": "meinung_äußern",
+            "text": "Ich finde Kuchen und Saft besser."
+          },
+          { "category": "zustimmen", "text": "Gute Idee!" },
+          { "category": "widersprechen", "text": "Ich mag keine Cola." }
+        ]
+      },
+      {
+        "step": 4,
+        "examinerPrompt": "Wen sollen wir einladen?",
+        "redemittelOptions": [
+          {
+            "category": "vorschlag_machen",
+            "text": "Unsere Freunde und Familie."
+          },
+          { "category": "nachfragen", "text": "Wen möchtest du dabei haben?" },
+          { "category": "meinung_äußern", "text": "Je mehr, desto besser!" },
+          { "category": "vorschlag_ablehnen", "text": "Nicht zu viele Leute." }
+        ]
+      },
+      {
+        "step": 5,
+        "examinerPrompt": "Wie dekorieren wir?",
+        "redemittelOptions": [
+          {
+            "category": "vorschlag_machen",
+            "text": "Mit Luftballons und Girlanden."
+          },
+          { "category": "meinung_äußern", "text": "Bunte Blumen wären schön." },
+          { "category": "zustimmen", "text": "Das gefällt mir!" },
+          {
+            "category": "widersprechen",
+            "text": "Girlanden sind zu aufwendig."
+          }
+        ]
+      },
+      {
+        "step": 6,
+        "examinerPrompt": "Welche Musik wollen wir spielen?",
+        "redemittelOptions": [
+          { "category": "vorschlag_machen", "text": "Popmusik für alle." },
+          { "category": "meinung_äußern", "text": "Ich mag klassische Musik." },
+          { "category": "nachfragen", "text": "Was hörst du gern?" },
+          { "category": "zustimmen", "text": "Pop ist super!" }
+        ]
+      },
+      {
+        "step": 7,
+        "examinerPrompt": "Welche Spiele wollen wir machen?",
+        "redemittelOptions": [
+          {
+            "category": "vorschlag_machen",
+            "text": "Karten- und Brettspiele."
+          },
+          {
+            "category": "meinung_äußern",
+            "text": "Ich finde Quizspiele spannend."
+          },
+          { "category": "zustimmen", "text": "Gute Idee!" },
+          { "category": "widersprechen", "text": "Ich mag keine Brettspiele." }
+        ]
+      },
+      {
+        "step": 8,
+        "examinerPrompt": "Wie viel Geld wollen wir ausgeben?",
+        "redemittelOptions": [
+          { "category": "vorschlag_machen", "text": "Jeder zahlt 10 Euro." },
+          { "category": "meinung_äußern", "text": "Das ist zu teuer." },
+          { "category": "zustimmen", "text": "Einverstanden!" },
+          {
+            "category": "widersprechen",
+            "text": "Ich kann nicht so viel zahlen."
+          }
+        ]
+      },
+      {
+        "step": 9,
+        "examinerPrompt": "Wie laden wir die Gäste ein?",
+        "redemittelOptions": [
+          {
+            "category": "vorschlag_machen",
+            "text": "Mit einer WhatsApp-Gruppe."
+          },
+          {
+            "category": "meinung_äußern",
+            "text": "Einladungen per Post sind persönlicher."
+          },
+          { "category": "zustimmen", "text": "WhatsApp ist praktisch." },
+          { "category": "widersprechen", "text": "Nicht jeder nutzt WhatsApp." }
+        ]
+      },
+      {
+        "step": 10,
+        "examinerPrompt": "Wer hilft beim Aufräumen?",
+        "redemittelOptions": [
+          {
+            "category": "vorschlag_machen",
+            "text": "Wir machen das zusammen."
+          },
+          { "category": "meinung_äußern", "text": "Alle sollten helfen." },
+          { "category": "zustimmen", "text": "Gute Idee!" },
+          { "category": "widersprechen", "text": "Ich kann nicht helfen." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "geburtstagsparty_real",
+    "title": "Geburtstagsparty planen",
+    "greeting": "Hallo, wir sollen gemeinsam eine Geburtstagsparty für Sofia planen.",
+    "description": "Planen Sie gemeinsam alle Details für die Party.",
+    "leitpunkte": [
+      "Wann?",
+      "Wo?",
+      "Essen/Getränke?",
+      "Wer kommt?",
+      "Dekoration?",
+      "Musik?",
+      "Geschenk?",
+      "Budget?",
+      "Einladungen?",
+      "Aufräumen?"
+    ],
+    "dialogueFlow": [
+      {
+        "step": 1,
+        "examinerPrompt": "Ich habe an Samstag gedacht. Passt das?",
+        "redemittelOptions": [
+          { "category": "zustimmen", "text": "Ja, Samstag passt mir gut." },
+          { "category": "ablehnen", "text": "Am Samstag habe ich keine Zeit." },
+          {
+            "category": "nachfragen",
+            "text": "Wie lange soll die Party dauern?"
+          },
+          { "category": "vorschlag_machen", "text": "Vielleicht ab 18 Uhr?" }
+        ],
+        "examinerModelAnswer": "Samstag ab 18 Uhr wäre ideal, weil die meisten frei haben."
+      },
+      {
+        "step": 2,
+        "examinerPrompt": "Sollen wir drinnen oder draußen feiern?",
+        "redemittelOptions": [
+          {
+            "category": "vorschlag_machen",
+            "text": "Lass uns drinnen feiern, falls es regnet."
+          },
+          {
+            "category": "vorschlag_machen",
+            "text": "Draußen ist es im Sommer schön."
+          },
+          {
+            "category": "meinung_äußern",
+            "text": "Ich finde drinnen gemütlicher."
+          },
+          { "category": "nachfragen", "text": "Wo wäre genug Platz?" }
+        ],
+        "examinerModelAnswer": "Drinnen ist sicherer wegen schlechtem Wetter, aber draußen ist schöner im Sommer."
+      },
+      {
+        "step": 3,
+        "examinerPrompt": "Was schlagen Sie für Essen vor?",
+        "redemittelOptions": [
+          {
+            "category": "vorschlag_machen",
+            "text": "Wir könnten Pizza bestellen."
+          },
+          {
+            "category": "vorschlag_machen",
+            "text": "Ein Buffet mit Salaten und Kuchen."
+          },
+          {
+            "category": "meinung_äußern",
+            "text": "Ich finde Fingerfood praktisch."
+          },
+          {
+            "category": "nachfragen",
+            "text": "Gibt es Allergien, die wir beachten müssen?"
+          }
+        ],
+        "examinerModelAnswer": "Ein Buffet ist flexibel: Vegetarische Optionen und Kuchen für alle."
+      },
+      {
+        "step": 4,
+        "examinerPrompt": "Wen wollen wir unbedingt einladen?",
+        "redemittelOptions": [
+          {
+            "category": "vorschlag_machen",
+            "text": "Ihre Familie und unsere engsten Freunde."
+          },
+          {
+            "category": "nachfragen",
+            "text": "Wie viele Personen sollen kommen?"
+          },
+          {
+            "category": "meinung_äußern",
+            "text": "Nur die nahen Freunde, sonst wird es zu laut."
+          },
+          { "category": "zustimmen", "text": "Das klingt gut." }
+        ],
+        "examinerModelAnswer": "Wir laden etwa 12 Personen ein: Familie und enge Freunde."
+      },
+      {
+        "step": 5,
+        "examinerPrompt": "Welche Dekoration fänden Sie passend?",
+        "redemittelOptions": [
+          {
+            "category": "vorschlag_machen",
+            "text": "Bunte Luftballons und eine Girlande."
+          },
+          {
+            "category": "meinung_äußern",
+            "text": "Schlichte Deko wäre eleganter."
+          },
+          { "category": "nachfragen", "text": "Möchten Sie ein Motto?" },
+          {
+            "category": "vorschlag_ablehnen",
+            "text": "Zu viel Deko ist unnötig."
+          }
+        ],
+        "examinerModelAnswer": "Bunte Luftballons und eine hübsche Girlande passen gut zum Anlass."
+      },
+      {
+        "step": 6,
+        "examinerPrompt": "Welche Musik würden Sie vorschlagen?",
+        "redemittelOptions": [
+          {
+            "category": "vorschlag_machen",
+            "text": "Eine Playlist mit Pop-Hits."
+          },
+          {
+            "category": "meinung_äußern",
+            "text": "Gemischte Musik ist am besten."
+          },
+          { "category": "nachfragen", "text": "Soll es laut oder leise sein?" },
+          { "category": "zustimmen", "text": "Popmusik ist gut für Stimmung." }
+        ],
+        "examinerModelAnswer": "Eine Mischung aus Pop und ruhigen Liedern, damit alle Spaß haben."
+      },
+      {
+        "step": 7,
+        "examinerPrompt": "Welches Geschenk würden Sie vorschlagen?",
+        "redemittelOptions": [
+          {
+            "category": "vorschlag_machen",
+            "text": "Ein schönes Buch oder Blumen."
+          },
+          {
+            "category": "meinung_äußern",
+            "text": "Ein gemeinsames Erlebnis ist toll."
+          },
+          { "category": "nachfragen", "text": "Was mag Sofia gern?" },
+          { "category": "zustimmen", "text": "Blumen sind immer schön." }
+        ],
+        "examinerModelAnswer": "Ein Buch oder ein gemeinsamer Ausflug wäre persönlich und passend."
+      },
+      {
+        "step": 8,
+        "examinerPrompt": "Was denken Sie über das Budget?",
+        "redemittelOptions": [
+          {
+            "category": "vorschlag_machen",
+            "text": "Jeder zahlt 10 Euro, das reicht."
+          },
+          {
+            "category": "meinung_äußern",
+            "text": "Wir sollten nicht mehr als 100 Euro ausgeben."
+          },
+          { "category": "nachfragen", "text": "Können alle das bezahlen?" },
+          { "category": "zustimmen", "text": "Das ist in Ordnung." }
+        ],
+        "examinerModelAnswer": "100 Euro für das Buffet und die Deko sind realistisch."
+      },
+      {
+        "step": 9,
+        "examinerPrompt": "Wie laden wir die Gäste am besten ein?",
+        "redemittelOptions": [
+          {
+            "category": "vorschlag_machen",
+            "text": "Per WhatsApp-Gruppe und eine schriftliche Einladung."
+          },
+          {
+            "category": "meinung_äußern",
+            "text": "Ein kurzer Anruf ist persönlicher."
+          },
+          {
+            "category": "nachfragen",
+            "text": "Soll ich die Einladungen schreiben?"
+          },
+          { "category": "zustimmen", "text": "Gute Idee mit WhatsApp." }
+        ],
+        "examinerModelAnswer": "WhatsApp plus eine kurze Nachricht ist schnell und persönlich."
+      },
+      {
+        "step": 10,
+        "examinerPrompt": "Wer hilft beim Aufräumen?",
+        "redemittelOptions": [
+          {
+            "category": "vorschlag_machen",
+            "text": "Wir teilen die Aufgaben auf."
+          },
+          {
+            "category": "meinung_äußern",
+            "text": "Am nächsten Morgen kann jeder helfen."
+          },
+          { "category": "nachfragen", "text": "Wer hat Zeit nach der Party?" },
+          { "category": "zustimmen", "text": "Das schaffen wir zusammen." }
+        ],
+        "examinerModelAnswer": "Wir teilen die Aufgaben: einige räumen auf, andere bringen Getränke weg."
+      }
+    ],
+    "closing": "Super, dann machen wir das so! Ich freue mich schon."
+  }
+]

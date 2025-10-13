@@ -36,7 +36,6 @@ All documentation in `docs/`:
    - User flows for Practice and Test modes
    - Component architecture
    - Data structure specifications
-   - 4-week implementation timeline
    - Success metrics and KPIs
 
 4. **📙 SPRECHEN_DIALOGUE_SCENARIOS.md** ← **All scenarios**
