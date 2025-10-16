@@ -135,19 +135,21 @@ export default function DialogueTrainer() {
 
     try {
       // Call backend TTS endpoint
-      const response = await fetch(
-        import.meta.env.VITE_BACKEND_URL.replace("/api/chat", "/api/tts"),
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            text: text,
-            voice: "nova", // Warm, friendly feminine voice
-          }),
-        }
-      );
+      // Use relative /api/tts if VITE_BACKEND_URL is not set (production/Vercel)
+      const ttsUrl = import.meta.env.VITE_BACKEND_URL
+        ? import.meta.env.VITE_BACKEND_URL.replace("/api/chat", "/api/tts")
+        : "/api/tts";
+      
+      const response = await fetch(ttsUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          text: text,
+          voice: "nova", // Warm, friendly feminine voice
+        }),
+      });
 
       if (!response.ok) {
         throw new Error("TTS request failed");
@@ -832,16 +834,32 @@ export default function DialogueTrainer() {
                         </div>
                         <div className="text-left">
                           <div className="font-bold text-gray-900 text-lg">
-                            {showRedemittelHelp ? "Hilfe ausblenden" : "Brauchst du Hilfe?"}
+                            {showRedemittelHelp
+                              ? "Hilfe ausblenden"
+                              : "Brauchst du Hilfe?"}
                           </div>
                           <div className="text-sm text-purple-600 font-medium">
-                            {showRedemittelHelp ? "Klicke zum Schließen" : "Redemittel & Tipps anzeigen"}
+                            {showRedemittelHelp
+                              ? "Klicke zum Schließen"
+                              : "Redemittel & Tipps anzeigen"}
                           </div>
                         </div>
                       </div>
-                      <div className={`transform transition-transform duration-200 ${showRedemittelHelp ? 'rotate-180' : ''}`}>
-                        <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      <div
+                        className={`transform transition-transform duration-200 ${showRedemittelHelp ? "rotate-180" : ""}`}
+                      >
+                        <svg
+                          className="w-6 h-6 text-purple-600"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
                         </svg>
                       </div>
                     </button>
@@ -870,11 +888,16 @@ export default function DialogueTrainer() {
                           </p>
                           <ul className="space-y-1.5">
                             {tipps.map((tip, i) => (
-                              <li key={i} className="flex items-start gap-2 text-xs">
+                              <li
+                                key={i}
+                                className="flex items-start gap-2 text-xs"
+                              >
                                 <span className="flex-shrink-0 w-5 h-5 bg-purple-200 text-purple-700 rounded-full flex items-center justify-center font-bold text-[10px]">
                                   {i + 1}
                                 </span>
-                                <span className="text-gray-800 leading-snug">{tip}</span>
+                                <span className="text-gray-800 leading-snug">
+                                  {tip}
+                                </span>
                               </li>
                             ))}
                           </ul>
@@ -898,7 +921,9 @@ export default function DialogueTrainer() {
                                       key={i}
                                       className="text-xs text-gray-700 flex items-start gap-1.5 leading-snug"
                                     >
-                                      <span className="text-purple-500 font-bold">•</span>
+                                      <span className="text-purple-500 font-bold">
+                                        •
+                                      </span>
                                       <span>{phrase}</span>
                                     </li>
                                   ))}
@@ -917,7 +942,9 @@ export default function DialogueTrainer() {
                                             key={j}
                                             className="text-xs text-gray-600 flex items-start gap-1.5"
                                           >
-                                            <span className="text-purple-400">→</span>
+                                            <span className="text-purple-400">
+                                              →
+                                            </span>
                                             <span>{ex}</span>
                                           </li>
                                         ))}
