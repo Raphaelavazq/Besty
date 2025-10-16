@@ -17,7 +17,7 @@ You requested a complete Speaking (Sprechen) practice system following the succe
 ✅ **Step-by-step implementation roadmap** (4-week timeline)  
 ✅ **All component specifications** with code examples  
 ✅ **Data structure designs** for JSON files  
-✅ **Mobile-first UI designs** following your design system  
+✅ **Mobile-first UI designs** following your design system
 
 ---
 
@@ -26,6 +26,7 @@ You requested a complete Speaking (Sprechen) practice system following the succe
 ### 1. Interactive Practice System (2 Modes)
 
 **Übung Mode (Practice):**
+
 - Watch examiner videos demonstrating correct responses
 - Record your own answers
 - Compare with model answers
@@ -33,6 +34,7 @@ You requested a complete Speaking (Sprechen) practice system following the succe
 - Unlimited replay
 
 **Prüfung Mode (Test):**
+
 - Full 16-minute timed simulation
 - All 3 Teile in sequence
 - Self-evaluation rubric
@@ -42,6 +44,7 @@ You requested a complete Speaking (Sprechen) practice system following the succe
 ### 2. Revolutionary Teil 3 Dialogue Trainer
 
 **Interactive Branching Conversations:**
+
 - Choose from Redemittel cards (common phrases)
 - Build complete dialogues step-by-step
 - Learn correct phrases in context
@@ -49,17 +52,18 @@ You requested a complete Speaking (Sprechen) practice system following the succe
 - Record final dialogue performance
 
 **Example Flow:**
+
 ```
 System: "Wann wollen Sie feiern?"
-  
+
 YOU CHOOSE:
 ┌─────────────────────────────────┐
 │ Vorschlag machen                │
 │ "Wie wäre es am Samstag?"       │
 └─────────────────────────────────┘
-  
+
 System: "Ja, gut! Wo wollen Sie feiern?"
-  
+
 YOU CHOOSE:
 ┌─────────────────────────────────┐
 │ Vorschlag: Restaurant           │
@@ -71,11 +75,13 @@ YOU CHOOSE:
 ### 3. Professional Video Integration
 
 **Available Videos (6 total):**
+
 - Teil 1: Beispiel + "Jetzt Sie" prompt
-- Teil 2: Beispiel + "Jetzt Sie" prompt  
+- Teil 2: Beispiel + "Jetzt Sie" prompt
 - Teil 3: Beispiel + "Jetzt Sie" prompt
 
 **Features:**
+
 - HTML5 video player with controls
 - Responsive design (mobile-friendly)
 - Subtitles/captions support
@@ -85,6 +91,7 @@ YOU CHOOSE:
 ### 4. Audio Recording System
 
 **Features:**
+
 - One-click recording (Web Audio API)
 - Visual feedback (pulsing red button)
 - Waveform visualization
@@ -100,7 +107,9 @@ YOU CHOOSE:
 I've created **4 comprehensive documents** in `/docs/`:
 
 ### 1. SPRECHEN_IMPLEMENTATION_PLAN.md (50+ pages)
+
 **Complete technical specification covering:**
+
 - Official DTZ Sprechen structure (3 Teile, 16 minutes)
 - User flows for Practice and Test modes
 - Interactive dialogue trainer design
@@ -114,7 +123,9 @@ I've created **4 comprehensive documents** in `/docs/`:
 - Launch checklist
 
 ### 2. SPRECHEN_DIALOGUE_SCENARIOS.md (30+ pages)
+
 **50+ ready-to-use dialogue scenarios organized by:**
+
 - 🎉 Feste & Feiern (Celebrations) - 5 scenarios
 - 🏠 Alltag & Wohnen (Daily Life & Housing) - 5 scenarios
 - 🚗 Ausflüge & Reisen (Trips & Travel) - 3 scenarios
@@ -122,6 +133,7 @@ I've created **4 comprehensive documents** in `/docs/`:
 - 🔧 Probleme lösen (Problem Solving) - 2 scenarios
 
 **Each scenario includes:**
+
 - Complete task description
 - 5 Leitpunkte (guiding points)
 - 6-8 dialogue exchanges
@@ -132,7 +144,9 @@ I've created **4 comprehensive documents** in `/docs/`:
 **Plus:** Complete Redemittel reference guide (100+ phrases organized by function)
 
 ### 3. SPRECHEN_TECHNICAL_AUDIT.md (40+ pages)
+
 **Deep technical analysis covering:**
+
 - Current state analysis (what you have ✅)
 - Gap analysis (what you need 🎯)
 - Component hierarchy and architecture
@@ -147,7 +161,9 @@ I've created **4 comprehensive documents** in `/docs/`:
 - Lessons learned from Hören implementation
 
 ### 4. SPRECHEN_QUICK_START.md (15 pages)
+
 **Get-started guide with:**
+
 - Video inventory (6 files identified)
 - Immediate next steps (move videos, create manifest)
 - Core component code examples (ready to copy-paste)
@@ -222,6 +238,7 @@ Audio playback                 →    Video playback + recording
 ```
 
 **New Sprechen-Specific Components:**
+
 - Video player with glass-morphism overlay
 - Recording button (80x80px, pulsing red when active)
 - Redemittel choice cards (large, tappable, rounded-2xl)
@@ -235,6 +252,7 @@ Audio playback                 →    Video playback + recording
 ### 1. Realistic Exam Simulation
 
 **Using Real Examiner Videos:**
+
 - Professional examiner demonstrates questions
 - "Beispiel" videos show correct responses
 - "Jetzt Sie" videos prompt user practice
@@ -243,6 +261,7 @@ Audio playback                 →    Video playback + recording
 ### 2. Interactive Dialogue Trainer (UNIQUE! 🌟)
 
 **No other DTZ app has this:**
+
 - Branching conversation trees
 - Learn Redemittel in context
 - Build complete dialogues interactively
@@ -251,6 +270,7 @@ Audio playback                 →    Video playback + recording
 - Practice until perfect
 
 **Educational Value:**
+
 - Teaches correct phrase usage
 - Builds confidence in conversation
 - Reduces exam anxiety
@@ -259,6 +279,7 @@ Audio playback                 →    Video playback + recording
 ### 3. Self-Evaluation System
 
 **Users assess their own speaking:**
+
 ```
 □ Aufgabe erfüllt (all points addressed)
 □ Verständlichkeit (clear and understandable)
@@ -269,6 +290,7 @@ Audio playback                 →    Video playback + recording
 ```
 
 **Benefits:**
+
 - Develops self-awareness
 - Identifies weak areas
 - Tracks improvement over time
@@ -277,6 +299,7 @@ Audio playback                 →    Video playback + recording
 ### 4. Complete Audio Recording
 
 **Record and review all responses:**
+
 - Compare with model answers
 - Track progress over time
 - Identify pronunciation issues
@@ -288,17 +311,20 @@ Audio playback                 →    Video playback + recording
 ## 📊 Content Inventory
 
 ### Videos (Already Available)
+
 - ✅ 6 MP4 files in `/dist/assets/Britta Weber.../Videos`
 - ✅ All 3 Teile covered (Beispiel + Jetzt Sie)
 - ✅ Ready to move to `/public/video/sprechen/`
 
 ### Dialogue Scenarios (Documented)
+
 - ✅ 20+ scenarios fully documented
 - ✅ 30+ additional scenarios outlined
 - ✅ Target: 50+ total scenarios
 - ✅ All with complete Leitpunkte and flows
 
 ### Redemittel Database (Complete)
+
 - ✅ 100+ phrases organized by function
 - ✅ Vorschläge machen (making suggestions)
 - ✅ Reagieren (reacting to suggestions)
@@ -307,6 +333,7 @@ Audio playback                 →    Video playback + recording
 - ✅ Bitten formulieren (making requests)
 
 ### Images for Teil 2 (Need to Add)
+
 - 🎯 20+ situation images needed
 - Topics: Einkaufen, Arzt, Bank, Post, Familie, Freizeit
 - Can use royalty-free stock photos
@@ -317,6 +344,7 @@ Audio playback                 →    Video playback + recording
 ## ⏱️ Implementation Timeline
 
 ### Week 1: Foundation (Nov 4-10)
+
 **Goal:** Video player + audio recorder working
 
 - Day 1-2: Video processing and setup
@@ -326,6 +354,7 @@ Audio playback                 →    Video playback + recording
 **Deliverable:** Can play videos and record audio
 
 ### Week 2: Practice Mode (Nov 11-17)
+
 **Goal:** Complete Übung for all 3 Teile
 
 - Day 1-2: Teil 1 implementation (personal questions)
@@ -335,6 +364,7 @@ Audio playback                 →    Video playback + recording
 **Deliverable:** Users can practice all Teile
 
 ### Week 3: Test Mode (Nov 18-24)
+
 **Goal:** Full 16-minute Prüfung simulation
 
 - Day 1-2: Build SprechenPruefung container
@@ -344,6 +374,7 @@ Audio playback                 →    Video playback + recording
 **Deliverable:** Complete test simulation
 
 ### Week 4: Content & Launch (Nov 25-Dec 1)
+
 **Goal:** Production-ready with content
 
 - Day 1-2: Create all exercise content
@@ -357,6 +388,7 @@ Audio playback                 →    Video playback + recording
 ## 🎓 Learning from Hören Success
 
 ### What Worked in Hören ✅
+
 1. Clean separation of Übung/Prüfung modes
 2. `useHoerenEngine` hook for state management
 3. JSON-based content structure
@@ -366,6 +398,7 @@ Audio playback                 →    Video playback + recording
 7. Haptic feedback on interactions
 
 ### Apply to Sprechen 🚀
+
 1. Use same mode separation pattern
 2. Create `useSprechenEngine` with same API
 3. JSON for all video/dialogue content
@@ -375,6 +408,7 @@ Audio playback                 →    Video playback + recording
 7. Haptic feedback on recording start/stop
 
 ### Improvements to Make 🔧
+
 1. Better onboarding for first-time users
 2. More intermediate progress indicators
 3. Clearer error messages
@@ -441,6 +475,7 @@ touch src/features/sprechen/useSprechenEngine.js
 ### Step 4: Copy Component Code (15 minutes)
 
 **All complete component code is in `SPRECHEN_QUICK_START.md`:**
+
 - VideoPlayer component (ready to copy)
 - AudioRecorder component (ready to copy)
 - SprechenHub page (ready to copy)
@@ -456,6 +491,7 @@ Add to `src/App.jsx` and visit `/tests/sprechen`
 ## 📈 Success Metrics
 
 ### Technical Success
+
 - ✅ Video load time < 3 seconds
 - ✅ Recording success rate > 99%
 - ✅ Zero crashes during test
@@ -463,6 +499,7 @@ Add to `src/App.jsx` and visit `/tests/sprechen`
 - ✅ Lighthouse score > 90
 
 ### User Success
+
 - ✅ Users complete 5+ practice sessions
 - ✅ Average 15+ minutes per session
 - ✅ Users re-record 2-3 times (good!)
@@ -470,6 +507,7 @@ Add to `src/App.jsx` and visit `/tests/sprechen`
 - ✅ Positive feedback on dialogues
 
 ### Business Success
+
 - ✅ Feature parity with Hören
 - ✅ Unique dialogue trainer differentiator
 - ✅ Complete DTZ coverage (all 4 parts)
@@ -481,7 +519,9 @@ Add to `src/App.jsx` and visit `/tests/sprechen`
 ## 🎯 What Makes This Special
 
 ### 1. Complete Package
+
 You're not getting just a plan - you have:
+
 - ✅ 4 detailed documentation files
 - ✅ Complete component code examples
 - ✅ 50+ dialogue scenarios
@@ -490,7 +530,9 @@ You're not getting just a plan - you have:
 - ✅ Week-by-week timeline
 
 ### 2. Proven Architecture
+
 Following the successful Hören pattern means:
+
 - ✅ Lower development risk
 - ✅ Faster implementation
 - ✅ Consistent user experience
@@ -498,7 +540,9 @@ Following the successful Hören pattern means:
 - ✅ Easier maintenance
 
 ### 3. Innovation
+
 The dialogue trainer is **unique**:
+
 - No other DTZ app has this
 - Revolutionary learning approach
 - Interactive and engaging
@@ -506,7 +550,9 @@ The dialogue trainer is **unique**:
 - Builds real confidence
 
 ### 4. Production-Ready
+
 Everything follows your standards:
+
 - ✅ Design system compliance
 - ✅ Mobile-first approach
 - ✅ Accessibility standards
@@ -531,6 +577,7 @@ All files in `/Users/rafaela/Desktop/Besty/docs/`:
 ## 🎉 You're Ready to Build!
 
 ### What You Have Now:
+
 ✅ Complete feature specification  
 ✅ 6 videos ready to use  
 ✅ 50+ dialogue scenarios documented  
@@ -538,9 +585,10 @@ All files in `/Users/rafaela/Desktop/Besty/docs/`:
 ✅ Data structure designs  
 ✅ 4-week implementation roadmap  
 ✅ Design system compliance  
-✅ Success metrics defined  
+✅ Success metrics defined
 
 ### Your Next Action:
+
 **Run the video setup commands above** to move videos to the public folder, then start building VideoPlayer component!
 
 ---

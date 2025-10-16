@@ -1,0 +1,483 @@
+{
+  "meta": {
+    "version": "6.0-OFFICIAL",
+    "level": "B1",
+    "total_scenarios": 59,
+    "source": "Official DTZ Teacher Materials",
+    "description": "Exact wording from official DTZ Sprechen Teil 3 materials"
+  },
+  "scenarios": [
+    {
+      "id": "1",
+      "number": 1,
+      "title": "Hausfest mit Partner/in planen",
+      "theme": "Feiern & Veranstaltungen",
+      "aufgabe": "Sie möchten mit Ihrer Partnerin/Ihrem Partner bald ein Hausfest machen. Planen Sie, was Sie machen!",
+      "leitpunkte": ["Wo?", "Wann?", "Essen und Trinken?", "Andere Ideen?", "Einladungen?"]
+    },
+    {
+      "id": "2",
+      "number": 2,
+      "title": "Essen für Bekannte",
+      "theme": "Feiern & Veranstaltungen",
+      "aufgabe": "Sie und Ihre Freundin/Ihr Freund haben am nächsten Wochenende Bekannte zu sich nach Hause eingeladen. Sie möchten Sie mit einem Essen überraschen. Planen Sie den Abend!",
+      "leitpunkte": ["Kochen: was?", "Getränke: welche?", "Einkaufen: wann?", "Nach dem Essen: was unternehmen?"]
+    },
+    {
+      "id": "3",
+      "number": 3,
+      "title": "Hausparty in neuer Wohnung",
+      "theme": "Feiern & Veranstaltungen",
+      "aufgabe": "Sie sind in eine neue Wohnung gezogen und möchten eine Hausparty machen! Planen Sie die Party!",
+      "leitpunkte": ["Wann?", "Wie viele Leute?", "Essen und Trinken?", "Nachbarn einladen?", "Wer macht was?"]
+    },
+    {
+      "id": "4",
+      "number": 4,
+      "title": "Fest mit Nachbarn",
+      "theme": "Nachbarschaft & Wohnen",
+      "aufgabe": "Sie wohnen in einem großen Haus zur Miete und möchten gemeinsam mit den Nachbarn ein Fest machen. Organisieren Sie das Fest!",
+      "leitpunkte": ["Wann?", "Essen/Getränke?", "Wer bezahlt dafür?", "Was brauchen Sie noch (Musik, Spiele für Kinder)?", "Wer macht was?"]
+    },
+    {
+      "id": "5",
+      "number": 5,
+      "title": "Ausflug mit Nachbarn",
+      "theme": "Nachbarschaft & Wohnen",
+      "aufgabe": "Sie möchten mit Ihren Nachbarn einen Ausflug machen. Planen Sie den Ausflug!",
+      "leitpunkte": ["Wann?", "Wohin?", "Wie lange?", "Verkehrsmittel?", "Essen/Getränke?"]
+    },
+    {
+      "id": "6",
+      "number": 6,
+      "title": "Sommerfest mit Nachbarn",
+      "theme": "Feiern & Veranstaltungen",
+      "aufgabe": "Planen Sie ein Sommerfest mit allen Nachbarn!",
+      "leitpunkte": ["Wann?", "Wo?", "Einladung?", "Essen/Getränke?", "Unterhaltung?", "Wer bezahlt?"]
+    },
+    {
+      "id": "7",
+      "number": 7,
+      "title": "Gemeinsame Geburtstagsparty für Kinder",
+      "theme": "Familie & Kinder",
+      "aufgabe": "Ihr Kind und das Kind Ihrer Nachbarin haben am selben Tag Geburtstag. Organisieren Sie eine gemeinsame Party!",
+      "leitpunkte": ["Wann?", "Wo?", "Wer kommt?", "Geschenk?", "Unterhaltung/Dekoration?"]
+    },
+    {
+      "id": "8",
+      "number": 8,
+      "title": "Geschenk für Hochzeit",
+      "theme": "Feiern & Veranstaltungen",
+      "aufgabe": "Ein Nachbar heiratet. Sie sind eingeladen und suchen ein passendes Geschenk.",
+      "leitpunkte": ["Welches Geschenk?", "Wer kauft es?", "Wie teuer?", "Geld bei Nachbarn einsammeln?"]
+    },
+    {
+      "id": "9",
+      "number": 9,
+      "title": "Sportlicher Nachmittag",
+      "theme": "Freizeit & Sport",
+      "aufgabe": "Sie sind Nachbarn und wollen zusammen einen Nachmittag mit sportlichen Aktivitäten verbringen. Planen Sie den Nachmittag!",
+      "leitpunkte": ["Wann?", "Was machen?", "Mit wem?", "Nach dem Sport?", "Zu einem Kurs anmelden?"]
+    },
+    {
+      "id": "10",
+      "number": 10,
+      "title": "Nachbar renoviert",
+      "theme": "Nachbarschaft & Wohnen",
+      "aufgabe": "Ihr Nachbar renoviert seine Wohnung. Jeden Sonntag hören Sie laute Maschinen und anderen Krach. Überlegen Sie, was Sie tun können!",
+      "leitpunkte": ["Mit dem Nachbarn reden?", "Beim Vermieter anrufen?", "Andere Nachbarn ansprechen?", "Dem Nachbarn helfen?", "Die Polizei anrufen?"]
+    },
+    {
+      "id": "11",
+      "number": 11,
+      "title": "Party am Wochenende",
+      "theme": "Feiern & Veranstaltungen",
+      "aufgabe": "Sie wollen am Wochenende mit Ihren Freunden in Ihrer Wohnung feiern. Planen Sie die Party!",
+      "leitpunkte": ["Wann genau?", "Welches Essen?", "Wie viele Gäste?", "Nachbarn informieren?", "Musik?"]
+    },
+    {
+      "id": "12",
+      "number": 12,
+      "title": "Ausstellung zum Kursabschluss",
+      "theme": "Schule & Bildung",
+      "aufgabe": "Zum Kursabschluss wollen Sie eine Ausstellung machen: Fotos und Texte der Kursteilnehmer! Organisieren Sie die Ausstellung!",
+      "leitpunkte": ["Wer macht die Fotos?", "Wo/wann ist die Ausstellung?", "Einladungen?", "Getränke?", "Begrüßung?"]
+    },
+    {
+      "id": "13",
+      "number": 13,
+      "title": "Deutschkurs Abschiedsparty",
+      "theme": "Schule & Bildung",
+      "aufgabe": "Sie möchten zum Ende Ihres Deutschkurses eine Abschiedsparty feiern. Planen Sie das Fest!",
+      "leitpunkte": ["Wo?", "Wann?", "Essen Getränke?", "Musik?", "Wer kommt?"]
+    },
+    {
+      "id": "14",
+      "number": 14,
+      "title": "Heimatland vorstellen",
+      "theme": "Schule & Bildung",
+      "aufgabe": "Sie sollen im Deutschkurs Ihr Heimatland vorstellen. Planen Sie gemeinsam die Präsentation!",
+      "leitpunkte": ["Wo treffen Sie sich?", "Wann treffen?", "Wo finden Sie Informationen?", "Was brauchen Sie? (Fotos, Musik...)?", "Essen/ Getränke?"]
+    },
+    {
+      "id": "15",
+      "number": 15,
+      "title": "B1-Prüfung vorbereiten",
+      "theme": "Schule & Bildung",
+      "aufgabe": "Sie möchten sich gemeinsam auf die B1-Prüfung vorbereiten!",
+      "leitpunkte": ["Wann?", "Wo?", "Wie oft?", "Material (Bücher, ...)?", "Nach dem Lernen?"]
+    },
+    {
+      "id": "16",
+      "number": 16,
+      "title": "Wochenendreise zum Kursabschluss",
+      "theme": "Reisen & Ausflüge",
+      "aufgabe": "Sie möchten zum Abschluss Ihres Deutschkurses ein Wochenende gemeinsam verreisen. Planen Sie die Reise!",
+      "leitpunkte": ["Wann?", "Wohin?", "Wer soll teilnehmen?", "Übernachtung?", "Welches Verkehrsmittel?"]
+    },
+    {
+      "id": "17",
+      "number": 17,
+      "title": "Klassentreffen",
+      "theme": "Schule & Bildung",
+      "aufgabe": "Zwei Jahre nach Ihrer B1-Prüfung möchten Sie ein Klassentreffen machen. Planen Sie gemeinsam!",
+      "leitpunkte": ["Wann/wo?", "Was machen?", "Adressen?", "Einladungen?", "Wer kommt-Kosten?"]
+    },
+    {
+      "id": "18",
+      "number": 18,
+      "title": "Krankem Freund helfen",
+      "theme": "Schule & Bildung",
+      "aufgabe": "Ihr Freund aus dem Deutschkurs ist krank. Sie haben in zwei Wochen einen Test. Überlegen Sie, wie Sie ihm helfen können.",
+      "leitpunkte": ["Wann treffen?", "Wo?", "Material?", "Lehrer fragen?", "Verkehrsmittel?"]
+    },
+    {
+      "id": "19",
+      "number": 19,
+      "title": "Dreitägige Reise mit Deutschkurs",
+      "theme": "Reisen & Ausflüge",
+      "aufgabe": "Sie möchten mit Ihrem Deutschkurs eine dreitägige Reise machen. Planen Sie gemeinsam!",
+      "leitpunkte": ["Wann/wohin?", "Verkehrsmittel?", "Unterkunft?", "Kosten?", "Teilnehmer fragen?"]
+    },
+    {
+      "id": "20",
+      "number": 20,
+      "title": "Party zum Deutschkurs-Ende",
+      "theme": "Schule & Bildung",
+      "aufgabe": "Der Deutschkurs ist zu Ende und Sie möchten eine Party feiern. Verschiedene Aufgaben müssen gemacht werden. Planen Sie gemeinsam!",
+      "leitpunkte": ["Wann?", "Wo?", "Raum vorbereiten?", "Einladungen schreiben?", "Essen/ Getränke?"]
+    },
+    {
+      "id": "21",
+      "number": 21,
+      "title": "Krankem Freund beim Test helfen",
+      "theme": "Schule & Bildung",
+      "aufgabe": "Ihr Freund aus dem Deutschkurs ist krank. Sie haben in zwei Wochen einen Test zum Thema \"Umwelt\". Überlegen Sie, wie Sie ihm helfen können!",
+      "leitpunkte": ["Wann mit ihm treffen?", "Wo treffen?", "Welches Material?", "Lehrer fragen?", "Verkehrsmittel?"]
+    },
+    {
+      "id": "22",
+      "number": 22,
+      "title": "Vortrag Umwelt und Klimawandel",
+      "theme": "Umwelt & Natur",
+      "aufgabe": "Sie sollen in Ihrer Klasse einen Vortrag zum Thema \"Umwelt und Klimawandel\" halten. Planen Sie die Präsentation!",
+      "leitpunkte": ["Informationsmaterial?", "Welche Themen?", "Wer macht was?", "Wann treffen?", "Wo treffen?"]
+    },
+    {
+      "id": "23",
+      "number": 23,
+      "title": "Freund bei Ausbildungswahl beraten",
+      "theme": "Arbeit & Beruf",
+      "aufgabe": "Ein Freund von Ihnen aus dem Deutschkurs möchte nach der B1-Prüfung eine Ausbildung machen. Er weiß nicht, für welche Ausbildung er sich entscheiden soll. Beraten Sie ihn!",
+      "leitpunkte": ["Wann?", "Wo?", "Welche Ausbildung?", "Informationen (woher)?", "Hilfe bei der Bewerbung?"]
+    },
+    {
+      "id": "24",
+      "number": 24,
+      "title": "Ausflug als Kursabschluss",
+      "theme": "Schule & Bildung",
+      "aufgabe": "Sie wollen einen Ausflug vorbereiten, an dem alle Schüler des Deutschkurses teilnehmen sollen. Dieser Ausflug ist der Abschluss des Kurses und soll den ganzen Tag dauern.",
+      "leitpunkte": ["Wann und wohin?", "Verkehrsmittel?", "Kosten?", "Was machen?", "Essen/Getränke?"]
+    },
+    {
+      "id": "25",
+      "number": 25,
+      "title": "Gemeinsam Deutsch lernen",
+      "theme": "Schule & Bildung",
+      "aufgabe": "Sie haben einige Bekannte aus Ihrem Deutschkurs am Wochenende zu sich nach Hause eingeladen, weil Sie gemeinsam Deutsch lernen wollen. Planen Sie!",
+      "leitpunkte": ["Wann genau?", "Wo?", "Welche Bücher?", "Welches andere Lernmaterial?", "Essen/Getränke?"]
+    },
+    {
+      "id": "26",
+      "number": 26,
+      "title": "Sprachschul-Feier",
+      "theme": "Schule & Bildung",
+      "aufgabe": "Ihre Sprachschule macht bald eine große Feier. Jeder Kurs soll etwas machen. Planen Sie etwas für Ihren Kurs.",
+      "leitpunkte": ["Was machen?", "Welches Material?", "Material/Deko kaufen oder leihen?", "Wann vorbereiten?", "Andere Kursteilnehmer informieren?"]
+    },
+    {
+      "id": "27",
+      "number": 27,
+      "title": "VHS-Kurs besuchen",
+      "theme": "Schule & Bildung",
+      "aufgabe": "Sie möchten zu zweit einen Kurs an der VHS besuchen. Überlegen Sie gemeinsam, welcher Kurs Ihnen gefallen könnte!",
+      "leitpunkte": ["Welcher Kurs (Kochen, Sprachen...)?", "Wann?", "Wann anmelden?", "Zusammen anmelden?", "Wie zur VHS kommen?"]
+    },
+    {
+      "id": "28",
+      "number": 28,
+      "title": "Gesünder leben",
+      "theme": "Gesundheit & Lifestyle",
+      "aufgabe": "Sie und Ihre Partnerin/Ihr Partner haben immer sehr viel Stress. Sie möchten gesünder leben! Planen Sie!",
+      "leitpunkte": ["Was machen?", "Wann?", "Wo?", "Mit wem?", "Weitere Ideen?"]
+    },
+    {
+      "id": "29",
+      "number": 29,
+      "title": "Gemeinsam einen Kurs besuchen",
+      "theme": "Schule & Bildung",
+      "aufgabe": "Sie und Ihre Partnerin/Ihr Partner möchten zusammen einen Kurs besuchen. Planen Sie gemeinsam.",
+      "leitpunkte": ["Was für ein Kurs?", "Wann am besten?", "Wie anmelden?", "Wer macht das?", "Wie zum Kurs kommen?"]
+    },
+    {
+      "id": "30",
+      "number": 30,
+      "title": "Kollegin wird 50",
+      "theme": "Arbeit & Beruf",
+      "aufgabe": "Ihre Kollegin, Rita Schwarz, wird in drei Wochen 50 Jahre alt. Sie hat Sie und andere Kollegen zu einer Geburtstagsfeier eingeladen. Planen Sie!",
+      "leitpunkte": ["Welches Verkehrsmittel?", "Geschenk?", "Geld einsammeln?", "Überraschung für Frau Schwarz?", "..."]
+    },
+    {
+      "id": "31",
+      "number": 31,
+      "title": "Hochzeitsfeier in Neuburg",
+      "theme": "Feiern & Veranstaltungen",
+      "aufgabe": "Sie sind beide am Wochenende zu einer Hochzeitsfeier eingeladen. Die Hochzeit findet in Neuburg statt, das etwa 100km von Ihnen entfernt liegt. Sie waren noch nie dort und kennen sich nicht aus.",
+      "leitpunkte": ["Verkehrsmittel?", "Stadtplan?", "Geschenk?", "Kleidung?", "Treffpunkt?"]
+    },
+    {
+      "id": "32",
+      "number": 32,
+      "title": "Katzen betreuen",
+      "theme": "Tiere & Haustiere",
+      "aufgabe": "Ihre Freundin hat zwei Katzen. Jetzt muss sie für eine Woche ins Krankenhaus. Sie sollen sich um die Katzen kümmern. Planen Sie!",
+      "leitpunkte": ["Was fressen Katzen?", "Was trinken sie?", "Wer kauft was?", "Wer spielt mit den Tieren?", "Sand für die Katzentoilette?"]
+    },
+    {
+      "id": "33",
+      "number": 33,
+      "title": "Besprechung organisieren",
+      "theme": "Arbeit & Beruf",
+      "aufgabe": "Sie und Ihre Partnerin/Ihr Partner sollen zusammen eine Besprechung in der Firma organisieren. Machen Sie einen Plan!",
+      "leitpunkte": ["Getränke/Material bestellen?", "Raum vorbereiten", "Mail an Teilnehmer schreiben", "Danach aufräumen", "Protokoll schreiben: wer?"]
+    },
+    {
+      "id": "34",
+      "number": 34,
+      "title": "Auf Kind aufpassen",
+      "theme": "Familie & Kinder",
+      "aufgabe": "Eine Freundin von Ihnen ist für ein Wochenende in den Urlaub gefahren. Sie und Ihre Partnerin/Ihr Partner sollen in dieser Zeit auf ihren 6-jährigen Sohn Philip aufpassen.",
+      "leitpunkte": ["Aktivitäten bei gutem Wetter?", "Aktivitäten bei schlechtem Wetter?", "Essen/Getränke?", "Was tun am Abend?", "Schlafenszeit?"]
+    },
+    {
+      "id": "35",
+      "number": 35,
+      "title": "Ausflug am Wochenende",
+      "theme": "Reisen & Ausflüge",
+      "aufgabe": "Sie möchten zu zweit am Wochenende einen Ausflug machen. Planen Sie!",
+      "leitpunkte": ["Wann genau?", "Wohin?", "Wie lange?", "Verkehrsmittel?", "Was mitnehmen?"]
+    },
+    {
+      "id": "36",
+      "number": 36,
+      "title": "Radtour",
+      "theme": "Freizeit & Sport",
+      "aufgabe": "Sie wollen zusammen einen Ausflug mit dem Rad machen. Planen Sie!",
+      "leitpunkte": ["Wann?", "Wohin?", "Wer soll mitkommen?", "Wie lange?", "Was nehmen Sie mit?"]
+    },
+    {
+      "id": "37",
+      "number": 37,
+      "title": "Grillen mit Freunden",
+      "theme": "Feiern & Veranstaltungen",
+      "aufgabe": "Sie möchten am Wochenende mit Freunden grillen.",
+      "leitpunkte": ["Wann genau?", "Wo?", "Was grillen?", "Wie viele Leute?", "Getränke?"]
+    },
+    {
+      "id": "38",
+      "number": 38,
+      "title": "Überraschungsparty",
+      "theme": "Feiern & Veranstaltungen",
+      "aufgabe": "Sie möchten eine Überraschungsparty für Ihren Freund machen, der nach einem Jahr aus Amerika zurückkommt. Planen Sie!",
+      "leitpunkte": ["Wann?", "Wo?", "Welche Gäste?", "Essen/Getränke?", "Abholen am Flughafen?"]
+    },
+    {
+      "id": "39",
+      "number": 39,
+      "title": "Freund in London besuchen",
+      "theme": "Reisen & Ausflüge",
+      "aufgabe": "Sie möchten gemeinsam Ihren Freund in London besuchen. Planen Sie die Reise!",
+      "leitpunkte": ["Wann?", "Wie lange?", "Verkehrsmittel?", "Geschenk für Freund?", "Sehenswürdigkeiten besuchen?"]
+    },
+    {
+      "id": "40",
+      "number": 40,
+      "title": "Picknick mit Familie",
+      "theme": "Familie & Kinder",
+      "aufgabe": "Sie möchten mit Ihrer Familie ein Picknick machen. Planen Sie!",
+      "leitpunkte": ["Wann?", "Wo?", "Essen/Getränke?", "Spiele?", "Verkehrsmittel?"]
+    },
+    {
+      "id": "41",
+      "number": 41,
+      "title": "Samstagabend planen",
+      "theme": "Freizeit & Sport",
+      "aufgabe": "Sie möchten am Samstagabend etwas zusammen machen. Planen Sie den Abend!",
+      "leitpunkte": ["Was?", "Wo?", "Andere Freunde einladen?", "Essen/Getränke?", "Wie lange?"]
+    },
+    {
+      "id": "42",
+      "number": 42,
+      "title": "Neue Möbel kaufen",
+      "theme": "Einkaufen & Konsum",
+      "aufgabe": "Sie möchten gemeinsam neue Möbel für das Wohnzimmer kaufen. Planen Sie den Einkauf!",
+      "leitpunkte": ["Termin?", "Wo?", "Was brauchen Sie?", "Hilfe?", "Transportmittel?"]
+    },
+    {
+      "id": "43",
+      "number": 43,
+      "title": "Kindergeburtstag organisieren",
+      "theme": "Familie & Kinder",
+      "aufgabe": "Sie wollen gemeinsam einen Kindergeburtstag organisieren. Verschiedene Aufgaben müssen erledigt werden.",
+      "leitpunkte": ["Einladungen schreiben?", "Dekoration?", "Wer kommt?", "Spiele?", "Essen/Getränke"]
+    },
+    {
+      "id": "44",
+      "number": 44,
+      "title": "Beim Umzug helfen",
+      "theme": "Nachbarschaft & Wohnen",
+      "aufgabe": "Eine befreundete Familie mit zwei kleinen Kindern zieht in eine neue Wohnung Sie haben versprochen, beim Umzug zu helfen. Organisieren Sie den Umzug.",
+      "leitpunkte": ["Termin?", "Transportmittel: Auto/LKW?", "Wer kann noch helfen?", "Essen/Getränke für die Helfer?", "Wer kümmert sich um die Kinder?"]
+    },
+    {
+      "id": "45",
+      "number": 45,
+      "title": "Hausaufgabenraum einrichten",
+      "theme": "Schule & Bildung",
+      "aufgabe": "Sie möchten in der Schule einen Hausaufgabenraum einrichten. Überlegen Sie, was Sie dazu brauchen!",
+      "leitpunkte": ["Was kaufen?", "Wo kaufen?", "Betreuung?", "Essen anbieten?", "Öffnungszeiten?"]
+    },
+    {
+      "id": "46",
+      "number": 46,
+      "title": "Umwelt schützen",
+      "theme": "Umwelt & Natur",
+      "aufgabe": "Überlegen Sie, wie Sie die Umwelt schützen können.",
+      "leitpunkte": ["Bioprodukte", "Verkehrsmittel", "Müll", "alternative Energien", "Zuhause"]
+    },
+    {
+      "id": "47",
+      "number": 47,
+      "title": "Bericht zum Umweltschutz",
+      "theme": "Umwelt & Natur",
+      "aufgabe": "Sie sollen einen Bericht zum Thema \"Umweltschutz\" schreiben. Überlegen Sie gemeinsam!",
+      "leitpunkte": ["Welche Themen?", "Woher Informationen?", "Wann schreiben?", "Wo treffen?", "Was brauchen Sie?"]
+    },
+    {
+      "id": "48",
+      "number": 48,
+      "title": "Ausflug zum Thema Umwelt",
+      "theme": "Umwelt & Natur",
+      "aufgabe": "Sie sind bei einem Elternabend. Die Lehrerin möchte einen Ausflug zum Thema \"Umwelt\" machen und bittet Sie um Hilfe. Planen Sie gemeinsam!",
+      "leitpunkte": ["Wohin?", "Wann?", "Transportmittel?", "Kosten?", "Betreuer?"]
+    },
+    {
+      "id": "49",
+      "number": 49,
+      "title": "Ehrenamtlich für Umwelt",
+      "theme": "Umwelt & Natur",
+      "aufgabe": "Sie möchten ehrenamtlich arbeiten und sich für die Umwelt engagieren. Überlegen Sie, was Sie machen können.",
+      "leitpunkte": ["Bei der Stadt nachfragen?", "Müll sammeln?", "Menschen informieren?", "Bei einer Umweltorganisation anmelden?", "..."]
+    },
+    {
+      "id": "50",
+      "number": 50,
+      "title": "Klassenfest für Kinder",
+      "theme": "Familie & Kinder",
+      "aufgabe": "Planen Sie ein Klassenfest für Ihre Kinder!",
+      "leitpunkte": ["Wann?", "Wo?", "Was machen?", "Lehrer fragen?", "Eltern auch einladen?"]
+    },
+    {
+      "id": "51",
+      "number": 51,
+      "title": "Ausflug in die Stadt",
+      "theme": "Reisen & Ausflüge",
+      "aufgabe": "Ihre Kursleiterin bittet Sie als Abschluss des Kurses einen Ausflug in die Stadt zu planen. Organisieren Sie gemeinsam!",
+      "leitpunkte": ["Wann?", "Verkehrsmittel (Tickets kaufen)?", "Wie lange?", "Sehenswürdigkeiten?", "Einladung?"]
+    },
+    {
+      "id": "52",
+      "number": 52,
+      "title": "Ausflug mit Rollstuhlfahrern",
+      "theme": "Soziales Engagement",
+      "aufgabe": "Sie arbeiten ehrenamtlich und betreuen junge Menschen, die im Rollstuhl sitzen. Planen Sie gemeinsam einen Ausflug!",
+      "leitpunkte": ["Wann?", "Wohin?", "Transportmittel?", "Verpflegung?", "Wie viele Betreuer?"]
+    },
+    {
+      "id": "53",
+      "number": 53,
+      "title": "Geschäftseröffnung",
+      "theme": "Arbeit & Beruf",
+      "aufgabe": "Sie und Ihre Partnerin/Ihr Partner eröffnen bald zusammen ein Geschäft. Planen Sie die Eröffnungsfeier.",
+      "leitpunkte": ["Wann?", "Wo?", "Wie lange?", "Wer wird eingeladen?", "Essen/Getränke?"]
+    },
+    {
+      "id": "54",
+      "number": 54,
+      "title": "Kinder in Mathe und Englisch helfen",
+      "theme": "Familie & Kinder",
+      "aufgabe": "Ihre Kinder sind in Mathematik und Englisch nicht gut in der Schule. Planen Sie, was Sie tun können.",
+      "leitpunkte": ["Wann treffen?", "Wo treffen?", "Nachhilfe?", "Mit Lehrer sprechen?", "Hausaufgabenbetreuung?"]
+    },
+    {
+      "id": "55",
+      "number": 55,
+      "title": "Freund bei Hauskauf beraten",
+      "theme": "Wohnen & Leben",
+      "aufgabe": "Ihr Freund möchte ein Haus kaufen. Er weiß nicht, ob er in die Stadt oder auf's Land ziehen soll. Beraten Sie ihn!",
+      "leitpunkte": ["Wann treffen?", "Wo treffen?", "Was raten (Vorteile/ Nachteile)?", "Andere Freunde fragen?", "Aktivität nach der Beratung?"]
+    },
+    {
+      "id": "56",
+      "number": 56,
+      "title": "Gemeinsam Auto kaufen",
+      "theme": "Einkaufen & Konsum",
+      "aufgabe": "Sie und Ihr Partner/Ihre Partnerin wollen zusammen ein Auto kaufen. Überlegen Sie gemeinsam.",
+      "leitpunkte": ["Wann?", "Welches Auto?", "Wie teuer?", "Wo kaufen?", "Welche Versicherung?"]
+    },
+    {
+      "id": "57",
+      "number": 57,
+      "title": "Freund bei Autokauf beraten",
+      "theme": "Einkaufen & Konsum",
+      "aufgabe": "Ihr Freund möchte ein Auto kaufen. Beraten Sie ihn!",
+      "leitpunkte": ["Welches Auto?", "Neu-oder Gebrauchtwagen?", "Welche Versicherung?", "Wann kaufen?", "Wo kaufen?"]
+    },
+    {
+      "id": "58",
+      "number": 58,
+      "title": "Oktoberfest in Heimatstadt",
+      "theme": "Feiern & Veranstaltungen",
+      "aufgabe": "In Ihrer Heimatstadt findet ein Oktoberfest statt. Sie wollen gemeinsam dorthin gehen. Planen Sie!",
+      "leitpunkte": ["Wann?", "Kleidung?", "Mit wem?", "Wo treffen?", "Eintrittskarten bestellen?"]
+    },
+    {
+      "id": "59",
+      "number": 59,
+      "title": "Auto versichern",
+      "theme": "Einkaufen & Konsum",
+      "aufgabe": "Sie haben ein Auto gekauft. Überlegen Sie gemeinsam, wie Sie das Auto versichern!",
+      "leitpunkte": ["Wo informieren?", "Freunde fragen?", "Haftpflichtversicherung?", "Kaskoversicherung?", "Wann Auto anmelden?"]
+    }
+  ]
+}

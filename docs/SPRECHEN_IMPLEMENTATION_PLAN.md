@@ -22,14 +22,14 @@ Implement a complete Speaking (Sprechen) practice and test system following the 
 
 ### System Comparison: Hören → Sprechen
 
-| Feature | Hören Implementation | Sprechen Adaptation |
-|---------|---------------------|---------------------|
-| **Data Source** | Audio files (MP3) | Video files (MP4/WebM) |
-| **User Input** | Multiple choice selection | Audio recording + dialogue choices |
-| **Feedback** | Immediate (Übung) / Delayed (Prüfung) | Self-evaluation + model answers |
-| **Practice Mode** | Answer questions | Follow dialogue prompts |
-| **Test Mode** | 25min timed test | 16min simulated exam |
-| **Components** | HoerenPlayer, HoerenUebung, HoerenPruefung | SprechenPlayer, SprechenUebung, SprechenPruefung |
+| Feature           | Hören Implementation                       | Sprechen Adaptation                              |
+| ----------------- | ------------------------------------------ | ------------------------------------------------ |
+| **Data Source**   | Audio files (MP3)                          | Video files (MP4/WebM)                           |
+| **User Input**    | Multiple choice selection                  | Audio recording + dialogue choices               |
+| **Feedback**      | Immediate (Übung) / Delayed (Prüfung)      | Self-evaluation + model answers                  |
+| **Practice Mode** | Answer questions                           | Follow dialogue prompts                          |
+| **Test Mode**     | 25min timed test                           | 16min simulated exam                             |
+| **Components**    | HoerenPlayer, HoerenUebung, HoerenPruefung | SprechenPlayer, SprechenUebung, SprechenPruefung |
 
 ---
 
@@ -65,19 +65,19 @@ Teil 3: Gemeinsam etwas planen (6 Minuten)
 2. Watch examiner video introduction
    ↓
 3. INTERACTIVE EXERCISE:
-   
+
    Teil 1: Practice answering personal questions
    - See prompts (Name? Woher kommen Sie?)
    - Record audio response
    - Play back recording
    - Compare with model answer
-   
+
    Teil 2: Practice describing images
    - View image prompt
    - See question prompts
    - Record description
    - Get feedback checklist (Did you mention...?)
-   
+
    Teil 3: BRANCHING DIALOGUE TRAINER ⭐
    - See planning scenario (z.B. "Fest organisieren")
    - Choose from Redemittel cards:
@@ -87,7 +87,7 @@ Teil 3: Gemeinsam etwas planen (6 Minuten)
      * Meinung äußern: "Ich finde, dass..."
    - Build complete dialogue interactively
    - Record final dialogue performance
-   
+
 4. Review & Repeat
 ```
 
@@ -116,6 +116,7 @@ Teil 3: Gemeinsam etwas planen (6 Minuten)
 **Purpose:** Help users practice using correct Redemittel in context
 
 **Flow:**
+
 ```
 Scenario: "Sie wollen eine Geburtstagsparty organisieren"
      ↓
@@ -147,6 +148,7 @@ Complete dialogue saved → Record audio version
 ```
 
 **UI Design:**
+
 - **Scenario card** at top (glass-morphism, purple gradient)
 - **Examiner prompt** in speech bubble (left side)
 - **2-3 response cards** (large, tappable, rounded-2xl)
@@ -158,12 +160,14 @@ Complete dialogue saved → Record audio version
 **Purpose:** Simulate realistic exam experience
 
 **Implementation:**
+
 - HTML5 `<video>` element
 - Videos in `/public/video/sprechen/`
 - Naming: `teil1_frage1.mp4`, `teil2_intro.mp4`, etc.
 - Controls: Play/Pause, Volume (no seek in Test mode)
 
 **Video Types:**
+
 1. **Introduction videos** (Teil 1-3 instructions)
 2. **Question videos** (Examiner asking questions)
 3. **Transition videos** (Moving between parts)
@@ -174,6 +178,7 @@ Complete dialogue saved → Record audio version
 **Purpose:** Allow users to practice speaking and review
 
 **Features:**
+
 - Record button with visual feedback (pulsing red circle)
 - Playback controls
 - Re-record option
@@ -181,6 +186,7 @@ Complete dialogue saved → Record audio version
 - Time limit indicators
 
 **Technical:**
+
 ```javascript
 // Use Web Audio API
 const mediaRecorder = new MediaRecorder(stream);
@@ -204,6 +210,7 @@ const mediaRecorder = new MediaRecorder(stream);
 ```
 
 **Scoring:**
+
 - 6/6: "Sehr gut! Prüfungsreif!"
 - 4-5/6: "Gut! Noch ein bisschen üben."
 - <4/6: "Übe weiter. Du schaffst das!"
@@ -275,7 +282,13 @@ const mediaRecorder = new MediaRecorder(stream);
         "id": "fest_organisieren",
         "title": "Eine Geburtstagsparty organisieren",
         "description": "Planen Sie gemeinsam eine Party",
-        "leitpunkte": ["Wann?", "Wo?", "Essen/Getränke?", "Wer kommt?", "Dekoration?"],
+        "leitpunkte": [
+          "Wann?",
+          "Wo?",
+          "Essen/Getränke?",
+          "Wer kommt?",
+          "Dekoration?"
+        ],
         "dialogueFlow": [
           {
             "step": 1,
@@ -461,7 +474,7 @@ src/features/sprechen/
 ├── SprechenUebung.jsx                 # Practice mode container
 ├── SprechenPruefung.jsx               # Test mode container
 ├── SprechenPlayer.jsx                 # Video player + recording UI
-├── DialogueTrainer.jsx                # Interactive branching dialogues (Teil 3)
+├── CleanDialogueTrainer.jsx                # Interactive branching dialogues (Teil 3, data-driven)
 ├── useSprechenEngine.js               # State management hook
 ├── scoring.js                         # Self-evaluation utilities
 └── components/
@@ -501,6 +514,7 @@ src/features/sprechen/
 ```
 
 **Features:**
+
 - Video playback with controls
 - Recording button (start/stop)
 - Waveform visualization during recording
@@ -508,20 +522,17 @@ src/features/sprechen/
 - Model answer playback
 - Timer display
 
-#### **DialogueTrainer.jsx** (Teil 3 Practice)
+#### **CleanDialogueTrainer.jsx** (Teil 3 Practice)
 
 ```jsx
-<DialogueTrainer
-  scenario={{
-    title: "Geburtstagsparty organisieren",
-    leitpunkte: ["Wann?", "Wo?", "Essen/Getränke?"],
-    dialogueFlow: [...]
-  }}
+<CleanDialogueTrainer
+  scenarioId={"1"} // uses the data-driven catalog
   onComplete={(dialogue) => {}}
-/>
+/
 ```
 
 **Features:**
+
 - Displays scenario at top
 - Shows examiner prompts (speech bubbles)
 - Presents 2-3 Redemittel choice cards
@@ -564,6 +575,7 @@ const useSprechenEngine = (mode, content, timeLimitSeconds) => {
 **Goal:** Build foundation components
 
 **Tasks:**
+
 1. ✅ Create `/src/features/sprechen/` folder structure
 2. ✅ Build `VideoPlayer.jsx` component
 3. ✅ Build `AudioRecorder.jsx` component
@@ -572,6 +584,7 @@ const useSprechenEngine = (mode, content, timeLimitSeconds) => {
 6. ✅ Create placeholder data files (JSON)
 
 **Deliverables:**
+
 - Working video player with controls
 - Functional audio recording/playback
 - Basic routing structure
@@ -583,15 +596,17 @@ const useSprechenEngine = (mode, content, timeLimitSeconds) => {
 **Goal:** Implement Übung for all 3 Teile
 
 **Tasks:**
+
 1. ✅ Build `SprechenUebung.jsx` container
 2. ✅ Implement Teil 1 practice (personal questions)
 3. ✅ Implement Teil 2 practice (image description)
-4. ✅ Build `DialogueTrainer.jsx` for Teil 3
+4. ✅ Build `CleanDialogueTrainer.jsx` for Teil 3
 5. ✅ Create Redemittel card system
 6. ✅ Add model answer comparisons
 7. ✅ Implement replay functionality
 
 **Deliverables:**
+
 - Complete practice mode for all 3 Teile
 - Interactive dialogue trainer working
 - Model answers available
@@ -603,6 +618,7 @@ const useSprechenEngine = (mode, content, timeLimitSeconds) => {
 **Goal:** Implement full 16-minute Prüfung
 
 **Tasks:**
+
 1. ✅ Build `SprechenPruefung.jsx` container
 2. ✅ Implement timed test (16 minutes)
 3. ✅ Add Teil transitions with examiner videos
@@ -611,6 +627,7 @@ const useSprechenEngine = (mode, content, timeLimitSeconds) => {
 6. ✅ Add warning on exit during test
 
 **Deliverables:**
+
 - Working full test simulation
 - Self-evaluation system
 - Results with detailed feedback
@@ -622,6 +639,7 @@ const useSprechenEngine = (mode, content, timeLimitSeconds) => {
 **Goal:** Add content and refine UX
 
 **Tasks:**
+
 1. ✅ Upload examiner videos to `/public/video/sprechen/`
 2. ✅ Create complete `video-manifest.json`
 3. ✅ Write `sprechen-uebung.json` (all exercises)
@@ -632,6 +650,7 @@ const useSprechenEngine = (mode, content, timeLimitSeconds) => {
 8. ✅ Accessibility testing
 
 **Deliverables:**
+
 - Complete content library
 - Polished, production-ready UI
 - Mobile-responsive design
@@ -643,12 +662,14 @@ const useSprechenEngine = (mode, content, timeLimitSeconds) => {
 ### Following Existing Design System
 
 **Colors:**
+
 - Primary gradient: `from-purple-600 to-indigo-600`
 - Card backgrounds: `bg-white/80 backdrop-blur-md`
 - Borders: `border-purple-100`
 - Hover effects: `hover:shadow-xl hover:-translate-y-2`
 
 **Components:**
+
 - Rounded corners: `rounded-2xl`, `rounded-3xl`
 - Shadows: `shadow-lg`, `shadow-xl`
 - Transitions: `transition-all duration-200`
@@ -657,6 +678,7 @@ const useSprechenEngine = (mode, content, timeLimitSeconds) => {
 ### Sprechen-Specific UI
 
 **Video Player:**
+
 ```jsx
 <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
   <video className="w-full h-full object-cover" />
@@ -667,6 +689,7 @@ const useSprechenEngine = (mode, content, timeLimitSeconds) => {
 ```
 
 **Recording Button:**
+
 ```jsx
 <button className="w-20 h-20 rounded-full bg-red-600 hover:bg-red-700 flex items-center justify-center shadow-2xl transition-all duration-200 hover:scale-110">
   {recording ? (
@@ -678,11 +701,10 @@ const useSprechenEngine = (mode, content, timeLimitSeconds) => {
 ```
 
 **Redemittel Choice Cards:**
+
 ```jsx
 <button className="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-lg border-2 border-purple-200 hover:border-purple-500 hover:shadow-2xl transition-all duration-200 hover:scale-105 text-left w-full">
-  <div className="text-sm text-purple-600 font-bold mb-2">
-    Vorschlag machen
-  </div>
+  <div className="text-sm text-purple-600 font-bold mb-2">Vorschlag machen</div>
   <div className="text-gray-900 font-medium">
     "Wie wäre es, wenn wir am Samstag feiern?"
   </div>
@@ -690,6 +712,7 @@ const useSprechenEngine = (mode, content, timeLimitSeconds) => {
 ```
 
 **Dialogue History:**
+
 ```jsx
 <div className="space-y-4">
   {/* Examiner bubble (left) */}
@@ -698,7 +721,7 @@ const useSprechenEngine = (mode, content, timeLimitSeconds) => {
       <p className="text-gray-900">Wann wollen Sie feiern?</p>
     </div>
   </div>
-  
+
   {/* User bubble (right) */}
   <div className="flex justify-end">
     <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-2xl rounded-tr-none p-4 max-w-xs">
@@ -713,11 +736,13 @@ const useSprechenEngine = (mode, content, timeLimitSeconds) => {
 ## 📱 Mobile Optimization
 
 ### Touch Targets
+
 - Minimum 44x44px for all interactive elements
 - Large recording button (80x80px)
 - Generous spacing between Redemittel cards
 
 ### Responsive Layout
+
 ```jsx
 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
   {/* Video on top (mobile) / left (desktop) */}
@@ -726,6 +751,7 @@ const useSprechenEngine = (mode, content, timeLimitSeconds) => {
 ```
 
 ### Video Player
+
 - Full-width on mobile
 - Aspect ratio maintained (16:9)
 - Controls optimized for touch
@@ -735,16 +761,19 @@ const useSprechenEngine = (mode, content, timeLimitSeconds) => {
 ## ♿ Accessibility
 
 ### Video
+
 - Captions/subtitles for all examiner videos
 - Audio descriptions available
 - Keyboard controls (Space = play/pause)
 
 ### Recording
+
 - Visual feedback for recording state
 - Clear labels and ARIA attributes
 - Error messages for mic permission issues
 
 ### Keyboard Navigation
+
 - Tab through Redemittel cards
 - Enter/Space to select
 - Escape to cancel recording
@@ -754,16 +783,19 @@ const useSprechenEngine = (mode, content, timeLimitSeconds) => {
 ## 🎯 Success Metrics
 
 ### User Engagement
+
 - [ ] Users complete at least 5 practice sessions before test
 - [ ] Average time in dialogue trainer: 10+ minutes
 - [ ] Users re-record responses 2-3 times (indicates engagement)
 
 ### Learning Outcomes
+
 - [ ] Users report feeling "more confident" (survey)
 - [ ] Self-evaluation scores improve over time
 - [ ] Users use correct Redemittel in recordings
 
 ### Technical Performance
+
 - [ ] Video load time < 3 seconds
 - [ ] Recording saves successfully 99%+ of time
 - [ ] Zero crashes during test mode
@@ -774,6 +806,7 @@ const useSprechenEngine = (mode, content, timeLimitSeconds) => {
 ## 🚀 Launch Checklist
 
 ### Pre-Launch
+
 - [ ] All examiner videos uploaded and tested
 - [ ] At least 2 complete Modelltests available
 - [ ] 20+ dialogue scenarios for Teil 3 trainer
@@ -784,12 +817,14 @@ const useSprechenEngine = (mode, content, timeLimitSeconds) => {
 - [ ] Performance testing (Core Web Vitals)
 
 ### Launch
+
 - [ ] Deploy to production
 - [ ] Update dashboard with Sprechen card
 - [ ] Add "New!" badge to Sprechen section
 - [ ] Monitor error logs
 
 ### Post-Launch
+
 - [ ] Collect user feedback
 - [ ] Add more scenarios based on demand
 - [ ] Create video tutorials for dialogue trainer
@@ -800,6 +835,7 @@ const useSprechenEngine = (mode, content, timeLimitSeconds) => {
 ## 📚 Resources Needed
 
 ### Video Content
+
 1. **Teil 1 Videos** (8 videos)
    - Introduction (1)
    - Personal questions (7)
@@ -817,11 +853,13 @@ const useSprechenEngine = (mode, content, timeLimitSeconds) => {
 **Total:** ~30 videos, 5-20 seconds each
 
 ### Audio Content
+
 - Model answers for Teil 1 (20 recordings)
 - Model descriptions for Teil 2 (10 recordings)
 - Complete dialogue examples for Teil 3 (50 recordings)
 
 ### Image Content
+
 - Teil 2 prompt images (20+ images)
 - Various topics: Einkaufen, Arzt, Bank, Post, etc.
 
@@ -830,6 +868,7 @@ const useSprechenEngine = (mode, content, timeLimitSeconds) => {
 ## 🔮 Future Enhancements
 
 ### Phase 5 (Future)
+
 - **AI Speech Evaluation:** Use Web Speech API or cloud service to evaluate pronunciation and grammar
 - **Peer Practice:** Match users for live practice sessions
 - **Video Responses:** Allow users to record video (not just audio)
@@ -843,6 +882,7 @@ const useSprechenEngine = (mode, content, timeLimitSeconds) => {
 ## 📝 Notes
 
 ### Video Format Recommendations
+
 - **Format:** MP4 (H.264 video, AAC audio)
 - **Resolution:** 1280x720 (720p) - balance quality/file size
 - **Frame rate:** 30fps
@@ -850,12 +890,14 @@ const useSprechenEngine = (mode, content, timeLimitSeconds) => {
 - **Audio:** 128 kbps stereo
 
 ### Recording Format
+
 - **Format:** WebM (browser native) or MP3 (converted)
 - **Sample rate:** 44.1 kHz
 - **Channels:** Mono (sufficient for speech)
 - **Bitrate:** 64-96 kbps
 
 ### Storage Considerations
+
 - Videos stored in `/public/video/sprechen/` (static hosting)
 - User recordings stored temporarily in browser (IndexedDB)
 - Optional: Upload to cloud for persistent storage

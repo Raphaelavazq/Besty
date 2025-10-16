@@ -1,0 +1,625 @@
+
+  {
+    "leitpunkte": ["Idee","Materialien","Vorbereitung"],
+    "greeting": "Hallo! Wir überlegen unseren Beitrag zur Schulfeier.",
+    "closing": "Dann sammeln wir Materialien und bereiten einen Ablauf vor.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Welche Idee möchten Sie beitragen?","redemittelOptions":[{"category":"vorschlag_machen","text":"Wir könnten einen Stand mit internationalen Gerichten anbieten."},{"category":"vorschlag_machen","text":"Eine kleine Theateraufführung wäre auch schön."}]},
+      {"step":2,"examinerPrompt":"Welche Materialien werden benötigt?","redemittelOptions":[{"category":"vorschlag_machen","text":"Tische, Dekoration und Rezeptkarten."},{"category":"nachfragen","text":"Wer kann welche Materialien besorgen?"}]},
+      {"step":3,"examinerPrompt":"Wer hilft bei der Vorbereitung?","redemittelOptions":[{"category":"vorschlag_machen","text":"Freiwillige aus dem Kurs helfen beim Aufbau."},{"category":"vorschlag_machen","text":"Wir planen einen Probetermin vor der Feier."}]}
+    ]
+  } 
+  {
+    [
+    "id": "27",
+    "title": "Gemeinsamer VHS-Kurs auswählen",
+    "theme": "Freizeit & Weiterbildung",
+    "leitpunkte": ["Kursart","Zeit","Anmeldung"],
+    "greeting": "Hallo! Wir möchten einen gemeinsamen VHS-Kurs auswählen.",
+    "closing": "Gut, dann melden wir uns an und besprechen den Stundenplan.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Welche Kursart bevorzugen Sie?","redemittelOptions":[{"category":"nachfragen","text":"Sollen es Sprach- oder Freizeitkurse sein?"},{"category":"vorschlag_machen","text":"Ein Sprachkurs für Konversation wäre hilfreich."}]},
+      {"step":2,"examinerPrompt":"Wann soll der Kurs stattfinden?","redemittelOptions":[{"category":"vorschlag_machen","text":"Abends oder am Wochenende wären passende Zeiten."},{"category":"nachfragen","text":"Können Sie werktags abends teilnehmen?"}]},
+      {"step":3,"examinerPrompt":"Wer meldet sich an?","redemittelOptions":[{"category":"vorschlag_machen","text":"Ich melde uns an, wenn alle zustimmen."},{"category":"vorschlag_machen","text":"Wir teilen die Anmeldung auf und holen Bestätigungen."}]}
+    ]
+  },
+  {
+    "number": 28,
+    "id": "28",
+    "title": "Gesünder leben mit Partner/in",
+    "theme": "Gesundheit & Alltag",
+    "leitpunkte": ["Aktivitäten","Ernährung","Zeitplan"],
+    "greeting": "Hallo! Wir planen einen gesünderen Lebensstil zu zweit.",
+    "closing": "Dann erstellen wir einen Plan mit Aktivitäten und Essensvorschlägen.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Welche Aktivitäten möchten Sie machen?","redemittelOptions":[{"category":"vorschlag_machen","text":"Gemeinsame Spaziergänge und Radfahren wären gut."},{"category":"vorschlag_machen","text":"Ein Kurs im Fitnessstudio könnte motivieren."}]},
+      {"step":2,"examinerPrompt":"Wie verändern Sie die Ernährung?","redemittelOptions":[{"category":"vorschlag_machen","text":"Mehr Gemüse und weniger Fertigprodukte."},{"category":"nachfragen","text":"Sollen wir einen Wochenplan für Mahlzeiten erstellen?"}]},
+      {"step":3,"examinerPrompt":"Wie integrieren Sie das in den Alltag?","redemittelOptions":[{"category":"vorschlag_machen","text":"Wir legen feste Zeiten für Sport und gemeinsame Mahlzeiten fest."},{"category":"vorschlag_machen","text":"Kleine Schritte jeden Tag sind realistischer."}]}
+    ]
+  },
+  {
+    "number": 29,
+    "id": "29",
+    "title": "Gemeinsamer Kurs planen",
+    "theme": "Freizeit & Weiterbildung",
+    "leitpunkte": ["Kurswahl","Anmeldung","Organisation"],
+    "greeting": "Hallo! Wir planen einen gemeinsamen Kurs.",
+    "closing": "Gut, dann wählen wir einen Kurs und melden uns an.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Welcher Kurs interessiert Sie?","redemittelOptions":[{"category":"nachfragen","text":"Eher kreativ oder sprachlich?"},{"category":"vorschlag_machen","text":"Ein Kreativkurs könnte Spaß machen."}]},
+      {"step":2,"examinerPrompt":"Wie melden Sie sich an?","redemittelOptions":[{"category":"vorschlag_machen","text":"Über das VHS-Portal online anmelden."},{"category":"vorschlag_machen","text":"Ich übernehme die Anmeldung, wenn alle zustimmen."}]},
+      {"step":3,"examinerPrompt":"Wer kümmert sich um die Organisation?","redemittelOptions":[{"category":"vorschlag_machen","text":"Eine Person koordiniert Termine und Materialien."},{"category":"vorschlag_machen","text":"Wir teilen Aufgaben auf mehrere Personen auf."}]}
+    ]
+  },
+  {
+    "number": 30,
+    "id": "30",
+    "title": "Kollegin wird 50 — Überraschung planen",
+    "theme": "Feiern & Veranstaltungen",
+    "leitpunkte": ["Geschenk","Karte","Feier"],
+    "greeting": "Hallo! Wir planen eine Überraschung für eine Kollegin.",
+    "closing": "Dann sammeln wir Ideen und bereiten die Überraschung vor.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Was schenken Sie?","redemittelOptions":[{"category":"vorschlag_machen","text":"Ein gemeinsames Geschenk von Kollegen, z.B. Gutschein."},{"category":"vorschlag_machen","text":"Ein persönliches Fotoalbum wäre schön."}]},
+      {"step":2,"examinerPrompt":"Wie organisieren Sie die Feier?","redemittelOptions":[{"category":"vorschlag_machen","text":"Kleine Feier in der Kantine mit Kuchen und Getränken."},{"category":"nachfragen","text":"Wann passt es den meisten Kollegen?"}]},
+      {"step":3,"examinerPrompt":"Wer schreibt die Karte?","redemittelOptions":[{"category":"vorschlag_machen","text":"Wir sammeln Unterschriften und schreiben persönliche Wünsche."},{"category":"vorschlag_machen","text":"Jeder schreibt einen kurzen Gruß, wir fügen sie zusammen."}]}
+    ]
+  },
+  {
+    "number": 31,
+    "id": "31",
+    "title": "Hochzeitsfeier in Neuburg — Anreise planen",
+    "theme": "Reisen & Transport",
+    "leitpunkte": ["Anreise","Kleidung","Treffpunkt"],
+    "greeting": "Hallo! Wir planen die Anreise zur Hochzeitsfeier.",
+    "closing": "Dann klären wir Anreisezeiten und Treffpunkt.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Wie kommen Sie nach Neuburg?","redemittelOptions":[{"category":"vorschlag_machen","text":"Wir fahren mit dem Zug, es ist bequem."},{"category":"vorschlag_machen","text":"Fahrgemeinschaften mit dem Auto wären praktisch."}]},
+      {"step":2,"examinerPrompt":"Was ziehen Sie an?","redemittelOptions":[{"category":"nachfragen","text":"Ist die Feier formell oder locker?"},{"category":"vorschlag_machen","text":"Ein festliches Outfit wäre passend."}]},
+      {"step":3,"examinerPrompt":"Wo treffen wir uns?","redemittelOptions":[{"category":"vorschlag_machen","text":"Treffpunkt am Bahnhof um 14 Uhr."},{"category":"vorschlag_machen","text":"Wir können Fahrgemeinschaften an der Tankstelle organisieren."}]}
+    ]
+  },
+  {
+    "number": 32,
+    "id": "32",
+    "title": "Katzenbetreuung während Krankenhausaufenthalt",
+    "theme": "Familie & Tiere",
+    "leitpunkte": ["Futter","Betreuung","Spielzeit"],
+    "greeting": "Hallo! Wir organisieren die Katzenbetreuung.",
+    "closing": "Danke, dann klären wir Futterplan und Betreuungszeiten.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Wer kann die Katze betreuen?","redemittelOptions":[{"category":"vorschlag_machen","text":"Eine Nachbarin könnte täglich füttern und spielen."},{"category":"nachfragen","text":"Ist die Katze an bestimmte Futterzeiten gewöhnt?"}]},
+      {"step":2,"examinerPrompt":"Was braucht die Betreuung?","redemittelOptions":[{"category":"vorschlag_machen","text":"Futter, Spielzeug und Kontaktdaten des Tierarztes bereitstellen."},{"category":"vorschlag_machen","text":"Wir schreiben eine Liste mit Routine und Medikamenten, falls nötig."}]},
+      {"step":3,"examinerPrompt":"Wie organisieren Sie die Spielzeit?","redemittelOptions":[{"category":"vorschlag_machen","text":"Kurze Spielzeiten morgens und abends einplanen."},{"category":"vorschlag_machen","text":"Ein Spielplan hilft, dass die Betreuung konstant bleibt."}]}
+    ]
+  },
+  {
+    "number": 33,
+    "id": "33",
+    "title": "Firmenbesprechung organisieren",
+    "theme": "Beruf & Arbeit",
+    "leitpunkte": ["Raum","Agenda","Getränke"],
+    "greeting": "Guten Tag! Wir organisieren eine Firmenbesprechung.",
+    "closing": "Okay, dann verschicken wir die Agenda und reservieren den Raum.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Welchen Raum benötigen Sie?","redemittelOptions":[{"category":"vorschlag_machen","text":"Einen Konferenzraum mit Beamer wäre ideal."},{"category":"nachfragen","text":"Wie viele Teilnehmer werden erwartet?"}]},
+      {"step":2,"examinerPrompt":"Welche Punkte stehen auf der Agenda?","redemittelOptions":[{"category":"vorschlag_machen","text":"Projektstatus, Budget und nächste Schritte."},{"category":"nachfragen","text":"Gibt es externe Teilnehmer?"}]},
+      {"step":3,"examinerPrompt":"Wer kümmert sich um Getränke?","redemittelOptions":[{"category":"vorschlag_machen","text":"Ich bestelle Kaffee und Wasser für alle."},{"category":"vorschlag_machen","text":"Ein Catering-Service kann kleine Snacks liefern."}]}
+    ]
+  },
+  {
+    "number": 34,
+    "id": "34",
+    "title": "Aufpassen auf 6-jährigen Philip",
+    "theme": "Familie & Kinder",
+    "leitpunkte": ["Aktivitäten","Essen","Abendroutine"],
+    "greeting": "Hallo! Wir kümmern uns um die Betreuung von Philip.",
+    "closing": "Gut, dann wissen wir wer Philip abholt und die Routine macht.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Welche Aktivitäten mag Philip?","redemittelOptions":[{"category":"nachfragen","text":"Spielt Philip gerne draußen oder drinnen?"},{"category":"vorschlag_machen","text":"Wir können zusammen malen und draußen spielen."}]},
+      {"step":2,"examinerPrompt":"Was gibt es zu essen?","redemittelOptions":[{"category":"vorschlag_machen","text":"Ein einfaches Abendessen wie Nudeln und Gemüse wäre passend."},{"category":"nachfragen","text":"Hat Philip Allergien oder besondere Vorlieben?"}]},
+      {"step":3,"examinerPrompt":"Wie sieht die Abendroutine aus?","redemittelOptions":[{"category":"vorschlag_machen","text":"Zähneputzen, eine Geschichte und Schlafenszeit um 20 Uhr."},{"category":"nachfragen","text":"Sollen wir eine bestimmte Gutenachtgeschichte lesen?"}]}
+    ]
+  },
+  {
+    "number": 35,
+    "id": "35",
+    "title": "Wochenendausflug zu zweit",
+    "theme": "Freizeit & Reisen",
+    "leitpunkte": ["Ziel","Dauer","Transport"],
+    "greeting": "Hallo! Wir planen einen Wochenendausflug zu zweit.",
+    "closing": "Dann buchen wir Unterkunft und legen ein Programm fest.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Wohin möchten Sie fahren?","redemittelOptions":[{"category":"vorschlag_machen","text":"Eine nahegelegene Stadt wäre schön für ein Wochenende."},{"category":"nachfragen","text":"Bevorzugen Sie Ruhe oder Aktivitäten?"}]},
+      {"step":2,"examinerPrompt":"Wie lange bleiben Sie?","redemittelOptions":[{"category":"vorschlag_machen","text":"Zwei Nächte wären ideal für ein entspanntes Wochenende."},{"category":"nachfragen","text":"Passt ein Wochenende in zwei Wochen?"}]},
+      {"step":3,"examinerPrompt":"Wie reisen Sie?","redemittelOptions":[{"category":"vorschlag_machen","text":"Mit dem Auto für Flexibilität."},{"category":"vorschlag_machen","text":"Der Zug ist entspannter und umweltfreundlich."}]}
+    ]
+  },
+  {
+    "number": 36,
+    "id": "36",
+    "title": "Radausflug planen",
+    "theme": "Freizeit & Sport",
+    "leitpunkte": ["Strecke","Pausen","Wasser"],
+    "greeting": "Hallo! Wir organisieren einen Radausflug.",
+    "closing": "Gut, dann legen wir die Strecke und Pausenorte fest.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Welche Strecke möchten Sie fahren?","redemittelOptions":[{"category":"vorschlag_machen","text":"Eine landschaftliche Strecke entlang dem Fluss wäre schön."},{"category":"nachfragen","text":"Wie lang sollen die Etappen sein?"}]},
+      {"step":2,"examinerPrompt":"Wo machen Sie Pausen?","redemittelOptions":[{"category":"vorschlag_machen","text":"Bei kleinen Cafés und Aussichtspunkten halten."},{"category":"vorschlag_machen","text":"Alle 20 Kilometer eine längere Pause einplanen."}]},
+      {"step":3,"examinerPrompt":"Wer bringt Wasser und Snacks mit?","redemittelOptions":[{"category":"vorschlag_machen","text":"Jeder bringt eine Flasche Wasser und Energieriegel mit."},{"category":"vorschlag_machen","text":"Wir legen eine gemeinsame Verpflegungsbox im Auto bereit."}]}
+    ]
+  },
+  {
+    "number": 37,
+    "id": "37",
+    "title": "Grillen mit Freunden",
+    "theme": "Feiern & Veranstaltungen",
+    "leitpunkte": ["Fleisch","Salate","Gäste"],
+    "greeting": "Hallo! Wir organisieren ein Grillen mit Freunden.",
+    "closing": "Dann notieren wir die Einkaufsliste und die Grillaufgaben.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Was möchten Sie grillen?","redemittelOptions":[{"category":"vorschlag_machen","text":"Verschiedene Fleischsorten und vegetarische Spieße."},{"category":"nachfragen","text":"Sollen auch Salate und Beilagen mitgebracht werden?"}]},
+      {"step":2,"examinerPrompt":"Wer bringt Getränke?","redemittelOptions":[{"category":"vorschlag_machen","text":"Einige bringen Bier und Wein, andere Softdrinks."},{"category":"vorschlag_machen","text":"Wir stellen alkoholfreie Optionen für Familien bereit."}]},
+      {"step":3,"examinerPrompt":"Wer kümmert sich um den Grill?","redemittelOptions":[{"category":"vorschlag_machen","text":"Ich übernehme das Grillen, wenn jemand mir hilft."},{"category":"vorschlag_machen","text":"Wir teilen die Grillzeiten untereinander auf."}]}
+    ]
+  },
+  {
+    "number": 38,
+    "id": "38",
+    "title": "Überraschungsparty nach Rückkehr eines Freundes",
+    "theme": "Feiern & Veranstaltungen",
+    "leitpunkte": ["Timing","Gäste","Überraschung"],
+    "greeting": "Hallo! Wir planen eine Überraschungsparty.",
+    "closing": "Super, dann koordinieren wir die Gäste und das Timing.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Wann ist die beste Zeit für die Überraschung?","redemittelOptions":[{"category":"vorschlag_machen","text":"Am Abend nach seiner Rückkehr wäre passend."},{"category":"nachfragen","text":"Können wir das Datum geheim halten?"}]},
+      {"step":2,"examinerPrompt":"Wen laden Sie ein?","redemittelOptions":[{"category":"vorschlag_machen","text":"Freunde aus der Stadt und Arbeitskollegen."},{"category":"nachfragen","text":"Sind auch Familienmitglieder eingeladen?"}]},
+      {"step":3,"examinerPrompt":"Wie sorgen Sie für die Überraschung?","redemittelOptions":[{"category":"vorschlag_machen","text":"Wir organisieren eine Ablenkung und überraschen ihn dann."},{"category":"vorschlag_machen","text":"Ein gemeinsamer Countdown beim Eintreten wäre toll."}]}
+    ]
+  },
+  {
+    "number": 39,
+    "id": "39",
+    "title": "Reise nach London planen",
+    "theme": "Reisen & Kultur",
+    "leitpunkte": ["Sehenswürdigkeiten","Transport","Programm"],
+    "greeting": "Hallo! Wir planen eine Reise nach London.",
+    "closing": "Dann erstellen wir eine Liste mit Sehenswürdigkeiten und buchen Tickets.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Welche Sehenswürdigkeiten möchten Sie sehen?","redemittelOptions":[{"category":"vorschlag_machen","text":"Das British Museum und der Tower wären spannend."},{"category":"nachfragen","text":"Möchten Sie auch eine Stadtrundfahrt machen?"}]},
+      {"step":2,"examinerPrompt":"Wie reisen Sie?","redemittelOptions":[{"category":"vorschlag_machen","text":"Mit dem Flugzeug für kurze Reisezeit."},{"category":"vorschlag_machen","text":"Der Zug ist entspannter, wenn verfügbar."}]},
+      {"step":3,"examinerPrompt":"Wie sieht das Programm aus?","redemittelOptions":[{"category":"vorschlag_machen","text":"Tagespläne mit Zeitfenstern für Museen und Spaziergänge."},{"category":"nachfragen","text":"Sollen wir freie Zeit zum Shoppen einplanen?"}]}
+    ]
+  },
+  {
+    "number": 40,
+    "id": "40",
+    "title": "Picknick mit der Familie",
+    "theme": "Familie & Freizeit",
+    "leitpunkte": ["Essen","Decken","Spiele"],
+    "greeting": "Hallo! Wir planen ein Picknick mit der Familie.",
+    "closing": "Gut, dann packen wir Decken, Essen und Spiele ein.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Was bringen Sie für Essen mit?","redemittelOptions":[{"category":"vorschlag_machen","text":"Sandwiches, Obst und ein paar Salate."},{"category":"nachfragen","text":"Hat jemand besondere Essenswünsche?"}]},
+      {"step":2,"examinerPrompt":"Wo treffen Sie sich?","redemittelOptions":[{"category":"vorschlag_machen","text":"Im Stadtpark unter den großen Bäumen."},{"category":"nachfragen","text":"Passt der Samstagvormittag?"}]},
+      {"step":3,"examinerPrompt":"Welche Spiele planen Sie?","redemittelOptions":[{"category":"vorschlag_machen","text":"Ballspiele und Brettspiele für Kinder."},{"category":"vorschlag_machen","text":"Ein kleines Quiz für die Familie wäre lustig."}]}
+    ]
+  },
+  {
+    "number": 41,
+    "id": "41",
+    "title": "Samstagabend planen",
+    "theme": "Freizeit & Freunde",
+    "leitpunkte": ["Aktivität","Gäste","Dauer"],
+    "greeting": "Hallo! Wir planen den Samstagabend.",
+    "closing": "Dann entscheiden wir uns für eine Aktivität und informieren die Gäste.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Was möchten Sie am Samstagabend machen?","redemittelOptions":[{"category":"vorschlag_machen","text":"Ins Kino gehen und danach etwas trinken."},{"category":"vorschlag_machen","text":"Ein Spieleabend zu Hause wäre gemütlich."}]},
+      {"step":2,"examinerPrompt":"Wen laden Sie ein?","redemittelOptions":[{"category":"nachfragen","text":"Sollen auch Kollegen eingeladen werden?"},{"category":"vorschlag_machen","text":"Nur enge Freunde, damit es klein bleibt."}]},
+      {"step":3,"examinerPrompt":"Wie lange soll es dauern?","redemittelOptions":[{"category":"vorschlag_machen","text":"Bis etwa Mitternacht wäre perfekt."},{"category":"vorschlag_machen","text":"Bis 23 Uhr, damit am Sonntag genug Erholung bleibt."}]}
+    ]
+  },
+  {
+    "number": 42,
+    "id": "42",
+    "title": "Möbelkauf planen",
+    "theme": "Haushalt & Einkaufen",
+    "leitpunkte": ["Maße","Budget","Transport"],
+    "greeting": "Hallo! Wir planen den Möbelkauf.",
+    "closing": "Dann messen wir Räume aus und vergleichen Preise.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Welche Maße brauchen die Möbel?","redemittelOptions":[{"category":"nachfragen","text":"Haben die Räume bestimmte Platzbeschränkungen?"},{"category":"vorschlag_machen","text":"Wir sollten vorher Maß nehmen und eine Skizze anfertigen."}]},
+      {"step":2,"examinerPrompt":"Welches Budget haben Sie?","redemittelOptions":[{"category":"vorschlag_machen","text":"Wir sollten ein maximales Budget pro Möbelstück festlegen."},{"category":"nachfragen","text":"Sollen wir gebrauchte Möbel in Betracht ziehen?"}]},
+      {"step":3,"examinerPrompt":"Wie transportieren Sie die Möbel?","redemittelOptions":[{"category":"vorschlag_machen","text":"Möbelspedition oder einen Transporter mieten."},{"category":"vorschlag_machen","text":"Freunde mit großem Auto könnten helfen."}]}
+    ]
+  },
+  {
+    "number": 43,
+    "id": "43",
+    "title": "Kindergeburtstag organisieren",
+    "theme": "Familie & Kinder",
+    "leitpunkte": ["Spiele","Einladungen","Essen"],
+    "greeting": "Hallo! Wir organisieren einen Kindergeburtstag.",
+    "closing": "Gut, dann schreiben wir die Einladungen und planen Spiele.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Welche Spiele planen Sie?","redemittelOptions":[{"category":"vorschlag_machen","text":"Schatzsuche, Bastelstation und Sackhüpfen."},{"category":"nachfragen","text":"Brauchen die Spiele einen Aufsichtspersonen?"}]},
+      {"step":2,"examinerPrompt":"Wer schreibt die Einladungen?","redemittelOptions":[{"category":"vorschlag_machen","text":"Ich gestalte die Einladungen und die Nachbarn verteilen sie."},{"category":"vorschlag_machen","text":"Wir verschicken digitale Einladungen per WhatsApp."}]},
+      {"step":3,"examinerPrompt":"Was gibt es zu essen?","redemittelOptions":[{"category":"vorschlag_machen","text":"Kinderfreundliche Snacks und Saft, evtl. Kuchen."},{"category":"vorschlag_machen","text":"Eltern können Salate und Getränke mitbringen."}]}
+    ]
+  },
+  {
+    "number": 44,
+    "id": "44",
+    "title": "Umzug organisieren",
+    "theme": "Haushalt & Hilfe",
+    "leitpunkte": ["Termin","Transport","Helfer"],
+    "greeting": "Hallo! Wir organisieren einen Umzug.",
+    "closing": "Dann reservieren wir ein Fahrzeug und sammeln Helfer.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Wann möchten Sie umziehen?","redemittelOptions":[{"category":"vorschlag_machen","text":"Am Monatsanfang ist oft günstiger für den Mietvertrag."},{"category":"nachfragen","text":"Welche Tage sind für Sie möglich?"}]},
+      {"step":2,"examinerPrompt":"Wie organisieren Sie den Transport?","redemittelOptions":[{"category":"vorschlag_machen","text":"Einen Transporter mieten oder eine Spedition beauftragen."},{"category":"vorschlag_machen","text":"Freunde mit großem Auto helfen uns beim Transport."}]},
+      {"step":3,"examinerPrompt":"Wer hilft beim Umziehen?","redemittelOptions":[{"category":"vorschlag_machen","text":"Wir fragen Freunde und Nachbarn um Hilfe."},{"category":"vorschlag_machen","text":"Eine professionelle Umzugsfirma kann alles übernehmen."}]}
+    ]
+  },
+  {
+    "number": 45,
+    "id": "45",
+    "title": "Hausaufgabenraum in der Schule einrichten",
+    "theme": "Schule & Bildung",
+    "leitpunkte": ["Öffnungszeiten","Betreuung","Material"],
+    "greeting": "Guten Tag! Wir planen einen Hausaufgabenraum in der Schule.",
+    "closing": "Dann klären wir Öffnungszeiten und Materialien.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Wann soll der Raum geöffnet sein?","redemittelOptions":[{"category":"vorschlag_machen","text":"Nachmittags von 14 bis 18 Uhr wäre sinnvoll."},{"category":"nachfragen","text":"Sollen wir auch am Wochenende öffnen?"}]},
+      {"step":2,"examinerPrompt":"Wer betreut den Raum?","redemittelOptions":[{"category":"vorschlag_machen","text":"Lehrer und ehrenamtliche Helfer wechseln sich ab."},{"category":"vorschlag_machen","text":"Eine verantwortliche Person koordiniert die Betreuung."}]},
+      {"step":3,"examinerPrompt":"Welche Materialien werden benötigt?","redemittelOptions":[{"category":"vorschlag_machen","text":"Bücher, Computer und Schreibmaterialien."},{"category":"vorschlag_machen","text":"Whiteboards und Übungsblätter wären hilfreich."}]}
+    ]
+  },
+  {
+    "number": 46,
+    "id": "46",
+    "title": "Umweltschutz im Alltag",
+    "theme": "Umwelt & Gesellschaft",
+    "leitpunkte": ["Fahrrad","Regional einkaufen","Müll vermeiden"],
+    "greeting": "Hallo! Wir sprechen über Umweltschutz im Alltag.",
+    "closing": "Gut, dann probieren wir kleine Änderungen im Alltag aus.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Welche Maßnahmen schlagen Sie vor?","redemittelOptions":[{"category":"vorschlag_machen","text":"Mehr mit dem Fahrrad fahren und öffentliche Verkehrsmittel nutzen."},{"category":"vorschlag_machen","text":"Regional und saisonal einkaufen."}]},
+      {"step":2,"examinerPrompt":"Wie vermeiden Sie Müll?","redemittelOptions":[{"category":"vorschlag_machen","text":"Weniger Verpackungen kaufen und Stoffbeutel nutzen."},{"category":"nachfragen","text":"Sammeln Sie Plastikmüll getrennt?"}]},
+      {"step":3,"examinerPrompt":"Wie motivieren Sie andere?","redemittelOptions":[{"category":"vorschlag_machen","text":"Workshops und Informationsveranstaltungen organisieren."},{"category":"vorschlag_machen","text":"Gemeinsame Aktionen wie Müllsammeln anbieten."}]}
+    ]
+  },
+  {
+    "number": 47,
+    "id": "47",
+    "title": "Bericht zum Umweltschutz schreiben",
+    "theme": "Schule & Bildung",
+    "leitpunkte": ["Quellen","Themen","Treffen"],
+    "greeting": "Guten Tag! Wir schreiben einen Bericht zum Umweltschutz.",
+    "closing": "Dann sammeln wir Quellen und teilen Kapitel auf.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Welche Themen möchten Sie behandeln?","redemittelOptions":[{"category":"vorschlag_machen","text":"Klimawandel, Energieeinsparung und Verkehr."},{"category":"nachfragen","text":"Sollen lokale Beispiele einbezogen werden?"}]},
+      {"step":2,"examinerPrompt":"Welche Quellen nutzen Sie?","redemittelOptions":[{"category":"vorschlag_machen","text":"Wissenschaftliche Artikel und offizielle Berichte."},{"category":"nachfragen","text":"Brauchen wir Interviews für den Bericht?"}]},
+      {"step":3,"examinerPrompt":"Wie organisieren Sie Treffen?","redemittelOptions":[{"category":"vorschlag_machen","text":"Wöchentliche Treffen zur Arbeitsteilung und Besprechung."},{"category":"vorschlag_machen","text":"Ein gemeinsames Online-Dokument für die Zusammenarbeit."}]}
+    ]
+  },
+  {
+    "number": 48,
+    "id": "48",
+    "title": "Elternabend: Ausflug organisieren",
+    "theme": "Schule & Elternarbeit",
+    "leitpunkte": ["Betreuung","Transport","Programm"],
+    "greeting": "Guten Tag! Wir planen einen Ausflug mit Elternabend-Teilnahme.",
+    "closing": "Gut, dann klären wir Betreuung, Transport und Programm.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Welche Betreuung ist nötig?","redemittelOptions":[{"category":"vorschlag_machen","text":"Zusätzliche Betreuer für Ausflüge mit Kindern organisieren."},{"category":"nachfragen","text":"Sind Helfer aus der Elternschaft verfügbar?"}]},
+      {"step":2,"examinerPrompt":"Wie organisieren Sie den Transport?","redemittelOptions":[{"category":"vorschlag_machen","text":"Busse für Gruppenbuchungen wären praktisch."},{"category":"vorschlag_machen","text":"Fahrgemeinschaften und private Autos kombinieren."}]},
+      {"step":3,"examinerPrompt":"Wie sieht das Programm aus?","redemittelOptions":[{"category":"vorschlag_machen","text":"Führungen, Workshops und Freizeitprogramme für Kinder."},{"category":"nachfragen","text":"Sollen wir Essenspausen im Zeitplan berücksichtigen?"}]}
+    ]
+  },
+  {
+    "number": 49,
+    "id": "49",
+    "title": "Ehrenamtlich arbeiten für die Umwelt",
+    "theme": "Umwelt & Gesellschaft",
+    "leitpunkte": ["Müllsammeln","Workshops","Organisation"],
+    "greeting": "Hallo! Wir planen ehrenamtliche Aktionen für die Umwelt.",
+    "closing": "Dann erstellen wir eine Liste mit Aktionen und freiwilligen Helfern.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Welche Aktion möchten Sie starten?","redemittelOptions":[{"category":"vorschlag_machen","text":"Müllsammelaktionen im Park organisieren."},{"category":"nachfragen","text":"Wollen wir auch Informationsstände anbieten?"}]},
+      {"step":2,"examinerPrompt":"Wer organisiert Workshops?","redemittelOptions":[{"category":"vorschlag_machen","text":"Freiwillige mit Expertise bieten Workshops an."},{"category":"vorschlag_machen","text":"Wir kollaborieren mit lokalen Organisationen."}]},
+      {"step":3,"examinerPrompt":"Wie kommunizieren Sie die Aktionen?","redemittelOptions":[{"category":"vorschlag_machen","text":"Über soziale Medien und Aushänge im Viertel."},{"category":"vorschlag_machen","text":"Mit lokalen Schulen zusammenarbeiten und Schüler einbinden."}]}
+    ]
+  },
+  {
+    "number": 50,
+    "id": "50",
+    "title": "Klassenfest für Kinder planen",
+    "theme": "Familie & Kinder",
+    "leitpunkte": ["Datum","Spiele","Verpflegung"],
+    "greeting": "Hallo! Wir planen ein Klassenfest für Kinder.",
+    "closing": "Dann legen wir das Datum fest und organisieren Spiele und Verpflegung.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Welches Datum passt?","redemittelOptions":[{"category":"vorschlag_machen","text":"Ein Samstagmittag wäre ideal für Familien."},{"category":"nachfragen","text":"Soll es drinnen oder draußen stattfinden?"}]},
+      {"step":2,"examinerPrompt":"Welche Spiele sollen angeboten werden?","redemittelOptions":[{"category":"vorschlag_machen","text":"Staffelläufe und Bastelstationen für Kinder."},{"category":"vorschlag_machen","text":"Ein kleines Theaterstück als Programmpunkt."}]},
+      {"step":3,"examinerPrompt":"Wie organisieren Sie das Essen?","redemittelOptions":[{"category":"vorschlag_machen","text":"Eltern bringen Snacks mit, wir koordinieren Allergien."},{"category":"vorschlag_machen","text":"Einfaches Catering für Kinder bestellen."}]}
+    ]
+  },
+  {
+    "number": 51,
+    "id": "51",
+    "title": "Ausflug für Kursleiterin organisieren",
+    "theme": "Kurse & Lernen",
+    "leitpunkte": ["Programm","Pausen","Teilnehmer"],
+    "greeting": "Hallo! Wir planen einen Ausflug für die Kursleiterin.",
+    "closing": "Gut, dann erstellen wir ein Programm und informieren die Teilnehmer.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Welches Programm ist passend?","redemittelOptions":[{"category":"vorschlag_machen","text":"Führung und kulturelles Programm mit Pausen."},{"category":"nachfragen","text":"Gibt es spezielle Wünsche der Kursleiterin?"}]},
+      {"step":2,"examinerPrompt":"Wie gestalten Sie Pausen?","redemittelOptions":[{"category":"vorschlag_machen","text":"Zeit für Kaffee und kurzen Austausch einplanen."},{"category":"vorschlag_machen","text":"Lunch in einem netten Restaurant organisieren."}]},
+      {"step":3,"examinerPrompt":"Wie viele Teilnehmer sind vorgesehen?","redemittelOptions":[{"category":"nachfragen","text":"Wie groß ist die Gruppe ungefähr?"},{"category":"vorschlag_machen","text":"Maximal 20 Teilnehmer sind praktisch für Organisation."}]}
+    ]
+  },
+  {
+    "number": 52,
+    "id": "52",
+    "title": "Ausflug für betreute Gruppe (Rollstuhl)",
+    "theme": "Inklusion & Betreuung",
+    "leitpunkte": ["Barrierefreie Orte","Transport","Betreuung"],
+    "greeting": "Guten Tag! Wir planen einen barrierefreien Ausflug.",
+    "closing": "Dann prüfen wir Orte und Transportmöglichkeiten und buchen frühzeitig.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Welche Orte sind barrierefrei?","redemittelOptions":[{"category":"vorschlag_machen","text":"Museen mit barrierefreiem Zugang und Aufzügen."},{"category":"nachfragen","text":"Brauchen wir spezielle Hilfen vor Ort?"}]},
+      {"step":2,"examinerPrompt":"Wie organisieren Sie Transport?","redemittelOptions":[{"category":"vorschlag_machen","text":"Ein barrierefreier Kleinbus oder Taxi-Service buchen."},{"category":"vorschlag_machen","text":"Mit speziellen Behindertenfahrdiensten in Kontakt treten."}]},
+      {"step":3,"examinerPrompt":"Wie wird die Betreuung gewährleistet?","redemittelOptions":[{"category":"vorschlag_machen","text":"Ausgebildete Betreuer und Freiwillige bereitstellen."},{"category":"nachfragen","text":"Sind spezielle medizinische Informationen verfügbar?"}]}
+    ]
+  },
+  {
+    "number": 53,
+    "id": "53",
+    "title": "Eröffnungsfeier für ein Geschäft",
+    "theme": "Beruf & Veranstaltungen",
+    "leitpunkte": ["Datum","Catering","Programm"],
+    "greeting": "Hallo! Wir planen eine Eröffnungsfeier für ein Geschäft.",
+    "closing": "Gut, dann organisieren wir Catering und Programm.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Wann soll die Eröffnung stattfinden?","redemittelOptions":[{"category":"vorschlag_machen","text":"An einem Freitagabend, wenn viele Leute Zeit haben."},{"category":"nachfragen","text":"Gibt es einen passenden Feiertag zu meiden?"}]},
+      {"step":2,"examinerPrompt":"Welches Catering möchten Sie?","redemittelOptions":[{"category":"vorschlag_machen","text":"Kleine Häppchen und Getränke reichen aus."},{"category":"vorschlag_machen","text":"Ein lokaler Caterer kann Buffets anbieten."}]},
+      {"step":3,"examinerPrompt":"Was steht im Programm?","redemittelOptions":[{"category":"vorschlag_machen","text":"Kurze Ansprachen und musikalische Begleitung."},{"category":"nachfragen","text":"Sollen lokale Partner eingebunden werden?"}]}
+    ]
+  },
+  {
+    "number": 54,
+    "id": "54",
+    "title": "Schulische Probleme: Nachhilfe organisieren",
+    "theme": "Schule & Bildung",
+    "leitpunkte": ["Nachhilfe","Termine","Lehrer kontaktieren"],
+    "greeting": "Hallo! Wir kümmern uns um Nachhilfe für schulische Probleme.",
+    "closing": "Dann suchen wir geeignete Lehrkräfte und legen Termine fest.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Für welches Fach brauchen Sie Nachhilfe?","redemittelOptions":[{"category":"nachfragen","text":"Gibt es ein bestimmtes Thema, das Schwierigkeiten macht?"},{"category":"vorschlag_machen","text":"Mathematik und Deutsch sind häufige Fächer für Hilfe."}]},
+      {"step":2,"examinerPrompt":"Wie oft sollen die Sitzungen sein?","redemittelOptions":[{"category":"vorschlag_machen","text":"Ein- bis zweimal pro Woche ist sinnvoll."},{"category":"nachfragen","text":"Sind Nachmittage oder Abende besser?"}]},
+      {"step":3,"examinerPrompt":"Wen kontaktieren Sie als Lehrer?","redemittelOptions":[{"category":"vorschlag_machen","text":"Wir fragen den Klassenlehrer oder lokale Tutor*innen."},{"category":"vorschlag_machen","text":"Eine private Nachhilfelehrerin könnte helfen."}]}
+    ]
+  },
+  {
+    "number": 55,
+    "id": "55",
+    "title": "Beratung: Stadt oder Land beim Hauskauf",
+    "theme": "Wohnen & Zukunft",
+    "leitpunkte": ["Vor- und Nachteile","Kriterien"],
+    "greeting": "Guten Tag! Wir beraten über Stadt oder Land beim Hauskauf.",
+    "closing": "Dann vergleichen wir Kriterien und besuchen Musterobjekte.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Welche Kriterien sind wichtig?","redemittelOptions":[{"category":"nachfragen","text":"Sind Arbeitsweg und Schulen wichtige Faktoren für Sie?"},{"category":"vorschlag_machen","text":"Infrastruktur, Preis und Ruhe sind entscheidend."}]},
+      {"step":2,"examinerPrompt":"Was sind Vorteile der Stadt?","redemittelOptions":[{"category":"vorschlag_machen","text":"Bessere Infrastruktur und kurze Wege zu Arbeit und Freizeit."},{"category":"vorschlag_machen","text":"Mehr kulturelle Angebote und öffentliche Verkehrsmittel."}]},
+      {"step":3,"examinerPrompt":"Und Vorteile des Lands?","redemittelOptions":[{"category":"vorschlag_machen","text":"Mehr Platz, Natur und oft günstigere Grundstücke."},{"category":"nachfragen","text":"Ist eine längere Fahrzeit ins Zentrum akzeptabel?"}]}
+    ]
+  },
+  {
+    "number": 56,
+    "id": "56",
+    "title": "Auto kaufen: Planung",
+    "theme": "Haushalt & Einkaufen",
+    "leitpunkte": ["Budget","Modell","Versicherung"],
+    "greeting": "Hallo! Wir planen den Autokauf.",
+    "closing": "Dann vergleichen wir Modelle und Angebote.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Welches Budget haben Sie?","redemittelOptions":[{"category":"nachfragen","text":"Gibt es eine Obergrenze für den Preis?"},{"category":"vorschlag_machen","text":"Wir sollten eine Budgetspanne festlegen."}]},
+      {"step":2,"examinerPrompt":"Welches Modell bevorzugen Sie?","redemittelOptions":[{"category":"vorschlag_machen","text":"Ein sparsames Modell mit geringerem Verbrauch."},{"category":"nachfragen","text":"Bevorzugen Sie neu oder gebraucht?"}]},
+      {"step":3,"examinerPrompt":"Welche Versicherung planen Sie?","redemittelOptions":[{"category":"vorschlag_machen","text":"Haftpflicht ist Pflicht, Vollkasko überlegen wir je nach Wert."},{"category":"vorschlag_machen","text":"Mehrere Angebote vergleichen und Rabatte prüfen."}]}
+    ]
+  },
+  {
+    "number": 57,
+    "id": "57",
+    "title": "Beratung beim Autokauf",
+    "theme": "Haushalt & Beratung",
+    "leitpunkte": ["Neu vs. Gebraucht","Checkliste"],
+    "greeting": "Hallo! Wir beraten beim Autokauf.",
+    "closing": "Dann erstellen wir eine Checkliste und vergleichen Angebote.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Neu oder gebraucht — was bevorzugen Sie?","redemittelOptions":[{"category":"vorschlag_machen","text":"Gebraucht mit guter Prüfung kann günstiger sein."},{"category":"vorschlag_machen","text":"Neu mit Garantie hat Vorteile für Sicherheit."}]},
+      {"step":2,"examinerPrompt":"Welche Punkte stehen auf Ihrer Checkliste?","redemittelOptions":[{"category":"vorschlag_machen","text":"Kilometerstand, Servicehistorie und Unfallfreiheit prüfen."},{"category":"nachfragen","text":"Sollen wir eine Probefahrt vereinbaren?"}]},
+      {"step":3,"examinerPrompt":"Wer hilft bei der Entscheidung?","redemittelOptions":[{"category":"vorschlag_machen","text":"Ein erfahrener Freund oder Mechaniker kann das Auto prüfen."},{"category":"vorschlag_machen","text":"Wir vergleichen mehrere Händler und Angebote."}]}
+    ]
+  },
+  {
+    "number": 58,
+    "id": "58",
+    "title": "Oktoberfest besuchen",
+    "theme": "Freizeit & Kultur",
+    "leitpunkte": ["Kleidung","Tickets","Anreise"],
+    "greeting": "Hallo! Wir planen einen Besuch auf dem Oktoberfest.",
+    "closing": "Dann kaufen wir Tickets und planen die Anreise.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Welche Kleidung ist angemessen?","redemittelOptions":[{"category":"vorschlag_machen","text":"Traditionelle Tracht wie Dirndl oder Lederhose ist üblich."},{"category":"nachfragen","text":"Soll es eher casual oder traditionell sein?"}]},
+      {"step":2,"examinerPrompt":"Benötigen Sie Tickets?","redemittelOptions":[{"category":"vorschlag_machen","text":"Reservierungen für Zelte sind empfehlenswert."},{"category":"vorschlag_machen","text":"Eintritt ist oft frei, aber Tische brauchen Reservierung."}]},
+      {"step":3,"examinerPrompt":"Wie reisen Sie an?","redemittelOptions":[{"category":"vorschlag_machen","text":"Mit dem Zug oder öffentlichen Verkehrsmitteln, Parken ist teuer."},{"category":"nachfragen","text":"Sollen wir Fahrgemeinschaften bilden?"}]}
+    ]
+  },
+  {
+    "number": 59,
+    "id": "59",
+    "title": "Versicherung für neues Auto",
+    "theme": "Haushalt & Finanzen",
+    "leitpunkte": ["Haftpflicht","Vollkasko","Tarife vergleichen"],
+    "greeting": "Hallo! Wir vergleichen Versicherungen für ein neues Auto.",
+    "closing": "Dann holen wir Angebote ein und wählen die beste Option.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Benötigen Sie Haftpflicht oder Vollkasko?","redemittelOptions":[{"category":"vorschlag_machen","text":"Haftpflicht ist Pflicht, Vollkasko ist sinnvoll bei Neuwagen."},{"category":"nachfragen","text":"Welche Extras sind Ihnen wichtig?"}]},
+      {"step":2,"examinerPrompt":"Wie vergleichen Sie Tarife?","redemittelOptions":[{"category":"vorschlag_machen","text":"Online-Vergleichsportale nutzen und Kundenbewertungen lesen."},{"category":"vorschlag_machen","text":"Makler um Rat fragen und mehrere Angebote einholen."}]},
+      {"step":3,"examinerPrompt":"Welche Selbstbeteiligung wählen Sie?","redemittelOptions":[{"category":"vorschlag_machen","text":"Eine höhere Selbstbeteiligung senkt die Prämie."},{"category":"nachfragen","text":"Ist Ihnen eine geringere Prämie oder geringere Kosten im Schadenfall wichtiger?"}]}
+    ]
+  }
+,
+  {
+    "number": 1,
+    "id": "1",
+    "title": "Hausfest mit Partner/in planen",
+    "theme": "Feiern & Veranstaltungen",
+    "leitpunkte": ["Ort","Zeit","Essen","Einladungen","Aufgaben"],
+    "greeting": "Hallo! Wir besprechen heute die Planung für unser Hausfest.",
+    "closing": "Danke für das Gespräch. Dann notieren wir die Aufgaben und bis bald!",
+    "dialogueFlow": [
+      {
+        "step": 1,
+        "examinerPrompt": "Wo sollen wir das Fest machen?",
+        "redemittelOptions": [
+          {"category": "vorschlag_machen", "text": "Wie wäre es, wenn wir das Fest im Garten feiern?"},
+          {"category": "nachfragen", "text": "Meinst du drinnen oder draußen wäre besser?"}
+        ]
+      },
+      {
+        "step": 2,
+        "examinerPrompt": "Wann wäre ein guter Termin?",
+        "redemittelOptions": [
+          {"category": "vorschlag_machen", "text": "Ich würde Samstagabend vorschlagen, ab 18 Uhr."},
+          {"category": "nachfragen", "text": "Passt dir der erste Samstag im Monat?"}
+        ]
+      },
+      {
+        "step": 3,
+        "examinerPrompt": "Was ist mit Essen und Getränken?",
+        "redemittelOptions": [
+          {"category": "vorschlag_machen", "text": "Ein Buffet mit Salaten und warmen Speisen wäre praktisch."},
+          {"category": "meinung_äußern", "text": "Ich finde, wir sollten auch vegetarische Optionen anbieten."}
+        ]
+      }
+    ]
+  },
+  {
+    "number": 2,
+    "id": "2",
+    "title": "Überraschungsessen für eingeladene Bekannte",
+    "theme": "Feiern & Veranstaltungen",
+    "leitpunkte": ["Menü","Einkaufen","Getränke","Dessert"],
+    "greeting": "Hallo! Wir planen ein Überraschungsessen für Freunde.",
+    "closing": "Danke, dann teilen wir die Aufgaben auf und treffen uns zum Einkaufen.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Welches Menü schlagen Sie vor?","redemittelOptions":[{"category":"vorschlag_machen","text":"Wie wäre es mit einem mediterranen Menü: Bruschetta, Lachs und Panna Cotta?"},{"category":"nachfragen","text":"Mögt ihr lieber Fisch oder Fleisch als Hauptgericht?"}]},
+      {"step":2,"examinerPrompt":"Wann wollen Sie einkaufen?","redemittelOptions":[{"category":"vorschlag_machen","text":"Ich kann am Freitagabend einkaufen gehen."},{"category":"vorschlag_machen","text":"Lass uns am Samstagvormittag zusammen einkaufen."}]}
+    ]
+  },
+  {
+    "number": 3,
+    "id": "3",
+    "title": "Hausparty nach Umzug",
+    "theme": "Wohnen & Nachbarn",
+    "leitpunkte": ["Gästeliste","Termin","Essen","Nachbarn"],
+    "greeting": "Hallo! Wir planen eine Hausparty nach dem Umzug.",
+    "closing": "Super, dann organisieren wir das Essen und informieren die Nachbarn.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Wie viele Gäste wollen Sie einladen?","redemittelOptions":[{"category":"meinung_äußern","text":"Ich denke maximal 20 Personen, dann bleibt es überschaubar."},{"category":"nachfragen","text":"Findest du 30 zu viel oder passt das?"}]},
+      {"step":2,"examinerPrompt":"Was angeboten Sie als Essen an?","redemittelOptions":[{"category":"vorschlag_machen","text":"Fingerfood wäre praktisch: Mini-Quiches und gefüllte Champignons."},{"category":"vorschlag_machen","text":"Wir können ein Buffet mit verschiedenen Häppchen machen."}]}
+    ]
+  },
+  {
+    "number": 4,
+    "id": "4",
+    "title": "Gemeinschaftsfest mit Nachbarn",
+    "theme": "Wohnen & Nachbarn",
+    "leitpunkte": ["Datum","Potluck","Kosten","Unterhaltung"],
+    "greeting": "Guten Tag! Wir möchten ein Gemeinschaftsfest organisieren.",
+    "closing": "Danke, wir bilden ein Team und erstellen eine Einladungsliste.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Wann wäre ein guter Termin?","redemittelOptions":[{"category":"vorschlag_machen","text":"Ein Sonntagnachmittag im Spätsommer wäre ideal."},{"category":"nachfragen","text":"Passt der erste Sonntag im September für alle?"}]},
+      {"step":2,"examinerPrompt":"Wie organisieren wir das Essen?","redemittelOptions":[{"category":"vorschlag_machen","text":"Potluck: jeder bringt etwas mit, wir erstellen Kategorien."},{"category":"nachfragen","text":"Wer kümmert sich um Tische und Zelt, falls es regnet?"}]}
+    ]
+  },
+  {
+    "number": 5,
+    "id": "5",
+    "title": "Nachbarschaftsausflug planen",
+    "theme": "Ausflüge & Reisen",
+    "leitpunkte": ["Ziel","Dauer","Abfahrt","Verpflegung"],
+    "greeting": "Hallo! Wir planen einen Ausflug mit den Nachbarn.",
+    "closing": "Gut, dann setzen wir den Plan und die Abfahrtszeit fest.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Wohin sollen wir fahren?","redemittelOptions":[{"category":"vorschlag_machen","text":"Ein Tag am See wäre schön zum Spazieren und Picknicken."},{"category":"nachfragen","text":"Möchten die Kinder mitkommen oder ist das eher ein Ausflug für Erwachsene?"}]}
+    ]
+  },
+  {
+    "number": 6,
+    "id": "6",
+    "title": "Sommerfest mit allen Nachbarn",
+    "theme": "Feiern & Veranstaltungen",
+    "leitpunkte": ["Ort","Datum","Essen","Unterhaltung"],
+    "greeting": "Hallo! Wir planen ein großes Sommerfest im Hof.",
+    "closing": "Prima, dann hängen wir die Einladungen auf und sammeln Beiträge für die Kasse.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Welcher Ort ist geeignet?","redemittelOptions":[{"category":"vorschlag_machen","text":"Der Hof hinter dem Haus ist zentral und gut erreichbar."},{"category":"nachfragen","text":"Sollten wir einen Pavillon für schlechtes Wetter organisieren?"}]},
+      {"step":2,"examinerPrompt":"Wie teilen wir die Kosten?","redemittelOptions":[{"category":"vorschlag_machen","text":"Wir können eine kleine Kasse einrichten und die Kosten teilen."},{"category":"nachfragen","text":"Wieviel wären alle bereit zu zahlen?"}]}
+    ]
+  },
+  {
+    "number": 7,
+    "id": "7",
+    "title": "Gemeinsame Geburtstagsfeier für Kinder",
+    "theme": "Familie & Kinder",
+    "leitpunkte": ["Uhrzeit","Gäste","Unterhaltung","Geschenk"],
+    "greeting": "Hallo! Wir planen eine gemeinsame Geburtstagsfeier für die Kinder.",
+    "closing": "Super, wir sammeln Geld für das gemeinsame Geschenk und kümmern uns um Spiele.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Wann soll die Party stattfinden?","redemittelOptions":[{"category":"vorschlag_machen","text":"Am Nachmittag von 15 bis 18 Uhr wäre gut."},{"category":"nachfragen","text":"Ist das für die Kinder und Eltern passend?"}]},
+      {"step":2,"examinerPrompt":"Wer organisiert die Unterhaltung?","redemittelOptions":[{"category":"vorschlag_machen","text":"Wir könnten Bastelstationen und Spiele anbieten."},{"category":"vorschlag_machen","text":"Vielleicht engagieren wir einen Animateur, wenn das Budget stimmt."}]}
+    ]
+  },
+  {
+    "number": 8,
+    "id": "8",
+    "title": "Geschenk für Nachbars Hochzeit",
+    "theme": "Feiern & Geschenke",
+    "leitpunkte": ["Geschenkidee","Kosten","Sammeln","Karte"],
+    "greeting": "Hallo! Wir suchen ein passendes Hochzeitsgeschenk für die Nachbarn.",
+    "closing": "Okay, ich frage die Nachbarn, wer mitmachen möchte, und wir sammeln das Geld.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Was könnten wir schenken?","redemittelOptions":[{"category":"vorschlag_machen","text":"Ein Gutschein für ein Wochenende in einer Pension wäre schön."},{"category":"vorschlag_machen","text":"Ein persönliches Fotoalbum wäre auch sehr nett."}]},
+      {"step":2,"examinerPrompt":"Wie sammeln wir das Geld?","redemittelOptions":[{"category":"vorschlag_machen","text":"Wir können die Nachbarn fragen und das Geld sammeln."},{"category":"nachfragen","text":"Wie viel wäre jeder bereit beizutragen?"}]}
+    ]
+  },
+  {
+    "number": 9,
+    "id": "9",
+    "title": "Sportlicher Nachmittag mit Nachbarn",
+    "theme": "Freizeit & Sport",
+    "leitpunkte": ["Aktivitäten","Teams","Snacks","Treffpunkt"],
+    "greeting": "Hallo! Wir planen einen sportlichen Nachmittag mit Nachbarn.",
+    "closing": "Gut, dann fragen wir, wer mitmacht, und organisieren die Aktivitäten.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Welche Aktivitäten wollen Sie machen?","redemittelOptions":[{"category":"vorschlag_machen","text":"Fußball für die Erwachsenen und Spiele für die Kinder wären gut."},{"category":"nachfragen","text":"Möchten wir auch Yoga oder eine Laufgruppe anbieten?"}]}
+    ]
+  },
+  {
+    "number": 10,
+    "id": "10",
+    "title": "Lärm durch Renovierung",
+    "theme": "Wohnen & Nachbarn",
+    "leitpunkte": ["Problem","Kontaktieren","Vermieter","Lösung"],
+    "greeting": "Guten Tag. Wir sprechen über Lärm durch Renovierungsarbeiten.",
+    "closing": "Danke, wir informieren den Vermieter und suchen eine Lösung mit dem Nachbarn.",
+    "dialogueFlow": [
+      {"step":1,"examinerPrompt":"Wie stört der Lärm Ihren Alltag?","redemittelOptions":[{"category":"meinung_äußern","text":"Der Lärm beginnt früh am Morgen und stört besonders beim Arbeiten von zuhause."},{"category":"nachfragen","text":"Haben Sie schon mit dem Nachbarn gesprochen?"}]},
+      {"step":2,"examinerPrompt":"Wen können wir informieren?","redemittelOptions":[{"category":"vorschlag_machen","text":"Wir könnten den Vermieter kontaktieren und um eine Lösung bitten."},{"category":"vorschlag_machen","text":"Vielleicht kann der Nachbar die lautesten Arbeiten später am Tag durchführen."}]}
+    ]
+  }
+  

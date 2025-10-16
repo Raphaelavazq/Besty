@@ -1,0 +1,107 @@
+{
+  "videos": {
+    "teil1": {
+      "id": "teil1",
+      "title": "Teil 1: Sich vorstellen",
+      "description": "Persönliche Vorstellung",
+      "duration": "3 Minuten",
+      "points": 4,
+      "beispiel": {
+        "filename": "teil1-beispiel.mp4",
+        "url": "/video/sprechen/teil1-beispiel.mp4",
+        "title": "Beispiel-Antwort",
+        "description": "Sehen Sie, wie man sich richtig vorstellt"
+      },
+      "jetztSie": {
+        "filename": "teil1-jetzt-sie.mp4",
+        "url": "/video/sprechen/teil1-jetzt-sie.mp4",
+        "title": "Jetzt Sie!",
+        "description": "Prüfer fragt Sie direkt"
+      },
+      "prompts": [
+        "Wie heißen Sie?",
+        "Woher kommen Sie?",
+        "Wo wohnen Sie jetzt?",
+        "Was machen Sie beruflich?",
+        "Haben Sie Kinder?",
+        "Was sind Ihre Hobbys?"
+      ],
+      "tips": [
+        "Sprechen Sie deutlich und nicht zu schnell",
+        "Antworten Sie in ganzen Sätzen",
+        "Nutzen Sie einfache, klare Sprache",
+        "Bleiben Sie freundlich und natürlich"
+      ]
+    },
+    "teil2": {
+      "id": "teil2",
+      "title": "Teil 2: Über ein Thema sprechen",
+      "description": "Strukturiertes Sprechen zu einem Thema",
+      "duration": "4 Minuten",
+      "points": 4,
+      "beispiel": {
+        "filename": "teil2-beispiel.mp4",
+        "url": "/video/sprechen/teil2-beispiel.mp4",
+        "title": "Beispiel-Antwort",
+        "description": "Musterlösung für Teil 2"
+      },
+      "jetztSie": {
+        "filename": "teil2-jetzt-sie.mp4",
+        "url": "/video/sprechen/teil2-jetzt-sie.mp4",
+        "title": "Jetzt Sie!",
+        "description": "Ihre Aufgabe mit Leitpunkten"
+      },
+      "structure": [
+        "Einleitung: Thema vorstellen",
+        "Hauptteil: Leitpunkte bearbeiten",
+        "Schluss: Zusammenfassung"
+      ],
+      "tips": [
+        "Folgen Sie den Leitpunkten auf der Karte",
+        "Sprechen Sie 2-3 Minuten",
+        "Strukturieren Sie Ihre Antwort",
+        "Verwenden Sie Konnektoren (zuerst, dann, deshalb)"
+      ]
+    },
+    "teil3": {
+      "id": "teil3",
+      "title": "Teil 3: Gemeinsam etwas planen",
+      "description": "Dialog mit dem Prüfer",
+      "duration": "5 Minuten",
+      "points": 4,
+      "beispiel": {
+        "filename": "teil3-beispiel.mp4",
+        "url": "/video/sprechen/teil3-beispiel.mp4",
+        "title": "Beispiel-Dialog",
+        "description": "Musterdialog zwischen Prüfer und Kandidat"
+      },
+      "jetztSie": {
+        "filename": "teil3-jetzt-sie.mp4",
+        "url": "/video/sprechen/teil3-jetzt-sie.mp4",
+        "title": "Jetzt Sie!",
+        "description": "Ihr Planungs-Dialog"
+      },
+      "skills": [
+        "Vorschläge machen",
+        "Zustimmen oder ablehnen",
+        "Nach Meinung fragen",
+        "Alternativen vorschlagen",
+        "Kompromisse finden"
+      ],
+      "tips": [
+        "Reagieren Sie auf den Prüfer",
+        "Stellen Sie Fragen",
+        "Machen Sie konkrete Vorschläge",
+        "Nutzen Sie passende Redemittel",
+        "Bleiben Sie im Dialog aktiv"
+      ]
+    }
+  },
+  "metadata": {
+    "totalDuration": "12 Minuten",
+    "totalPoints": 12,
+    "examFormat": "Mündliche Paar- oder Einzelprüfung",
+    "lastUpdated": "2025-10-13",
+    "version": "1.0.0"
+  }
+}

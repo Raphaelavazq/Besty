@@ -17,6 +17,8 @@ export default function AudioPlayer({
   const [duration, setDuration] = useState(0);
   const [volume, setVolume] = useState(1);
   const [isMuted, setIsMuted] = useState(false);
+  const [isLoadingAudio, setIsLoadingAudio] = useState(true);
+  const [audioError, setAudioError] = useState(null);
   const audioRef = useRef(null);
 
   useEffect(() => {
@@ -154,8 +156,30 @@ export default function AudioPlayer({
     : 0;
 
   return (
-    <div className="group bg-gradient-to-br from-white via-purple-50 to-indigo-50 backdrop-blur-md rounded-2xl shadow-xl border border-white/50 p-4 sm:p-6">
-      <audio ref={audioRef} src={audioFile} preload="metadata" />
+    <div
+      className={`group bg-gradient-to-br from-white via-purple-50 to-indigo-50 backdrop-blur-md rounded-2xl shadow-xl border p-4 sm:p-6 transition-all duration-200 ${
+        isPlaying
+          ? "border-purple-400 shadow-purple-200 shadow-xl"
+          : "border-white/50"
+      }`}
+    >
+      <audio
+        ref={audioRef}
+        src={audioFile}
+        preload="metadata"
+        onError={() =>
+          setAudioError(
+            "Audio konnte nicht geladen werden. Überprüfe deine Internetverbindung."
+          )
+        }
+      />
+
+      {/* Audio error message */}
+      {audioError && (
+        <div className="bg-red-50 border border-red-200 text-red-800 p-4 rounded-xl mb-4">
+          <p className="font-medium">⚠️ {audioError}</p>
+        </div>
+      )}
 
       {/* Enhanced Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6 gap-3">
@@ -189,12 +213,18 @@ export default function AudioPlayer({
       {/* Enhanced Controls with Integrated Progress Bar */}
       <div className="flex items-center justify-center mb-4 sm:mb-6">
         <div className="flex items-center gap-3 sm:gap-4 w-full max-w-2xl">
-          {/* Play Button */}
+          {/* Play Button with loading spinner */}
           <button
             onClick={togglePlay}
-            className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-2xl flex items-center justify-center transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
+            disabled={isLoadingAudio || !!audioError}
+            className={`flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-2xl flex items-center justify-center transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 ${
+              isLoadingAudio ? "opacity-50 cursor-wait" : ""
+            }`}
+            aria-label={isPlaying ? "Pause" : "Play"}
           >
-            {isPlaying ? (
+            {isLoadingAudio ? (
+              <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin" />
+            ) : isPlaying ? (
               <svg
                 className="w-6 h-6 sm:w-7 sm:h-7"
                 fill="currentColor"
@@ -221,7 +251,9 @@ export default function AudioPlayer({
             >
               {/* Progress Fill */}
               <div
-                className="absolute top-0 left-0 h-2 sm:h-3 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full transition-all duration-150 shadow-sm"
+                className={`absolute top-0 left-0 h-2 sm:h-3 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full transition-all duration-150 shadow-sm ${
+                  isPlaying ? "animate-pulse" : ""
+                }`}
                 style={{ width: `${progressPercentage}%` }}
               />
 
@@ -294,6 +326,7 @@ export default function AudioPlayer({
                       : "bg-white/90 text-slate-600 hover:bg-purple-50 shadow-md border border-white/70"
                 }`}
                 title={`Frage ${index + 1} - Klicken Sie hier um zu dieser Frage zu springen`}
+                style={{ minWidth: 44, minHeight: 44 }} // Ensure 44px touch target
               >
                 <div className="text-sm sm:text-base font-bold">
                   {index + 1}
@@ -306,6 +339,47 @@ export default function AudioPlayer({
           })}
         </div>
       </div>
+
+      {/* Teil 3 Paired Questions Visual Grouping (example, insert where paired questions are rendered) */}
+      {/* 
+      {pairedItem && (
+        <div className="mb-4 px-4 py-2 bg-purple-50 border border-purple-200 rounded-xl">
+          <p className="text-sm text-purple-700 font-medium text-center">
+            📎 Beide Fragen zu einem Audio • {item.no} & {pairedItem.no}
+          </p>
+        </div>
+      )}
+      */}
+
+      {/* Teil 4 Statement Buttons - ensure wrapping and no horizontal overflow */}
+      {/* 
+      <div className="space-y-3 max-w-full">
+        {statements.map((statement, index) => (
+          <button
+            className="w-full p-4 rounded-xl border-2 text-left font-medium transition-all break-words"
+            style={{ minHeight: 44 }} // Ensure 44px touch target
+          >
+            <span className="line-clamp-3">{statement}</span>
+          </button>
+        ))}
+      </div>
+      */}
+
+      {/* Sticky "Weiter" Button with gradient fade (example, insert where next button is rendered) */}
+      {/* 
+      <div className="sticky bottom-0 bg-gradient-to-t from-white via-white to-transparent pt-6 pb-2 -mx-6 px-6">
+        <button
+          onClick={onNext}
+          className="w-full py-4 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold 
+                     hover:shadow-lg transition-all hover:scale-105 active:scale-95"
+          style={{ minHeight: 44 }}
+        >
+          {currentItemNumber >= totalItems ? 'Abschließen' : 'Weiter →'}
+        </button>
+      </div>
+      */}
+
+      {/* ...existing code... */}
     </div>
   );
 }

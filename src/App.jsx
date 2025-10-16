@@ -11,11 +11,19 @@ import About from "./pages/About";
 // New unified test system
 import TestHub from "./pages/TestHub";
 import HoerenHub from "./pages/HoerenHub";
+import SprechenHub from "./pages/SprechenHub";
 
 // New Hören system (rebuilt)
 import HoerenPruefung from "./features/hoeren/HoerenPruefung";
 import HoerenUebung from "./features/hoeren/HoerenUebung";
 import HoerenTraining from "./features/hoeren/HoerenTraining";
+
+// Sprechen system
+import SprechenUebung from "./features/sprechen/SprechenUebung";
+import DialogueMenu from "./features/sprechen/DialogueMenu";
+import DialogTrainer from "./pages/DialogTrainer";
+import DialogueTrainerAI from "./features/sprechen/DialogueTrainerAI";
+import DialogueCatalogPage from "./pages/DialogueCatalogPage";
 
 // Theme/Wortschatz system
 import ThemeDetail from "./features/themes/ThemeDetail";
@@ -138,6 +146,55 @@ function App() {
         }
       />
 
+      {/* Sprechen Test Area */}
+      <Route
+        path="/tests/sprechen"
+        element={
+          <HoverSidebarShell>
+            <SprechenHub />
+          </HoverSidebarShell>
+        }
+      />
+
+      {/* Dialogue Catalog & Trainer */}
+      <Route
+        path="/tests/sprechen/trainer"
+        element={
+          <HoverSidebarShell>
+            <DialogueCatalogPage />
+          </HoverSidebarShell>
+        }
+      />
+
+      <Route
+        path="/tests/sprechen/trainer/:scenarioId"
+        element={
+          <HoverSidebarShell>
+            <DialogueTrainerAI />
+          </HoverSidebarShell>
+        }
+      />
+
+      {/* Legacy routes for backwards compatibility */}
+      <Route
+        path="/tests/sprechen/menu"
+        element={
+          <HoverSidebarShell>
+            <DialogueMenu />
+          </HoverSidebarShell>
+        }
+      />
+
+      {/* NEW: Sprechen Practice Mode */}
+      <Route
+        path="/tests/sprechen/uebung/:teil"
+        element={
+          <HoverSidebarShell>
+            <SprechenUebung />
+          </HoverSidebarShell>
+        }
+      />
+
       {/* Theme/Wortschatz Routes */}
       <Route
         path="/themes/:themeId"
@@ -173,14 +230,7 @@ function App() {
           </HoverSidebarShell>
         }
       />
-      <Route
-        path="/tests/sprechen"
-        element={
-          <HoverSidebarShell>
-            <ComingSoon title="Sprechen Training" />
-          </HoverSidebarShell>
-        }
-      />
+
       <Route
         path="/about"
         element={

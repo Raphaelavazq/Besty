@@ -5,7 +5,7 @@
  * Preserves existing visual design exactly.
  */
 import { Link } from "react-router-dom";
-import { Headphones, Eye, PenTool, FileText } from "lucide-react";
+import { Headphones, Eye, PenTool, FileText, ArrowRight } from "lucide-react";
 import { allThemes } from "../../features/themes/themesData";
 import * as LucideIcons from "lucide-react";
 
@@ -18,6 +18,7 @@ export default function DashboardContent() {
       icon: Headphones,
       color: "from-purple-500 to-indigo-600",
       href: "/tests/hoeren",
+      available: true,
     },
     {
       title: "Lesen",
@@ -26,6 +27,7 @@ export default function DashboardContent() {
       icon: Eye,
       color: "from-indigo-500 to-purple-600",
       href: "/tests/lesen",
+      available: false,
     },
     {
       title: "Schreiben",
@@ -34,6 +36,7 @@ export default function DashboardContent() {
       icon: FileText,
       color: "from-purple-600 to-pink-600",
       href: "/tests/schreiben",
+      available: false,
     },
     {
       title: "Sprechen",
@@ -42,6 +45,7 @@ export default function DashboardContent() {
       icon: PenTool,
       color: "from-pink-500 to-purple-600",
       href: "/tests/sprechen",
+      available: true,
     },
   ];
 
@@ -60,10 +64,20 @@ export default function DashboardContent() {
             {examParts.map((part) => (
               <Link
                 key={part.title}
-                to={part.href}
-                className="bg-white/80 backdrop-blur-md rounded-2xl p-4 shadow-sm border border-purple-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
+                to={part.available ? part.href : "#"}
+                className={`bg-white/80 backdrop-blur-md rounded-2xl p-4 shadow-sm border border-purple-100 transition-all duration-300 group relative ${
+                  part.available
+                    ? "hover:shadow-lg hover:-translate-y-1 cursor-pointer"
+                    : "opacity-75 cursor-not-allowed"
+                }`}
+                onClick={(e) => !part.available && e.preventDefault()}
               >
-                <div
+            {/* Bald Badge */}
+            {!part.available && (
+              <div className="absolute top-3 right-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-[10px] font-bold px-2 py-1 rounded-lg shadow-md">
+                Bald
+              </div>
+            )}                <div
                   className={`w-10 h-10 bg-gradient-to-r ${part.color} rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
                 >
                   <part.icon size={20} className="text-white" />
@@ -72,9 +86,16 @@ export default function DashboardContent() {
                   {part.title}
                 </h3>
                 <p className="text-xs text-purple-600 mb-2">{part.subtitle}</p>
-                <p className="text-xs text-gray-600 line-clamp-2">
+                <p className="text-xs text-gray-600 line-clamp-2 mb-2">
                   {part.description}
                 </p>
+                
+                {/* Arrow indicator for available items */}
+                {part.available && (
+                  <div className="flex items-center justify-end mt-2">
+                    <ArrowRight className="w-4 h-4 text-purple-600 group-hover:translate-x-1 transition-transform duration-200" />
+                  </div>
+                )}
               </Link>
             ))}
           </div>

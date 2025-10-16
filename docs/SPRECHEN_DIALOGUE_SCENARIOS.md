@@ -9,9 +9,13 @@
 ## 📋 Scenario Categories
 
 ### 1. Feste & Feiern (Celebrations)
+
 ### 2. Alltag & Wohnen (Daily Life & Housing)
+
 ### 3. Ausflüge & Reisen (Trips & Travel)
+
 ### 4. Familie & Freizeit (Family & Leisure)
+
 ### 5. Probleme lösen (Problem Solving)
 
 ---
@@ -23,6 +27,7 @@
 **Aufgabe:** Sie wollen mit Ihrer Partnerin/Ihrem Partner bald eine Geburtstagsparty machen.
 
 **Leitpunkte:**
+
 - Wann?
 - Wo?
 - Essen und Trinken?
@@ -34,38 +39,38 @@
 1. **Termin festlegen**
    - Prüfer: "Wann wollen Sie die Party machen?"
    - Redemittel-Optionen:
-     * Vorschlag: "Wie wäre es, wenn wir am Samstag feiern?"
-     * Nachfragen: "Wann hättest du Zeit? Am Wochenende?"
+     - Vorschlag: "Wie wäre es, wenn wir am Samstag feiern?"
+     - Nachfragen: "Wann hättest du Zeit? Am Wochenende?"
 
 2. **Ort bestimmen**
    - Prüfer: "Ja, Samstag ist gut. Wo wollen Sie feiern?"
    - Redemittel-Optionen:
-     * Vorschlag Restaurant: "Wir könnten im Restaurant feiern."
-     * Vorschlag Zu Hause: "Ich schlage vor, dass wir zu Hause feiern."
+     - Vorschlag Restaurant: "Wir könnten im Restaurant feiern."
+     - Vorschlag Zu Hause: "Ich schlage vor, dass wir zu Hause feiern."
 
 3. **Essen planen**
    - Prüfer: "Gute Idee! Was machen wir mit dem Essen?"
    - Redemittel-Optionen:
-     * Selbst kochen: "Ich denke, wir könnten selbst kochen."
-     * Bestellen: "Vielleicht sollten wir lieber Pizza bestellen?"
+     - Selbst kochen: "Ich denke, wir könnten selbst kochen."
+     - Bestellen: "Vielleicht sollten wir lieber Pizza bestellen?"
 
 4. **Gästeliste**
    - Prüfer: "Wen wollen Sie einladen?"
    - Redemittel-Optionen:
-     * Familie: "Ich würde gerne unsere Familie einladen."
-     * Freunde: "Wie wäre es, wenn wir unsere Freunde einladen?"
+     - Familie: "Ich würde gerne unsere Familie einladen."
+     - Freunde: "Wie wäre es, wenn wir unsere Freunde einladen?"
 
 5. **Dekoration**
    - Prüfer: "Brauchen wir Dekoration?"
    - Redemittel-Optionen:
-     * Zustimmen: "Ja, das finde ich wichtig. Vielleicht Luftballons?"
-     * Ablehnen: "Das finde ich nicht so wichtig. Wir brauchen keine."
+     - Zustimmen: "Ja, das finde ich wichtig. Vielleicht Luftballons?"
+     - Ablehnen: "Das finde ich nicht so wichtig. Wir brauchen keine."
 
 6. **Aufgaben verteilen**
    - Prüfer: "Wer macht was?"
    - Redemittel-Optionen:
-     * Angebot: "Ich könnte die Einladungen schreiben."
-     * Bitte: "Könntest du vielleicht die Getränke kaufen?"
+     - Angebot: "Ich könnte die Einladungen schreiben."
+     - Bitte: "Könntest du vielleicht die Getränke kaufen?"
 
 ---
 
@@ -74,6 +79,7 @@
 **Aufgabe:** Sie sind in eine neue Wohnung gezogen und möchten eine Hausparty machen.
 
 **Leitpunkte:**
+
 - Wann?
 - Wie viele Leute?
 - Essen und Trinken?
@@ -87,6 +93,7 @@
 **Aufgabe:** Ein Kollege verlässt die Firma. Sie organisieren ein Abschiedsfest.
 
 **Leitpunkte:**
+
 - Wann? (Nach Feierabend? Am Wochenende?)
 - Wo? (Im Büro? Restaurant?)
 - Geschenk?
@@ -100,6 +107,7 @@
 **Aufgabe:** Sie möchten gemeinsam mit den Nachbarn ein Sommerfest machen.
 
 **Leitpunkte:**
+
 - Wann?
 - Essen/Getränke?
 - Wer bezahlt dafür?
@@ -113,6 +121,7 @@
 **Aufgabe:** Sie wollen gemeinsam einen Kindergeburtstag organisieren.
 
 **Leitpunkte:**
+
 - Einladungen schreiben?
 - Dekoration?
 - Wer kommt?
@@ -128,6 +137,7 @@
 **Aufgabe:** Der Aufzug im Hausflur funktioniert nicht. Überlegen Sie gemeinsam, wie Sie das Problem lösen können.
 
 **Leitpunkte:**
+
 - Wem Bescheid sagen?
 - Anrufen oder schreiben?
 - Wer macht das?
@@ -135,6 +145,7 @@
 - Was tun, wenn nichts passiert?
 
 **Sample Dialogue:**
+
 ```
 A: Hallo, hast du auch gemerkt, dass der Aufzug nicht funktioniert?
 B: Ja, das ist ein Problem! Wen sollten wir informieren?
@@ -154,6 +165,7 @@ A: Dann müssen wir den Vermieter direkt kontaktieren.
 **Aufgabe:** Seit über einem Monat tropft Ihr Wasserhahn in der Küche. Der Vermieter hat noch nichts unternommen.
 
 **Leitpunkte:**
+
 - Wann treffen?
 - Wo treffen?
 - Wie den Vermieter kontaktieren (telefonisch, Mail, persönlich)?
@@ -167,6 +179,7 @@ A: Dann müssen wir den Vermieter direkt kontaktieren.
 **Aufgabe:** Ihr Nachbar renoviert seine Wohnung. Jeden Sonntag hören Sie laute Maschinen.
 
 **Leitpunkte:**
+
 - Mit dem Nachbarn reden?
 - Beim Vermieter anrufen?
 - Andere Nachbarn ansprechen?
@@ -180,6 +193,7 @@ A: Dann müssen wir den Vermieter direkt kontaktieren.
 **Aufgabe:** Sie möchten gemeinsam neue Möbel für das Wohnzimmer kaufen.
 
 **Leitpunkte:**
+
 - Termin?
 - Wo?
 - Was brauchen Sie?
@@ -193,6 +207,7 @@ A: Dann müssen wir den Vermieter direkt kontaktieren.
 **Aufgabe:** Eine befreundete Familie zieht in eine neue Wohnung. Sie haben versprochen zu helfen.
 
 **Leitpunkte:**
+
 - Termin?
 - Transportmittel: Auto/LKW?
 - Wer kann noch helfen?
@@ -208,6 +223,7 @@ A: Dann müssen wir den Vermieter direkt kontaktieren.
 **Aufgabe:** Sie möchten mit Ihren Nachbarn einen Ausflug machen.
 
 **Leitpunkte:**
+
 - Wann?
 - Wohin?
 - Wie lange?
@@ -232,6 +248,7 @@ A: Dann müssen wir den Vermieter direkt kontaktieren.
 **Aufgabe:** Sie sind bei einem Elternabend. Die Lehrerin möchte einen Ausflug zum Thema "Umwelt" machen.
 
 **Leitpunkte:**
+
 - Wohin?
 - Wann?
 - Transportmittel?
@@ -245,6 +262,7 @@ A: Dann müssen wir den Vermieter direkt kontaktieren.
 **Aufgabe:** Sie möchten mit Freunden einen Wochenendtrip machen.
 
 **Leitpunkte:**
+
 - Wohin fahren?
 - Wann fahren?
 - Übernachtung: Hotel/Hostel?
@@ -260,6 +278,7 @@ A: Dann müssen wir den Vermieter direkt kontaktieren.
 **Aufgabe:** Sie sind Nachbarn und wollen zusammen einen Nachmittag mit sportlichen Aktivitäten verbringen.
 
 **Leitpunkte:**
+
 - Wann?
 - Was machen?
 - Mit wem?
@@ -273,6 +292,7 @@ A: Dann müssen wir den Vermieter direkt kontaktieren.
 **Aufgabe:** Sie wollen sich gemeinsam auf die DTZ-Prüfung vorbereiten.
 
 **Leitpunkte:**
+
 - Wann?
 - Wo?
 - Mit wem?
@@ -280,6 +300,7 @@ A: Dann müssen wir den Vermieter direkt kontaktieren.
 - Aktivität nach dem Lernen?
 
 **Model Dialogue:**
+
 ```
 A: Hey, wir müssen uns langsam auf die DTZ-Prüfung vorbereiten.
 B: Ja, stimmt! Wann wollen wir lernen?
@@ -303,6 +324,7 @@ A: Ja gerne! Dann bis Dienstag!
 **Aufgabe:** Ein Nachbar heiratet. Sie sind eingeladen und suchen ein passendes Geschenk.
 
 **Leitpunkte:**
+
 - Welches Geschenk?
 - Wer kauft es?
 - Wie teuer?
@@ -316,6 +338,7 @@ A: Ja gerne! Dann bis Dienstag!
 **Aufgabe:** Sie möchten in der Schule einen Hausaufgabenraum einrichten.
 
 **Leitpunkte:**
+
 - Was kaufen?
 - Wo kaufen?
 - Betreuung?
@@ -331,6 +354,7 @@ A: Ja gerne! Dann bis Dienstag!
 **Aufgabe:** Sie sollen einen Bericht zum Thema "Umweltschutz" schreiben.
 
 **Leitpunkte:**
+
 - Welche Themen?
 - Woher Informationen?
 - Wann schreiben?
@@ -344,6 +368,7 @@ A: Ja gerne! Dann bis Dienstag!
 **Aufgabe:** Sie möchten ehrenamtlich arbeiten und sich für die Umwelt engagieren.
 
 **Leitpunkte:**
+
 - Bei der Stadt nachfragen?
 - Müll sammeln?
 - Menschen informieren?
@@ -355,59 +380,70 @@ A: Ja gerne! Dann bis Dienstag!
 ## 📚 Redemittel Reference Guide
 
 ### Aufgabe nennen
+
 - "Wir sollen {task}."
 - "Unsere Aufgabe ist, {task}."
 - "Wir müssen gemeinsam {task}."
 
 ### Vorschläge machen
+
 - "Wie wäre es, wenn wir {activity}?"
 - "Wir könnten {activity}. Was meinst du?"
 - "Ich schlage vor, dass wir {activity}."
 - "Vielleicht sollten wir {activity}?"
 
 ### Vorschlag annehmen
+
 - "Ja, das ist eine gute Idee!"
 - "Das finde ich super!"
 - "In Ordnung, das machen wir so."
 - "Ich bin einverstanden."
 
 ### Vorschlag ablehnen
+
 - "Das finde ich nicht so gut. Vielleicht sollten wir lieber {alternative}."
 - "Ich weiß nicht, das ist keine gute Idee. Besser wäre es, wenn {alternative}."
 - "Nein, ich denke, wir sollten {alternative}."
 
 ### Meinung äußern
+
 - "Ich finde, dass {opinion}."
 - "Ich denke, {opinion}."
 - "Meiner Meinung nach {opinion}."
 
 ### Zustimmen
+
 - "Das finde ich auch."
 - "Ja, das stimmt."
 - "Da hast du recht."
 
 ### Widersprechen
+
 - "Nein, das finde ich nicht."
 - "Das kommt darauf an."
 - "Ich denke nicht, dass {reason}."
 
 ### Nachfragen
+
 - "Was denkst du?"
 - "Was meinst du?"
 - "Wie findest du das?"
 - "Was hältst du davon?"
 
 ### Bitten formulieren
+
 - "Könntest du vielleicht {action}?"
 - "Es wäre sehr nett, wenn du {action}."
 - "Würdest du {action}?"
 
 ### Positive Reaktion auf Bitte
+
 - "Ja, natürlich. Das mache ich gern."
 - "Ja, klar, ich helfe gern."
 - "Ja, sicher!"
 
 ### Negative Reaktion auf Bitte
+
 - "Nein, tut mir leid."
 - "Nein, das geht leider nicht."
 - "Leider nicht, ich habe keine Zeit."
@@ -442,4 +478,4 @@ A: Ja gerne! Dann bis Dienstag!
 
 **Total Scenarios Ready:** 20+  
 **Additional Scenarios to Create:** 30+ (Target: 50 scenarios)  
-**Next Steps:** Convert to JSON format for DialogueTrainer component
+**Next Steps:** Convert to JSON format for `CleanDialogueTrainer` component
