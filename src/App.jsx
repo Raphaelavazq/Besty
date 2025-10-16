@@ -20,11 +20,10 @@ import HoerenTraining from "./features/hoeren/HoerenTraining";
 
 // Sprechen system
 import SprechenUebung from "./features/sprechen/SprechenUebung";
-import SprechenPruefung from "./features/sprechen/SprechenPruefung";
 import DialogueMenu from "./features/sprechen/DialogueMenu";
-import DialogueTrainer from "./features/sprechen/DialogueTrainer";
-import DialogueTrainerIndex from "./features/sprechen/DialogueTrainerIndex";
 import DialogTrainer from "./pages/DialogTrainer";
+import DialogueTrainerAI from "./features/sprechen/DialogueTrainerAI";
+import DialogueCatalogPage from "./pages/DialogueCatalogPage";
 
 // Theme/Wortschatz system
 import ThemeDetail from "./features/themes/ThemeDetail";
@@ -157,21 +156,12 @@ function App() {
         }
       />
 
-      {/* Dialogue Menu & Trainer */}
-      <Route
-        path="/tests/sprechen/menu"
-        element={
-          <HoverSidebarShell>
-            <DialogueMenu />
-          </HoverSidebarShell>
-        }
-      />
-
+      {/* Dialogue Catalog & Trainer */}
       <Route
         path="/tests/sprechen/trainer"
         element={
           <HoverSidebarShell>
-            <DialogTrainer />
+            <DialogueCatalogPage />
           </HoverSidebarShell>
         }
       />
@@ -180,7 +170,17 @@ function App() {
         path="/tests/sprechen/trainer/:scenarioId"
         element={
           <HoverSidebarShell>
-            <DialogueTrainer />
+            <DialogueTrainerAI />
+          </HoverSidebarShell>
+        }
+      />
+
+      {/* Legacy routes for backwards compatibility */}
+      <Route
+        path="/tests/sprechen/menu"
+        element={
+          <HoverSidebarShell>
+            <DialogueMenu />
           </HoverSidebarShell>
         }
       />
@@ -191,16 +191,6 @@ function App() {
         element={
           <HoverSidebarShell>
             <SprechenUebung />
-          </HoverSidebarShell>
-        }
-      />
-
-      {/* NEW: Sprechen Test Info */}
-      <Route
-        path="/tests/sprechen/pruefung"
-        element={
-          <HoverSidebarShell>
-            <SprechenPruefung />
           </HoverSidebarShell>
         }
       />

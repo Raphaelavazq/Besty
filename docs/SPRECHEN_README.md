@@ -145,11 +145,11 @@ Then record the complete dialogue!
 - [ ] Mobile testing
 
 ### Week 3: Teil 3 Dialogue Trainer
-- [ ] Create DialogueTrainer component
-- [ ] Implement branching logic
-- [ ] Create Redemittel card system
-- [ ] Add scenario selection
-- [ ] Integration testing
+- [x] Create CleanDialogueTrainer component (data-driven)
+- [x] Implement branching logic
+- [x] Create Redemittel card system
+- [x] Add scenario selection
+- [x] Integration testing
 
 ### Week 4: Prüfung Mode & Polish
 - [ ] Create SprechenPruefung component
@@ -170,7 +170,7 @@ src/features/sprechen/
 ├── components/
 │   ├── VideoPlayer.jsx       # Video playback
 │   ├── AudioRecorder.jsx     # Recording interface
-│   ├── DialogueTrainer.jsx   # Interactive Teil 3
+│   ├── CleanDialogueTrainer.jsx   # Interactive Teil 3 (data-driven)
 │   ├── SprechenPlayer.jsx    # Shared player logic
 │   └── EvaluationRubric.jsx  # Self-assessment
 ├── hooks/

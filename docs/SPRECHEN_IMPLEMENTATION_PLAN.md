@@ -474,7 +474,7 @@ src/features/sprechen/
 ├── SprechenUebung.jsx                 # Practice mode container
 ├── SprechenPruefung.jsx               # Test mode container
 ├── SprechenPlayer.jsx                 # Video player + recording UI
-├── DialogueTrainer.jsx                # Interactive branching dialogues (Teil 3)
+├── CleanDialogueTrainer.jsx                # Interactive branching dialogues (Teil 3, data-driven)
 ├── useSprechenEngine.js               # State management hook
 ├── scoring.js                         # Self-evaluation utilities
 └── components/
@@ -522,17 +522,13 @@ src/features/sprechen/
 - Model answer playback
 - Timer display
 
-#### **DialogueTrainer.jsx** (Teil 3 Practice)
+#### **CleanDialogueTrainer.jsx** (Teil 3 Practice)
 
 ```jsx
-<DialogueTrainer
-  scenario={{
-    title: "Geburtstagsparty organisieren",
-    leitpunkte: ["Wann?", "Wo?", "Essen/Getränke?"],
-    dialogueFlow: [...]
-  }}
+<CleanDialogueTrainer
+  scenarioId={"1"} // uses the data-driven catalog
   onComplete={(dialogue) => {}}
-/>
+/
 ```
 
 **Features:**
@@ -604,7 +600,7 @@ const useSprechenEngine = (mode, content, timeLimitSeconds) => {
 1. ✅ Build `SprechenUebung.jsx` container
 2. ✅ Implement Teil 1 practice (personal questions)
 3. ✅ Implement Teil 2 practice (image description)
-4. ✅ Build `DialogueTrainer.jsx` for Teil 3
+4. ✅ Build `CleanDialogueTrainer.jsx` for Teil 3
 5. ✅ Create Redemittel card system
 6. ✅ Add model answer comparisons
 7. ✅ Implement replay functionality

@@ -1,188 +1,220 @@
 /**
  * SprechenHub
  * Landing page for DTZ Speaking practice.
- * Displays practice modes and learning videos.
- * Following Hören pattern with design system compliance.
+ * Beautiful glass-morphism design with exceptional mobile UX.
+ * Maintains brand colors and design consistency.
  */
 
 import { Link } from "react-router-dom";
-import { MessageSquare, Play, Info, BookOpen, Video } from "lucide-react";
+import {
+  MessageSquare,
+  Play,
+  Info,
+  Video,
+  ArrowLeft,
+  Clock,
+  Users,
+  Target,
+  CheckCircle,
+  Lightbulb,
+} from "lucide-react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import DialogueTrainer from "../features/sprechen/DialogueTrainer";
 
 export default function SprechenHub() {
   const practiceOptions = [
     {
       id: "uebung",
       title: "Übung",
-      description: "Videos anschauen und lernen",
+      description: "Videos und Beispiele",
       icon: Video,
-      color: "from-purple-500 to-indigo-600",
       path: "/tests/sprechen/uebung/teil1",
-      details: "Teil 1-3 mit Beispielen",
-    },
-    {
-      id: "pruefung-info",
-      title: "Prüfungsinfo",
-      description: "Was Sie wissen müssen",
-      icon: Info,
-      color: "from-pink-500 to-purple-600",
-      path: "/tests/sprechen/pruefung",
-      details: "Ablauf, Tipps, Bewertung",
+      details: "Teil 1-3 lernen",
     },
     {
       id: "dialogue-trainer",
-      title: "Dialogue Trainer",
-      description: "Interaktiver Dialog (Teil 3)",
+      title: "Dialog-Trainer",
+      description: "Mit Besty üben",
       icon: MessageSquare,
-      color: "from-green-500 to-teal-500",
       path: "/tests/sprechen/trainer",
-      details: "Interaktives Üben — Auswahl von Dialogtypen",
+      details: "59 Szenarien • KI-Dialog",
     },
   ];
 
   const teileInfo = [
     {
-      teil: "Teil 1",
+      teil: "1",
       title: "Sich vorstellen",
       duration: "3 Min",
-      points: "4 Punkte",
-      description: "Persönliche Fragen beantworten",
-      icon: MessageSquare,
-      color: "from-blue-500 to-cyan-500",
+      description: "Persönliche Fragen",
+      icon: Users,
     },
     {
-      teil: "Teil 2",
-      title: "Über ein Thema sprechen",
+      teil: "2",
+      title: "Bild beschreiben",
       duration: "4 Min",
-      points: "4 Punkte",
-      description: "Strukturiert zu einem Thema sprechen",
-      icon: BookOpen,
-      color: "from-purple-500 to-pink-500",
+      description: "Foto präsentieren",
+      icon: Target,
     },
     {
-      teil: "Teil 3",
-      title: "Gemeinsam etwas planen",
+      teil: "3",
+      title: "Planen",
       duration: "5 Min",
-      points: "4 Punkte",
-      description: "Dialog führen und planen",
-      icon: Play,
-      color: "from-orange-500 to-red-500",
+      description: "Dialog führen",
+      icon: MessageSquare,
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 pb-20">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50">
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-700 text-white">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.1),transparent)]"></div>
-        </div>
+      <div className="relative overflow-hidden bg-gradient-to-br from-purple-600 via-indigo-600 to-purple-700">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent_50%)]"></div>
 
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
           {/* Back Button */}
           <Link
             to="/tests"
-            className="inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors duration-200 mb-8 group"
+            className="inline-flex items-center gap-2 mb-8 px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl transition-all duration-200 text-white font-medium group"
           >
-            <div className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 group-hover:bg-white/20 transition-all duration-200">
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-            </div>
-            <span className="font-medium">Zurück zu Tests</span>
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-200" />
+            Zurück zu Tests
           </Link>
 
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-            {/* Animation */}
-            <div className="w-32 h-32 lg:w-40 lg:h-40 flex-shrink-0">
+            {/* Lottie Animation */}
+            <div className="w-40 h-40 lg:w-48 lg:h-48 flex-shrink-0">
               <DotLottieReact
                 src="https://lottie.host/e625cdca-0dac-4776-a55e-0b437f54c0a7/diw9hO8Z3c.lottie"
                 loop
                 autoplay
-                className="w-full h-full filter brightness-125 contrast-110 saturate-125"
+                className="w-full h-full filter brightness-125"
               />
             </div>
 
             {/* Text Content */}
             <div className="text-center lg:text-left flex-1">
-              <h1 className="text-4xl lg:text-5xl font-black mb-4 tracking-tight">
+              <h1 className="text-5xl lg:text-6xl font-black text-white mb-4 tracking-tight">
                 DTZ Sprechen
               </h1>
-              <p className="text-xl text-white/90 font-light mb-2">
+              <p className="text-xl lg:text-2xl text-white/90 font-light mb-4">
                 Mündliche Prüfung vorbereiten
               </p>
-              <p className="text-white/80 text-sm">
-                Videos anschauen • Beispiele lernen • Tipps bekommen
-              </p>
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-white/80 text-sm">
+                <div className="flex items-center gap-2">
+                  <Clock className="w-4 h-4" />
+                  <span>15 Minuten</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Target className="w-4 h-4" />
+                  <span>12 Punkte</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Users className="w-4 h-4" />
+                  <span>2 Prüfer</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
-        {/* Practice Options Grid */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            Wie möchten Sie üben?
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {practiceOptions.map((option) => {
-              const Icon = option.icon;
-              return (
-                <Link
-                  key={option.id}
-                  to={option.path}
-                  className="group relative bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-lg border border-purple-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 overflow-hidden"
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        {/* Prüfungsstruktur - Navigation Cards at Top */}
+        <div className="mb-16">
+          <div className="text-center mb-8">
+            <h2 className="text-4xl lg:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-3 tracking-tight">
+              Prüfungsstruktur
+            </h2>
+            <p className="text-slate-600 text-lg lg:text-xl leading-relaxed font-light">
+              3 Teile • 15 Minuten • 12 Punkte
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+            {teileInfo.map((info) => {
+              const Icon = info.icon;
+              const isComingSoon = info.teil !== "3";
+
+              return isComingSoon ? (
+                <div
+                  key={info.teil}
+                  className="group bg-white/60 backdrop-blur-md rounded-3xl p-8 shadow-lg border border-purple-100 opacity-75 cursor-not-allowed relative overflow-hidden"
                 >
-                  {/* Background Gradient */}
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${option.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
-                  ></div>
+                  <div className="absolute top-4 right-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                    Bald
+                  </div>
+
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-2xl flex items-center justify-center shadow-lg">
+                      <span className="text-2xl font-black text-white">
+                        {info.teil}
+                      </span>
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-xs font-bold text-purple-600 uppercase tracking-wider mb-1">
+                        Teil {info.teil}
+                      </div>
+                      <div className="flex items-center gap-2 text-gray-500 text-sm">
+                        <Clock className="w-3 h-3" />
+                        <span>{info.duration}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-purple-400" />
+                  </div>
+
+                  <h3 className="text-xl font-bold text-gray-700 mb-2">
+                    {info.title}
+                  </h3>
+                  <p className="text-gray-500 leading-relaxed">
+                    {info.description}
+                  </p>
+                </div>
+              ) : (
+                <Link
+                  key={info.teil}
+                  to="/tests/sprechen/trainer"
+                  className="group bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-purple-100 hover:shadow-3xl transition-all duration-200 hover:-translate-y-2 hover:scale-105 relative overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-indigo-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
 
                   <div className="relative">
-                    {/* Icon */}
-                    <div
-                      className={`w-16 h-16 bg-gradient-to-r ${option.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
-                    >
-                      <Icon size={28} className="text-white" />
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-200">
+                        <span className="text-2xl font-black text-white">
+                          {info.teil}
+                        </span>
+                      </div>
+                      <div className="flex-1">
+                        <div className="text-xs font-bold text-purple-600 uppercase tracking-wider mb-1">
+                          Teil {info.teil}
+                        </div>
+                        <div className="flex items-center gap-2 text-gray-500 text-sm">
+                          <Clock className="w-3 h-3" />
+                          <span>{info.duration}</span>
+                        </div>
+                      </div>
                     </div>
 
-                    {/* Content */}
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                      {option.title}
-                    </h3>
-                    <p className="text-purple-600 font-medium mb-2">
-                      {option.description}
-                    </p>
-                    <p className="text-gray-600 text-sm">{option.details}</p>
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl flex items-center justify-center mb-4 group-hover:from-purple-100 group-hover:to-indigo-100 transition-all duration-200">
+                      <Icon className="w-6 h-6 text-purple-600" />
+                    </div>
 
-                    {/* Arrow */}
-                    <div className="absolute bottom-8 right-8 w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center group-hover:bg-purple-200 transition-colors duration-200">
-                      <svg
-                        className="w-5 h-5 text-purple-700"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                      {info.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed mb-4">
+                      {info.description}
+                    </p>
+
+                    <div className="flex items-center justify-end">
+                      <div className="w-10 h-10 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl flex items-center justify-center group-hover:from-purple-600 group-hover:to-indigo-600 transition-all duration-200">
+                        <Play className="w-5 h-5 text-purple-600 group-hover:text-white group-hover:translate-x-1 transition-all duration-200" />
+                      </div>
                     </div>
                   </div>
                 </Link>
@@ -191,99 +223,287 @@ export default function SprechenHub() {
           </div>
         </div>
 
-        {/* Teile Overview */}
-        <div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">
-            Prüfungsstruktur
+        {/* Section Title - Üben */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl lg:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4 tracking-tight">
+            Wie möchten Sie üben?
           </h2>
-          <p className="text-gray-600 mb-6">
-            Die mündliche Prüfung hat 3 Teile (insgesamt ca. 12 Minuten)
+          <p className="text-slate-600 text-lg lg:text-xl leading-relaxed font-light">
+            Wählen Sie Ihren Lernweg
           </p>
+        </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {teileInfo.map((info) => {
-              const Icon = info.icon;
-              return (
-                <div
-                  key={info.teil}
-                  className="bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-sm border border-purple-100 hover:shadow-lg transition-all duration-300"
-                >
+        {/* Practice Options Grid */}
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 mb-16">
+          {practiceOptions.map((option) => {
+            const Icon = option.icon;
+            return (
+              <Link
+                key={option.id}
+                to={option.path}
+                className="group relative bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-purple-100 hover:shadow-3xl transition-all duration-200 hover:-translate-y-2 hover:scale-105 overflow-hidden"
+              >
+                {/* Hover Background Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-indigo-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+
+                <div className="relative">
                   {/* Icon */}
-                  <div
-                    className={`w-12 h-12 bg-gradient-to-r ${info.color} rounded-xl flex items-center justify-center mb-4 shadow-md`}
-                  >
-                    <Icon size={24} className="text-white" />
+                  <div className="w-20 h-20 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200 shadow-lg">
+                    <Icon className="w-10 h-10 text-white" />
                   </div>
 
                   {/* Content */}
-                  <div className="mb-3">
-                    <span className="text-xs font-bold text-purple-600 uppercase tracking-wide">
-                      {info.teil}
-                    </span>
-                    <h3 className="text-lg font-bold text-gray-900 mt-1">
-                      {info.title}
-                    </h3>
-                  </div>
-
-                  <p className="text-sm text-gray-600 mb-3">
-                    {info.description}
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    {option.title}
+                  </h3>
+                  <p className="text-purple-600 font-semibold mb-3">
+                    {option.description}
+                  </p>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {option.details}
                   </p>
 
-                  <div className="flex items-center justify-between text-xs">
-                    <span className="text-gray-500">{info.duration}</span>
-                    <span className="font-medium text-purple-600">
-                      {info.points}
-                    </span>
+                  {/* Arrow Icon */}
+                  <div className="mt-6 flex items-center justify-end">
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl flex items-center justify-center group-hover:from-purple-100 group-hover:to-indigo-100 transition-all duration-200">
+                      <Play className="w-5 h-5 text-purple-600 group-hover:translate-x-1 transition-transform duration-200" />
+                    </div>
                   </div>
                 </div>
-              );
-            })}
+              </Link>
+            );
+          })}
+        </div>
+
+        {/* Prüfungsformat & Bewertung */}
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl lg:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4 tracking-tight">
+              Prüfungsformat & Bewertung
+            </h2>
+            <p className="text-slate-600 text-lg lg:text-xl leading-relaxed font-light">
+              Was Sie wissen müssen
+            </p>
+          </div>
+
+          {/* Single Card with All Info */}
+          <div className="bg-white/80 backdrop-blur-md rounded-3xl p-8 lg:p-10 shadow-xl border border-purple-100 mb-8">
+            {/* Quick Stats Banner */}
+            <div className="flex flex-wrap items-center justify-center gap-8 mb-10 pb-8 border-b border-purple-100">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
+                  <Clock className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <div className="text-2xl font-black text-gray-900">
+                    15 Min
+                  </div>
+                  <div className="text-sm text-gray-600">Gesamtdauer</div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <div className="text-2xl font-black text-gray-900">
+                    2 Prüfer
+                  </div>
+                  <div className="text-sm text-gray-600">Plus Partner</div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
+                  <Target className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <div className="text-2xl font-black text-gray-900">
+                    12 Punkte
+                  </div>
+                  <div className="text-sm text-gray-600">Maximal</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bewertungskriterien */}
+            <div className="mb-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <CheckCircle className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">
+                  Bewertungskriterien
+                </h3>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-3">
+                <div className="flex items-start gap-3 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4">
+                  <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <div className="font-semibold text-gray-900 mb-1">
+                      Aufgabe erfüllt
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      Alle Punkte behandeln
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4">
+                  <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <div className="font-semibold text-gray-900 mb-1">
+                      Flüssig sprechen
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      Ohne lange Pausen
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4">
+                  <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <div className="font-semibold text-gray-900 mb-1">
+                      Wortschatz & Grammatik
+                    </div>
+                    <div className="text-sm text-gray-600">B1-Level zeigen</div>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4">
+                  <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <div className="font-semibold text-gray-900 mb-1">
+                      Aussprache
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      Verständlich und deutlich
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Allgemeine Tipps */}
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <Lightbulb className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">
+                  Tipps für die Prüfung
+                </h3>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-3">
+                <div className="flex items-start gap-2 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4">
+                  <CheckCircle className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5" />
+                  <div className="text-sm text-gray-700">Pünktlich sein</div>
+                </div>
+
+                <div className="flex items-start gap-2 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4">
+                  <CheckCircle className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5" />
+                  <div className="text-sm text-gray-700">Ruhig bleiben</div>
+                </div>
+
+                <div className="flex items-start gap-2 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4">
+                  <CheckCircle className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5" />
+                  <div className="text-sm text-gray-700">Weitersprechen</div>
+                </div>
+
+                <div className="flex items-start gap-2 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4">
+                  <CheckCircle className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5" />
+                  <div className="text-sm text-gray-700">
+                    Nachfragen erlaubt
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-2 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4">
+                  <CheckCircle className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5" />
+                  <div className="text-sm text-gray-700">Mit Freunden üben</div>
+                </div>
+
+                <div className="flex items-start gap-2 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4">
+                  <CheckCircle className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5" />
+                  <div className="text-sm text-gray-700">Videos ansehen</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Quick Info */}
-        <div className="mt-12 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-2xl p-6 border border-purple-100">
-          <h3 className="text-lg font-bold text-gray-900 mb-3">
-            💡 Wichtig zu wissen
-          </h3>
-          <ul className="space-y-2 text-sm text-gray-700">
-            <li className="flex items-start gap-2">
-              <span className="text-purple-600 mt-0.5">•</span>
-              <span>
-                Die Prüfung findet meist <strong>zu zweit</strong> statt (mit
-                einem anderen Teilnehmer)
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-purple-600 mt-0.5">•</span>
-              <span>
-                Insgesamt können Sie <strong>12 Punkte</strong> erreichen
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-purple-600 mt-0.5">•</span>
-              <span>
-                Sprechen Sie <strong>deutlich</strong> und nicht zu schnell
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-purple-600 mt-0.5">•</span>
-              <span>
-                Schauen Sie sich die <strong>Beispielvideos</strong> an, um zu
-                sehen, was erwartet wird
-              </span>
-            </li>
-          </ul>
-        </div>
+        {/* Wichtig zu wissen */}
+        <div className="bg-gradient-to-br from-purple-50 via-indigo-50 to-purple-50 rounded-3xl p-8 lg:p-10 shadow-xl border border-purple-100">
+          <div className="flex items-start gap-4 mb-6">
+            <div className="w-14 h-14 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+              <Info className="w-7 h-7 text-white" />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                Wichtig zu wissen
+              </h3>
+              <p className="text-gray-600">Tipps für die mündliche Prüfung</p>
+            </div>
+          </div>
 
-        {/* DialogueTrainer Preview */}
-        <div className="mt-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            Teil 3: Dialog-Trainer Vorschau
-          </h2>
-          <div className="rounded-2xl shadow-xl border border-purple-100 overflow-hidden">
-            <div className="bg-white/80 backdrop-blur-md">
-              <DialogueTrainer />
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-5 border border-purple-100">
+              <div className="flex items-start gap-3">
+                <Users className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <div className="font-semibold text-gray-900 mb-1">
+                    Zu zweit
+                  </div>
+                  <div className="text-sm text-gray-600 leading-relaxed">
+                    Mit anderem Teilnehmer üben
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-5 border border-purple-100">
+              <div className="flex items-start gap-3">
+                <Target className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <div className="font-semibold text-gray-900 mb-1">
+                    12 Punkte
+                  </div>
+                  <div className="text-sm text-gray-600 leading-relaxed">
+                    Maximal erreichbare Punktzahl
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-5 border border-purple-100">
+              <div className="flex items-start gap-3">
+                <MessageSquare className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <div className="font-semibold text-gray-900 mb-1">
+                    Deutlich sprechen
+                  </div>
+                  <div className="text-sm text-gray-600 leading-relaxed">
+                    Nicht zu schnell reden
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-5 border border-purple-100">
+              <div className="flex items-start gap-3">
+                <Video className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <div className="font-semibold text-gray-900 mb-1">
+                    Beispiele ansehen
+                  </div>
+                  <div className="text-sm text-gray-600 leading-relaxed">
+                    Videos zeigen, was erwartet wird
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

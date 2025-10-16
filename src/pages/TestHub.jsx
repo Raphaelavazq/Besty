@@ -4,181 +4,257 @@ import {
   BookOpen,
   FileEdit,
   Mic,
-  ChevronRight,
+  ArrowLeft,
   Play,
   Target,
   Clock,
-  Star,
+  CheckCircle,
 } from "lucide-react";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function TestHub() {
   const skillAreas = [
     {
       id: "hoeren",
       title: "Hören",
-      description: "Hörverstehen mit authentischen Dialogen und Ansagen",
+      description: "Authentische Dialoge verstehen",
       icon: Headphones,
-      color: "from-purple-500 to-indigo-600",
-      duration: "15-25 min",
-      levels: "Teil 1-4",
+      duration: "25 Min",
+      parts: "4 Teile",
       path: "/tests/hoeren",
-      difficulty: "B1",
+      available: true,
     },
     {
       id: "lesen",
       title: "Lesen",
-      description: "Leseverstehen mit verschiedenen Textarten",
+      description: "Verschiedene Texte verstehen",
       icon: BookOpen,
-      color: "from-blue-500 to-purple-600",
-      duration: "45-60 min",
-      levels: "Teil 1-3",
+      duration: "60 Min",
+      parts: "3 Teile",
       path: "/tests/lesen",
-      difficulty: "B1",
+      available: false,
     },
     {
       id: "schreiben",
       title: "Schreiben",
-      description: "Schriftlicher Ausdruck E-Mail und Brief",
+      description: "E-Mail und Brief schreiben",
       icon: FileEdit,
-      color: "from-green-500 to-blue-600",
-      duration: "30 min",
-      levels: "1 Aufgabe",
+      duration: "30 Min",
+      parts: "1 Aufgabe",
       path: "/tests/schreiben",
-      difficulty: "B1",
+      available: false,
     },
     {
       id: "sprechen",
       title: "Sprechen",
-      description: "Mündlicher Ausdruck Gespräch und Präsentation",
+      description: "Gespräch und Präsentation",
       icon: Mic,
-      color: "from-orange-500 to-red-600",
-      duration: "15 min",
-      levels: "Teil 1-3",
+      duration: "15 Min",
+      parts: "3 Teile",
       path: "/tests/sprechen",
-      difficulty: "B1",
+      available: true,
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-purple-50 to-indigo-100">
-      <div className="max-w-6xl mx-auto p-6">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <div className="w-24 h-24 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl">
-            <Play size={36} className="text-white" />
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50">
+      {/* Hero Section */}
+      <div className="relative overflow-hidden bg-gradient-to-br from-purple-600 via-indigo-600 to-purple-700">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent_50%)]"></div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+          {/* Back Button */}
+          <Link
+            to="/dashboard"
+            className="inline-flex items-center gap-2 mb-8 px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl transition-all duration-200 text-white font-medium group"
+          >
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-200" />
+            Zurück zum Dashboard
+          </Link>
+
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+            {/* Lottie Animation */}
+            <div className="w-40 h-40 lg:w-48 lg:h-48 flex-shrink-0">
+              <DotLottieReact
+                src="https://lottie.host/e625cdca-0dac-4776-a55e-0b437f54c0a7/diw9hO8Z3c.lottie"
+                loop
+                autoplay
+                className="w-full h-full filter brightness-125"
+              />
+            </div>
+
+            {/* Text Content */}
+            <div className="text-center lg:text-left flex-1">
+              <h1 className="text-5xl lg:text-6xl font-black text-white mb-4 tracking-tight">
+                DTZ B1 Training
+              </h1>
+              <p className="text-xl lg:text-2xl text-white/90 font-light mb-4">
+                Prüfung gezielt vorbereiten
+              </p>
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-white/80 text-sm">
+                <div className="flex items-center gap-2">
+                  <Target className="w-4 h-4" />
+                  <span>4 Kompetenzen</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock className="w-4 h-4" />
+                  <span>Interaktives Training</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4" />
+                  <span>DTZ Zertifikat B1</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4">
-            DTZ B1 Training
-          </h1>
-          <p className="text-slate-600 text-xl max-w-3xl mx-auto leading-relaxed">
-            Wähle einen Prüfungsbereich und trainiere gezielt für deine DTZ B1
-            Zertifikatsprüfung
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        {/* Section Title */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl lg:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4 tracking-tight">
+            Prüfungsbereiche
+          </h2>
+          <p className="text-slate-600 text-lg lg:text-xl leading-relaxed font-light">
+            Wählen Sie einen Bereich zum Üben
           </p>
         </div>
 
         {/* Skill Areas Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-16">
           {skillAreas.map((area) => {
             const Icon = area.icon;
-            return (
-              <Link key={area.id} to={area.path} className="group block">
-                <div
-                  className={`bg-gradient-to-br ${area.color} rounded-3xl p-8 shadow-xl border border-white/20 text-white hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105`}
-                >
-                  {/* Header */}
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
-                      <Icon size={32} className="text-white" />
-                    </div>
-                    <div className="text-right">
-                      <span className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">
-                        {area.difficulty}
-                      </span>
-                    </div>
+
+            return area.available ? (
+              <Link
+                key={area.id}
+                to={area.path}
+                className="group bg-white/80 backdrop-blur-md rounded-3xl p-8 lg:p-10 shadow-xl border border-purple-100 hover:shadow-3xl transition-all duration-200 hover:-translate-y-2 hover:scale-105 relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-indigo-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+
+                <div className="relative">
+                  {/* Icon */}
+                  <div className="w-20 h-20 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200 shadow-lg">
+                    <Icon className="w-10 h-10 text-white" />
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-3xl font-bold text-white mb-3">
+                  <h3 className="text-3xl font-bold text-gray-900 mb-3">
                     {area.title}
                   </h3>
-
-                  <p className="text-white/90 text-lg mb-6 leading-relaxed">
+                  <p className="text-gray-600 text-lg mb-6 leading-relaxed">
                     {area.description}
                   </p>
 
                   {/* Stats */}
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center gap-2">
-                      <Clock size={18} className="text-white/80" />
-                      <span className="text-white/80 text-sm font-medium">
+                  <div className="flex items-center gap-6 mb-6">
+                    <div className="flex items-center gap-2 text-gray-600">
+                      <Clock className="w-4 h-4 text-purple-600" />
+                      <span className="text-sm font-medium">
                         {area.duration}
                       </span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <Target size={18} className="text-white/80" />
-                      <span className="text-white/80 text-sm font-medium">
-                        {area.levels}
-                      </span>
+                    <div className="flex items-center gap-2 text-gray-600">
+                      <Target className="w-4 h-4 text-purple-600" />
+                      <span className="text-sm font-medium">{area.parts}</span>
                     </div>
                   </div>
 
-                  {/* CTA */}
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <Star size={16} className="text-yellow-300" />
-                      <span className="text-white/80 text-sm">
-                        Training & Test Modi
-                      </span>
+                  {/* Arrow */}
+                  <div className="flex items-center justify-end">
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl flex items-center justify-center group-hover:from-purple-600 group-hover:to-indigo-600 transition-all duration-200">
+                      <Play className="w-5 h-5 text-purple-600 group-hover:text-white group-hover:translate-x-1 transition-all duration-200" />
                     </div>
-                    <ChevronRight
-                      size={24}
-                      className="text-white/60 group-hover:text-white group-hover:translate-x-2 transition-all duration-300"
-                    />
                   </div>
                 </div>
               </Link>
+            ) : (
+              <div
+                key={area.id}
+                className="group bg-white/60 backdrop-blur-md rounded-3xl p-8 lg:p-10 shadow-lg border border-purple-100 opacity-75 cursor-not-allowed relative overflow-hidden"
+              >
+                {/* Bald Badge */}
+                <div className="absolute top-4 right-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                  Bald
+                </div>
+
+                {/* Icon */}
+                <div className="w-20 h-20 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                  <Icon className="w-10 h-10 text-white" />
+                </div>
+
+                {/* Content */}
+                <h3 className="text-3xl font-bold text-gray-700 mb-3">
+                  {area.title}
+                </h3>
+                <p className="text-gray-500 text-lg mb-6 leading-relaxed">
+                  {area.description}
+                </p>
+
+                {/* Stats */}
+                <div className="flex items-center gap-6">
+                  <div className="flex items-center gap-2 text-gray-500">
+                    <Clock className="w-4 h-4 text-purple-400" />
+                    <span className="text-sm font-medium">{area.duration}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-gray-500">
+                    <Target className="w-4 h-4 text-purple-400" />
+                    <span className="text-sm font-medium">{area.parts}</span>
+                  </div>
+                </div>
+              </div>
             );
           })}
         </div>
 
         {/* Info Section */}
-        <div className="mt-16 bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-purple-100">
-          <div className="text-center">
-            <h2 className="text-2xl font-bold text-slate-800 mb-4">
+        <div className="bg-gradient-to-br from-purple-50 via-indigo-50 to-purple-50 rounded-3xl p-8 lg:p-10 shadow-xl border border-purple-100">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">
               Wie funktioniert das Training?
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold">1</span>
-                </div>
-                <h3 className="font-semibold text-slate-800 mb-2">
-                  Bereich wählen
-                </h3>
-                <p className="text-slate-600 text-sm">
-                  Klicke auf einen Prüfungsbereich
-                </p>
+            <p className="text-gray-600 text-lg">
+              In 3 einfachen Schritten starten
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 text-center border border-purple-100">
+              <div className="w-14 h-14 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <span className="text-2xl font-black text-white">1</span>
               </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold">2</span>
-                </div>
-                <h3 className="font-semibold text-slate-800 mb-2">
-                  Modus wählen
-                </h3>
-                <p className="text-slate-600 text-sm">
-                  Training oder Test-Simulation
-                </p>
+              <h3 className="font-bold text-gray-900 mb-2 text-lg">
+                Bereich wählen
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Klicken Sie auf Hören oder Sprechen
+              </p>
+            </div>
+
+            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 text-center border border-purple-100">
+              <div className="w-14 h-14 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <span className="text-2xl font-black text-white">2</span>
               </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold">3</span>
-                </div>
-                <h3 className="font-semibold text-slate-800 mb-2">Üben</h3>
-                <p className="text-slate-600 text-sm">
-                  Interaktive Übungen mit Feedback
-                </p>
+              <h3 className="font-bold text-gray-900 mb-2 text-lg">
+                Modus wählen
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Übung, Training oder Prüfung
+              </p>
+            </div>
+
+            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 text-center border border-purple-100">
+              <div className="w-14 h-14 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <span className="text-2xl font-black text-white">3</span>
               </div>
+              <h3 className="font-bold text-gray-900 mb-2 text-lg">Üben</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Mit Feedback besser werden
+              </p>
             </div>
           </div>
         </div>

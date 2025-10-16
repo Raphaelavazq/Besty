@@ -1,6 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { MessageSquare, Play, Info, BookOpen, Video } from "lucide-react";
+import {
+  MessageSquare,
+  Play,
+  Info,
+  BookOpen,
+  Video,
+  ArrowLeft,
+} from "lucide-react";
 
 function IconPlay(props) {
   return (
@@ -89,6 +96,15 @@ export default function DialogueMenu() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 py-8">
       <div className="max-w-6xl mx-auto px-4">
+        {/* Back Button */}
+        <button
+          onClick={() => navigate("/tests/sprechen")}
+          className="mb-4 inline-flex items-center gap-2 px-4 py-2 bg-white/80 hover:bg-white border border-purple-200 rounded-xl transition-all duration-200 hover:shadow-md hover:-translate-x-1 text-purple-700 font-medium"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Zurück zu Sprechen Tests
+        </button>
+
         <div className="mb-6 flex items-center gap-3">
           <div className="w-14 h-14 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-3xl flex items-center justify-center text-white shadow-lg">
             <MessageSquare />
@@ -116,15 +132,6 @@ export default function DialogueMenu() {
                 color: "from-purple-500 to-indigo-600",
                 path: "/tests/sprechen/uebung/teil1",
                 details: "Teil 1-3 mit Beispielen",
-              },
-              {
-                id: "pruefung-info",
-                title: "Prüfungsinfo",
-                description: "Was Sie wissen müssen",
-                icon: Info,
-                color: "from-pink-500 to-purple-600",
-                path: "/tests/sprechen/pruefung",
-                details: "Ablauf, Tipps, Bewertung",
               },
               {
                 id: "dialogue-trainer",

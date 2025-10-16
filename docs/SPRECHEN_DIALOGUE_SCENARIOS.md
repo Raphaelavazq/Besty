@@ -478,4 +478,4 @@ A: Ja gerne! Dann bis Dienstag!
 
 **Total Scenarios Ready:** 20+  
 **Additional Scenarios to Create:** 30+ (Target: 50 scenarios)  
-**Next Steps:** Convert to JSON format for DialogueTrainer component
+**Next Steps:** Convert to JSON format for `CleanDialogueTrainer` component

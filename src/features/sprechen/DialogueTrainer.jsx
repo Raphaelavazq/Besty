@@ -1,510 +1,287 @@
 /**
  * DialogueTrainer
- * Interactive branching dialogue trainer for Sprechen Teil 3.
- * User builds a conversation by selecting Redemittel cards in response to examiner prompts.
- * Study-only mode (no recording).
- * Design: glass-morphism, purple gradients, rounded-2xl, mobile-first.
+ * Complete DTZ Sprechen Teil 3 dialogue practice interface.
+ *
+ * Features:
+ * - Full Aufgabe display at top
+ * - Leitpunkte (discussion points) checklist
+ * - Conversation history between Teilnehmer A & B
+ * - Four choice buttons (positive, negative, question, opinion) with colors and icons
+ * - Progress indicator
+ * - Natural B1-level dialogue flow
  */
 
-// Example scenario and flow (would be loaded from JSON in production)
-const scenario = {
-  id: "fest_organisieren",
-  title: "Eine Geburtstagsparty organisieren",
-  description: "Planen Sie gemeinsam eine Party",
-  leitpunkte: ["Wann?", "Wo?", "Essen/Getränke?", "Wer kommt?", "Dekoration?"],
-  dialogueFlow: [
-    {
-      step: 1,
-      examinerPrompt: "Wann wollen Sie die Party machen?",
-      redemittelOptions: [
-        {
-          category: "vorschlag_machen",
-          text: "Wie wäre es, wenn wir am Samstag feiern?",
-        },
-        {
-          category: "nachfragen",
-          text: "Was denkst du? Wann hast du Zeit?",
-        },
-      ],
-    },
-    {
-      step: 2,
-      examinerPrompt: "Ja, Samstag ist gut! Wo wollen Sie feiern?",
-      redemittelOptions: [
-        {
-          category: "vorschlag_machen",
-          text: "Wir könnten im Restaurant feiern.",
-        },
-        {
-          category: "vorschlag_machen",
-          text: "Ich schlage vor, dass wir zu Hause feiern.",
-        },
-      ],
-    },
-    {
-      step: 3,
-      examinerPrompt: "Super! Was wollen wir essen und trinken?",
-      redemittelOptions: [
-        {
-          category: "vorschlag_machen",
-          text: "Vielleicht Pizza und Cola?",
-        },
-        {
-          category: "meinung_äußern",
-          text: "Ich finde, dass wir Kuchen und Saft nehmen sollten.",
-        },
-      ],
-    },
-    {
-      step: 4,
-      examinerPrompt: "Wer soll eingeladen werden?",
-      redemittelOptions: [
-        {
-          category: "nachfragen",
-          text: "Was meinst du? Wen sollen wir einladen?",
-        },
-        {
-          category: "vorschlag_machen",
-          text: "Ich schlage vor, wir laden unsere Freunde und Familie ein.",
-        },
-      ],
-    },
-    {
-      step: 5,
-      examinerPrompt: "Wie dekorieren wir?",
-      redemittelOptions: [
-        {
-          category: "vorschlag_machen",
-          text: "Wir könnten Luftballons und Girlanden nehmen.",
-        },
-        {
-          category: "meinung_äußern",
-          text: "Ich denke, bunte Blumen wären schön.",
-        },
-      ],
-    },
-  ],
-};
-import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { ArrowLeft, CheckCircle, MessageSquare } from "lucide-react";
-// ...existing code...
+import { useChatEngine } from "../dialogue/useChatEngine";
+import {
+  ArrowLeft,
+  RotateCcw,
+  CheckCircle2,
+  ThumbsUp,
+  ThumbsDown,
+  HelpCircle,
+  Lightbulb,
+  MessageCircle,
+  ListChecks,
+} from "lucide-react";
 
-// DialogueTrainer now accepts either a `scenario` prop or a route param `scenarioId`.
-export default function DialogueTrainer({ scenario: propScenario }) {
-  // All hooks at top, unconditional
-  const [redemittel, setRedemittel] = useState([]);
-  const params = useParams();
-  const navigate = useNavigate();
-  const scenarioId = params.scenarioId;
-  const [scenario, setScenario] = useState(propScenario || null);
-  const [step, setStep] = useState(0);
-  const [dialogue, setDialogue] = useState([]);
-  const [loading, setLoading] = useState(!propScenario);
+// Choice button with icon and color coding
+function ChoiceButton({ choice, onClick, type }) {
+  const config = {
+    positive: {
+      gradient: "from-green-500 to-emerald-600",
+      icon: ThumbsUp,
+      label: "Zustimmen",
+    },
+    negative: {
+      gradient: "from-red-500 to-rose-600",
+      icon: ThumbsDown,
+      label: "Ablehnen",
+    },
+    question: {
+      gradient: "from-blue-500 to-indigo-600",
+      icon: HelpCircle,
+      label: "Nachfragen",
+    },
+    suggestion: {
+      gradient: "from-amber-500 to-orange-600",
+      icon: Lightbulb,
+      label: "Vorschlag",
+    },
+  };
 
-  useEffect(() => {
-    fetch("/data/sprechen/redemittel.json")
-      .then((r) => r.json())
-      .then(setRedemittel);
-  }, []);
+  const { gradient, icon: Icon, label } = config[type] || config.positive;
 
-  useEffect(() => {
-    if (propScenario) return;
-    fetch("/data/sprechen/dialogues.json")
-      .then((res) => res.json())
-      .then((data) => {
-        if (scenarioId) {
-          const found = data.find(
-            (s) =>
-              s.id === scenarioId || String(s.number) === String(scenarioId)
-          );
-          setScenario(found || data[0]);
-        } else {
-          setScenario(data[0]);
-        }
-      })
-      .catch(() => setScenario(null))
-      .finally(() => setLoading(false));
-  }, [propScenario, scenarioId]);
-
-  useEffect(() => {
-    setStep(0);
-    setDialogue([]);
-  }, [scenario?.id]);
-
-  // Always render main UI, show loading/error states inline
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 pb-20">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        {loading && (
-          <div className="flex items-center justify-center min-h-[200px]">
-            <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-purple-600" />
-          </div>
-        )}
-        {!loading && !scenario && (
-          <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-purple-100 max-w-md text-center mx-auto">
-            <h2 className="text-xl font-bold mb-2">Szenario nicht gefunden</h2>
-            <p className="text-gray-600 mb-4">
-              Wählen Sie ein anderes Szenario aus der Übersicht.
-            </p>
+    <button
+      onClick={onClick}
+      className={`group bg-gradient-to-r ${gradient} text-white p-5 rounded-2xl font-medium hover:scale-105 hover:shadow-2xl transition-all duration-200 text-left relative overflow-hidden`}
+    >
+      {/* Background icon effect */}
+      <Icon className="absolute -right-2 -bottom-2 w-24 h-24 opacity-10 group-hover:opacity-20 transition-opacity duration-200" />
+
+      {/* Content */}
+      <div className="relative z-10">
+        <div className="flex items-center gap-2 mb-2">
+          <Icon className="w-5 h-5" />
+          <span className="text-xs font-semibold uppercase tracking-wide opacity-90">
+            {label}
+          </span>
+        </div>
+        <p className="text-sm leading-relaxed">{choice}</p>
+      </div>
+    </button>
+  );
+}
+
+export default function DialogueTrainer() {
+  const { scenarioId } = useParams();
+  const navigate = useNavigate();
+  const {
+    currentScenario,
+    messageHistory,
+    currentChoices,
+    isComplete,
+    handleChoice,
+    restart,
+    loading,
+    error,
+  } = useChatEngine(scenarioId);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-purple-600 mx-auto mb-4"></div>
+          <p className="text-lg text-gray-600">Lade Dialog...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error || !currentScenario) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50">
+        <div className="text-center bg-white/80 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-red-200">
+          <MessageCircle className="w-16 h-16 text-red-500 mx-auto mb-4" />
+          <p className="text-lg text-red-600 mb-4">
+            Fehler beim Laden des Dialogs
+          </p>
+          <button
+            onClick={() => navigate("/tests/sprechen/trainer")}
+            className="px-6 py-3 bg-purple-600 text-white rounded-xl hover:bg-purple-700 font-medium transition-colors duration-200"
+          >
+            Zurück zur Übersicht
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // Calculate progress
+  const totalSteps = Object.keys(currentScenario.dialogue || {}).length;
+  const currentStep = messageHistory.filter((m) => m.role === "user").length;
+  const progressPercent = totalSteps > 0 ? (currentStep / totalSteps) * 100 : 0;
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50">
+      {/* Fixed Header */}
+      <div className="bg-white/90 backdrop-blur-md border-b border-purple-100 shadow-sm sticky top-0 z-20">
+        <div className="max-w-5xl mx-auto px-4 py-4">
+          <div className="flex items-center justify-between mb-3">
             <button
-              onClick={() => navigate("/tests/sprechen/menu")}
-              className="px-4 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl"
+              onClick={() => navigate("/tests/sprechen/trainer")}
+              className="flex items-center text-purple-700 hover:text-purple-900 font-medium transition-colors duration-200"
             >
-              Zur Szenario-Übersicht
+              <ArrowLeft className="w-5 h-5 mr-2" />
+              Alle Dialoge
+            </button>
+            <button
+              onClick={restart}
+              className="flex items-center text-gray-600 hover:text-purple-700 font-medium transition-colors duration-200"
+            >
+              <RotateCcw className="w-5 h-5 mr-2" />
+              Neu starten
             </button>
           </div>
-        )}
-        {!loading && scenario && (
-          <>
-            {/* Scenario Card */}
-            <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-3xl p-5 mb-5 shadow-xl">
-              <div className="flex items-start gap-3">
-                <div className="flex-shrink-0">
-                  <MessageSquare size={28} className="text-white" />
-                </div>
-                <div className="flex-1">
-                  <h1 className="text-2xl font-black leading-tight">
-                    {scenario.title}
-                  </h1>
-                  {scenario.greeting && (
-                    <p className="text-white/90 mt-2">{scenario.greeting}</p>
-                  )}
-                  <p className="text-white/90 mt-2 text-sm">
-                    {scenario.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mt-3">
-                    {scenario.leitpunkte.map((lp, i) => (
-                      <span
-                        key={i}
-                        className="bg-white/20 text-white px-3 py-1 rounded-xl text-xs font-medium"
-                      >
-                        {lp}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            {/* Progress Bar */}
-            <div className="w-full bg-white/40 rounded-full h-2 mb-6">
-              <div
-                className="h-2 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full transition-all duration-500"
-                style={{
-                  width: `${Math.round(((step + 1) / scenario.dialogueFlow.length) * 100)}%`,
-                }}
-              />
-            </div>
-
-            {/* Dialogue History */}
-            <div className="space-y-4 mb-6">
-              {dialogue.map((turn, idx) => (
-                <div key={idx}>
-                  <div className="flex justify-start mb-2">
-                    <div className="bg-white/90 rounded-2xl rounded-tl-none p-4 max-w-xs">
-                      <div className="text-xs text-purple-600 font-bold mb-1">
-                        Prüfer
-                      </div>
-                      <p className="text-gray-900 text-sm">{turn.a}</p>
-                    </div>
-                  </div>
-                  <div className="flex justify-end">
-                    <div
-                      className={`rounded-2xl rounded-tr-none p-4 max-w-xs shadow-lg ${bubbleColor(turn.category)}`}
-                    >
-                      <div className="text-xs text-white/80 font-bold mb-1">
-                        Teilnehmer
-                      </div>
-                      <p className="text-white text-sm">{turn.b}</p>
-                      <span className="block text-xs text-white/70 mt-1">
-                        {redemittelLabel(turn.category)}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Current Step */}
-            {step < scenario.dialogueFlow.length ? (
-              <div className="bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-purple-100 mb-6">
-                <div className="flex items-start gap-3 mb-4">
-                  <div className="flex-shrink-0">
-                    <div className="bg-purple-100 rounded-full w-10 h-10 flex items-center justify-center">
-                      <MessageSquare className="text-purple-600" />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-xs text-purple-600 font-bold mb-1">
-                      Prüfer
-                    </div>
-                    <p className="text-gray-900 text-base">
-                      {scenario.dialogueFlow[step].examinerPrompt}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {scenario.dialogueFlow[step].redemittelOptions.map(
-                    (option, i) => (
-                      <button
-                        key={i}
-                        onClick={() => {
-                          setDialogue((d) => [
-                            ...d,
-                            {
-                              a: scenario.dialogueFlow[step].examinerPrompt,
-                              b: option.text,
-                              category: option.category,
-                            },
-                          ]);
-                          setStep((prev) => prev + 1);
-                        }}
-                        className={`rounded-2xl p-4 shadow-lg border-2 border-purple-100 hover:border-purple-400 transition-all duration-150 active:scale-98 text-left w-full focus:outline-none focus:ring-2 focus:ring-purple-500 ${bubbleColor(option.category)}`}
-                      >
-                        <div className="text-sm font-semibold mb-1 text-white/90">
-                          {redemittelLabel(option.category)}
-                        </div>
-                        <div className="font-medium text-white text-sm">
-                          {option.text}
-                        </div>
-                      </button>
-                    )
-                  )}
-                </div>
-              </div>
-            ) : (
-              <div className="bg-gradient-to-r from-green-400 to-purple-500 text-white rounded-2xl p-6 shadow-xl flex flex-col items-center">
-                <CheckCircle size={36} className="mb-2 text-white" />
-                <h2 className="text-xl font-bold mb-2">
-                  Dialog abgeschlossen!
-                </h2>
-                <p className="mb-2 text-white/90">
-                  Sie haben alle Leitpunkte besprochen.
-                </p>
-                <div className="flex gap-3 mt-3">
-                  <button
-                    onClick={() => {
-                      setStep(0);
-                      setDialogue([]);
-                    }}
-                    className="px-4 py-2 bg-white/90 text-purple-700 rounded-xl font-medium"
-                  >
-                    Nochmal üben
-                  </button>
-                  <button
-                    onClick={() => navigate("/tests/sprechen/menu")}
-                    className="px-4 py-2 bg-white/20 border border-white/30 rounded-xl"
-                  >
-                    Zur Übersicht
-                  </button>
-                </div>
-              </div>
-            )}
-          </>
-        )}
+          {/* Progress Bar */}
+          <div className="w-full bg-purple-100 rounded-full h-2 mb-2">
+            <div
+              className="h-2 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full transition-all duration-500"
+              style={{ width: `${progressPercent}%` }}
+            />
+          </div>
+          <p className="text-xs text-gray-600 text-right">
+            Schritt {currentStep} von {totalSteps}
+          </p>
+        </div>
       </div>
-    </div>
-  );
 
-  const currentFlow = scenario.dialogueFlow[step];
-  const progress = Math.round(
-    ((step + 1) / scenario.dialogueFlow.length) * 100
-  );
+      <div className="max-w-5xl mx-auto px-4 py-8 space-y-6">
+        {/* Aufgabe Card */}
+        <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-purple-100">
+          <div className="flex items-start gap-3 mb-3">
+            <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white w-10 h-10 rounded-xl flex items-center justify-center font-bold text-lg shadow-lg flex-shrink-0">
+              {currentScenario.number}
+            </div>
+            <div className="flex-1">
+              <div className="inline-block px-3 py-1 bg-purple-100 text-purple-700 rounded-lg text-xs font-medium mb-2">
+                {currentScenario.theme}
+              </div>
+              <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">
+                {currentScenario.title}
+              </h1>
+            </div>
+          </div>
 
-  function handleSelect(option) {
-    setDialogue((d) => [
-      ...d,
-      {
-        a: currentFlow.examinerPrompt,
-        b: option.text,
-        category: option.category,
-      },
-    ]);
-    setStep((prev) => prev + 1);
-  }
-
-  function handleRestart() {
-    setStep(0);
-    setDialogue([]);
-  }
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 pb-20">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="flex items-center justify-between mb-4">
-          <button
-            onClick={() => navigate(-1)}
-            aria-label="Back"
-            className="p-2 rounded-lg bg-white/80 backdrop-blur-md border border-purple-100 shadow-sm"
-          >
-            <ArrowLeft />
-          </button>
-          <div className="text-sm text-gray-600">
-            Leitpunkte: {scenario.leitpunkte.length}
+          <div className="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl p-4 border border-purple-200">
+            <h2 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
+              <MessageCircle className="w-5 h-5 text-purple-600" />
+              Aufgabe
+            </h2>
+            <p className="text-gray-700 leading-relaxed">
+              {currentScenario.aufgabe}
+            </p>
           </div>
         </div>
 
-        {/* Scenario Card */}
-        <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-3xl p-5 mb-5 shadow-xl">
-          <div className="flex items-start gap-3">
-            <div className="flex-shrink-0">
-              <MessageSquare size={28} className="text-white" />
-            </div>
-            <div className="flex-1">
-              <h1 className="text-2xl font-black leading-tight">
-                {scenario.title}
-              </h1>
-              {scenario.greeting && (
-                <p className="text-white/90 mt-2">{scenario.greeting}</p>
-              )}
-              <p className="text-white/90 mt-2 text-sm">
-                {scenario.description}
-              </p>
-              <div className="flex flex-wrap gap-2 mt-3">
-                {scenario.leitpunkte.map((lp, i) => (
-                  <span
-                    key={i}
-                    className="bg-white/20 text-white px-3 py-1 rounded-xl text-xs font-medium"
+        {/* Leitpunkte Checklist */}
+        {currentScenario.leitpunkte &&
+          currentScenario.leitpunkte.length > 0 && (
+            <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-purple-100">
+              <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                <ListChecks className="w-5 h-5 text-purple-600" />
+                Diskussionspunkte
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
+                {currentScenario.leitpunkte.map((punkt, index) => (
+                  <div
+                    key={index}
+                    className="bg-purple-50 border border-purple-200 rounded-lg px-3 py-2 text-sm text-purple-700 font-medium text-center"
                   >
-                    {lp}
-                  </span>
+                    {punkt}
+                  </div>
                 ))}
               </div>
             </div>
-          </div>
-        </div>
+          )}
 
-        {/* Progress Bar */}
-        <div className="w-full bg-white/40 rounded-full h-2 mb-6">
-          <div
-            className="h-2 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full transition-all duration-500"
-            style={{ width: `${progress}%` }}
-          />
-        </div>
-
-        {/* Dialogue History */}
-        <div className="space-y-4 mb-6">
-          {dialogue.map((turn, idx) => (
-            <div key={idx}>
-              <div className="flex justify-start mb-2">
-                <div className="bg-white/90 rounded-2xl rounded-tl-none p-4 max-w-xs">
-                  <div className="text-xs text-purple-600 font-bold mb-1">
-                    Prüfer
-                  </div>
-                  <p className="text-gray-900 text-sm">{turn.a}</p>
-                </div>
-              </div>
-              <div className="flex justify-end">
+        {/* Conversation History */}
+        {messageHistory.length > 0 && (
+          <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-purple-100">
+            <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
+              <MessageCircle className="w-5 h-5 text-purple-600" />
+              Gesprächsverlauf
+            </h3>
+            <div className="space-y-3 max-h-96 overflow-y-auto pr-2">
+              {messageHistory.map((msg, index) => (
                 <div
-                  className={`rounded-2xl rounded-tr-none p-4 max-w-xs shadow-lg ${bubbleColor(turn.category)}`}
+                  key={index}
+                  className={`p-4 rounded-xl border-l-4 ${
+                    msg.role === "examiner"
+                      ? "bg-indigo-50 border-indigo-500"
+                      : "bg-purple-50 border-purple-500"
+                  }`}
                 >
-                  <div className="text-xs text-white/80 font-bold mb-1">
-                    Teilnehmer
-                  </div>
-                  <p className="text-white text-sm">{turn.b}</p>
-                  <span className="block text-xs text-white/70 mt-1">
-                    {redemittelLabel(turn.category)}
-                  </span>
+                  <p
+                    className={`font-bold text-sm mb-1 ${msg.role === "examiner" ? "text-indigo-700" : "text-purple-700"}`}
+                  >
+                    {msg.role === "examiner"
+                      ? "Teilnehmer A"
+                      : "Teilnehmer B (Du)"}
+                  </p>
+                  <p className="text-gray-800 leading-relaxed">{msg.content}</p>
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Current Step */}
-        {step < scenario.dialogueFlow.length ? (
-          <div className="bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-purple-100 mb-6">
-            <div className="flex items-start gap-3 mb-4">
-              <div className="flex-shrink-0">
-                <div className="bg-purple-100 rounded-full w-10 h-10 flex items-center justify-center">
-                  <MessageSquare className="text-purple-600" />
-                </div>
-              </div>
-              <div>
-                <div className="text-xs text-purple-600 font-bold mb-1">
-                  Prüfer
-                </div>
-                <p className="text-gray-900 text-base">
-                  {currentFlow.examinerPrompt}
-                </p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {currentFlow.redemittelOptions.map((option, i) => (
-                <button
-                  key={i}
-                  onClick={() => handleSelect(option)}
-                  className={`rounded-2xl p-4 shadow-lg border-2 border-purple-100 hover:border-purple-400 transition-all duration-150 active:scale-98 text-left w-full focus:outline-none focus:ring-2 focus:ring-purple-500 ${bubbleColor(option.category)}`}
-                >
-                  <div className="text-sm font-semibold mb-1 text-white/90">
-                    {redemittelLabel(option.category)}
-                  </div>
-                  <div className="font-medium text-white text-sm">
-                    {option.text}
-                  </div>
-                </button>
               ))}
             </div>
           </div>
-        ) : (
-          <div className="bg-gradient-to-r from-green-400 to-purple-500 text-white rounded-2xl p-6 shadow-xl flex flex-col items-center">
-            <CheckCircle size={36} className="mb-2 text-white" />
-            <h2 className="text-xl font-bold mb-2">Dialog abgeschlossen!</h2>
-            <p className="mb-2 text-white/90">
-              Sie haben alle Leitpunkte besprochen.
+        )}
+
+        {/* Choice Buttons or Completion */}
+        {isComplete ? (
+          <div className="bg-white/80 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-green-200 text-center">
+            <CheckCircle2 className="w-20 h-20 text-green-600 mx-auto mb-4" />
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+              Dialog abgeschlossen!
+            </h2>
+            <p className="text-gray-600 text-lg mb-6">
+              Ausgezeichnet! Du hast den Dialog erfolgreich durchgeführt.
             </p>
-            <div className="flex gap-3 mt-3">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
-                onClick={handleRestart}
-                className="px-4 py-2 bg-white/90 text-purple-700 rounded-xl font-medium"
+                onClick={restart}
+                className="flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-200 font-medium"
               >
+                <RotateCcw className="w-5 h-5 mr-2" />
                 Nochmal üben
               </button>
               <button
-                onClick={() => navigate("/tests/sprechen/menu")}
-                className="px-4 py-2 bg-white/20 border border-white/30 rounded-xl"
+                onClick={() => navigate("/tests/sprechen/trainer")}
+                className="px-8 py-4 bg-white text-purple-700 border-2 border-purple-600 rounded-xl hover:bg-purple-50 hover:scale-105 transition-all duration-200 font-medium"
               >
-                Zur Übersicht
+                Andere Dialoge
               </button>
             </div>
           </div>
-        )}
+        ) : currentChoices ? (
+          <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-purple-100">
+            <h3 className="font-bold text-gray-900 mb-4 text-center">
+              Wähle deine Antwort
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {Object.entries(currentChoices).map(([type, choice]) => (
+                <ChoiceButton
+                  key={type}
+                  type={type}
+                  choice={choice}
+                  onClick={() => handleChoice(type)}
+                />
+              ))}
+            </div>
+          </div>
+        ) : null}
       </div>
     </div>
   );
-}
-
-function redemittelLabel(category) {
-  switch (category) {
-    case "vorschlag_machen":
-      return "Vorschlag machen";
-    case "vorschlag_annehmen":
-    case "zustimmen":
-      return "Zustimmen";
-    case "vorschlag_ablehnen":
-    case "widersprechen":
-      return "Ablehnen";
-    case "meinung_äußern":
-      return "Meinung äußern";
-    case "nachfragen":
-      return "Nachfragen";
-    default:
-      return "Redemittel";
-  }
-}
-
-function bubbleColor(category) {
-  switch (category) {
-    case "vorschlag_annehmen":
-    case "zustimmen":
-      return "bg-gradient-to-r from-green-500 to-green-700 text-white border-2 border-green-400 shadow-xl";
-    case "vorschlag_ablehnen":
-    case "widersprechen":
-      return "bg-gradient-to-r from-pink-500 to-red-600 text-white border-2 border-pink-400 shadow-xl";
-    default:
-      return "bg-gradient-to-r from-purple-600 to-indigo-700 text-white border-2 border-purple-300 shadow-xl";
-  }
 }

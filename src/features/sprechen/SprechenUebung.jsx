@@ -230,21 +230,12 @@ export default function SprechenUebung() {
 
         {/* Navigation */}
         <div className="flex items-center justify-between">
-          <div className="flex gap-2">
-            <Link
-              to="/tests/sprechen"
-              className="px-6 py-3 bg-white/80 backdrop-blur-md text-gray-700 rounded-xl font-medium hover:shadow-md transition-all duration-200 border border-purple-100"
-            >
-              Übersicht
-            </Link>
-            <Link
-              to="/tests/sprechen/pruefung"
-              className="px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-xl font-medium hover:shadow-lg transition-all duration-200 flex items-center gap-2"
-            >
-              <span>Prüfungsinfo</span>
-              <ArrowLeft size={16} className="rotate-180" />
-            </Link>
-          </div>
+          <Link
+            to="/tests/sprechen"
+            className="px-6 py-3 bg-white/80 backdrop-blur-md text-gray-700 rounded-xl font-medium hover:shadow-md transition-all duration-200 border border-purple-100"
+          >
+            Zurück zur Übersicht
+          </Link>
 
           {nextTeil ? (
             <Link

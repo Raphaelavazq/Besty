@@ -24,15 +24,15 @@ export default function DashboardShell({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const sidebarItems = [
-    { name: "Dashboard", icon: Home, href: "/dashboard", active: true },
-    { name: "Tests", icon: FileText, href: "/tests" },
-    { name: "Study", icon: BookOpen, href: "/study" },
-    { name: "Progress", icon: BarChart3, href: "/progress" },
-    { name: "Bookmarks", icon: Star, href: "/bookmarks" },
-    { name: "Achievements", icon: Award, href: "/achievements" },
-    { name: "Profile", icon: User, href: "/profile" },
-    { name: "About", icon: HelpCircle, href: "/about" },
-    { name: "Settings", icon: Settings, href: "/settings" },
+    { name: "Dashboard", icon: Home, href: "/dashboard", active: true, available: true },
+    { name: "Tests", icon: FileText, href: "/tests", available: true },
+    { name: "Study", icon: BookOpen, href: "/study", available: true },
+    { name: "Progress", icon: BarChart3, href: "/progress", available: false },
+    { name: "Bookmarks", icon: Star, href: "/bookmarks", available: false },
+    { name: "Achievements", icon: Award, href: "/achievements", available: false },
+    { name: "Profile", icon: User, href: "/profile", available: false },
+    { name: "About", icon: HelpCircle, href: "/about", available: true },
+    { name: "Settings", icon: Settings, href: "/settings", available: true },
   ];
 
   return (
@@ -106,15 +106,25 @@ export default function DashboardShell({ children }) {
             {sidebarItems.map((item) => (
               <Link
                 key={item.name}
-                to={item.href}
-                className={`flex items-center px-3 py-2 text-sm font-medium rounded-xl transition-all duration-200 ${
+                to={item.available ? item.href : "#"}
+                onClick={(e) => !item.available && e.preventDefault()}
+                className={`flex items-center justify-between px-3 py-2 text-sm font-medium rounded-xl transition-all duration-200 ${
                   item.active
                     ? "bg-white/20 text-white shadow-lg backdrop-blur-sm"
-                    : "text-white/80 hover:bg-white hover:text-purple-700 hover:shadow-md"
+                    : item.available
+                    ? "text-white/80 hover:bg-white hover:text-purple-700 hover:shadow-md"
+                    : "text-white/50 cursor-not-allowed"
                 }`}
               >
-                <item.icon size={18} className="mr-3" />
-                {item.name}
+                <div className="flex items-center">
+                  <item.icon size={18} className="mr-3" />
+                  {item.name}
+                </div>
+                {!item.available && (
+                  <span className="bg-white/20 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-md border border-white/30">
+                    Bald
+                  </span>
+                )}
               </Link>
             ))}
           </nav>

@@ -4,7 +4,7 @@
  * Sidebar slides out from left edge on hover, providing navigation without taking up space.
  * Uses same purple gradient design as DashboardShell for consistency.
  */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import {
@@ -22,6 +22,16 @@ import {
 export default function HoverSidebarShell({ children }) {
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  // Reset sidebar state on window resize to prevent distortion
+  useEffect(() => {
+    const handleResize = () => {
+      setSidebarOpen(false);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const sidebarItems = [
     {
@@ -84,12 +94,12 @@ export default function HoverSidebarShell({ children }) {
     <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50">
       {/* Hover Activation Strip - Desktop */}
       <div
-        className="hidden lg:block fixed left-0 top-0 h-full w-3 z-40 hover:w-64 group transition-all duration-300"
+        className="hidden lg:block fixed left-0 top-0 h-full w-8 z-40 hover:w-64 group transition-all duration-300"
         onMouseEnter={() => setSidebarOpen(true)}
         onMouseLeave={() => setSidebarOpen(false)}
       >
-        {/* Invisible hover trigger */}
-        <div className="absolute inset-0 bg-transparent" />
+        {/* Visible hover trigger with subtle indicator */}
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-transparent hover:from-purple-600/20" />
 
         {/* Sidebar that appears on hover */}
         <div

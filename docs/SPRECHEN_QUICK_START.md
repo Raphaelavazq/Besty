@@ -13,6 +13,7 @@
 Located in: `/Users/rafaela/Desktop/Besty/dist/assets/Britta Weber et al - Mit Erfolg zum Deutsch-Test für Zuwanderer - 2023 Videos/`
 
 **Video Files:**
+
 1. `DTZ Sprechen Teil 1 - Beispiel.mp4` - Example demonstration for Teil 1
 2. `DTZ Sprechen Teil 1 - Jetzt Sie.mp4` - Practice prompt for Teil 1
 3. `DTZ Sprechen Teil 2 - Beispiel.mp4` - Example demonstration for Teil 2
@@ -21,6 +22,7 @@ Located in: `/Users/rafaela/Desktop/Besty/dist/assets/Britta Weber et al - Mit E
 6. `DTZ Sprechen Teil 3 - Jetzt Sie.mp4` - Practice prompt for Teil 3
 
 **PDF Files:**
+
 - `676863_MEz DTZ_Aufgabenblätter Teil Sprechen_Videos.pdf` - Task sheets
 - `DTZ-Sprechen-Teil-1-sich-vorstellen.pdf` - Teil 1 introduction materials
 
@@ -48,14 +50,14 @@ hoeren-tests.json           →    sprechen-tests.json
 
 ### Key Differences
 
-| Aspect | Hören | Sprechen |
-|--------|-------|----------|
-| **Media Type** | Audio (MP3) | Video (MP4) + Audio Recording |
-| **User Input** | Multiple choice clicks | Audio recording + dialogue choices |
-| **Feedback** | Immediate (Übung) | Self-evaluation + model comparison |
-| **Duration** | 25 minutes | 16 minutes |
-| **Parts** | 4 Teile | 3 Teile |
-| **Special Feature** | Timed playback | Interactive dialogue trainer (Teil 3) |
+| Aspect              | Hören                  | Sprechen                              |
+| ------------------- | ---------------------- | ------------------------------------- |
+| **Media Type**      | Audio (MP3)            | Video (MP4) + Audio Recording         |
+| **User Input**      | Multiple choice clicks | Audio recording + dialogue choices    |
+| **Feedback**        | Immediate (Übung)      | Self-evaluation + model comparison    |
+| **Duration**        | 25 minutes             | 16 minutes                            |
+| **Parts**           | 4 Teile                | 3 Teile                               |
+| **Special Feature** | Timed playback         | Interactive dialogue trainer (Teil 3) |
 
 ---
 
@@ -141,15 +143,10 @@ Create `/public/data/sprechen/video-manifest.json`:
 Create `/src/features/sprechen/components/VideoPlayer.jsx`:
 
 ```jsx
-import { useState, useRef } from 'react';
-import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
+import { useState, useRef } from "react";
+import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 
-export default function VideoPlayer({ 
-  src, 
-  poster,
-  onEnded,
-  controls = true 
-}) {
+export default function VideoPlayer({ src, poster, onEnded, controls = true }) {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -176,7 +173,7 @@ export default function VideoPlayer({
       >
         Ihr Browser unterstützt keine Videos.
       </video>
-      
+
       {controls && (
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
           <div className="flex items-center gap-4">
@@ -190,7 +187,7 @@ export default function VideoPlayer({
                 <Play className="w-6 h-6 text-purple-600 ml-1" />
               )}
             </button>
-            
+
             <button
               onClick={() => {
                 videoRef.current.muted = !isMuted;
@@ -217,17 +214,17 @@ export default function VideoPlayer({
 Create `/src/features/sprechen/components/AudioRecorder.jsx`:
 
 ```jsx
-import { useState, useRef, useEffect } from 'react';
-import { Mic, Square, Play, RotateCcw } from 'lucide-react';
+import { useState, useRef, useEffect } from "react";
+import { Mic, Square, Play, RotateCcw } from "lucide-react";
 
-export default function AudioRecorder({ 
+export default function AudioRecorder({
   maxDuration = 30,
-  onRecordingComplete 
+  onRecordingComplete,
 }) {
   const [isRecording, setIsRecording] = useState(false);
   const [recordingTime, setRecordingTime] = useState(0);
   const [audioURL, setAudioURL] = useState(null);
-  
+
   const mediaRecorderRef = useRef(null);
   const chunksRef = useRef([]);
   const timerRef = useRef(null);
@@ -244,11 +241,11 @@ export default function AudioRecorder({
       };
 
       mediaRecorder.onstop = () => {
-        const blob = new Blob(chunksRef.current, { type: 'audio/webm' });
+        const blob = new Blob(chunksRef.current, { type: "audio/webm" });
         const url = URL.createObjectURL(blob);
         setAudioURL(url);
         onRecordingComplete?.(blob);
-        stream.getTracks().forEach(track => track.stop());
+        stream.getTracks().forEach((track) => track.stop());
       };
 
       mediaRecorder.start();
@@ -257,7 +254,7 @@ export default function AudioRecorder({
 
       // Timer
       timerRef.current = setInterval(() => {
-        setRecordingTime(prev => {
+        setRecordingTime((prev) => {
           if (prev >= maxDuration) {
             stopRecording();
             return prev;
@@ -266,8 +263,8 @@ export default function AudioRecorder({
         });
       }, 1000);
     } catch (err) {
-      console.error('Mikrofon-Zugriff verweigert:', err);
-      alert('Bitte erlauben Sie den Zugriff auf Ihr Mikrofon.');
+      console.error("Mikrofon-Zugriff verweigert:", err);
+      alert("Bitte erlauben Sie den Zugriff auf Ihr Mikrofon.");
     }
   };
 
@@ -282,7 +279,7 @@ export default function AudioRecorder({
   const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
-    return `${mins}:${secs.toString().padStart(2, '0')}`;
+    return `${mins}:${secs.toString().padStart(2, "0")}`;
   };
 
   return (
@@ -293,8 +290,8 @@ export default function AudioRecorder({
           onClick={isRecording ? stopRecording : startRecording}
           className={`w-20 h-20 rounded-full flex items-center justify-center shadow-2xl transition-all duration-200 ${
             isRecording
-              ? 'bg-red-600 hover:bg-red-700 animate-pulse'
-              : 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:scale-110'
+              ? "bg-red-600 hover:bg-red-700 animate-pulse"
+              : "bg-gradient-to-r from-purple-600 to-indigo-600 hover:scale-110"
           }`}
         >
           {isRecording ? (
@@ -336,34 +333,34 @@ export default function AudioRecorder({
 Create `/src/pages/SprechenHub.jsx`:
 
 ```jsx
-import { Link } from 'react-router-dom';
-import { BookOpen, Award, Shuffle } from 'lucide-react';
+import { Link } from "react-router-dom";
+import { BookOpen, Award, Shuffle } from "lucide-react";
 
 export default function SprechenHub() {
   const modes = [
     {
-      title: 'Übung',
-      subtitle: 'Mit Feedback üben',
-      description: 'Übe alle 3 Teile mit Beispielen',
+      title: "Übung",
+      subtitle: "Mit Feedback üben",
+      description: "Übe alle 3 Teile mit Beispielen",
       icon: BookOpen,
-      color: 'from-purple-500 to-indigo-600',
-      href: '/tests/sprechen/uebung/teil1',
+      color: "from-purple-500 to-indigo-600",
+      href: "/tests/sprechen/uebung/teil1",
     },
     {
-      title: 'Prüfung',
-      subtitle: 'Test simulieren',
-      description: '16 Minuten wie in echter Prüfung',
+      title: "Prüfung",
+      subtitle: "Test simulieren",
+      description: "16 Minuten wie in echter Prüfung",
       icon: Award,
-      color: 'from-indigo-500 to-purple-600',
-      href: '/tests/sprechen/pruefung/modelltest-1',
+      color: "from-indigo-500 to-purple-600",
+      href: "/tests/sprechen/pruefung/modelltest-1",
     },
     {
-      title: 'Training',
-      subtitle: 'Zufällige Übungen',
-      description: 'Zufällige Fragen aus allen Teilen',
+      title: "Training",
+      subtitle: "Zufällige Übungen",
+      description: "Zufällige Fragen aus allen Teilen",
       icon: Shuffle,
-      color: 'from-purple-600 to-pink-600',
-      href: '/tests/sprechen/training',
+      color: "from-purple-600 to-pink-600",
+      href: "/tests/sprechen/training",
     },
   ];
 
@@ -374,9 +371,7 @@ export default function SprechenHub() {
           <h1 className="text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4">
             Sprechen
           </h1>
-          <p className="text-xl text-gray-600">
-            Mündliche Prüfung vorbereiten
-          </p>
+          <p className="text-xl text-gray-600">Mündliche Prüfung vorbereiten</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
@@ -386,7 +381,9 @@ export default function SprechenHub() {
               to={mode.href}
               className="group bg-white/80 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-purple-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
             >
-              <div className={`w-16 h-16 bg-gradient-to-r ${mode.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+              <div
+                className={`w-16 h-16 bg-gradient-to-r ${mode.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+              >
                 <mode.icon size={32} className="text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
@@ -407,16 +404,28 @@ export default function SprechenHub() {
           </h2>
           <div className="space-y-4">
             <div className="border-l-4 border-purple-600 pl-4">
-              <h3 className="font-bold text-gray-900">Teil 1: Sich vorstellen</h3>
-              <p className="text-gray-600">Name, Herkunft, Wohnort, Arbeit, Familie</p>
+              <h3 className="font-bold text-gray-900">
+                Teil 1: Sich vorstellen
+              </h3>
+              <p className="text-gray-600">
+                Name, Herkunft, Wohnort, Arbeit, Familie
+              </p>
             </div>
             <div className="border-l-4 border-indigo-600 pl-4">
-              <h3 className="font-bold text-gray-900">Teil 2: Über Erfahrungen sprechen</h3>
-              <p className="text-gray-600">Bild beschreiben und eigene Erfahrungen erzählen</p>
+              <h3 className="font-bold text-gray-900">
+                Teil 2: Über Erfahrungen sprechen
+              </h3>
+              <p className="text-gray-600">
+                Bild beschreiben und eigene Erfahrungen erzählen
+              </p>
             </div>
             <div className="border-l-4 border-purple-600 pl-4">
-              <h3 className="font-bold text-gray-900">Teil 3: Gemeinsam etwas planen</h3>
-              <p className="text-gray-600">Vorschläge machen, reagieren, Meinungen äußern</p>
+              <h3 className="font-bold text-gray-900">
+                Teil 3: Gemeinsam etwas planen
+              </h3>
+              <p className="text-gray-600">
+                Vorschläge machen, reagieren, Meinungen äußern
+              </p>
             </div>
           </div>
         </div>
@@ -430,7 +439,7 @@ export default function SprechenHub() {
 
 ```jsx
 // In src/App.jsx, add:
-import SprechenHub from './pages/SprechenHub';
+import SprechenHub from "./pages/SprechenHub";
 
 // In Routes:
 <Route
@@ -440,7 +449,7 @@ import SprechenHub from './pages/SprechenHub';
       <SprechenHub />
     </HoverSidebarShell>
   }
-/>
+/>;
 ```
 
 ---
@@ -448,6 +457,7 @@ import SprechenHub from './pages/SprechenHub';
 ## 📋 Complete Implementation Checklist
 
 ### Week 1: Foundation ✅
+
 - [x] Identified available videos (6 MP4 files)
 - [ ] Move videos to `/public/video/sprechen/`
 - [ ] Create `video-manifest.json`
@@ -459,6 +469,7 @@ import SprechenHub from './pages/SprechenHub';
 - [ ] Test audio recording on mobile
 
 ### Week 2: Practice Mode
+
 - [ ] Create `SprechenUebung.jsx`
 - [ ] Implement Teil 1 practice (personal questions)
 - [ ] Implement Teil 2 practice (image description)
@@ -467,14 +478,16 @@ import SprechenHub from './pages/SprechenHub';
 - [ ] Create `sprechen-uebung.json` data file
 
 ### Week 3: Interactive Dialogues
-- [ ] Build `DialogueTrainer.jsx` component
-- [ ] Implement Redemittel card system
-- [ ] Create branching logic
-- [ ] Add dialogue history view
-- [ ] Create 20+ dialogue scenarios
-- [ ] Convert scenarios to JSON
+
+- [x] Build `CleanDialogueTrainer.jsx` component (data-driven)
+- [x] Implement Redemittel card system
+- [x] Create branching logic
+- [x] Add dialogue history view
+- [x] Create 20+ dialogue scenarios
+- [x] Convert scenarios to JSON
 
 ### Week 4: Test Mode & Polish
+
 - [ ] Create `SprechenPruefung.jsx`
 - [ ] Implement 16-minute timer
 - [ ] Build self-evaluation rubric
@@ -500,6 +513,7 @@ All detailed documentation is available in `/docs/`:
 ## 🎯 Success Metrics
 
 ### MVP Success (Phase 1)
+
 - ✅ Video playback works smoothly
 - ✅ Audio recording works on mobile + desktop
 - ✅ At least Teil 1 practice fully functional
@@ -507,6 +521,7 @@ All detailed documentation is available in `/docs/`:
 - ✅ Users can complete one full practice session
 
 ### Full Launch Success (Phase 4)
+
 - ✅ All 3 Teile working in both modes
 - ✅ 20+ interactive dialogue scenarios
 - ✅ Self-evaluation system implemented
@@ -518,6 +533,7 @@ All detailed documentation is available in `/docs/`:
 ## 🚀 Get Started Now!
 
 ### Recommended Order:
+
 1. **Move videos** → public folder
 2. **Test one video** → Ensure playback works
 3. **Build VideoPlayer** → Get video component working
@@ -526,6 +542,7 @@ All detailed documentation is available in `/docs/`:
 6. **Add to dashboard** → Update Sprechen card
 
 ### Time Estimate:
+
 - **Day 1-2:** Video setup + VideoPlayer component
 - **Day 3-4:** AudioRecorder component + testing
 - **Day 5:** Hub page + routing

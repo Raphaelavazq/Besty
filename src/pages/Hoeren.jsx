@@ -7,202 +7,228 @@ import {
   Shuffle,
   Target,
   Zap,
+  MessageSquare,
+  FileText,
+  Users,
+  Video,
+  Brain,
+  Trophy,
 } from "lucide-react";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function Hoeren() {
   const practiceOptions = [
     {
-      id: "single-question",
-      title: "Einzelfrage Training",
-      description: "Übe mit einer einzelnen Frage aus allen Bereichen",
-      icon: Target,
-      color: "from-emerald-500 to-teal-600",
-      duration: "1-2 min",
-      questions: "1",
-      path: "/synchronized-test/dtz-single-question",
-      features: [
-        "Schnell & fokussiert",
-        "Sofortiges Feedback",
-        "Alle Teile gemischt",
-      ],
+      id: "training",
+      title: "Training",
+      description: "Zufällige Fragen üben",
+      icon: Brain,
+      path: "/tests/hoeren/training",
+      details: "Alle Teile • Flexibel",
     },
     {
-      id: "random-practice",
-      title: "Zufällige Übung",
-      description: "5-8 zufällige Fragen zum lockeren Training",
-      icon: Shuffle,
-      color: "from-blue-500 to-indigo-600",
-      duration: "8-12 min",
-      questions: "5-8",
-      path: "/synchronized-test/dtz-local-drills",
-      features: [
-        "Zufällige Auswahl",
-        "Entspanntes Tempo",
-        "Gemischte Schwierigkeit",
-      ],
+      id: "test",
+      title: "Prüfung",
+      description: "Kompletter Modelltest",
+      icon: Trophy,
+      path: "/tests/hoeren/pruefung/modelltest-1",
+      details: "25 Min • 20 Punkte",
+    },
+  ];
+
+  const teileInfo = [
+    {
+      teil: "1",
+      title: "Alltagsgespräche",
+      duration: "8 Min",
+      description: "4 kurze Dialoge",
+      icon: MessageSquare,
     },
     {
-      id: "complete-test",
-      title: "Kompletter Test",
-      description: "Vollständige 20-minütige DTZ Hörprüfung",
-      icon: Zap,
-      color: "from-purple-500 to-pink-600",
-      duration: "25 min",
-      questions: "18",
-      path: "/synchronized-test/dtz-local-fulltest",
-      features: [
-        "Echte Prüfungsbedingungen",
-        "Timer aktiviert",
-        "Vollständige Bewertung",
-      ],
-      recommended: true,
+      teil: "2",
+      title: "Radio & Ansagen",
+      duration: "10 Min",
+      description: "3 Durchsagen",
+      icon: Headphones,
+    },
+    {
+      teil: "3",
+      title: "Telefongespräche",
+      duration: "7 Min",
+      description: "5 Notizen",
+      icon: FileText,
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100">
-      <div className="max-w-4xl mx-auto p-6">
-        {/* Header */}
-        <div className="flex items-center gap-4 mb-8">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50">
+      {/* Hero Section */}
+      <div className="relative overflow-hidden bg-gradient-to-br from-purple-600 via-indigo-600 to-purple-700">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent_50%)]"></div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+          {/* Back Button */}
           <Link
             to="/tests"
-            className="w-12 h-12 bg-white/80 backdrop-blur-md rounded-xl flex items-center justify-center shadow-lg border border-white/50 hover:bg-white/90 transition-all duration-200"
+            className="inline-flex items-center gap-2 mb-8 px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl transition-all duration-200 text-white font-medium group"
           >
-            <ArrowLeft size={20} className="text-slate-600" />
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-200" />
+            Zurück zu Tests
           </Link>
-          <div>
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-              Hören Training
-            </h1>
-            <p className="text-slate-600 text-lg">
-              Wähle deinen bevorzugten Übungsmodus
+
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+            {/* Lottie Animation */}
+            <div className="w-40 h-40 lg:w-48 lg:h-48 flex-shrink-0">
+              <DotLottieReact
+                src="https://lottie.host/4d3e31f5-81a0-4a2f-ae91-4005e44d6183/yN5pIHb42r.lottie"
+                loop
+                autoplay
+                className="w-full h-full filter brightness-125"
+              />
+            </div>
+
+            {/* Text Content */}
+            <div className="text-center lg:text-left flex-1">
+              <h1 className="text-5xl lg:text-6xl font-black text-white mb-4 tracking-tight">
+                DTZ Hören
+              </h1>
+              <p className="text-xl lg:text-2xl text-white/90 font-light mb-4">
+                Hörverstehen trainieren
+              </p>
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-white/80 text-sm">
+                <div className="flex items-center gap-2">
+                  <Clock className="w-4 h-4" />
+                  <span>25 Minuten</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Target className="w-4 h-4" />
+                  <span>20 Punkte</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Headphones className="w-4 h-4" />
+                  <span>3 Teile</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+
+        {/* Prüfungsstruktur - Navigation Cards */}
+        <div className="mb-16">
+          <div className="text-center mb-8">
+            <h2 className="text-4xl lg:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-3 tracking-tight">
+              Prüfungsstruktur
+            </h2>
+            <p className="text-slate-600 text-lg lg:text-xl leading-relaxed font-light">
+              3 Teile • 25 Minuten • 20 Punkte
             </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+            {teileInfo.map((info) => {
+              const Icon = info.icon;
+
+              return (
+                <div
+                  key={info.teil}
+                  className="group bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-purple-100 hover:shadow-3xl transition-all duration-200 hover:-translate-y-2 hover:scale-105 relative overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-indigo-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+
+                  <div className="relative">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-200">
+                        <span className="text-2xl font-black text-white">
+                          {info.teil}
+                        </span>
+                      </div>
+                      <div className="flex-1">
+                        <div className="text-xs font-bold text-purple-600 uppercase tracking-wider mb-1">
+                          Teil {info.teil}
+                        </div>
+                        <div className="flex items-center gap-2 text-gray-500 text-sm">
+                          <Clock className="w-3 h-3" />
+                          <span>{info.duration}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl flex items-center justify-center mb-4 group-hover:from-purple-100 group-hover:to-indigo-100 transition-all duration-200">
+                      <Icon className="w-6 h-6 text-purple-600" />
+                    </div>
+
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                      {info.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {info.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
-        {/* Practice Options */}
-        <div className="space-y-6">
+        {/* Section Title - Üben */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl lg:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4 tracking-tight">
+            Wie möchten Sie üben?
+          </h2>
+          <p className="text-slate-600 text-lg lg:text-xl leading-relaxed font-light">
+            Wählen Sie Ihren Lernweg
+          </p>
+        </div>
+
+        {/* Practice Options Grid */}
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 mb-16">
           {practiceOptions.map((option) => {
             const Icon = option.icon;
             return (
-              <div key={option.id} className="relative">
-                {option.recommended && (
-                  <div className="absolute -top-3 left-6 z-10">
-                    <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
-                      ⭐ Empfohlen
+              <Link
+                key={option.id}
+                to={option.path}
+                className="group relative bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-purple-100 hover:shadow-3xl transition-all duration-200 hover:-translate-y-2 hover:scale-105 overflow-hidden"
+              >
+                {/* Hover Background Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-indigo-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+
+                <div className="relative">
+                  {/* Icon */}
+                  <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-200">
+                    <Icon className="w-8 h-8 text-white" />
+                  </div>
+
+                  {/* Title & Description */}
+                  <h3 className="text-2xl lg:text-3xl font-black text-gray-900 mb-3">
+                    {option.title}
+                  </h3>
+                  <p className="text-gray-600 text-base lg:text-lg mb-6 leading-relaxed">
+                    {option.description}
+                  </p>
+
+                  {/* Details Badge */}
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-xl border border-purple-100">
+                    <span className="text-purple-600 text-sm font-semibold">
+                      {option.details}
+                    </span>
+                  </div>
+
+                  {/* Arrow Indicator */}
+                  <div className="absolute bottom-8 right-8">
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl flex items-center justify-center group-hover:from-purple-600 group-hover:to-indigo-600 transition-all duration-200">
+                      <Play className="w-5 h-5 text-purple-600 group-hover:text-white group-hover:translate-x-1 transition-all duration-200" />
                     </div>
                   </div>
-                )}
-
-                <Link to={option.path} className="group block">
-                  <div
-                    className={`bg-gradient-to-br ${option.color} rounded-3xl p-8 shadow-xl border border-white/20 text-white hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden relative`}
-                  >
-                    {/* Background decoration */}
-                    <div className="absolute -right-8 -top-8 w-32 h-32 bg-white/10 rounded-full"></div>
-                    <div className="absolute -right-4 -top-4 w-20 h-20 bg-white/5 rounded-full"></div>
-
-                    <div className="relative z-10">
-                      <div className="flex items-start justify-between mb-6">
-                        <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
-                          <Icon size={32} className="text-white" />
-                        </div>
-                        <div className="text-right">
-                          <div className="text-white/90 text-sm font-medium">
-                            {option.duration}
-                          </div>
-                          <div className="text-white/70 text-xs">Dauer</div>
-                        </div>
-                      </div>
-
-                      <h3 className="text-2xl font-bold text-white mb-3">
-                        {option.title}
-                      </h3>
-
-                      <p className="text-white/90 text-lg mb-6 leading-relaxed">
-                        {option.description}
-                      </p>
-
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 text-center">
-                          <div className="flex items-center justify-center gap-2 mb-1">
-                            <Play size={16} className="text-white" />
-                            <span className="text-white font-medium">
-                              {option.questions}
-                            </span>
-                          </div>
-                          <div className="text-white/70 text-xs">Fragen</div>
-                        </div>
-
-                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 text-center">
-                          <div className="flex items-center justify-center gap-2 mb-1">
-                            <Clock size={16} className="text-white" />
-                            <span className="text-white font-medium">
-                              {option.duration}
-                            </span>
-                          </div>
-                          <div className="text-white/70 text-xs">Zeit</div>
-                        </div>
-
-                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 text-center">
-                          <div className="flex items-center justify-center gap-2 mb-1">
-                            <Headphones size={16} className="text-white" />
-                            <span className="text-white font-medium">
-                              DTZ B1
-                            </span>
-                          </div>
-                          <div className="text-white/70 text-xs">Level</div>
-                        </div>
-                      </div>
-
-                      <div className="space-y-2">
-                        <div className="text-white/80 text-sm font-medium mb-2">
-                          Features:
-                        </div>
-                        {option.features.map((feature, idx) => (
-                          <div
-                            key={idx}
-                            className="flex items-center gap-3 text-white/80"
-                          >
-                            <div className="w-1.5 h-1.5 bg-white/60 rounded-full"></div>
-                            <span className="text-sm">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      <div className="mt-6 flex items-center justify-between">
-                        <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
-                          <span className="text-white text-sm font-medium">
-                            Jetzt starten
-                          </span>
-                        </div>
-                        <div className="text-white/60 group-hover:text-white transition-colors">
-                          <Play size={20} />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              </div>
+                </div>
+              </Link>
             );
           })}
-        </div>
-
-        {/* Info Section */}
-        <div className="mt-12 bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/50">
-          <div className="text-center">
-            <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <Headphones size={24} className="text-white" />
-            </div>
-            <h3 className="text-lg font-semibold text-slate-800 mb-2">
-              DTZ B1 Hörverständnis
-            </h3>
-            <p className="text-slate-600 max-w-2xl mx-auto">
-              Das Hörverständnis besteht aus 4 Teilen: Ansagen,
-              Radio-Nachrichten, Alltagsgespräche und längere Beiträge. Jeder
-              Modus hilft dir dabei, dich optimal auf die Prüfung vorzubereiten.
-            </p>
-          </div>
         </div>
       </div>
     </div>

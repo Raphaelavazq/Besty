@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "version": "2.0",
+    "level": "B1",
+    "tags": ["DTZ", "Teil 3", "Planen", "Verbesserte Dialoge"],
+    "description": "Erweiterte Dialoge mit natürlichen Strukturen, Konnektoren und logischem Ablauf"
+  },
+  "scenarios": [
+    {
+      "id": "1",
+      "number": 1,
+      "title": "Hausfest mit Partner/in planen",
+      "theme": "Feiern & Veranstaltungen",
+      "aufgabe": "Sie möchten mit Ihrer Partnerin/Ihrem Partner bald ein Hausfest machen. Planen Sie, was Sie machen!",
+      "leitpunkte": ["Wo?", "Wann?", "Essen und Trinken?", "Einladungen?", "Andere Ideen?"],
+      "einleitung": {
+        "variant1": "Hallo! Wie geht's? Wir wollten ja bald ein Hausfest machen. Was denkst du, wo könnten wir feiern?",
+        "variant2": "Hey! Schön, dass wir endlich Zeit haben, unser Hausfest zu planen. Ich habe schon ein paar Ideen. Sollen wir gleich anfangen?"
+      },
+      "dialogue": {
+        "step1": {
+          "topic": "Ort bestimmen",
+          "a_question": "Also, wo sollen wir das Fest machen? Ich denke, draußen im Garten wäre super, weil wir da genug Platz haben. Was hältst du davon?",
+          "b_responses": {
+            "positive": "Ja, das ist eine gute Idee! Im Garten ist es schöner, denn die Leute können sich besser bewegen. Und falls es regnet?",
+            "negative": "Hmm, ich weiß nicht. Wegen des Wetters könnte das problematisch werden. Vielleicht sollten wir lieber den Gemeinschaftsraum nehmen?",
+            "suggestion": "Wie wäre es, wenn wir im Hof feiern und bei Regen in den Gemeinschaftsraum wechseln? Dann sind wir flexibel.",
+            "question": "Ist der Gemeinschaftsraum im Keller noch frei? Ich meine, wir sollten das vorher prüfen, da andere Nachbarn ihn auch nutzen."
+          },
+          "a_followup": {
+            "to_positive": "Guter Punkt! Wir könnten ein Zelt mieten, deshalb würden wir auch bei Regen draußen bleiben können.",
+            "to_negative": "Du hast recht. Dann reserviere ich den Gemeinschaftsraum, und wir haben eine sichere Lösung.",
+            "to_suggestion": "Perfekt! Das ist eine tolle Lösung, denn so müssen wir uns keine Sorgen machen.",
+            "to_question": "Ich frage morgen nach. Aber der Garten wäre wahrscheinlich schöner, weil dort mehr Atmosphäre ist."
+          }
+        },
+        "step2": {
+          "topic": "Termin festlegen",
+          "b_question": "Gut! Und wann passt es dir am besten? Ich würde Samstag vorschlagen, weil die meisten Leute da Zeit haben.",
+          "a_responses": {
+            "positive": "Samstag ab 18 Uhr ist perfekt! Da können alle kommen, und wir haben den ganzen Abend Zeit.",
+            "negative": "Samstag geht bei mir leider nicht, weil ich arbeiten muss. Wäre Sonntag auch möglich?",
+            "suggestion": "Wie wäre es mit Samstag um 17 Uhr? Dann haben Familien mit Kindern auch mehr Zeit, bevor es dunkel wird.",
+            "question": "Sollen wir früher anfangen, zum Beispiel um 16 Uhr? Ich frage, da einige Nachbarn kleine Kinder haben."
+          },
+          "b_followup": {
+            "to_positive": "Super! Dann blocke ich den Termin im Kalender. Wegen der Einladungen sollten wir bald loslegen.",
+            "to_negative": "Kein Problem! Sonntag um 17 Uhr geht auch gut. Dann haben wir am Sonntag eine entspannte Atmosphäre.",
+            "to_suggestion": "Gute Idee! 17 Uhr ist ein guter Kompromiss, denn dann können wirklich alle dabei sein.",
+            "to_question": "Ja, 16 Uhr wäre ideal für Familien. Deshalb schlage ich vor, wir machen es so."
+          }
+        },
+        "step3": {
+          "topic": "Essen, Getränke und Aufgaben",
+          "a_question": "Jetzt zum Essen und den Getränken - was machen wir da? Ich denke, ein Mitbring-Buffet wäre am besten, weil dann jeder etwas beitragen kann.",
+          "b_responses": {
+            "positive": "Perfekt! Ein Mitbring-Buffet ist eine tolle Idee, denn so haben wir eine große Auswahl. Ich könnte die Einladungen schreiben.",
+            "negative": "Grillen geht leider nicht, weil das auf unserem Balkon verboten ist. Daher sollten wir kalte Platten und Salate machen.",
+            "suggestion": "Wie wäre es, wenn du die Gästeliste machst und ich die Musik organisiere? Dann ist alles gut verteilt.",
+            "question": "Wer bringt vegetarische Optionen mit? Wir sollten eine Liste machen, damit wir nichts vergessen."
+          },
+          "a_followup": {
+            "to_positive": "Klasse! Ich organisiere dann Musik und Getränke. Wegen der Getränke - sollen wir alkoholfreie und normale anbieten?",
+            "to_negative": "Verstanden. Kalte Platten sind auch lecker! Deshalb kaufe ich morgen Käse, Wurst und frisches Brot.",
+            "to_suggestion": "Einverstanden! Du machst die Gästeliste, ich die Musik. So haben wir beide etwas zu tun.",
+            "to_question": "Gute Idee! Ich lege eine Liste an und frage die Nachbarn. Da viele Leute kommen, brauchen wir verschiedene Optionen."
+          }
+        }
+      },
+      "closing": "Perfekt! Ich denke, wir haben jetzt einen guten Plan. Ich schreibe die Einladungen, und du kümmerst dich um Musik und Getränke. Das wird bestimmt ein tolles Fest!"
+    },
+    {
+      "id": "8",
+      "number": 8,
+      "title": "Geschenk für Nachbars Hochzeit",
+      "theme": "Feiern & Geschenke",
+      "aufgabe": "Ein Nachbar heiratet. Sie sind eingeladen und suchen ein passendes Geschenk.",
+      "leitpunkte": ["Welches Geschenk?", "Wer kauft es?", "Wie teuer?", "Geld bei Nachbarn einsammeln?"],
+      "einleitung": {
+        "variant1": "Hallo! Unser Nachbar Peter heiratet ja bald. Wie du weißt, sind wir eingeladen und brauchen ein passendes Geschenk. Was denkst du - was können wir schenken?",
+        "variant2": "Hey! Peter heiratet nächsten Monat, und ich habe gehört, dass mehrere Nachbarn auch eingeladen sind. Sollen wir zusammen ein Geschenk kaufen?"
+      },
+      "dialogue": {
+        "step1": {
+          "topic": "Geschenkidee finden",
+          "a_question": "Hast du schon eine Idee, was wir Peter schenken könnten? Ich denke, etwas für die Wohnung wäre gut, weil die beiden gerade zusammenziehen.",
+          "b_responses": {
+            "positive": "Ja, das ist eine gute Idee! Vielleicht eine schöne Vase oder ein Geschirr-Set? Das kann man immer gebrauchen.",
+            "negative": "Hmm, Geschirr haben die beiden bestimmt schon. Wegen ihrer neuen Wohnung bräuchten sie vielleicht eher Geld für Möbel?",
+            "suggestion": "Wie wäre es mit einem Gutschein für ein Möbelgeschäft? Dann können sie sich selbst etwas aussuchen, was ihnen gefällt.",
+            "question": "Weißt du, ob sie eine Wunschliste haben? Ich frage, da viele Paare heutzutage so eine Liste erstellen."
+          },
+          "a_followup": {
+            "to_positive": "Eine Vase ist eine gute Idee! Allerdings könnte ein Gutschein praktischer sein, denn dann wählen sie selbst aus.",
+            "to_negative": "Du hast recht. Geld ist praktisch, aber vielleicht ein bisschen unpersönlich. Deshalb finde ich einen Gutschein besser.",
+            "to_suggestion": "Perfekt! Ein Möbelgutschein ist ideal, weil sie damit wirklich etwas Nützliches kaufen können.",
+            "to_question": "Gute Frage! Ich könnte Peter anrufen und diskret fragen. Falls sie eine Liste haben, wäre das natürlich am einfachsten."
+          }
+        },
+        "step2": {
+          "topic": "Budget und Organisation",
+          "b_question": "Okay, gut! Und wie viel möchtest du ausgeben? Sollen wir auch bei den anderen Nachbarn Geld einsammeln?",
+          "a_responses": {
+            "positive": "Ja, das ist eine super Idee! Wenn jeder Nachbar 20 Euro gibt, kommen wir auf einen guten Betrag, und niemand muss zu viel zahlen.",
+            "negative": "Ich weiß nicht, ob alle Nachbarn mitmachen wollen. Vielleicht sollten wir lieber nur zu zweit ein Geschenk kaufen?",
+            "suggestion": "Wie wäre es, wenn wir die direkten Nachbarn fragen? Also die aus unserem Stockwerk - das wären etwa vier Familien.",
+            "question": "Wer könnte das Geld einsammeln? Wegen der Organisation wäre es gut, wenn sich jemand darum kümmert."
+          },
+          "b_followup": {
+            "to_positive": "Einverstanden! Ich gehe zu den Nachbarn und frage. Da Peter beliebt ist, werden bestimmt viele mitmachen wollen.",
+            "to_negative": "Okay, dann kaufen wir zu zweit. Ich würde 40-50 Euro vorschlagen, weil das ein angemessener Betrag für eine Hochzeit ist.",
+            "to_suggestion": "Gute Idee! Die vier Familien aus unserem Stock kenne ich gut. Deshalb übernehme ich das Fragen.",
+            "to_question": "Ich kann das machen! Ich habe nächste Woche Urlaub, daher habe ich genug Zeit, zu allen zu gehen."
+          }
+        },
+        "step3": {
+          "topic": "Kauf und Karte",
+          "a_question": "Super! Und wer kauft dann das Geschenk? Wir brauchen auch eine Glückwunschkarte, oder?",
+          "b_responses": {
+            "positive": "Ich kann das Geschenk kaufen, denn ich komme täglich am Möbelgeschäft vorbei. Die Karte können wir zusammen schreiben.",
+            "negative": "Nächste Woche habe ich leider keine Zeit zum Einkaufen. Könntest du das übernehmen? Wegen meiner Arbeit bin ich total eingespannt.",
+            "suggestion": "Wie wäre es, wenn wir zusammen am Samstag einkaufen gehen? Dann können wir auch gleich eine schöne Karte aussuchen.",
+            "question": "Sollen wir eine lustige oder eine elegante Karte nehmen? Ich frage, weil ich Peters Geschmack nicht so gut kenne."
+          },
+          "a_followup": {
+            "to_positive": "Perfekt! Du kaufst den Gutschein, und wir treffen uns dann bei mir zum Karte-Schreiben. Kaffee und Kuchen gibt's dazu!",
+            "to_negative": "Kein Problem! Ich kaufe das Geschenk und besorge auch die Karte. Du kannst dann später unterschreiben.",
+            "to_suggestion": "Sehr gern! Samstag um 10 Uhr am Möbelgeschäft? Danach können wir in einem Café die Karte schreiben.",
+            "to_question": "Ich denke, eine elegante Karte ist besser, weil eine Hochzeit ein formeller Anlass ist. Deshalb sollten wir etwas Klassisches nehmen."
+          }
+        }
+      },
+      "closing": "Wunderbar! Dann haben wir alles geklärt. Ich bin sicher, Peter wird sich über unser Geschenk freuen. Lass uns noch einmal vor der Hochzeit telefonieren!"
+    },
+    {
+      "id": "15",
+      "number": 15,
+      "title": "B1-Prüfungsvorbereitung organisieren",
+      "theme": "Kurse & Lernen",
+      "aufgabe": "Sie möchten sich gemeinsam auf die B1-Prüfung vorbereiten!",
+      "leitpunkte": ["Wann?", "Wo?", "Wie oft?", "Material (Bücher, ...)?", "Nach dem Lernen?"],
+      "einleitung": {
+        "variant1": "Hallo! Wie du weißt, haben wir in sechs Wochen die B1-Prüfung. Ich denke, wir sollten zusammen lernen, weil man so besser motiviert bleibt. Was meinst du?",
+        "variant2": "Hey! Die Prüfung kommt immer näher, und ich bin ehrlich gesagt etwas nervös. Sollen wir eine Lerngruppe machen?"
+      },
+      "dialogue": {
+        "step1": {
+          "topic": "Zeitpunkt festlegen",
+          "a_question": "Also, wann hättest du Zeit zum Lernen? Ich würde zweimal pro Woche vorschlagen, weil wir dann regelmäßig üben können.",
+          "b_responses": {
+            "positive": "Zweimal pro Woche ist perfekt! Wie wäre es mit Dienstag und Donnerstag abends? Da habe ich immer frei.",
+            "negative": "Zweimal pro Woche ist mir zu viel, weil ich noch arbeiten muss. Einmal wäre besser - vielleicht am Wochenende?",
+            "suggestion": "Wie wäre es, wenn wir mittwochs und samstags lernen? Mittwoch ist ein guter Tag in der Woche, und Samstag haben wir mehr Zeit.",
+            "question": "Wie lange sollten wir jedes Mal lernen? Ich frage, da ich nicht weiß, ob zwei oder drei Stunden besser sind."
+          },
+          "a_followup": {
+            "to_positive": "Super! Dienstag und Donnerstag passen mir auch gut. Um wie viel Uhr könnten wir anfangen? Wegen der Arbeit erst ab 18 Uhr?",
+            "to_negative": "Verstehe. Dann machen wir es einmal pro Woche, aber dafür länger - vielleicht drei Stunden? Samstag wäre ideal.",
+            "to_suggestion": "Gute Idee! Mittwoch und Samstag ist ein guter Rhythmus, denn dann haben wir Pausen dazwischen.",
+            "to_question": "Ich denke, zwei Stunden sind optimal, weil man danach nicht mehr so konzentriert ist. Deshalb schlage ich vor: 18-20 Uhr."
+          }
+        },
+        "step2": {
+          "topic": "Ort und Material",
+          "b_question": "Okay, und wo sollen wir lernen? Bei dir, bei mir oder vielleicht in der Bibliothek? Und welches Material brauchen wir?",
+          "a_responses": {
+            "positive": "Bei mir ist es ruhig, und ich habe einen großen Tisch. Außerdem habe ich schon ein B1-Übungsbuch gekauft, das wir nutzen können.",
+            "negative": "Bei mir geht es leider nicht, weil ich eine kleine Wohnung habe und meine Mitbewohnerin auch lernen muss. Vielleicht bei dir?",
+            "suggestion": "Wie wäre es in der Stadtbibliothek? Da ist es sehr ruhig, und wir haben Zugang zu vielen Büchern und Materialien.",
+            "question": "Brauchen wir nur Bücher, oder sollten wir auch Online-Übungen machen? Wegen der Prüfungsvorbereitung wäre beides sinnvoll."
+          },
+          "b_followup": {
+            "to_positive": "Perfekt! Bei dir also. Ich habe auch Prüfungshefte mit Modellprüfungen. Zusammen haben wir dann genug Material.",
+            "to_negative": "Kein Problem! Wir können zu mir kommen. Ich räume das Wohnzimmer auf, dann haben wir genug Platz.",
+            "to_suggestion": "Bibliothek ist eine gute Idee! Allerdings müssen wir dort leise sein. Deshalb können wir nur schriftlich üben, nicht sprechen.",
+            "to_question": "Beides wäre ideal! Online-Übungen sind gut für Grammatik, und Bücher brauchen wir für Lesen und Schreiben. Ich kümmere mich um Links."
+          }
+        },
+        "step3": {
+          "topic": "Lernplan und Belohnung",
+          "a_question": "Gut! Sollten wir einen festen Plan machen, was wir jede Woche üben? Und was machen wir nach dem Lernen zur Entspannung?",
+          "b_responses": {
+            "positive": "Ja, ein Plan ist wichtig, denn so vergessen wir keine Prüfungsteile. Erste Woche Lesen, zweite Woche Hören und so weiter?",
+            "negative": "Ich finde einen festen Plan zu streng. Wir könnten spontan entscheiden, je nachdem, was wir gerade brauchen.",
+            "suggestion": "Wie wäre es, wenn wir jede Sitzung alle Teile machen, aber jedes Mal einen Schwerpunkt setzen? So üben wir alles regelmäßig.",
+            "question": "Nach dem Lernen könnten wir spazieren gehen oder einen Kaffee trinken, oder? Das wäre eine gute Belohnung."
+          },
+          "a_followup": {
+            "to_positive": "Einverstanden! Ich erstelle einen Plan und schicke ihn dir. Wegen der Prüfungsteile sollten wir auch Sprechen nicht vergessen.",
+            "to_negative": "Okay, machen wir es flexibel. Aber wir sollten aufschreiben, was wir schon geübt haben, damit wir nichts auslassen.",
+            "to_suggestion": "Das ist der beste Vorschlag! Alle Teile jede Woche, aber mit Schwerpunkt. Dann sind wir breit aufgestellt.",
+            "to_question": "Ja, unbedingt! Nach dem Lernen entspannen wir uns. Ich kenne ein nettes Café in der Nähe, da können wir auch auf Deutsch reden."
+          }
+        }
+      },
+      "closing": "Super! Ich freue mich schon aufs gemeinsame Lernen. Mit diesem Plan schaffen wir die Prüfung bestimmt! Bis Dienstag dann!"
+    }
+  ],
+  "useful_phrases": {
+    "einleitung": [
+      "Wie du weißt, ...",
+      "Ich habe gehört/gelesen, dass ...",
+      "Wir wollten ja ...",
+      "Lass uns über ... sprechen"
+    ],
+    "vorschlaege_machen": [
+      "Ich würde vorschlagen, dass ..., weil ...",
+      "Wie wäre es, wenn ..., denn ...",
+      "Vielleicht könnten wir ..., da ...",
+      "Ich denke, wir sollten ..., deshalb ..."
+    ],
+    "zustimmen": [
+      "Ja, das ist eine gute Idee, denn ...",
+      "Perfekt! Das machen wir so, weil ...",
+      "Einverstanden! Wegen ... passt das gut.",
+      "Super! Ich bin dafür, da ..."
+    ],
+    "ablehnen_hoeflich": [
+      "Das ist eine gute Idee, aber wegen ... geht das leider nicht.",
+      "Hmm, ich weiß nicht. Da ... könnte das problematisch werden.",
+      "Eigentlich ist das schwierig, weil ...",
+      "Leider geht das nicht, denn ..."
+    ],
+    "nachfragen": [
+      "Was denkst du?",
+      "Was hältst du davon?",
+      "Was meinst du dazu?",
+      "Wie findest du das?",
+      "Wäre das okay für dich?"
+    ],
+    "gruende_geben": [
+      "... , weil ... (+ Verb am Ende)",
+      "... , denn ... (+ normale Wortstellung)",
+      "... , da ... (+ Verb am Ende)",
+      "Wegen + Genitiv/Dativ ...",
+      "Deshalb/Darum/Deswegen/Daher ... (+ Verb Position 2)"
+    ]
+  }
+}

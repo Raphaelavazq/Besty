@@ -78,7 +78,7 @@ Create an interactive Speaking practice system that:
 
 - [ ] `VideoPlayer.jsx` - HTML5 video with controls
 - [ ] `AudioRecorder.jsx` - Recording interface with MediaRecorder API
-- [ ] `DialogueTrainer.jsx` - Branching dialogue system
+- [x] `CleanDialogueTrainer.jsx` - Branching dialogue system (implemented)
 - [ ] `SprechenPlayer.jsx` - Main player combining video + recording
 - [ ] `useSprechenEngine.js` - State management hook
 
@@ -117,7 +117,7 @@ SprechenUebung (Practice)
 │   ├── Question Display
 │   ├── AudioRecorder (user)
 │   └── Model Answer Playback
-└── For Teil 3: DialogueTrainer
+└── For Teil 3: CleanDialogueTrainer
     ├── Scenario Display
     ├── Examiner Prompt
     ├── Redemittel Cards (choices)
@@ -551,13 +551,13 @@ User builds a complete dialogue by choosing appropriate Redemittel at each step.
 - [ ] Checklist for completeness
 - [ ] Tips and feedback
 
-**Day 5-7: Teil 3 DialogueTrainer**
+**Day 5-7: Teil 3 — CleanDialogueTrainer**
 
-- [ ] Build `DialogueTrainer.jsx`
-- [ ] Implement branching logic
-- [ ] Create Redemittel card system
-- [ ] Build dialogue history view
-- [ ] Add completion validation
+- [x] Build `CleanDialogueTrainer.jsx` (data-driven)
+- [x] Implement branching logic
+- [x] Create Redemittel card system
+- [x] Build dialogue history view
+- [x] Add completion validation
 
 **Deliverables:**
 

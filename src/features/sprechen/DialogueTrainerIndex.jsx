@@ -1,4 +1,4 @@
-// Removed static scenario index. Data-driven trainer will be implemented in DialogTrainer.tsx
-export default function DialogueTrainerIndex() {
-  return null;
-}
+// Compatibility wrapper: re-export the canonical DialogueTrainer for legacy imports.
+import DialogueTrainer from "./DialogueTrainer";
+
+export default DialogueTrainer;
