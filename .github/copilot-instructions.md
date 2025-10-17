@@ -3,7 +3,12 @@
 Goal: help an AI coding agent be productive quickly in this repo. Focus on concrete, discoverable patterns and commands.
 
 - Project type: React 18 SPA built with Vite, Tailwind CSS, Zustand for state, deployed as a static site (Vercel recommended). See `README.md` and `package.json`.
-- Start/dev commands: `npm install` then `npm run dev` (Vite). Build with `npm run build`, preview with `npm run preview`.
+- **Start/dev commands**: 
+  - **ALWAYS use**: `./start-dev.sh` (automated startup with health checks)
+  - **Manual alternative**: `npm install` then `npm run dev` (but prefer the script)
+  - **CRITICAL**: Vite must run with `CI=true` environment variable to disable interactive mode (prevents process freezing)
+  - Build: `npm run build`, preview: `npm run preview`
+  - Stop servers: Use PIDs from `start-dev.sh` output or `killall -9 node npm`
 
 - Key directories to read first:
   - `src/` — main app code. Entry: `src/main.jsx`, routes: `src/App.jsx`.
@@ -52,6 +57,20 @@ Goal: help an AI coding agent be productive quickly in this repo. Focus on concr
 - When adding or modifying content/data:
   - Run `npm run prepare-content` to regenerate JSON and ensure `data/` stays in sync.
   - Validate with `npm run validate-questions` and visually smoke-test the relevant route (e.g. `/tests/hoeren` or `dtz-hoeren-training`).
+
+- **Local Development Workflow** (CRITICAL - prevents "loading forever" issues):
+  - **Start development**: Always use `./start-dev.sh` script
+    - Automatically cleans up zombie processes
+    - Starts backend on port 3001, frontend on port 3003
+    - Enables CI mode to prevent Vite interactive TTY freezing
+    - Provides health checks and PID tracking
+    - Logs to `/tmp/backend.log` and `/tmp/vite.log`
+  - **Troubleshooting**: If servers freeze or hang:
+    - Check logs: `tail -f /tmp/backend.log` or `tail -f /tmp/vite.log`
+    - Check process status: `ps aux | grep -E '[n]ode' | grep -v "Code Helper"`
+    - Look for status "TN" (frozen) or "Z" (zombie)
+    - Full reset: `killall -9 node npm && ./start-dev.sh`
+  - **Never run Vite in background without CI=true** - causes process suspension on macOS
 
 - Quick examples (search & edit patterns):
   - To find where timestamps are used: search for `.timestamp` or `onQuestionJump` in `src/`.

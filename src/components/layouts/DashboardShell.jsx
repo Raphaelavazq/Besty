@@ -24,12 +24,23 @@ export default function DashboardShell({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const sidebarItems = [
-    { name: "Dashboard", icon: Home, href: "/dashboard", active: true, available: true },
+    {
+      name: "Dashboard",
+      icon: Home,
+      href: "/dashboard",
+      active: true,
+      available: true,
+    },
     { name: "Tests", icon: FileText, href: "/tests", available: true },
     { name: "Study", icon: BookOpen, href: "/study", available: true },
     { name: "Progress", icon: BarChart3, href: "/progress", available: false },
     { name: "Bookmarks", icon: Star, href: "/bookmarks", available: false },
-    { name: "Achievements", icon: Award, href: "/achievements", available: false },
+    {
+      name: "Achievements",
+      icon: Award,
+      href: "/achievements",
+      available: false,
+    },
     { name: "Profile", icon: User, href: "/profile", available: false },
     { name: "About", icon: HelpCircle, href: "/about", available: true },
     { name: "Settings", icon: Settings, href: "/settings", available: true },
@@ -112,8 +123,8 @@ export default function DashboardShell({ children }) {
                   item.active
                     ? "bg-white/20 text-white shadow-lg backdrop-blur-sm"
                     : item.available
-                    ? "text-white/80 hover:bg-white hover:text-purple-700 hover:shadow-md"
-                    : "text-white/50 cursor-not-allowed"
+                      ? "text-white/80 hover:bg-white hover:text-purple-700 hover:shadow-md"
+                      : "text-white/50 cursor-not-allowed"
                 }`}
               >
                 <div className="flex items-center">

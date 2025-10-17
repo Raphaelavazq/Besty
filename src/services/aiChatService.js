@@ -14,9 +14,9 @@ import {
   clearSessionId,
 } from "../utils/sessionManager.js";
 
-// Use backend proxy to avoid CORS issues
-const API_ENDPOINT =
-  import.meta.env.VITE_BACKEND_URL || "http://localhost:3001/api/chat";
+// Use backend proxy to avoid CORS issues. When deployed on Vercel the relative
+// path `/api/chat` will route to the serverless function we add under /api.
+const API_ENDPOINT = import.meta.env.VITE_BACKEND_URL || "/api/chat";
 const MODEL = "gpt-4o-mini";
 
 /**
@@ -241,7 +241,11 @@ export async function startDialogue(aufgabe, leitpunkte, theme, scenarioId) {
         sessionId: sessionId, // Add session ID for tracking
         messages: [
           { role: "system", content: systemPrompt },
-          { role: "user", content: "Hallo! Ich bin bereit. Lass uns mit der Planung anfangen." },
+          {
+            role: "user",
+            content:
+              "Hallo! Ich bin bereit. Lass uns mit der Planung anfangen.",
+          },
         ],
         temperature: 0.7, // Natural but consistent
         max_tokens: 250, // Keep responses concise (B1 level)

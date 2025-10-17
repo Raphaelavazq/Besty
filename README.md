@@ -53,16 +53,58 @@ A modern, viewport-locked web application for preparing for the DTZ (Deutsch-Tes
    npm install
    ```
 
-3. **Start development server**
+3. **Start development servers** ⚡
 
+   **RECOMMENDED - Use the automated startup script:**
    ```bash
-   npm run dev
+   ./start-dev.sh
+   ```
+   
+   This script:
+   - ✅ Cleans up zombie processes automatically
+   - ✅ Starts backend (port 3001) and frontend (port 3003)
+   - ✅ Runs health checks to verify servers are ready
+   - ✅ Enables CI mode to prevent Vite freezing
+   - ✅ Provides PIDs for easy shutdown
+   - ✅ Logs to `/tmp/backend.log` and `/tmp/vite.log`
+
+   **Manual alternative** (if script fails):
+   ```bash
+   # Terminal 1 - Backend
+   cd backend
+   node server.js
+   
+   # Terminal 2 - Frontend
+   CI=true npm run dev
    ```
 
 4. **Open in browser**
    ```
-   http://localhost:5173
+   http://127.0.0.1:3003
    ```
+
+5. **Stop servers**
+   ```bash
+   # Use PIDs from start-dev.sh output, or:
+   killall -9 node npm
+   ```
+
+### Troubleshooting
+
+**If servers freeze or show "loading forever":**
+```bash
+# Check logs
+tail -f /tmp/backend.log
+tail -f /tmp/vite.log
+
+# Check for frozen processes (status "TN")
+ps aux | grep -E '[n]ode' | grep -v "Code Helper"
+
+# Full reset
+killall -9 node npm && ./start-dev.sh
+```
+
+See `FULL_STACK_AUDIT_REPORT.md` for comprehensive troubleshooting guide.
 
 ## 📁 Project Structure
 

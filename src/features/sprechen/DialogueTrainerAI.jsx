@@ -139,7 +139,7 @@ export default function DialogueTrainer() {
       const ttsUrl = import.meta.env.VITE_BACKEND_URL
         ? import.meta.env.VITE_BACKEND_URL.replace("/api/chat", "/api/tts")
         : "/api/tts";
-      
+
       const response = await fetch(ttsUrl, {
         method: "POST",
         headers: {

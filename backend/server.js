@@ -74,15 +74,40 @@ setInterval(
 );
 
 // Middleware
+// Allow CORS from localhost/127.0.0.1 on any port during development.
+// In production, set a stricter allowlist or use Vercel serverless functions.
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "http://localhost:3002",
-      "http://localhost:3003",
-      "http://localhost:3004", // Added for Vite dev server
-    ],
+    origin: function (origin, callback) {
+      // allow requests with no origin (like curl, server-to-server)
+      if (!origin) return callback(null, true);
+
+      try {
+        const url = new URL(origin);
+        const hostname = url.hostname;
+
+        // Allow localhost and 127.0.0.1 (any port)
+        if (hostname === "localhost" || hostname === "127.0.0.1") {
+          return callback(null, true);
+        }
+
+        // Allow Vercel preview/prod (you can customize this list)
+        if (origin.endsWith(".vercel.app") || origin.endsWith(".now.sh")) {
+          return callback(null, true);
+        }
+
+        // Reject other origins by default
+        return callback(new Error("Not allowed by CORS"), false);
+      } catch (e) {
+        // If URL parsing fails, reject
+        return callback(new Error("Invalid origin"), false);
+      }
+    },
     credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"],
+    methods: ["GET", "POST", "OPTIONS"],
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
   })
 );
 app.use(express.json());
