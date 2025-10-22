@@ -135,7 +135,7 @@ export default function SprechenHub() {
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
             {teileInfo.map((info) => {
               const Icon = info.icon;
-              const isComingSoon = info.teil !== "3";
+              const isComingSoon = info.teil === "1"; // Only Teil 1 is coming soon now
 
               return isComingSoon ? (
                 <div
@@ -177,7 +177,11 @@ export default function SprechenHub() {
               ) : (
                 <Link
                   key={info.teil}
-                  to="/tests/sprechen/trainer"
+                  to={
+                    info.teil === "2"
+                      ? "/tests/sprechen/bild-beschreiben"
+                      : "/tests/sprechen/trainer"
+                  }
                   className="group bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-purple-100 hover:shadow-3xl transition-all duration-200 hover:-translate-y-2 hover:scale-105 relative overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-indigo-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>

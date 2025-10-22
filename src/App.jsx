@@ -24,6 +24,9 @@ import DialogueMenu from "./features/sprechen/DialogueMenu";
 import DialogTrainer from "./pages/DialogTrainer";
 import DialogueTrainerAI from "./features/sprechen/DialogueTrainerAI";
 import DialogueCatalogPage from "./pages/DialogueCatalogPage";
+import BildBeschreiben from "./pages/BildBeschreiben";
+import BildBeschreibenDetail from "./pages/BildBeschreibenDetail";
+import ThemeGallery from "./pages/ThemeGallery";
 
 // Theme/Wortschatz system
 import ThemeDetail from "./features/themes/ThemeDetail";
@@ -191,6 +194,32 @@ function App() {
         element={
           <HoverSidebarShell>
             <SprechenUebung />
+          </HoverSidebarShell>
+        }
+      />
+
+      {/* Bild Beschreiben (Teil 2) */}
+      <Route
+        path="/tests/sprechen/bild-beschreiben"
+        element={
+          <HoverSidebarShell>
+            <BildBeschreiben />
+          </HoverSidebarShell>
+        }
+      />
+      <Route
+        path="/tests/sprechen/bild-beschreiben/:themeId/gallery"
+        element={
+          <HoverSidebarShell>
+            <ThemeGallery />
+          </HoverSidebarShell>
+        }
+      />
+      <Route
+        path="/tests/sprechen/bild-beschreiben/:id"
+        element={
+          <HoverSidebarShell>
+            <BildBeschreibenDetail />
           </HoverSidebarShell>
         }
       />

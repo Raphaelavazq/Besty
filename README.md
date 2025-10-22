@@ -56,10 +56,11 @@ A modern, viewport-locked web application for preparing for the DTZ (Deutsch-Tes
 3. **Start development servers** ⚡
 
    **RECOMMENDED - Use the automated startup script:**
+
    ```bash
    ./start-dev.sh
    ```
-   
+
    This script:
    - ✅ Cleans up zombie processes automatically
    - ✅ Starts backend (port 3001) and frontend (port 3003)
@@ -69,16 +70,18 @@ A modern, viewport-locked web application for preparing for the DTZ (Deutsch-Tes
    - ✅ Logs to `/tmp/backend.log` and `/tmp/vite.log`
 
    **Manual alternative** (if script fails):
+
    ```bash
    # Terminal 1 - Backend
    cd backend
    node server.js
-   
+
    # Terminal 2 - Frontend
    CI=true npm run dev
    ```
 
 4. **Open in browser**
+
    ```
    http://127.0.0.1:3003
    ```
@@ -92,6 +95,7 @@ A modern, viewport-locked web application for preparing for the DTZ (Deutsch-Tes
 ### Troubleshooting
 
 **If servers freeze or show "loading forever":**
+
 ```bash
 # Check logs
 tail -f /tmp/backend.log

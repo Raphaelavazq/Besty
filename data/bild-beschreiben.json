@@ -1,0 +1,906 @@
+{
+  "themes": {
+    "lernen-bildung": [
+      {
+        "id": "1",
+        "file": "/images/sprechen/bild-beschreiben/1.png",
+        "title": "Lernen und Bildung",
+        "alt": "Lernen und Bildung - Schülerin am Schreibtisch",
+        "description": "Auf dem Bild ist zu sehen, wie ein junges Mädchen an einem Schreibtisch sitzt und lernt. Der Tisch ist mit Heften, Stiften und einem geöffneten Laptop ausgestattet.\n\nIm Vordergrund arbeitet das Mädchen konzentriert in einem Heft; sie hält einen Stift in der Hand und hat den Kopf leicht geneigt. Links neben ihr steht der Laptop, daneben liegen rote Kopfhörer. Im Hintergrund sind bunte Aufbewahrungsboxen und Schulmaterial sichtbar, was auf einen organisierten Arbeitsplatz hindeutet. Die Kleidung wirkt lässig, das Umfeld ruhig und auf Lernen ausgelegt.\n\nIch vermute, dass sie sich auf eine Prüfung oder Hausaufgaben vorbereitet, weil sie fokussiert schreibt. Meiner Meinung nach zeigt das Bild, wie wichtig eine strukturierte Lernumgebung ist, da sie die Konzentration fördert und produktives Arbeiten ermöglicht.",
+        "category": "Lernen & Bildung",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Machen Sie gern Hausaufgaben?",
+            "answer": "Nicht immer, aber sie sind wichtig, um den Unterricht besser zu verstehen."
+          },
+          {
+            "question": "Wie lange lernen Sie normalerweise zu Hause?",
+            "answer": "Ungefähr ein bis zwei Stunden pro Tag, manchmal mehr vor Prüfungen."
+          },
+          {
+            "question": "Welche Vorteile hat Online-Lernen?",
+            "answer": "Man kann bequem von zu Hause lernen, viele Informationen finden und flexibel arbeiten."
+          },
+          {
+            "question": "Braucht man beim Lernen Pausen?",
+            "answer": "Ja, Pausen sind sehr wichtig, damit man konzentriert bleibt und sich besser erinnern kann."
+          },
+          {
+            "question": "Wie haben Sie früher in der Schule gelernt?",
+            "answer": "Ich habe meistens mit Büchern gelernt und viele Übungen im Heft gemacht. Später habe ich auch Computer und Internet benutzt."
+          }
+        ],
+        "duration": "1:19"
+      },
+      {
+        "id": "25",
+        "file": "/images/sprechen/bild-beschreiben/25.jpeg",
+        "title": "Schule und Bildung",
+        "alt": "Gruppe von Kindern im Klassenzimmer",
+        "description": "Auf dem Foto sehe ich eine Gruppe von Kindern in einem Klassenzimmer. Die Kinder sitzen an ihren Tischen und heben die Hand, wahrscheinlich, um eine Frage zu beantworten. Im Vordergrund sitzt ein Junge mit einem Heft und bunten Stiften. Die Lehrerin steht vorne, lächelt und spricht mit den Schülern. Das Klassenzimmer ist hell, mit großen Fenstern, gelben Vorhängen und Pflanzen auf der Fensterbank. Die Kinder sehen glücklich und interessiert aus. Die Stimmung ist freundlich, und man merkt, dass die Lehrerin den Unterricht spannend gestaltet. Das Thema des Fotos ist ‚Schule und Bildung‘. Ich finde, Schule ist sehr wichtig für die Zukunft der Kinder. Dort lernen sie nicht nur Lesen, Schreiben und Rechnen, sondern auch, mit anderen Menschen umzugehen. Gute Lehrerinnen und Lehrer können Kinder motivieren und ihnen helfen, selbstbewusster zu werden. In meinem Heimatland ist die Schule ähnlich wie hier, aber oft sind die Klassen größer und es gibt weniger moderne Materialien. Ich finde das deutsche Schulsystem gut, weil Kinder hier viel praktisch lernen und Lehrer oft sehr nett sind. Eltern und Lehrer sollten zusammenarbeiten, damit Kinder Freude am Lernen haben.",
+        "category": "Schule & Bildung",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Wie war Ihre Schulzeit?",
+            "answer": "Meine Schulzeit war gut. Ich hatte nette Freunde und interessante Lehrer."
+          },
+          {
+            "question": "Was war Ihr Lieblingsfach?",
+            "answer": "Ich mochte Geschichte und Biologie am liebsten."
+          },
+          {
+            "question": "Was macht einen guten Lehrer aus?",
+            "answer": "Ein guter Lehrer erklärt gut, ist geduldig und motiviert die Schüler."
+          },
+          {
+            "question": "Ist Bildung wichtig?",
+            "answer": "Ja, sehr wichtig. Bildung öffnet viele Türen und gibt einem mehr Möglichkeiten im Leben."
+          }
+        ],
+        "duration": "1:17"
+      }
+    ],
+    "familie-kinder": [
+      {
+        "id": "2",
+        "file": "/images/sprechen/bild-beschreiben/2.jpg",
+        "title": "Familie und Kinder - Wohnzimmer",
+        "alt": "Familie und Kinder - Eltern mit Baby",
+        "description": "Auf dem Foto ist eine junge Familie im Wohnzimmer zu sehen; ein Elternteil hält ein Baby im Arm.\n\nIm Vordergrund sitzt der Vater mit dem Baby auf einem grauen Sofa, die Mutter sitzt daneben und lächelt. Das Baby trägt ein helles Kleid; die Eltern wirken entspannt und liebevoll. Im Hintergrund erkennt man helle Wände, Pflanzen und eine dezente Wanddekoration. Die Atmosphäre ist gemütlich und familiär.\n\nWahrscheinlich verbringen die Personen einen ruhigen Nachmittag zu Hause. Ich denke, das Bild betont die Bedeutung von familiären Momenten und zeigt, wie wichtig Nähe und Zuneigung im Alltag sind.",
+        "category": "Familie & Kinder",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Wie wichtig ist Familie für Sie?",
+            "answer": "Familie ist sehr wichtig für mich. Sie gibt mir Unterstützung, Liebe und ein Gefühl von Sicherheit."
+          },
+          {
+            "question": "Wie oft sehen Sie Ihre Familie?",
+            "answer": "Ich versuche, meine Familie mindestens einmal pro Woche zu besuchen. Manchmal telefonieren wir auch."
+          },
+          {
+            "question": "Was macht eine gute Familie aus?",
+            "answer": "Eine gute Familie unterstützt sich gegenseitig, verbringt Zeit zusammen und respektiert einander."
+          },
+          {
+            "question": "Ist es wichtig, Zeit mit Kindern zu verbringen?",
+            "answer": "Ja, sehr wichtig. Kinder brauchen Aufmerksamkeit und Liebe von ihren Eltern, um sich gut zu entwickeln."
+          },
+          {
+            "question": "Wie war Ihre Kindheit?",
+            "answer": "Meine Kindheit war schön. Ich habe viel mit meinen Geschwistern gespielt und meine Eltern haben sich gut um uns gekümmert."
+          }
+        ],
+        "duration": "1:20"
+      },
+      {
+        "id": "3",
+        "file": "/images/sprechen/bild-beschreiben/3.png",
+        "title": "Familie und Freizeit",
+        "alt": "Drei Personen spielen mit Bauklötzen",
+        "description": "Auf dem Foto sehe ich drei Personen: ein Kind, einen Mann und eine Frau. Wahrscheinlich handelt es sich um eine Familie - Vater, Mutter und Sohn. Sie sitzen an einem Tisch und spielen gemeinsam mit bunten Bauklötzen. Links sitzt der Mann. Er trägt ein helles Langarmshirt und hat einen dichten Bart. Er lacht freundlich und schaut auf das Kind. In der Mitte sitzt der kleine Junge. Er hat blonde Haare und trägt ein weißes Hemd mit kleinen Punkten. Der Junge spielt konzentriert mit den Bauklötzen und scheint Spaß zu haben. Rechts sitzt die Frau. Sie hat lange dunkle Haare und trägt ein grünes Oberteil. Sie hilft dem Kind beim Bauen und lächelt dabei. Auf dem Tisch liegen viele bunte Bauklötze in Blau, Rot, Gelb und Grün. Im Hintergrund sehe ich Stofftiere und eine Tafel. Vielleicht verbringen die drei Personen gerade ihre Freizeit zu Hause. Wahrscheinlich spielen sie zusammen, um Zeit miteinander zu verbringen und Spaß zu haben. Die Stimmung wirkt warm, harmonisch und glücklich. Das Thema des Fotos ist \"Familie und Freizeit\". Ich finde es sehr wichtig, dass Eltern Zeit mit ihren Kindern verbringen. Das stärkt die Beziehung und gibt den Kindern Sicherheit. Außerdem lernen Kinder beim Spielen viele neue Dinge, zum Beispiel Farben, Formen und auch Kreativität. In meiner Kindheit habe ich auch oft mit Bauklötzen oder Lego gespielt. Das hat mir immer sehr viel Spaß gemacht. Heute finde ich, dass solche Spiele nicht nur unterhaltsam, sondern auch pädagogisch wertvoll sind. Zusatzfragen: Sollten Eltern viel Zeit mit ihren Kindern verbringen? Ja, unbedingt. Gemeinsame Zeit ist wichtig für die Entwicklung und für eine gute Beziehung in der Familie. Was lernen Kinder beim Spielen? Kinder lernen Kreativität, Konzentration, Geduld und auch soziale Fähigkeiten, wenn sie zusammen mit anderen spielen. Haben Sie als Kind gern mit Bauklötzen gespielt? Ja, sehr gern. Ich habe oft Häuser und Türme gebaut. Das war immer spannend. Wie verbringen Sie Ihre Freizeit? In meiner Freizeit lese ich gern, treffe Freunde und gehe spazieren. Manchmal spiele ich auch mit meinen kleinen Verwandten.",
+        "category": "Familie & Kinder",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Sollten Eltern viel Zeit mit ihren Kindern verbringen?",
+            "answer": "Ja, unbedingt. Gemeinsame Zeit ist wichtig für die Entwicklung und für eine gute Beziehung in der Familie."
+          },
+          {
+            "question": "Was lernen Kinder beim Spielen?",
+            "answer": "Kinder lernen Kreativität, Konzentration, Geduld und auch soziale Fähigkeiten, wenn sie zusammen mit anderen spielen."
+          },
+          {
+            "question": "Haben Sie als Kind gern mit Bauklötzen gespielt?",
+            "answer": "Ja, sehr gern. Ich habe oft Häuser und Türme gebaut. Das war immer spannend."
+          },
+          {
+            "question": "Wie verbringen Sie Ihre Freizeit?",
+            "answer": "In meiner Freizeit lese ich gern, treffe Freunde und gehe spazieren. Manchmal spiele ich auch mit meinen kleinen Verwandten."
+          }
+        ],
+        "duration": "1:15"
+      }
+    ],
+    "einkaufen": [
+      {
+        "id": "4",
+        "file": "/images/sprechen/bild-beschreiben/4.jpg",
+        "title": "Einkaufen und Ernährung",
+        "alt": "Menschen auf einem Wochenmarkt",
+        "description": "Auf dem Foto sehe ich mehrere Menschen auf einem Wochenmarkt. Im Vordergrund steht eine Frau mit einer schwarz-weiß gestreiften Bluse und einer Tasche über der Schulter. Neben ihr steht ein Mann mit einem gestreiften Pullover. Beide schauen auf das frische Obst. Hinter dem Stand steht eine Verkäuferin mit einer grauen Jacke. Sie wiegt das Obst auf einer Waage. Auf dem Tisch liegen viele grüne Kisten mit Äpfeln, Trauben und anderen Früchten. Im Hintergrund sieht man noch mehr Marktstände und Menschen, die einkaufen. Es ist ein sonniger Tag, und die Stimmung wirkt freundlich und ruhig. Vielleicht fragt die Frau gerade nach dem Preis oder kauft etwas ein. Der Mann wartet neben ihr. Das Foto zeigt eine typische Alltagsszene auf einem Wochenmarkt. Ich finde es sehr schön, auf dem Markt einzukaufen. Das Obst und Gemüse ist dort meistens frischer als im Supermarkt, und man kann mit den Verkäufern sprechen. In meiner Heimat gehe ich oft auf den Wochenmarkt, besonders am Wochenende. Ich kaufe dort gern Obst, Gemüse und Blumen. Ich finde es wichtig, regionale Produkte zu unterstützen und gesunde Lebensmittel zu essen. Das Thema des Fotos ist \"Einkaufen und Ernährung\".",
+        "category": "Einkaufen",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Kaufen Sie lieber auf dem Markt oder im Supermarkt ein?",
+            "answer": "Ich kaufe lieber auf dem Markt, weil die Produkte frischer sind und man direkt mit den Verkäufern sprechen kann."
+          },
+          {
+            "question": "Wie oft gehen Sie einkaufen?",
+            "answer": "Ich gehe normalerweise zweimal pro Woche einkaufen – einmal für frisches Obst und Gemüse und einmal für andere Sachen."
+          },
+          {
+            "question": "Was ist Ihnen beim Einkaufen wichtig?",
+            "answer": "Mir ist wichtig, dass die Produkte frisch und von guter Qualität sind. Außerdem achte ich auf den Preis."
+          },
+          {
+            "question": "Sollte man mehr regionale Produkte kaufen?",
+            "answer": "Ja, ich finde das sehr wichtig. Es ist gut für die Umwelt und unterstützt lokale Bauern und Geschäfte."
+          }
+        ],
+        "duration": "1:18"
+      },
+      {
+        "id": "16",
+        "file": "/images/sprechen/bild-beschreiben/16.png",
+        "title": "Online einkaufen",
+        "alt": "Person sitzt auf dem Sofa mit Laptop zum Online-Shoppen",
+        "description": "Auf dem Bildschirm sieht man eine Webseite mit einem Online-Shop. Die Person schaut sich Kleidung an – ein Hemd in verschiedenen Größen und Farben. Sie trägt ein kariertes Hemd, Jeans und eine Armbanduhr. Im Hintergrund sieht man den Holzboden, einen Stuhl und etwas von der Wohnungseinrichtung. Die Situation zeigt eine ganz typische Alltagsszene: jemand kauft bequem von zu Hause aus ein. Man braucht keinen Laden zu besuchen, sondern kann einfach online bestellen. Das Foto wirkt ruhig und modern. Ich finde, Online-Shopping ist heute sehr praktisch und spart viel Zeit. Man kann rund um die Uhr einkaufen, Preise vergleichen und hat eine große Auswahl. Besonders Kleidung, Technik oder Bücher kaufe ich oft im Internet, weil es schnell und einfach ist. Aber es gibt auch Nachteile. Man kann die Produkte nicht vorher sehen oder anprobieren, und manchmal passt etwas nicht oder sieht anders aus als auf dem Foto. Auch die Rücksendung kann manchmal kompliziert sein.",
+        "category": "Einkaufen",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Kaufen Sie oft online ein?",
+            "answer": "Ja, ziemlich oft. Besonders Bücher, Kleidung und Elektronik bestelle ich im Internet."
+          },
+          {
+            "question": "Was sind die Vorteile von Online-Shopping?",
+            "answer": "Es ist bequem, man spart Zeit und hat eine große Auswahl. Man kann auch Preise gut vergleichen."
+          },
+          {
+            "question": "Was sind die Nachteile?",
+            "answer": "Man kann die Produkte nicht vorher sehen oder anprobieren. Manchmal dauert die Lieferung lange."
+          },
+          {
+            "question": "Haben Sie schon einmal etwas zurückgeschickt?",
+            "answer": "Ja, ein paarmal. Meistens, weil die Größe nicht gepasst hat oder die Farbe anders aussah."
+          }
+        ],
+        "duration": "1:15"
+      },
+      {
+        "id": "17",
+        "file": "/images/sprechen/bild-beschreiben/17.png",
+        "title": "Einkaufen im Geschäft",
+        "alt": "Frau im Kleidungsgeschäft vor einem Spiegel hält zwei Jeans",
+        "description": "Auf dem Foto sehe ich eine Frau in einem Kleidungsgeschäft. Sie steht vor einem Spiegel und hält zwei Jeans in den Händen – eine blaue und eine hellgraue. Die Frau überlegt wahrscheinlich, welche Hose ihr besser gefällt oder besser passt. Im Hintergrund sehe ich viele bunte Kleidungsstücke, die an Kleiderständern hängen – Pullover, Jacken und T-Shirts. Die Frau trägt ein helles Sommerkleid und hat lockige blonde Haare. Die Atmosphäre im Laden wirkt ruhig und ordentlich. Das Foto zeigt eine typische Alltagssituation: Einkaufen in einem Modegeschäft. Ich persönlich kaufe Kleidung lieber im Geschäft als online, weil ich gern verschiedene Größen und Farben anprobiere. Online ist es manchmal schwierig, die richtige Passform zu finden.",
+        "category": "Einkaufen",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Kaufen Sie Kleidung lieber im Geschäft oder online?",
+            "answer": "Lieber im Geschäft, weil ich die Kleidung anprobieren und die Qualität prüfen kann."
+          },
+          {
+            "question": "Wie oft kaufen Sie neue Kleidung?",
+            "answer": "Nicht sehr oft, vielleicht alle zwei bis drei Monate, wenn ich wirklich etwas brauche."
+          },
+          {
+            "question": "Was ist Ihnen bei Kleidung wichtig?",
+            "answer": "Mir ist wichtig, dass sie gut passt, bequem ist und nicht zu teuer."
+          },
+          {
+            "question": "Achten Sie auf Mode?",
+            "answer": "Ein bisschen, aber nicht zu sehr. Ich kaufe lieber klassische Kleidung, die lange hält."
+          }
+        ],
+        "duration": "1:12"
+      }
+    ],
+    "gesundheit": [
+      {
+        "id": "5",
+        "file": "/images/sprechen/bild-beschreiben/5.jpg",
+        "title": "Gesundheit und Arztbesuch",
+        "alt": "Ärztin mit Patientin (schwangere Frau) im Behandlungszimmer",
+        "description": "Auf dem Foto sehe ich zwei Frauen in einem Arztzimmer. Links sitzt eine Ärztin mit einem weißen Kittel. Sie hält ein Tablet oder eine Mappe in der Hand und erklärt etwas. Rechts sitzt eine schwangere Frau. Sie trägt ein hellblaues Hemd und eine Jeans. Man sieht ihren Bauch, sie ist wahrscheinlich im letzten Trimester. Neben den beiden steht ein medizinisches Gerät, vielleicht ein Ultraschallgerät. Im Hintergrund sehe ich eine Pflanze und helle Wände – der Raum wirkt sauber und freundlich. Das Foto zeigt eine Situation beim Arzt, wahrscheinlich während einer Untersuchung oder Beratung. Die Ärztin erklärt der Frau etwas über die Schwangerschaft oder die Untersuchungsergebnisse. Ich finde es sehr wichtig, regelmäßig zum Arzt zu gehen, besonders in der Schwangerschaft. Die Gesundheit von Mutter und Kind ist sehr wichtig, und man sollte die Arzttermine ernst nehmen.",
+        "category": "Gesundheit",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Gehen Sie regelmäßig zum Arzt?",
+            "answer": "Ja, ich gehe mindestens einmal im Jahr zur Vorsorgeuntersuchung. Wenn ich krank bin, gehe ich natürlich auch."
+          },
+          {
+            "question": "Was machen Sie, wenn Sie krank sind?",
+            "answer": "Zuerst versuche ich, mich zu Hause auszuruhen und viel zu trinken. Wenn es nicht besser wird, gehe ich zum Arzt."
+          },
+          {
+            "question": "Ist Gesundheit wichtig für Sie?",
+            "answer": "Ja, sehr wichtig. Ohne Gesundheit kann man nicht arbeiten, sich nicht um die Familie kümmern oder das Leben genießen."
+          },
+          {
+            "question": "Wie kann man gesund bleiben?",
+            "answer": "Man sollte sich ausgewogen ernähren, regelmäßig Sport treiben, genug schlafen und Stress vermeiden."
+          }
+        ],
+        "duration": "1:12"
+      }
+    ],
+    "wohnen": [
+      {
+        "id": "6",
+        "file": "/images/sprechen/bild-beschreiben/6.jpg",
+        "title": "Wohnen und Umzug",
+        "alt": "Frau in neuer Wohnung freut sich",
+        "description": "Auf dem Foto sehe ich eine junge Frau, die in einer hellen Wohnung steht. Sie lacht und breitet die Arme weit aus. Sie wirkt sehr glücklich und stolz. Im Hintergrund sehe ich eine moderne Küche mit weißen Schränken, einem Herd, einem Waschbecken und einer Dunstabzugshaube. Der Boden ist aus Holz, und vor dem Fenster liegt ein Teppich. Es scheint, als sei die Wohnung neu oder gerade frisch renoviert. Durch das große Fenster kommt viel Licht in den Raum. Ich denke, die Frau ist gerade eingezogen und freut sich über ihre neue Wohnung.",
+        "category": "Wohnen",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Wie oft sind Sie schon umgezogen?",
+            "answer": "Ich bin zweimal umgezogen – einmal während des Studiums und einmal wegen der Arbeit."
+          },
+          {
+            "question": "Was ist beim Umzug am schwierigsten?",
+            "answer": "Das Packen und Tragen der schweren Möbel ist anstrengend. Auch das Organisieren von allem kann stressig sein."
+          },
+          {
+            "question": "Braucht man Hilfe beim Umzug?",
+            "answer": "Ja, meistens schon. Es ist viel einfacher mit Freunden oder einer Umzugsfirma."
+          },
+          {
+            "question": "Was ist Ihnen bei einer Wohnung wichtig?",
+            "answer": "Mir ist wichtig, dass die Wohnung hell ist, eine gute Lage hat und nicht zu teuer ist."
+          }
+        ],
+        "duration": "1:10"
+      },
+      {
+        "id": "29",
+        "file": "/images/sprechen/bild-beschreiben/29.jpeg",
+        "title": "Umzug und Wohnen",
+        "alt": "Junges Paar beim Umzug mit Kartons",
+        "description": "Auf dem Foto sehe ich ein junges Paar, das gerade beim Umzug ist. Beide tragen gemeinsam einen großen Karton. Im Hintergrund sieht man viele Umzugskartons, Möbel und eine helle Wohnung mit modernen Möbeln. An der Wand hängen einige Bilderrahmen, und auf dem Tisch stehen noch Gegenstände, die wahrscheinlich eingepackt werden müssen. Das Paar sieht glücklich und motiviert aus, obwohl die Arbeit anstrengend scheint.",
+        "category": "Wohnen & Umzug",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Haben Sie schon einmal geholfen, jemandem beim Umzug zu helfen?",
+            "answer": "Ja, mehrmals. Ich habe Freunden geholfen, Möbel zu tragen und Kartons zu packen."
+          },
+          {
+            "question": "Was macht man zuerst beim Umzug?",
+            "answer": "Man sollte zuerst aussortieren, was man nicht mehr braucht, und dann alles gut verpacken."
+          },
+          {
+            "question": "Ist ein Umzug immer stressig?",
+            "answer": "Meistens schon, aber mit guter Planung und Hilfe geht es besser."
+          },
+          {
+            "question": "Würden Sie lieber in einer Wohnung oder einem Haus wohnen?",
+            "answer": "Beides hat Vorteile. Eine Wohnung ist pflegeleichter, ein Haus hat mehr Platz und einen Garten."
+          }
+        ],
+        "duration": "1:14"
+      }
+    ],
+    "arbeit-beruf": [
+      {
+        "id": "7",
+        "file": "/images/sprechen/bild-beschreiben/7.jpg",
+        "title": "Arbeit und Familie – Homeoffice",
+        "alt": "Frau arbeitet am Laptop mit Kind auf dem Schoß",
+        "description": "Auf dem Foto sehe ich eine Frau, die an einem Schreibtisch sitzt. Sie arbeitet am Laptop, spricht am Handy und schreibt gleichzeitig etwas in ein Heft. Auf ihrem Schoß sitzt ein kleines Kind, das einen Teddybären hält. Die Frau trägt eine Brille und sieht freundlich und konzentriert aus. Das Kind schaut auf das Heft und scheint ruhig zu sein. Im Hintergrund sehe ich Pflanzen, einen schwarzen Hintergrund mit Notizen und viel Licht, das durch das Fenster kommt. Das Foto zeigt eine typische Situation im Homeoffice. Die Frau arbeitet von zu Hause, während sie sich gleichzeitig um ihr Kind kümmert. Das ist heutzutage sehr häufig, vor allem bei Eltern, die Beruf und Familie verbinden möchten.",
+        "category": "Arbeit & Familie",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Arbeiten Sie auch manchmal von zu Hause?",
+            "answer": "Ja, ich arbeite ein- oder zweimal pro Woche im Homeoffice. Das ist sehr praktisch."
+          },
+          {
+            "question": "Was sind die Vorteile von Homeoffice?",
+            "answer": "Man spart Zeit für den Arbeitsweg, kann flexibler arbeiten und ist manchmal konzentrierter."
+          },
+          {
+            "question": "Gibt es auch Nachteile?",
+            "answer": "Ja, manchmal fehlt der direkte Kontakt zu Kollegen und es ist schwieriger, Arbeit und Privatleben zu trennen."
+          },
+          {
+            "question": "Wie vereinbaren Sie Arbeit und Familie?",
+            "answer": "Das ist manchmal schwierig, aber ich versuche, feste Arbeitszeiten zu haben und nach der Arbeit Zeit für die Familie einzuplanen."
+          }
+        ],
+        "duration": "1:14"
+      },
+      {
+        "id": "30",
+        "file": "/images/sprechen/bild-beschreiben/30.jpg",
+        "title": "Arbeit und Beruf - Friseursalon",
+        "alt": "Friseurinnen beim Haareschneiden in einem Salon",
+        "description": "Auf dem Foto sehe ich mehrere Frauen in einem Friseursalon. Im Vordergrund sitzt eine Kundin mit blonden Haaren, die gerade frisiert wird. Zwei Friseurinnen föhnen und stylen ihr die Haare und sehen dabei freundlich und konzentriert aus. Im Hintergrund kann man weitere Kundinnen sehen, die ebenfalls frisiert werden. Der Raum ist hell und modern eingerichtet, mit großen Fenstern und Spiegeln.",
+        "category": "Arbeit & Beruf",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Was machen Sie beruflich?",
+            "answer": "Ich arbeite im Büro als Angestellte/r in einer Firma."
+          },
+          {
+            "question": "Mögen Sie Ihre Arbeit?",
+            "answer": "Ja, meistens. Die Aufgaben sind interessant und die Kollegen sind nett."
+          },
+          {
+            "question": "Was ist Ihnen bei der Arbeit wichtig?",
+            "answer": "Mir ist wichtig, dass die Arbeit Sinn macht, das Team gut ist und ich fair bezahlt werde."
+          },
+          {
+            "question": "Möchten Sie den Beruf wechseln?",
+            "answer": "Im Moment nicht, aber ich bin offen für neue Möglichkeiten in der Zukunft."
+          }
+        ],
+        "duration": "1:15"
+      }
+    ],
+    "essen-trinken": [
+      {
+        "id": "8",
+        "file": "/images/sprechen/bild-beschreiben/8.png",
+        "title": "Kochen und Familie",
+        "alt": "Mann und Kind kochen zusammen in der Küche",
+        "description": "Auf dem Foto sehe ich einen Mann und ein Kind, die zusammen in der Küche kochen. Der Mann trägt ein hellblaues Hemd und lächelt. Das Kind sitzt auf der Arbeitsfläche und trägt ein dunkelblau gestreiftes T-Shirt. Beide wirken fröhlich und haben Spaß. Das Kind schneidet rotes Gemüse, wahrscheinlich Paprika, während der Vater in einer Pfanne kocht. Auf dem Tisch liegen verschiedene frische Zutaten: Tomaten, Paprika, Gurken und vielleicht auch Melone. Die Küche sieht modern und hell aus, mit weißen und braunen Farben. Das Foto zeigt eine schöne Familienszene. Ich denke, der Vater kocht mit seinem Sohn, um gemeinsam Zeit zu verbringen und dem Kind etwas beizubringen. Das Kochen kann nicht nur praktisch, sondern auch eine schöne Familienaktivität sein.",
+        "category": "Essen & Trinken",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Essen Sie oft im Restaurant?",
+            "answer": "Nicht sehr oft, vielleicht ein- oder zweimal im Monat. Meistens koche ich zu Hause."
+          },
+          {
+            "question": "Was ist Ihr Lieblingsessen?",
+            "answer": "Ich esse sehr gern Pasta mit Tomatensoße. Auch Pizza mag ich sehr."
+          },
+          {
+            "question": "Kochen Sie gern?",
+            "answer": "Ja, ich koche gern, besonders am Wochenende, wenn ich mehr Zeit habe."
+          },
+          {
+            "question": "Was halten Sie von Fast Food?",
+            "answer": "Ab und zu ist es okay, aber man sollte nicht zu oft Fast Food essen, weil es nicht gesund ist."
+          }
+        ],
+        "duration": "1:11"
+      },
+      {
+        "id": "27",
+        "file": "/images/sprechen/bild-beschreiben/27.jpg",
+        "title": "Kochen und Ernährung",
+        "alt": "Junges Paar kocht zusammen in der Küche",
+        "description": "Auf dem Foto sehe ich ein junges Paar in der Küche. Beide stehen nebeneinander und bereiten gemeinsam das Essen vor. Die Frau rührt Nudeln in einem Topf, während der Mann Gemüse schneidet – ich sehe Zucchini, Karotten und Paprika. Auf dem Tisch liegen Zwiebeln, Knoblauch und Olivenöl, daneben steht auch ein Glas Rotwein. Die Stimmung wirkt sehr angenehm und harmonisch, beide lächeln und scheinen Spaß beim Kochen zu haben.",
+        "category": "Kommunikation",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Wie kommunizieren Sie mit Freunden?",
+            "answer": "Meistens per WhatsApp oder Telefon, manchmal treffen wir uns auch persönlich."
+          },
+          {
+            "question": "Telefonieren Sie gern?",
+            "answer": "Ja, mit engen Freunden und Familie telefoniere ich gern."
+          },
+          {
+            "question": "Schreiben Sie lieber oder sprechen Sie lieber?",
+            "answer": "Kommt drauf an. Kurze Infos schreibe ich, aber für längere Gespräche rufe ich lieber an."
+          },
+          {
+            "question": "Hat sich Kommunikation durch Technologie verändert?",
+            "answer": "Ja, sehr. Heute kann man jederzeit und überall Nachrichten schreiben oder videotelefonieren."
+          }
+        ],
+        "duration": "1:12"
+      }
+    ],
+    "reisen-verkehr": [
+      {
+        "id": "9",
+        "file": "/images/sprechen/bild-beschreiben/9.jpeg",
+        "title": "Reisen und Urlaub",
+        "alt": "Familie auf dem Bahnsteig mit Koffer",
+        "description": "Auf dem Foto sehe ich drei Personen – ein Mann, eine Frau und ein Kind. Sie stehen auf einem Bahnsteig und scheinen auf eine Reise zu gehen. Der Mann trägt eine braune Lederjacke und hält einen großen blauen Koffer in der Hand. Das Kind trägt eine braune Jacke, eine dunkle Mütze und einen Rucksack. Die Frau trägt einen hellen Mantel und ebenfalls eine Tasche über der Schulter. Im Hintergrund sieht man einen Zug, der wahrscheinlich bald abfährt. Das Wetter scheint schön zu sein, denn der Himmel ist blau und die Sonne scheint.",
+        "category": "Freizeit",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Lesen Sie gern?",
+            "answer": "Ja, ich lese sehr gern, besonders Romane und Krimis."
+          },
+          {
+            "question": "Wie oft lesen Sie?",
+            "answer": "Ich versuche, jeden Abend vor dem Schlafen zu lesen, mindestens 30 Minuten."
+          },
+          {
+            "question": "Lesen Sie lieber Bücher oder E-Books?",
+            "answer": "Ich bevorzuge normale Bücher, aber E-Books sind praktisch auf Reisen."
+          },
+          {
+            "question": "Was war das letzte Buch, das Sie gelesen haben?",
+            "answer": "Das letzte Buch war ein Krimi von einem deutschen Autor. Es war sehr spannend."
+          }
+        ],
+        "duration": "1:09"
+      }
+    ],
+    "medien-kommunikation": [
+      {
+        "id": "10",
+        "file": "/images/sprechen/bild-beschreiben/10.jpg",
+        "title": "Freizeit, Freunde und Medien",
+        "alt": "Gruppe junger Leute im Park mit Smartphones",
+        "description": "Auf dem Foto sehe ich fünf junge Leute, die im Park auf dem Gras sitzen. Alle tragen Sommerkleidung – T-Shirts, Shorts, Sonnenbrillen und leichte Schuhe. Das Wetter ist schön, die Sonne scheint, und im Hintergrund sieht man grüne Bäume und Büsche. Alle Jugendlichen haben ein Smartphone in der Hand und schauen konzentriert auf den Bildschirm. Sie sitzen nah beieinander, lachen und wirken gut gelaunt. Das Foto zeigt eine typische Situation aus dem Alltag junger Menschen: Sie treffen sich draußen mit Freunden, aber trotzdem beschäftigt sich jeder mit seinem Handy. Vielleicht machen sie Fotos, hören Musik oder chatten miteinander. Ich benutze mein Handy jeden Tag, aber ich versuche, nicht zu viel Zeit damit zu verbringen. Am Wochenende treffe ich mich lieber mit Freunden ohne Handy, gehe spazieren oder trinke einen Kaffee.",
+        "category": "Sport",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Treiben Sie regelmäßig Sport?",
+            "answer": "Ja, ich gehe zweimal pro Woche joggen und einmal ins Fitnessstudio."
+          },
+          {
+            "question": "Welche Sportart mögen Sie am liebsten?",
+            "answer": "Ich mag Schwimmen am liebsten, weil es gut für den ganzen Körper ist und entspannend wirkt."
+          },
+          {
+            "question": "Ist Sport wichtig für Sie?",
+            "answer": "Ja, sehr wichtig. Sport hält mich fit und gesund und hilft mir, Stress abzubauen."
+          },
+          {
+            "question": "Haben Sie früher Sport gemacht?",
+            "answer": "Ja, als Kind habe ich Fußball gespielt und bin viel Fahrrad gefahren."
+          }
+        ],
+        "duration": "1:13"
+      }
+    ],
+    "sport-fitness": [
+      {
+        "id": "11",
+        "file": "/images/sprechen/bild-beschreiben/11.jpg",
+        "title": "Gesundheit und Sport",
+        "alt": "Paar joggt auf einem Waldweg",
+        "description": "Auf dem Foto sehe ich eine Frau und einen Mann, die draußen joggen. Sie laufen auf einem schmalen Weg durch den Wald. Es ist ein sonniger Tag, und die Umgebung ist grün und friedlich. Beide tragen Sportkleidung: Die Frau hat eine weiße Sporttop und eine rosafarbene Leggings an, der Mann trägt ein blaues T-Shirt und schwarze Shorts. Sie sehen fit und fröhlich aus und unterhalten sich beim Laufen. Das Foto zeigt eine typische Freizeitaktivität vieler Menschen – Sport an der frischen Luft.",
+        "category": "Natur & Umwelt",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Mögen Sie die Natur?",
+            "answer": "Ja, sehr. Ich finde es wichtig, Zeit in der Natur zu verbringen, um zu entspannen."
+          },
+          {
+            "question": "Wie oft gehen Sie spazieren?",
+            "answer": "Ich versuche, mindestens dreimal pro Woche spazieren zu gehen, am liebsten im Park oder im Wald."
+          },
+          {
+            "question": "Was können wir für die Umwelt tun?",
+            "answer": "Wir sollten weniger Müll produzieren, Energie sparen, öffentliche Verkehrsmittel nutzen und recyceln."
+          },
+          {
+            "question": "Ist Umweltschutz wichtig?",
+            "answer": "Ja, sehr wichtig. Wir müssen die Umwelt schützen, damit auch zukünftige Generationen gut leben können."
+          }
+        ],
+        "duration": "1:16"
+      },
+      {
+        "id": "22",
+        "file": "/images/sprechen/bild-beschreiben/22.png",
+        "title": "Hobbys und Bewegung - Tennis",
+        "alt": "Vier Personen auf einem Tennisplatz mit Schlägern",
+        "description": "Auf dem Foto sehe ich vier junge Erwachsene. Sie stehen auf einem Tennisplatz. Links steht ein junger Mann. Er trägt ein graues T-Shirt, gelbe Shorts und schwarze Sportschuhe. Er sieht sportlich und entspannt aus und hält einen Tennisschläger in der Hand. Neben ihm steht eine junge Frau. Sie trägt ein weißes Tennis-Kleid und eine weiße Kappe. Sie wirkt glücklich und lacht leicht. Die dritte Person ist auch eine junge Frau. Sie trägt ein ähnliches weißes Kleid und helle Turnschuhe. Sie schaut freundlich in die Kamera. Rechts steht ein weiterer junger Mann. Er trägt ein weißes Polo-Shirt und schwarze Shorts. In seiner Hand hält er einen Tennisschläger und einen Tennisball. Er wirkt ruhig und konzentriert. Im Vordergrund sehe ich einen Korb mit vielen Tennisbällen. Im Hintergrund gibt es Bäume, und der Platz scheint im Freien zu sein. Das Wetter sieht schön und sonnig aus.",
+        "category": "Hobbys",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Was sind Ihre Hobbys?",
+            "answer": "Ich fotografiere gern, lese Bücher und gehe wandern."
+          },
+          {
+            "question": "Seit wann haben Sie diese Hobbys?",
+            "answer": "Mit dem Fotografieren habe ich vor etwa fünf Jahren angefangen."
+          },
+          {
+            "question": "Wie viel Zeit verbringen Sie mit Ihren Hobbys?",
+            "answer": "Am Wochenende mehrere Stunden, unter der Woche eher weniger."
+          },
+          {
+            "question": "Möchten Sie ein neues Hobby beginnen?",
+            "answer": "Ja, ich würde gern Malen lernen oder einen Tanzkurs machen."
+          }
+        ],
+        "duration": "1:13"
+      }
+    ],
+    "natur-umwelt": [
+      {
+        "id": "12",
+        "file": "/images/sprechen/bild-beschreiben/12.jpg",
+        "title": "Umwelt und Mülltrennung",
+        "alt": "Überfüllte Mülltonne mit gemischtem Abfall",
+        "description": "Auf dem Foto sehe ich eine überfüllte Mülltonne. Der Deckel ist offen, weil zu viel Müll darin ist. Ich erkenne viele verschiedene Sachen – Plastikflaschen, Glas, Dosen, Papier und Plastiktüten. Die Tonne ist grün und hat ein Schild mit der Aufschrift \"Weißglas\", aber darin liegt auch anderer Müll, der dort eigentlich nicht hineingehört. Im Hintergrund sieht man einen grauen Boden und eine Mauer. Das Foto zeigt ein typisches Problem: Menschen trennen ihren Müll nicht richtig oder werfen zu viel weg. Ich denke, dass viele Leute nicht genau wissen, welcher Müll wohin gehört, oder sie sind einfach zu bequem. Das ist schlecht für die Umwelt, weil der Müll dann nicht recycelt werden kann.",
+        "category": "Verkehr",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Wie kommen Sie zur Arbeit?",
+            "answer": "Ich fahre meistens mit dem Bus und der U-Bahn. Das ist schneller als mit dem Auto."
+          },
+          {
+            "question": "Haben Sie ein Auto?",
+            "answer": "Nein, ich habe kein Auto. In der Stadt brauche ich es nicht wirklich."
+          },
+          {
+            "question": "Was sind die Vorteile von öffentlichen Verkehrsmitteln?",
+            "answer": "Sie sind umweltfreundlicher, oft günstiger und man muss sich nicht um Parkplätze kümmern."
+          },
+          {
+            "question": "Gibt es Nachteile?",
+            "answer": "Manchmal sind die Verkehrsmittel überfüllt oder haben Verspätungen."
+          }
+        ],
+        "duration": "1:08"
+      },
+      {
+        "id": "19",
+        "file": "/images/sprechen/bild-beschreiben/19.png",
+        "title": "Sperrmüll und Entsorgung",
+        "alt": "Alte Möbel auf dem Gehweg (Sperrmüll)",
+        "description": "Auf dem Foto sehe ich alte Möbel, die auf einer Straße stehen. Es liegt ein braunes Sofa, ein Tisch und ein roter Sessel dort. Rechts sieht man auch einen alten Weihnachtsbaum. Die Gegenstände stehen vor einer gelben Backsteinwand auf dem Gehweg. Es scheint Winter zu sein, weil man etwas Schnee auf der Straße sieht. Das Foto zeigt eine typische Situation von Sperrmüll. Wahrscheinlich haben die Leute alte Möbel und den Tannenbaum nach Weihnachten auf die Straße gestellt, damit sie abgeholt werden. Die Situation erinnert an das Thema Umwelt und Müllentsorgung. Ich finde, es ist sehr wichtig, dass wir unseren Müll richtig trennen und entsorgen.",
+        "category": "Feste & Feiern",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Feiern Sie gern Geburtstag?",
+            "answer": "Ja, ich feiere gern mit Familie und Freunden, aber nicht zu groß."
+          },
+          {
+            "question": "Wie haben Sie Ihren letzten Geburtstag gefeiert?",
+            "answer": "Ich habe ein kleines Abendessen mit engen Freunden gemacht und dann haben wir gespielt."
+          },
+          {
+            "question": "Welche Feste sind in Ihrer Heimat wichtig?",
+            "answer": "Bei uns sind Weihnachten, Ostern und Neujahr sehr wichtige Feste."
+          },
+          {
+            "question": "Schenken Sie gern?",
+            "answer": "Ja, ich schenke gern, aber ich überlege mir immer gut, was der Person gefallen könnte."
+          }
+        ],
+        "duration": "1:14"
+      },
+      {
+        "id": "20",
+        "file": "/images/sprechen/bild-beschreiben/20.png",
+        "title": "Müllabfuhr und Sauberkeit in der Stadt",
+        "alt": "Müllabfuhrfahrzeug und Arbeiter in orangefarbener Kleidung",
+        "description": "Auf dem Foto sehe ich mehrere Männer in orangefarbener Arbeitskleidung. Sie arbeiten für die Müllabfuhr und leeren Mülltonnen in ein großes orangefarbenes Müllauto. Das Fahrzeug steht am Straßenrand einer Wohnstraße mit vielen Häusern und parkenden Autos. Man sieht auch Fahrräder und Mülltonnen auf dem Gehweg. Die Männer tragen Handschuhe und reflektierende Streifen an der Kleidung – das ist wichtig für die Sicherheit im Straßenverkehr. Die Situation zeigt eine typische Szene aus dem Alltag in der Stadt.",
+        "category": "Freundschaft",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Haben Sie viele Freunde?",
+            "answer": "Ich habe nicht sehr viele, aber ein paar enge Freunde, auf die ich mich verlassen kann."
+          },
+          {
+            "question": "Wie oft treffen Sie Ihre Freunde?",
+            "answer": "Mindestens einmal pro Woche, manchmal auch öfter, je nachdem wie viel Zeit wir haben."
+          },
+          {
+            "question": "Was macht eine gute Freundschaft aus?",
+            "answer": "Vertrauen, Ehrlichkeit und dass man füreinander da ist, auch in schwierigen Zeiten."
+          },
+          {
+            "question": "Wie haben Sie Ihre besten Freunde kennengelernt?",
+            "answer": "Die meisten habe ich in der Schule oder bei der Arbeit kennengelernt."
+          }
+        ],
+        "duration": "1:11"
+      }
+    ],
+    "feste-feiern": [
+      {
+        "id": "13",
+        "file": "/images/sprechen/bild-beschreiben/13.jpg",
+        "title": "Feste und Feiern – Hochzeit",
+        "alt": "Brautpaar und Gäste bei einer Hochzeit",
+        "description": "Auf dem Foto sehe ich eine Hochzeitsszene. Im Vordergrund sitzen einige Gäste auf Stühlen und schauen nach vorne. Im Hintergrund steht ein Brautpaar – die Braut trägt ein weißes, elegantes Hochzeitskleid mit Schleier und hält einen Blumenstrauß in der Hand. Der Bräutigam trägt einen grauen Anzug und liest etwas von einem Blatt Papier vor, vielleicht sein Eheversprechen. Neben dem Paar steht ein Mann in schwarzer Kleidung – wahrscheinlich der Standesbeamte oder der Trauredner. Der Raum ist hell und modern, mit großen Fenstern und viel Tageslicht.",
+        "category": "Reisen",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Reisen Sie gern?",
+            "answer": "Ja, sehr gern. Ich finde es spannend, neue Länder und Kulturen kennenzulernen."
+          },
+          {
+            "question": "Wohin sind Sie zuletzt gereist?",
+            "answer": "Zuletzt war ich in Italien. Ich habe Rom und Florenz besucht."
+          },
+          {
+            "question": "Wie bereiten Sie sich auf eine Reise vor?",
+            "answer": "Ich informiere mich über das Land, buche Hotels und packe meinen Koffer rechtzeitig."
+          },
+          {
+            "question": "Was nehmen Sie immer mit auf Reisen?",
+            "answer": "Ich nehme immer meinen Reisepass, mein Handy, bequeme Schuhe und eine Kamera mit."
+          }
+        ],
+        "duration": "1:17"
+      }
+    ],
+    "freizeit": [
+      {
+        "id": "14",
+        "file": "/images/sprechen/bild-beschreiben/14.jpeg",
+        "title": "Freizeit und Urlaub - Schwimmbad",
+        "alt": "Familie am Pool mit Sonnenbrillen",
+        "description": "Auf dem Foto sehe ich eine Familie im Schwimmbad oder am Pool. Im Vordergrund sind zwei Erwachsene – eine Frau und ein Mann – und zwei Kinder. Alle vier tragen Badebekleidung und Sonnenbrillen. Sie liegen am Rand des Pools und lächeln einander freundlich an. Im Hintergrund sieht man das blaue Wasser und einige Schwimmringe. Das Wetter scheint sehr warm und sonnig zu sein. Die Familie sieht sehr glücklich und entspannt aus.",
+        "category": "Technologie",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Nutzen Sie viel Technologie?",
+            "answer": "Ja, ich benutze täglich mein Handy, meinen Computer und manchmal auch ein Tablet."
+          },
+          {
+            "question": "Was sind die Vorteile von Technologie?",
+            "answer": "Man kann schnell Informationen finden, mit Menschen kommunizieren und vieles effizienter erledigen."
+          },
+          {
+            "question": "Gibt es auch Nachteile?",
+            "answer": "Ja, manchmal verbringt man zu viel Zeit am Bildschirm und hat weniger persönliche Kontakte."
+          },
+          {
+            "question": "Könnten Sie ohne Smartphone leben?",
+            "answer": "Das wäre schwierig, aber möglich. Ich würde viele praktische Funktionen vermissen."
+          }
+        ],
+        "duration": "1:07"
+      },
+      {
+        "id": "28",
+        "file": "/images/sprechen/bild-beschreiben/28.jpg",
+        "title": "Freizeit und Familie - Picknick",
+        "alt": "Familie macht Picknick im Park auf einer Decke",
+        "description": "Auf dem Foto sehe ich eine Familie, die zusammen ein Picknick im Park macht. Die Eltern sitzen mit ihren zwei kleinen Kindern auf einer Decke auf dem Gras. Auf der Decke liegen ein Picknickkorb, Brot, Saft und Obst. Das Mädchen isst gerade einen Apfel, und der Junge sitzt neben ihr und lächelt. Im Hintergrund sieht man grüne Bäume und schönes Wetter — es scheint ein sonniger Tag zu sein. Die Stimmung auf dem Foto ist sehr fröhlich und entspannt.",
+        "category": "Alltag",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Wie sieht Ihr typischer Tag aus?",
+            "answer": "Ich stehe um 7 Uhr auf, frühstücke, gehe zur Arbeit und komme am Abend nach Hause."
+          },
+          {
+            "question": "Was machen Sie nach der Arbeit?",
+            "answer": "Ich koche, esse zu Abend, schaue vielleicht etwas fern oder lese ein Buch."
+          },
+          {
+            "question": "Haben Sie einen regelmäßigen Tagesablauf?",
+            "answer": "Ja, unter der Woche schon. Am Wochenende bin ich flexibler."
+          },
+          {
+            "question": "Was ist Ihnen im Alltag wichtig?",
+            "answer": "Mir ist wichtig, genug Zeit für mich selbst zu haben und nicht nur zu arbeiten."
+          }
+        ],
+        "duration": "1:11"
+      }
+    ],
+    "freundschaft": [
+      {
+        "id": "15",
+        "file": "/images/sprechen/bild-beschreiben/15.jpeg",
+        "title": "Freundschaft und Freizeit - Café",
+        "alt": "Gruppe junger Leute sitzt draußen im Café und lacht",
+        "description": "Auf dem Foto sehe ich eine Gruppe von fünf jungen Menschen, die gemeinsam in einem Café sitzen. Alle lachen und scheinen gute Laune zu haben. Auf dem Tisch stehen mehrere Tassen mit Kaffee oder Cappuccino, und Smartphones. Die Freunde sitzen draußen an einem kleinen runden Tisch – vielleicht ist es Frühling oder Sommer, weil sie leichte Kleidung tragen. Im Hintergrund kann man ein Café oder Restaurant sehen.",
+        "category": "Medien",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Sehen Sie oft fern?",
+            "answer": "Nicht sehr oft. Ich schaue lieber Serien online oder höre Podcasts."
+          },
+          {
+            "question": "Was für Sendungen mögen Sie?",
+            "answer": "Ich mag Dokumentationen, Nachrichten und manchmal auch Krimiserien."
+          },
+          {
+            "question": "Lesen Sie Zeitung?",
+            "answer": "Ja, ich lese die Nachrichten meistens online auf meinem Handy."
+          },
+          {
+            "question": "Wie informieren Sie sich über aktuelle Ereignisse?",
+            "answer": "Hauptsächlich über Nachrichten-Apps und manchmal über das Radio."
+          }
+        ],
+        "duration": "1:06"
+      },
+      {
+        "id": "18",
+        "file": "/images/sprechen/bild-beschreiben/18.png",
+        "title": "Nachbarn und Nachbarschaft / Hilfsbereitschaft",
+        "alt": "Zwei Personen sprechen über einen Gartenzaun; Hilfe mit Lebensmitteln",
+        "description": "Auf dem Foto sehe ich zwei Personen, die miteinander sprechen. Ein Mann lehnt sich über einen Gartenzaun und lächelt freundlich. Er trägt ein kariertes Hemd und scheint gut gelaunt zu sein. Vor ihm steht eine Frau, die ihm zuhört – sie trägt ebenfalls ein kariertes Hemd. Im Hintergrund sieht man ein Haus mit einem Garten voller Blumen und Pflanzen. Die Sonne scheint, es ist wahrscheinlich Nachmittag oder früher Abend. Die Situation zeigt ein typisches Gespräch zwischen Nachbarn.",
+        "category": "Wetter",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Welche Jahreszeit mögen Sie am liebsten?",
+            "answer": "Ich mag den Frühling am liebsten, weil das Wetter angenehm ist und alles blüht."
+          },
+          {
+            "question": "Was machen Sie bei schönem Wetter?",
+            "answer": "Ich gehe gern spazieren, treffe Freunde im Park oder fahre Fahrrad."
+          },
+          {
+            "question": "Was machen Sie bei schlechtem Wetter?",
+            "answer": "Bei Regen bleibe ich lieber zu Hause, lese ein Buch oder schaue einen Film."
+          },
+          {
+            "question": "Beeinflusst das Wetter Ihre Stimmung?",
+            "answer": "Ja, bei Sonnenschein fühle ich mich meistens besser und energiegeladener."
+          }
+        ],
+        "duration": "1:10"
+      }
+    ],
+    "misc": [
+      {
+        "id": "21",
+        "file": "/images/sprechen/bild-beschreiben/21.jpeg",
+        "title": "Müllabfuhr und Sauberkeit",
+        "alt": "Müllabfuhr arbeitet in einer Wohnstraße",
+        "description": "Auf dem Foto sehe ich mehrere Männer in orangefarbener Arbeitskleidung. Sie arbeiten für die Müllabfuhr und leeren Mülltonnen in ein großes orangefarbenes Müllauto. Das Fahrzeug steht am Straßenrand einer Wohnstraße mit vielen Häusern und parkenden Autos. Man sieht auch Fahrräder und Mülltonnen auf dem Gehweg. Die Männer tragen Handschuhe und reflektierende Streifen an der Kleidung – das ist wichtig für die Sicherheit im Straßenverkehr.",
+        "category": "Musik",
+        "questions": [
+          "Was sehen Sie auf dem Foto?",
+          "Was für eine Situation zeigt dieses Bild?",
+          "Welche Erfahrungen haben Sie damit?"
+        ],
+        "additionalQuestions": [
+          {
+            "question": "Hören Sie gern Musik?",
+            "answer": "Ja, sehr gern. Musik begleitet mich den ganzen Tag."
+          },
+          {
+            "question": "Was für Musik mögen Sie?",
+            "answer": "Ich höre verschiedene Musikrichtungen – Pop, Rock und manchmal auch Klassik."
+          },
+          {
+            "question": "Spielen Sie ein Instrument?",
+            "answer": "Nein, leider nicht. Aber ich würde gern Gitarre lernen."
+          },
+          {
+            "question": "Gehen Sie auf Konzerte?",
+            "answer": "Ja, ab und zu. Zuletzt war ich auf einem Konzert meiner Lieblingsband."
+          }
+        ],
+        "duration": "1:09"
+      }
+    ]
+  }
+}

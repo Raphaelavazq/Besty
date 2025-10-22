@@ -3,7 +3,7 @@
 Goal: help an AI coding agent be productive quickly in this repo. Focus on concrete, discoverable patterns and commands.
 
 - Project type: React 18 SPA built with Vite, Tailwind CSS, Zustand for state, deployed as a static site (Vercel recommended). See `README.md` and `package.json`.
-- **Start/dev commands**: 
+- **Start/dev commands**:
   - **ALWAYS use**: `./start-dev.sh` (automated startup with health checks)
   - **Manual alternative**: `npm install` then `npm run dev` (but prefer the script)
   - **CRITICAL**: Vite must run with `CI=true` environment variable to disable interactive mode (prevents process freezing)
@@ -19,10 +19,12 @@ Goal: help an AI coding agent be productive quickly in this repo. Focus on concr
   - `scripts/` — content build tooling (e.g. `scan-audio.js`, `build-hoeren-json.js`, `validate-questions.js`) — use these to prepare test content.
 
 - Important conventions and patterns (do not invent alternatives):
+  - **DATA ARCHITECTURE (CRITICAL)**: Keep content in JSON files, NOT in component code. See `data/bild-beschreiben.json` for reference architecture. Components should load and display data, not store it. This keeps components small (~400 lines) and content easily editable.
   - Audio is file-based and referenced by JSON in `data/`. Scripts in `scripts/` scan `content/` and emit JSON used by the app. If you change content layout, update `scripts/scan-audio.js` and `scripts/build-hoeren-json.js`.
   - Components use Tailwind utility classes and prefer small presentational components + feature folders under `src/features` for domain logic (see `src/features/hoeren/`).
   - Routing: React Router is configured in `src/App.jsx`. Wrap feature pages with `BareShell` when needed.
   - State: Lightweight app state uses Zustand; search `src/store/` for stores. Avoid adding global Context unless necessary.
+  - **SIMPLIFICATION PRINCIPLE**: Always look for opportunities to move data from code to JSON, reduce component size, and eliminate duplication. Target: <500 lines per component.
 
 - Testing & validation flows to preserve:
   - `npm run scan-audio` — regenerate audio index (reads `content/` for mp3 files).
