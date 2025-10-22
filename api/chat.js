@@ -1,5 +1,3 @@
-import fetch from "node-fetch";
-
 // Simple helper to read raw JSON body from IncomingMessage
 async function readJson(req) {
   return await new Promise((resolve, reject) => {
