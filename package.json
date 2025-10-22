@@ -8,20 +8,24 @@
     "preview": "vite preview",
     "lint": "eslint . --ext js,jsx",
     "scan-audio": "node scripts/scan-audio.js",
+    "scan-images": "node scripts/scan-bild-beschreiben.js",
     "build-questions": "node scripts/build-hoeren-json.js",
+    "validate-images": "node scripts/validate-bild-metadata.js",
     "validate-questions": "node scripts/validate-questions.js",
-    "prepare-content": "npm run scan-audio && npm run build-questions"
+    "prepare-content": "npm run scan-audio && npm run build-questions && npm run scan-images && npm run validate-images"
   },
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.17.5",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@vercel/analytics": "^1.5.0",
+    "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.294.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.0",
+    "tailwind-merge": "^3.3.1",
     "zod": "^3.22.4",
     "zustand": "^4.4.7"
   },
