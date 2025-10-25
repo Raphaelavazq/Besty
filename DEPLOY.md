@@ -1,88 +1,94 @@
-# 🚀 B1 Bestie - Deployment Guide
-
-## Quick Deploy to Vercel
-
-### 1. Push to GitHub
-```bash
-git add .
-git commit -m "Production ready"
-git push origin main
-```
-
-### 2. Deploy on Vercel
-1. Go to [vercel.com](https://vercel.com)
-2. Import your GitHub repository
-3. Add environment variables:
-   - `OPENAI_API_KEY` or `VITE_OPENAI_API_KEY` = Your OpenAI API key
-   - `UPSTASH_REDIS_REST_URL` = (Optional) Your Upstash Redis URL
-   - `UPSTASH_REDIS_REST_TOKEN` = (Optional) Your Upstash Redis token
-
-4. Click Deploy! 🎉
-
-### 3. That's It!
-Your app will be live at `https://your-app.vercel.app`
-
----
+# 🚀 B1 Bestie - Deploy Guide
 
 ## Local Development
 
 ```bash
-# Install dependencies
-npm install
-
-# Run development server
+# Start development (both API server + Vite)
 npm run dev
+
+# Or use the helper script
+./start.sh
 ```
 
-Open [http://localhost:3003](http://localhost:3003)
+Opens at http://localhost:3003
+
+**What works locally:**
+
+- ✅ Everything! (UI + All API features)
 
 ---
 
-## API Endpoints
+## Deploy to Vercel
 
-All endpoints are Vercel Serverless Functions in `/api/`:
+### Step 1: Push to GitHub
 
-- **`POST /api/chat`** - AI dialogue training
-- **`POST /api/schreiben`** - Email correction & evaluation  
-- **`POST /api/tts`** - Text-to-speech
-- **`GET /api/health`** - Health check
+```bash
+git push origin main
+```
+
+### Step 2: Vercel Dashboard
+
+1. Go to https://vercel.com
+2. Import your GitHub repo
+3. Add environment variable:
+   ```
+   OPENAI_API_KEY = sk-proj-your-key-here
+   ```
+4. Deploy
+
+### Step 3: Done!
+
+App is live at `https://your-app.vercel.app`
+
+---
+
+## How It Works
+
+### Local Development
+
+- **Express server (port 3001)** runs your `/api/*.js` files
+- **Vite (port 3003)** serves React app and proxies API calls
+- Same code as production!
+
+### Production (Vercel)
+
+- **Vercel serverless** runs your `/api/*.js` files automatically
+- **Vercel CDN** serves your React app
+- Zero config needed!
 
 ---
 
 ## Environment Variables
 
-### Required
+**Required in Vercel:**
+
 - `OPENAI_API_KEY` - Your OpenAI API key
 
-### Optional (for rate limiting)
-- `UPSTASH_REDIS_REST_URL` - Redis URL from [upstash.com](https://upstash.com)
-- `UPSTASH_REDIS_REST_TOKEN` - Redis auth token
+**Optional:**
+
+- `UPSTASH_REDIS_REST_URL` - For rate limiting
+- `UPSTASH_REDIS_REST_TOKEN` - For rate limiting
 
 ---
 
-## Features
+## Troubleshooting
 
-✅ Works on all devices (desktop, mobile, tablet)  
-✅ Auto-scaling with Vercel  
-✅ Global CDN  
-✅ Rate limiting (1 req/2s)  
-✅ Session tracking  
-✅ OpenAI integration
+### Local dev not working?
+
+```bash
+# Kill everything and restart
+pkill -9 node
+npm run dev
+```
+
+### Port already in use?
+
+```bash
+# Kill processes on ports 3001 and 3003
+lsof -ti:3001,3003 | xargs kill -9
+npm run dev
+```
 
 ---
 
-## Tech Stack
-
-- **Frontend:** React 18 + Vite + Tailwind CSS
-- **Backend:** Vercel Serverless Functions
-- **AI:** OpenAI GPT-4o-mini
-- **Deployment:** Vercel
-- **Rate Limiting:** Upstash Redis (optional)
-
----
-
-## Support
-
-Questions? Check the docs in `/docs/` or open an issue on GitHub.
-
-Happy learning! 🎓
+See `ARCHITECTURE_CLEAN.md` for full technical details.

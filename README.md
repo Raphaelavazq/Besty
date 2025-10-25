@@ -1,11 +1,30 @@
 # 🎓 B1 Bestie - DTZ B1 Exam Preparation App
 
-A modern, viewport-locked web application for preparing for the DTZ (Deutsch-Test für Zuwanderer) B1 examination.
+A modern, AI-powered web application for preparing for the DTZ (Deutsch-Test für Zuwanderer) B1 examination.
 
 ![B1 Bestie Preview](https://img.shields.io/badge/DTZ%20B1-Exam%20Prep-purple?style=for-the-badge)
 ![React](https://img.shields.io/badge/React-18-blue?style=flat-square&logo=react)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-06B6D4?style=flat-square&logo=tailwindcss)
 ![Vite](https://img.shields.io/badge/Vite-Build-646CFF?style=flat-square&logo=vite)
+
+---
+
+## 🚀 Quick Deploy (Required for AI Features)
+
+**⚠️ IMPORTANT:** AI features (Schreiben correction, Dialogue chat, TTS) only work when deployed to Vercel!
+
+```bash
+# 1. Push to GitHub
+git push origin main
+
+# 2. Deploy on Vercel (https://vercel.com)
+# 3. Add environment variable: OPENAI_API_KEY
+# 4. Done! Test at your-app.vercel.app
+```
+
+📖 **See `DEPLOY.md` for detailed instructions**
+
+---
 
 ## ✨ Features
 

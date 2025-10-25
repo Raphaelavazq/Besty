@@ -3,7 +3,9 @@
   "version": "1.0.1",
   "type": "module",
   "scripts": {
-    "dev": "vite --host 127.0.0.1 --port 3003",
+    "dev": "npm run dev:server & npm run dev:vite",
+    "dev:server": "cd server && npm install && node index.js",
+    "dev:vite": "CI=true vite --host 127.0.0.1 --port 3003",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext js,jsx",

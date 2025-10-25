@@ -53,28 +53,50 @@ async function upstashExpire(key, seconds) {
 }
 
 export default async function handler(req, res) {
+  console.log("✅ Handler called - method:", req.method);
+
   // Only allow POST
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
+  console.log("✅ Reading JSON body...");
   let body;
-  try {
-    body = await readJson(req);
-  } catch (err) {
-    return res.status(400).json({ error: "Invalid JSON" });
+
+  // Check if Express already parsed the body
+  if (req.body && typeof req.body === "object") {
+    body = req.body;
+    console.log("✅ Using Express-parsed body");
+  } else {
+    // Fallback to manual parsing (for Vercel serverless)
+    try {
+      body = await readJson(req);
+      console.log("✅ JSON parsed manually");
+    } catch (err) {
+      console.error("❌ JSON parse error:", err.message);
+      return res.status(400).json({ error: "Invalid JSON" });
+    }
   }
 
   const { text, prompt, type, sessionId } = body;
+  console.log(
+    "✅ Extracted fields - text length:",
+    text?.length,
+    "type:",
+    type
+  );
 
   // Validate input
   if (!text || !prompt || !type) {
+    console.error("❌ Missing required fields");
     return res.status(400).json({
       error: "Missing required fields: text, prompt, type",
     });
   }
 
   const wordCount = text.trim().split(/\s+/).length;
+  console.log("✅ Word count:", wordCount);
+
   if (wordCount < 50) {
     return res.status(400).json({
       error: `Text zu kurz. ${wordCount} Wörter, mindestens 50 erforderlich.`,
@@ -85,10 +107,14 @@ export default async function handler(req, res) {
   const actualSessionId =
     sessionId || `anon_${Math.random().toString(36).slice(2, 9)}`;
 
+  console.log("🔄 Checking rate limit for session:", actualSessionId);
+
   // Rate limiting: 1 request per 2 seconds
   const RATE_WINDOW = 2;
   const rateKey = `schreiben:rate:${actualSessionId}`;
   const rateCount = await upstashIncr(rateKey);
+
+  console.log("✅ Rate limit check done - count:", rateCount);
 
   if (rateCount !== null) {
     if (rateCount === 1) {
@@ -155,17 +181,27 @@ Sei konstruktiv und ermutigend! Erkläre Fehler klar und einfach auf B1-Niveau.`
 
   // Call OpenAI API
   try {
-    const OPENAI_API_KEY =
-      process.env.OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY;
+    const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+
+    console.log("🔑 API Key exists:", !!OPENAI_API_KEY);
+    console.log("🔑 API Key length:", OPENAI_API_KEY?.length);
 
     if (!OPENAI_API_KEY) {
+      console.error("❌ OpenAI API key not configured");
       return res.status(500).json({ error: "OpenAI API key not configured" });
     }
+
+    console.log("📡 Calling OpenAI API...");
+
+    // Add timeout to fetch
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 30000); // 30 second timeout
 
     const openaiResponse = await fetch(
       "https://api.openai.com/v1/chat/completions",
       {
         method: "POST",
+        signal: controller.signal,
         headers: {
           Authorization: `Bearer ${OPENAI_API_KEY}`,
           "Content-Type": "application/json",
@@ -186,9 +222,12 @@ Sei konstruktiv und ermutigend! Erkläre Fehler klar und einfach auf B1-Niveau.`
       }
     );
 
+    clearTimeout(timeout);
+    console.log("✅ OpenAI responded with status:", openaiResponse.status);
+
     if (!openaiResponse.ok) {
       const errorData = await openaiResponse.json();
-      console.error("OpenAI error:", errorData);
+      console.error("❌ OpenAI error:", errorData);
       return res.status(openaiResponse.status).json({
         error: "OpenAI API error",
         details: errorData,
@@ -217,7 +256,15 @@ Sei konstruktiv und ermutigend! Erkläre Fehler klar und einfach auf B1-Niveau.`
 
     return res.status(200).json(result);
   } catch (error) {
-    console.error("Schreiben API error:", error);
+    console.error("❌ Schreiben API error:", error.name, error.message);
+
+    if (error.name === "AbortError") {
+      return res.status(504).json({
+        error: "OpenAI request timeout",
+        details: "The request took too long. Please try again.",
+      });
+    }
+
     return res.status(500).json({
       error: "Failed to process correction",
       details: error.message,

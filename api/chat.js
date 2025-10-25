@@ -45,12 +45,19 @@ export default async function handler(req, res) {
   }
 
   let body;
-  try {
-    body = await readJson(req);
-  } catch (err) {
-    res.statusCode = 400;
-    res.end(JSON.stringify({ error: "Invalid JSON" }));
-    return;
+
+  // Check if Express already parsed the body
+  if (req.body && typeof req.body === "object") {
+    body = req.body;
+  } else {
+    // Fallback to manual parsing (for Vercel serverless)
+    try {
+      body = await readJson(req);
+    } catch (err) {
+      res.statusCode = 400;
+      res.end(JSON.stringify({ error: "Invalid JSON" }));
+      return;
+    }
   }
 
   const sessionId =

@@ -9,8 +9,8 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const OPENAI_API_KEY =
-    process.env.OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY;
+  // Get API key from environment
+  const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
   if (!OPENAI_API_KEY) {
     console.error("❌ OpenAI API key not configured");
