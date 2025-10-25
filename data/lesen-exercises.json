@@ -35,26 +35,36 @@
         "situations": [
           {
             "id": 1,
+            "person": "Familie Müller",
+            "situation": "Familie Müller hat 2 Kinder und sucht eine große Wohnung mit Garten. Sie möchten nicht zu viel Miete zahlen.",
             "text": "Familie Müller hat 2 Kinder und sucht eine große Wohnung mit Garten. Sie möchten nicht zu viel Miete zahlen.",
             "correctAnswer": "b"
           },
           {
             "id": 2,
+            "person": "Anna",
+            "situation": "Anna ist Studentin und sucht ein günstiges Zimmer in der Nähe der Universität. Sie hat wenig Möbel.",
             "text": "Anna ist Studentin und sucht ein günstiges Zimmer in der Nähe der Universität. Sie hat wenig Möbel.",
             "correctAnswer": "c"
           },
           {
             "id": 3,
+            "person": "Herr Schmidt",
+            "situation": "Herr Schmidt arbeitet in der Stadtmitte und hat eine Katze. Er braucht eine kleine Wohnung und kann bis zu 800€ zahlen.",
             "text": "Herr Schmidt arbeitet in der Stadtmitte und hat eine Katze. Er braucht eine kleine Wohnung und kann bis zu 800€ zahlen.",
             "correctAnswer": "a"
           },
           {
             "id": 4,
+            "person": "Frau Wagner",
+            "situation": "Frau Wagner ist Geschäftsführerin und sucht eine moderne Wohnung mit Service und Parkplatz. Preis spielt keine Rolle.",
             "text": "Frau Wagner ist Geschäftsführerin und sucht eine moderne Wohnung mit Service und Parkplatz. Preis spielt keine Rolle.",
             "correctAnswer": "d"
           },
           {
             "id": 5,
+            "person": "Junges Paar",
+            "situation": "Ein junges Paar ohne Kinder sucht eine zentrale 2-Zimmer-Wohnung, aber sie wohnen nicht gern im Erdgeschoss.",
             "text": "Ein junges Paar ohne Kinder sucht eine zentrale 2-Zimmer-Wohnung, aber sie wohnen nicht gern im Erdgeschoss.",
             "correctAnswer": "a"
           }
@@ -90,21 +100,29 @@
         "situations": [
           {
             "id": 1,
+            "person": "Maria",
+            "situation": "Maria hat das B1-Zertifikat und möchte bald die B2-Prüfung machen. Sie arbeitet nicht und hat jeden Tag Zeit.",
             "text": "Maria hat das B1-Zertifikat und möchte bald die B2-Prüfung machen. Sie arbeitet nicht und hat jeden Tag Zeit.",
             "correctAnswer": "c"
           },
           {
             "id": 2,
+            "person": "Herr Kim",
+            "situation": "Herr Kim arbeitet von Montag bis Freitag. Er kann nur abends lernen und möchte besser sprechen können.",
             "text": "Herr Kim arbeitet von Montag bis Freitag. Er kann nur abends lernen und möchte besser sprechen können.",
             "correctAnswer": "b"
           },
           {
             "id": 3,
+            "person": "Anna",
+            "situation": "Anna arbeitet auch am Samstag. Sie spricht schon ein bisschen Deutsch (A2) und möchte ihre Grammatik verbessern.",
             "text": "Anna arbeitet auch am Samstag. Sie spricht schon ein bisschen Deutsch (A2) und möchte ihre Grammatik verbessern.",
             "correctAnswer": "d"
           },
           {
             "id": 4,
+            "person": "Tom",
+            "situation": "Tom hat noch nie Deutsch gelernt. Er arbeitet tagsüber und sucht einen günstigen Abendkurs für Anfänger.",
             "text": "Tom hat noch nie Deutsch gelernt. Er arbeitet tagsüber und sucht einen günstigen Abendkurs für Anfänger.",
             "correctAnswer": "a"
           }
@@ -126,30 +144,35 @@
         "questions": [
           {
             "id": 1,
+            "question": "Das Familienzentrum hat nur vormittags geöffnet.",
             "text": "Das Familienzentrum hat nur vormittags geöffnet.",
             "correctAnswer": false,
             "explanation": "Falsch. Das Zentrum hat Mo-Fr von 9-16 Uhr und Sa von 10-14 Uhr geöffnet."
           },
           {
             "id": 2,
+            "question": "Die Beratung im Zentrum kostet nichts.",
             "text": "Die Beratung im Zentrum kostet nichts.",
             "correctAnswer": true,
             "explanation": "Richtig. Im Text steht: 'Familien können sich kostenlos ... informieren.'"
           },
           {
             "id": 3,
+            "question": "Für die Samstags-Workshops muss man sich anmelden.",
             "text": "Für die Samstags-Workshops muss man sich anmelden.",
             "correctAnswer": false,
             "explanation": "Falsch. Im Text steht nur, dass man 5 Euro zahlen muss. Eine Anmeldung wird nicht erwähnt."
           },
           {
             "id": 4,
+            "question": "Am ersten Tag kamen mehr als 150 Besucher.",
             "text": "Am ersten Tag kamen mehr als 150 Besucher.",
             "correctAnswer": true,
             "explanation": "Richtig. Frau Dr. Weber sagt: 'Wir hatten schon 200 Besucher am ersten Tag.'"
           },
           {
             "id": 5,
+            "question": "Eltern können ihre Kinder samstags zum Workshop bringen und dann alleine einkaufen gehen.",
             "text": "Eltern können ihre Kinder samstags zum Workshop bringen und dann alleine einkaufen gehen.",
             "correctAnswer": false,
             "explanation": "Falsch. Der Text sagt, dass Eltern die Cafeteria nutzen oder am Elterntreff teilnehmen können - sie bleiben also im Zentrum."
@@ -164,30 +187,35 @@
         "questions": [
           {
             "id": 1,
+            "question": "Beim Carsharing kauft man zusammen mit anderen ein Auto.",
             "text": "Beim Carsharing kauft man zusammen mit anderen ein Auto.",
             "correctAnswer": false,
             "explanation": "Falsch. Man teilt sich ein Auto, kauft es aber nicht."
           },
           {
             "id": 2,
+            "question": "In Berlin gibt es mehr Carsharing-Nutzer als auf dem Land.",
             "text": "In Berlin gibt es mehr Carsharing-Nutzer als auf dem Land.",
             "correctAnswer": true,
             "explanation": "Richtig. Im Text steht: 'Die meisten leben in Großstädten wie Berlin, München oder Hamburg.'"
           },
           {
             "id": 3,
+            "question": "Bei allen Anbietern muss man eine monatliche Gebühr zahlen.",
             "text": "Bei allen Anbietern muss man eine monatliche Gebühr zahlen.",
             "correctAnswer": false,
             "explanation": "Falsch. Im Text steht 'Viele Anbieter verlangen...' - nicht alle."
           },
           {
             "id": 4,
+            "question": "Carsharing ist billiger als ein eigenes Auto, wenn man wenig fährt.",
             "text": "Carsharing ist billiger als ein eigenes Auto, wenn man wenig fährt.",
             "correctAnswer": true,
             "explanation": "Richtig. Experten sagen, dass es sich für Menschen lohnt, die weniger als 10.000 km fahren."
           },
           {
             "id": 5,
+            "question": "Benzin muss man beim Carsharing extra bezahlen.",
             "text": "Benzin muss man beim Carsharing extra bezahlen.",
             "correctAnswer": false,
             "explanation": "Falsch. Im Text steht: 'Benzin und Versicherung sind im Preis enthalten.'"
@@ -210,6 +238,7 @@
         "questions": [
           {
             "id": 1,
+            "question": "Wann beginnen die Renovierungsarbeiten?",
             "text": "Wann beginnen die Renovierungsarbeiten?",
             "options": [
               "Sofort",
@@ -222,6 +251,7 @@
           },
           {
             "id": 2,
+            "question": "Was sollen die Mieter während der Renovierung tun?",
             "text": "Was sollen die Mieter während der Renovierung tun?",
             "options": [
               "Zu Hause bleiben",
@@ -234,6 +264,7 @@
           },
           {
             "id": 3,
+            "question": "Wann können die Mieter das Treppenhaus benutzen?",
             "text": "Wann können die Mieter das Treppenhaus benutzen?",
             "options": [
               "Nur am Wochenende",
@@ -246,6 +277,7 @@
           },
           {
             "id": 4,
+            "question": "Wie lange dauern die Arbeiten?",
             "text": "Wie lange dauern die Arbeiten?",
             "options": [
               "1 Woche",
@@ -258,6 +290,7 @@
           },
           {
             "id": 5,
+            "question": "Was sollen die Mieter machen, wenn sie Fragen haben?",
             "text": "Was sollen die Mieter machen, wenn sie Fragen haben?",
             "options": [
               "Eine E-Mail schreiben",
