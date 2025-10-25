@@ -603,9 +603,10 @@ VERBESSERUNGEN:
 /**
  * Corrects grammar and vocabulary mistakes in user's message
  * @param {string} userMessage - User's message to correct
+ * @param {number} scenarioId - Scenario ID for session tracking
  * @returns {Promise<{hasErrors: boolean, original: string, corrected: string, mistakes: Array}>}
  */
-export async function correctMessage(userMessage) {
+export async function correctMessage(userMessage, scenarioId) {
   const systemPrompt = `Du bist ein Deutschlehrer für B1-Niveau.
 
 Analysiere den folgenden Satz und korrigiere alle Fehler:
