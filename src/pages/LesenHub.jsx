@@ -4,12 +4,7 @@
  */
 
 import { Link } from "react-router-dom";
-import {
-  BookOpen,
-  Clock,
-  Target,
-  ArrowRight,
-} from "lucide-react";
+import { BookOpen, Clock, Target, ArrowRight } from "lucide-react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function LesenHub() {
@@ -57,8 +52,10 @@ export default function LesenHub() {
 
               {/* CTA Button - Placeholder */}
               <div className="space-y-4">
-                <p className="text-white/70 text-sm">In Entwicklung – Bald verfügbar</p>
-                <button 
+                <p className="text-white/70 text-sm">
+                  In Entwicklung – Bald verfügbar
+                </p>
+                <button
                   disabled
                   className="inline-flex items-center gap-3 bg-white/50 text-purple-700/50 px-8 py-4 rounded-2xl font-bold text-lg shadow-xl cursor-not-allowed"
                 >

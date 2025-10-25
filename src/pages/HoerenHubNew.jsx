@@ -341,7 +341,9 @@ export default function HoerenHubNew() {
 
                           const currentSrc = e.target.src;
                           const currentIndex = fallbacks.findIndex((fb) =>
-                            currentSrc.includes(fb.split("/").pop().split(".")[0])
+                            currentSrc.includes(
+                              fb.split("/").pop().split(".")[0]
+                            )
                           );
                           const nextIndex = currentIndex + 1;
 
@@ -399,8 +401,12 @@ export default function HoerenHubNew() {
               </button>
 
               <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-6">
-                <h3 className="text-2xl font-bold mb-1">{selectedVideo.title}</h3>
-                <p className="text-xl font-semibold text-purple-100">{selectedVideo.subtitle}</p>
+                <h3 className="text-2xl font-bold mb-1">
+                  {selectedVideo.title}
+                </h3>
+                <p className="text-xl font-semibold text-purple-100">
+                  {selectedVideo.subtitle}
+                </p>
               </div>
 
               <div className="relative bg-black">
@@ -423,7 +429,9 @@ export default function HoerenHubNew() {
                     {selectedVideo.category}
                   </span>
                   <span className="text-slate-600 flex items-center gap-1">
-                    <span className="font-medium">{selectedVideo.difficulty} Level</span>
+                    <span className="font-medium">
+                      {selectedVideo.difficulty} Level
+                    </span>
                   </span>
                 </div>
               </div>

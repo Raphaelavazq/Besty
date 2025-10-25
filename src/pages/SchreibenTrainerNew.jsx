@@ -162,7 +162,9 @@ export default function SchreibenTrainerNew() {
               autoplay
             />
           </div>
-          <span className="text-lg font-semibold text-gray-700">Besty lädt deine Aufgabe...</span>
+          <span className="text-lg font-semibold text-gray-700">
+            Besty lädt deine Aufgabe...
+          </span>
         </div>
       </div>
     );
@@ -179,7 +181,9 @@ export default function SchreibenTrainerNew() {
               className="flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 rounded-2xl bg-white/60 hover:bg-white/80 backdrop-blur-sm border border-white/40 transition-all duration-200 hover:scale-105 active:scale-95 shadow-lg"
             >
               <ArrowLeft size={18} className="text-purple-700" />
-              <span className="hidden sm:inline font-semibold text-purple-700">Zurück</span>
+              <span className="hidden sm:inline font-semibold text-purple-700">
+                Zurück
+              </span>
             </button>
 
             <h1 className="text-base sm:text-xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
@@ -262,13 +266,17 @@ export default function SchreibenTrainerNew() {
                 />
               </button>
 
-              <div className={`space-y-3 ${showContentPoints ? "block" : "hidden sm:block"} mt-4`}>
+              <div
+                className={`space-y-3 ${showContentPoints ? "block" : "hidden sm:block"} mt-4`}
+              >
                 {prompt.contentPoints.map((point, index) => (
                   <div key={index} className="flex items-start gap-3 group">
                     <span className="w-7 h-7 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
                       {index + 1}
                     </span>
-                    <span className="text-gray-700 text-sm sm:text-base pt-1">{point}</span>
+                    <span className="text-gray-700 text-sm sm:text-base pt-1">
+                      {point}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -285,14 +293,24 @@ export default function SchreibenTrainerNew() {
                     <Lightbulb size={18} className="text-purple-600" />
                     <span>Tipps ({prompt.hints.length})</span>
                   </span>
-                  {showHints ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                  {showHints ? (
+                    <ChevronUp size={20} />
+                  ) : (
+                    <ChevronDown size={20} />
+                  )}
                 </button>
 
                 {showHints && (
                   <div className="mt-3 space-y-2 pl-4 sm:pl-6">
                     {prompt.hints.map((hint, index) => (
-                      <div key={index} className="flex items-start gap-2 text-sm sm:text-base text-gray-700">
-                        <Lightbulb size={16} className="text-purple-600 flex-shrink-0 mt-1" />
+                      <div
+                        key={index}
+                        className="flex items-start gap-2 text-sm sm:text-base text-gray-700"
+                      >
+                        <Lightbulb
+                          size={16}
+                          className="text-purple-600 flex-shrink-0 mt-1"
+                        />
                         <span>{hint}</span>
                       </div>
                     ))}
@@ -307,7 +325,9 @@ export default function SchreibenTrainerNew() {
         {!showResults && (
           <div className="bg-white/60 backdrop-blur-xl rounded-3xl p-4 sm:p-8 shadow-2xl border border-white/40">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-4 sm:mb-6">
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900">Dein Brief</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900">
+                Dein Brief
+              </h3>
 
               {/* Word Counter - Glassmorphic */}
               <div
@@ -339,7 +359,10 @@ export default function SchreibenTrainerNew() {
             {/* Error Message */}
             {error && (
               <div className="mt-4 bg-violet-50/80 backdrop-blur-sm border-2 border-violet-200 rounded-2xl p-4 flex items-start gap-3 shadow-lg">
-                <AlertCircle size={20} className="text-violet-600 flex-shrink-0 mt-0.5" />
+                <AlertCircle
+                  size={20}
+                  className="text-violet-600 flex-shrink-0 mt-0.5"
+                />
                 <p className="text-violet-700 text-sm sm:text-base">{error}</p>
               </div>
             )}
@@ -352,8 +375,13 @@ export default function SchreibenTrainerNew() {
                 className="group flex items-center gap-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 sm:px-10 py-4 sm:py-5 rounded-2xl font-bold shadow-2xl hover:shadow-3xl hover:-translate-y-1 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <Sparkles size={22} className="relative z-10 group-hover:rotate-12 transition-transform" />
-                <span className="relative z-10 text-sm sm:text-base">Von Besty korrigieren lassen</span>
+                <Sparkles
+                  size={22}
+                  className="relative z-10 group-hover:rotate-12 transition-transform"
+                />
+                <span className="relative z-10 text-sm sm:text-base">
+                  Von Besty korrigieren lassen
+                </span>
               </button>
             </div>
           </div>
@@ -375,9 +403,13 @@ export default function SchreibenTrainerNew() {
                     <Award className="w-8 h-8 text-purple-600" />
                     Bewertung
                   </h2>
-                  <div className={`text-5xl sm:text-6xl font-black ${getScoreColor(results.score.total, 15)}`}>
+                  <div
+                    className={`text-5xl sm:text-6xl font-black ${getScoreColor(results.score.total, 15)}`}
+                  >
                     {results.score.total}
-                    <span className="text-3xl sm:text-4xl text-gray-400">/15</span>
+                    <span className="text-3xl sm:text-4xl text-gray-400">
+                      /15
+                    </span>
                   </div>
                 </div>
 
@@ -385,22 +417,39 @@ export default function SchreibenTrainerNew() {
                 <div className="flex gap-4 overflow-x-auto pb-4 sm:pb-0 sm:grid sm:grid-cols-3 scrollbar-hide">
                   {[
                     { key: "content", label: "Inhalt", icon: FileText, max: 5 },
-                    { key: "communication", label: "Kommunikation", icon: Zap, max: 5 },
-                    { key: "accuracy", label: "Korrektheit", icon: CheckCircle2, max: 5 },
+                    {
+                      key: "communication",
+                      label: "Kommunikation",
+                      icon: Zap,
+                      max: 5,
+                    },
+                    {
+                      key: "accuracy",
+                      label: "Korrektheit",
+                      icon: CheckCircle2,
+                      max: 5,
+                    },
                   ].map((criteria) => (
                     <div
                       key={criteria.key}
                       className="flex-shrink-0 w-48 sm:w-auto bg-gradient-to-br from-purple-100/60 to-indigo-100/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-purple-200/40 hover:scale-105 transition-transform"
                     >
-                      <criteria.icon size={24} className="text-purple-600 mb-2" />
+                      <criteria.icon
+                        size={24}
+                        className="text-purple-600 mb-2"
+                      />
                       <h4 className="text-xs sm:text-sm font-bold text-gray-700 mb-3">
                         {criteria.label}
                       </h4>
                       <div className="flex items-center justify-between">
-                        <span className={`text-3xl sm:text-4xl font-black ${getScoreColor(results.score[criteria.key], criteria.max)}`}>
+                        <span
+                          className={`text-3xl sm:text-4xl font-black ${getScoreColor(results.score[criteria.key], criteria.max)}`}
+                        >
                           {results.score[criteria.key]}
                         </span>
-                        <span className="text-xl sm:text-2xl text-gray-400">/{criteria.max}</span>
+                        <span className="text-xl sm:text-2xl text-gray-400">
+                          /{criteria.max}
+                        </span>
                       </div>
                     </div>
                   ))}
@@ -423,11 +472,19 @@ export default function SchreibenTrainerNew() {
                         }`}
                       >
                         {results.contentPoints[index] ? (
-                          <CheckCircle2 size={20} className="text-indigo-600 flex-shrink-0 mt-0.5" />
+                          <CheckCircle2
+                            size={20}
+                            className="text-indigo-600 flex-shrink-0 mt-0.5"
+                          />
                         ) : (
-                          <XCircle size={20} className="text-violet-600 flex-shrink-0 mt-0.5" />
+                          <XCircle
+                            size={20}
+                            className="text-violet-600 flex-shrink-0 mt-0.5"
+                          />
                         )}
-                        <span className={`text-sm sm:text-base ${results.contentPoints[index] ? "text-gray-700" : "text-violet-700 font-semibold"}`}>
+                        <span
+                          className={`text-sm sm:text-base ${results.contentPoints[index] ? "text-gray-700" : "text-violet-700 font-semibold"}`}
+                        >
                           {point}
                           {!results.contentPoints[index] && " (Fehlt!)"}
                         </span>
@@ -450,11 +507,15 @@ export default function SchreibenTrainerNew() {
                   className="flex items-center gap-2 text-sm bg-purple-100/60 hover:bg-purple-200/60 backdrop-blur-sm px-4 py-2 rounded-xl transition-all border border-purple-200/40"
                 >
                   {showOriginal ? <Eye size={16} /> : <EyeOff size={16} />}
-                  <span>{showOriginal ? "Original zeigen" : "Nur Korrektur"}</span>
+                  <span>
+                    {showOriginal ? "Original zeigen" : "Nur Korrektur"}
+                  </span>
                 </button>
               </div>
 
-              <div className={`grid ${showOriginal ? "md:grid-cols-2" : "grid-cols-1"} gap-4 sm:gap-6`}>
+              <div
+                className={`grid ${showOriginal ? "md:grid-cols-2" : "grid-cols-1"} gap-4 sm:gap-6`}
+              >
                 {showOriginal && (
                   <div>
                     <h4 className="text-xs sm:text-sm font-bold text-gray-700 mb-3 flex items-center gap-2">
@@ -488,13 +549,21 @@ export default function SchreibenTrainerNew() {
               <div className="bg-white/60 backdrop-blur-xl rounded-3xl p-4 sm:p-8 shadow-2xl border border-white/40">
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center gap-2">
                   <AlertCircle className="w-6 h-6 text-violet-600" />
-                  {results.errors.length} {results.errors.length === 1 ? "Fehler" : "Fehler"}
+                  {results.errors.length}{" "}
+                  {results.errors.length === 1 ? "Fehler" : "Fehler"}
                 </h3>
                 <div className="space-y-3">
                   {results.errors.map((error, index) => (
-                    <div key={index} className="bg-violet-50/60 backdrop-blur-sm border border-violet-200/40 rounded-2xl overflow-hidden">
+                    <div
+                      key={index}
+                      className="bg-violet-50/60 backdrop-blur-sm border border-violet-200/40 rounded-2xl overflow-hidden"
+                    >
                       <button
-                        onClick={() => setExpandedError(expandedError === index ? null : index)}
+                        onClick={() =>
+                          setExpandedError(
+                            expandedError === index ? null : index
+                          )
+                        }
                         className="w-full p-4 flex items-center justify-between hover:bg-violet-100/60 transition-colors"
                       >
                         <div className="flex items-center gap-3">
@@ -511,23 +580,40 @@ export default function SchreibenTrainerNew() {
                                   : "Rechtschreibung"}
                           </span>
                         </div>
-                        {expandedError === index ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                        {expandedError === index ? (
+                          <ChevronUp size={20} />
+                        ) : (
+                          <ChevronDown size={20} />
+                        )}
                       </button>
 
                       {expandedError === index && (
                         <div className="px-4 pb-4 space-y-3">
                           <div className="bg-white/60 backdrop-blur-sm rounded-xl p-3">
-                            <span className="text-xs font-bold text-gray-600">Falsch:</span>
-                            <p className="text-violet-700 line-through text-sm sm:text-base">{error.original}</p>
+                            <span className="text-xs font-bold text-gray-600">
+                              Falsch:
+                            </span>
+                            <p className="text-violet-700 line-through text-sm sm:text-base">
+                              {error.original}
+                            </p>
                           </div>
                           <div className="bg-white/60 backdrop-blur-sm rounded-xl p-3">
-                            <span className="text-xs font-bold text-gray-600">Richtig:</span>
-                            <p className="text-indigo-700 font-semibold text-sm sm:text-base">{error.corrected}</p>
+                            <span className="text-xs font-bold text-gray-600">
+                              Richtig:
+                            </span>
+                            <p className="text-indigo-700 font-semibold text-sm sm:text-base">
+                              {error.corrected}
+                            </p>
                           </div>
                           <div className="bg-gradient-to-br from-purple-100/60 to-indigo-100/60 backdrop-blur-sm rounded-xl p-3 border border-purple-200/40">
                             <div className="flex items-start gap-2">
-                              <Lightbulb size={16} className="text-purple-600 flex-shrink-0 mt-0.5" />
-                              <p className="text-sm text-gray-700">{error.explanation}</p>
+                              <Lightbulb
+                                size={16}
+                                className="text-purple-600 flex-shrink-0 mt-0.5"
+                              />
+                              <p className="text-sm text-gray-700">
+                                {error.explanation}
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -541,58 +627,81 @@ export default function SchreibenTrainerNew() {
             {/* Feedback - Horizontal Scroll on Mobile */}
             <div className="flex gap-4 overflow-x-auto pb-4 sm:pb-0 sm:grid sm:grid-cols-3 scrollbar-hide">
               {/* Strengths */}
-              {results.feedback.strengths && results.feedback.strengths.length > 0 && (
-                <div className="flex-shrink-0 w-72 sm:w-auto bg-white/60 backdrop-blur-xl rounded-3xl p-6 shadow-2xl border border-white/40">
-                  <h4 className="font-bold text-indigo-700 mb-4 flex items-center gap-2">
-                    <CheckCircle2 size={20} />
-                    Stärken
-                  </h4>
-                  <ul className="space-y-2">
-                    {results.feedback.strengths.map((strength, index) => (
-                      <li key={index} className="text-sm text-gray-700 flex items-start gap-2">
-                        <CheckCircle2 size={16} className="text-indigo-600 flex-shrink-0 mt-0.5" />
-                        <span>{strength}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+              {results.feedback.strengths &&
+                results.feedback.strengths.length > 0 && (
+                  <div className="flex-shrink-0 w-72 sm:w-auto bg-white/60 backdrop-blur-xl rounded-3xl p-6 shadow-2xl border border-white/40">
+                    <h4 className="font-bold text-indigo-700 mb-4 flex items-center gap-2">
+                      <CheckCircle2 size={20} />
+                      Stärken
+                    </h4>
+                    <ul className="space-y-2">
+                      {results.feedback.strengths.map((strength, index) => (
+                        <li
+                          key={index}
+                          className="text-sm text-gray-700 flex items-start gap-2"
+                        >
+                          <CheckCircle2
+                            size={16}
+                            className="text-indigo-600 flex-shrink-0 mt-0.5"
+                          />
+                          <span>{strength}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
               {/* Improvements */}
-              {results.feedback.improvements && results.feedback.improvements.length > 0 && (
-                <div className="flex-shrink-0 w-72 sm:w-auto bg-white/60 backdrop-blur-xl rounded-3xl p-6 shadow-2xl border border-white/40">
-                  <h4 className="font-bold text-purple-700 mb-4 flex items-center gap-2">
-                    <TrendingUp size={20} />
-                    Verbesserungen
-                  </h4>
-                  <ul className="space-y-2">
-                    {results.feedback.improvements.map((improvement, index) => (
-                      <li key={index} className="text-sm text-gray-700 flex items-start gap-2">
-                        <TrendingUp size={16} className="text-purple-600 flex-shrink-0 mt-0.5" />
-                        <span>{improvement}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+              {results.feedback.improvements &&
+                results.feedback.improvements.length > 0 && (
+                  <div className="flex-shrink-0 w-72 sm:w-auto bg-white/60 backdrop-blur-xl rounded-3xl p-6 shadow-2xl border border-white/40">
+                    <h4 className="font-bold text-purple-700 mb-4 flex items-center gap-2">
+                      <TrendingUp size={20} />
+                      Verbesserungen
+                    </h4>
+                    <ul className="space-y-2">
+                      {results.feedback.improvements.map(
+                        (improvement, index) => (
+                          <li
+                            key={index}
+                            className="text-sm text-gray-700 flex items-start gap-2"
+                          >
+                            <TrendingUp
+                              size={16}
+                              className="text-purple-600 flex-shrink-0 mt-0.5"
+                            />
+                            <span>{improvement}</span>
+                          </li>
+                        )
+                      )}
+                    </ul>
+                  </div>
+                )}
 
               {/* Suggestions */}
-              {results.feedback.suggestions && results.feedback.suggestions.length > 0 && (
-                <div className="flex-shrink-0 w-72 sm:w-auto bg-white/60 backdrop-blur-xl rounded-3xl p-6 shadow-2xl border border-white/40">
-                  <h4 className="font-bold text-purple-700 mb-4 flex items-center gap-2">
-                    <Lightbulb size={20} />
-                    Tipps
-                  </h4>
-                  <ul className="space-y-2">
-                    {results.feedback.suggestions.map((suggestion, index) => (
-                      <li key={index} className="text-sm text-gray-700 flex items-start gap-2">
-                        <Lightbulb size={16} className="text-purple-600 flex-shrink-0 mt-0.5" />
-                        <span>{suggestion}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+              {results.feedback.suggestions &&
+                results.feedback.suggestions.length > 0 && (
+                  <div className="flex-shrink-0 w-72 sm:w-auto bg-white/60 backdrop-blur-xl rounded-3xl p-6 shadow-2xl border border-white/40">
+                    <h4 className="font-bold text-purple-700 mb-4 flex items-center gap-2">
+                      <Lightbulb size={20} />
+                      Tipps
+                    </h4>
+                    <ul className="space-y-2">
+                      {results.feedback.suggestions.map((suggestion, index) => (
+                        <li
+                          key={index}
+                          className="text-sm text-gray-700 flex items-start gap-2"
+                        >
+                          <Lightbulb
+                            size={16}
+                            className="text-purple-600 flex-shrink-0 mt-0.5"
+                          />
+                          <span>{suggestion}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
             </div>
 
             {/* Action Buttons */}
@@ -631,9 +740,7 @@ export default function SchreibenTrainerNew() {
               <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-2">
                 Besty korrigiert deinen Brief
               </h3>
-              <p className="text-gray-600">
-                Einen Moment bitte...
-              </p>
+              <p className="text-gray-600">Einen Moment bitte...</p>
             </div>
           </div>
         </div>

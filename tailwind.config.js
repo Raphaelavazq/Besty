@@ -91,17 +91,17 @@ export default {
   plugins: [
     function ({ addUtilities }) {
       addUtilities({
-        '.scrollbar-hide': {
+        ".scrollbar-hide": {
           /* IE and Edge */
-          '-ms-overflow-style': 'none',
+          "-ms-overflow-style": "none",
           /* Firefox */
-          'scrollbar-width': 'none',
+          "scrollbar-width": "none",
           /* Safari and Chrome */
-          '&::-webkit-scrollbar': {
-            display: 'none'
-          }
-        }
-      })
-    }
+          "&::-webkit-scrollbar": {
+            display: "none",
+          },
+        },
+      });
+    },
   ],
 };

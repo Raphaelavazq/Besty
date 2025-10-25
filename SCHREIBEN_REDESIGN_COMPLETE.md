@@ -11,6 +11,7 @@ Complete high-end UI redesign following your requirements:
 ## 🔮 Glassmorphism Effects
 
 ### Enhanced Visual Depth
+
 - **Stronger backdrop blur**: `backdrop-blur-xl` (vs old `backdrop-blur-md`)
 - **Frosted glass cards**: `bg-white/60` with transparency
 - **Layered shadows**: `shadow-2xl` and `shadow-3xl` for premium depth
@@ -18,6 +19,7 @@ Complete high-end UI redesign following your requirements:
 - **Border glow**: Subtle white borders (`border-white/40`)
 
 ### Examples:
+
 ```jsx
 // Header
 bg-white/40 backdrop-blur-xl border-b border-white/20
@@ -34,18 +36,21 @@ bg-gradient-to-br from-purple-100/60 to-indigo-100/60 backdrop-blur-sm
 ## 📱 Mobile-First Minimal Text
 
 ### Progressive Disclosure
+
 1. **Collapsible Content Points** - Hidden on mobile, click to expand
 2. **Collapsible Hints** - Dropdown with chevron icon
 3. **Collapsible Error Details** - Each error expands individually
 4. **Toggle Original/Corrected** - Show/hide original text with eye icon
 
 ### Minimal Labels on Small Screens
+
 - Icons with short labels (e.g., "Neu" instead of "Neue Aufgabe" on mobile)
 - `hidden sm:inline` for non-essential text
 - Responsive text sizing: `text-base sm:text-xl`
 - Compact spacing: `gap-3 sm:gap-6`, `p-4 sm:p-8`
 
 ### Mobile Touch Targets
+
 - All interactive elements: minimum 44px (`py-4`)
 - Generous padding on buttons
 - Large tap areas for dropdowns
@@ -55,7 +60,9 @@ bg-gradient-to-br from-purple-100/60 to-indigo-100/60 backdrop-blur-sm
 ## 📜 Horizontal Scrolling
 
 ### Mobile-Optimized Sections
+
 **Score Breakdown** (Content/Communication/Accuracy):
+
 ```jsx
 <div className="flex gap-4 overflow-x-auto pb-4 sm:pb-0 sm:grid sm:grid-cols-3 scrollbar-hide">
   {/* 3 cards, horizontal scroll on mobile, grid on desktop */}
@@ -63,6 +70,7 @@ bg-gradient-to-br from-purple-100/60 to-indigo-100/60 backdrop-blur-sm
 ```
 
 **Feedback Cards** (Strengths/Improvements/Suggestions):
+
 ```jsx
 <div className="flex gap-4 overflow-x-auto pb-4 sm:pb-0 sm:grid sm:grid-cols-3 scrollbar-hide">
   {/* Fixed width cards on mobile (w-72), full width on desktop */}
@@ -70,7 +78,9 @@ bg-gradient-to-br from-purple-100/60 to-indigo-100/60 backdrop-blur-sm
 ```
 
 ### Custom Scrollbar Hiding
+
 Added Tailwind utility in `tailwind.config.js`:
+
 ```js
 '.scrollbar-hide': {
   '-ms-overflow-style': 'none',
@@ -84,6 +94,7 @@ Added Tailwind utility in `tailwind.config.js`:
 ## 🎯 Brand Color Scheme Integration
 
 ### Primary Purple (`#7A36E8`)
+
 - Gradient backgrounds: `from-purple-600 to-indigo-600`
 - Text gradients: `bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent`
 - Button backgrounds
@@ -91,10 +102,12 @@ Added Tailwind utility in `tailwind.config.js`:
 - Border highlights
 
 ### Accent Teal (`#17838E`)
+
 - **Currently minimal usage** (can be expanded if needed)
 - Could add for secondary actions or info badges
 
 ### Supporting Colors
+
 - **Emerald** - Success states (score ≥80%, correct content points)
 - **Amber** - Warning states (score 60-80%, errors)
 - **Rose** - Error states (score <60%, missing content)
@@ -105,6 +118,7 @@ Added Tailwind utility in `tailwind.config.js`:
 ## ✨ Premium Animations & Micro-interactions
 
 ### Hover Effects
+
 ```jsx
 // Buttons
 hover:scale-105 active:scale-95 transition-all duration-200
@@ -120,12 +134,16 @@ hover:-translate-y-1 transition-all duration-200
 ```
 
 ### Button Gradient Overlays
+
 ```jsx
-<div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 
-               opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div
+  className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 
+               opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+></div>
 ```
 
 ### Icon Rotations
+
 ```jsx
 // Chevron icons
 className={`transition-transform ${showHints ? "rotate-180" : ""}`}
@@ -139,21 +157,25 @@ group-hover:rotate-12 transition-transform
 ## 🧩 Collapsible Components
 
 ### 1. **Content Points** (Mobile Only)
+
 - Desktop: Always visible
 - Mobile: Click header to expand/collapse
 - Chevron icon indicates state
 
 ### 2. **Hints** (All Devices)
+
 - Click to reveal/hide all hints
 - Shows count: "Tipps (3)"
 - Gradient button with hover effect
 
 ### 3. **Error Details** (All Devices)
+
 - Click each error card to expand explanation
 - Shows: Type → Original → Corrected → Explanation
 - Only one expanded at a time (`expandedError` state)
 
 ### 4. **Original Text Toggle**
+
 - Eye/EyeOff icon button
 - Switch between original+corrected vs corrected-only
 - Saves screen space on mobile
@@ -163,11 +185,13 @@ group-hover:rotate-12 transition-transform
 ## 📐 Layout Structure
 
 ### Writing Phase
+
 1. **Sticky Header** - Glassmorphic with back/new buttons
 2. **Prompt Card** - Type badge, title, situation, content points, hints
 3. **Writing Area** - Textarea + word counter + submit button
 
 ### Results Phase
+
 1. **Sticky Header** - Same as writing phase
 2. **Score Hero Card** - Large total score + 3 criteria breakdown + content points check
 3. **Text Comparison** - Side-by-side or single view toggle
@@ -180,21 +204,25 @@ group-hover:rotate-12 transition-transform
 ## 🎨 Design Tokens Used
 
 ### Spacing
+
 - `gap-3 sm:gap-6` (12px → 24px)
 - `p-4 sm:p-8` (16px → 32px)
 - `mb-4 sm:mb-6` (16px → 24px)
 
 ### Border Radius
+
 - `rounded-2xl` (16px) - Standard cards
 - `rounded-3xl` (24px) - Large cards
 - `rounded-full` - Badges and score badges
 
 ### Typography
+
 - Headers: `text-2xl sm:text-3xl font-black`
 - Body: `text-sm sm:text-base`
 - Icons: `size={18}` on mobile, `size={20-24}` on desktop
 
 ### Shadows
+
 - Cards: `shadow-2xl`
 - Buttons: `shadow-lg` → `hover:shadow-2xl`
 - Premium depth: `shadow-3xl` (you may need to add this to Tailwind config)
@@ -204,6 +232,7 @@ group-hover:rotate-12 transition-transform
 ## 🔧 Technical Implementation
 
 ### State Management
+
 ```jsx
 // Collapsible states
 const [showHints, setShowHints] = useState(false);
@@ -213,6 +242,7 @@ const [showOriginal, setShowOriginal] = useState(true);
 ```
 
 ### Dynamic Styling Functions
+
 ```jsx
 // Score colors based on percentage
 function getScoreColor(score, max) {
@@ -228,6 +258,7 @@ function getScoreBg(score, max) {
 ```
 
 ### Responsive Classes Pattern
+
 ```jsx
 // Mobile: vertical stack, Desktop: horizontal grid
 <div className="flex flex-col sm:flex-row">
@@ -244,6 +275,7 @@ function getScoreBg(score, max) {
 ## 🚀 Next Steps (If Requested)
 
 ### Potential Enhancements
+
 1. **Add shadow-3xl** to Tailwind config for even more depth
 2. **Integrate accent teal** more prominently (info badges, secondary buttons)
 3. **Loading skeleton states** with glassmorphism
@@ -252,6 +284,7 @@ function getScoreBg(score, max) {
 6. **Sound effects** on interactions (optional)
 
 ### Other Pages to Redesign
+
 - **SchreibenHub** - Apply same glassmorphism
 - **DialogueTrainerAI** - Sprechen feature
 - **BildBeschreiben** - Image description feature
@@ -314,20 +347,21 @@ function getScoreBg(score, max) {
 
 ## 🎯 User Requirements Met
 
-| Requirement | Status | Implementation |
-|-------------|--------|----------------|
-| Glassmorphism feel | ✅ | `backdrop-blur-xl`, `bg-white/60`, layered shadows |
-| Minimal text on mobile | ✅ | `hidden sm:inline`, icons, collapsible sections |
-| Hints with dropdowns | ✅ | Click-to-expand with chevron icons |
-| Horizontal scrolling | ✅ | Score breakdown + feedback cards scroll on mobile |
-| High-end UI | ✅ | Premium shadows, gradients, smooth animations |
-| Brand color scheme | ✅ | Purple #7A36E8 throughout, teal available |
+| Requirement            | Status | Implementation                                     |
+| ---------------------- | ------ | -------------------------------------------------- |
+| Glassmorphism feel     | ✅     | `backdrop-blur-xl`, `bg-white/60`, layered shadows |
+| Minimal text on mobile | ✅     | `hidden sm:inline`, icons, collapsible sections    |
+| Hints with dropdowns   | ✅     | Click-to-expand with chevron icons                 |
+| Horizontal scrolling   | ✅     | Score breakdown + feedback cards scroll on mobile  |
+| High-end UI            | ✅     | Premium shadows, gradients, smooth animations      |
+| Brand color scheme     | ✅     | Purple #7A36E8 throughout, teal available          |
 
 ---
 
 ## 🔗 Live Testing
 
 **Local Development:**
+
 ```bash
 # Server should already be running on:
 http://127.0.0.1:3003/tests/schreiben/trainer
@@ -337,6 +371,7 @@ http://127.0.0.1:3003/tests/schreiben/trainer
 ```
 
 **Production:**
+
 ```
 https://b1besty.vercel.app/tests/schreiben/trainer
 ```

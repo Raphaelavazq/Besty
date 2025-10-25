@@ -249,7 +249,9 @@ export default function SprechenHubNew() {
                   <Clock className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <div className="text-2xl font-black text-gray-900">15 Min</div>
+                  <div className="text-2xl font-black text-gray-900">
+                    15 Min
+                  </div>
                   <div className="text-sm text-gray-600">Gesamtdauer</div>
                 </div>
               </div>
@@ -259,7 +261,9 @@ export default function SprechenHubNew() {
                   <Users className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <div className="text-2xl font-black text-gray-900">2 Prüfer</div>
+                  <div className="text-2xl font-black text-gray-900">
+                    2 Prüfer
+                  </div>
                   <div className="text-sm text-gray-600">Plus Partner</div>
                 </div>
               </div>
@@ -269,7 +273,9 @@ export default function SprechenHubNew() {
                   <Target className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <div className="text-2xl font-black text-gray-900">12 Punkte</div>
+                  <div className="text-2xl font-black text-gray-900">
+                    12 Punkte
+                  </div>
                   <div className="text-sm text-gray-600">Maximal</div>
                 </div>
               </div>
@@ -290,23 +296,33 @@ export default function SprechenHubNew() {
                 <div className="flex items-start gap-3 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4">
                   <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <div className="font-semibold text-gray-900 mb-1">Aufgabe erfüllt</div>
-                    <div className="text-sm text-gray-600">Alle Punkte behandeln</div>
+                    <div className="font-semibold text-gray-900 mb-1">
+                      Aufgabe erfüllt
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      Alle Punkte behandeln
+                    </div>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4">
                   <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <div className="font-semibold text-gray-900 mb-1">Flüssig sprechen</div>
-                    <div className="text-sm text-gray-600">Ohne lange Pausen</div>
+                    <div className="font-semibold text-gray-900 mb-1">
+                      Flüssig sprechen
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      Ohne lange Pausen
+                    </div>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4">
                   <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <div className="font-semibold text-gray-900 mb-1">Wortschatz & Grammatik</div>
+                    <div className="font-semibold text-gray-900 mb-1">
+                      Wortschatz & Grammatik
+                    </div>
                     <div className="text-sm text-gray-600">B1-Level zeigen</div>
                   </div>
                 </div>
@@ -314,8 +330,12 @@ export default function SprechenHubNew() {
                 <div className="flex items-start gap-3 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4">
                   <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <div className="font-semibold text-gray-900 mb-1">Aussprache</div>
-                    <div className="text-sm text-gray-600">Verständlich und deutlich</div>
+                    <div className="font-semibold text-gray-900 mb-1">
+                      Aussprache
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      Verständlich und deutlich
+                    </div>
                   </div>
                 </div>
               </div>
@@ -350,7 +370,9 @@ export default function SprechenHubNew() {
 
                 <div className="flex items-start gap-2 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4">
                   <CheckCircle className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5" />
-                  <div className="text-sm text-gray-700">Nachfragen erlaubt</div>
+                  <div className="text-sm text-gray-700">
+                    Nachfragen erlaubt
+                  </div>
                 </div>
 
                 <div className="flex items-start gap-2 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4">
