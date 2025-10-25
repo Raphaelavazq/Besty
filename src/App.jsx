@@ -10,10 +10,11 @@ import About from "./pages/About";
 
 // New unified test system
 import TestHub from "./pages/TestHub";
-import HoerenHub from "./pages/HoerenHub";
-import SprechenHub from "./pages/SprechenHub";
-import SchreibenHub from "./pages/SchreibenHub";
-import SchreibenTrainer from "./pages/SchreibenTrainer";
+import HoerenHub from "./pages/HoerenHubNew";
+import SprechenHub from "./pages/SprechenHubNew";
+import SchreibenHub from "./pages/SchreibenHubNew";
+import SchreibenTrainer from "./pages/SchreibenTrainerNew";
+import LesenHub from "./pages/LesenHub";
 
 // New Hören system (rebuilt)
 import HoerenPruefung from "./features/hoeren/HoerenPruefung";
@@ -271,6 +272,16 @@ function App() {
         element={
           <HoverSidebarShell>
             <SchreibenTrainer />
+          </HoverSidebarShell>
+        }
+      />
+
+      {/* Lesen Test Area */}
+      <Route
+        path="/tests/lesen"
+        element={
+          <HoverSidebarShell>
+            <LesenHub />
           </HoverSidebarShell>
         }
       />
