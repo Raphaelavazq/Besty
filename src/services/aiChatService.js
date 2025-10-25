@@ -326,14 +326,25 @@ export async function continueDialogue(
     .filter((p) => !discussedPoints.includes(p.index));
 
   let contextReminder = "";
-  if (remainingPoints.length > 0) {
+  
+  // Special case: if user message is "Zusammenfassung", generate natural closing
+  if (userMessage === "Zusammenfassung") {
+    contextReminder = `\n\nWICHTIG: Alle Diskussionspunkte wurden besprochen! Beende das Gespräch JETZT freundlich und natürlich:
+1. Fasse kurz zusammen, was ihr geplant habt
+2. Zeige Vorfreude auf das Event/die Aktivität
+3. Sage auf Wiedersehen auf eine warme Art
+4. MAXIMAL 2-3 kurze Sätze!
+
+Beispiel: "Super! Dann ist alles geplant. Ich freue mich schon auf den Abend! Bis dann!"`;
+  } else if (remainingPoints.length > 0) {
     contextReminder = `\n\nREMINDER: Du musst noch diese Leitpunkte besprechen:\n${remainingPoints.map((p) => `- ${p.punkt}`).join("\n")}\nFrage jetzt nach dem NÄCHSTEN Punkt!`;
-  } else if (messageHistory.length > 8) {
+  } else {
     contextReminder =
-      "\n\nAlle Punkte wurden besprochen. Beende das Gespräch freundlich mit einer kurzen Zusammenfassung.";
+      "\n\nAlle Punkte wurden besprochen. Beim nächsten Austausch kannst du das Gespräch natürlich beenden.";
   }
 
-  try {
+  // Helper function to make the request
+  const makeRequest = async () => {
     const response = await fetch(API_ENDPOINT, {
       method: "POST",
       headers: {
@@ -365,11 +376,11 @@ export async function continueDialogue(
       // Handle protection errors
       if (response.status === 429) {
         if (error.retryAfter) {
-          throw new ProtectionError(
-            `Bitte warten Sie ${error.retryAfter} Sekunden.`,
-            "rate_limit",
-            error.retryAfter
-          );
+          // Auto-retry after the specified delay
+          console.log(`⏳ [Frontend] Waiting ${error.retryAfter} seconds before retry...`);
+          await new Promise(resolve => setTimeout(resolve, error.retryAfter * 1000));
+          console.log(`🔄 [Frontend] Retrying request...`);
+          return makeRequest(); // Recursive retry
         } else if (error.limitReached) {
           clearSessionId(scenarioId);
           throw new ProtectionError(
@@ -387,6 +398,12 @@ export async function continueDialogue(
 
       throw new Error(error.error?.message || "API request failed");
     }
+
+    return response;
+  };
+
+  try {
+    const response = await makeRequest();
 
     const data = await response.json();
     const aiMessage = data.choices[0].message.content;

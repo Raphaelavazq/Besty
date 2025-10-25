@@ -31,19 +31,19 @@ export default function ThemeGallery() {
     "lernen-bildung": {
       name: "Lernen und Bildung",
       icon: BookOpen,
-      color: "from-purple-500 to-indigo-600",
+      color: "from-purple-800 to-indigo-900",
       exercises: [1],
     },
     "familie-kinder": {
       name: "Familie und Kinder",
       icon: Users,
-      color: "from-pink-500 to-purple-600",
+      color: "from-pink-800 to-purple-900",
       exercises: [2, 3],
     },
     einkaufen: {
       name: "Einkaufen",
       icon: ShoppingCart,
-      color: "from-indigo-500 to-purple-600",
+      color: "from-indigo-800 to-purple-900",
       exercises: [4],
     },
     gesundheit: {
@@ -61,7 +61,7 @@ export default function ThemeGallery() {
     "arbeit-beruf": {
       name: "Arbeit und Beruf",
       icon: Briefcase,
-      color: "from-purple-600 to-pink-600",
+      color: "from-purple-800 to-pink-800",
       exercises: [7],
     },
     "essen-trinken": {
@@ -79,7 +79,7 @@ export default function ThemeGallery() {
     "medien-kommunikation": {
       name: "Medien und Kommunikation",
       icon: Smartphone,
-      color: "from-indigo-500 to-purple-600",
+      color: "from-indigo-800 to-purple-900",
       exercises: [10],
     },
     "sport-fitness": {
@@ -288,7 +288,7 @@ export default function ThemeGallery() {
                           e.target.parentElement.innerHTML = `
                             <div class="w-full h-full flex items-center justify-center">
                               <div class="text-center">
-                                <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center">
+                                <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-purple-800 to-indigo-900 rounded-2xl flex items-center justify-center">
                                   <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                   </svg>

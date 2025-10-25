@@ -129,7 +129,7 @@ export default function DialogueMenu() {
                 title: "Übung",
                 description: "Videos anschauen und lernen",
                 icon: Video,
-                color: "from-purple-500 to-indigo-600",
+                color: "from-purple-800 to-indigo-900",
                 path: "/tests/sprechen/uebung/teil1",
                 details: "Teil 1-3 mit Beispielen",
               },

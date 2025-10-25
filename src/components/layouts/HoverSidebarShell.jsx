@@ -8,15 +8,13 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import {
-  BookOpen,
-  FileText,
   Home,
-  Star,
-  Settings,
-  BarChart3,
-  Award,
+  Headphones,
+  Eye,
+  FileText,
+  MessageSquare,
   HelpCircle,
-  User,
+  Settings,
 } from "lucide-react";
 
 export default function HoverSidebarShell({ children }) {
@@ -41,40 +39,28 @@ export default function HoverSidebarShell({ children }) {
       active: location.pathname === "/dashboard",
     },
     {
-      name: "Tests",
+      name: "Hören",
+      icon: Headphones,
+      href: "/tests/hoeren",
+      active: location.pathname.startsWith("/tests/hoeren"),
+    },
+    {
+      name: "Lesen",
+      icon: Eye,
+      href: "/tests/lesen",
+      active: location.pathname.startsWith("/tests/lesen"),
+    },
+    {
+      name: "Schreiben",
       icon: FileText,
-      href: "/tests",
-      active: location.pathname.startsWith("/tests"),
+      href: "/tests/schreiben",
+      active: location.pathname.startsWith("/tests/schreiben"),
     },
     {
-      name: "Study",
-      icon: BookOpen,
-      href: "/study",
-      active: location.pathname === "/study",
-    },
-    {
-      name: "Progress",
-      icon: BarChart3,
-      href: "/progress",
-      active: location.pathname === "/progress",
-    },
-    {
-      name: "Bookmarks",
-      icon: Star,
-      href: "/bookmarks",
-      active: location.pathname === "/bookmarks",
-    },
-    {
-      name: "Achievements",
-      icon: Award,
-      href: "/achievements",
-      active: location.pathname === "/achievements",
-    },
-    {
-      name: "Profile",
-      icon: User,
-      href: "/profile",
-      active: location.pathname === "/profile",
+      name: "Sprechen",
+      icon: MessageSquare,
+      href: "/tests/sprechen",
+      active: location.pathname.startsWith("/tests/sprechen"),
     },
     {
       name: "About",
@@ -92,84 +78,45 @@ export default function HoverSidebarShell({ children }) {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50">
-      {/* Hover Activation Strip - Desktop */}
-      <div
-        className="hidden lg:block fixed left-0 top-0 h-full w-8 z-40 hover:w-64 group transition-all duration-300"
-        onMouseEnter={() => setSidebarOpen(true)}
-        onMouseLeave={() => setSidebarOpen(false)}
-      >
-        {/* Visible hover trigger with subtle indicator */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-transparent hover:from-purple-600/20" />
-
-        {/* Sidebar that appears on hover */}
-        <div
-          className={`absolute left-0 top-0 h-full w-64 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-700 shadow-2xl transform transition-transform duration-300 ease-in-out ${
-            sidebarOpen ? "translate-x-0" : "-translate-x-64"
-          }`}
-        >
+      {/* Icon Sidebar - Desktop Only */}
+      <div className="hidden lg:block fixed left-0 top-0 h-full w-20 z-40">
+        {/* Icon sidebar */}
+        <div className="absolute left-0 top-0 h-full w-20 bg-white/80 backdrop-blur-md shadow-lg border-r border-purple-100">
           <div className="flex flex-col h-full">
-            {/* Spacer to push content to bottom */}
+            {/* Spacer */}
             <div className="flex-1"></div>
 
-            {/* Avatar with Animation */}
-            <div className="flex flex-col items-center px-4 pb-4">
-              <div className="w-24 h-24 flex items-center justify-center mb-1">
-                <DotLottieReact
-                  src="https://lottie.host/e625cdca-0dac-4776-a55e-0b437f54c0a7/diw9hO8Z3c.lottie"
-                  loop
-                  autoplay
-                  className="w-full h-full filter brightness-125 contrast-110 saturate-125"
-                />
-              </div>
-              <div className="w-26 h-9 hover:scale-105 transition-all duration-300">
-                <svg viewBox="0 0 229.4 94.9" className="w-full h-full">
-                  <text
-                    x="0"
-                    y="74.5"
-                    fill="#ffffff"
-                    fontFamily="AglonemaRegular, Aglonema, sans-serif"
-                    fontSize="93.3"
-                    fontWeight="normal"
-                  >
-                    Besty
-                  </text>
-                </svg>
-              </div>
-            </div>
-
-            {/* Navigation */}
-            <nav className="px-4 space-y-1 pb-3">
+            {/* Icon-only navigation */}
+            <nav className="px-2 space-y-2 pb-3">
               {sidebarItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  onClick={() => setSidebarOpen(false)}
-                  className={`flex items-center px-3 py-2 text-sm font-medium rounded-xl transition-all duration-200 ${
+                  className={`flex items-center justify-center w-16 h-12 rounded-xl transition-all duration-200 ${
                     item.active
-                      ? "bg-white/20 text-white shadow-lg backdrop-blur-sm"
-                      : "text-white/80 hover:bg-white hover:text-purple-700 hover:shadow-md"
+                      ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg"
+                      : "text-purple-600 hover:bg-purple-50"
                   }`}
+                  title={item.name}
                 >
-                  <item.icon size={18} className="mr-3" />
-                  {item.name}
+                  <item.icon size={20} />
                 </Link>
               ))}
             </nav>
 
-            {/* Attribution Footer */}
-            <div className="px-4 pb-3 pt-3 border-t border-white/10">
-              <p className="text-[11px] text-white/60 text-center leading-snug">
-                Made with <span className="text-white/80">♥</span> for German
-                learners
-                <br />
-                <span className="text-white/40">© Raphaella 2025</span>
-              </p>
+            {/* Small logo at bottom */}
+            <div className="px-2 pb-3 pt-2 border-t border-purple-100">
+              <div className="w-16 h-16 flex items-center justify-center">
+                <DotLottieReact
+                  src="https://lottie.host/e625cdca-0dac-4776-a55e-0b437f54c0a7/diw9hO8Z3c.lottie"
+                  loop
+                  autoplay
+                  className="w-full h-full"
+                />
+              </div>
             </div>
           </div>
         </div>
-
-        {/* Visual indicator line (subtle) */}
-        <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-purple-400/30 via-purple-500/50 to-indigo-400/30 group-hover:w-2 transition-all duration-300" />
       </div>
 
       {/* Mobile Hamburger Menu Button - Top Right */}
@@ -186,7 +133,7 @@ export default function HoverSidebarShell({ children }) {
 
       {/* Mobile Sidebar */}
       <div
-        className={`fixed inset-y-0 left-0 z-[90] w-64 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-700 shadow-2xl transform transition-transform duration-300 ease-in-out lg:hidden ${
+        className={`fixed inset-y-0 left-0 z-[90] w-64 bg-gradient-to-br from-purple-600 via-indigo-700 to-purple-800 shadow-2xl transform transition-transform duration-300 ease-in-out lg:hidden ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -260,7 +207,7 @@ export default function HoverSidebarShell({ children }) {
       )}
 
       {/* Main Content */}
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 lg:ml-20">{children}</main>
     </div>
   );
 }

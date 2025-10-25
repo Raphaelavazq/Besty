@@ -63,6 +63,58 @@ export default function DialogueTrainer() {
   const [recognition, setRecognition] = useState(null);
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [speechSynthesis, setSpeechSynthesis] = useState(null);
+
+  // Auto-correct German text capitalization
+  const autoCorrectGermanText = (text) => {
+    if (!text) return text;
+
+    // 1. Capitalize first letter of text
+    let corrected = text.charAt(0).toUpperCase() + text.slice(1);
+
+    // 2. Capitalize after sentence endings (. ! ?)
+    corrected = corrected.replace(/([.!?]\s+)([a-zäöüß])/g, (match, punctuation, letter) => {
+      return punctuation + letter.toUpperCase();
+    });
+
+    // 3. Capitalize "Sie" and "Ihr/Ihre/Ihnen" (formal you) - but not "sie" (they/she)
+    // Only capitalize when it's clearly formal context
+    corrected = corrected.replace(/\b(sie|ihr|ihre|ihnen|ihrem|ihrer)\b/gi, (match) => {
+      const lower = match.toLowerCase();
+      // Capitalize at start of sentence or after comma (likely formal)
+      return match.charAt(0).toUpperCase() + match.slice(1).toLowerCase();
+    });
+
+    // 4. Capitalize all German nouns (common ones)
+    const commonNouns = [
+      'arbeit', 'auto', 'bahnhof', 'bild', 'brief', 'büro', 'computer',
+      'deutsch', 'dialog', 'essen', 'familie', 'fenster', 'frage', 'frau',
+      'freund', 'freundin', 'garten', 'geld', 'haus', 'herr', 'hotel',
+      'information', 'kind', 'kino', 'kunde', 'land', 'leute', 'mann',
+      'monat', 'mutter', 'name', 'nummer', 'ort', 'person', 'platz',
+      'problem', 'punkt', 'raum', 'restaurant', 'schule', 'stadt', 'stelle',
+      'straße', 'tag', 'telefon', 'termin', 'text', 'tisch', 'tür',
+      'uhr', 'urlaub', 'vater', 'wagen', 'weg', 'welt', 'woche',
+      'wohnung', 'wort', 'zeit', 'zimmer', 'zug',
+      // Days and months
+      'montag', 'dienstag', 'mittwoch', 'donnerstag', 'freitag', 'samstag', 'sonntag',
+      'januar', 'februar', 'märz', 'april', 'mai', 'juni', 'juli',
+      'august', 'september', 'oktober', 'november', 'dezember'
+    ];
+
+    commonNouns.forEach(noun => {
+      const regex = new RegExp(`\\b${noun}\\b`, 'gi');
+      corrected = corrected.replace(regex, (match) => {
+        return match.charAt(0).toUpperCase() + match.slice(1).toLowerCase();
+      });
+    });
+
+    // 5. Capitalize "ich" at start of sentence only
+    corrected = corrected.replace(/^ich\b/i, 'Ich');
+    corrected = corrected.replace(/([.!?]\s+)ich\b/g, '$1Ich');
+
+    return corrected;
+  };
+
   const [expandedCorrections, setExpandedCorrections] = useState(new Set());
   const [showRedemittelHelp, setShowRedemittelHelp] = useState(false);
 
@@ -99,22 +151,57 @@ export default function DialogueTrainer() {
         window.SpeechRecognition || window.webkitSpeechRecognition;
       const recognitionInstance = new SpeechRecognition();
 
-      recognitionInstance.continuous = false;
-      recognitionInstance.interimResults = false;
+      // Configure for learner-friendly recognition
+      recognitionInstance.continuous = true; // Keep listening for pauses
+      recognitionInstance.interimResults = true; // Show what's being said
       recognitionInstance.lang = "de-DE";
+      recognitionInstance.maxAlternatives = 1;
+
+      // Timer to detect when user has finished speaking
+      let silenceTimer = null;
+      const SILENCE_DELAY = 2500; // Wait 2.5 seconds of silence before stopping
 
       recognitionInstance.onresult = (event) => {
-        const transcript = event.results[0][0].transcript;
-        setUserInput(transcript);
-        setIsListening(false);
+        // Clear existing timer
+        if (silenceTimer) {
+          clearTimeout(silenceTimer);
+        }
+
+        // Get the latest result
+        const lastResultIndex = event.results.length - 1;
+        const result = event.results[lastResultIndex];
+        
+        if (result.isFinal) {
+          // Update with final transcript and auto-correct
+          const transcript = result[0].transcript;
+          const correctedText = autoCorrectGermanText(transcript);
+          setUserInput(correctedText);
+          
+          // Start silence timer - will stop recognition after delay
+          silenceTimer = setTimeout(() => {
+            if (recognitionInstance) {
+              recognitionInstance.stop();
+            }
+          }, SILENCE_DELAY);
+        } else {
+          // Show interim results (what's being spoken now)
+          const interimTranscript = result[0].transcript;
+          const correctedInterim = autoCorrectGermanText(interimTranscript);
+          setUserInput(correctedInterim);
+        }
       };
 
       recognitionInstance.onerror = (event) => {
         console.error("Speech recognition error:", event.error);
-        setIsListening(false);
+        if (event.error !== 'aborted' && event.error !== 'no-speech') {
+          setIsListening(false);
+        }
       };
 
       recognitionInstance.onend = () => {
+        if (silenceTimer) {
+          clearTimeout(silenceTimer);
+        }
         setIsListening(false);
       };
 
@@ -283,25 +370,61 @@ export default function DialogueTrainer() {
       // Speak Besty's response
       speakText(result.message);
 
-      // Check if conversation should end (after 5-7 exchanges)
+      // Check if all discussion points are covered
       const exchanges = updatedHistory.filter((m) => m.role === "user").length;
-      if (exchanges >= 6) {
-        // Analyze discussed points
-        const points = await analyzeDiscussedPoints(
+      
+      // Analyze which points have been discussed so far
+      const currentPoints = await analyzeDiscussedPoints(
+        updatedHistory,
+        scenario.leitpunkte,
+        scenarioId
+      );
+      setDiscussedPoints(currentPoints);
+      
+      const allPointsDiscussed = currentPoints.length >= scenario.leitpunkte.length;
+      
+      // If all points are discussed, generate natural closing from Besty
+      if (allPointsDiscussed && exchanges >= 3) {
+        // Generate a natural closing message
+        const closingMessage = await continueDialogue(
           updatedHistory,
+          "Zusammenfassung", // Signal to AI to close naturally
+          scenario.aufgabe,
           scenario.leitpunkte,
-          scenarioId // Pass scenarioId for session tracking
+          scenario.theme,
+          currentPoints,
+          scenarioId
         );
-        setDiscussedPoints(points);
-
-        // Get feedback
+        
+        // Add Besty's closing message
+        const finalHistory = [
+          ...updatedHistory,
+          { role: "assistant", content: closingMessage.message },
+        ];
+        setMessageHistory(finalHistory);
+        
+        // Speak the closing
+        speakText(closingMessage.message);
+        
+        // Small delay before showing feedback
+        setTimeout(async () => {
+          // Get feedback
+          const feedbackResult = await getFeedback(
+            finalHistory,
+            scenario.leitpunkte,
+            scenarioId
+          );
+          setFeedback(feedbackResult);
+          setIsComplete(true);
+        }, 2000);
+      } else if (exchanges >= 15) {
+        // Safety limit - end if too many exchanges
         const feedbackResult = await getFeedback(
           updatedHistory,
           scenario.leitpunkte,
-          scenarioId // Pass scenarioId for session tracking
+          scenarioId
         );
         setFeedback(feedbackResult);
-
         setIsComplete(true);
       }
     } catch (err) {

@@ -167,7 +167,7 @@ export default function SchreibenTrainer() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-700 text-white px-6 py-4 shadow-lg sticky top-0 z-10">
+      <div className="bg-gradient-to-r from-purple-600 via-indigo-700 to-purple-800 text-white px-6 py-4 shadow-lg sticky top-0 z-10">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <button
             onClick={() => navigate("/tests/schreiben")}
@@ -206,7 +206,7 @@ export default function SchreibenTrainer() {
                 className={`px-4 py-1.5 rounded-full text-sm font-bold text-white shadow-lg ${
                   prompt.type === "formal"
                     ? "bg-gradient-to-r from-indigo-600 to-purple-600"
-                    : "bg-gradient-to-r from-purple-600 to-pink-600"
+                    : "bg-gradient-to-r from-purple-800 to-pink-800"
                 }`}
               >
                 {prompt.type === "formal" ? "📋 Formell" : "💌 Informell"}

@@ -59,7 +59,7 @@ export default function Theme() {
 
         {/* Theme Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-3xl shadow-xl mb-6">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-800 to-indigo-900 rounded-3xl shadow-xl mb-6">
             <Icon size={32} className="text-white" />
           </div>
           <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4">
@@ -122,7 +122,7 @@ export default function Theme() {
                   <span className="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded">
                     {item.type || "Übung"}
                   </span>
-                  <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-8 h-8 bg-gradient-to-br from-purple-800 to-indigo-900 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <Play size={14} className="text-white" />
                   </div>
                 </div>

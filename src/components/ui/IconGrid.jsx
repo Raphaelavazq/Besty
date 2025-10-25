@@ -70,7 +70,7 @@ const IconGrid = ({
           >
             {/* Icon */}
             {Icon && (
-              <div className="flex items-center justify-center h-16 w-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 text-white shadow-lg">
+              <div className="flex items-center justify-center h-16 w-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-purple-800 to-indigo-900 text-white shadow-lg">
                 <Icon className="h-8 w-8" />
               </div>
             )}

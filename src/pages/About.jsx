@@ -13,19 +13,19 @@ export default function About() {
       icon: BookOpen,
       title: "Strukturierte Inhalte",
       description: "Alle Prüfungsteile übersichtlich organisiert",
-      gradient: "from-purple-500 to-indigo-600",
+      gradient: "from-purple-800 to-indigo-900",
     },
     {
       icon: Users,
       title: "Praxisnah",
       description: "Realistische Übungen und Beispiele",
-      gradient: "from-indigo-500 to-purple-600",
+      gradient: "from-indigo-800 to-purple-900",
     },
     {
       icon: Target,
       title: "Zielorientiert",
       description: "Fokus auf B1 DTZ Prüfung",
-      gradient: "from-purple-600 to-pink-600",
+      gradient: "from-purple-800 to-pink-800",
     },
     {
       icon: Award,
@@ -61,19 +61,19 @@ export default function About() {
       emoji: "🎧",
       title: "Hören (25 min)",
       description: "Verstehen von Gesprächen, Durchsagen und Nachrichten",
-      gradient: "from-purple-500 to-indigo-600",
+      gradient: "from-purple-800 to-indigo-900",
     },
     {
       emoji: "📖",
       title: "Lesen (45 min)",
       description: "Verstehen von Texten, E-Mails und Anzeigen",
-      gradient: "from-indigo-500 to-purple-600",
+      gradient: "from-indigo-800 to-purple-900",
     },
     {
       emoji: "✍️",
       title: "Schreiben (30 min)",
       description: "Formelle E-Mails und persönliche Meinungen",
-      gradient: "from-purple-600 to-pink-600",
+      gradient: "from-purple-800 to-pink-800",
     },
     {
       emoji: "🗣️",
@@ -105,7 +105,7 @@ export default function About() {
         {/* Main Info */}
         <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl border border-white/50 p-6 lg:p-8">
           <h2 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-br from-purple-800 to-indigo-900 rounded-lg flex items-center justify-center">
               <span className="text-white text-sm font-bold">?</span>
             </div>
             Was ist B1 Bestie?
@@ -156,7 +156,7 @@ export default function About() {
         {/* How to Use */}
         <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl border border-white/50 p-8 lg:p-12">
           <h2 className="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-br from-purple-800 to-indigo-900 rounded-lg flex items-center justify-center">
               <span className="text-white text-sm font-bold">💡</span>
             </div>
             Wie nutzt du B1 Bestie?
@@ -167,7 +167,7 @@ export default function About() {
               return (
                 <div key={index} className="group">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                    <div className="w-10 h-10 bg-gradient-to-br from-purple-800 to-indigo-900 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
                       {step.number}
                     </div>
                     <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">

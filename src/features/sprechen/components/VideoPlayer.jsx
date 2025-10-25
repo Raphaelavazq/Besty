@@ -105,7 +105,7 @@ export default function VideoPlayer({ videoUrl, title, description, onEnded }) {
             onClick={handleSeek}
           >
             <div
-              className="h-full bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full transition-all duration-150 group-hover:h-3"
+              className="h-full bg-gradient-to-r from-purple-800 to-indigo-900 rounded-full transition-all duration-150 group-hover:h-3"
               style={{ width: `${(currentTime / duration) * 100}%` }}
             />
           </div>

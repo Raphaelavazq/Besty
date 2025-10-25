@@ -251,7 +251,7 @@ export default function AudioPlayer({
             >
               {/* Progress Fill */}
               <div
-                className={`absolute top-0 left-0 h-2 sm:h-3 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full transition-all duration-150 shadow-sm ${
+                className={`absolute top-0 left-0 h-2 sm:h-3 bg-gradient-to-r from-purple-800 to-indigo-900 rounded-full transition-all duration-150 shadow-sm ${
                   isPlaying ? "animate-pulse" : ""
                 }`}
                 style={{ width: `${progressPercentage}%` }}

@@ -8,16 +8,13 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import {
-  BookOpen,
-  FileText,
   Home,
-  Star,
-  Settings,
+  Headphones,
   Eye,
-  BarChart3,
-  Award,
+  FileText,
+  MessageSquare,
   HelpCircle,
-  User,
+  Settings,
 } from "lucide-react";
 
 export default function DashboardShell({ children }) {
@@ -31,19 +28,42 @@ export default function DashboardShell({ children }) {
       active: true,
       available: true,
     },
-    { name: "Tests", icon: FileText, href: "/tests", available: true },
-    { name: "Study", icon: BookOpen, href: "/study", available: true },
-    { name: "Progress", icon: BarChart3, href: "/progress", available: false },
-    { name: "Bookmarks", icon: Star, href: "/bookmarks", available: false },
     {
-      name: "Achievements",
-      icon: Award,
-      href: "/achievements",
-      available: false,
+      name: "Hören",
+      icon: Headphones,
+      href: "/tests/hoeren",
+      available: true,
     },
-    { name: "Profile", icon: User, href: "/profile", available: false },
-    { name: "About", icon: HelpCircle, href: "/about", available: true },
-    { name: "Settings", icon: Settings, href: "/settings", available: true },
+    {
+      name: "Lesen",
+      icon: Eye,
+      href: "/tests/lesen",
+      available: true,
+    },
+    {
+      name: "Schreiben",
+      icon: FileText,
+      href: "/tests/schreiben",
+      available: true,
+    },
+    {
+      name: "Sprechen",
+      icon: MessageSquare,
+      href: "/tests/sprechen",
+      available: true,
+    },
+    {
+      name: "About",
+      icon: HelpCircle,
+      href: "/about",
+      available: true,
+    },
+    {
+      name: "Settings",
+      icon: Settings,
+      href: "/settings",
+      available: true,
+    },
   ];
 
   return (
@@ -78,7 +98,7 @@ export default function DashboardShell({ children }) {
 
       {/* Sidebar */}
       <div
-        className={`fixed inset-y-0 right-0 z-[90] w-64 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-700 shadow-2xl transform transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-y-0 right-0 z-[90] w-64 bg-gradient-to-br from-purple-600 via-indigo-700 to-purple-800 shadow-2xl transform transition-transform duration-300 ease-in-out ${
           sidebarOpen ? "translate-x-0" : "translate-x-full"
         } lg:translate-x-0 lg:static lg:inset-0 lg:left-0 lg:right-auto border-l lg:border-l-0 lg:border-r border-purple-500`}
       >

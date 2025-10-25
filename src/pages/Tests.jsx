@@ -16,7 +16,7 @@ export default function Tests() {
       title: "Hören",
       description: "Hörverstehen üben mit authentischen Dialogen und Texten",
       icon: Headphones,
-      color: "from-purple-500 to-indigo-600",
+      color: "from-purple-800 to-indigo-900",
       duration: "15-25 min",
       questions: "10-18",
       path: "/tests/hoeren",

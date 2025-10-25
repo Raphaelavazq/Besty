@@ -164,7 +164,7 @@ function ThemeQuiz() {
             </p>
 
             {/* Feedback Message */}
-            <div className="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl p-6 text-white mb-6">
+            <div className="bg-gradient-to-br from-purple-800 to-indigo-900 rounded-2xl p-6 text-white mb-6">
               <p className="text-lg font-semibold">
                 {percentage >= 80 &&
                   "🎉 Ausgezeichnet! Du beherrschst das Thema sehr gut!"}

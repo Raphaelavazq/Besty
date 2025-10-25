@@ -43,7 +43,7 @@ export default function BildBeschreiben() {
       category: "Lernen & Bildung",
       imageCount: 1,
       icon: BookOpen,
-      color: "from-purple-500 to-indigo-600",
+      color: "from-purple-800 to-indigo-900",
     },
     {
       id: "familie-kinder",
@@ -51,7 +51,7 @@ export default function BildBeschreiben() {
       category: "Familie & Kinder",
       imageCount: 2,
       icon: Users,
-      color: "from-pink-500 to-purple-600",
+      color: "from-pink-800 to-purple-900",
     },
     {
       id: "einkaufen",
@@ -59,7 +59,7 @@ export default function BildBeschreiben() {
       category: "Alltag",
       imageCount: 1,
       icon: ShoppingCart,
-      color: "from-indigo-500 to-purple-600",
+      color: "from-indigo-800 to-purple-900",
     },
     {
       id: "gesundheit",
@@ -83,7 +83,7 @@ export default function BildBeschreiben() {
       category: "Arbeit",
       imageCount: 1,
       icon: Briefcase,
-      color: "from-purple-600 to-pink-600",
+      color: "from-purple-800 to-pink-800",
     },
     {
       id: "essen-trinken",
@@ -107,7 +107,7 @@ export default function BildBeschreiben() {
       category: "Medien",
       imageCount: 1,
       icon: Smartphone,
-      color: "from-indigo-500 to-purple-600",
+      color: "from-indigo-800 to-purple-900",
     },
     {
       id: "sport-fitness",

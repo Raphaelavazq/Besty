@@ -96,7 +96,7 @@ export default function BareShell({ children }) {
 
       {/* Mobile Purple Sidebar */}
       <div
-        className={`fixed inset-y-0 left-0 z-[90] w-64 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-700 shadow-2xl transform transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-y-0 left-0 z-[90] w-64 bg-gradient-to-br from-purple-600 via-indigo-700 to-purple-800 shadow-2xl transform transition-transform duration-300 ease-in-out ${
           mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
         } md:hidden border-r border-purple-500`}
       >

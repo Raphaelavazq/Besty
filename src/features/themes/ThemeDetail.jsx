@@ -106,7 +106,7 @@ function ThemeDetail() {
             <div className="flex items-start justify-between">
               <div className="flex items-start gap-6">
                 {/* Icon */}
-                <div className="bg-gradient-to-br from-purple-500 to-indigo-600 p-5 rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-200">
+                <div className="bg-gradient-to-br from-purple-800 to-indigo-900 p-5 rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-200">
                   <BookOpen className="w-8 h-8 text-white" />
                 </div>
 
@@ -159,7 +159,7 @@ function ThemeDetail() {
         </div>
 
         {/* Tips Section */}
-        <div className="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl shadow-xl p-8 text-white">
+        <div className="bg-gradient-to-br from-purple-800 to-indigo-900 rounded-2xl shadow-xl p-8 text-white">
           <div className="flex items-start gap-4">
             <Trophy className="w-8 h-8 flex-shrink-0 mt-1" />
             <div>
