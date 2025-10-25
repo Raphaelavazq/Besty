@@ -1,0 +1,343 @@
+{
+  "teil1": {
+    "title": "Teil 1: Kataloge & Anzeigen",
+    "description": "Kurze Texte aus Katalogen, Anzeigen, Zeitungen",
+    "duration": 15,
+    "points": 5,
+    "exercises": [
+      {
+        "id": "t1_ex1",
+        "type": "matching",
+        "title": "Wohnungsanzeigen",
+        "instruction": "Welche Anzeige passt zu welcher Person? Lesen Sie die Texte und ordnen Sie zu.",
+        "texts": [
+          {
+            "id": "a",
+            "title": "Schöne 2-Zi-Wohnung",
+            "content": "2-Zimmer-Wohnung, 55 m², zentral, 3. Stock ohne Aufzug, Balkon, Kaltmiete 650€ + NK 120€, ab 1.3. frei. Haustiere nicht erlaubt. Tel: 0711-445566"
+          },
+          {
+            "id": "b",
+            "title": "Moderne Familienwohnung",
+            "content": "4-Zimmer-Wohnung, 95 m², ruhige Lage am Stadtrand, Erdgeschoss, großer Garten, Garage, Warmmiete 1.200€, sofort frei. Kinder willkommen! Tel: 0711-778899"
+          },
+          {
+            "id": "c",
+            "title": "WG-Zimmer zu vermieten",
+            "content": "Möbliertes Zimmer in 3er-WG, 15 m², Uninähe, 2. Stock mit Aufzug, Gemeinschaftsküche und Bad, 350€ warm, ab sofort. Nur für Studenten. Tel: 0711-223344"
+          },
+          {
+            "id": "d",
+            "title": "Luxus-Penthouse",
+            "content": "Exklusive 3-Zimmer-Wohnung, 120 m², Dachterrasse, klimatisiert, Tiefgarage, 5. Stock, Concierge-Service, 1.800€ kalt + 300€ NK. Tel: 0711-996677"
+          }
+        ],
+        "situations": [
+          {
+            "id": 1,
+            "text": "Familie Müller hat 2 Kinder und sucht eine große Wohnung mit Garten. Sie möchten nicht zu viel Miete zahlen.",
+            "correctAnswer": "b"
+          },
+          {
+            "id": 2,
+            "text": "Anna ist Studentin und sucht ein günstiges Zimmer in der Nähe der Universität. Sie hat wenig Möbel.",
+            "correctAnswer": "c"
+          },
+          {
+            "id": 3,
+            "text": "Herr Schmidt arbeitet in der Stadtmitte und hat eine Katze. Er braucht eine kleine Wohnung und kann bis zu 800€ zahlen.",
+            "correctAnswer": "a"
+          },
+          {
+            "id": 4,
+            "text": "Frau Wagner ist Geschäftsführerin und sucht eine moderne Wohnung mit Service und Parkplatz. Preis spielt keine Rolle.",
+            "correctAnswer": "d"
+          },
+          {
+            "id": 5,
+            "text": "Ein junges Paar ohne Kinder sucht eine zentrale 2-Zimmer-Wohnung, aber sie wohnen nicht gern im Erdgeschoss.",
+            "correctAnswer": "a"
+          }
+        ]
+      },
+      {
+        "id": "t1_ex2",
+        "type": "matching",
+        "title": "Kursangebote",
+        "instruction": "Welcher Kurs passt zu welcher Person?",
+        "texts": [
+          {
+            "id": "a",
+            "title": "Deutsch für Anfänger A1",
+            "content": "Montag & Mittwoch 18-20 Uhr, 12 Wochen, 240€, Volkshochschule Mitte, keine Vorkenntnisse nötig"
+          },
+          {
+            "id": "b",
+            "title": "Konversationskurs B1/B2",
+            "content": "Dienstag 19-21 Uhr, 8 Wochen, 160€, Sprachschule Berlitz, frei sprechen üben, B1-Niveau erforderlich"
+          },
+          {
+            "id": "c",
+            "title": "Intensivkurs B2-Prüfungsvorbereitung",
+            "content": "Montag bis Freitag 9-13 Uhr, 4 Wochen, 680€, telc-Prüfung inklusive, B1-Zertifikat erforderlich"
+          },
+          {
+            "id": "d",
+            "title": "Deutsch am Wochenende",
+            "content": "Samstag 10-14 Uhr, 10 Wochen, 200€, Niveau A2, Grammatik und Schreiben, Stadtbibliothek Süd"
+          }
+        ],
+        "situations": [
+          {
+            "id": 1,
+            "text": "Maria hat das B1-Zertifikat und möchte bald die B2-Prüfung machen. Sie arbeitet nicht und hat jeden Tag Zeit.",
+            "correctAnswer": "c"
+          },
+          {
+            "id": 2,
+            "text": "Herr Kim arbeitet von Montag bis Freitag. Er kann nur abends lernen und möchte besser sprechen können.",
+            "correctAnswer": "b"
+          },
+          {
+            "id": 3,
+            "text": "Anna arbeitet auch am Samstag. Sie spricht schon ein bisschen Deutsch (A2) und möchte ihre Grammatik verbessern.",
+            "correctAnswer": "d"
+          },
+          {
+            "id": 4,
+            "text": "Tom hat noch nie Deutsch gelernt. Er arbeitet tagsüber und sucht einen günstigen Abendkurs für Anfänger.",
+            "correctAnswer": "a"
+          }
+        ]
+      }
+    ]
+  },
+  "teil2": {
+    "title": "Teil 2: Zeitungsartikel",
+    "description": "Längere Texte aus Zeitungen und Zeitschriften verstehen",
+    "duration": 15,
+    "points": 5,
+    "exercises": [
+      {
+        "id": "t2_ex1",
+        "type": "true-false",
+        "title": "Artikel: Neues Familienzentrum eröffnet",
+        "text": "Gestern wurde in Stuttgart-Ost das neue Familienzentrum 'Regenbogen' eröffnet. Das Zentrum bietet Kurse für Eltern und Kinder an. Es gibt einen Spielbereich für Kleinkinder, einen Computerraum und eine kleine Cafeteria.\n\nBesonders wichtig ist das Beratungsangebot. Familien können sich kostenlos über Erziehung, Gesundheit und finanzielle Hilfen informieren. Die Beratung findet von Montag bis Freitag zwischen 9 und 16 Uhr statt. Eine Anmeldung ist nicht nötig.\n\nDas Zentrum ist auch am Samstag von 10 bis 14 Uhr geöffnet. Dann finden Workshops für Kinder statt, zum Beispiel Malen, Musik oder Sport. Die Teilnahme kostet 5 Euro pro Kind und Tag. Eltern können in dieser Zeit die Cafeteria nutzen oder an einem Elterntreff teilnehmen.\n\nDie Leiterin, Frau Dr. Weber, freut sich über das große Interesse: 'Wir hatten schon 200 Besucher am ersten Tag. Besonders die kostenlosen Beratungsgespräche sind sehr beliebt.'",
+        "questions": [
+          {
+            "id": 1,
+            "text": "Das Familienzentrum hat nur vormittags geöffnet.",
+            "correctAnswer": false,
+            "explanation": "Falsch. Das Zentrum hat Mo-Fr von 9-16 Uhr und Sa von 10-14 Uhr geöffnet."
+          },
+          {
+            "id": 2,
+            "text": "Die Beratung im Zentrum kostet nichts.",
+            "correctAnswer": true,
+            "explanation": "Richtig. Im Text steht: 'Familien können sich kostenlos ... informieren.'"
+          },
+          {
+            "id": 3,
+            "text": "Für die Samstags-Workshops muss man sich anmelden.",
+            "correctAnswer": false,
+            "explanation": "Falsch. Im Text steht nur, dass man 5 Euro zahlen muss. Eine Anmeldung wird nicht erwähnt."
+          },
+          {
+            "id": 4,
+            "text": "Am ersten Tag kamen mehr als 150 Besucher.",
+            "correctAnswer": true,
+            "explanation": "Richtig. Frau Dr. Weber sagt: 'Wir hatten schon 200 Besucher am ersten Tag.'"
+          },
+          {
+            "id": 5,
+            "text": "Eltern können ihre Kinder samstags zum Workshop bringen und dann alleine einkaufen gehen.",
+            "correctAnswer": false,
+            "explanation": "Falsch. Der Text sagt, dass Eltern die Cafeteria nutzen oder am Elterntreff teilnehmen können - sie bleiben also im Zentrum."
+          }
+        ]
+      },
+      {
+        "id": "t2_ex2",
+        "type": "true-false",
+        "title": "Artikel: Carsharing wird immer beliebter",
+        "text": "Immer mehr Deutsche nutzen Carsharing statt ein eigenes Auto zu kaufen. Carsharing bedeutet, dass man sich ein Auto mit anderen Menschen teilt. Man braucht das Auto nur dann, wenn man es wirklich braucht.\n\nIn Deutschland gibt es jetzt über 3 Millionen Carsharing-Nutzer. Die meisten leben in Großstädten wie Berlin, München oder Hamburg. Dort stehen die Autos an vielen Stellen bereit. Man kann sie per App finden und mieten.\n\nDie Kosten sind unterschiedlich. Meistens zahlt man pro Minute oder pro Stunde. Benzin und Versicherung sind im Preis enthalten. Viele Anbieter verlangen auch eine monatliche Grundgebühr von 5 bis 10 Euro.\n\nExperten sagen: Carsharing lohnt sich besonders für Menschen, die weniger als 10.000 Kilometer im Jahr fahren. Wer mehr fährt, für den ist ein eigenes Auto oft günstiger. Aber Carsharing ist gut für die Umwelt, weil weniger Autos produziert werden müssen.",
+        "questions": [
+          {
+            "id": 1,
+            "text": "Beim Carsharing kauft man zusammen mit anderen ein Auto.",
+            "correctAnswer": false,
+            "explanation": "Falsch. Man teilt sich ein Auto, kauft es aber nicht."
+          },
+          {
+            "id": 2,
+            "text": "In Berlin gibt es mehr Carsharing-Nutzer als auf dem Land.",
+            "correctAnswer": true,
+            "explanation": "Richtig. Im Text steht: 'Die meisten leben in Großstädten wie Berlin, München oder Hamburg.'"
+          },
+          {
+            "id": 3,
+            "text": "Bei allen Anbietern muss man eine monatliche Gebühr zahlen.",
+            "correctAnswer": false,
+            "explanation": "Falsch. Im Text steht 'Viele Anbieter verlangen...' - nicht alle."
+          },
+          {
+            "id": 4,
+            "text": "Carsharing ist billiger als ein eigenes Auto, wenn man wenig fährt.",
+            "correctAnswer": true,
+            "explanation": "Richtig. Experten sagen, dass es sich für Menschen lohnt, die weniger als 10.000 km fahren."
+          },
+          {
+            "id": 5,
+            "text": "Benzin muss man beim Carsharing extra bezahlen.",
+            "correctAnswer": false,
+            "explanation": "Falsch. Im Text steht: 'Benzin und Versicherung sind im Preis enthalten.'"
+          }
+        ]
+      }
+    ]
+  },
+  "teil3": {
+    "title": "Teil 3: Formelle Texte",
+    "description": "Briefe, E-Mails, Mitteilungen verstehen",
+    "duration": 15,
+    "points": 10,
+    "exercises": [
+      {
+        "id": "t3_ex1",
+        "type": "multiple-choice",
+        "title": "Brief von der Hausverwaltung",
+        "text": "Sehr geehrte Mieterinnen und Mieter,\n\nwie bereits angekündigt, werden ab dem 1. März die Treppenhäuser in unserem Haus renoviert. Die Arbeiten dauern voraussichtlich 3 Wochen.\n\nIn dieser Zeit ist das Treppenhaus von Montag bis Freitag zwischen 8 und 17 Uhr für Sie nicht nutzbar. Bitte benutzen Sie den Aufzug. Der Aufzug funktioniert normal und ist immer zugänglich.\n\nAm Wochenende finden keine Arbeiten statt. Sie können das Treppenhaus dann wie gewohnt nutzen.\n\nWir bitten um Ihr Verständnis für die Unannehmlichkeiten. Bei Fragen erreichen Sie uns telefonisch unter 0711-555-1234.\n\nMit freundlichen Grüßen\nIhre Hausverwaltung Meyer & Co.",
+        "questions": [
+          {
+            "id": 1,
+            "text": "Wann beginnen die Renovierungsarbeiten?",
+            "options": [
+              "Sofort",
+              "Am 1. März",
+              "In 3 Wochen",
+              "Am Wochenende"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Im Text steht: 'ab dem 1. März werden ... die Treppenhäuser ... renoviert.'"
+          },
+          {
+            "id": 2,
+            "text": "Was sollen die Mieter während der Renovierung tun?",
+            "options": [
+              "Zu Hause bleiben",
+              "Das Treppenhaus meiden",
+              "Den Aufzug benutzen",
+              "Eine andere Wohnung suchen"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Im Text steht: 'Bitte benutzen Sie den Aufzug.'"
+          },
+          {
+            "id": 3,
+            "text": "Wann können die Mieter das Treppenhaus benutzen?",
+            "options": [
+              "Nur am Wochenende",
+              "Jeden Tag nach 17 Uhr",
+              "Nur mit Genehmigung",
+              "Am Wochenende und nach 17 Uhr"
+            ],
+            "correctAnswer": 3,
+            "explanation": "Die Arbeiten sind Mo-Fr von 8-17 Uhr. Am Wochenende und abends ist das Treppenhaus frei."
+          },
+          {
+            "id": 4,
+            "text": "Wie lange dauern die Arbeiten?",
+            "options": [
+              "1 Woche",
+              "2 Wochen",
+              "3 Wochen",
+              "1 Monat"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Im Text steht: 'Die Arbeiten dauern voraussichtlich 3 Wochen.'"
+          },
+          {
+            "id": 5,
+            "text": "Was sollen die Mieter machen, wenn sie Fragen haben?",
+            "options": [
+              "Eine E-Mail schreiben",
+              "Persönlich vorbeikommen",
+              "Anrufen",
+              "Einen Brief schreiben"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Im Text steht: 'Bei Fragen erreichen Sie uns telefonisch unter 0711-555-1234.'"
+          }
+        ]
+      },
+      {
+        "id": "t3_ex2",
+        "type": "multiple-choice",
+        "title": "E-Mail von der Stadtbibliothek",
+        "text": "Betreff: Änderung der Öffnungszeiten\n\nSehr geehrte Bibliotheksnutzerinnen und -nutzer,\n\nab dem 15. Juni ändern sich unsere Öffnungszeiten:\n\nMontag - Freitag: 10:00 - 19:00 Uhr (bisher 9:00 - 18:00 Uhr)\nSamstag: 10:00 - 16:00 Uhr (bisher 10:00 - 14:00 Uhr)\nSonntag: geschlossen\n\nDie Rückgabeautomaten sind weiterhin rund um die Uhr verfügbar. Sie können Medien auch außerhalb der Öffnungszeiten zurückgeben.\n\nNeu: Ab sofort können Sie Bücher bis zu 4 Wochen ausleihen (bisher 3 Wochen). DVDs und CDs können weiterhin nur 2 Wochen ausgeliehen werden.\n\nWir freuen uns auf Ihren Besuch!\n\nIhr Bibliotheksteam",
+        "questions": [
+          {
+            "id": 1,
+            "text": "Wann öffnet die Bibliothek ab dem 15. Juni unter der Woche?",
+            "options": [
+              "Um 9:00 Uhr",
+              "Um 10:00 Uhr",
+              "Um 18:00 Uhr",
+              "Um 19:00 Uhr"
+            ],
+            "correctAnswer": 1,
+            "explanation": "In der neuen Öffnungszeit steht: Montag - Freitag: 10:00 - 19:00 Uhr"
+          },
+          {
+            "id": 2,
+            "text": "Wie lange ist die Bibliothek am Samstag geöffnet?",
+            "options": [
+              "4 Stunden",
+              "6 Stunden",
+              "8 Stunden",
+              "9 Stunden"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Samstag 10:00 - 16:00 Uhr = 6 Stunden"
+          },
+          {
+            "id": 3,
+            "text": "Was ändert sich bei der Ausleihzeit für Bücher?",
+            "options": [
+              "Man kann sie nur noch 2 Wochen ausleihen",
+              "Man kann sie jetzt 4 Wochen ausleihen",
+              "Die Ausleihzeit bleibt gleich",
+              "Man kann sie unbegrenzt ausleihen"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Im Text steht: 'Ab sofort können Sie Bücher bis zu 4 Wochen ausleihen (bisher 3 Wochen).'"
+          },
+          {
+            "id": 4,
+            "text": "Wann kann man Medien zurückgeben?",
+            "options": [
+              "Nur während der Öffnungszeiten",
+              "Nur bis 19:00 Uhr",
+              "Jederzeit",
+              "Nur am Wochenende"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Im Text steht: 'Die Rückgabeautomaten sind weiterhin rund um die Uhr verfügbar.'"
+          },
+          {
+            "id": 5,
+            "text": "Wie lange kann man DVDs ausleihen?",
+            "options": [
+              "2 Wochen",
+              "3 Wochen",
+              "4 Wochen",
+              "Das steht nicht im Text"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Im Text steht: 'DVDs und CDs können weiterhin nur 2 Wochen ausgeliehen werden.'"
+          }
+        ]
+      }
+    ]
+  }
+}

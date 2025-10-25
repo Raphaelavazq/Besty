@@ -15,6 +15,11 @@ import SprechenHub from "./pages/SprechenHubNew";
 import SchreibenHub from "./pages/SchreibenHubNew";
 import SchreibenTrainer from "./pages/SchreibenTrainerNew";
 import LesenHub from "./pages/LesenHub";
+import LesenTraining from "./pages/LesenTraining";
+import LesenTeil1 from "./pages/LesenTeil1";
+import LesenTeil2 from "./pages/LesenTeil2";
+import LesenTeil3 from "./pages/LesenTeil3";
+import LesenPruefung from "./pages/LesenPruefung";
 
 // New Hören system (rebuilt)
 import HoerenPruefung from "./features/hoeren/HoerenPruefung";
@@ -285,13 +290,43 @@ function App() {
           </HoverSidebarShell>
         }
       />
-
-      {/* Other test areas - Coming Soon */}
       <Route
-        path="/tests/lesen"
+        path="/tests/lesen/pruefung"
         element={
           <HoverSidebarShell>
-            <ComingSoon title="Lesen Training" />
+            <LesenPruefung />
+          </HoverSidebarShell>
+        }
+      />
+      <Route
+        path="/tests/lesen/training"
+        element={
+          <HoverSidebarShell>
+            <LesenTraining />
+          </HoverSidebarShell>
+        }
+      />
+      <Route
+        path="/tests/lesen/training/teil1"
+        element={
+          <HoverSidebarShell>
+            <LesenTeil1 />
+          </HoverSidebarShell>
+        }
+      />
+      <Route
+        path="/tests/lesen/training/teil2"
+        element={
+          <HoverSidebarShell>
+            <LesenTeil2 />
+          </HoverSidebarShell>
+        }
+      />
+      <Route
+        path="/tests/lesen/training/teil3"
+        element={
+          <HoverSidebarShell>
+            <LesenTeil3 />
           </HoverSidebarShell>
         }
       />

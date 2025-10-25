@@ -27,7 +27,7 @@ export default function DashboardContent() {
       icon: Eye,
       color: "from-indigo-500 to-purple-600",
       href: "/tests/lesen",
-      available: false,
+      available: true,
     },
     {
       title: "Schreiben",
