@@ -36,7 +36,7 @@ export default function DashboardContent() {
       icon: FileText,
       color: "from-purple-600 to-pink-600",
       href: "/tests/schreiben",
-      available: false,
+      available: true,
     },
     {
       title: "Sprechen",
@@ -72,12 +72,13 @@ export default function DashboardContent() {
                 }`}
                 onClick={(e) => !part.available && e.preventDefault()}
               >
-            {/* Bald Badge */}
-            {!part.available && (
-              <div className="absolute top-3 right-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-[10px] font-bold px-2 py-1 rounded-lg shadow-md">
-                Bald
-              </div>
-            )}                <div
+                {/* Bald Badge */}
+                {!part.available && (
+                  <div className="absolute top-3 right-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-[10px] font-bold px-2 py-1 rounded-lg shadow-md">
+                    Bald
+                  </div>
+                )}{" "}
+                <div
                   className={`w-10 h-10 bg-gradient-to-r ${part.color} rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
                 >
                   <part.icon size={20} className="text-white" />
@@ -89,7 +90,6 @@ export default function DashboardContent() {
                 <p className="text-xs text-gray-600 line-clamp-2 mb-2">
                   {part.description}
                 </p>
-                
                 {/* Arrow indicator for available items */}
                 {part.available && (
                   <div className="flex items-center justify-end mt-2">

@@ -9,7 +9,7 @@
  * - Fully responsive with mobile-first design
  */
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   Search,
@@ -29,6 +29,9 @@ export default function DialogueCatalogPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTheme, setSelectedTheme] = useState("all");
   const [isLoading, setIsLoading] = useState(true);
+  const [showHeader, setShowHeader] = useState(true);
+  const lastScrollY = useRef(0);
+  const themeNavRef = useRef(null);
 
   useEffect(() => {
     // Load dialogues catalog
@@ -44,6 +47,45 @@ export default function DialogueCatalogPage() {
         setIsLoading(false);
       });
   }, []);
+
+  // Handle scroll to hide/show header
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY < 50) {
+        // At top, always show
+        setShowHeader(true);
+      } else if (currentScrollY > lastScrollY.current) {
+        // Scrolling down - hide header
+        setShowHeader(false);
+      } else {
+        // Scrolling up - show header
+        setShowHeader(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Scroll to selected theme in horizontal nav
+  const scrollToTheme = (theme, index) => {
+    setSelectedTheme(theme);
+
+    if (themeNavRef.current) {
+      const button = themeNavRef.current.children[index];
+      if (button) {
+        button.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+          inline: "center",
+        });
+      }
+    }
+  };
 
   // Extract unique themes
   const themes = ["all", ...new Set(dialogues.map((d) => d.theme))];
@@ -98,16 +140,20 @@ export default function DialogueCatalogPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50">
-      {/* Header */}
-      <div className="bg-white/80 backdrop-blur-md border-b border-purple-100 shadow-sm sticky top-0 z-10">
+      {/* Header - Hide on scroll */}
+      <div
+        className={`bg-white/80 backdrop-blur-md border-b border-purple-100 shadow-sm sticky top-0 z-20 transition-transform duration-300 ${
+          showHeader ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 py-6">
-          {/* Back Button */}
+          {/* Back Button - Icon only */}
           <button
             onClick={() => navigate("/tests/sprechen")}
-            className="mb-4 inline-flex items-center gap-2 px-4 py-2 bg-white/80 hover:bg-white border border-purple-200 rounded-xl transition-all duration-200 hover:shadow-md hover:-translate-x-1 text-purple-700 font-medium"
+            className="mb-4 w-10 h-10 rounded-full bg-white hover:bg-purple-50 border border-purple-100 hover:border-purple-300 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 shadow-sm group"
+            aria-label="Zurück zu Sprechen Tests"
           >
-            <ArrowLeft className="w-4 h-4" />
-            Zurück zu Sprechen Tests
+            <ArrowLeft className="w-5 h-5 text-purple-600 group-hover:-translate-x-0.5 transition-transform duration-200" />
           </button>
 
           <h1 className="text-4xl lg:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-2 tracking-tight">
@@ -119,42 +165,54 @@ export default function DialogueCatalogPage() {
         </div>
       </div>
 
-      {/* Search and Filter Section */}
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-purple-100 mb-8">
+      {/* Sticky Theme Navigation - Horizontal Scroll Gallery */}
+      <div className="sticky top-0 z-10 bg-white/90 backdrop-blur-md border-b border-purple-100 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 py-4">
+          <div
+            ref={themeNavRef}
+            className="flex gap-3 overflow-x-auto scrollbar-hide scroll-smooth"
+            style={{
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+              WebkitOverflowScrolling: "touch",
+            }}
+          >
+            {themes.map((theme, index) => (
+              <button
+                key={theme}
+                onClick={() => scrollToTheme(theme, index)}
+                className={`flex-shrink-0 px-5 py-2.5 rounded-xl font-medium transition-all duration-200 whitespace-nowrap ${
+                  selectedTheme === theme
+                    ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg scale-105"
+                    : "bg-white text-purple-700 border border-purple-200 hover:bg-purple-50 hover:scale-105"
+                }`}
+              >
+                {theme === "all" ? "Alle" : theme}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Search Section */}
+      <div className="max-w-7xl mx-auto px-4 py-6">
+        <div className="bg-white/80 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-purple-100 mb-6">
           {/* Search Bar */}
-          <div className="relative mb-6">
+          <div className="relative">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-purple-400 w-5 h-5" />
             <input
               type="text"
-              placeholder="Dialog suchen (Nummer, Thema, Stichwort)..."
+              placeholder="Dialog suchen..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-12 pr-4 py-3 bg-white border-2 border-purple-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 text-gray-700 placeholder-gray-400"
             />
           </div>
 
-          {/* Theme Filter Pills */}
-          <div className="flex flex-wrap gap-2">
-            {themes.map((theme) => (
-              <button
-                key={theme}
-                onClick={() => setSelectedTheme(theme)}
-                className={`px-4 py-2 rounded-xl font-medium transition-all duration-200 ${
-                  selectedTheme === theme
-                    ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg scale-105"
-                    : "bg-white text-purple-700 border border-purple-200 hover:bg-purple-50 hover:scale-105"
-                }`}
-              >
-                {theme === "all" ? "Alle Dialoge" : theme}
-              </button>
-            ))}
-          </div>
-
           {/* Results Count */}
-          <p className="text-sm text-gray-600 mt-4">
+          <p className="text-sm text-gray-600 mt-3">
             {filteredDialogues.length}{" "}
-            {filteredDialogues.length === 1 ? "Dialog" : "Dialoge"} gefunden
+            {filteredDialogues.length === 1 ? "Dialog" : "Dialoge"}
           </p>
         </div>
 

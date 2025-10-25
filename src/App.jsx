@@ -12,6 +12,8 @@ import About from "./pages/About";
 import TestHub from "./pages/TestHub";
 import HoerenHub from "./pages/HoerenHub";
 import SprechenHub from "./pages/SprechenHub";
+import SchreibenHub from "./pages/SchreibenHub";
+import SchreibenTrainer from "./pages/SchreibenTrainer";
 
 // New Hören system (rebuilt)
 import HoerenPruefung from "./features/hoeren/HoerenPruefung";
@@ -20,6 +22,7 @@ import HoerenTraining from "./features/hoeren/HoerenTraining";
 
 // Sprechen system
 import SprechenUebung from "./features/sprechen/SprechenUebung";
+import SprechenTeil1Interactive from "./pages/SprechenTeil1Interactive";
 import DialogueMenu from "./features/sprechen/DialogueMenu";
 import DialogTrainer from "./pages/DialogTrainer";
 import DialogueTrainerAI from "./features/sprechen/DialogueTrainerAI";
@@ -159,6 +162,16 @@ function App() {
         }
       />
 
+      {/* NEW: Sprechen Teil 1 Interactive Learning */}
+      <Route
+        path="/tests/sprechen/teil1"
+        element={
+          <HoverSidebarShell>
+            <SprechenTeil1Interactive />
+          </HoverSidebarShell>
+        }
+      />
+
       {/* Dialogue Catalog & Trainer */}
       <Route
         path="/tests/sprechen/trainer"
@@ -242,20 +255,32 @@ function App() {
         }
       />
 
+      {/* Schreiben Test Area */}
+      <Route
+        path="/tests/schreiben"
+        element={
+          <HoverSidebarShell>
+            <SchreibenHub />
+          </HoverSidebarShell>
+        }
+      />
+
+      {/* Schreiben Trainer */}
+      <Route
+        path="/tests/schreiben/trainer"
+        element={
+          <HoverSidebarShell>
+            <SchreibenTrainer />
+          </HoverSidebarShell>
+        }
+      />
+
       {/* Other test areas - Coming Soon */}
       <Route
         path="/tests/lesen"
         element={
           <HoverSidebarShell>
             <ComingSoon title="Lesen Training" />
-          </HoverSidebarShell>
-        }
-      />
-      <Route
-        path="/tests/schreiben"
-        element={
-          <HoverSidebarShell>
-            <ComingSoon title="Schreiben Training" />
           </HoverSidebarShell>
         }
       />

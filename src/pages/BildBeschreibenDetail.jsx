@@ -96,11 +96,7 @@ export default function BildBeschreibenDetail() {
     setIsSpeaking(true);
 
     try {
-      const ttsUrl = import.meta.env.VITE_BACKEND_URL
-        ? import.meta.env.VITE_BACKEND_URL.replace("/api/chat", "/api/tts")
-        : "/api/tts";
-
-      const response = await fetch(ttsUrl, {
+      const response = await fetch("/api/tts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -163,7 +159,14 @@ export default function BildBeschreibenDetail() {
 
   const togglePlayPause = async () => {
     const a = audioRef.current;
-    if (!a) return;
+
+    // If no audio loaded yet, generate TTS for the description
+    if (!playerSrc || !a.src) {
+      await handlePlaySample();
+      return;
+    }
+
+    // Otherwise toggle play/pause
     if (a.paused) {
       await a.play();
       setIsPlayingLocal(true);
@@ -194,81 +197,90 @@ export default function BildBeschreibenDetail() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50">
-      {/* Header */}
-      <div className="bg-white/80 backdrop-blur-md border-b border-purple-100 sticky top-0 z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      {/* Minimal Header */}
+      <div className="bg-white/95 backdrop-blur-md border-b border-purple-100 sticky top-0 z-20 shadow-sm">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3">
           <div className="flex items-center justify-between">
+            {/* Icon-only back button */}
             <Link
               to="/tests/sprechen/bild-beschreiben"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 hover:bg-white rounded-xl transition-all duration-200 text-gray-700 font-medium border border-purple-100 hover:border-purple-200 group"
+              className="w-10 h-10 rounded-full bg-white hover:bg-purple-50 border border-purple-100 hover:border-purple-300 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 group shadow-sm"
+              aria-label="Zurück"
             >
-              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-200" />
-              Zurück zur Übersicht
+              <ArrowLeft className="w-5 h-5 text-purple-600 group-hover:-translate-x-0.5 transition-transform duration-200" />
             </Link>
 
-            <div className="flex items-center gap-3">
-              <span className="text-sm font-semibold text-purple-600 bg-purple-50 px-3 py-1 rounded-full">
-                Übung {exercise.id}
+            {/* Compact exercise number badge */}
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-bold text-purple-600 bg-purple-50 px-3 py-1.5 rounded-full border border-purple-100">
+                #{exercise.id}
               </span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Main Content: Clean 50/50 split layout */}
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 py-3 sm:py-4">
-        <div className="mb-2 sm:mb-3 text-center">
-          <h1 className="text-xl sm:text-2xl lg:text-3xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-1 tracking-tight">
+      {/* Main Content: Clean modern layout */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-6">
+        {/* Compact title */}
+        <div className="mb-4 text-center">
+          <h1 className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent tracking-tight">
             {exercise.title}
           </h1>
-          <p className="text-slate-600 text-xs sm:text-sm font-light">
-            {exercise.category}
-          </p>
         </div>
 
-        {/* Main layout container - Stacked on all screens */}
-        <div className="space-y-4 lg:space-y-6 pb-8">
-          {/* Image Section */}
-          <div className="relative">
-            <div className="bg-white/80 backdrop-blur-md rounded-2xl sm:rounded-3xl p-3 sm:p-4 shadow-xl border border-purple-100 h-[400px] sm:h-[500px] flex items-center justify-center">
-              <img
-                src={exercise.imageUrl}
-                alt={exercise.title}
-                className="max-w-full max-h-full object-contain rounded-xl sm:rounded-2xl"
-                onError={(e) => {
-                  e.target.src =
-                    "https://via.placeholder.com/800x600/7c3aed/ffffff?text=Bild+nicht+verfügbar";
-                }}
-              />
+        {/* Two-column layout on desktop, stacked on mobile */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
+          {/* Left: Image + Audio Player */}
+          <div className="space-y-4">
+            {/* Image - Clean presentation */}
+            <div className="relative bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-purple-100">
+              <div className="aspect-[4/3] flex items-center justify-center">
+                <img
+                  src={exercise.imageUrl}
+                  alt={exercise.title}
+                  className="max-w-full max-h-full object-contain rounded-xl"
+                  onError={(e) => {
+                    e.target.src =
+                      "https://via.placeholder.com/800x600/7c3aed/ffffff?text=Bild+nicht+verfügbar";
+                  }}
+                />
+              </div>
             </div>
-          </div>
 
-          {/* Text content panel */}
-          <div className="relative flex flex-col">
-            <div className="bg-white/80 backdrop-blur-md rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl border border-purple-100 h-full flex flex-col overflow-hidden">
-              {/* Small inline player at top */}
-              <div className="mb-4 sm:mb-6 flex items-center gap-3 sm:gap-4 pb-4 sm:pb-6 border-b border-purple-50 flex-shrink-0">
+            {/* Compact Audio Player */}
+            <div className="bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-purple-100 group">
+              <div className="flex items-center gap-3">
+                {/* Play button */}
                 <button
                   onClick={togglePlayPause}
-                  className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition-transform duration-200"
-                  aria-label={isPlayingLocal ? "Pause" : "Play"}
+                  disabled={isSpeaking}
+                  className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                  aria-label={isPlayingLocal ? "Pause" : "Abspielen"}
                 >
-                  {isPlayingLocal ? (
-                    <Pause className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                  {isSpeaking ? (
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  ) : isPlayingLocal ? (
+                    <Pause className="w-5 h-5 text-white" />
                   ) : (
-                    <Play className="w-4 h-4 sm:w-5 sm:h-5 text-white ml-0.5" />
+                    <Play className="w-5 h-5 text-white ml-0.5" />
                   )}
                 </button>
 
+                {/* Progress */}
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-center justify-between text-xs text-gray-500 mb-1">
-                    <span className="truncate">Beispielantwort</span>
-                    <span className="flex-shrink-0 ml-2">
-                      {exercise.duration || "1:20"}
+                  <div className="flex items-center justify-between text-[10px] text-gray-500 mb-1">
+                    <span className="truncate font-medium">
+                      {isSpeaking ? "Lädt..." : "Beispielantwort"}
+                    </span>
+                    <span className="flex-shrink-0 ml-2 tabular-nums">
+                      {durationSec > 0
+                        ? `${Math.floor(progress / 60)}:${String(Math.floor(progress % 60)).padStart(2, "0")}`
+                        : exercise.duration || "1:20"}
                     </span>
                   </div>
                   <div
-                    className="w-full h-1.5 sm:h-2 bg-purple-100 rounded-full cursor-pointer overflow-hidden"
+                    className="w-full h-1.5 bg-purple-100 rounded-full cursor-pointer overflow-hidden hover:h-2 transition-all"
                     onClick={handleSeek}
                   >
                     <div
@@ -279,111 +291,127 @@ export default function BildBeschreibenDetail() {
                     />
                   </div>
                 </div>
-
-                <button
-                  className="flex-shrink-0 text-gray-400 hover:text-purple-600 transition-colors"
-                  aria-label="Volume"
-                >
-                  <Volume2 className="w-4 h-4 sm:w-5 sm:h-5" />
-                </button>
               </div>
 
-              {/* Hidden audio element */}
+              {/* Volume - appears on hover */}
+              <div className="flex items-center gap-2 px-2 mt-3 opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-10 transition-all duration-200 overflow-hidden">
+                <Volume2 className="w-3 h-3 text-purple-500 flex-shrink-0" />
+                <input
+                  type="range"
+                  min="0"
+                  max="1"
+                  step="0.05"
+                  value={volume}
+                  onChange={(e) => handleVolume(parseFloat(e.target.value))}
+                  className="flex-1 h-1 bg-purple-100 rounded-full appearance-none cursor-pointer
+                    [&::-webkit-slider-thumb]:appearance-none 
+                    [&::-webkit-slider-thumb]:w-3
+                    [&::-webkit-slider-thumb]:h-3
+                    [&::-webkit-slider-thumb]:rounded-full 
+                    [&::-webkit-slider-thumb]:bg-gradient-to-r
+                    [&::-webkit-slider-thumb]:from-purple-600
+                    [&::-webkit-slider-thumb]:to-indigo-600
+                    [&::-webkit-slider-thumb]:cursor-pointer 
+                    hover:[&::-webkit-slider-thumb]:scale-110
+                    [&::-webkit-slider-thumb]:transition-transform"
+                />
+                <span className="text-[10px] font-semibold text-purple-600 w-8 text-right flex-shrink-0">
+                  {Math.round(volume * 100)}%
+                </span>
+              </div>
+
               <audio ref={audioRef} preload="auto" className="hidden" />
-
-              {/* Fragen (Questions) - Below player */}
-              <div className="mb-4 flex-shrink-0">
-                <button
-                  onClick={() => setShowQuestions(!showQuestions)}
-                  className="w-full flex items-center justify-between py-2.5 px-4 bg-purple-50 hover:bg-purple-100 rounded-xl transition-colors text-sm font-semibold text-gray-900"
-                  aria-expanded={showQuestions}
-                >
-                  <span>Fragen</span>
-                  <span className="text-purple-600 text-lg">
-                    {showQuestions ? "−" : "+"}
-                  </span>
-                </button>
-
-                {showQuestions && (
-                  <div className="mt-3 space-y-2 px-2">
-                    {exercise.questions.map((q, i) => (
-                      <div key={i} className="flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />
-                        <div className="text-gray-700 text-sm">{q}</div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Mobile dropdown toggle for description - positioned after Fragen */}
-              <button
-                onClick={() => setShowTextMobile(!showTextMobile)}
-                className="lg:hidden mb-3 w-full flex items-center justify-between py-2 px-3 bg-purple-50 hover:bg-purple-100 rounded-xl transition-colors text-sm font-medium text-purple-700 flex-shrink-0"
-                aria-expanded={showTextMobile}
-              >
-                <span>Beschreibung anzeigen</span>
-                <span className="text-lg">{showTextMobile ? "−" : "+"}</span>
-              </button>
-
-              {/* Scrollable text content - collapsible on mobile, always visible on desktop */}
-              <div
-                className={`overflow-y-auto pr-1 sm:pr-2 -mr-1 sm:-mr-2 scrollbar-thin scrollbar-thumb-purple-200 scrollbar-track-transparent transition-all duration-300 mb-4 ${
-                  showTextMobile ? "block" : "hidden lg:block"
-                }`}
-              >
-                <div className="prose prose-gray max-w-none">
-                  {getTranscriptionText()
-                    .split("\n\n")
-                    .filter((p) => p.trim())
-                    .map((paragraph, idx) => (
-                      <p
-                        key={idx}
-                        className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base first:mt-0"
-                      >
-                        {paragraph}
-                      </p>
-                    ))}
-                </div>
-              </div>
             </div>
           </div>
 
-          {/* Zusatzfragen - Full width below (all screens) */}
-          <div className="bg-white/80 backdrop-blur-md rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-xl border border-purple-100">
-            <div className="flex items-center justify-between mb-4">
-              <h4 className="text-sm sm:text-base font-semibold text-gray-900">
-                Zusatzfragen
-              </h4>
-              <span className="text-xs sm:text-sm text-gray-500">
-                {exercise.additionalQuestions.length} Fragen
-              </span>
+          {/* Right: Content (Description + Questions) */}
+          <div className="space-y-4">
+            {/* Description */}
+            <div className="bg-white/90 backdrop-blur-md rounded-2xl p-5 shadow-lg border border-purple-100 max-h-[500px] overflow-y-auto">
+              <div className="prose prose-sm prose-gray max-w-none">
+                {getTranscriptionText()
+                  .split("\n\n")
+                  .filter((p) => p.trim())
+                  .map((paragraph, idx) => (
+                    <p
+                      key={idx}
+                      className="text-gray-700 leading-relaxed mb-3 text-sm first:mt-0"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+              </div>
             </div>
 
-            <div className="overflow-x-auto -mx-2 px-2 pb-2">
-              <div className="flex gap-3 sm:gap-4 snap-x snap-mandatory">
+            {/* Questions - Compact collapsible */}
+            <details className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg border border-purple-100 group">
+              <summary className="flex items-center justify-between p-4 cursor-pointer hover:bg-purple-50/50 rounded-2xl transition-colors">
+                <span className="text-sm font-bold text-gray-900">Fragen</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs text-purple-600 font-medium">
+                    {exercise.questions.length}
+                  </span>
+                  <div className="w-5 h-5 rounded-full bg-purple-100 flex items-center justify-center group-open:rotate-180 transition-transform duration-200">
+                    <span className="text-purple-600 text-xs">▼</span>
+                  </div>
+                </div>
+              </summary>
+              <div className="px-4 pb-4 space-y-2">
+                {exercise.questions.map((q, i) => (
+                  <div
+                    key={i}
+                    className="flex items-start gap-2 p-2 rounded-lg hover:bg-purple-50/50 transition-colors"
+                  >
+                    <div className="w-5 h-5 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-white text-xs font-bold">
+                        {i + 1}
+                      </span>
+                    </div>
+                    <p className="text-gray-700 text-sm leading-snug">{q}</p>
+                  </div>
+                ))}
+              </div>
+            </details>
+          </div>
+        </div>
+
+        {/* Zusatzfragen - Modern card grid */}
+        {exercise.additionalQuestions &&
+          exercise.additionalQuestions.length > 0 && (
+            <div className="mt-6">
+              <div className="flex items-center justify-between mb-4 px-1">
+                <h3 className="text-lg font-bold text-gray-900">
+                  Zusatzfragen
+                </h3>
+                <span className="text-xs text-purple-600 font-medium bg-purple-50 px-2 py-1 rounded-full">
+                  {exercise.additionalQuestions.length}
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {exercise.additionalQuestions.map((item, idx) => (
                   <div
                     key={idx}
-                    className="snap-center flex-shrink-0 w-72 sm:w-80 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-4 sm:p-5 shadow-sm border border-purple-100 hover:shadow-md transition-shadow"
+                    className="bg-white/90 backdrop-blur-md rounded-xl p-4 shadow-sm border border-purple-100 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 group"
                   >
-                    <div className="flex items-start gap-2 sm:gap-3 mb-2 sm:mb-3">
-                      <span className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 bg-purple-600 text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-bold">
-                        {idx + 1}
-                      </span>
-                      <div className="font-semibold text-gray-900 text-sm sm:text-base leading-snug">
-                        {item.question}
+                    <div className="flex items-start gap-2 mb-2">
+                      <div className="w-6 h-6 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
+                        <span className="text-white text-xs font-bold">
+                          {idx + 1}
+                        </span>
                       </div>
+                      <p className="font-semibold text-gray-900 text-sm leading-snug">
+                        {item.question}
+                      </p>
                     </div>
-                    <div className="text-gray-700 text-sm leading-relaxed pl-8 sm:pl-10">
+                    <p className="text-gray-600 text-xs leading-relaxed pl-8">
                       {item.answer}
-                    </div>
+                    </p>
                   </div>
                 ))}
               </div>
             </div>
-          </div>
-        </div>
+          )}
       </div>
     </div>
   );

@@ -49,7 +49,7 @@ export default function DashboardShell({ children }) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 flex safe-area-inset">
       {/* Mobile Hamburger Menu Button - Top Right */}
-      <div className="fixed top-4 right-4 z-50 lg:hidden safe-area-inset-top safe-area-inset-right">
+      <div className="fixed top-4 right-4 z-[100] lg:hidden safe-area-inset-top safe-area-inset-right">
         <button
           onClick={() => setSidebarOpen(!sidebarOpen)}
           className={`w-10 h-10 flex flex-col items-center justify-center space-y-1 group transition-all duration-300 hover:scale-105 ${
@@ -78,7 +78,7 @@ export default function DashboardShell({ children }) {
 
       {/* Sidebar */}
       <div
-        className={`fixed inset-y-0 right-0 z-40 w-64 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-700 shadow-2xl transform transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-y-0 right-0 z-[90] w-64 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-700 shadow-2xl transform transition-transform duration-300 ease-in-out ${
           sidebarOpen ? "translate-x-0" : "translate-x-full"
         } lg:translate-x-0 lg:static lg:inset-0 lg:left-0 lg:right-auto border-l lg:border-l-0 lg:border-r border-purple-500`}
       >
@@ -155,7 +155,7 @@ export default function DashboardShell({ children }) {
       {/* Mobile overlay */}
       {sidebarOpen && (
         <div
-          className="fixed inset-0 z-30 bg-black bg-opacity-50 lg:hidden"
+          className="fixed inset-0 z-[80] bg-black bg-opacity-50 lg:hidden"
           onClick={() => setSidebarOpen(false)}
         />
       )}

@@ -1,0 +1,357 @@
+{
+  "formal": [
+    {
+      "id": "formal-01",
+      "title": "Beschwerde - Laute Nachbarn",
+      "situation": "Sie wohnen seit 3 Monaten in einer Wohnung. Ihre Nachbarn sind sehr laut, besonders abends und am Wochenende. Sie haben schon mehrmals geklingelt, aber nichts hat sich geändert.",
+      "recipient": "Hausverwaltung Schmidt & Partner",
+      "contentPoints": [
+        "Grund für Ihr Schreiben nennen",
+        "Problem genau beschreiben (wann, wie oft, was passiert)",
+        "Was Sie schon versucht haben",
+        "Um eine Lösung bitten"
+      ],
+      "level": "B1",
+      "category": "Beschwerde",
+      "hints": [
+        "Verwenden Sie 'Sehr geehrte Damen und Herren'",
+        "Bleiben Sie höflich, aber klar",
+        "Nennen Sie konkrete Beispiele",
+        "Schließen Sie mit 'Mit freundlichen Grüßen'"
+      ]
+    },
+    {
+      "id": "formal-02",
+      "title": "Kursanmeldung absagen",
+      "situation": "Sie haben sich vor zwei Wochen für einen Deutschkurs (B2, Abendkurs, Montag und Mittwoch, 18-20 Uhr) an der Volkshochschule angemeldet. Leider können Sie nicht teilnehmen, weil Sie einen neuen Job gefunden haben.",
+      "recipient": "Volkshochschule Berlin-Mitte",
+      "contentPoints": [
+        "Grund für Ihr Schreiben",
+        "Kursinformationen nennen (welcher Kurs, wann)",
+        "Grund für die Absage erklären",
+        "Nach Rückerstattung der Kursgebühr fragen"
+      ],
+      "level": "B1",
+      "category": "Absage/Änderung",
+      "hints": [
+        "Verwenden Sie 'Sehr geehrte Damen und Herren'",
+        "Seien Sie freundlich, aber bestimmt",
+        "Erwähnen Sie das Datum Ihrer Anmeldung",
+        "Bitten Sie höflich um Bestätigung"
+      ]
+    },
+    {
+      "id": "formal-03",
+      "title": "Reklamation - Kaputtes Gerät",
+      "situation": "Vor einer Woche haben Sie online einen Laptop gekauft. Leider funktioniert er nicht richtig: Er wird sehr heiß und schaltet sich plötzlich aus. Sie möchten das Gerät umtauschen.",
+      "recipient": "Elektronik-Shop TechMax",
+      "contentPoints": [
+        "Was Sie gekauft haben (wann, wo)",
+        "Problem beschreiben",
+        "Um Umtausch oder Reparatur bitten",
+        "Fragen, wie Sie weiter vorgehen sollen"
+      ],
+      "level": "B1",
+      "category": "Reklamation",
+      "hints": [
+        "Erwähnen Sie Bestellnummer, wenn möglich",
+        "Beschreiben Sie das Problem genau",
+        "Fordern Sie eine Lösung",
+        "Setzen Sie eine Frist für die Antwort"
+      ]
+    },
+    {
+      "id": "formal-04",
+      "title": "Terminverschiebung beim Arzt",
+      "situation": "Sie haben einen Termin beim Zahnarzt am nächsten Montag um 14:00 Uhr. Leider haben Sie an diesem Tag ein wichtiges Vorstellungsgespräch und müssen den Termin verschieben.",
+      "recipient": "Zahnarztpraxis Dr. Müller",
+      "contentPoints": [
+        "Ihren Namen und Termin nennen",
+        "Grund für die Verschiebung",
+        "Um einen neuen Termin bitten",
+        "Sich entschuldigen für die Unannehmlichkeiten"
+      ],
+      "level": "B1",
+      "category": "Terminänderung",
+      "hints": [
+        "Nennen Sie den genauen Termin",
+        "Seien Sie höflich und entschuldigen Sie sich",
+        "Schlagen Sie alternative Zeiten vor",
+        "Danken Sie für das Verständnis"
+      ]
+    },
+    {
+      "id": "formal-05",
+      "title": "Bewerbung um Praktikumsplatz",
+      "situation": "Sie haben in der Zeitung gelesen, dass die Firma 'Marketing Plus GmbH' Praktikanten sucht. Sie interessieren sich für Marketing und möchten sich für ein 3-monatiges Praktikum bewerben.",
+      "recipient": "Marketing Plus GmbH, Personalabteilung",
+      "contentPoints": [
+        "Woher Sie die Information haben",
+        "Warum Sie sich für das Praktikum interessieren",
+        "Was Sie studieren oder gelernt haben",
+        "Wann Sie das Praktikum machen möchten"
+      ],
+      "level": "B1",
+      "category": "Bewerbung",
+      "hints": [
+        "Verwenden Sie 'Sehr geehrte Damen und Herren'",
+        "Zeigen Sie Interesse und Motivation",
+        "Erwähnen Sie relevante Erfahrungen",
+        "Bitten Sie um ein Vorstellungsgespräch"
+      ]
+    },
+    {
+      "id": "formal-06",
+      "title": "Kündigungsschreiben Fitnessstudio",
+      "situation": "Sie haben vor einem Jahr einen Vertrag mit dem Fitnessstudio 'FitLife' abgeschlossen. Jetzt ziehen Sie in eine andere Stadt und möchten Ihren Vertrag zum nächstmöglichen Termin kündigen.",
+      "recipient": "FitLife Fitnessstudio, Kundenverwaltung",
+      "contentPoints": [
+        "Ihre Mitgliedsnummer und Vertragsdatum",
+        "Grund für die Kündigung",
+        "Kündigungsdatum nennen",
+        "Um Bestätigung bitten"
+      ],
+      "level": "B1",
+      "category": "Kündigung",
+      "hints": [
+        "Verwenden Sie klare, formelle Sprache",
+        "Nennen Sie alle wichtigen Daten",
+        "Fordern Sie eine schriftliche Bestätigung",
+        "Behalten Sie eine Kopie des Briefes"
+      ]
+    },
+    {
+      "id": "formal-07",
+      "title": "Anfrage - Wohnungssuche",
+      "situation": "Sie haben im Internet eine Wohnungsanzeige gesehen: 2 Zimmer, 60 qm, 850€ warm, Stadtzentrum. Sie interessieren sich für die Wohnung und möchten mehr Informationen.",
+      "recipient": "Wohnungsverwaltung Immobilien Schmidt",
+      "contentPoints": [
+        "Auf welche Anzeige Sie sich beziehen",
+        "Interesse an der Wohnung zeigen",
+        "Fragen zur Wohnung stellen (Nebenkosten, Einzugstermin, Besichtigung)",
+        "Kurz etwas über sich erzählen"
+      ],
+      "level": "B1",
+      "category": "Anfrage",
+      "hints": [
+        "Erwähnen Sie die Anzeigennummer",
+        "Stellen Sie konkrete Fragen",
+        "Machen Sie einen guten Eindruck",
+        "Bitten Sie um einen Besichtigungstermin"
+      ]
+    },
+    {
+      "id": "formal-08",
+      "title": "Entschuldigung für Verspätung",
+      "situation": "Sie arbeiten in einer Firma. Morgen haben Sie eine wichtige Besprechung um 9:00 Uhr. Leider müssen Sie Ihr Kind zum Arzt bringen und werden wahrscheinlich 30 Minuten zu spät kommen.",
+      "recipient": "Ihre Chefin, Frau Weber",
+      "contentPoints": [
+        "Um welche Besprechung es geht",
+        "Grund für Ihre Verspätung",
+        "Wie viel später Sie kommen",
+        "Entschuldigung und Vorschlag für Lösung"
+      ],
+      "level": "B1",
+      "category": "Entschuldigung",
+      "hints": [
+        "Verwenden Sie 'Sehr geehrte Frau Weber'",
+        "Seien Sie ehrlich und klar",
+        "Bieten Sie eine Lösung an",
+        "Versichern Sie, dass es eine Ausnahme ist"
+      ]
+    }
+  ],
+  "informal": [
+    {
+      "id": "informal-01",
+      "title": "Einladung zum Geburtstag annehmen",
+      "situation": "Ihr guter Freund Max hat Sie zu seiner Geburtstagsparty am Samstag eingeladen. Die Party ist bei ihm zu Hause ab 19:00 Uhr. Sie können kommen und freuen sich sehr!",
+      "recipient": "Max (Ihr Freund)",
+      "contentPoints": [
+        "Für die Einladung bedanken",
+        "Zusagen, dass Sie kommen",
+        "Fragen, ob Sie etwas mitbringen sollen",
+        "Fragen nach Details (Geschenkwunsch, Dresscode, andere Gäste)"
+      ],
+      "level": "B1",
+      "category": "Einladung",
+      "hints": [
+        "Verwenden Sie 'Lieber Max' oder 'Hallo Max'",
+        "Schreiben Sie freundlich und persönlich",
+        "Zeigen Sie Ihre Vorfreude",
+        "Schließen Sie mit 'Liebe Grüße' oder 'Bis Samstag!'"
+      ]
+    },
+    {
+      "id": "informal-02",
+      "title": "Um Umzugshilfe bitten",
+      "situation": "Sie ziehen nächsten Monat in eine neue Wohnung. Sie haben viele Möbel und Kartons. Ihr Freund Paul hat ein Auto und hat Ihnen schon öfter geholfen.",
+      "recipient": "Paul (Ihr Freund)",
+      "contentPoints": [
+        "Von Ihrem Umzug erzählen",
+        "Um Hilfe bitten (Auto, beim Tragen helfen)",
+        "Wann der Umzug ist",
+        "Dankeschön anbieten (Essen, Getränke)"
+      ],
+      "level": "B1",
+      "category": "Bitte",
+      "hints": [
+        "Seien Sie freundlich und nicht zu fordernd",
+        "Erklären Sie, warum Sie Hilfe brauchen",
+        "Nennen Sie das genaue Datum",
+        "Bieten Sie etwas als Dankeschön an"
+      ]
+    },
+    {
+      "id": "informal-03",
+      "title": "Einladung absagen",
+      "situation": "Ihre Kollegin Anna hat Sie zu ihrem Grillabend am Freitag eingeladen. Leider kommt Ihre Schwester überraschend zu Besuch und Sie können nicht kommen.",
+      "recipient": "Anna (Ihre Kollegin)",
+      "contentPoints": [
+        "Für die Einladung bedanken",
+        "Absagen mit Bedauern",
+        "Grund für die Absage erklären",
+        "Vorschlag für ein anderes Treffen"
+      ],
+      "level": "B1",
+      "category": "Absage",
+      "hints": [
+        "Zeigen Sie, dass es Ihnen leid tut",
+        "Erklären Sie den Grund",
+        "Schlagen Sie ein alternatives Treffen vor",
+        "Wünschen Sie einen schönen Abend"
+      ]
+    },
+    {
+      "id": "informal-04",
+      "title": "Nach Kochrezept fragen",
+      "situation": "Ihre Freundin Julia hat letzte Woche einen fantastischen Kuchen gebacken. Sie haben ihn bei ihr probiert und möchten das Rezept haben, um ihn selbst zu backen.",
+      "recipient": "Julia (Ihre Freundin)",
+      "contentPoints": [
+        "An den Kuchen erinnern (wie lecker er war)",
+        "Nach dem Rezept fragen",
+        "Fragen stellen (Zutaten, Backzeit, Schwierigkeit)",
+        "Vorschlagen, zusammen zu backen"
+      ],
+      "level": "B1",
+      "category": "Anfrage",
+      "hints": [
+        "Seien Sie enthusiastisch",
+        "Machen Sie ein Kompliment",
+        "Zeigen Sie Interesse",
+        "Schlagen Sie vor, zusammen zu kochen/backen"
+      ]
+    },
+    {
+      "id": "informal-05",
+      "title": "Entschuldigung für vergessenen Termin",
+      "situation": "Sie hatten gestern Abend mit Ihrer Freundin Maria verabredet, ins Kino zu gehen. Leider haben Sie den Termin komplett vergessen und sind nicht gekommen. Maria ist sicher sauer!",
+      "recipient": "Maria (Ihre Freundin)",
+      "contentPoints": [
+        "Sich aufrichtig entschuldigen",
+        "Erklären, was passiert ist",
+        "Zeigen, dass es Ihnen wirklich leid tut",
+        "Neuen Termin vorschlagen und anbieten, die Tickets zu bezahlen"
+      ],
+      "level": "B1",
+      "category": "Entschuldigung",
+      "hints": [
+        "Seien Sie ehrlich und aufrichtig",
+        "Übernehmen Sie die Verantwortung",
+        "Bieten Sie eine Wiedergutmachung an",
+        "Versichern Sie, dass es nicht wieder vorkommt"
+      ]
+    },
+    {
+      "id": "informal-06",
+      "title": "Urlaubsgrüße schicken",
+      "situation": "Sie sind gerade im Urlaub in Spanien. Das Wetter ist toll, Sie haben schon viel gesehen und das Essen ist fantastisch. Sie möchten Ihrer besten Freundin davon erzählen.",
+      "recipient": "Deine beste Freundin Sarah",
+      "contentPoints": [
+        "Erzählen, wo Sie sind und wie es ist",
+        "Beschreiben, was Sie schon gemacht haben",
+        "Was Sie noch vorhaben",
+        "Liebe Grüße aus dem Urlaub senden"
+      ],
+      "level": "B1",
+      "category": "Urlaubsgruß",
+      "hints": [
+        "Schreiben Sie begeistert und positiv",
+        "Erzählen Sie interessante Details",
+        "Verwenden Sie Präteritum und Perfekt",
+        "Wünschen Sie Ihrer Freundin auch etwas Schönes"
+      ]
+    },
+    {
+      "id": "informal-07",
+      "title": "Gemeinsamen Ausflug planen",
+      "situation": "Das Wetter soll am Wochenende sehr schön werden. Sie haben die Idee, mit Ihrem Freund Tom einen Fahrradausflug an den See zu machen. Sie fahren gerne Fahrrad und Tom auch.",
+      "recipient": "Tom (Ihr Freund)",
+      "contentPoints": [
+        "Vorschlag für den Ausflug machen",
+        "Wann und wohin Sie fahren möchten",
+        "Was Sie mitnehmen wollen (Essen, Getränke)",
+        "Nach Toms Meinung fragen"
+      ],
+      "level": "B1",
+      "category": "Vorschlag",
+      "hints": [
+        "Seien Sie enthusiastisch",
+        "Machen Sie konkrete Vorschläge",
+        "Fragen Sie nach der Meinung",
+        "Schlagen Sie Treffpunkt und Zeit vor"
+      ]
+    },
+    {
+      "id": "informal-08",
+      "title": "Gratulation zum neuen Job",
+      "situation": "Ihr Freund Ben hat Ihnen erzählt, dass er eine neue Stelle als Programmierer bei einer großen Firma bekommen hat. Sie freuen sich sehr für ihn und möchten ihm gratulieren.",
+      "recipient": "Ben (Ihr Freund)",
+      "contentPoints": [
+        "Herzlich gratulieren",
+        "Sagen, wie sehr Sie sich für ihn freuen",
+        "Nach Details fragen (was er machen wird, wann er anfängt)",
+        "Vorschlagen, den neuen Job zusammen zu feiern"
+      ],
+      "level": "B1",
+      "category": "Gratulation",
+      "hints": [
+        "Zeigen Sie echte Freude",
+        "Machen Sie ein Kompliment",
+        "Stellen Sie interessierte Fragen",
+        "Schlagen Sie ein Treffen vor"
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "totalPrompts": 16,
+    "formalCount": 8,
+    "informalCount": 8,
+    "targetLevel": "B1",
+    "examType": "DTZ",
+    "lastUpdated": "2025-10-23",
+    "categories": {
+      "formal": [
+        "Beschwerde",
+        "Absage/Änderung",
+        "Reklamation",
+        "Terminänderung",
+        "Bewerbung",
+        "Kündigung",
+        "Anfrage",
+        "Entschuldigung"
+      ],
+      "informal": [
+        "Einladung",
+        "Bitte",
+        "Absage",
+        "Anfrage",
+        "Entschuldigung",
+        "Urlaubsgruß",
+        "Vorschlag",
+        "Gratulation"
+      ]
+    }
+  }
+}

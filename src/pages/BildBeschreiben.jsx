@@ -189,21 +189,11 @@ export default function BildBeschreiben() {
           <div className="flex items-center justify-between">
             <Link
               to="/tests/sprechen"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 hover:bg-white rounded-xl transition-all duration-200 text-gray-700 font-medium border border-purple-100 hover:border-purple-200 group"
+              className="w-10 h-10 rounded-full bg-white hover:bg-purple-50 border border-purple-100 hover:border-purple-300 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 group shadow-sm"
+              aria-label="Zurück zu Sprechen Tests"
             >
-              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-200" />
-              Zurück
+              <ArrowLeft className="w-5 h-5 text-purple-600 group-hover:-translate-x-0.5 transition-transform duration-200" />
             </Link>
-
-            <div className="flex items-center gap-3">
-              <div className="text-right">
-                <div className="text-sm text-gray-600">Dein Fortschritt</div>
-                <div className="text-xl font-bold text-purple-600">0%</div>
-              </div>
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full flex items-center justify-center">
-                <ImageIcon className="w-6 h-6 text-white" />
-              </div>
-            </div>
           </div>
         </div>
       </div>

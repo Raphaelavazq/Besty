@@ -47,6 +47,7 @@ export default function SprechenHub() {
       duration: "3 Min",
       description: "Persönliche Fragen",
       icon: Users,
+      path: "/tests/sprechen/teil1",
     },
     {
       teil: "2",
@@ -54,6 +55,7 @@ export default function SprechenHub() {
       duration: "4 Min",
       description: "Foto präsentieren",
       icon: Target,
+      path: "/tests/sprechen/bild-beschreiben",
     },
     {
       teil: "3",
@@ -61,6 +63,7 @@ export default function SprechenHub() {
       duration: "5 Min",
       description: "Dialog führen",
       icon: MessageSquare,
+      path: "/tests/sprechen/trainer",
     },
   ];
 
@@ -72,13 +75,13 @@ export default function SprechenHub() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent_50%)]"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
-          {/* Back Button */}
+          {/* Back Button - Icon only */}
           <Link
             to="/tests"
-            className="inline-flex items-center gap-2 mb-8 px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl transition-all duration-200 text-white font-medium group"
+            className="inline-flex items-center justify-center w-10 h-10 mb-8 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full transition-all duration-200 hover:scale-110 active:scale-95 group"
+            aria-label="Zurück zu Tests"
           >
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-200" />
-            Zurück zu Tests
+            <ArrowLeft className="w-5 h-5 text-white group-hover:-translate-x-0.5 transition-transform duration-200" />
           </Link>
 
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
@@ -135,53 +138,11 @@ export default function SprechenHub() {
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
             {teileInfo.map((info) => {
               const Icon = info.icon;
-              const isComingSoon = info.teil === "1"; // Only Teil 1 is coming soon now
 
-              return isComingSoon ? (
-                <div
-                  key={info.teil}
-                  className="group bg-white/60 backdrop-blur-md rounded-3xl p-8 shadow-lg border border-purple-100 opacity-75 cursor-not-allowed relative overflow-hidden"
-                >
-                  <div className="absolute top-4 right-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-                    Bald
-                  </div>
-
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-2xl flex items-center justify-center shadow-lg">
-                      <span className="text-2xl font-black text-white">
-                        {info.teil}
-                      </span>
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-xs font-bold text-purple-600 uppercase tracking-wider mb-1">
-                        Teil {info.teil}
-                      </div>
-                      <div className="flex items-center gap-2 text-gray-500 text-sm">
-                        <Clock className="w-3 h-3" />
-                        <span>{info.duration}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-purple-400" />
-                  </div>
-
-                  <h3 className="text-xl font-bold text-gray-700 mb-2">
-                    {info.title}
-                  </h3>
-                  <p className="text-gray-500 leading-relaxed">
-                    {info.description}
-                  </p>
-                </div>
-              ) : (
+              return (
                 <Link
                   key={info.teil}
-                  to={
-                    info.teil === "2"
-                      ? "/tests/sprechen/bild-beschreiben"
-                      : "/tests/sprechen/trainer"
-                  }
+                  to={info.path}
                   className="group bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-purple-100 hover:shadow-3xl transition-all duration-200 hover:-translate-y-2 hover:scale-105 relative overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-indigo-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>

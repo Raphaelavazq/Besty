@@ -83,7 +83,7 @@ export default function BareShell({ children }) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-purple-50 to-indigo-100">
       {/* Mobile Hamburger Menu Button - Top Right */}
-      <div className="fixed top-4 right-4 z-50 md:hidden">
+      <div className="fixed top-4 right-4 z-[100] md:hidden">
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-2xl flex flex-col items-center justify-center space-y-1 shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 hover:bg-gradient-to-br hover:from-purple-600 hover:to-indigo-600 border border-purple-100 group"
@@ -96,7 +96,7 @@ export default function BareShell({ children }) {
 
       {/* Mobile Purple Sidebar */}
       <div
-        className={`fixed inset-y-0 left-0 z-40 w-64 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-700 shadow-2xl transform transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-y-0 left-0 z-[90] w-64 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-700 shadow-2xl transform transition-transform duration-300 ease-in-out ${
           mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
         } md:hidden border-r border-purple-500`}
       >
@@ -164,7 +164,7 @@ export default function BareShell({ children }) {
       {/* Mobile overlay */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 z-30 bg-black bg-opacity-50 md:hidden"
+          className="fixed inset-0 z-[80] bg-black bg-opacity-50 md:hidden"
           onClick={() => setMobileMenuOpen(false)}
         />
       )}

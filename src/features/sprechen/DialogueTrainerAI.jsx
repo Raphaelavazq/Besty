@@ -135,12 +135,7 @@ export default function DialogueTrainer() {
 
     try {
       // Call backend TTS endpoint
-      // Use relative /api/tts if VITE_BACKEND_URL is not set (production/Vercel)
-      const ttsUrl = import.meta.env.VITE_BACKEND_URL
-        ? import.meta.env.VITE_BACKEND_URL.replace("/api/chat", "/api/tts")
-        : "/api/tts";
-
-      const response = await fetch(ttsUrl, {
+      const response = await fetch("/api/tts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

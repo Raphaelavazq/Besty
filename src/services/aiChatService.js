@@ -14,9 +14,8 @@ import {
   clearSessionId,
 } from "../utils/sessionManager.js";
 
-// Use backend proxy to avoid CORS issues. When deployed on Vercel the relative
-// path `/api/chat` will route to the serverless function we add under /api.
-const API_ENDPOINT = import.meta.env.VITE_BACKEND_URL || "/api/chat";
+// Use Vercel serverless function - works in production and development
+const API_ENDPOINT = "/api/chat";
 const MODEL = "gpt-4o-mini";
 
 /**

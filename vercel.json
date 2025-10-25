@@ -3,6 +3,10 @@
   "framework": "vite",
   "rewrites": [
     {
+      "source": "/api/schreiben/correct",
+      "destination": "/api/schreiben"
+    },
+    {
       "source": "/api/:path*",
       "destination": "/api/:path*"
     },

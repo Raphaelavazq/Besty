@@ -64,13 +64,13 @@ export default function TestHub() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent_50%)]"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
-          {/* Back Button */}
+          {/* Back Button - Icon only */}
           <Link
             to="/dashboard"
-            className="inline-flex items-center gap-2 mb-8 px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl transition-all duration-200 text-white font-medium group"
+            className="inline-flex items-center justify-center w-10 h-10 mb-8 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full transition-all duration-200 hover:scale-110 active:scale-95 group"
+            aria-label="Zurück zum Dashboard"
           >
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-200" />
-            Zurück zum Dashboard
+            <ArrowLeft className="w-5 h-5 text-white group-hover:-translate-x-0.5 transition-transform duration-200" />
           </Link>
 
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">

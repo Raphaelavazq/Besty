@@ -173,7 +173,7 @@ export default function HoverSidebarShell({ children }) {
       </div>
 
       {/* Mobile Hamburger Menu Button - Top Right */}
-      <div className="fixed top-4 right-4 z-50 lg:hidden">
+      <div className="fixed top-4 right-4 z-[100] lg:hidden">
         <button
           onClick={() => setSidebarOpen(!sidebarOpen)}
           className="w-12 h-12 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-2xl flex flex-col items-center justify-center space-y-1 shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
@@ -186,7 +186,7 @@ export default function HoverSidebarShell({ children }) {
 
       {/* Mobile Sidebar */}
       <div
-        className={`fixed inset-y-0 left-0 z-40 w-64 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-700 shadow-2xl transform transition-transform duration-300 ease-in-out lg:hidden ${
+        className={`fixed inset-y-0 left-0 z-[90] w-64 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-700 shadow-2xl transform transition-transform duration-300 ease-in-out lg:hidden ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -254,7 +254,7 @@ export default function HoverSidebarShell({ children }) {
       {/* Mobile overlay */}
       {sidebarOpen && (
         <div
-          className="fixed inset-0 z-30 bg-black bg-opacity-50 lg:hidden"
+          className="fixed inset-0 z-[80] bg-black bg-opacity-50 lg:hidden"
           onClick={() => setSidebarOpen(false)}
         />
       )}
