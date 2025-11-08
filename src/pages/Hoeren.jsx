@@ -61,17 +61,17 @@ export default function Hoeren() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary">
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-purple-600 via-indigo-700 to-purple-800">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent_50%)]"></div>
+      <div className="relative overflow-hidden bg-gradient-to-br from-purple-600 via-indigo-700 to-purple-800 dark:from-purple-700 dark:via-indigo-800 dark:to-purple-900">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15),transparent_50%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.08),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.05),transparent_50%)]"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
           {/* Back Button */}
           <Link
             to="/tests"
-            className="inline-flex items-center gap-2 mb-8 px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl transition-all duration-200 text-white font-medium group"
+            className="inline-flex items-center gap-2 mb-8 px-4 py-2 bg-white/10 hover:bg-white/20 dark:bg-white/5 dark:hover:bg-white/10 backdrop-blur-sm rounded-xl transition-all duration-200 text-white font-medium group"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-200" />
             Zurück zu Tests
@@ -120,10 +120,10 @@ export default function Hoeren() {
         {/* Prüfungsstruktur - Navigation Cards */}
         <div className="mb-16">
           <div className="text-center mb-8">
-            <h2 className="text-4xl lg:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-3 tracking-tight">
+            <h2 className="text-4xl lg:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-400 dark:to-indigo-400 bg-clip-text text-transparent mb-3 tracking-tight">
               Prüfungsstruktur
             </h2>
-            <p className="text-slate-600 text-lg lg:text-xl leading-relaxed font-light">
+            <p className="text-slate-600 dark:text-dark-text-secondary text-lg lg:text-xl leading-relaxed font-light">
               3 Teile • 25 Minuten • 20 Punkte
             </p>
           </div>
@@ -135,36 +135,36 @@ export default function Hoeren() {
               return (
                 <div
                   key={info.teil}
-                  className="group bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-purple-100 hover:shadow-3xl transition-all duration-200 hover:-translate-y-2 hover:scale-105 relative overflow-hidden"
+                  className="group bg-white/80 dark:bg-white/5 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-purple-100 dark:border-purple-500/20 hover:shadow-3xl transition-all duration-200 hover:-translate-y-2 hover:scale-105 relative overflow-hidden"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-indigo-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-indigo-600/5 dark:from-purple-500/10 dark:to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
 
                   <div className="relative">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-200">
+                      <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-200">
                         <span className="text-2xl font-black text-white">
                           {info.teil}
                         </span>
                       </div>
                       <div className="flex-1">
-                        <div className="text-xs font-bold text-purple-600 uppercase tracking-wider mb-1">
+                        <div className="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider mb-1">
                           Teil {info.teil}
                         </div>
-                        <div className="flex items-center gap-2 text-gray-500 text-sm">
+                        <div className="flex items-center gap-2 text-gray-500 dark:text-dark-text-muted text-sm">
                           <Clock className="w-3 h-3" />
                           <span>{info.duration}</span>
                         </div>
                       </div>
                     </div>
 
-                    <div className="w-12 h-12 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl flex items-center justify-center mb-4 group-hover:from-purple-100 group-hover:to-indigo-100 transition-all duration-200">
-                      <Icon className="w-6 h-6 text-purple-600" />
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/30 dark:to-indigo-900/30 rounded-xl flex items-center justify-center mb-4 group-hover:from-purple-100 group-hover:to-indigo-100 dark:group-hover:from-purple-800/50 dark:group-hover:to-indigo-800/50 transition-all duration-200">
+                      <Icon className="w-6 h-6 text-purple-600 dark:text-purple-400" />
                     </div>
 
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-dark-text-primary mb-2">
                       {info.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-600 dark:text-dark-text-secondary leading-relaxed">
                       {info.description}
                     </p>
                   </div>
@@ -176,10 +176,10 @@ export default function Hoeren() {
 
         {/* Section Title - Üben */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4 tracking-tight">
+          <h2 className="text-4xl lg:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-400 dark:to-indigo-400 bg-clip-text text-transparent mb-4 tracking-tight">
             Wie möchten Sie üben?
           </h2>
-          <p className="text-slate-600 text-lg lg:text-xl leading-relaxed font-light">
+          <p className="text-slate-600 dark:text-dark-text-secondary text-lg lg:text-xl leading-relaxed font-light">
             Wählen Sie Ihren Lernweg
           </p>
         </div>
@@ -192,36 +192,36 @@ export default function Hoeren() {
               <Link
                 key={option.id}
                 to={option.path}
-                className="group relative bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-purple-100 hover:shadow-3xl transition-all duration-200 hover:-translate-y-2 hover:scale-105 overflow-hidden"
+                className="group relative bg-white/80 dark:bg-white/5 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-purple-100 dark:border-purple-500/20 hover:shadow-3xl transition-all duration-200 hover:-translate-y-2 hover:scale-105 overflow-hidden"
               >
                 {/* Hover Background Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-indigo-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-indigo-600/5 dark:from-purple-500/10 dark:to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
 
                 <div className="relative">
                   {/* Icon */}
-                  <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-200">
+                  <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-200">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
 
                   {/* Title & Description */}
-                  <h3 className="text-2xl lg:text-3xl font-black text-gray-900 mb-3">
+                  <h3 className="text-2xl lg:text-3xl font-black text-gray-900 dark:text-dark-text-primary mb-3">
                     {option.title}
                   </h3>
-                  <p className="text-gray-600 text-base lg:text-lg mb-6 leading-relaxed">
+                  <p className="text-gray-600 dark:text-dark-text-secondary text-base lg:text-lg mb-6 leading-relaxed">
                     {option.description}
                   </p>
 
                   {/* Details Badge */}
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-xl border border-purple-100">
-                    <span className="text-purple-600 text-sm font-semibold">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 dark:bg-purple-900/30 rounded-xl border border-purple-100 dark:border-purple-500/30">
+                    <span className="text-purple-600 dark:text-purple-400 text-sm font-semibold">
                       {option.details}
                     </span>
                   </div>
 
                   {/* Arrow Indicator */}
                   <div className="absolute bottom-8 right-8">
-                    <div className="w-12 h-12 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl flex items-center justify-center group-hover:from-purple-600 group-hover:to-indigo-600 transition-all duration-200">
-                      <Play className="w-5 h-5 text-purple-600 group-hover:text-white group-hover:translate-x-1 transition-all duration-200" />
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/30 dark:to-indigo-900/30 rounded-xl flex items-center justify-center group-hover:from-purple-600 group-hover:to-indigo-600 dark:group-hover:from-purple-500 dark:group-hover:to-indigo-500 transition-all duration-200">
+                      <Play className="w-5 h-5 text-purple-600 dark:text-purple-400 group-hover:text-white group-hover:translate-x-1 transition-all duration-200" />
                     </div>
                   </div>
                 </div>

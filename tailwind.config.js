@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
   content: ["./index.html", "./src/**/*.{js,jsx}"],
   theme: {
     extend: {
@@ -40,6 +41,24 @@ export default {
         "error-tint": "#FEE2E2",
         info: "#2563EB",
         "info-tint": "#DBEAFE",
+        // Dark mode colors
+        dark: {
+          bg: {
+            primary: "#0A0118",
+            secondary: "#1A0F2E",
+            tertiary: "#290675",
+          },
+          text: {
+            primary: "#F9F5FF",
+            secondary: "#C4B5FD",
+            muted: "#60597F",
+          },
+          border: {
+            light: "rgba(139, 92, 246, 0.2)",
+            medium: "rgba(139, 92, 246, 0.3)",
+            strong: "rgba(139, 92, 246, 0.5)",
+          },
+        },
       },
       borderRadius: {
         xs: "6px",

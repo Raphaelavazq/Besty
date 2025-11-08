@@ -54,17 +54,17 @@ export default function Tests() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-dark-bg-primary dark:to-dark-bg-tertiary">
       <div className="max-w-6xl mx-auto p-6">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl">
+          <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl">
             <Play size={32} className="text-white" />
           </div>
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4">
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-400 dark:to-indigo-400 bg-clip-text text-transparent mb-4">
             Tests & Übungen
           </h1>
-          <p className="text-slate-600 text-xl max-w-2xl mx-auto">
+          <p className="text-slate-600 dark:text-dark-text-secondary text-xl max-w-2xl mx-auto">
             Wähle einen Bereich aus und übe gezielt für deine DTZ B1 Prüfung
           </p>
         </div>
@@ -80,10 +80,10 @@ export default function Tests() {
                 className="group block"
               >
                 <div
-                  className={`bg-gradient-to-br ${practice.color} rounded-3xl p-8 shadow-xl border border-white/20 text-white hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105`}
+                  className={`bg-gradient-to-br ${practice.color} rounded-3xl p-8 shadow-xl border border-white/20 dark:border-white/10 text-white hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105`}
                 >
                   <div className="flex items-start justify-between mb-6">
-                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+                    <div className="w-16 h-16 bg-white/20 dark:bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center">
                       <Icon size={32} className="text-white" />
                     </div>
                     <ChevronRight
@@ -119,27 +119,27 @@ export default function Tests() {
         </div>
 
         {/* Featured DTZ Complete Test */}
-        <div className="bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-white/50 mb-8">
+        <div className="bg-white/80 dark:bg-white/5 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-white/50 dark:border-purple-500/20 mb-8">
           <div className="text-center mb-6">
-            <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-600 dark:from-amber-600 dark:to-orange-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
               <Headphones size={24} className="text-white" />
             </div>
-            <h2 className="text-2xl font-bold text-slate-800 mb-2">
+            <h2 className="text-2xl font-bold text-slate-800 dark:text-dark-text-primary mb-2">
               DTZ B1 Komplett-Test
             </h2>
-            <p className="text-slate-600 text-lg">
+            <p className="text-slate-600 dark:text-dark-text-secondary text-lg">
               Vollständige Prüfungssimulation mit allen Teilen
             </p>
           </div>
 
           <Link to="/tests/hoeren-komplett" className="group block">
-            <div className="bg-gradient-to-r from-amber-500 to-orange-600 rounded-2xl p-6 text-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div className="bg-gradient-to-r from-amber-500 to-orange-600 dark:from-amber-600 dark:to-orange-700 rounded-2xl p-6 text-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-xl font-bold mb-2">
                     Hörprüfung Komplett
                   </h3>
-                  <p className="text-amber-100 mb-4">
+                  <p className="text-amber-100 dark:text-amber-200 mb-4">
                     Alle 4 Teile der DTZ Hörprüfung unter Prüfungsbedingungen
                   </p>
                   <div className="flex items-center gap-4 text-sm">

@@ -4,6 +4,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  /* Smooth theme transitions */
+  * {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Preserve transform/opacity transitions */
+  *:where(
+    [class*="translate"],
+    [class*="scale"],
+    [class*="rotate"],
+    [class*="opacity"]
+  ) {
+    transition-property:
+      background-color, border-color, color, fill, stroke, transform, opacity;
+  }
+}
+
 :root {
   /* Brand colors */
   --brand-50: #f5f2ff;
@@ -399,6 +419,13 @@
 }
 
 /* Utility classes for mobile touch */
+
+/* Reserve space for hamburger menu on mobile/tablet */
+@layer utilities {
+  .hamburger-safe {
+    @apply pr-16 md:pr-0 lg:pr-0;
+  }
+}
 
 /* Custom scrollbar for video gallery */
 .scrollbar-hide {

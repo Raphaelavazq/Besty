@@ -196,84 +196,7 @@ export default function TestDetail() {
     return `${mins}:${secs.toString().padStart(2, "0")}`;
   };
 
-  // Start screen
-  if (!started) {
-    return (
-      <div className="max-w-4xl mx-auto">
-        <Link
-          to="/tests"
-          className="btn-secondary inline-flex items-center gap-2 mb-6"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Zurück zu Tests
-        </Link>
-
-        <div className="card">
-          <div className="mb-6">
-            <span className="badge badge-primary mb-4">{test.level}</span>
-            <h1 className="text-3xl font-bold mb-2">{test.title}</h1>
-            <p className="text-gray-600 text-lg">{test.subtitle}</p>
-          </div>
-
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
-            <h3 className="font-semibold mb-3 flex items-center gap-2">
-              <FileText className="w-5 h-5 text-blue-600" />
-              Anweisungen
-            </h3>
-            <p className="text-gray-700 mb-4">{test.instructions}</p>
-
-            <div className="grid md:grid-cols-3 gap-4 mt-4">
-              <div className="flex items-center gap-2">
-                <Clock className="w-5 h-5 text-gray-500" />
-                <div>
-                  <div className="text-sm text-gray-500">Dauer</div>
-                  <div className="font-semibold">{test.duration}</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <FileText className="w-5 h-5 text-gray-500" />
-                <div>
-                  <div className="text-sm text-gray-500">Aufgaben</div>
-                  <div className="font-semibold">
-                    {test.totalQuestions || test.questions?.length || 0}
-                  </div>
-                </div>
-              </div>
-              {test.audioRequired && (
-                <div className="flex items-center gap-2">
-                  <Volume2 className="w-5 h-5 text-blue-600" />
-                  <div>
-                    <div className="text-sm text-gray-500">Audio</div>
-                    <div className="font-semibold text-blue-600">
-                      Erforderlich
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Context (for reading tests) */}
-          {test.context && (
-            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
-              <h3 className="font-semibold mb-3">Textmaterial</h3>
-              <div className="prose prose-sm max-w-none whitespace-pre-line">
-                {test.context}
-              </div>
-            </div>
-          )}
-
-          <button
-            onClick={() => setStarted(true)}
-            className="btn-primary w-full flex items-center justify-center gap-2 text-lg py-3"
-          >
-            <Play className="w-5 h-5" />
-            Test starten
-          </button>
-        </div>
-      </div>
-    );
-  }
+  // (duplicate start-screen removed)
 
   // Results screen
   if (showResults) {
@@ -292,12 +215,16 @@ export default function TestDetail() {
 
           {test.questionType === "essay" ? (
             <div>
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
-                <h3 className="font-semibold mb-3">Ihre Antwort</h3>
-                <div className="bg-white p-4 rounded border">
-                  <p className="whitespace-pre-wrap">{essayText}</p>
+              <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-500/30 rounded-lg p-6 mb-6">
+                <h3 className="font-semibold mb-3 dark:text-dark-text-primary">
+                  Ihre Antwort
+                </h3>
+                <div className="bg-white dark:bg-white/10 p-4 rounded border dark:border-purple-500/30">
+                  <p className="whitespace-pre-wrap dark:text-dark-text-secondary">
+                    {essayText}
+                  </p>
                 </div>
-                <p className="text-sm text-gray-600 mt-3">
+                <p className="text-sm text-gray-600 dark:text-dark-text-muted mt-3">
                   Wortanzahl: {essayText.split(/\s+/).filter((w) => w).length}{" "}
                   Wörter
                 </p>
@@ -431,10 +358,12 @@ export default function TestDetail() {
   if (test.questionType === "essay") {
     return (
       <div className="max-w-4xl mx-auto">
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 mb-6 flex items-center justify-between">
+        <div className="bg-white dark:bg-white/10 rounded-lg shadow-sm border border-gray-200 dark:border-purple-500/30 p-4 mb-6 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <span className="text-sm text-gray-600">Zeit</span>
-            <span className="font-mono font-bold text-lg">
+            <span className="text-sm text-gray-600 dark:text-dark-text-secondary">
+              Zeit
+            </span>
+            <span className="font-mono font-bold text-lg dark:text-dark-text-primary">
               {formatTime(timeElapsed)}
             </span>
           </div>
@@ -442,11 +371,15 @@ export default function TestDetail() {
         </div>
 
         <div className="card">
-          <h2 className="text-2xl font-bold mb-4">{test.title}</h2>
+          <h2 className="text-2xl font-bold mb-4 dark:text-dark-text-primary">
+            {test.title}
+          </h2>
 
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
-            <p className="text-sm text-gray-700 mb-4">{test.instructions}</p>
-            <div className="prose prose-sm max-w-none whitespace-pre-line">
+          <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-500/30 rounded-lg p-6 mb-6">
+            <p className="text-sm text-gray-700 dark:text-dark-text-secondary mb-4">
+              {test.instructions}
+            </p>
+            <div className="prose prose-sm max-w-none whitespace-pre-line dark:text-dark-text-secondary">
               {test.prompt}
             </div>
           </div>
@@ -455,7 +388,7 @@ export default function TestDetail() {
             value={essayText}
             onChange={(e) => setEssayText(e.target.value)}
             placeholder="Schreiben Sie hier Ihre E-Mail..."
-            className="w-full h-96 border border-gray-300 rounded-lg p-4 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+            className="w-full h-96 border border-gray-300 dark:border-purple-500/30 rounded-lg p-4 focus:ring-2 focus:ring-indigo-500 focus:border-transparent dark:bg-white/10 dark:text-dark-text-primary dark:placeholder-dark-text-muted"
           />
 
           <div className="flex justify-between items-center mt-4">
@@ -479,10 +412,12 @@ export default function TestDetail() {
   if (test.questionType === "speaking") {
     return (
       <div className="max-w-4xl mx-auto">
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 mb-6 flex items-center justify-between">
+        <div className="bg-white dark:bg-white/10 rounded-lg shadow-sm border border-gray-200 dark:border-purple-500/30 p-4 mb-6 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <span className="text-sm text-gray-600">Zeit</span>
-            <span className="font-mono font-bold text-lg">
+            <span className="text-sm text-gray-600 dark:text-dark-text-secondary">
+              Zeit
+            </span>
+            <span className="font-mono font-bold text-lg dark:text-dark-text-primary">
               {formatTime(timeElapsed)}
             </span>
           </div>
@@ -490,17 +425,26 @@ export default function TestDetail() {
         </div>
 
         <div className="card">
-          <h2 className="text-2xl font-bold mb-4">{test.title}</h2>
+          <h2 className="text-2xl font-bold mb-4 dark:text-dark-text-primary">
+            {test.title}
+          </h2>
 
-          <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-6">
-            <p className="text-sm text-gray-700 mb-4">{test.instructions}</p>
+          <div className="bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-500/30 rounded-lg p-6 mb-6">
+            <p className="text-sm text-gray-700 dark:text-dark-text-secondary mb-4">
+              {test.instructions}
+            </p>
 
             {test.topics && (
               <div className="space-y-4 mt-4">
                 {test.topics.map((topic, idx) => (
-                  <div key={idx} className="bg-white rounded p-4">
-                    <h4 className="font-semibold mb-2">{topic.topic}</h4>
-                    <ul className="text-sm text-gray-700 space-y-1">
+                  <div
+                    key={idx}
+                    className="bg-white dark:bg-white/10 rounded p-4"
+                  >
+                    <h4 className="font-semibold mb-2 dark:text-dark-text-primary">
+                      {topic.topic}
+                    </h4>
+                    <ul className="text-sm text-gray-700 dark:text-dark-text-secondary space-y-1">
                       {topic.prompts.map((prompt, pIdx) => (
                         <li key={pIdx}>• {prompt}</li>
                       ))}
@@ -511,20 +455,26 @@ export default function TestDetail() {
             )}
 
             {test.imagePrompt && (
-              <div className="bg-white rounded p-4 mt-4">
-                <p className="whitespace-pre-line">{test.imagePrompt}</p>
+              <div className="bg-white dark:bg-white/10 rounded p-4 mt-4">
+                <p className="whitespace-pre-line dark:text-dark-text-secondary">
+                  {test.imagePrompt}
+                </p>
               </div>
             )}
 
             {test.scenario && (
-              <div className="bg-white rounded p-4 mt-4">
-                <p className="font-medium mb-3">{test.scenario}</p>
+              <div className="bg-white dark:bg-white/10 rounded p-4 mt-4">
+                <p className="font-medium mb-3 dark:text-dark-text-primary">
+                  {test.scenario}
+                </p>
                 {test.planningPoints && (
                   <div className="space-y-2">
                     {test.planningPoints.map((point, idx) => (
                       <div key={idx}>
-                        <span className="font-semibold">{point.point}</span>
-                        <span className="text-sm text-gray-600">
+                        <span className="font-semibold dark:text-dark-text-primary">
+                          {point.point}
+                        </span>
+                        <span className="text-sm text-gray-600 dark:text-dark-text-muted">
                           {" "}
                           - {point.details}
                         </span>
@@ -536,9 +486,11 @@ export default function TestDetail() {
             )}
 
             {test.questions && (
-              <div className="bg-white rounded p-4 mt-4">
-                <h4 className="font-semibold mb-2">Fragen:</h4>
-                <ul className="space-y-1 text-sm">
+              <div className="bg-white dark:bg-white/10 rounded p-4 mt-4">
+                <h4 className="font-semibold mb-2 dark:text-dark-text-primary">
+                  Fragen:
+                </h4>
+                <ul className="space-y-1 text-sm dark:text-dark-text-secondary">
                   {test.questions.map((q, idx) => (
                     <li key={idx}>• {q}</li>
                   ))}
@@ -548,11 +500,13 @@ export default function TestDetail() {
           </div>
 
           {(test.tipps || test.nützlicheRedemittel) && (
-            <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
+            <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-500/30 rounded-lg p-6 mb-6">
               {test.tipps && (
                 <>
-                  <h4 className="font-semibold mb-2">💡 Tipps:</h4>
-                  <ul className="text-sm space-y-1 mb-4">
+                  <h4 className="font-semibold mb-2 dark:text-dark-text-primary">
+                    💡 Tipps:
+                  </h4>
+                  <ul className="text-sm space-y-1 mb-4 dark:text-dark-text-secondary">
                     {test.tipps.map((tip, idx) => (
                       <li key={idx}>• {tip}</li>
                     ))}
@@ -561,14 +515,14 @@ export default function TestDetail() {
               )}
               {test.nützlicheRedemittel && (
                 <>
-                  <h4 className="font-semibold mb-2">
+                  <h4 className="font-semibold mb-2 dark:text-dark-text-primary">
                     📝 Nützliche Redemittel:
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {test.nützlicheRedemittel.map((phrase, idx) => (
                       <span
                         key={idx}
-                        className="bg-white px-3 py-1 rounded text-sm"
+                        className="bg-white dark:bg-white/10 px-3 py-1 rounded text-sm dark:text-dark-text-secondary"
                       >
                         {phrase}
                       </span>
@@ -596,24 +550,24 @@ export default function TestDetail() {
     <div className="h-full overflow-auto">
       <div className="max-w-4xl mx-auto p-6">
         {/* Progress bar */}
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 mb-6">
+        <div className="bg-white dark:bg-white/10 rounded-lg shadow-sm border border-gray-200 dark:border-purple-500/30 p-4 mb-6">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm text-gray-600">
+            <span className="text-sm text-gray-600 dark:text-dark-text-secondary">
               Frage {currentQuestion + 1} von {test.questions.length}
             </span>
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-gray-500" />
-                <span className="font-mono font-bold">
+                <Clock className="w-4 h-4 text-gray-500 dark:text-dark-text-muted" />
+                <span className="font-mono font-bold dark:text-dark-text-primary">
                   {formatTime(timeElapsed)}
                 </span>
               </div>
               <span className="badge badge-primary">{test.level}</span>
             </div>
           </div>
-          <div className="w-full bg-gray-200 rounded-full h-2">
+          <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
             <div
-              className="bg-indigo-600 h-2 rounded-full transition-all"
+              className="bg-indigo-600 dark:bg-indigo-500 h-2 rounded-full transition-all"
               style={{
                 width: `${((currentQuestion + 1) / test.questions.length) * 100}%`,
               }}
@@ -622,26 +576,32 @@ export default function TestDetail() {
         </div>
 
         <div className="card">
-          <h2 className="text-2xl font-bold mb-6">{test.title}</h2>
+          <h2 className="text-2xl font-bold mb-6 dark:text-dark-text-primary">
+            {test.title}
+          </h2>
 
           {/* Context for reading */}
           {test.context && currentQuestion === 0 && (
-            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
-              <h3 className="font-semibold mb-3">Lesen Sie den Text:</h3>
-              <div className="prose prose-sm max-w-none whitespace-pre-line">
+            <div className="bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-purple-500/30 rounded-lg p-6 mb-6">
+              <h3 className="font-semibold mb-3 dark:text-dark-text-primary">
+                Lesen Sie den Text:
+              </h3>
+              <div className="prose prose-sm max-w-none whitespace-pre-line dark:text-dark-text-secondary">
                 {test.context}
               </div>
             </div>
           )}
 
           {/* Question */}
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+          <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-500/30 rounded-lg p-6 mb-6">
             {currentQ.audioFile && (
               <div className="mb-4">
                 <AudioPlayerNew audioFile={currentQ.audioFile} />
               </div>
             )}
-            <p className="font-medium text-lg">{currentQ.questionText}</p>
+            <p className="font-medium text-lg dark:text-dark-text-primary">
+              {currentQ.questionText}
+            </p>
           </div>
 
           {/* Options */}
@@ -652,21 +612,23 @@ export default function TestDetail() {
                 onClick={() => handleAnswer(currentQ.id, idx)}
                 className={`w-full text-left p-4 rounded-lg border-2 transition-all ${
                   answers[currentQ.id] === idx
-                    ? "border-indigo-600 bg-indigo-50"
-                    : "border-gray-200 hover:border-indigo-300"
+                    ? "border-indigo-600 dark:border-indigo-500 bg-indigo-50 dark:bg-indigo-900/20"
+                    : "border-gray-200 dark:border-purple-500/30 hover:border-indigo-300 dark:hover:border-indigo-500"
                 }`}
               >
                 <div className="flex items-center gap-3">
                   <div
                     className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
                       answers[currentQ.id] === idx
-                        ? "border-indigo-600 bg-indigo-600 text-white"
-                        : "border-gray-300"
+                        ? "border-indigo-600 dark:border-indigo-500 bg-indigo-600 dark:bg-indigo-500 text-white"
+                        : "border-gray-300 dark:border-gray-600"
                     }`}
                   >
                     {answers[currentQ.id] === idx && "✓"}
                   </div>
-                  <span>{option}</span>
+                  <span className="dark:text-dark-text-secondary">
+                    {option}
+                  </span>
                 </div>
               </button>
             ))}

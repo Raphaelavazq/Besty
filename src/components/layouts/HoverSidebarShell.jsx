@@ -77,11 +77,11 @@ export default function HoverSidebarShell({ children }) {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary">
       {/* Icon Sidebar - Desktop Only */}
       <div className="hidden lg:block fixed left-0 top-0 h-full w-20 z-40">
         {/* Icon sidebar */}
-        <div className="absolute left-0 top-0 h-full w-20 bg-white/80 backdrop-blur-md shadow-lg border-r border-purple-100">
+        <div className="absolute left-0 top-0 h-full w-20 bg-white/80 dark:bg-white/10 backdrop-blur-md shadow-lg border-r border-purple-100 dark:border-purple-500/30">
           <div className="flex flex-col h-full">
             {/* Spacer */}
             <div className="flex-1"></div>
@@ -94,8 +94,8 @@ export default function HoverSidebarShell({ children }) {
                   to={item.href}
                   className={`flex items-center justify-center w-16 h-12 rounded-xl transition-all duration-200 ${
                     item.active
-                      ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg"
-                      : "text-purple-600 hover:bg-purple-50"
+                      ? "bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-700 dark:to-indigo-800 text-white shadow-lg"
+                      : "text-purple-600 dark:text-purple-400 hover:bg-purple-50 dark:hover:bg-white/10"
                   }`}
                   title={item.name}
                 >
@@ -105,7 +105,7 @@ export default function HoverSidebarShell({ children }) {
             </nav>
 
             {/* Small logo at bottom */}
-            <div className="px-2 pb-3 pt-2 border-t border-purple-100">
+            <div className="px-2 pb-3 pt-2 border-t border-purple-100 dark:border-purple-500/30">
               <div className="w-16 h-16 flex items-center justify-center">
                 <DotLottieReact
                   src="https://lottie.host/e625cdca-0dac-4776-a55e-0b437f54c0a7/diw9hO8Z3c.lottie"

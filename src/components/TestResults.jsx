@@ -221,7 +221,7 @@ export default function TestResults({
       </div>
 
       {/* Score Overview */}
-      <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/50">
+      <div className="bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/50 dark:border-purple-500/30">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {/* Main Score */}
           <div className="md:col-span-2 text-center">
@@ -250,21 +250,28 @@ export default function TestResults({
           {/* Statistics */}
           <div className="space-y-3">
             <div className="flex items-center gap-3">
-              <CheckCircle size={20} className="text-green-600" />
+              <CheckCircle
+                size={20}
+                className="text-green-600 dark:text-green-400"
+              />
               <div>
-                <div className="text-2xl font-bold text-green-600">
+                <div className="text-2xl font-bold text-green-600 dark:text-green-400">
                   {correctCount}
                 </div>
-                <div className="text-sm text-gray-600">Richtig</div>
+                <div className="text-sm text-gray-600 dark:text-dark-text-secondary">
+                  Richtig
+                </div>
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <XCircle size={20} className="text-red-600" />
+              <XCircle size={20} className="text-red-600 dark:text-red-400" />
               <div>
-                <div className="text-2xl font-bold text-red-600">
+                <div className="text-2xl font-bold text-red-600 dark:text-red-400">
                   {incorrectCount}
                 </div>
-                <div className="text-sm text-gray-600">Falsch</div>
+                <div className="text-sm text-gray-600 dark:text-dark-text-secondary">
+                  Falsch
+                </div>
               </div>
             </div>
           </div>
@@ -272,21 +279,28 @@ export default function TestResults({
           {/* Time */}
           <div className="space-y-3">
             <div className="flex items-center gap-3">
-              <Clock size={20} className="text-blue-600" />
+              <Clock size={20} className="text-blue-600 dark:text-blue-400" />
               <div>
-                <div className="text-lg font-bold text-blue-600">
+                <div className="text-lg font-bold text-blue-600 dark:text-blue-400">
                   {Math.round(timeSpent / 60)}min
                 </div>
-                <div className="text-sm text-gray-600">Benötigt</div>
+                <div className="text-sm text-gray-600 dark:text-dark-text-secondary">
+                  Benötigt
+                </div>
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <Target size={20} className="text-purple-600" />
+              <Target
+                size={20}
+                className="text-purple-600 dark:text-purple-400"
+              />
               <div>
-                <div className="text-lg font-bold text-purple-600">
+                <div className="text-lg font-bold text-purple-600 dark:text-purple-400">
                   {Math.round(totalTime / 60)}min
                 </div>
-                <div className="text-sm text-gray-600">Vorgegeben</div>
+                <div className="text-sm text-gray-600 dark:text-dark-text-secondary">
+                  Vorgegeben
+                </div>
               </div>
             </div>
           </div>
@@ -295,8 +309,8 @@ export default function TestResults({
 
       {/* Recommendations */}
       {recommendations.length > 0 && (
-        <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/50">
-          <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+        <div className="bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/50 dark:border-purple-500/30">
+          <h3 className="text-xl font-semibold text-gray-800 dark:text-dark-text-primary mb-4 flex items-center gap-2">
             <TrendingUp size={20} />
             Empfehlungen
           </h3>
@@ -348,8 +362,8 @@ export default function TestResults({
       </div>
 
       {/* Detailed Question Review */}
-      <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/50">
-        <h3 className="text-xl font-semibold text-gray-800 mb-4">
+      <div className="bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/50 dark:border-purple-500/30">
+        <h3 className="text-xl font-semibold text-gray-800 dark:text-dark-text-primary mb-4">
           Detaillierte Auswertung
         </h3>
         <div className="space-y-4">
@@ -358,8 +372,8 @@ export default function TestResults({
               key={item.questionId}
               className={`p-4 rounded-xl border ${
                 item.isCorrect
-                  ? "border-green-200 bg-green-50"
-                  : "border-red-200 bg-red-50"
+                  ? "border-green-200 dark:border-green-500/30 bg-green-50 dark:bg-green-900/20"
+                  : "border-red-200 dark:border-red-500/30 bg-red-50 dark:bg-red-900/20"
               }`}
             >
               <div className="flex items-start gap-3">
@@ -397,7 +411,7 @@ export default function TestResults({
                       </div>
                     )}
                     {item.explanation && (
-                      <div className="mt-2 p-2 bg-white/50 rounded-lg">
+                      <div className="mt-2 p-2 bg-white/50 dark:bg-white/10 rounded-lg dark:text-dark-text-secondary">
                         <span className="font-medium">Erklärung:</span>{" "}
                         {item.explanation}
                       </div>

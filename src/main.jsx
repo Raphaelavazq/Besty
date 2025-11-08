@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 import App from "./App";
 import ErrorBoundary from "./components/ErrorBoundary";
+import { ThemeProvider } from "./contexts/ThemeContext";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -15,8 +16,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           v7_relativeSplatPath: true,
         }}
       >
-        <App />
-        <Analytics />
+        <ThemeProvider>
+          <App />
+          <Analytics />
+        </ThemeProvider>
       </BrowserRouter>
     </ErrorBoundary>
   </React.StrictMode>

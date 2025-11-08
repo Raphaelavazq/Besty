@@ -217,16 +217,16 @@ export default function SprechenTeil1Interactive() {
   // Intro Screen
   if (mode === "intro") {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50">
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary">
         {/* Header */}
-        <div className="bg-white/90 backdrop-blur-md border-b border-purple-100 sticky top-0 z-30 shadow-sm">
+        <div className="bg-white/90 dark:bg-white/5 backdrop-blur-md border-b border-purple-100 dark:border-purple-500/20 sticky top-0 z-30 shadow-sm">
           <div className="max-w-4xl mx-auto px-4 py-4">
             <button
               onClick={() => navigate("/tests/sprechen")}
-              className="w-10 h-10 rounded-full bg-white hover:bg-purple-50 border border-purple-100 hover:border-purple-300 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 group shadow-sm"
+              className="w-10 h-10 rounded-full bg-white dark:bg-white/10 hover:bg-purple-50 dark:hover:bg-white/20 border border-purple-100 dark:border-purple-500/30 hover:border-purple-300 dark:hover:border-purple-400 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 group shadow-sm"
               aria-label="Zurück"
             >
-              <ArrowLeft className="w-5 h-5 text-purple-600 group-hover:-translate-x-0.5 transition-transform duration-200" />
+              <ArrowLeft className="w-5 h-5 text-purple-600 dark:text-purple-400 group-hover:-translate-x-0.5 transition-transform duration-200" />
             </button>
           </div>
         </div>
@@ -237,37 +237,41 @@ export default function SprechenTeil1Interactive() {
             <div className="w-24 h-24 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-2xl">
               <User className="w-12 h-12 text-white" />
             </div>
-            <h1 className="text-4xl lg:text-5xl font-black text-gray-900 mb-4">
+            <h1 className="text-4xl lg:text-5xl font-black text-gray-900 dark:text-dark-text-primary mb-4">
               Teil 1: Sich vorstellen
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-dark-text-secondary max-w-2xl mx-auto">
               Lernen Sie, sich perfekt auf Deutsch vorzustellen
             </p>
           </div>
 
           {/* Info Cards */}
           <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-purple-100">
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-100 to-purple-200 rounded-xl flex items-center justify-center mb-4">
-                <Calendar className="w-6 h-6 text-purple-600" />
+            <div className="bg-white/90 dark:bg-white/5 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-purple-100 dark:border-purple-500/20">
+              <div className="w-12 h-12 bg-gradient-to-r from-purple-100 to-purple-200 dark:from-purple-900/30 dark:to-purple-800/30 rounded-xl flex items-center justify-center mb-4">
+                <Calendar className="w-6 h-6 text-purple-600 dark:text-purple-400" />
               </div>
-              <div className="text-3xl font-black text-purple-600 mb-2">
+              <div className="text-3xl font-black text-purple-600 dark:text-purple-400 mb-2">
                 3 Min
               </div>
-              <p className="text-sm text-gray-600">Prüfungsdauer</p>
+              <p className="text-sm text-gray-600 dark:text-dark-text-secondary">
+                Prüfungsdauer
+              </p>
             </div>
 
-            <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-purple-100">
-              <div className="w-12 h-12 bg-gradient-to-r from-indigo-100 to-indigo-200 rounded-xl flex items-center justify-center mb-4">
-                <MessageSquare className="w-6 h-6 text-indigo-600" />
+            <div className="bg-white/90 dark:bg-white/5 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-purple-100 dark:border-purple-500/20">
+              <div className="w-12 h-12 bg-gradient-to-r from-indigo-100 to-indigo-200 dark:from-indigo-900/30 dark:to-indigo-800/30 rounded-xl flex items-center justify-center mb-4">
+                <MessageSquare className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
               </div>
-              <div className="text-3xl font-black text-indigo-600 mb-2">
+              <div className="text-3xl font-black text-indigo-600 dark:text-indigo-400 mb-2">
                 6 Fragen
               </div>
-              <p className="text-sm text-gray-600">Persönliche Fragen</p>
+              <p className="text-sm text-gray-600 dark:text-dark-text-secondary">
+                Persönliche Fragen
+              </p>
             </div>
 
-            <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-purple-100">
+            <div className="bg-white/90 dark:bg-white/5 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-purple-100 dark:border-purple-500/20">
               <div className="w-12 h-12 bg-gradient-to-r from-pink-100 to-pink-200 rounded-xl flex items-center justify-center mb-4">
                 <Award className="w-6 h-6 text-pink-600" />
               </div>
@@ -279,21 +283,21 @@ export default function SprechenTeil1Interactive() {
           </div>
 
           {/* What to expect */}
-          <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 lg:p-12 shadow-xl border border-purple-100 mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+          <div className="bg-white/90 dark:bg-white/10 backdrop-blur-md rounded-3xl p-8 lg:p-12 shadow-xl border border-purple-100 dark:border-purple-500/20 mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-dark-text-primary mb-6">
               Was erwartet Sie?
             </h2>
 
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
+                <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-500 dark:from-purple-600 dark:to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
                   <Eye className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-900 mb-2">
+                  <h3 className="font-bold text-gray-900 dark:text-dark-text-primary mb-2">
                     1. Video-Beispiel ansehen
                   </h3>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-gray-600 dark:text-dark-text-secondary text-sm">
                     Sehen Sie, wie andere die Fragen beantworten
                   </p>
                 </div>
@@ -389,8 +393,8 @@ export default function SprechenTeil1Interactive() {
 
         <div className="max-w-4xl mx-auto px-4 py-12">
           {/* Summary */}
-          <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-purple-100 mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+          <div className="bg-white/90 dark:bg-white/10 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-purple-100 dark:border-purple-500/30 mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-dark-text-primary mb-6">
               Das haben Sie gelernt:
             </h2>
 
@@ -400,7 +404,7 @@ export default function SprechenTeil1Interactive() {
                 return (
                   <div
                     key={q.id}
-                    className="flex items-center gap-3 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl p-4 border border-purple-100"
+                    className="flex items-center gap-3 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-xl p-4 border border-purple-100 dark:border-purple-500/30"
                   >
                     <div
                       className={`w-10 h-10 bg-gradient-to-r ${q.color} rounded-lg flex items-center justify-center shadow-md`}
@@ -408,15 +412,15 @@ export default function SprechenTeil1Interactive() {
                       <QuestionIcon className="w-5 h-5 text-white" />
                     </div>
                     <div className="flex-1">
-                      <div className="font-bold text-gray-900 text-sm">
+                      <div className="font-bold text-gray-900 dark:text-dark-text-primary text-sm">
                         {q.question}
                       </div>
-                      <div className="text-xs text-purple-600">
+                      <div className="text-xs text-purple-600 dark:text-purple-400">
                         {q.category}
                       </div>
                     </div>
                     {completedQuestions.has(index) && (
-                      <CheckCircle className="w-5 h-5 text-purple-600" />
+                      <CheckCircle className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                     )}
                   </div>
                 );
@@ -471,7 +475,7 @@ export default function SprechenTeil1Interactive() {
                 setViewMode("example");
                 setCompletedQuestions(new Set());
               }}
-              className="flex-1 px-6 py-4 bg-white border-2 border-purple-300 text-purple-700 rounded-xl font-semibold hover:bg-purple-50 transition-all duration-200 flex items-center justify-center gap-2"
+              className="flex-1 px-6 py-4 bg-white dark:bg-white/10 border-2 border-purple-300 dark:border-purple-500 text-purple-700 dark:text-purple-400 rounded-xl font-semibold hover:bg-purple-50 dark:hover:bg-white/20 transition-all duration-200 flex items-center justify-center gap-2"
             >
               <RotateCcw className="w-5 h-5" />
               <span>Noch einmal üben</span>
@@ -492,20 +496,20 @@ export default function SprechenTeil1Interactive() {
 
   // Learning Mode - Main Practice Interface
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50 pb-24">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary pb-24">
       {/* Sticky Header with Progress */}
-      <div className="bg-white/90 backdrop-blur-md border-b border-purple-100 sticky top-0 z-30 shadow-sm">
+      <div className="bg-white/90 dark:bg-white/10 backdrop-blur-md border-b border-purple-100 dark:border-purple-500/30 sticky top-0 z-30 shadow-sm">
         <div className="max-w-4xl mx-auto px-4 py-4">
           {/* Back Button + Title */}
           <div className="flex items-center gap-4 mb-4">
             <button
               onClick={() => navigate("/tests/sprechen")}
-              className="w-10 h-10 rounded-full bg-white hover:bg-purple-50 border border-purple-100 hover:border-purple-300 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 group shadow-sm"
+              className="w-10 h-10 rounded-full bg-white dark:bg-white/10 hover:bg-purple-50 dark:hover:bg-white/20 border border-purple-100 dark:border-purple-500/30 hover:border-purple-300 dark:hover:border-purple-500 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 group shadow-sm"
               aria-label="Zurück"
             >
-              <ArrowLeft className="w-5 h-5 text-purple-600 group-hover:-translate-x-0.5 transition-transform duration-200" />
+              <ArrowLeft className="w-5 h-5 text-purple-600 dark:text-purple-400 group-hover:-translate-x-0.5 transition-transform duration-200" />
             </button>
-            <h1 className="text-xl lg:text-2xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+            <h1 className="text-xl lg:text-2xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-400 dark:to-indigo-400 bg-clip-text text-transparent">
               Teil 1: Sich vorstellen
             </h1>
           </div>
@@ -513,14 +517,14 @@ export default function SprechenTeil1Interactive() {
           {/* Progress Bar */}
           <div className="mb-4">
             <div className="flex items-center justify-between text-sm mb-2">
-              <span className="font-medium text-gray-600">
+              <span className="font-medium text-gray-600 dark:text-dark-text-secondary">
                 Frage {currentQuestionIndex + 1} von {TEIL1_QUESTIONS.length}
               </span>
-              <span className="font-semibold text-purple-600">
+              <span className="font-semibold text-purple-600 dark:text-purple-400">
                 {completedQuestions.size} geübt
               </span>
             </div>
-            <div className="h-2 bg-purple-100 rounded-full overflow-hidden">
+            <div className="h-2 bg-purple-100 dark:bg-purple-900/30 rounded-full overflow-hidden">
               <div
                 className="h-full bg-gradient-to-r from-purple-600 to-indigo-600 transition-all duration-500"
                 style={{ width: `${progress}%` }}
@@ -539,10 +543,10 @@ export default function SprechenTeil1Interactive() {
                     onClick={() => handleGoToQuestion(idx)}
                     className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 whitespace-nowrap ${
                       idx === currentQuestionIndex
-                        ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg scale-105"
+                        ? "bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 text-white shadow-lg scale-105"
                         : completedQuestions.has(idx)
-                          ? "bg-purple-100 text-purple-700 border border-purple-200"
-                          : "bg-white text-gray-600 border border-purple-100 hover:bg-purple-50"
+                          ? "bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 border border-purple-200 dark:border-purple-500/30"
+                          : "bg-white dark:bg-white/10 text-gray-600 dark:text-dark-text-secondary border border-purple-100 dark:border-purple-500/30 hover:bg-purple-50 dark:hover:bg-white/20"
                     }`}
                   >
                     <QuestionIcon className="w-4 h-4" />
@@ -561,7 +565,7 @@ export default function SprechenTeil1Interactive() {
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-4 py-8">
         {/* Question Header */}
-        <div className="bg-white/90 backdrop-blur-md rounded-3xl p-6 lg:p-8 shadow-xl border border-purple-100 mb-6">
+        <div className="bg-white/90 dark:bg-white/10 backdrop-blur-md rounded-3xl p-6 lg:p-8 shadow-xl border border-purple-100 dark:border-purple-500/30 mb-6">
           <div className="flex items-start gap-4 mb-6">
             <div
               className={`w-14 h-14 bg-gradient-to-r ${currentQuestion.color} rounded-2xl flex items-center justify-center shadow-lg flex-shrink-0`}
@@ -569,10 +573,10 @@ export default function SprechenTeil1Interactive() {
               <Icon className="w-7 h-7 text-white" />
             </div>
             <div className="flex-1">
-              <div className="text-sm font-semibold text-purple-600 mb-1">
+              <div className="text-sm font-semibold text-purple-600 dark:text-purple-400 mb-1">
                 {currentQuestion.category}
               </div>
-              <h2 className="text-2xl lg:text-3xl font-black text-gray-900">
+              <h2 className="text-2xl lg:text-3xl font-black text-gray-900 dark:text-dark-text-primary">
                 {currentQuestion.question}
               </h2>
             </div>
@@ -584,8 +588,8 @@ export default function SprechenTeil1Interactive() {
               onClick={() => setViewMode("example")}
               className={`flex-1 px-4 py-3 rounded-xl font-semibold transition-all duration-200 ${
                 viewMode === "example"
-                  ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg"
-                  : "bg-purple-50 text-purple-700 hover:bg-purple-100"
+                  ? "bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 text-white shadow-lg"
+                  : "bg-purple-50 dark:bg-white/5 text-purple-700 dark:text-purple-400 hover:bg-purple-100 dark:hover:bg-white/10"
               }`}
             >
               <Play className="w-4 h-4 inline mr-2" />
@@ -595,8 +599,8 @@ export default function SprechenTeil1Interactive() {
               onClick={() => setViewMode("redemittel")}
               className={`flex-1 px-4 py-3 rounded-xl font-semibold transition-all duration-200 ${
                 viewMode === "redemittel"
-                  ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg"
-                  : "bg-purple-50 text-purple-700 hover:bg-purple-100"
+                  ? "bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 text-white shadow-lg"
+                  : "bg-purple-50 dark:bg-white/5 text-purple-700 dark:text-purple-400 hover:bg-purple-100 dark:hover:bg-white/10"
               }`}
             >
               <MessageSquare className="w-4 h-4 inline mr-2" />
@@ -606,8 +610,8 @@ export default function SprechenTeil1Interactive() {
               onClick={() => setViewMode("practice")}
               className={`flex-1 px-4 py-3 rounded-xl font-semibold transition-all duration-200 ${
                 viewMode === "practice"
-                  ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg"
-                  : "bg-purple-50 text-purple-700 hover:bg-purple-100"
+                  ? "bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 text-white shadow-lg"
+                  : "bg-purple-50 dark:bg-white/5 text-purple-700 dark:text-purple-400 hover:bg-purple-100 dark:hover:bg-white/10"
               }`}
             >
               <Mic className="w-4 h-4 inline mr-2" />
@@ -619,7 +623,7 @@ export default function SprechenTeil1Interactive() {
           {viewMode === "example" && (
             <div className="space-y-6">
               {/* Video Player */}
-              <div className="bg-gradient-to-br from-purple-100 to-indigo-100 rounded-2xl overflow-hidden">
+              <div className="bg-gradient-to-br from-purple-100 dark:from-purple-900/20 to-indigo-100 dark:to-indigo-900/20 rounded-2xl overflow-hidden">
                 <div className="aspect-video flex items-center justify-center">
                   <video
                     controls
@@ -637,18 +641,20 @@ export default function SprechenTeil1Interactive() {
 
               {/* Example Answers */}
               <div>
-                <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                  <MessageSquare className="w-5 h-5 text-purple-600" />
+                <h3 className="font-bold text-gray-900 dark:text-dark-text-primary mb-4 flex items-center gap-2">
+                  <MessageSquare className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                   Beispiel-Antworten
                 </h3>
                 <div className="space-y-3">
                   {currentQuestion.examples.map((example, idx) => (
                     <div
                       key={idx}
-                      className="flex items-start gap-3 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl p-4 border border-purple-100"
+                      className="flex items-start gap-3 bg-gradient-to-r from-purple-50 dark:from-purple-900/20 to-indigo-50 dark:to-indigo-900/20 rounded-xl p-4 border border-purple-100 dark:border-purple-500/30"
                     >
-                      <Volume2 className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
-                      <p className="text-gray-700">{example}</p>
+                      <Volume2 className="w-5 h-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
+                      <p className="text-gray-700 dark:text-dark-text-secondary">
+                        {example}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -659,21 +665,21 @@ export default function SprechenTeil1Interactive() {
           {viewMode === "redemittel" && (
             <div className="space-y-6">
               <div>
-                <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                  <MessageSquare className="w-5 h-5 text-purple-600" />
+                <h3 className="font-bold text-gray-900 dark:text-dark-text-primary mb-4 flex items-center gap-2">
+                  <MessageSquare className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                   Nützliche Satzanfänge
                 </h3>
                 <div className="grid gap-3">
                   {currentQuestion.redemittel.map((phrase, idx) => (
                     <div
                       key={idx}
-                      className="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl p-4 border border-purple-100"
+                      className="bg-gradient-to-r from-purple-50 dark:from-purple-900/20 to-indigo-50 dark:to-indigo-900/20 rounded-xl p-4 border border-purple-100 dark:border-purple-500/30"
                     >
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-md flex-shrink-0">
+                        <div className="w-8 h-8 bg-gradient-to-r from-purple-600 dark:from-purple-500 to-indigo-600 dark:to-indigo-500 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-md flex-shrink-0">
                           {idx + 1}
                         </div>
-                        <p className="text-lg font-semibold text-gray-900">
+                        <p className="text-lg font-semibold text-gray-900 dark:text-dark-text-primary">
                           {phrase}
                         </p>
                       </div>
@@ -683,15 +689,17 @@ export default function SprechenTeil1Interactive() {
               </div>
 
               {/* Tips */}
-              <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 border border-amber-200">
-                <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                  <Lightbulb className="w-5 h-5 text-amber-600" />
+              <div className="bg-gradient-to-br from-amber-50 dark:from-amber-900/20 to-orange-50 dark:to-orange-900/20 rounded-2xl p-6 border border-amber-200 dark:border-amber-500/30">
+                <h4 className="font-bold text-gray-900 dark:text-dark-text-primary mb-3 flex items-center gap-2">
+                  <Lightbulb className="w-5 h-5 text-amber-600 dark:text-amber-400" />
                   Tipps für diese Frage
                 </h4>
-                <ul className="space-y-2 text-sm text-gray-700">
+                <ul className="space-y-2 text-sm text-gray-700 dark:text-dark-text-secondary">
                   {currentQuestion.hints.map((hint, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <span className="text-amber-600 font-bold mt-0.5">•</span>
+                      <span className="text-amber-600 dark:text-amber-400 font-bold mt-0.5">
+                        •
+                      </span>
                       <span>{hint}</span>
                     </li>
                   ))}
@@ -703,7 +711,7 @@ export default function SprechenTeil1Interactive() {
           {viewMode === "practice" && (
             <div className="space-y-6">
               {/* Practice Video */}
-              <div className="bg-gradient-to-br from-purple-100 to-indigo-100 rounded-2xl overflow-hidden">
+              <div className="bg-gradient-to-br from-purple-100 dark:from-purple-900/20 to-indigo-100 dark:to-indigo-900/20 rounded-2xl overflow-hidden">
                 <div className="aspect-video flex items-center justify-center">
                   <video
                     controls
@@ -720,32 +728,32 @@ export default function SprechenTeil1Interactive() {
               </div>
 
               {/* Practice Instructions */}
-              <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-6 border border-indigo-200">
-                <h4 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                  <Mic className="w-5 h-5 text-indigo-600" />
+              <div className="bg-gradient-to-br from-indigo-50 dark:from-indigo-900/20 to-purple-50 dark:to-purple-900/20 rounded-2xl p-6 border border-indigo-200 dark:border-indigo-500/30">
+                <h4 className="font-bold text-gray-900 dark:text-dark-text-primary mb-4 flex items-center gap-2">
+                  <Mic className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
                   So üben Sie richtig
                 </h4>
-                <ol className="space-y-3 text-sm text-gray-700">
+                <ol className="space-y-3 text-sm text-gray-700 dark:text-dark-text-secondary">
                   <li className="flex items-start gap-3">
-                    <span className="w-6 h-6 bg-indigo-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
+                    <span className="w-6 h-6 bg-indigo-600 dark:bg-indigo-500 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
                       1
                     </span>
                     <span>Lesen Sie die Frage laut</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-6 h-6 bg-indigo-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
+                    <span className="w-6 h-6 bg-indigo-600 dark:bg-indigo-500 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
                       2
                     </span>
                     <span>Denken Sie kurz nach (10-15 Sekunden)</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-6 h-6 bg-indigo-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
+                    <span className="w-6 h-6 bg-indigo-600 dark:bg-indigo-500 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
                       3
                     </span>
                     <span>Antworten Sie laut in ganzen Sätzen</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-6 h-6 bg-indigo-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
+                    <span className="w-6 h-6 bg-indigo-600 dark:bg-indigo-500 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
                       4
                     </span>
                     <span>Wiederholen Sie mehrmals, bis Sie sicher sind</span>
@@ -754,15 +762,15 @@ export default function SprechenTeil1Interactive() {
               </div>
 
               {/* Quick Redemittel Reference */}
-              <div className="bg-white/50 rounded-xl p-4 border border-purple-100">
-                <div className="text-xs font-bold text-purple-600 mb-2">
+              <div className="bg-white/50 dark:bg-white/5 rounded-xl p-4 border border-purple-100 dark:border-purple-500/30">
+                <div className="text-xs font-bold text-purple-600 dark:text-purple-400 mb-2">
                   SCHNELL-REFERENZ:
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {currentQuestion.redemittel.map((phrase, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 bg-white rounded-lg text-xs text-purple-700 border border-purple-200 font-medium shadow-sm"
+                      className="px-3 py-1 bg-white dark:bg-white/10 rounded-lg text-xs text-purple-700 dark:text-purple-400 border border-purple-200 dark:border-purple-500/30 font-medium shadow-sm"
                     >
                       {phrase}
                     </span>
@@ -775,15 +783,15 @@ export default function SprechenTeil1Interactive() {
 
         {/* Hints Toggle */}
         {showHints && (
-          <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-6 border border-blue-200 mb-6">
+          <div className="bg-gradient-to-r from-blue-50 dark:from-blue-900/20 to-cyan-50 dark:to-cyan-900/20 rounded-2xl p-6 border border-blue-200 dark:border-blue-500/30 mb-6">
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-start gap-3 flex-1">
-                <Lightbulb className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
+                <Lightbulb className="w-6 h-6 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-1" />
                 <div>
-                  <div className="font-bold text-gray-900 mb-2">
+                  <div className="font-bold text-gray-900 dark:text-dark-text-primary mb-2">
                     💡 Wichtiger Hinweis
                   </div>
-                  <p className="text-sm text-gray-700">
+                  <p className="text-sm text-gray-700 dark:text-dark-text-secondary">
                     Nehmen Sie sich Zeit, jede Frage mehrmals laut zu üben. In
                     der Prüfung haben Sie nur eine Chance!
                   </p>
@@ -791,7 +799,7 @@ export default function SprechenTeil1Interactive() {
               </div>
               <button
                 onClick={() => setShowHints(false)}
-                className="text-gray-400 hover:text-gray-600 transition-colors"
+                className="text-gray-400 dark:text-dark-text-muted hover:text-gray-600 dark:hover:text-dark-text-secondary transition-colors"
               >
                 ×
               </button>
@@ -801,15 +809,15 @@ export default function SprechenTeil1Interactive() {
       </div>
 
       {/* Fixed Bottom Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-purple-100 p-4 shadow-lg z-30">
+      <div className="fixed bottom-0 left-0 right-0 bg-white/95 dark:bg-dark-bg-secondary/95 backdrop-blur-md border-t border-purple-100 dark:border-purple-500/30 p-4 shadow-lg z-30">
         <div className="max-w-4xl mx-auto flex items-center justify-between gap-4">
           <button
             onClick={handlePreviousQuestion}
             disabled={currentQuestionIndex === 0}
             className={`px-6 py-3 rounded-xl font-semibold transition-all duration-200 ${
               currentQuestionIndex === 0
-                ? "bg-gray-100 text-gray-400 cursor-not-allowed"
-                : "bg-white text-purple-600 border-2 border-purple-200 hover:bg-purple-50 hover:scale-105 shadow-md"
+                ? "bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 cursor-not-allowed"
+                : "bg-white dark:bg-white/10 text-purple-600 dark:text-purple-400 border-2 border-purple-200 dark:border-purple-500/30 hover:bg-purple-50 dark:hover:bg-white/20 hover:scale-105 shadow-md"
             }`}
           >
             <ArrowLeft className="w-4 h-4 inline mr-2" />
@@ -818,7 +826,7 @@ export default function SprechenTeil1Interactive() {
 
           <button
             onClick={handleMarkComplete}
-            className="flex-1 max-w-xs px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2"
+            className="flex-1 max-w-xs px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2"
           >
             <CheckCircle className="w-5 h-5" />
             <span>Geübt!</span>
@@ -829,8 +837,8 @@ export default function SprechenTeil1Interactive() {
             disabled={currentQuestionIndex === TEIL1_QUESTIONS.length - 1}
             className={`px-6 py-3 rounded-xl font-semibold transition-all duration-200 ${
               currentQuestionIndex === TEIL1_QUESTIONS.length - 1
-                ? "bg-gray-100 text-gray-400 cursor-not-allowed"
-                : "bg-white text-purple-600 border-2 border-purple-200 hover:bg-purple-50 hover:scale-105 shadow-md"
+                ? "bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 cursor-not-allowed"
+                : "bg-white dark:bg-white/10 text-purple-600 dark:text-purple-400 border-2 border-purple-200 dark:border-purple-500/30 hover:bg-purple-50 dark:hover:bg-white/20 hover:scale-105 shadow-md"
             }`}
           >
             <span className="hidden sm:inline">Weiter</span>

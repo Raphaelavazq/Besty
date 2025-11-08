@@ -1,12 +1,19 @@
 import React from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { ArrowLeft, BookOpen, Trophy, Clock } from "lucide-react";
+import {
+  ArrowLeft,
+  BookOpen,
+  Trophy,
+  Clock,
+  ArrowRight,
+  Play,
+} from "lucide-react";
 import * as LucideIcons from "lucide-react";
 import { getThemeById } from "./themesData";
 
 /**
- * Theme Detail Page
- * Shows theme info and available exercises (Wortschatz Quiz card)
+ * Theme Detail Page - Hero Style
+ * Full viewport hero + theme info + quick start action
  */
 function ThemeDetail() {
   const { themeId } = useParams();
@@ -15,14 +22,14 @@ function ThemeDetail() {
 
   if (!theme) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50 flex items-center justify-center p-6">
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary flex items-center justify-center p-6">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-800 mb-4">
+          <h1 className="text-2xl font-bold text-gray-800 dark:text-dark-text-primary mb-4">
             Thema nicht gefunden
           </h1>
           <Link
             to="/dashboard"
-            className="text-purple-600 hover:text-purple-700 font-semibold"
+            className="text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-semibold"
           >
             ← Zurück zum Dashboard
           </Link>
@@ -35,141 +42,65 @@ function ThemeDetail() {
   const IconComponent = LucideIcons[theme.icon] || LucideIcons.BookOpen;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50">
-      {/* Header */}
-      <div className="bg-white/80 backdrop-blur-md border-b border-purple-100 sticky top-0 z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary">
+      {/* Hero Section - Full Viewport */}
+      <div className="relative overflow-hidden bg-gradient-to-br from-purple-600 via-indigo-700 to-purple-800 dark:from-purple-900 dark:via-indigo-950 dark:to-purple-950 min-h-screen flex items-center">
+        {/* Background Effects */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent_50%)]"></div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12 w-full">
+          {/* Back Button */}
           <button
             onClick={() => navigate("/dashboard")}
-            className="flex items-center gap-2 text-purple-600 hover:text-purple-700 font-semibold transition-colors"
+            className="flex items-center gap-2 text-white/90 hover:text-white font-semibold transition-colors mb-8 group"
           >
-            <ArrowLeft className="w-5 h-5" />
-            Zurück zum Dashboard
+            <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+            Dashboard
           </button>
-        </div>
-      </div>
 
-      {/* Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Theme Header */}
-        <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl border border-purple-100 p-8 mb-8">
-          <div className="flex items-start gap-6">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
             {/* Icon */}
-            <div
-              className={`bg-gradient-to-br ${theme.color} p-6 rounded-2xl shadow-lg`}
-            >
-              <IconComponent className="w-12 h-12 text-white" />
+            <div className="w-40 h-40 lg:w-48 lg:h-48 flex-shrink-0">
+              <div className="w-full h-full bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl border border-white/20 flex items-center justify-center">
+                <IconComponent className="w-24 h-24 lg:w-32 lg:h-32 text-white" />
+              </div>
             </div>
 
-            {/* Info */}
-            <div className="flex-1">
-              <h1 className="text-4xl font-black mb-2">
-                <span
-                  className={`bg-gradient-to-r ${theme.color} bg-clip-text text-transparent`}
-                >
-                  {theme.name}
-                </span>
+            {/* Content */}
+            <div className="flex-1 text-center lg:text-left">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-4 lg:mb-6">
+                {theme.name}
               </h1>
-              <p className="text-xl text-gray-600 mb-4">{theme.description}</p>
+              <p className="text-lg sm:text-xl lg:text-2xl text-white/90 mb-6 lg:mb-8 max-w-3xl">
+                {theme.description}
+              </p>
 
               {/* Stats */}
-              <div className="flex gap-6 text-sm">
-                <div className="flex items-center gap-2">
-                  <BookOpen className="w-5 h-5 text-purple-600" />
-                  <span className="text-gray-700">
-                    <strong>{theme.questionCount}</strong> Übungen
+              <div className="flex flex-wrap gap-4 lg:gap-6 justify-center lg:justify-start mb-8 lg:mb-10">
+                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20">
+                  <BookOpen className="w-5 h-5 text-white" />
+                  <span className="text-white font-semibold">
+                    {theme.questionCount} Übungen
                   </span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="w-5 h-5 text-purple-600" />
-                  <span className="text-gray-700">
-                    ca. <strong>{Math.ceil(theme.questionCount * 0.5)}</strong>{" "}
-                    Min.
+                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20">
+                  <Clock className="w-5 h-5 text-white" />
+                  <span className="text-white font-semibold">
+                    ca. {Math.ceil(theme.questionCount * 0.5)} Min.
                   </span>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
 
-        {/* Available Exercises */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">
-            Verfügbare Übungen
-          </h2>
-
-          {/* Wortschatz Quiz Card */}
-          <Link
-            to={`/themes/${themeId}/quiz`}
-            className="block bg-white/80 backdrop-blur-md rounded-2xl shadow-lg border border-purple-100 p-8 hover:-translate-y-1 hover:shadow-xl transition-all duration-200 group"
-          >
-            <div className="flex items-start justify-between">
-              <div className="flex items-start gap-6">
-                {/* Icon */}
-                <div className="bg-gradient-to-br from-purple-800 to-indigo-900 p-5 rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-200">
-                  <BookOpen className="w-8 h-8 text-white" />
-                </div>
-
-                {/* Content */}
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
-                    Wortschatz-Quiz
-                  </h3>
-                  <p className="text-gray-600 mb-4 max-w-2xl">
-                    Übe wichtige Wörter und Ausdrücke zum Thema.
-                    Fill-in-the-blank Übungen mit sofortigem Feedback.
-                  </p>
-
-                  {/* Stats */}
-                  <div className="flex gap-4 text-sm">
-                    <div className="flex items-center gap-2 bg-purple-50 px-3 py-1 rounded-full">
-                      <BookOpen className="w-4 h-4 text-purple-600" />
-                      <span className="font-semibold text-purple-700">
-                        {theme.questionCount} Fragen
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-2 bg-purple-50 px-3 py-1 rounded-full">
-                      <Clock className="w-4 h-4 text-purple-600" />
-                      <span className="font-semibold text-purple-700">
-                        ca. {Math.ceil(theme.questionCount * 0.5)} Min.
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Arrow */}
-              <div className="text-purple-600 group-hover:translate-x-2 transition-transform duration-200">
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </div>
-            </div>
-          </Link>
-        </div>
-
-        {/* Tips Section */}
-        <div className="bg-gradient-to-br from-purple-800 to-indigo-900 rounded-2xl shadow-xl p-8 text-white">
-          <div className="flex items-start gap-4">
-            <Trophy className="w-8 h-8 flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-bold mb-2">Lerntipps</h3>
-              <ul className="space-y-2 text-white/90">
-                <li>• Nimm dir Zeit und lies jede Frage sorgfältig</li>
-                <li>• Versuche, die Wörter im Kontext zu verstehen</li>
-                <li>• Wiederhole falsch beantwortete Fragen</li>
-                <li>• Nutze die gelernten Wörter im Alltag</li>
-              </ul>
+              {/* CTA Button */}
+              <Link
+                to={`/themes/${themeId}/quiz`}
+                className="inline-flex items-center gap-3 px-8 py-4 bg-white text-purple-700 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-200 group"
+              >
+                <Play className="w-6 h-6" />
+                Wortschatz-Quiz starten
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </div>
           </div>
         </div>

@@ -34,10 +34,10 @@ const QuestionCard = ({
     <div
       className={`backdrop-blur-sm rounded-xl shadow-sm border p-4 transition-all duration-200 hover:shadow-md ${
         isCorrect
-          ? "border-green-200 bg-green-50/50"
+          ? "border-green-200 dark:border-green-500/30 bg-green-50/50 dark:bg-green-900/20"
           : isIncorrect
-            ? "border-red-200 bg-red-50/50"
-            : "border-purple-100 bg-white/80"
+            ? "border-red-200 dark:border-red-500/30 bg-red-50/50 dark:bg-red-900/20"
+            : "border-purple-100 dark:border-purple-500/30 bg-white/80 dark:bg-white/10"
       } ${compact ? "space-y-3" : "space-y-4"} ${className}`}
     >
       {/* Question Header */}
@@ -45,13 +45,13 @@ const QuestionCard = ({
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-2">
             {question.type === "audio" && (
-              <Volume2 className="w-4 h-4 text-purple-600" />
+              <Volume2 className="w-4 h-4 text-purple-600 dark:text-purple-400" />
             )}
-            <span className="text-sm font-medium text-purple-600">
+            <span className="text-sm font-medium text-purple-600 dark:text-purple-400">
               {question.type === "audio" ? "Hören" : "Lesen"}
             </span>
             {question.timestamp && (
-              <span className="text-xs text-gray-500 flex items-center gap-1">
+              <span className="text-xs text-gray-500 dark:text-dark-text-muted flex items-center gap-1">
                 <Clock className="w-3 h-3" />
                 {Math.floor(question.timestamp / 60)}:
                 {(question.timestamp % 60).toString().padStart(2, "0")}
@@ -59,7 +59,7 @@ const QuestionCard = ({
             )}
           </div>
           <h3
-            className={`font-medium text-gray-900 ${compact ? "text-base" : "text-lg"}`}
+            className={`font-medium text-gray-900 dark:text-dark-text-primary ${compact ? "text-base" : "text-lg"}`}
           >
             {question.question}
           </h3>
@@ -100,10 +100,11 @@ const QuestionCard = ({
               optionStyles += "border-purple-400 bg-purple-100 text-purple-800";
             }
           } else if (showFeedback && isThisCorrect && !isSelected) {
-            optionStyles += "border-green-300 bg-green-50 text-green-700";
+            optionStyles +=
+              "border-green-300 dark:border-green-500/30 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400";
           } else {
             optionStyles +=
-              "border-gray-200 hover:border-purple-200 hover:bg-purple-50/50";
+              "border-gray-200 dark:border-purple-500/30 hover:border-purple-200 dark:hover:border-purple-400 hover:bg-purple-50/50 dark:hover:bg-white/10";
           }
 
           let radioStyles =
@@ -112,13 +113,14 @@ const QuestionCard = ({
           if (isSelected) {
             if (showFeedback) {
               radioStyles += isThisCorrect
-                ? "border-green-600 bg-green-600"
-                : "border-red-600 bg-red-600";
+                ? "border-green-600 dark:border-green-500 bg-green-600 dark:bg-green-500"
+                : "border-red-600 dark:border-red-500 bg-red-600 dark:bg-red-500";
             } else {
-              radioStyles += "border-purple-600 bg-purple-600";
+              radioStyles +=
+                "border-purple-600 dark:border-purple-500 bg-purple-600 dark:bg-purple-500";
             }
           } else {
-            radioStyles += "border-gray-300";
+            radioStyles += "border-gray-300 dark:border-gray-600";
           }
 
           return (

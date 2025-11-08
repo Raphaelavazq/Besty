@@ -123,14 +123,14 @@ export default function ThemeGallery() {
 
   if (!theme) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50 p-6">
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary p-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">
+          <h2 className="text-2xl font-bold text-gray-800 dark:text-dark-text-primary mb-4">
             Thema nicht gefunden
           </h2>
           <Link
             to="/tests/sprechen/bild-beschreiben"
-            className="text-purple-600 hover:text-purple-700 font-semibold"
+            className="text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-semibold"
           >
             ← Zurück zur Übersicht
           </Link>
@@ -201,14 +201,14 @@ export default function ThemeGallery() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Back Button */}
         <button
           onClick={() => navigate("/tests/sprechen/bild-beschreiben")}
-          className="group mb-8 flex items-center gap-2 text-gray-600 hover:text-purple-600 transition-colors duration-200"
+          className="group mb-8 flex items-center gap-2 text-gray-600 dark:text-dark-text-secondary hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200"
         >
-          <div className="w-10 h-10 bg-white/80 backdrop-blur-md rounded-xl flex items-center justify-center shadow-sm border border-purple-100 group-hover:shadow-md group-hover:border-purple-200 transition-all duration-200">
+          <div className="w-10 h-10 bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center shadow-sm border border-purple-100 dark:border-purple-500/30 group-hover:shadow-md group-hover:border-purple-200 dark:group-hover:border-purple-500/50 transition-all duration-200">
             <ArrowLeft className="w-5 h-5" />
           </div>
           <span className="font-semibold">Zurück zur Themenübersicht</span>
@@ -224,7 +224,7 @@ export default function ThemeGallery() {
             </div>
           </div>
           <GradientHeading className="mb-2">{theme.name}</GradientHeading>
-          <p className="text-gray-600">
+          <p className="text-gray-600 dark:text-dark-text-secondary">
             {theme.exercises.length}{" "}
             {theme.exercises.length === 1 ? "Bild" : "Bilder"} verfügbar
           </p>
@@ -238,30 +238,30 @@ export default function ThemeGallery() {
                   <Link
                     key={img.id || img.file}
                     to={`/tests/sprechen/bild-beschreiben/${img.id}`}
-                    className="group bg-white/80 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg border border-purple-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-200"
+                    className="group bg-white/80 dark:bg-white/5 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg border border-purple-100 dark:border-purple-500/20 hover:shadow-xl hover:-translate-y-1 transition-all duration-200"
                   >
-                    <div className="relative aspect-[4/3] bg-gradient-to-br from-purple-100 to-indigo-100 overflow-hidden">
+                    <div className="relative aspect-[4/3] bg-gradient-to-br from-purple-100 to-indigo-100 dark:from-purple-900/20 dark:to-indigo-900/20 overflow-hidden">
                       <img
                         src={img.file}
                         alt={img.alt || `${theme.name} Bild ${index + 1}`}
                         loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                      <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-md">
-                        <span className="text-xs font-bold text-purple-600">
+                      <div className="absolute top-3 right-3 bg-white/90 dark:bg-dark-bg-secondary/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-md">
+                        <span className="text-xs font-bold text-purple-600 dark:text-purple-400">
                           Bild {index + 1}
                         </span>
                       </div>
                     </div>
                     <div className="p-5">
-                      <h3 className="text-base font-bold text-gray-800 mb-3 group-hover:text-purple-600 transition-colors">
+                      <h3 className="text-base font-bold text-gray-800 dark:text-dark-text-primary mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                         {img.title || `${theme.name} - Bild ${index + 1}`}
                       </h3>
-                      <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-                        <span className="text-sm text-purple-600 font-semibold group-hover:text-purple-700">
+                      <div className="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-purple-500/20">
+                        <span className="text-sm text-purple-600 dark:text-purple-400 font-semibold group-hover:text-purple-700 dark:group-hover:text-purple-300">
                           Übung starten
                         </span>
-                        <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-200">
+                        <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 rounded-lg flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-200">
                           <ImageIcon className="w-4 h-4 text-white" />
                         </div>
                       </div>
@@ -275,7 +275,7 @@ export default function ThemeGallery() {
                   <Link
                     key={exerciseId}
                     to={`/tests/sprechen/bild-beschreiben/${exerciseId}`}
-                    className="group bg-white/80 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg border border-purple-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-200"
+                    className="group bg-white/80 dark:bg-white/5 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg border border-purple-100 dark:border-purple-500/20 hover:shadow-xl hover:-translate-y-1 transition-all duration-200"
                   >
                     {/* Image */}
                     <div className="relative aspect-[4/3] bg-gradient-to-br from-purple-100 to-indigo-100 overflow-hidden">
@@ -300,8 +300,8 @@ export default function ThemeGallery() {
                         }}
                       />
                       {/* Badge */}
-                      <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-md">
-                        <span className="text-xs font-bold text-purple-600">
+                      <div className="absolute top-3 right-3 bg-white/90 dark:bg-dark-bg-secondary/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-md">
+                        <span className="text-xs font-bold text-purple-600 dark:text-purple-400">
                           Bild {index + 1}
                         </span>
                       </div>
@@ -309,15 +309,15 @@ export default function ThemeGallery() {
 
                     {/* Info */}
                     <div className="p-5">
-                      <h3 className="text-base font-bold text-gray-800 mb-3 group-hover:text-purple-600 transition-colors">
+                      <h3 className="text-base font-bold text-gray-800 dark:text-dark-text-primary mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                         {exercise.title}
                       </h3>
 
-                      <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-                        <span className="text-sm text-purple-600 font-semibold group-hover:text-purple-700">
+                      <div className="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-purple-500/20">
+                        <span className="text-sm text-purple-600 dark:text-purple-400 font-semibold group-hover:text-purple-700 dark:group-hover:text-purple-300">
                           Übung starten
                         </span>
-                        <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-200">
+                        <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 rounded-lg flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-200">
                           <ImageIcon className="w-4 h-4 text-white" />
                         </div>
                       </div>
@@ -331,7 +331,7 @@ export default function ThemeGallery() {
           <div className="mt-8 text-center">
             <button
               onClick={() => setVisibleCount((v) => v + 12)}
-              className="inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg shadow-md hover:scale-105 transition-transform duration-150"
+              className="inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 text-white rounded-lg shadow-md hover:scale-105 transition-transform duration-150"
             >
               Mehr Bilder laden
             </button>
@@ -340,8 +340,8 @@ export default function ThemeGallery() {
 
         {/* Info Footer */}
         <div className="mt-12 text-center">
-          <div className="inline-block bg-white/80 backdrop-blur-md rounded-2xl px-6 py-4 shadow-lg border border-purple-100">
-            <p className="text-gray-600">
+          <div className="inline-block bg-white/80 dark:bg-white/5 backdrop-blur-md rounded-2xl px-6 py-4 shadow-lg border border-purple-100 dark:border-purple-500/20">
+            <p className="text-gray-600 dark:text-dark-text-secondary">
               💡 <strong>Tipp:</strong> Wählen Sie ein Bild aus, um die Übung zu
               starten
             </p>

@@ -155,23 +155,25 @@ export default function SchreibenTrainer() {
 
   if (!prompt) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary flex items-center justify-center">
         <div className="flex items-center gap-3">
-          <Loader2 className="w-8 h-8 text-purple-600 animate-spin" />
-          <span className="text-lg text-gray-600">Lade Aufgabe...</span>
+          <Loader2 className="w-8 h-8 text-purple-600 dark:text-purple-400 animate-spin" />
+          <span className="text-lg text-gray-600 dark:text-dark-text-secondary">
+            Lade Aufgabe...
+          </span>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary">
       {/* Header */}
-      <div className="bg-gradient-to-r from-purple-600 via-indigo-700 to-purple-800 text-white px-6 py-4 shadow-lg sticky top-0 z-10">
+      <div className="bg-gradient-to-r from-purple-600 via-indigo-700 to-purple-800 dark:from-purple-900 dark:via-indigo-900 dark:to-purple-950 text-white px-6 py-4 shadow-lg sticky top-0 z-10">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <button
             onClick={() => navigate("/tests/schreiben")}
-            className="flex items-center gap-2 hover:bg-white/10 px-4 py-2 rounded-xl transition-colors duration-200"
+            className="flex items-center gap-2 hover:bg-white/10 dark:hover:bg-white/20 px-4 py-2 rounded-xl transition-colors duration-200"
           >
             <ArrowLeft size={20} />
             <span>Zurück</span>
@@ -199,7 +201,7 @@ export default function SchreibenTrainer() {
       <div className="max-w-7xl mx-auto px-6 py-8 space-y-8">
         {/* Prompt Display */}
         {!showResults && (
-          <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-purple-100">
+          <div className="bg-white/80 dark:bg-white/5 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-purple-100 dark:border-purple-500/20">
             {/* Type Badge */}
             <div className="flex items-center gap-3 mb-4">
               <span
@@ -211,31 +213,33 @@ export default function SchreibenTrainer() {
               >
                 {prompt.type === "formal" ? "📋 Formell" : "💌 Informell"}
               </span>
-              <span className="text-sm text-gray-500">{prompt.category}</span>
+              <span className="text-sm text-gray-500 dark:text-dark-text-muted">
+                {prompt.category}
+              </span>
             </div>
 
             {/* Title */}
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-dark-text-primary mb-4">
               {prompt.title}
             </h2>
 
             {/* Situation */}
-            <div className="bg-purple-50 rounded-xl p-4 mb-4">
-              <p className="text-gray-700 leading-relaxed">
+            <div className="bg-purple-50 dark:bg-purple-900/20 rounded-xl p-4 mb-4">
+              <p className="text-gray-700 dark:text-dark-text-secondary leading-relaxed">
                 {prompt.situation}
               </p>
             </div>
 
             {/* Recipient */}
             <div className="mb-4">
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-gray-600 dark:text-dark-text-secondary">
                 <strong>Empfänger:</strong> {prompt.recipient}
               </p>
             </div>
 
             {/* Content Points */}
             <div>
-              <h3 className="font-bold text-gray-900 mb-2">
+              <h3 className="font-bold text-gray-900 dark:text-dark-text-primary mb-2">
                 Inhaltspunkte (alle bearbeiten!):
               </h3>
               <ul className="space-y-2">
@@ -244,7 +248,9 @@ export default function SchreibenTrainer() {
                     <span className="w-6 h-6 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">
                       {index + 1}
                     </span>
-                    <span className="text-gray-700">{point}</span>
+                    <span className="text-gray-700 dark:text-dark-text-secondary">
+                      {point}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -252,14 +258,17 @@ export default function SchreibenTrainer() {
 
             {/* Hints */}
             {prompt.hints && prompt.hints.length > 0 && (
-              <div className="mt-4 pt-4 border-t border-purple-200">
-                <h4 className="text-sm font-bold text-purple-900 mb-2 flex items-center gap-2">
+              <div className="mt-4 pt-4 border-t border-purple-200 dark:border-purple-500/20">
+                <h4 className="text-sm font-bold text-purple-900 dark:text-purple-300 mb-2 flex items-center gap-2">
                   <Lightbulb size={16} />
                   Tipps:
                 </h4>
                 <ul className="space-y-1">
                   {prompt.hints.map((hint, index) => (
-                    <li key={index} className="text-sm text-gray-600">
+                    <li
+                      key={index}
+                      className="text-sm text-gray-600 dark:text-dark-text-secondary"
+                    >
                       💡 {hint}
                     </li>
                   ))}
@@ -271,18 +280,20 @@ export default function SchreibenTrainer() {
 
         {/* Writing Area */}
         {!showResults && (
-          <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-purple-100">
+          <div className="bg-white/80 dark:bg-white/5 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-purple-100 dark:border-purple-500/20">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-bold text-gray-900">Dein Brief</h3>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-dark-text-primary">
+                Dein Brief
+              </h3>
               <div className="flex items-center gap-4">
                 {/* Word Counter */}
                 <div
                   className={`px-4 py-2 rounded-xl font-bold ${
                     wordCount < 50
-                      ? "bg-red-100 text-red-700"
+                      ? "bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400"
                       : wordCount < 80
-                        ? "bg-yellow-100 text-yellow-700"
-                        : "bg-green-100 text-green-700"
+                        ? "bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400"
+                        : "bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400"
                   }`}
                 >
                   {wordCount} Wörter
@@ -299,18 +310,18 @@ export default function SchreibenTrainer() {
               value={userText}
               onChange={(e) => setUserText(e.target.value)}
               placeholder="Schreibe deinen Brief hier..."
-              className="w-full h-96 p-4 border-2 border-purple-200 rounded-xl focus:border-purple-500 focus:outline-none resize-none text-base leading-relaxed"
+              className="w-full h-96 p-4 border-2 border-purple-200 dark:border-purple-500/30 bg-white dark:bg-dark-bg-secondary text-gray-900 dark:text-dark-text-primary rounded-xl focus:border-purple-500 dark:focus:border-purple-400 focus:outline-none resize-none text-base leading-relaxed placeholder:text-gray-400 dark:placeholder:text-dark-text-muted"
               disabled={isSubmitting}
             />
 
             {/* Error Message */}
             {error && (
-              <div className="mt-4 bg-red-50 border border-red-200 rounded-xl p-4 flex items-start gap-3">
+              <div className="mt-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-500/30 rounded-xl p-4 flex items-start gap-3">
                 <AlertCircle
                   size={20}
-                  className="text-red-600 flex-shrink-0 mt-0.5"
+                  className="text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5"
                 />
-                <p className="text-red-700">{error}</p>
+                <p className="text-red-700 dark:text-red-400">{error}</p>
               </div>
             )}
 
@@ -341,10 +352,10 @@ export default function SchreibenTrainer() {
         {showResults && results && (
           <div className="space-y-6">
             {/* Score Overview */}
-            <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-purple-100">
+            <div className="bg-white/80 dark:bg-white/5 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-purple-100 dark:border-purple-500/20">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                  <Award className="w-7 h-7 text-purple-600" />
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-dark-text-primary flex items-center gap-2">
+                  <Award className="w-7 h-7 text-purple-600 dark:text-purple-400" />
                   Deine Bewertung
                 </h2>
                 <div
@@ -363,9 +374,9 @@ export default function SchreibenTrainer() {
                 ].map((criteria) => (
                   <div
                     key={criteria.key}
-                    className="bg-purple-50 rounded-xl p-4"
+                    className="bg-purple-50 dark:bg-purple-900/20 rounded-xl p-4"
                   >
-                    <h4 className="text-sm font-bold text-gray-700 mb-2">
+                    <h4 className="text-sm font-bold text-gray-700 dark:text-dark-text-secondary mb-2">
                       {criteria.label}
                     </h4>
                     <div className="flex items-center justify-between">
@@ -377,15 +388,17 @@ export default function SchreibenTrainer() {
                       >
                         {results.score[criteria.key]}
                       </span>
-                      <span className="text-gray-500">/ {criteria.max}</span>
+                      <span className="text-gray-500 dark:text-dark-text-muted">
+                        / {criteria.max}
+                      </span>
                     </div>
                   </div>
                 ))}
               </div>
 
               {/* Content Points Status */}
-              <div className="mt-6 pt-6 border-t border-purple-200">
-                <h4 className="font-bold text-gray-900 mb-3">
+              <div className="mt-6 pt-6 border-t border-purple-200 dark:border-purple-500/20">
+                <h4 className="font-bold text-gray-900 dark:text-dark-text-primary mb-3">
                   Bearbeitete Inhaltspunkte:
                 </h4>
                 <div className="space-y-2">
@@ -394,19 +407,19 @@ export default function SchreibenTrainer() {
                       {results.contentPoints[index] ? (
                         <CheckCircle2
                           size={20}
-                          className="text-green-600 flex-shrink-0 mt-0.5"
+                          className="text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5"
                         />
                       ) : (
                         <XCircle
                           size={20}
-                          className="text-red-600 flex-shrink-0 mt-0.5"
+                          className="text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5"
                         />
                       )}
                       <span
                         className={
                           results.contentPoints[index]
-                            ? "text-gray-700"
-                            : "text-red-700 font-semibold"
+                            ? "text-gray-700 dark:text-dark-text-secondary"
+                            : "text-red-700 dark:text-red-400 font-semibold"
                         }
                       >
                         {point}
@@ -419,15 +432,15 @@ export default function SchreibenTrainer() {
             </div>
 
             {/* Text Comparison */}
-            <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-purple-100">
+            <div className="bg-white/80 dark:bg-white/5 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-purple-100 dark:border-purple-500/20">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2">
-                  <FileText className="w-6 h-6 text-purple-600" />
+                <h3 className="text-xl font-bold text-gray-900 dark:text-dark-text-primary flex items-center gap-2">
+                  <FileText className="w-6 h-6 text-purple-600 dark:text-purple-400" />
                   Textvergleich
                 </h3>
                 <button
                   onClick={() => setShowOriginal(!showOriginal)}
-                  className="flex items-center gap-2 text-sm bg-purple-100 hover:bg-purple-200 px-4 py-2 rounded-xl transition-colors duration-200"
+                  className="flex items-center gap-2 text-sm bg-purple-100 dark:bg-purple-900/30 hover:bg-purple-200 dark:hover:bg-purple-900/50 text-gray-900 dark:text-dark-text-primary px-4 py-2 rounded-xl transition-colors duration-200"
                 >
                   {showOriginal ? (
                     <>
@@ -449,14 +462,14 @@ export default function SchreibenTrainer() {
                 {/* Original Text */}
                 {showOriginal && (
                   <div>
-                    <h4 className="text-sm font-bold text-gray-700 mb-3 flex items-center gap-2">
-                      <span className="w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center text-xs">
+                    <h4 className="text-sm font-bold text-gray-700 dark:text-dark-text-secondary mb-3 flex items-center gap-2">
+                      <span className="w-6 h-6 bg-red-500 dark:bg-red-600 text-white rounded-full flex items-center justify-center text-xs">
                         ✗
                       </span>
                       Original (mit Fehlern)
                     </h4>
-                    <div className="bg-red-50 rounded-xl p-4 border-2 border-red-200">
-                      <p className="text-gray-800 whitespace-pre-wrap leading-relaxed">
+                    <div className="bg-red-50 dark:bg-red-900/20 rounded-xl p-4 border-2 border-red-200 dark:border-red-500/30">
+                      <p className="text-gray-800 dark:text-dark-text-primary whitespace-pre-wrap leading-relaxed">
                         {results.original}
                       </p>
                     </div>
@@ -465,14 +478,14 @@ export default function SchreibenTrainer() {
 
                 {/* Corrected Text */}
                 <div>
-                  <h4 className="text-sm font-bold text-gray-700 mb-3 flex items-center gap-2">
-                    <span className="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs">
+                  <h4 className="text-sm font-bold text-gray-700 dark:text-dark-text-secondary mb-3 flex items-center gap-2">
+                    <span className="w-6 h-6 bg-green-500 dark:bg-green-600 text-white rounded-full flex items-center justify-center text-xs">
                       ✓
                     </span>
                     Korrigiert
                   </h4>
-                  <div className="bg-green-50 rounded-xl p-4 border-2 border-green-200">
-                    <p className="text-gray-800 whitespace-pre-wrap leading-relaxed">
+                  <div className="bg-green-50 dark:bg-green-900/20 rounded-xl p-4 border-2 border-green-200 dark:border-green-500/30">
+                    <p className="text-gray-800 dark:text-dark-text-primary whitespace-pre-wrap leading-relaxed">
                       {results.corrected}
                     </p>
                   </div>
@@ -482,9 +495,9 @@ export default function SchreibenTrainer() {
 
             {/* Errors List */}
             {results.errors && results.errors.length > 0 && (
-              <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-purple-100">
-                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                  <AlertCircle className="w-6 h-6 text-orange-600" />
+              <div className="bg-white/80 dark:bg-white/5 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-purple-100 dark:border-purple-500/20">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-dark-text-primary mb-4 flex items-center gap-2">
+                  <AlertCircle className="w-6 h-6 text-orange-600 dark:text-orange-400" />
                   Fehleranalyse ({results.errors.length}{" "}
                   {results.errors.length === 1 ? "Fehler" : "Fehler"})
                 </h3>
@@ -492,15 +505,15 @@ export default function SchreibenTrainer() {
                   {results.errors.map((error, index) => (
                     <div
                       key={index}
-                      className="bg-orange-50 border border-orange-200 rounded-xl p-4"
+                      className="bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-500/30 rounded-xl p-4"
                     >
                       <div className="flex items-start gap-3">
-                        <span className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                        <span className="w-8 h-8 bg-orange-500 dark:bg-orange-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
                           {index + 1}
                         </span>
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-2">
-                            <span className="px-2 py-1 bg-orange-200 text-orange-800 text-xs font-bold rounded">
+                            <span className="px-2 py-1 bg-orange-200 dark:bg-orange-900/50 text-orange-800 dark:text-orange-300 text-xs font-bold rounded">
                               {error.type === "grammar"
                                 ? "Grammatik"
                                 : error.type === "vocabulary"
@@ -512,22 +525,22 @@ export default function SchreibenTrainer() {
                           </div>
                           <div className="space-y-2">
                             <div>
-                              <span className="text-sm font-bold text-gray-700">
+                              <span className="text-sm font-bold text-gray-700 dark:text-dark-text-secondary">
                                 Falsch:
                               </span>{" "}
-                              <span className="text-red-700 line-through">
+                              <span className="text-red-700 dark:text-red-400 line-through">
                                 {error.original}
                               </span>
                             </div>
                             <div>
-                              <span className="text-sm font-bold text-gray-700">
+                              <span className="text-sm font-bold text-gray-700 dark:text-dark-text-secondary">
                                 Richtig:
                               </span>{" "}
-                              <span className="text-green-700 font-semibold">
+                              <span className="text-green-700 dark:text-green-400 font-semibold">
                                 {error.corrected}
                               </span>
                             </div>
-                            <div className="text-sm text-gray-600 bg-white rounded-lg p-2 border border-orange-200">
+                            <div className="text-sm text-gray-600 dark:text-dark-text-secondary bg-white dark:bg-dark-bg-secondary rounded-lg p-2 border border-orange-200 dark:border-orange-500/30">
                               💡 {error.explanation}
                             </div>
                           </div>
@@ -544,8 +557,8 @@ export default function SchreibenTrainer() {
               {/* Strengths */}
               {results.feedback.strengths &&
                 results.feedback.strengths.length > 0 && (
-                  <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-purple-100">
-                    <h4 className="font-bold text-green-700 mb-3 flex items-center gap-2">
+                  <div className="bg-white/80 dark:bg-white/5 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-purple-100 dark:border-purple-500/20">
+                    <h4 className="font-bold text-green-700 dark:text-green-400 mb-3 flex items-center gap-2">
                       <CheckCircle2 size={20} />
                       Stärken
                     </h4>
@@ -553,9 +566,11 @@ export default function SchreibenTrainer() {
                       {results.feedback.strengths.map((strength, index) => (
                         <li
                           key={index}
-                          className="text-sm text-gray-700 flex items-start gap-2"
+                          className="text-sm text-gray-700 dark:text-dark-text-secondary flex items-start gap-2"
                         >
-                          <span className="text-green-600">✓</span>
+                          <span className="text-green-600 dark:text-green-400">
+                            ✓
+                          </span>
                           <span>{strength}</span>
                         </li>
                       ))}
@@ -566,8 +581,8 @@ export default function SchreibenTrainer() {
               {/* Improvements */}
               {results.feedback.improvements &&
                 results.feedback.improvements.length > 0 && (
-                  <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-purple-100">
-                    <h4 className="font-bold text-orange-700 mb-3 flex items-center gap-2">
+                  <div className="bg-white/80 dark:bg-white/5 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-purple-100 dark:border-purple-500/20">
+                    <h4 className="font-bold text-orange-700 dark:text-orange-400 mb-3 flex items-center gap-2">
                       <TrendingUp size={20} />
                       Verbesserungen
                     </h4>
@@ -576,9 +591,11 @@ export default function SchreibenTrainer() {
                         (improvement, index) => (
                           <li
                             key={index}
-                            className="text-sm text-gray-700 flex items-start gap-2"
+                            className="text-sm text-gray-700 dark:text-dark-text-secondary flex items-start gap-2"
                           >
-                            <span className="text-orange-600">→</span>
+                            <span className="text-orange-600 dark:text-orange-400">
+                              →
+                            </span>
                             <span>{improvement}</span>
                           </li>
                         )
@@ -590,8 +607,8 @@ export default function SchreibenTrainer() {
               {/* Suggestions */}
               {results.feedback.suggestions &&
                 results.feedback.suggestions.length > 0 && (
-                  <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-purple-100">
-                    <h4 className="font-bold text-purple-700 mb-3 flex items-center gap-2">
+                  <div className="bg-white/80 dark:bg-white/5 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-purple-100 dark:border-purple-500/20">
+                    <h4 className="font-bold text-purple-700 dark:text-purple-300 mb-3 flex items-center gap-2">
                       <Lightbulb size={20} />
                       Tipps
                     </h4>
@@ -599,9 +616,11 @@ export default function SchreibenTrainer() {
                       {results.feedback.suggestions.map((suggestion, index) => (
                         <li
                           key={index}
-                          className="text-sm text-gray-700 flex items-start gap-2"
+                          className="text-sm text-gray-700 dark:text-dark-text-secondary flex items-start gap-2"
                         >
-                          <span className="text-purple-600">💡</span>
+                          <span className="text-purple-600 dark:text-purple-400">
+                            💡
+                          </span>
                           <span>{suggestion}</span>
                         </li>
                       ))}
@@ -614,7 +633,7 @@ export default function SchreibenTrainer() {
             <div className="flex flex-col sm:flex-row gap-4">
               <button
                 onClick={handleRestart}
-                className="flex-1 flex items-center justify-center gap-2 bg-white border-2 border-purple-300 text-purple-700 px-6 py-4 rounded-xl font-bold shadow-lg hover:bg-purple-50 hover:-translate-y-1 transition-all duration-200"
+                className="flex-1 flex items-center justify-center gap-2 bg-white dark:bg-dark-bg-secondary border-2 border-purple-300 dark:border-purple-500/40 text-purple-700 dark:text-purple-300 px-6 py-4 rounded-xl font-bold shadow-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 hover:-translate-y-1 transition-all duration-200"
               >
                 <RotateCcw size={20} />
                 <span>Nochmal versuchen</span>

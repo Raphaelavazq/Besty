@@ -16,6 +16,7 @@ import {
   HelpCircle,
   Settings,
 } from "lucide-react";
+import ThemeToggle from "../ThemeToggle";
 
 export default function DashboardShell({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -67,7 +68,7 @@ export default function DashboardShell({ children }) {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 flex safe-area-inset">
+    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary flex safe-area-inset">
       {/* Mobile Hamburger Menu Button - Top Right */}
       <div className="fixed top-4 right-4 z-[100] lg:hidden safe-area-inset-top safe-area-inset-right">
         <button
@@ -98,9 +99,9 @@ export default function DashboardShell({ children }) {
 
       {/* Sidebar */}
       <div
-        className={`fixed inset-y-0 right-0 z-[90] w-64 bg-gradient-to-br from-purple-600 via-indigo-700 to-purple-800 shadow-2xl transform transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-y-0 right-0 z-[90] w-64 bg-gradient-to-br from-purple-600 via-indigo-700 to-purple-800 dark:from-dark-bg-secondary dark:via-dark-bg-tertiary dark:to-purple-950 shadow-2xl transform transition-transform duration-300 ease-in-out ${
           sidebarOpen ? "translate-x-0" : "translate-x-full"
-        } lg:translate-x-0 lg:static lg:inset-0 lg:left-0 lg:right-auto border-l lg:border-l-0 lg:border-r border-purple-500`}
+        } lg:translate-x-0 lg:static lg:inset-0 lg:left-0 lg:right-auto border-l lg:border-l-0 lg:border-r border-purple-500 dark:border-purple-900/50`}
       >
         <div className="flex flex-col h-full">
           {/* Spacer to push content to bottom */}
@@ -141,10 +142,10 @@ export default function DashboardShell({ children }) {
                 onClick={(e) => !item.available && e.preventDefault()}
                 className={`flex items-center justify-between px-3 py-2 text-sm font-medium rounded-xl transition-all duration-200 ${
                   item.active
-                    ? "bg-white/20 text-white shadow-lg backdrop-blur-sm"
+                    ? "bg-white/20 dark:bg-white/10 text-white shadow-lg backdrop-blur-sm"
                     : item.available
-                      ? "text-white/80 hover:bg-white hover:text-purple-700 hover:shadow-md"
-                      : "text-white/50 cursor-not-allowed"
+                      ? "text-white/80 hover:bg-white dark:hover:bg-white/20 hover:text-purple-700 dark:hover:text-purple-300 hover:shadow-md"
+                      : "text-white/50 dark:text-white/30 cursor-not-allowed"
                 }`}
               >
                 <div className="flex items-center">
@@ -152,7 +153,7 @@ export default function DashboardShell({ children }) {
                   {item.name}
                 </div>
                 {!item.available && (
-                  <span className="bg-white/20 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-md border border-white/30">
+                  <span className="bg-white/20 dark:bg-white/10 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-md border border-white/30 dark:border-white/20">
                     Bald
                   </span>
                 )}
@@ -160,13 +161,21 @@ export default function DashboardShell({ children }) {
             ))}
           </nav>
 
+          {/* Theme Toggle */}
+          <div className="px-4 pb-3">
+            <ThemeToggle />
+          </div>
+
           {/* Attribution Footer */}
-          <div className="px-4 pb-3 pt-3 border-t border-white/10">
-            <p className="text-[11px] text-white/60 text-center leading-snug">
-              Made with <span className="text-white/80">♥</span> for German
-              learners
+          <div className="px-4 pb-3 pt-3 border-t border-white/10 dark:border-white/5">
+            <p className="text-[11px] text-white/60 dark:text-white/50 text-center leading-snug">
+              Made with{" "}
+              <span className="text-white/80 dark:text-white/70">♥</span> for
+              German learners
               <br />
-              <span className="text-white/40">© Raphaella 2025</span>
+              <span className="text-white/40 dark:text-white/30">
+                © Raphaella 2025
+              </span>
             </p>
           </div>
         </div>

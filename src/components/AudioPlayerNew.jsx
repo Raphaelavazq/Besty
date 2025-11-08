@@ -246,12 +246,12 @@ export default function AudioPlayer({
           {/* Progress Bar */}
           <div className="flex-1">
             <div
-              className="relative w-full h-2 sm:h-3 bg-white/80 rounded-full cursor-pointer shadow-inner border border-white/50"
+              className="relative w-full h-2 sm:h-3 bg-white/80 dark:bg-white/20 rounded-full cursor-pointer shadow-inner border border-white/50 dark:border-purple-500/30"
               onClick={handleTimelineClick}
             >
               {/* Progress Fill */}
               <div
-                className={`absolute top-0 left-0 h-2 sm:h-3 bg-gradient-to-r from-purple-800 to-indigo-900 rounded-full transition-all duration-150 shadow-sm ${
+                className={`absolute top-0 left-0 h-2 sm:h-3 bg-gradient-to-r from-purple-800 dark:from-purple-600 to-indigo-900 dark:to-indigo-700 rounded-full transition-all duration-150 shadow-sm ${
                   isPlaying ? "animate-pulse" : ""
                 }`}
                 style={{ width: `${progressPercentage}%` }}
@@ -259,14 +259,14 @@ export default function AudioPlayer({
 
               {/* Progress Handle */}
               <div
-                className="absolute top-0 w-4 h-4 sm:w-5 sm:h-5 bg-white shadow-lg transform -translate-x-2 -translate-y-1 sm:-translate-x-2.5 sm:-translate-y-1 rounded-full border-2 border-purple-500 transition-all duration-150"
+                className="absolute top-0 w-4 h-4 sm:w-5 sm:h-5 bg-white dark:bg-dark-text-primary shadow-lg transform -translate-x-2 -translate-y-1 sm:-translate-x-2.5 sm:-translate-y-1 rounded-full border-2 border-purple-500 dark:border-purple-400 transition-all duration-150"
                 style={{ left: `${progressPercentage}%` }}
               />
             </div>
           </div>
 
           {/* Volume Control - Only visible on hover */}
-          <div className="flex-shrink-0 flex items-center gap-2 sm:gap-3 bg-white/80 backdrop-blur-sm px-3 py-2 sm:px-4 sm:py-2 rounded-xl border border-white/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          <div className="flex-shrink-0 flex items-center gap-2 sm:gap-3 bg-white/80 dark:bg-white/10 backdrop-blur-sm px-3 py-2 sm:px-4 sm:py-2 rounded-xl border border-white/50 dark:border-purple-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
             <button
               onClick={toggleMute}
               className="w-6 h-6 sm:w-8 sm:h-8 bg-slate-100 hover:bg-slate-200 rounded-lg flex items-center justify-center transition-colors"
@@ -320,10 +320,10 @@ export default function AudioPlayer({
                 onClick={() => handleQuestionMarkerClick(question.timestamp)}
                 className={`flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-xl text-center transition-all duration-200 transform active:scale-95 hover:scale-105 ${
                   isCurrent
-                    ? "bg-gradient-to-br from-yellow-400 to-orange-500 text-white shadow-lg ring-2 ring-yellow-300"
+                    ? "bg-gradient-to-br from-yellow-400 to-orange-500 text-white shadow-lg ring-2 ring-yellow-300 dark:ring-yellow-500"
                     : isAnswered
-                      ? "bg-gradient-to-br from-purple-500 to-purple-700 text-white shadow-lg"
-                      : "bg-white/90 text-slate-600 hover:bg-purple-50 shadow-md border border-white/70"
+                      ? "bg-gradient-to-br from-purple-500 to-purple-700 dark:from-purple-600 dark:to-purple-800 text-white shadow-lg"
+                      : "bg-white/90 dark:bg-white/10 text-slate-600 dark:text-dark-text-primary hover:bg-purple-50 dark:hover:bg-white/20 shadow-md border border-white/70 dark:border-purple-500/30"
                 }`}
                 title={`Frage ${index + 1} - Klicken Sie hier um zu dieser Frage zu springen`}
                 style={{ minWidth: 44, minHeight: 44 }} // Ensure 44px touch target

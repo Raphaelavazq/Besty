@@ -86,10 +86,12 @@ export default function HoerenPruefung() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary flex items-center justify-center">
         <div className="text-center">
-          <div className="w-16 h-16 border-4 border-purple-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-gray-600">Test wird geladen...</p>
+          <div className="w-16 h-16 border-4 border-purple-600 dark:border-purple-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <p className="text-gray-600 dark:text-dark-text-secondary">
+            Test wird geladen...
+          </p>
         </div>
       </div>
     );
@@ -97,12 +99,14 @@ export default function HoerenPruefung() {
 
   if (!testData || allItems.length === 0) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary flex items-center justify-center">
         <div className="text-center">
-          <p className="text-red-600 text-lg mb-4">Test nicht gefunden</p>
+          <p className="text-red-600 dark:text-red-400 text-lg mb-4">
+            Test nicht gefunden
+          </p>
           <button
             onClick={handleBackClick}
-            className="px-6 py-3 bg-purple-600 text-white rounded-xl hover:bg-purple-700"
+            className="px-6 py-3 bg-purple-600 dark:bg-purple-500 text-white rounded-xl hover:bg-purple-700 dark:hover:bg-purple-600"
           >
             Zurück
           </button>
@@ -145,39 +149,41 @@ export default function HoerenPruefung() {
   // Results screen
   if (state.isComplete && score) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50 py-12 px-4">
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary py-12 px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl p-12 text-center border border-purple-100">
+          <div className="bg-white/90 dark:bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl p-12 text-center border border-purple-200 dark:border-purple-400/40">
             <div className="mb-8">
               <div
                 className={`w-24 h-24 rounded-full mx-auto mb-6 flex items-center justify-center ${
-                  score.passed ? "bg-green-100" : "bg-red-100"
+                  score.passed
+                    ? "bg-green-100 dark:bg-green-900/30"
+                    : "bg-red-100 dark:bg-red-900/30"
                 }`}
               >
                 {score.passed ? (
-                  <CheckCircle className="w-12 h-12 text-green-600" />
+                  <CheckCircle className="w-12 h-12 text-green-600 dark:text-green-400" />
                 ) : (
                   <span className="text-4xl">📖</span>
                 )}
               </div>
 
-              <h1 className="text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4">
+              <h1 className="text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-400 dark:to-indigo-400 bg-clip-text text-transparent mb-4">
                 {score.passed ? "Bestanden!" : "Nicht bestanden"}
               </h1>
 
-              <p className="text-2xl text-gray-600 mb-2">
+              <p className="text-2xl text-gray-600 dark:text-dark-text-secondary mb-2">
                 {score.correct} von {score.total} richtig
               </p>
 
-              <p className="text-4xl font-bold text-purple-600 mb-4">
+              <p className="text-4xl font-bold text-purple-600 dark:text-purple-400 mb-4">
                 {score.percentage}%
               </p>
 
-              <p className="text-xl text-gray-700 mb-2">
+              <p className="text-xl text-gray-700 dark:text-dark-text-primary mb-2">
                 {calculateLevel(score.percentage)}
               </p>
 
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-gray-600 dark:text-dark-text-secondary">
                 {getFeedbackMessage(score)}
               </p>
             </div>
@@ -188,14 +194,14 @@ export default function HoerenPruefung() {
                   triggerHaptic();
                   actions.resetEngine();
                 }}
-                className="px-8 py-4 rounded-xl bg-purple-600 text-white font-bold hover:bg-purple-700 transition-colors"
+                className="px-8 py-4 rounded-xl bg-purple-600 dark:bg-purple-500 text-white font-bold hover:bg-purple-700 dark:hover:bg-purple-600 transition-colors"
               >
                 Nochmal versuchen
               </button>
 
               <button
                 onClick={handleBackClick}
-                className="px-8 py-4 rounded-xl bg-white text-purple-600 font-bold border-2 border-purple-600 hover:bg-purple-50 transition-colors"
+                className="px-8 py-4 rounded-xl bg-white dark:bg-white/10 text-purple-600 dark:text-purple-400 font-bold border-2 border-purple-600 dark:border-purple-400 hover:bg-purple-50 dark:hover:bg-white/20 transition-colors"
               >
                 Zurück zur Übersicht
               </button>
@@ -208,16 +214,16 @@ export default function HoerenPruefung() {
 
   // Test screen
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50 py-8 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary py-8 px-4">
       {/* Header with timer */}
       <div className="max-w-4xl mx-auto mb-6">
-        <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-lg p-4 border border-purple-100">
+        <div className="bg-white/90 dark:bg-white/10 backdrop-blur-md rounded-2xl shadow-lg p-4 border border-purple-200 dark:border-purple-400/40">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">
+              <h1 className="text-2xl font-bold text-gray-900 dark:text-dark-text-primary">
                 {testData.title}
               </h1>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-gray-600 dark:text-dark-text-secondary">
                 Hören • {currentItem.teil}. Teil
               </p>
             </div>
@@ -226,15 +232,15 @@ export default function HoerenPruefung() {
               <div className="text-right">
                 <div className="flex items-center gap-2">
                   <Clock
-                    className={`w-5 h-5 ${state.timeRemaining < 300 ? "text-red-600" : "text-purple-600"}`}
+                    className={`w-5 h-5 ${state.timeRemaining < 300 ? "text-red-600 dark:text-red-400" : "text-purple-600 dark:text-purple-400"}`}
                   />
                   <div className="flex flex-col">
                     <span
-                      className={`text-xl font-bold ${state.timeRemaining < 300 ? "text-red-600" : "text-gray-900"}`}
+                      className={`text-xl font-bold ${state.timeRemaining < 300 ? "text-red-600 dark:text-red-400" : "text-gray-900 dark:text-dark-text-primary"}`}
                     >
                       {formatTime(state.timeRemaining || 0)}
                     </span>
-                    <span className="text-xs text-gray-500">
+                    <span className="text-xs text-gray-500 dark:text-dark-text-muted">
                       Frage {state.currentItemIndex + 1} von {allItems.length}
                     </span>
                   </div>

@@ -182,17 +182,17 @@ export default function BildBeschreiben() {
   const clearSearch = () => setSearchQuery("");
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary">
       {/* Header */}
-      <div className="bg-white/80 backdrop-blur-md border-b border-purple-100 shadow-sm sticky top-0 z-10">
+      <div className="bg-white/80 dark:bg-white/5 backdrop-blur-md border-b border-purple-100 dark:border-purple-500/20 shadow-sm sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <Link
               to="/tests/sprechen"
-              className="w-10 h-10 rounded-full bg-white hover:bg-purple-50 border border-purple-100 hover:border-purple-300 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 group shadow-sm"
+              className="w-10 h-10 rounded-full bg-white dark:bg-dark-bg-secondary hover:bg-purple-50 dark:hover:bg-purple-900/30 border border-purple-100 dark:border-purple-500/30 hover:border-purple-300 dark:hover:border-purple-500/50 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 group shadow-sm"
               aria-label="Zurück zu Sprechen Tests"
             >
-              <ArrowLeft className="w-5 h-5 text-purple-600 group-hover:-translate-x-0.5 transition-transform duration-200" />
+              <ArrowLeft className="w-5 h-5 text-purple-600 dark:text-purple-400 group-hover:-translate-x-0.5 transition-transform duration-200" />
             </Link>
           </div>
         </div>
@@ -205,7 +205,7 @@ export default function BildBeschreiben() {
           <GradientHeading level="h1" className="mb-4">
             DTZ B1 Bild beschreiben
           </GradientHeading>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 dark:text-dark-text-secondary max-w-3xl mx-auto leading-relaxed">
             Üben Sie die Bildbeschreibung für die DTZ-Prüfung Teil 2. Wählen Sie
             ein Thema und hören Sie sich Beispielantworten an.
           </p>
@@ -221,13 +221,13 @@ export default function BildBeschreiben() {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Suche nach Thema, Kategorie oder Dialog-Nummer..."
-              className="w-full pl-12 pr-12 py-4 bg-white/80 backdrop-blur-md rounded-2xl border border-purple-100 focus:border-purple-300 focus:ring-2 focus:ring-purple-500 focus:ring-opacity-20 transition-all duration-200 text-gray-900 placeholder-gray-400 shadow-sm hover:shadow-md"
+              placeholder="Suche nach Thema..."
+              className="w-full pl-12 pr-12 py-4 bg-white/80 dark:bg-white/5 backdrop-blur-md rounded-2xl border border-purple-100 dark:border-purple-500/30 focus:border-purple-300 dark:focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500 focus:ring-opacity-20 transition-all duration-200 text-gray-900 dark:text-dark-text-primary placeholder-gray-400 dark:placeholder-dark-text-muted shadow-sm hover:shadow-md"
             />
             {searchQuery && (
               <button
                 onClick={clearSearch}
-                className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600 transition-colors"
+                className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 dark:text-dark-text-muted hover:text-gray-600 dark:hover:text-dark-text-secondary transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -235,13 +235,13 @@ export default function BildBeschreiben() {
           </div>
           {searchQuery && (
             <div className="mt-3 text-center">
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-gray-600 dark:text-dark-text-secondary">
                 {filteredThemes.length === 0 ? (
-                  <span className="text-red-600 font-medium">
+                  <span className="text-red-600 dark:text-red-400 font-medium">
                     Keine Ergebnisse gefunden für "{searchQuery}"
                   </span>
                 ) : (
-                  <span className="text-purple-600 font-medium">
+                  <span className="text-purple-600 dark:text-purple-400 font-medium">
                     {filteredThemes.length}{" "}
                     {filteredThemes.length === 1
                       ? "Thema gefunden"
@@ -254,31 +254,31 @@ export default function BildBeschreiben() {
         </div>
 
         {/* Info Banner */}
-        <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-purple-100 mb-12">
+        <div className="bg-white/80 dark:bg-white/5 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-purple-100 dark:border-purple-500/20 mb-12">
           <div className="flex items-start gap-4">
             <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0">
               <ImageIcon className="w-6 h-6 text-white" />
             </div>
             <div className="flex-1">
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-dark-text-primary mb-2">
                 Wie funktioniert die Bildbeschreibung?
               </h3>
-              <ul className="space-y-2 text-gray-600">
+              <ul className="space-y-2 text-gray-600 dark:text-dark-text-secondary">
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
                   <span>
                     Sie haben 1-2 Minuten Zeit, um ein Bild zu beschreiben
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
                   <span>
                     Beschreiben Sie, was Sie sehen: Personen, Ort, Handlung,
                     Stimmung
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
                   <span>
                     Stellen Sie Vermutungen an oder erzählen Sie von eigenen
                     Erfahrungen
@@ -291,10 +291,10 @@ export default function BildBeschreiben() {
 
         {/* Section Title */}
         <div className="mb-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-2">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-dark-text-primary mb-2">
             Themen für Bildbeschreibung
           </h2>
-          <p className="text-gray-600">
+          <p className="text-gray-600 dark:text-dark-text-secondary">
             {filteredThemes.length}{" "}
             {filteredThemes.length === 1 ? "Thema" : "Themen"}{" "}
             {searchQuery ? "gefunden" : "verfügbar"}
@@ -307,10 +307,10 @@ export default function BildBeschreiben() {
             <div className="w-24 h-24 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6 opacity-20">
               <Search className="w-12 h-12 text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-dark-text-primary mb-3">
               Keine Themen gefunden
             </h3>
-            <p className="text-gray-600 mb-6 max-w-md mx-auto">
+            <p className="text-gray-600 dark:text-dark-text-secondary mb-6 max-w-md mx-auto">
               Versuchen Sie eine andere Suche oder löschen Sie den Suchbegriff.
             </p>
             <button
@@ -329,7 +329,7 @@ export default function BildBeschreiben() {
                 <Link
                   key={theme.id}
                   to={`/tests/sprechen/bild-beschreiben/${theme.id}/gallery`}
-                  className="group bg-white/80 backdrop-blur-md rounded-2xl p-4 shadow-sm border border-purple-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-200"
+                  className="group bg-white/80 dark:bg-white/5 backdrop-blur-md rounded-2xl p-4 shadow-sm border border-purple-100 dark:border-purple-500/20 hover:shadow-lg hover:-translate-y-1 transition-all duration-200"
                 >
                   {/* Icon and Badge */}
                   <div className="flex items-center justify-between mb-3">
@@ -338,23 +338,25 @@ export default function BildBeschreiben() {
                     >
                       <IconComponent className="w-5 h-5 text-white" />
                     </div>
-                    <div className="text-xs font-bold text-purple-600 bg-purple-50 px-2.5 py-1 rounded-full">
+                    <div className="text-xs font-bold text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/30 px-2.5 py-1 rounded-full">
                       {theme.imageCount}{" "}
                       {theme.imageCount === 1 ? "Bild" : "Bilder"}
                     </div>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-sm font-bold text-gray-900 mb-1 line-clamp-2 group-hover:text-purple-600 transition-colors">
+                  <h3 className="text-sm font-bold text-gray-900 dark:text-dark-text-primary mb-1 line-clamp-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                     {theme.name}
                   </h3>
 
                   {/* Category */}
-                  <p className="text-xs text-gray-600 mb-3">{theme.category}</p>
+                  <p className="text-xs text-gray-600 dark:text-dark-text-secondary mb-3">
+                    {theme.category}
+                  </p>
 
                   {/* View Button */}
-                  <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-                    <span className="text-xs text-purple-600 font-semibold group-hover:text-purple-700">
+                  <div className="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-gray-700">
+                    <span className="text-xs text-purple-600 dark:text-purple-400 font-semibold group-hover:text-purple-700 dark:group-hover:text-purple-300">
                       Bilder ansehen
                     </span>
                     <div className="w-6 h-6 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-200">
@@ -369,8 +371,8 @@ export default function BildBeschreiben() {
 
         {/* Info footer */}
         <div className="mt-12 text-center">
-          <div className="inline-block bg-white/80 backdrop-blur-md rounded-2xl px-6 py-4 shadow-lg border border-purple-100">
-            <p className="text-gray-600">
+          <div className="inline-block bg-white/80 dark:bg-white/5 backdrop-blur-md rounded-2xl px-6 py-4 shadow-lg border border-purple-100 dark:border-purple-500/20">
+            <p className="text-gray-600 dark:text-dark-text-secondary">
               💡 <strong>Tipp:</strong> Sie können für jedes Thema später
               weitere Bilder hinzufügen
             </p>

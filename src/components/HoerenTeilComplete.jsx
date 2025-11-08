@@ -210,9 +210,11 @@ export default function HoerenTeilComplete() {
               />
             </svg>
           </div>
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 p-8">
-            <div className="animate-spin rounded-full h-8 w-8 border-3 border-slate-200 border-t-blue-600 mx-auto mb-4"></div>
-            <p className="text-slate-600 font-medium">Lade Hörprüfung...</p>
+          <div className="bg-white/80 dark:bg-white/10 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 dark:border-purple-500/30 p-8">
+            <div className="animate-spin rounded-full h-8 w-8 border-3 border-slate-200 dark:border-slate-700 border-t-blue-600 dark:border-t-blue-400 mx-auto mb-4"></div>
+            <p className="text-slate-600 dark:text-dark-text-secondary font-medium">
+              Lade Hörprüfung...
+            </p>
           </div>
         </div>
       </div>
@@ -220,7 +222,7 @@ export default function HoerenTeilComplete() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-3">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary p-3">
       <div className="max-w-7xl mx-auto">
         {/* Main Content - Split Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 h-screen">
@@ -245,7 +247,7 @@ export default function HoerenTeilComplete() {
           {/* Right Side - Question Cards (2/3 width) */}
           <div className="lg:col-span-2">
             {currentQuestion ? (
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-6 h-full overflow-y-auto">
+              <div className="bg-white/95 dark:bg-white/10 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 dark:border-purple-500/30 p-6 h-full overflow-y-auto">
                 {/* Streamlined Header */}
                 <div className="text-center mb-6">
                   <div className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-full px-6 py-3 border border-purple-200/50">
@@ -360,11 +362,11 @@ export default function HoerenTeilComplete() {
               </div>
             ) : (
               /* No Current Question */
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 p-8 text-center h-full flex items-center justify-center">
-                <div className="text-slate-500 max-w-md mx-auto">
-                  <div className="w-20 h-20 bg-gradient-to-br from-purple-100 to-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <div className="bg-white/95 dark:bg-white/10 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 dark:border-purple-500/30 p-8 text-center h-full flex items-center justify-center">
+                <div className="text-slate-500 dark:text-dark-text-muted max-w-md mx-auto">
+                  <div className="w-20 h-20 bg-gradient-to-br from-purple-100 dark:from-purple-900/30 to-indigo-100 dark:to-indigo-900/30 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
                     <svg
-                      className="w-10 h-10 text-purple-600"
+                      className="w-10 h-10 text-purple-600 dark:text-purple-400"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -377,10 +379,10 @@ export default function HoerenTeilComplete() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold mb-3 text-slate-800">
+                  <h3 className="text-2xl font-bold mb-3 text-slate-800 dark:text-dark-text-primary">
                     Warten auf nächste Frage...
                   </h3>
-                  <p className="text-slate-600 mb-4 leading-relaxed">
+                  <p className="text-slate-600 dark:text-dark-text-secondary mb-4 leading-relaxed">
                     Die Fragen erscheinen automatisch zur richtigen Zeit während
                     der Audiowiedergabe.
                   </p>

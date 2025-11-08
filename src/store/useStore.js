@@ -31,6 +31,26 @@ export const useStore = create(
         theme: "light",
         language: "de",
       },
+
+      // Theme actions
+      toggleTheme: () => {
+        const current = get().preferences.theme;
+        set({
+          preferences: {
+            ...get().preferences,
+            theme: current === "light" ? "dark" : "light",
+          },
+        });
+      },
+
+      setTheme: (theme) => {
+        set({
+          preferences: {
+            ...get().preferences,
+            theme,
+          },
+        });
+      },
     }),
     {
       name: "b1-bestie-storage",

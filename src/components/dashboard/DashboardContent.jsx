@@ -57,7 +57,7 @@ export default function DashboardContent() {
       <div className="flex-1 overflow-y-auto space-y-6 pr-2">
         {/* Exam Parts */}
         <div>
-          <h2 className="text-lg font-bold text-gray-900 mb-4">
+          <h2 className="text-lg font-bold text-gray-900 dark:text-dark-text-primary mb-4">
             Prüfungsteile
           </h2>
           <div className="grid grid-cols-2 xl:grid-cols-4 gap-3">
@@ -65,29 +65,33 @@ export default function DashboardContent() {
               <Link
                 key={part.title}
                 to={part.available ? part.href : "#"}
-                className={`bg-white/80 backdrop-blur-md rounded-2xl p-4 shadow-sm border border-purple-100 transition-all duration-300 group relative ${
+                className={`backdrop-blur-md rounded-2xl p-4 shadow-lg border transition-all duration-300 group relative ${
                   part.available
-                    ? "hover:shadow-lg hover:-translate-y-1 cursor-pointer"
-                    : "opacity-75 cursor-not-allowed"
+                    ? "bg-white/90 dark:bg-white/10 border-purple-200 dark:border-purple-400/40 hover:shadow-xl hover:-translate-y-1 hover:border-purple-300 dark:hover:border-purple-400/60 cursor-pointer"
+                    : "bg-white/60 dark:bg-white/5 border-gray-200 dark:border-gray-600/30 opacity-70 cursor-not-allowed"
                 }`}
                 onClick={(e) => !part.available && e.preventDefault()}
               >
                 {/* Bald Badge */}
                 {!part.available && (
-                  <div className="absolute top-3 right-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-[10px] font-bold px-2 py-1 rounded-lg shadow-md">
+                  <div className="absolute top-3 right-3 bg-gradient-to-r from-gray-400 to-gray-500 text-white text-[10px] font-bold px-2 py-1 rounded-lg shadow-md">
                     Bald
                   </div>
                 )}{" "}
                 <div
-                  className={`w-10 h-10 bg-gradient-to-r ${part.color} rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                  className={`w-10 h-10 bg-gradient-to-r ${part.color} rounded-lg flex items-center justify-center mb-3 transition-transform duration-300 shadow-lg ${
+                    part.available ? "group-hover:scale-110" : "opacity-50"
+                  }`}
                 >
                   <part.icon size={20} className="text-white" />
                 </div>
-                <h3 className="text-sm font-bold text-gray-900 mb-1">
+                <h3 className="text-sm font-bold text-gray-900 dark:text-dark-text-primary mb-1">
                   {part.title}
                 </h3>
-                <p className="text-xs text-purple-600 mb-2">{part.subtitle}</p>
-                <p className="text-xs text-gray-600 line-clamp-2 mb-2">
+                <p className="text-xs text-purple-600 dark:text-purple-300 mb-2 font-semibold">
+                  {part.subtitle}
+                </p>
+                <p className="text-xs text-gray-600 dark:text-dark-text-secondary line-clamp-2 mb-2">
                   {part.description}
                 </p>
                 {/* Arrow indicator for available items */}
@@ -103,7 +107,9 @@ export default function DashboardContent() {
 
         {/* Themes Grid - All 20 Real Themes */}
         <div>
-          <h2 className="text-xl font-bold text-gray-900 mb-4">Themen</h2>
+          <h2 className="text-xl font-bold text-gray-900 dark:text-dark-text-primary mb-4">
+            Themen
+          </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
             {allThemes.map((theme) => {
               const IconComponent =
@@ -112,17 +118,17 @@ export default function DashboardContent() {
                 <Link
                   key={theme.id}
                   to={`/themes/${theme.id}`}
-                  className="bg-white/80 backdrop-blur-md rounded-2xl p-4 shadow-sm border border-purple-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
+                  className="bg-white/90 dark:bg-white/10 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-purple-200 dark:border-purple-400/40 hover:shadow-xl hover:border-purple-300 dark:hover:border-purple-400/60 transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
                 >
                   <div
                     className={`w-10 h-10 bg-gradient-to-r ${theme.color} rounded-xl mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg flex items-center justify-center`}
                   >
                     <IconComponent className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="text-sm font-bold text-gray-900 mb-1 line-clamp-2">
+                  <h3 className="text-sm font-bold text-gray-900 dark:text-dark-text-primary mb-1 line-clamp-2">
                     {theme.name}
                   </h3>
-                  <p className="text-purple-600 text-xs font-semibold">
+                  <p className="text-purple-600 dark:text-purple-300 text-xs font-bold">
                     {theme.questionCount} Übungen
                   </p>
                 </Link>

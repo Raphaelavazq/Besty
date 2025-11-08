@@ -181,13 +181,13 @@ export default function HoerenPlayer({
     <div className="max-w-4xl mx-auto">
       {/* Audio Error Banner */}
       {audioError && (
-        <div className="bg-red-100 border-2 border-red-300 rounded-xl p-4 mb-4 flex items-start gap-3">
-          <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+        <div className="bg-red-100 dark:bg-red-900/30 border-2 border-red-300 dark:border-red-500/50 rounded-xl p-4 mb-4 flex items-start gap-3">
+          <AlertCircle className="w-5 h-5 text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5" />
           <div>
-            <p className="text-red-800 font-medium text-sm lg:text-base">
+            <p className="text-red-800 dark:text-red-200 font-medium text-sm lg:text-base">
               Audio konnte nicht geladen werden
             </p>
-            <p className="text-red-700 text-xs lg:text-sm mt-1">
+            <p className="text-red-700 dark:text-red-300 text-xs lg:text-sm mt-1">
               Überprüfe deine Internetverbindung und versuche es erneut.
             </p>
           </div>
@@ -196,28 +196,28 @@ export default function HoerenPlayer({
 
       {/* Audio Player - Hides on scroll down, shows on scroll up */}
       <div
-        className={`sticky top-0 z-20 bg-white/95 backdrop-blur-md rounded-2xl lg:rounded-3xl shadow-lg p-4 lg:p-8 mb-4 lg:mb-6 border transition-all duration-300 ${
+        className={`sticky top-0 z-20 bg-white/95 dark:bg-white/10 backdrop-blur-md rounded-2xl lg:rounded-3xl shadow-lg p-4 lg:p-8 mb-4 lg:mb-6 border transition-all duration-300 ${
           isPlaying
-            ? "border-purple-400 shadow-purple-200 shadow-xl"
-            : "border-purple-100"
+            ? "border-purple-400 dark:border-purple-500/60 shadow-purple-200 dark:shadow-purple-900/50 shadow-xl"
+            : "border-purple-200 dark:border-purple-400/40"
         } ${hideAudioPlayer ? "-translate-y-full opacity-0 pointer-events-none" : "translate-y-0 opacity-100"}`}
       >
         {/* Compact Header - Mobile */}
         <div className="flex items-center justify-between mb-3 lg:mb-6">
           <div className="flex items-center gap-2 lg:gap-3 min-w-0 flex-1">
-            <Volume2 className="w-5 h-5 lg:w-6 lg:h-6 text-purple-600 flex-shrink-0" />
+            <Volume2 className="w-5 h-5 lg:w-6 lg:h-6 text-purple-600 dark:text-purple-400 flex-shrink-0" />
             <div className="min-w-0 flex-1">
-              <h3 className="text-sm lg:text-lg font-bold text-gray-900 truncate">
+              <h3 className="text-sm lg:text-lg font-bold text-gray-900 dark:text-dark-text-primary truncate">
                 Aufgabe {item.no || currentItemNumber}
               </h3>
-              <p className="text-xs lg:text-sm text-gray-500">
+              <p className="text-xs lg:text-sm text-gray-500 dark:text-dark-text-muted">
                 {currentItemNumber} von {totalItems}
               </p>
             </div>
           </div>
 
           {mode === "uebung" && (
-            <span className="px-2 lg:px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs lg:text-sm font-medium flex-shrink-0">
+            <span className="px-2 lg:px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-xs lg:text-sm font-medium flex-shrink-0">
               Übung
             </span>
           )}
@@ -245,14 +245,14 @@ export default function HoerenPlayer({
 
             {/* Time Display - Compact */}
             <div className="flex-1 min-w-0">
-              <div className="text-xs lg:text-sm text-gray-600 mb-1">
+              <div className="text-xs lg:text-sm text-gray-600 dark:text-dark-text-secondary mb-1">
                 {formatTime(currentTime)} / {formatTime(duration)}
               </div>
 
               {/* Progress Bar - Inline */}
-              <div className="w-full h-1.5 lg:h-2 bg-purple-100 rounded-full overflow-hidden">
+              <div className="w-full h-1.5 lg:h-2 bg-purple-100 dark:bg-purple-900/30 rounded-full overflow-hidden">
                 <div
-                  className={`h-full bg-gradient-to-r from-purple-600 to-indigo-600 transition-all ${
+                  className={`h-full bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 transition-all ${
                     isPlaying ? "animate-pulse" : ""
                   }`}
                   style={{
@@ -266,7 +266,7 @@ export default function HoerenPlayer({
             {allowReplay && hasPlayed && (
               <button
                 onClick={handleReplay}
-                className="w-10 h-10 lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-xl bg-purple-100 text-purple-700 hover:bg-purple-200 transition-colors flex items-center justify-center lg:gap-2 flex-shrink-0"
+                className="w-10 h-10 lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-xl bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-900/50 transition-colors flex items-center justify-center lg:gap-2 flex-shrink-0"
                 title="Nochmal hören"
               >
                 <RotateCcw className="w-4 h-4" />
@@ -287,11 +287,11 @@ export default function HoerenPlayer({
 
       {/* Statements Box (Teil 4 only) - Interactive & Compact */}
       {statements && item.type === "match" && (
-        <div className="bg-purple-50/80 backdrop-blur-md rounded-2xl lg:rounded-3xl shadow-lg p-4 lg:p-6 mb-4 lg:mb-6 border border-purple-200">
-          <h3 className="text-base lg:text-lg font-bold text-gray-900 mb-2 lg:mb-4">
+        <div className="bg-purple-50/80 dark:bg-white/10 backdrop-blur-md rounded-2xl lg:rounded-3xl shadow-lg p-4 lg:p-6 mb-4 lg:mb-6 border border-purple-200 dark:border-purple-400/40">
+          <h3 className="text-base lg:text-lg font-bold text-gray-900 dark:text-dark-text-primary mb-2 lg:mb-4">
             Aussagen zum Thema "Kinder und Internet"
           </h3>
-          <p className="text-xs lg:text-sm text-gray-600 mb-3 lg:mb-4">
+          <p className="text-xs lg:text-sm text-gray-600 dark:text-dark-text-secondary mb-3 lg:mb-4">
             Welche Aussage passt?
           </p>
           <div className="space-y-2 lg:space-y-3 max-w-full">
@@ -308,26 +308,26 @@ export default function HoerenPlayer({
                   disabled={showFeedback}
                   className={`w-full flex gap-2 lg:gap-3 p-3 lg:p-4 rounded-xl border-2 text-left text-sm lg:text-base transition-all break-words ${
                     isSelected && isCorrectOption
-                      ? "border-green-500 bg-green-50"
+                      ? "border-green-500 bg-green-50 dark:bg-green-900/30"
                       : isSelected && !isCorrectOption && showFeedback
-                        ? "border-red-500 bg-red-50"
+                        ? "border-red-500 bg-red-50 dark:bg-red-900/30"
                         : isSelected
-                          ? "border-purple-600 bg-purple-100"
+                          ? "border-purple-600 dark:border-purple-500 bg-purple-100 dark:bg-purple-900/30"
                           : isCorrectOption && showFeedback
-                            ? "border-green-500 bg-green-50"
-                            : "border-purple-200 bg-white/60 hover:border-purple-400 hover:bg-purple-50"
+                            ? "border-green-500 bg-green-50 dark:bg-green-900/30"
+                            : "border-purple-200 dark:border-purple-400/40 bg-white/60 dark:bg-white/5 hover:border-purple-400 dark:hover:border-purple-400/60 hover:bg-purple-50 dark:hover:bg-white/10"
                   } ${showFeedback ? "cursor-default" : "cursor-pointer"}`}
                 >
                   <span
                     className={`w-7 h-7 lg:w-8 lg:h-8 rounded-full flex items-center justify-center font-bold text-xs lg:text-sm flex-shrink-0 ${
                       isSelected
-                        ? "bg-purple-600 text-white"
-                        : "bg-purple-200 text-purple-900"
+                        ? "bg-purple-600 dark:bg-purple-500 text-white"
+                        : "bg-purple-200 dark:bg-purple-900/50 text-purple-900 dark:text-purple-300"
                     }`}
                   >
                     {optionValue}
                   </span>
-                  <p className="text-gray-800 leading-snug flex-1 break-words line-clamp-3">
+                  <p className="text-gray-800 dark:text-dark-text-primary leading-snug flex-1 break-words line-clamp-3">
                     {statement}
                   </p>
                   {showFeedback && isCorrectOption && (
@@ -346,8 +346,8 @@ export default function HoerenPlayer({
             <div
               className={`p-4 rounded-xl mt-4 ${
                 isCorrect
-                  ? "bg-green-100 text-green-800"
-                  : "bg-red-100 text-red-800"
+                  ? "bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200"
+                  : "bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-200"
               }`}
             >
               <p className="font-medium">
@@ -360,10 +360,10 @@ export default function HoerenPlayer({
 
           {/* Next Button for Teil 4 */}
           {selectedAnswer && (
-            <div className="sticky bottom-0 bg-gradient-to-t from-white via-white to-transparent pt-4 pb-2 -mx-4 px-4 sm:-mx-6 sm:px-6">
+            <div className="sticky bottom-0 bg-gradient-to-t from-white dark:from-dark-bg-primary via-white dark:via-dark-bg-primary to-transparent pt-4 pb-2 -mx-4 px-4 sm:-mx-6 sm:px-6">
               <button
                 onClick={onNext}
-                className="w-full py-3 lg:py-4 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold hover:shadow-lg transition-all hover:scale-105 active:scale-95"
+                className="w-full py-3 lg:py-4 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 text-white font-bold hover:shadow-lg transition-all hover:scale-105 active:scale-95"
               >
                 {currentItemNumber >= totalItems ? "Abschließen" : "Weiter →"}
               </button>
@@ -379,7 +379,7 @@ export default function HoerenPlayer({
             setHideAudioPlayer(false);
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
-          className="fixed top-4 right-4 z-30 w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-xl flex items-center justify-center hover:scale-110 transition-all active:scale-95"
+          className="fixed top-4 right-4 z-30 w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 text-white shadow-xl flex items-center justify-center hover:scale-110 transition-all active:scale-95"
           aria-label="Audio Player anzeigen"
         >
           {isPlaying ? (
@@ -393,22 +393,22 @@ export default function HoerenPlayer({
       {/* Question Card(s) - Hide for Teil 4 matching (statements shown above) */}
       {item.type !== "match" && (
         <div
-          className={`bg-white/80 backdrop-blur-md rounded-2xl lg:rounded-3xl shadow-lg p-4 sm:p-6 lg:p-8 border ${
+          className={`bg-white/90 dark:bg-white/10 backdrop-blur-md rounded-2xl lg:rounded-3xl shadow-lg p-4 sm:p-6 lg:p-8 border ${
             hideAudioPlayer
               ? "max-h-[calc(100vh-120px)]"
               : "max-h-[calc(100vh-200px)]"
           } overflow-y-auto ${
             isCorrect
-              ? "border-green-300 bg-green-50/50"
+              ? "border-green-300 dark:border-green-500/50 bg-green-50/50 dark:bg-green-900/20"
               : isWrong
-                ? "border-red-300 bg-red-50/50"
-                : "border-purple-100"
+                ? "border-red-300 dark:border-red-500/50 bg-red-50/50 dark:bg-red-900/20"
+                : "border-purple-200 dark:border-purple-400/40"
           }`}
         >
           {/* Teil 3 Pairing Indicator */}
           {pairedItem && (
-            <div className="mb-4 px-3 py-2 bg-purple-50 border border-purple-200 rounded-xl">
-              <p className="text-xs lg:text-sm text-purple-700 font-medium text-center">
+            <div className="mb-4 px-3 py-2 bg-purple-50 dark:bg-purple-900/30 border border-purple-200 dark:border-purple-500/40 rounded-xl">
+              <p className="text-xs lg:text-sm text-purple-700 dark:text-purple-300 font-medium text-center">
                 📎 Beide Fragen zu einem Audio • {item.no} & {pairedItem.no}
               </p>
             </div>
@@ -417,12 +417,16 @@ export default function HoerenPlayer({
           {/* First Question (or single question) */}
           <div
             className={
-              pairedItem ? "mb-6 pb-6 border-b-2 border-purple-100" : ""
+              pairedItem
+                ? "mb-6 pb-6 border-b-2 border-purple-100 dark:border-purple-500/30"
+                : ""
             }
           >
-            <h2 className="text-base lg:text-xl font-bold text-gray-900 mb-4 leading-snug">
+            <h2 className="text-base lg:text-xl font-bold text-gray-900 dark:text-dark-text-primary mb-4 leading-snug">
               {pairedItem && (
-                <span className="text-purple-600 mr-2">{item.no}.</span>
+                <span className="text-purple-600 dark:text-purple-400 mr-2">
+                  {item.no}.
+                </span>
               )}
               {item.question}
             </h2>
@@ -442,14 +446,14 @@ export default function HoerenPlayer({
                     disabled={showFeedback}
                     className={`flex-1 px-4 py-4 lg:px-6 lg:py-5 rounded-xl border-2 text-sm lg:text-base font-medium transition-all ${
                       isSelected && isCorrectOption
-                        ? "border-green-500 bg-green-50 text-green-900"
+                        ? "border-green-500 bg-green-50 dark:bg-green-900/30 text-green-900 dark:text-green-200"
                         : isSelected && showFeedback && !isCorrectOption
-                          ? "border-red-500 bg-red-50 text-red-900"
+                          ? "border-red-500 bg-red-50 dark:bg-red-900/30 text-red-900 dark:text-red-200"
                           : isSelected
-                            ? "border-purple-600 bg-gradient-to-r from-purple-600 to-indigo-600 text-white"
+                            ? "border-purple-600 dark:border-purple-500 bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 text-white"
                             : isCorrectOption && showFeedback
-                              ? "border-green-500 bg-green-50 text-green-900"
-                              : "border-gray-300 bg-white text-gray-700 hover:border-purple-400 hover:bg-purple-50"
+                              ? "border-green-500 bg-green-50 dark:bg-green-900/30 text-green-900 dark:text-green-200"
+                              : "border-gray-300 dark:border-purple-400/40 bg-white dark:bg-white/5 text-gray-700 dark:text-dark-text-primary hover:border-purple-400 dark:hover:border-purple-400/60 hover:bg-purple-50 dark:hover:bg-white/10"
                     } ${showFeedback ? "cursor-default" : "cursor-pointer"}`}
                   >
                     <div className="flex items-center justify-center gap-2">
@@ -471,8 +475,8 @@ export default function HoerenPlayer({
               <div
                 className={`p-3 lg:p-4 rounded-xl mt-3 lg:mt-4 ${
                   isCorrect
-                    ? "bg-green-100 text-green-800"
-                    : "bg-red-100 text-red-800"
+                    ? "bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200"
+                    : "bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-200"
                 }`}
               >
                 <p className="text-sm lg:text-base font-medium">
@@ -487,8 +491,10 @@ export default function HoerenPlayer({
           {/* Second Question (Teil 3 paired questions only) */}
           {pairedItem && (
             <div>
-              <h2 className="text-base lg:text-xl font-bold text-gray-900 mb-4 leading-snug">
-                <span className="text-purple-600 mr-2">{pairedItem.no}.</span>
+              <h2 className="text-base lg:text-xl font-bold text-gray-900 dark:text-dark-text-primary mb-4 leading-snug">
+                <span className="text-purple-600 dark:text-purple-400 mr-2">
+                  {pairedItem.no}.
+                </span>
                 {pairedItem.question}
               </h2>
 
@@ -510,20 +516,20 @@ export default function HoerenPlayer({
                       disabled={showFeedback}
                       className={`w-full p-3 lg:p-4 rounded-xl border-2 text-left text-sm lg:text-base font-medium transition-all ${
                         isSelected && showFeedback && isCorrectOption
-                          ? "border-green-500 bg-green-50 text-green-900"
+                          ? "border-green-500 bg-green-50 dark:bg-green-900/30 text-green-900 dark:text-green-200"
                           : isSelected && showFeedback && !isCorrectOption
-                            ? "border-red-500 bg-red-50 text-red-900"
+                            ? "border-red-500 bg-red-50 dark:bg-red-900/30 text-red-900 dark:text-red-200"
                             : isSelected
-                              ? "border-purple-600 bg-gradient-to-r from-purple-600 to-indigo-600 text-white"
+                              ? "border-purple-600 dark:border-purple-500 bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 text-white"
                               : isCorrectOption && showFeedback
-                                ? "border-green-500 bg-green-50 text-green-900"
-                                : "border-gray-300 bg-white text-gray-700 hover:border-purple-400 hover:bg-purple-50"
+                                ? "border-green-500 bg-green-50 dark:bg-green-900/30 text-green-900 dark:text-green-200"
+                                : "border-gray-300 dark:border-purple-400/40 bg-white dark:bg-white/5 text-gray-700 dark:text-dark-text-primary hover:border-purple-400 dark:hover:border-purple-400/60 hover:bg-purple-50 dark:hover:bg-white/10"
                       } ${showFeedback ? "cursor-default" : "cursor-pointer"}`}
                     >
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2 lg:gap-3 min-w-0 flex-1">
                           <span
-                            className={`text-xs lg:text-sm font-bold min-w-[18px] lg:min-w-[20px] flex-shrink-0 ${isSelected ? "text-white/80" : "text-gray-500"}`}
+                            className={`text-xs lg:text-sm font-bold min-w-[18px] lg:min-w-[20px] flex-shrink-0 ${isSelected ? "text-white/80" : "text-gray-500 dark:text-dark-text-muted"}`}
                           >
                             {optionValue})
                           </span>
@@ -531,10 +537,10 @@ export default function HoerenPlayer({
                         </div>
 
                         {showFeedback && isCorrectOption && (
-                          <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                          <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
                         )}
                         {showFeedback && isSelected && !isCorrectOption && (
-                          <XCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
+                          <XCircle className="w-5 h-5 text-red-600 dark:text-red-400 flex-shrink-0" />
                         )}
                       </div>
                     </button>
@@ -547,8 +553,8 @@ export default function HoerenPlayer({
                 <div
                   className={`p-3 lg:p-4 rounded-xl mt-3 lg:mt-4 ${
                     selectedAnswerPaired === pairedItem.correct
-                      ? "bg-green-100 text-green-800"
-                      : "bg-red-100 text-red-800"
+                      ? "bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200"
+                      : "bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-200"
                   }`}
                 >
                   <p className="text-sm lg:text-base font-medium">
@@ -566,10 +572,10 @@ export default function HoerenPlayer({
           {((pairedItem && selectedAnswer && selectedAnswerPaired) ||
             (!pairedItem && selectedAnswer) ||
             showFeedback) && (
-            <div className="sticky bottom-0 bg-gradient-to-t from-white via-white to-transparent pt-4 pb-1 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+            <div className="sticky bottom-0 bg-gradient-to-t from-white dark:from-dark-bg-primary via-white dark:via-dark-bg-primary to-transparent pt-4 pb-1 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
               <button
                 onClick={onNext}
-                className="w-full py-3 lg:py-4 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm lg:text-base font-bold hover:shadow-lg transition-all hover:scale-105 active:scale-95"
+                className="w-full py-3 lg:py-4 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 text-white text-sm lg:text-base font-bold hover:shadow-lg transition-all hover:scale-105 active:scale-95"
               >
                 {currentItemNumber >= totalItems ? "Abschließen" : "Weiter →"}
               </button>

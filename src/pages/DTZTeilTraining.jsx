@@ -97,34 +97,39 @@ export default function DTZTeilTraining() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary flex items-center justify-center">
         <div className="text-center">
-          <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
+          <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
             <Headphones size={24} className="text-white" />
           </div>
-          <p className="text-slate-600">Lade Teil-Tests...</p>
+          <p className="text-slate-600 dark:text-dark-text-secondary">
+            Lade Teil-Tests...
+          </p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary">
       <div className="max-w-6xl mx-auto p-6 space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center space-x-4">
             <Link
               to="/tests"
-              className="flex items-center justify-center w-10 h-10 rounded-xl bg-white/80 backdrop-blur-md shadow-lg border border-white/50 hover:bg-white transition-colors"
+              className="flex items-center justify-center w-10 h-10 rounded-xl bg-white/80 dark:bg-white/10 backdrop-blur-md shadow-lg border border-white/50 dark:border-purple-500/30 hover:bg-white dark:hover:bg-white/20 transition-colors"
             >
-              <ArrowLeft size={18} className="text-slate-600" />
+              <ArrowLeft
+                size={18}
+                className="text-slate-600 dark:text-dark-text-secondary"
+              />
             </Link>
             <div>
-              <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+              <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-400 dark:to-indigo-400 bg-clip-text text-transparent">
                 DTZ Teil Training
               </h1>
-              <p className="text-slate-600 mt-1">
+              <p className="text-slate-600 dark:text-dark-text-secondary mt-1">
                 Übe einzelne Teile der Hörprüfung
               </p>
             </div>
@@ -144,7 +149,7 @@ export default function DTZTeilTraining() {
               <Link
                 key={test.id}
                 to={`/synchronized-test/${test.id}`}
-                className="group block p-6 bg-white/80 backdrop-blur-md rounded-2xl shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="group block p-6 bg-white/80 dark:bg-white/5 backdrop-blur-md rounded-2xl shadow-lg border border-white/50 dark:border-purple-500/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="flex items-start space-x-4">
                   <div
@@ -153,15 +158,15 @@ export default function DTZTeilTraining() {
                     {getPartIcon(partId)}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-xl font-bold text-slate-800 mb-2 group-hover:text-purple-600 transition-colors">
+                    <h3 className="text-xl font-bold text-slate-800 dark:text-dark-text-primary mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                       Teil {partNumber}
                     </h3>
-                    <p className="text-slate-600 text-sm mb-3 leading-relaxed">
+                    <p className="text-slate-600 dark:text-dark-text-secondary text-sm mb-3 leading-relaxed">
                       {getPartDescription(partId)}
                     </p>
 
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4 text-slate-500">
+                      <div className="flex items-center space-x-4 text-slate-500 dark:text-dark-text-muted">
                         <div className="flex items-center space-x-1">
                           <Clock size={14} />
                           <span className="text-sm">{test.duration}</span>
@@ -174,7 +179,7 @@ export default function DTZTeilTraining() {
                         </div>
                       </div>
 
-                      <div className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">
+                      <div className="bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 px-3 py-1 rounded-full text-xs font-medium">
                         Lokal
                       </div>
                     </div>
@@ -188,13 +193,13 @@ export default function DTZTeilTraining() {
         {/* Fallback if no tests loaded */}
         {teilTests.length === 0 && !loading && (
           <div className="text-center py-12">
-            <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-4">
               <Headphones size={24} className="text-white" />
             </div>
-            <h3 className="text-xl font-semibold text-slate-800 mb-2">
+            <h3 className="text-xl font-semibold text-slate-800 dark:text-dark-text-primary mb-2">
               Keine Teil-Tests verfügbar
             </h3>
-            <p className="text-slate-600 mb-4">
+            <p className="text-slate-600 dark:text-dark-text-secondary mb-4">
               Die lokalen Audio-Dateien sind noch nicht vollständig
               konfiguriert.
             </p>

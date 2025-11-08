@@ -240,12 +240,7 @@
             "id": 1,
             "question": "Wann beginnen die Renovierungsarbeiten?",
             "text": "Wann beginnen die Renovierungsarbeiten?",
-            "options": [
-              "Sofort",
-              "Am 1. März",
-              "In 3 Wochen",
-              "Am Wochenende"
-            ],
+            "options": ["Sofort", "Am 1. März", "In 3 Wochen", "Am Wochenende"],
             "correctAnswer": 1,
             "explanation": "Im Text steht: 'ab dem 1. März werden ... die Treppenhäuser ... renoviert.'"
           },
@@ -279,12 +274,7 @@
             "id": 4,
             "question": "Wie lange dauern die Arbeiten?",
             "text": "Wie lange dauern die Arbeiten?",
-            "options": [
-              "1 Woche",
-              "2 Wochen",
-              "3 Wochen",
-              "1 Monat"
-            ],
+            "options": ["1 Woche", "2 Wochen", "3 Wochen", "1 Monat"],
             "correctAnswer": 2,
             "explanation": "Im Text steht: 'Die Arbeiten dauern voraussichtlich 3 Wochen.'"
           },
@@ -324,12 +314,7 @@
           {
             "id": 2,
             "text": "Wie lange ist die Bibliothek am Samstag geöffnet?",
-            "options": [
-              "4 Stunden",
-              "6 Stunden",
-              "8 Stunden",
-              "9 Stunden"
-            ],
+            "options": ["4 Stunden", "6 Stunden", "8 Stunden", "9 Stunden"],
             "correctAnswer": 1,
             "explanation": "Samstag 10:00 - 16:00 Uhr = 6 Stunden"
           },

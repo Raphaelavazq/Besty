@@ -41,7 +41,7 @@ export default function Section() {
       <div className="max-w-6xl mx-auto p-6">
         <Link
           to="/"
-          className="flex items-center gap-2 text-gray-600 hover:text-gray-900 mb-6"
+          className="flex items-center gap-2 text-gray-600 dark:text-dark-text-secondary hover:text-gray-900 dark:hover:text-dark-text-primary mb-6"
         >
           <ArrowLeft size={20} />
           Zurück zur Übersicht
@@ -55,15 +55,21 @@ export default function Section() {
               <Icon size={32} />
             </div>
             <div>
-              <h1 className="text-3xl font-bold">{section.title}</h1>
-              <p className="text-gray-600">{section.description}</p>
+              <h1 className="text-3xl font-bold dark:text-dark-text-primary">
+                {section.title}
+              </h1>
+              <p className="text-gray-600 dark:text-dark-text-secondary">
+                {section.description}
+              </p>
             </div>
           </div>
 
           {section.parts && (
-            <div className="bg-gray-50 rounded-lg p-4 mt-4">
-              <h3 className="font-semibold mb-2">Prüfungsteile:</h3>
-              <ul className="space-y-1 text-sm text-gray-700">
+            <div className="bg-gray-50 dark:bg-white/5 rounded-lg p-4 mt-4 border dark:border-purple-500/20">
+              <h3 className="font-semibold mb-2 dark:text-dark-text-primary">
+                Prüfungsteile:
+              </h3>
+              <ul className="space-y-1 text-sm text-gray-700 dark:text-dark-text-secondary">
                 {section.parts.map((part, idx) => (
                   <li key={idx}>• {part}</li>
                 ))}
@@ -82,15 +88,21 @@ export default function Section() {
               <div className="badge bg-primary/10 text-primary mb-2">
                 {item.level}
               </div>
-              <h3 className="font-semibold text-lg">{item.title}</h3>
-              <p className="text-sm text-gray-600 mt-1">{item.subtitle}</p>
-              <div className="text-xs text-gray-500 mt-3">{item.duration}</div>
+              <h3 className="font-semibold text-lg dark:text-dark-text-primary">
+                {item.title}
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-dark-text-secondary mt-1">
+                {item.subtitle}
+              </p>
+              <div className="text-xs text-gray-500 dark:text-dark-text-muted mt-3">
+                {item.duration}
+              </div>
             </Link>
           ))}
         </div>
 
         {content.length === 0 && (
-          <div className="text-center py-12 text-gray-500">
+          <div className="text-center py-12 text-gray-500 dark:text-dark-text-muted">
             Noch keine Inhalte für diesen Bereich verfügbar.
           </div>
         )}

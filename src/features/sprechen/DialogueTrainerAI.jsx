@@ -13,6 +13,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import {
   ArrowLeft,
   RotateCcw,
@@ -72,45 +73,119 @@ export default function DialogueTrainer() {
     let corrected = text.charAt(0).toUpperCase() + text.slice(1);
 
     // 2. Capitalize after sentence endings (. ! ?)
-    corrected = corrected.replace(/([.!?]\s+)([a-zäöüß])/g, (match, punctuation, letter) => {
-      return punctuation + letter.toUpperCase();
-    });
+    corrected = corrected.replace(
+      /([.!?]\s+)([a-zäöüß])/g,
+      (match, punctuation, letter) => {
+        return punctuation + letter.toUpperCase();
+      }
+    );
 
     // 3. Capitalize "Sie" and "Ihr/Ihre/Ihnen" (formal you) - but not "sie" (they/she)
     // Only capitalize when it's clearly formal context
-    corrected = corrected.replace(/\b(sie|ihr|ihre|ihnen|ihrem|ihrer)\b/gi, (match) => {
-      const lower = match.toLowerCase();
-      // Capitalize at start of sentence or after comma (likely formal)
-      return match.charAt(0).toUpperCase() + match.slice(1).toLowerCase();
-    });
+    corrected = corrected.replace(
+      /\b(sie|ihr|ihre|ihnen|ihrem|ihrer)\b/gi,
+      (match) => {
+        const lower = match.toLowerCase();
+        // Capitalize at start of sentence or after comma (likely formal)
+        return match.charAt(0).toUpperCase() + match.slice(1).toLowerCase();
+      }
+    );
 
     // 4. Capitalize all German nouns (common ones)
     const commonNouns = [
-      'arbeit', 'auto', 'bahnhof', 'bild', 'brief', 'büro', 'computer',
-      'deutsch', 'dialog', 'essen', 'familie', 'fenster', 'frage', 'frau',
-      'freund', 'freundin', 'garten', 'geld', 'haus', 'herr', 'hotel',
-      'information', 'kind', 'kino', 'kunde', 'land', 'leute', 'mann',
-      'monat', 'mutter', 'name', 'nummer', 'ort', 'person', 'platz',
-      'problem', 'punkt', 'raum', 'restaurant', 'schule', 'stadt', 'stelle',
-      'straße', 'tag', 'telefon', 'termin', 'text', 'tisch', 'tür',
-      'uhr', 'urlaub', 'vater', 'wagen', 'weg', 'welt', 'woche',
-      'wohnung', 'wort', 'zeit', 'zimmer', 'zug',
+      "arbeit",
+      "auto",
+      "bahnhof",
+      "bild",
+      "brief",
+      "büro",
+      "computer",
+      "deutsch",
+      "dialog",
+      "essen",
+      "familie",
+      "fenster",
+      "frage",
+      "frau",
+      "freund",
+      "freundin",
+      "garten",
+      "geld",
+      "haus",
+      "herr",
+      "hotel",
+      "information",
+      "kind",
+      "kino",
+      "kunde",
+      "land",
+      "leute",
+      "mann",
+      "monat",
+      "mutter",
+      "name",
+      "nummer",
+      "ort",
+      "person",
+      "platz",
+      "problem",
+      "punkt",
+      "raum",
+      "restaurant",
+      "schule",
+      "stadt",
+      "stelle",
+      "straße",
+      "tag",
+      "telefon",
+      "termin",
+      "text",
+      "tisch",
+      "tür",
+      "uhr",
+      "urlaub",
+      "vater",
+      "wagen",
+      "weg",
+      "welt",
+      "woche",
+      "wohnung",
+      "wort",
+      "zeit",
+      "zimmer",
+      "zug",
       // Days and months
-      'montag', 'dienstag', 'mittwoch', 'donnerstag', 'freitag', 'samstag', 'sonntag',
-      'januar', 'februar', 'märz', 'april', 'mai', 'juni', 'juli',
-      'august', 'september', 'oktober', 'november', 'dezember'
+      "montag",
+      "dienstag",
+      "mittwoch",
+      "donnerstag",
+      "freitag",
+      "samstag",
+      "sonntag",
+      "januar",
+      "februar",
+      "märz",
+      "april",
+      "mai",
+      "juni",
+      "juli",
+      "august",
+      "september",
+      "oktober",
+      "november",
+      "dezember",
     ];
 
-    commonNouns.forEach(noun => {
-      const regex = new RegExp(`\\b${noun}\\b`, 'gi');
+    commonNouns.forEach((noun) => {
+      const regex = new RegExp(`\\b${noun}\\b`, "gi");
       corrected = corrected.replace(regex, (match) => {
         return match.charAt(0).toUpperCase() + match.slice(1).toLowerCase();
       });
     });
 
     // 5. Capitalize "ich" at start of sentence only
-    corrected = corrected.replace(/^ich\b/i, 'Ich');
-    corrected = corrected.replace(/([.!?]\s+)ich\b/g, '$1Ich');
+    corrected = corrected.replace(/^ich\b/i, "Ich");
+    corrected = corrected.replace(/([.!?]\s+)ich\b/g, "$1Ich");
 
     return corrected;
   };
@@ -170,13 +245,13 @@ export default function DialogueTrainer() {
         // Get the latest result
         const lastResultIndex = event.results.length - 1;
         const result = event.results[lastResultIndex];
-        
+
         if (result.isFinal) {
           // Update with final transcript and auto-correct
           const transcript = result[0].transcript;
           const correctedText = autoCorrectGermanText(transcript);
           setUserInput(correctedText);
-          
+
           // Start silence timer - will stop recognition after delay
           silenceTimer = setTimeout(() => {
             if (recognitionInstance) {
@@ -193,7 +268,7 @@ export default function DialogueTrainer() {
 
       recognitionInstance.onerror = (event) => {
         console.error("Speech recognition error:", event.error);
-        if (event.error !== 'aborted' && event.error !== 'no-speech') {
+        if (event.error !== "aborted" && event.error !== "no-speech") {
           setIsListening(false);
         }
       };
@@ -372,7 +447,7 @@ export default function DialogueTrainer() {
 
       // Check if all discussion points are covered
       const exchanges = updatedHistory.filter((m) => m.role === "user").length;
-      
+
       // Analyze which points have been discussed so far
       const currentPoints = await analyzeDiscussedPoints(
         updatedHistory,
@@ -380,9 +455,10 @@ export default function DialogueTrainer() {
         scenarioId
       );
       setDiscussedPoints(currentPoints);
-      
-      const allPointsDiscussed = currentPoints.length >= scenario.leitpunkte.length;
-      
+
+      const allPointsDiscussed =
+        currentPoints.length >= scenario.leitpunkte.length;
+
       // If all points are discussed, generate natural closing from Besty
       if (allPointsDiscussed && exchanges >= 3) {
         // Generate a natural closing message
@@ -395,17 +471,17 @@ export default function DialogueTrainer() {
           currentPoints,
           scenarioId
         );
-        
+
         // Add Besty's closing message
         const finalHistory = [
           ...updatedHistory,
           { role: "assistant", content: closingMessage.message },
         ];
         setMessageHistory(finalHistory);
-        
+
         // Speak the closing
         speakText(closingMessage.message);
-        
+
         // Small delay before showing feedback
         setTimeout(async () => {
           // Get feedback
@@ -503,10 +579,12 @@ export default function DialogueTrainer() {
   // Loading state
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50">
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary">
         <div className="text-center">
-          <Loader2 className="w-16 h-16 text-purple-600 mx-auto mb-4 animate-spin" />
-          <p className="text-lg text-gray-600">Lade Dialog...</p>
+          <Loader2 className="w-16 h-16 text-purple-600 dark:text-purple-400 mx-auto mb-4 animate-spin" />
+          <p className="text-lg text-gray-600 dark:text-dark-text-secondary">
+            Lade Dialog...
+          </p>
         </div>
       </div>
     );
@@ -515,10 +593,10 @@ export default function DialogueTrainer() {
   // Error state
   if (error || !scenario) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50">
-        <div className="text-center bg-white/80 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-red-200 max-w-md">
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary">
+        <div className="text-center bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-red-200 dark:border-red-500/30 max-w-md">
           <AlertCircle className="w-16 h-16 text-red-500 mx-auto mb-4" />
-          <p className="text-lg text-red-600 mb-4">
+          <p className="text-lg text-red-600 dark:text-red-400 mb-4">
             {error || "Dialog nicht gefunden"}
           </p>
           <button
@@ -538,29 +616,29 @@ export default function DialogueTrainer() {
       : 0;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50">
-      {/* Fixed Header */}
-      <div className="bg-white/90 backdrop-blur-md border-b border-purple-100 shadow-sm sticky top-0 z-20">
-        <div className="max-w-5xl mx-auto px-4 py-4">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary">
+      {/* Header */}
+      <div className="bg-white/90 dark:bg-white/5 backdrop-blur-md border-b border-purple-100 dark:border-purple-500/20 shadow-sm">
+        <div className="max-w-5xl mx-auto px-4 py-4 pr-16 md:pr-4">
           {/* Session Status - Show message count */}
           {conversationStarted && (
-            <div className="bg-purple-50 rounded-xl p-3 mb-3 border border-purple-200">
+            <div className="bg-purple-50 dark:bg-purple-900/20 rounded-xl p-3 mb-3 border border-purple-200 dark:border-purple-500/30">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-medium text-gray-700">
+                <span className="text-sm font-medium text-gray-700 dark:text-dark-text-primary">
                   Nachrichten:{" "}
                   {messageHistory.filter((m) => m.role !== "error").length}/30
                 </span>
-                <span className="text-xs text-gray-600">
+                <span className="text-xs text-gray-600 dark:text-dark-text-secondary">
                   Pro Sitzung maximal 30 Nachrichten
                 </span>
               </div>
-              <div className="w-full bg-gray-200 rounded-full h-2">
+              <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                 <div
                   className={`h-2 rounded-full transition-all duration-300 ${
                     messageHistory.filter((m) => m.role !== "error").length >=
                     25
                       ? "bg-red-500"
-                      : "bg-purple-600"
+                      : "bg-purple-600 dark:bg-purple-500"
                   }`}
                   style={{
                     width: `${(messageHistory.filter((m) => m.role !== "error").length / 30) * 100}%`,
@@ -569,7 +647,7 @@ export default function DialogueTrainer() {
               </div>
               {messageHistory.filter((m) => m.role !== "error").length >=
                 25 && (
-                <p className="text-xs text-red-600 mt-1">
+                <p className="text-xs text-red-600 dark:text-red-400 mt-1">
                   ⚠️ Nur noch{" "}
                   {30 - messageHistory.filter((m) => m.role !== "error").length}{" "}
                   Nachrichten übrig
@@ -581,7 +659,7 @@ export default function DialogueTrainer() {
           <div className="flex items-center justify-between mb-3">
             <button
               onClick={() => navigate("/tests/sprechen/trainer")}
-              className="flex items-center text-purple-700 hover:text-purple-900 font-medium transition-colors duration-200"
+              className="flex items-center text-purple-700 dark:text-purple-400 hover:text-purple-900 dark:hover:text-purple-300 font-medium transition-colors duration-200"
             >
               <ArrowLeft className="w-5 h-5 mr-2" />
               Alle Dialoge
@@ -589,7 +667,7 @@ export default function DialogueTrainer() {
             {conversationStarted && (
               <button
                 onClick={handleRestart}
-                className="flex items-center text-gray-600 hover:text-purple-700 font-medium transition-colors duration-200"
+                className="flex items-center text-gray-600 dark:text-dark-text-secondary hover:text-purple-700 dark:hover:text-purple-400 font-medium transition-colors duration-200"
               >
                 <RotateCcw className="w-5 h-5 mr-2" />
                 Neu starten
@@ -600,13 +678,13 @@ export default function DialogueTrainer() {
           {/* Progress Bar */}
           {conversationStarted && (
             <>
-              <div className="w-full bg-purple-100 rounded-full h-2 mb-2">
+              <div className="w-full bg-purple-100 dark:bg-purple-900/30 rounded-full h-2 mb-2">
                 <div
-                  className="h-2 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full transition-all duration-500"
+                  className="h-2 bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 rounded-full transition-all duration-500"
                   style={{ width: `${progressPercent}%` }}
                 />
               </div>
-              <p className="text-xs text-gray-600 text-right">
+              <p className="text-xs text-gray-600 dark:text-dark-text-secondary text-right">
                 {discussedPoints.length} von {scenario.leitpunkte.length}{" "}
                 Punkten besprochen
               </p>
@@ -617,27 +695,27 @@ export default function DialogueTrainer() {
 
       <div className="max-w-5xl mx-auto px-4 py-8 space-y-6">
         {/* Aufgabe Card */}
-        <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-purple-100">
+        <div className="bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-purple-100 dark:border-purple-500/20">
           <div className="flex items-start gap-3 mb-3">
-            <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white w-10 h-10 rounded-xl flex items-center justify-center font-bold text-lg shadow-lg flex-shrink-0">
+            <div className="bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 text-white w-10 h-10 rounded-xl flex items-center justify-center font-bold text-lg shadow-lg flex-shrink-0">
               {scenario.number}
             </div>
             <div className="flex-1">
-              <div className="inline-block px-3 py-1 bg-purple-100 text-purple-700 rounded-lg text-xs font-medium mb-2">
+              <div className="inline-block px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-lg text-xs font-medium mb-2">
                 {scenario.theme}
               </div>
-              <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">
+              <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-dark-text-primary mb-2">
                 {scenario.title}
               </h1>
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl p-4 border border-purple-200">
-            <h2 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
-              <MessageCircle className="w-5 h-5 text-purple-600" />
+          <div className="bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-xl p-4 border border-purple-200 dark:border-purple-500/30">
+            <h2 className="font-bold text-gray-900 dark:text-dark-text-primary mb-2 flex items-center gap-2">
+              <MessageCircle className="w-5 h-5 text-purple-600 dark:text-purple-400" />
               Aufgabe
             </h2>
-            <p className="text-gray-700 leading-relaxed whitespace-pre-wrap">
+            <p className="text-gray-700 dark:text-dark-text-secondary leading-relaxed whitespace-pre-wrap">
               {scenario.aufgabe}
             </p>
           </div>
@@ -645,9 +723,9 @@ export default function DialogueTrainer() {
 
         {/* Leitpunkte Checklist */}
         {scenario.leitpunkte && scenario.leitpunkte.length > 0 && (
-          <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-purple-100">
-            <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-              <ListChecks className="w-5 h-5 text-purple-600" />
+          <div className="bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-purple-100 dark:border-purple-500/20">
+            <h3 className="font-bold text-gray-900 dark:text-dark-text-primary mb-4 flex items-center gap-2">
+              <ListChecks className="w-5 h-5 text-purple-600 dark:text-purple-400" />
               Diskussionspunkte
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
@@ -658,8 +736,8 @@ export default function DialogueTrainer() {
                     key={index}
                     className={`rounded-lg px-3 py-2 text-sm font-medium text-center transition-all duration-300 ${
                       isDiscussed
-                        ? "bg-green-100 border-2 border-green-400 text-green-700"
-                        : "bg-purple-50 border border-purple-200 text-purple-700"
+                        ? "bg-green-100 dark:bg-green-900/30 border-2 border-green-400 dark:border-green-500 text-green-700 dark:text-green-300"
+                        : "bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-500/30 text-purple-700 dark:text-purple-300"
                     }`}
                   >
                     {isDiscussed && (
@@ -675,36 +753,36 @@ export default function DialogueTrainer() {
 
         {/* Conversation Area */}
         {!conversationStarted ? (
-          <div className="bg-white/80 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-purple-100 text-center">
-            <h2 className="text-3xl font-bold text-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text mb-2">
+          <div className="bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-purple-100 dark:border-purple-500/20 text-center">
+            <h2 className="text-3xl font-bold text-transparent bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-400 dark:to-indigo-400 bg-clip-text mb-2">
               Hallo! Ich bin Besty
             </h2>
-            <p className="text-gray-700 mb-3 text-lg leading-relaxed">
+            <p className="text-gray-700 dark:text-dark-text-primary mb-3 text-lg leading-relaxed">
               Lass uns zusammen für deine{" "}
-              <span className="font-semibold text-purple-600">
+              <span className="font-semibold text-purple-600 dark:text-purple-400">
                 DTZ B1 Prüfung
               </span>{" "}
               üben!
             </p>
-            <p className="text-gray-600 mb-6 leading-relaxed">
+            <p className="text-gray-600 dark:text-dark-text-secondary mb-6 leading-relaxed">
               Ich helfe dir durch alle wichtigen Punkte und gebe dir Tipps.
               <br />
               So bereitest du dich perfekt auf das echte Gespräch vor.
             </p>
 
-            {/* Lottie Animation */}
-            <div className="flex justify-center mb-6">
-              <iframe
-                src="https://lottie.host/embed/03951b2d-8905-4508-ad99-6174c3b827e2/y4yWixwYzp.lottie"
-                className="w-48 h-48 pointer-events-none"
-                style={{ border: "none" }}
-                title="Besty Animation"
+            {/* Lottie Animation - No background, transparent */}
+            <div className="w-48 h-48 mx-auto mb-6">
+              <DotLottieReact
+                src="https://lottie.host/03951b2d-8905-4508-ad99-6174c3b827e2/y4yWixwYzp.lottie"
+                loop
+                autoplay
+                className="w-full h-full"
               />
             </div>
 
             <button
               onClick={handleStartConversation}
-              className="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-200 font-medium inline-flex items-center gap-2"
+              className="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 text-white rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-200 font-medium inline-flex items-center gap-2"
             >
               <MessageCircle className="w-5 h-5" />
               Gespräch starten
@@ -713,32 +791,32 @@ export default function DialogueTrainer() {
         ) : (
           <>
             {/* Messages - Modern Chat Interface */}
-            <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-purple-200/50 overflow-hidden">
+            <div className="bg-white/95 dark:bg-white/10 backdrop-blur-md rounded-2xl shadow-xl border border-purple-200/50 dark:border-purple-500/30 overflow-hidden">
               {/* Chat Header with Besty and Animation */}
-              <div className="relative px-6 py-6 border-b border-purple-100 overflow-hidden bg-gradient-to-r from-purple-50 to-indigo-50">
+              <div className="relative px-6 py-6 border-b border-purple-100 dark:border-purple-500/20 overflow-hidden">
                 {/* Content */}
                 <div className="relative flex items-center gap-4">
-                  {/* Lottie Animation Avatar - Bigger, no background */}
+                  {/* Lottie Animation Avatar - No background, transparent */}
                   <div className="w-24 h-24 flex-shrink-0">
-                    <iframe
-                      src="https://lottie.host/embed/03951b2d-8905-4508-ad99-6174c3b827e2/y4yWixwYzp.lottie"
-                      className="w-full h-full pointer-events-none"
-                      style={{ border: "none" }}
-                      title="Besty Animation"
+                    <DotLottieReact
+                      src="https://lottie.host/03951b2d-8905-4508-ad99-6174c3b827e2/y4yWixwYzp.lottie"
+                      loop
+                      autoplay
+                      className="w-full h-full"
                     />
                   </div>
 
                   {/* Text Content */}
                   <div className="flex-1">
-                    <h3 className="font-bold text-2xl bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent flex items-center gap-2">
+                    <h3 className="font-bold text-2xl bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-400 dark:to-indigo-400 bg-clip-text text-transparent flex items-center gap-2">
                       Besty
                       {isSpeaking && (
-                        <span className="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full animate-pulse">
+                        <span className="text-xs bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded-full animate-pulse">
                           🔊 Spricht
                         </span>
                       )}
                     </h3>
-                    <p className="text-purple-600 font-medium text-sm mt-1">
+                    <p className="text-purple-600 dark:text-purple-400 font-medium text-sm mt-1">
                       Hallo! Ich bin Besty, und ich helfe dir beim Üben.
                     </p>
                   </div>
@@ -746,7 +824,7 @@ export default function DialogueTrainer() {
               </div>
 
               {/* Messages Area */}
-              <div className="p-6 bg-white/60 backdrop-blur-sm">
+              <div className="p-6 bg-white/60 dark:bg-white/5 backdrop-blur-sm">
                 <div className="space-y-6 max-h-[500px] overflow-y-auto pr-2 mb-4">
                   {messageHistory.map((msg, index) => (
                     <div key={index} className="space-y-2">
@@ -784,10 +862,10 @@ export default function DialogueTrainer() {
                             <div
                               className={`px-4 py-3 rounded-2xl shadow-md transition-all duration-200 ${
                                 msg.role === "assistant"
-                                  ? "bg-purple-600 text-white rounded-tl-none shadow-lg"
+                                  ? "bg-purple-600 dark:bg-purple-700 text-white rounded-tl-none shadow-lg"
                                   : msg.role === "error"
-                                    ? "bg-red-50 text-red-800 rounded-tr-none border border-red-200"
-                                    : "bg-gradient-to-br from-purple-50 to-indigo-50 text-gray-800 rounded-tr-none border border-purple-200"
+                                    ? "bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-300 rounded-tr-none border border-red-200 dark:border-red-500/30"
+                                    : "bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 text-gray-800 dark:text-dark-text-primary rounded-tr-none border border-purple-200 dark:border-purple-500/30"
                               }`}
                             >
                               <p
@@ -832,7 +910,7 @@ export default function DialogueTrainer() {
                           </div>
 
                           {/* Timestamp */}
-                          <span className="text-xs text-gray-400 mt-1 px-1">
+                          <span className="text-xs text-gray-400 dark:text-gray-500 mt-1 px-1">
                             {new Date().toLocaleTimeString("de-DE", {
                               hour: "2-digit",
                               minute: "2-digit",
@@ -842,7 +920,7 @@ export default function DialogueTrainer() {
 
                         {/* Avatar - Right side for User */}
                         {msg.role === "user" && (
-                          <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-600 shadow-md flex items-center justify-center">
+                          <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-600 dark:bg-purple-700 shadow-md flex items-center justify-center">
                             <User
                               className="w-5 h-5 text-white"
                               strokeWidth={2}
@@ -855,11 +933,11 @@ export default function DialogueTrainer() {
                       {msg.role === "user" &&
                         msg.correction &&
                         msg.correction.hasErrors && (
-                          <div className="ml-6 p-2 bg-purple-50 border-l-4 border-purple-400 rounded-lg">
+                          <div className="ml-6 p-2 bg-purple-50 dark:bg-purple-900/20 border-l-4 border-purple-400 dark:border-purple-500 rounded-lg">
                             <div className="flex items-start justify-between gap-2">
                               <div className="flex-1">
-                                <p className="text-sm text-gray-700">
-                                  <span className="font-semibold text-purple-600">
+                                <p className="text-sm text-gray-700 dark:text-dark-text-secondary">
+                                  <span className="font-semibold text-purple-600 dark:text-purple-400">
                                     ✏️ Besser:
                                   </span>{" "}
                                   {msg.correction.corrected}
@@ -895,7 +973,7 @@ export default function DialogueTrainer() {
                             </div>
                             {expandedCorrections.has(index) &&
                               msg.correction.mistakes.length > 0 && (
-                                <div className="mt-2 pt-2 border-t border-purple-200 text-xs text-gray-600 space-y-1">
+                                <div className="mt-2 pt-2 border-t border-purple-200 dark:border-purple-500/30 text-xs text-gray-600 dark:text-dark-text-secondary space-y-1">
                                   {msg.correction.mistakes.map((mistake, i) => (
                                     <p key={i}>• {mistake}</p>
                                   ))}
@@ -908,16 +986,16 @@ export default function DialogueTrainer() {
                   {isAIThinking && (
                     <div className="flex gap-3 justify-start animate-fadeIn">
                       {/* AI Avatar */}
-                      <div className="w-10 h-10 rounded-full bg-purple-600 shadow-md flex-shrink-0 flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-full bg-purple-600 dark:bg-purple-700 shadow-md flex-shrink-0 flex items-center justify-center">
                         <Bot className="w-5 h-5 text-white" strokeWidth={2} />
                       </div>
 
                       {/* Typing Indicator Bubble */}
                       <div className="flex flex-col max-w-[75%] items-start">
-                        <span className="text-xs font-semibold mb-1 px-1 text-purple-600">
+                        <span className="text-xs font-semibold mb-1 px-1 text-purple-600 dark:text-purple-400">
                           Besty
                         </span>
-                        <div className="px-5 py-4 rounded-2xl rounded-tl-none bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-200 shadow-md">
+                        <div className="px-5 py-4 rounded-2xl rounded-tl-none bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 border border-purple-200 dark:border-purple-500/30 shadow-md">
                           <div className="flex gap-1">
                             <span
                               className="w-2 h-2 bg-purple-400 rounded-full animate-bounce"
@@ -944,19 +1022,19 @@ export default function DialogueTrainer() {
                   <div className="mb-4">
                     <button
                       onClick={() => setShowRedemittelHelp(!showRedemittelHelp)}
-                      className="group w-full px-6 py-4 bg-gradient-to-r from-purple-50 to-indigo-50 border-2 border-purple-200 rounded-2xl hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-between"
+                      className="group w-full px-6 py-4 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 border-2 border-purple-200 dark:border-purple-500/30 rounded-2xl hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-between"
                     >
                       <div className="flex items-center gap-3">
-                        <div className="p-2 bg-white rounded-lg shadow-sm group-hover:shadow-md transition-shadow">
-                          <HelpCircle className="w-6 h-6 text-purple-600" />
+                        <div className="p-2 bg-white dark:bg-white/10 rounded-lg shadow-sm group-hover:shadow-md transition-shadow">
+                          <HelpCircle className="w-6 h-6 text-purple-600 dark:text-purple-400" />
                         </div>
                         <div className="text-left">
-                          <div className="font-bold text-gray-900 text-lg">
+                          <div className="font-bold text-gray-900 dark:text-dark-text-primary text-lg">
                             {showRedemittelHelp
                               ? "Hilfe ausblenden"
                               : "Brauchst du Hilfe?"}
                           </div>
-                          <div className="text-sm text-purple-600 font-medium">
+                          <div className="text-sm text-purple-600 dark:text-purple-400 font-medium">
                             {showRedemittelHelp
                               ? "Klicke zum Schließen"
                               : "Redemittel & Tipps anzeigen"}
@@ -967,7 +1045,7 @@ export default function DialogueTrainer() {
                         className={`transform transition-transform duration-200 ${showRedemittelHelp ? "rotate-180" : ""}`}
                       >
                         <svg
-                          className="w-6 h-6 text-purple-600"
+                          className="w-6 h-6 text-purple-600 dark:text-purple-400"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -984,24 +1062,24 @@ export default function DialogueTrainer() {
 
                     {/* Redemittel Dropdown */}
                     {showRedemittelHelp && (
-                      <div className="mt-3 bg-white/90 backdrop-blur-md rounded-xl p-4 shadow-xl border-2 border-purple-200 max-h-[400px] overflow-y-auto">
+                      <div className="mt-3 bg-white/90 dark:bg-white/10 backdrop-blur-md rounded-xl p-4 shadow-xl border-2 border-purple-200 dark:border-purple-500/30 max-h-[400px] overflow-y-auto">
                         {/* Header */}
-                        <div className="mb-3 pb-2 border-b border-purple-100">
-                          <h3 className="text-lg font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-1 flex items-center gap-2">
-                            <div className="p-1.5 bg-gradient-to-br from-purple-100 to-indigo-100 rounded-lg">
-                              <HelpCircle className="w-4 h-4 text-purple-600" />
+                        <div className="mb-3 pb-2 border-b border-purple-100 dark:border-purple-500/20">
+                          <h3 className="text-lg font-bold bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-400 dark:to-indigo-400 bg-clip-text text-transparent mb-1 flex items-center gap-2">
+                            <div className="p-1.5 bg-gradient-to-br from-purple-100 to-indigo-100 dark:from-purple-900/30 dark:to-indigo-900/30 rounded-lg">
+                              <HelpCircle className="w-4 h-4 text-purple-600 dark:text-purple-400" />
                             </div>
                             Redemittel & Tipps
                           </h3>
-                          <p className="text-gray-600 text-xs ml-8">
+                          <p className="text-gray-600 dark:text-dark-text-secondary text-xs ml-8">
                             Benutze diese Phrasen für ein natürliches Gespräch
                           </p>
                         </div>
 
                         {/* Tips */}
-                        <div className="mb-3 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-lg p-3 border border-purple-200">
-                          <p className="font-bold text-purple-900 mb-2 flex items-center gap-1.5 text-sm">
-                            <span className="text-2xl">�</span>
+                        <div className="mb-3 bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-lg p-3 border border-purple-200 dark:border-purple-500/30">
+                          <p className="font-bold text-purple-900 dark:text-purple-300 mb-2 flex items-center gap-1.5 text-sm">
+                            <span className="text-2xl">💡</span>
                             Wichtige Tipps
                           </p>
                           <ul className="space-y-1.5">
@@ -1010,10 +1088,10 @@ export default function DialogueTrainer() {
                                 key={i}
                                 className="flex items-start gap-2 text-xs"
                               >
-                                <span className="flex-shrink-0 w-5 h-5 bg-purple-200 text-purple-700 rounded-full flex items-center justify-center font-bold text-[10px]">
+                                <span className="flex-shrink-0 w-5 h-5 bg-purple-200 dark:bg-purple-700 text-purple-700 dark:text-purple-200 rounded-full flex items-center justify-center font-bold text-[10px]">
                                   {i + 1}
                                 </span>
-                                <span className="text-gray-800 leading-snug">
+                                <span className="text-gray-800 dark:text-dark-text-secondary leading-snug">
                                   {tip}
                                 </span>
                               </li>
@@ -1026,10 +1104,10 @@ export default function DialogueTrainer() {
                           {Object.entries(redemittel).map(([key, section]) => (
                             <div
                               key={key}
-                              className="bg-white rounded-lg p-3 border border-purple-100 hover:border-purple-300 hover:shadow-md transition-all duration-200"
+                              className="bg-white dark:bg-white/5 rounded-lg p-3 border border-purple-100 dark:border-purple-500/30 hover:border-purple-300 dark:hover:border-purple-400 hover:shadow-md transition-all duration-200"
                             >
-                              <h4 className="font-bold text-purple-900 mb-2 text-sm flex items-center gap-1.5">
-                                <span className="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>
+                              <h4 className="font-bold text-purple-900 dark:text-purple-300 mb-2 text-sm flex items-center gap-1.5">
+                                <span className="w-1.5 h-1.5 bg-purple-500 dark:bg-purple-400 rounded-full"></span>
                                 {section.title}
                               </h4>
                               {section.phrases && (
@@ -1037,9 +1115,9 @@ export default function DialogueTrainer() {
                                   {section.phrases.map((phrase, i) => (
                                     <li
                                       key={i}
-                                      className="text-xs text-gray-700 flex items-start gap-1.5 leading-snug"
+                                      className="text-xs text-gray-700 dark:text-dark-text-secondary flex items-start gap-1.5 leading-snug"
                                     >
-                                      <span className="text-purple-500 font-bold">
+                                      <span className="text-purple-500 dark:text-purple-400 font-bold">
                                         •
                                       </span>
                                       <span>{phrase}</span>
@@ -1051,16 +1129,16 @@ export default function DialogueTrainer() {
                                 <div className="space-y-2">
                                   {section.questions.map((q, i) => (
                                     <div key={i}>
-                                      <p className="text-xs font-semibold text-purple-700 mb-1">
+                                      <p className="text-xs font-semibold text-purple-700 dark:text-purple-300 mb-1">
                                         {q.type}
                                       </p>
                                       <ul className="ml-2 space-y-1">
                                         {q.examples.slice(0, 2).map((ex, j) => (
                                           <li
                                             key={j}
-                                            className="text-xs text-gray-600 flex items-start gap-1.5"
+                                            className="text-xs text-gray-600 dark:text-dark-text-secondary flex items-start gap-1.5"
                                           >
-                                            <span className="text-purple-400">
+                                            <span className="text-purple-400 dark:text-purple-500">
                                               →
                                             </span>
                                             <span>{ex}</span>
@@ -1078,9 +1156,9 @@ export default function DialogueTrainer() {
                                     .map((sentence, i) => (
                                       <li
                                         key={i}
-                                        className="text-xs text-gray-700 flex items-start gap-1.5 leading-snug"
+                                        className="text-xs text-gray-700 dark:text-dark-text-secondary flex items-start gap-1.5 leading-snug"
                                       >
-                                        <span className="text-purple-500 font-bold">
+                                        <span className="text-purple-500 dark:text-purple-400 font-bold">
                                           •
                                         </span>
                                         <span>{sentence}</span>
@@ -1111,7 +1189,7 @@ export default function DialogueTrainer() {
                           : "Schreibe oder spreche deine Antwort..."
                       }
                       disabled={isAIThinking || isListening}
-                      className="flex-1 px-4 py-3 border-2 border-purple-200 rounded-xl focus:outline-none focus:border-purple-500 transition-colors duration-200 disabled:bg-gray-100 disabled:cursor-not-allowed"
+                      className="flex-1 px-4 py-3 border-2 border-purple-200 dark:border-purple-500/30 rounded-xl focus:outline-none focus:border-purple-500 dark:focus:border-purple-400 transition-colors duration-200 disabled:bg-gray-100 dark:disabled:bg-gray-800 disabled:cursor-not-allowed bg-white dark:bg-white/10 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-400"
                     />
                     <button
                       onClick={toggleVoiceInput}
@@ -1119,7 +1197,7 @@ export default function DialogueTrainer() {
                       className={`px-4 py-3 rounded-xl transition-all duration-200 flex items-center gap-2 ${
                         isListening
                           ? "bg-red-500 text-white hover:bg-red-600 animate-pulse"
-                          : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                          : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
                       } disabled:opacity-50 disabled:cursor-not-allowed`}
                       title={
                         isListening
@@ -1136,7 +1214,7 @@ export default function DialogueTrainer() {
                     <button
                       onClick={handleSendMessage}
                       disabled={!userInput.trim() || isAIThinking}
-                      className="px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl hover:shadow-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                      className="px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 text-white rounded-xl hover:shadow-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
                     >
                       <Send className="w-5 h-5" />
                       Senden
@@ -1148,41 +1226,45 @@ export default function DialogueTrainer() {
 
             {/* Completion & Feedback */}
             {isComplete && feedback && (
-              <div className="bg-white/80 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-green-200">
+              <div className="bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-green-200 dark:border-green-500/30">
                 <div className="text-center mb-6">
-                  <CheckCircle2 className="w-20 h-20 text-green-600 mx-auto mb-4" />
-                  <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                  <CheckCircle2 className="w-20 h-20 text-green-600 dark:text-green-400 mx-auto mb-4" />
+                  <h2 className="text-3xl font-bold text-gray-900 dark:text-dark-text-primary mb-2">
                     Dialog abgeschlossen!
                   </h2>
-                  <p className="text-gray-600 text-lg">
+                  <p className="text-gray-600 dark:text-dark-text-secondary text-lg">
                     Ausgezeichnet! Du hast das Gespräch erfolgreich
                     durchgeführt.
                   </p>
                 </div>
 
                 {/* Feedback */}
-                <div className="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl p-6 mb-6">
-                  <h3 className="font-bold text-gray-900 mb-3">📊 Feedback</h3>
+                <div className="bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-xl p-6 mb-6">
+                  <h3 className="font-bold text-gray-900 dark:text-dark-text-primary mb-3">
+                    📊 Feedback
+                  </h3>
 
                   {feedback.coverage && (
                     <div className="mb-4">
-                      <p className="text-sm font-semibold text-gray-700 mb-1">
+                      <p className="text-sm font-semibold text-gray-700 dark:text-dark-text-primary mb-1">
                         Abdeckung:
                       </p>
-                      <p className="text-gray-700">{feedback.coverage}</p>
+                      <p className="text-gray-700 dark:text-dark-text-secondary">
+                        {feedback.coverage}
+                      </p>
                     </div>
                   )}
 
                   {feedback.strengths && feedback.strengths.length > 0 && (
                     <div className="mb-4">
-                      <p className="text-sm font-semibold text-green-700 mb-2">
+                      <p className="text-sm font-semibold text-green-700 dark:text-green-400 mb-2">
                         ✅ Stärken:
                       </p>
                       <ul className="space-y-1">
                         {feedback.strengths.map((strength, i) => (
                           <li
                             key={i}
-                            className="text-gray-700 flex items-start gap-2"
+                            className="text-gray-700 dark:text-dark-text-secondary flex items-start gap-2"
                           >
                             <span className="text-green-600">•</span>
                             <span>{strength}</span>
@@ -1202,9 +1284,11 @@ export default function DialogueTrainer() {
                           {feedback.improvements.map((improvement, i) => (
                             <li
                               key={i}
-                              className="text-gray-700 flex items-start gap-2"
+                              className="text-gray-700 dark:text-dark-text-secondary flex items-start gap-2"
                             >
-                              <span className="text-orange-600">•</span>
+                              <span className="text-orange-600 dark:text-orange-400">
+                                •
+                              </span>
                               <span>{improvement}</span>
                             </li>
                           ))}
@@ -1223,7 +1307,7 @@ export default function DialogueTrainer() {
                   </button>
                   <button
                     onClick={() => navigate("/tests/sprechen/trainer")}
-                    className="px-8 py-4 bg-white text-purple-700 border-2 border-purple-600 rounded-xl hover:bg-purple-50 hover:scale-105 transition-all duration-200 font-medium"
+                    className="px-8 py-4 bg-white dark:bg-white/10 text-purple-700 dark:text-purple-400 border-2 border-purple-600 dark:border-purple-500 rounded-xl hover:bg-purple-50 dark:hover:bg-white/20 hover:scale-105 transition-all duration-200 font-medium"
                   >
                     Andere Dialoge
                   </button>

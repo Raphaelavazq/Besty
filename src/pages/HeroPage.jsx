@@ -23,7 +23,7 @@ export default function HeroPage() {
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-purple-600 via-indigo-700 to-purple-800 overflow-hidden">
+    <div className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900 overflow-hidden">
       {/* Background Animation - Better Fit */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="w-full h-full max-w-4xl max-h-4xl">
@@ -43,7 +43,10 @@ export default function HeroPage() {
         }`}
       >
         <div className="w-28 h-12 sm:w-36 sm:h-14 md:w-44 md:h-18">
-          <svg viewBox="0 0 229.4 94.9" className="w-full h-full drop-shadow-2xl">
+          <svg
+            viewBox="0 0 229.4 94.9"
+            className="w-full h-full drop-shadow-2xl"
+          >
             <text
               x="0"
               y="74.5"
@@ -66,7 +69,7 @@ export default function HeroPage() {
       >
         <button
           onClick={handleEnterApp}
-          className="bg-white/90 backdrop-blur-md text-purple-900 px-8 py-4 sm:px-10 sm:py-5 md:px-12 md:py-6 rounded-full hover:bg-white hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-3xl"
+          className="bg-white/90 dark:bg-white/80 backdrop-blur-md text-purple-900 dark:text-purple-800 px-8 py-4 sm:px-10 sm:py-5 md:px-12 md:py-6 rounded-full hover:bg-white dark:hover:bg-white hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-3xl"
         >
           <span className="font-black text-base sm:text-lg md:text-xl">
             Starten

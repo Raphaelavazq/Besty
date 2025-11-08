@@ -129,20 +129,22 @@ export default function DialogueCatalogPage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-purple-600 mx-auto mb-4"></div>
-          <p className="text-gray-600 text-lg">Lade Dialoge...</p>
+          <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-purple-600 dark:border-purple-400 mx-auto mb-4"></div>
+          <p className="text-gray-600 dark:text-dark-text-secondary text-lg">
+            Lade Dialoge...
+          </p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary">
       {/* Header - Hide on scroll */}
       <div
-        className={`bg-white/80 backdrop-blur-md border-b border-purple-100 shadow-sm sticky top-0 z-20 transition-transform duration-300 ${
+        className={`bg-white/80 dark:bg-white/5 backdrop-blur-md border-b border-purple-100 dark:border-purple-500/20 shadow-sm sticky top-0 z-20 transition-transform duration-300 ${
           showHeader ? "translate-y-0" : "-translate-y-full"
         }`}
       >
@@ -150,23 +152,23 @@ export default function DialogueCatalogPage() {
           {/* Back Button - Icon only */}
           <button
             onClick={() => navigate("/tests/sprechen")}
-            className="mb-4 w-10 h-10 rounded-full bg-white hover:bg-purple-50 border border-purple-100 hover:border-purple-300 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 shadow-sm group"
+            className="mb-4 w-10 h-10 rounded-full bg-white dark:bg-white/10 hover:bg-purple-50 dark:hover:bg-white/20 border border-purple-100 dark:border-purple-500/30 hover:border-purple-300 dark:hover:border-purple-400 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 shadow-sm group"
             aria-label="Zurück zu Sprechen Tests"
           >
-            <ArrowLeft className="w-5 h-5 text-purple-600 group-hover:-translate-x-0.5 transition-transform duration-200" />
+            <ArrowLeft className="w-5 h-5 text-purple-600 dark:text-purple-400 group-hover:-translate-x-0.5 transition-transform duration-200" />
           </button>
 
-          <h1 className="text-4xl lg:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-2 tracking-tight">
+          <h1 className="text-4xl lg:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-400 dark:to-indigo-400 bg-clip-text text-transparent mb-2 tracking-tight">
             DTZ Sprechen Teil 3
           </h1>
-          <p className="text-slate-600 text-lg lg:text-xl leading-relaxed font-light">
+          <p className="text-slate-600 dark:text-dark-text-secondary text-lg lg:text-xl leading-relaxed font-light">
             Dialoge planen und üben — 59 Szenarien
           </p>
         </div>
       </div>
 
       {/* Sticky Theme Navigation - Horizontal Scroll Gallery */}
-      <div className="sticky top-0 z-10 bg-white/90 backdrop-blur-md border-b border-purple-100 shadow-sm">
+      <div className="sticky top-0 z-10 bg-white/90 dark:bg-white/5 backdrop-blur-md border-b border-purple-100 dark:border-purple-500/20 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div
             ref={themeNavRef}
@@ -184,7 +186,7 @@ export default function DialogueCatalogPage() {
                 className={`flex-shrink-0 px-5 py-2.5 rounded-xl font-medium transition-all duration-200 whitespace-nowrap ${
                   selectedTheme === theme
                     ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg scale-105"
-                    : "bg-white text-purple-700 border border-purple-200 hover:bg-purple-50 hover:scale-105"
+                    : "bg-white dark:bg-white/10 text-purple-700 dark:text-purple-400 border border-purple-200 dark:border-purple-500/30 hover:bg-purple-50 dark:hover:bg-white/20 hover:scale-105"
                 }`}
               >
                 {theme === "all" ? "Alle" : theme}
@@ -196,7 +198,7 @@ export default function DialogueCatalogPage() {
 
       {/* Search Section */}
       <div className="max-w-7xl mx-auto px-4 py-6">
-        <div className="bg-white/80 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-purple-100 mb-6">
+        <div className="bg-white/80 dark:bg-white/5 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-purple-100 dark:border-purple-500/20 mb-6">
           {/* Search Bar */}
           <div className="relative">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-purple-400 w-5 h-5" />
@@ -205,12 +207,12 @@ export default function DialogueCatalogPage() {
               placeholder="Dialog suchen..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 bg-white border-2 border-purple-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 text-gray-700 placeholder-gray-400"
+              className="w-full pl-12 pr-4 py-3 bg-white dark:bg-white/10 border-2 border-purple-100 dark:border-purple-500/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 text-gray-700 dark:text-dark-text-primary placeholder-gray-400 dark:placeholder-dark-text-muted"
             />
           </div>
 
           {/* Results Count */}
-          <p className="text-sm text-gray-600 mt-3">
+          <p className="text-sm text-gray-600 dark:text-dark-text-secondary mt-3">
             {filteredDialogues.length}{" "}
             {filteredDialogues.length === 1 ? "Dialog" : "Dialoge"}
           </p>
@@ -219,9 +221,13 @@ export default function DialogueCatalogPage() {
         {/* Dialogues Grid */}
         {filteredDialogues.length === 0 ? (
           <div className="text-center py-16">
-            <MessageCircle className="w-16 h-16 text-purple-300 mx-auto mb-4" />
-            <p className="text-xl text-gray-600 mb-2">Keine Dialoge gefunden</p>
-            <p className="text-gray-500">Versuche einen anderen Suchbegriff</p>
+            <MessageCircle className="w-16 h-16 text-purple-300 dark:text-purple-600 mx-auto mb-4" />
+            <p className="text-xl text-gray-600 dark:text-dark-text-secondary mb-2">
+              Keine Dialoge gefunden
+            </p>
+            <p className="text-gray-500 dark:text-dark-text-muted">
+              Versuche einen anderen Suchbegriff
+            </p>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -229,43 +235,43 @@ export default function DialogueCatalogPage() {
               <Link
                 key={dialogue.id}
                 to={`/tests/sprechen/trainer/${dialogue.id}`}
-                className="group bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-sm border border-purple-100 hover:shadow-xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 cursor-pointer"
+                className="group bg-white/80 dark:bg-white/5 backdrop-blur-md rounded-2xl p-6 shadow-sm border border-purple-100 dark:border-purple-500/20 hover:shadow-xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 cursor-pointer"
               >
                 {/* Dialogue Number Badge */}
                 <div className="flex items-center justify-between mb-4">
                   <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg shadow-lg group-hover:scale-110 transition-transform duration-300">
                     {dialogue.number}
                   </div>
-                  <div className="text-purple-600 group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform duration-300">
                     {getThemeIcon(dialogue.theme)}
                   </div>
                 </div>
 
                 {/* Theme Tag */}
-                <div className="inline-block px-3 py-1 bg-purple-100 text-purple-700 rounded-lg text-xs font-medium mb-3">
+                <div className="inline-block px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-lg text-xs font-medium mb-3">
                   {dialogue.theme}
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-bold text-gray-900 mb-2 leading-snug group-hover:text-purple-700 transition-colors duration-200">
+                <h3 className="text-lg font-bold text-gray-900 dark:text-dark-text-primary mb-2 leading-snug group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors duration-200">
                   {dialogue.title}
                 </h3>
 
                 {/* Aufgabe Preview */}
-                <p className="text-sm text-gray-600 line-clamp-2 mb-3">
+                <p className="text-sm text-gray-600 dark:text-dark-text-secondary line-clamp-2 mb-3">
                   {dialogue.aufgabe}
                 </p>
 
                 {/* Leitpunkte Count */}
                 {dialogue.leitpunkte && (
-                  <div className="flex items-center text-xs text-purple-600">
+                  <div className="flex items-center text-xs text-purple-600 dark:text-purple-400">
                     <MessageCircle className="w-4 h-4 mr-1" />
                     <span>{dialogue.leitpunkte.length} Diskussionspunkte</span>
                   </div>
                 )}
 
                 {/* Hover Arrow */}
-                <div className="mt-4 flex items-center text-purple-600 font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                <div className="mt-4 flex items-center text-purple-600 dark:text-purple-400 font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                   <span>Üben</span>
                   <svg
                     className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-200"

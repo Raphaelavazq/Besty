@@ -57,9 +57,9 @@ export default function TestHub() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary">
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-purple-600 via-indigo-700 to-purple-800">
+      <div className="relative overflow-hidden bg-gradient-to-br from-purple-600 via-indigo-700 to-purple-800 dark:from-purple-800 dark:via-indigo-900 dark:to-purple-900">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent_50%)]"></div>
 
@@ -67,7 +67,7 @@ export default function TestHub() {
           {/* Back Button - Icon only */}
           <Link
             to="/dashboard"
-            className="inline-flex items-center justify-center w-10 h-10 mb-8 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full transition-all duration-200 hover:scale-110 active:scale-95 group"
+            className="inline-flex items-center justify-center w-10 h-10 mb-8 bg-white/10 hover:bg-white/20 dark:bg-white/5 dark:hover:bg-white/15 backdrop-blur-sm rounded-full transition-all duration-200 hover:scale-110 active:scale-95 group"
             aria-label="Zurück zum Dashboard"
           >
             <ArrowLeft className="w-5 h-5 text-white group-hover:-translate-x-0.5 transition-transform duration-200" />
@@ -132,42 +132,42 @@ export default function TestHub() {
               <Link
                 key={area.id}
                 to={area.path}
-                className="group bg-white/80 backdrop-blur-md rounded-3xl p-8 lg:p-10 shadow-xl border border-purple-100 hover:shadow-3xl transition-all duration-200 hover:-translate-y-2 hover:scale-105 relative overflow-hidden"
+                className="group bg-white/80 dark:bg-white/5 backdrop-blur-md rounded-3xl p-8 lg:p-10 shadow-xl border border-purple-100 dark:border-purple-500/20 hover:shadow-3xl transition-all duration-200 hover:-translate-y-2 hover:scale-105 relative overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-indigo-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-indigo-600/5 dark:from-purple-400/10 dark:to-indigo-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
 
                 <div className="relative">
                   {/* Icon */}
-                  <div className="w-20 h-20 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200 shadow-lg">
+                  <div className="w-20 h-20 bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200 shadow-lg">
                     <Icon className="w-10 h-10 text-white" />
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-3xl font-bold text-gray-900 mb-3">
+                  <h3 className="text-3xl font-bold text-gray-900 dark:text-dark-text-primary mb-3">
                     {area.title}
                   </h3>
-                  <p className="text-gray-600 text-lg mb-6 leading-relaxed">
+                  <p className="text-gray-600 dark:text-dark-text-secondary text-lg mb-6 leading-relaxed">
                     {area.description}
                   </p>
 
                   {/* Stats */}
                   <div className="flex items-center gap-6 mb-6">
-                    <div className="flex items-center gap-2 text-gray-600">
-                      <Clock className="w-4 h-4 text-purple-600" />
+                    <div className="flex items-center gap-2 text-gray-600 dark:text-dark-text-muted">
+                      <Clock className="w-4 h-4 text-purple-600 dark:text-purple-400" />
                       <span className="text-sm font-medium">
                         {area.duration}
                       </span>
                     </div>
-                    <div className="flex items-center gap-2 text-gray-600">
-                      <Target className="w-4 h-4 text-purple-600" />
+                    <div className="flex items-center gap-2 text-gray-600 dark:text-dark-text-muted">
+                      <Target className="w-4 h-4 text-purple-600 dark:text-purple-400" />
                       <span className="text-sm font-medium">{area.parts}</span>
                     </div>
                   </div>
 
                   {/* Arrow */}
                   <div className="flex items-center justify-end">
-                    <div className="w-12 h-12 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl flex items-center justify-center group-hover:from-purple-600 group-hover:to-indigo-600 transition-all duration-200">
-                      <Play className="w-5 h-5 text-purple-600 group-hover:text-white group-hover:translate-x-1 transition-all duration-200" />
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-xl flex items-center justify-center group-hover:from-purple-600 group-hover:to-indigo-600 dark:group-hover:from-purple-500 dark:group-hover:to-indigo-500 transition-all duration-200">
+                      <Play className="w-5 h-5 text-purple-600 dark:text-purple-400 group-hover:text-white group-hover:translate-x-1 transition-all duration-200" />
                     </div>
                   </div>
                 </div>
@@ -175,20 +175,20 @@ export default function TestHub() {
             ) : (
               <div
                 key={area.id}
-                className="group bg-white/60 backdrop-blur-md rounded-3xl p-8 lg:p-10 shadow-lg border border-purple-100 opacity-75 cursor-not-allowed relative overflow-hidden"
+                className="group bg-white/60 dark:bg-white/5 backdrop-blur-md rounded-3xl p-8 lg:p-10 shadow-lg border border-purple-100 dark:border-purple-500/20 opacity-75 cursor-not-allowed relative overflow-hidden"
               >
                 {/* Bald Badge */}
-                <div className="absolute top-4 right-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                <div className="absolute top-4 right-4 bg-purple-600 dark:bg-purple-700 text-white text-xs font-bold px-3 py-1 rounded-full">
                   Bald
                 </div>
 
                 {/* Icon */}
-                <div className="w-20 h-20 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                <div className="w-20 h-20 bg-gradient-to-r from-purple-400 to-indigo-400 dark:from-purple-600 dark:to-indigo-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
                   <Icon className="w-10 h-10 text-white" />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-3xl font-bold text-gray-700 mb-3">
+                <h3 className="text-3xl font-bold text-gray-700 dark:text-dark-text-secondary mb-3">
                   {area.title}
                 </h3>
                 <p className="text-gray-500 text-lg mb-6 leading-relaxed">
@@ -212,47 +212,49 @@ export default function TestHub() {
         </div>
 
         {/* Info Section */}
-        <div className="bg-gradient-to-br from-purple-50 via-indigo-50 to-purple-50 rounded-3xl p-8 lg:p-10 shadow-xl border border-purple-100">
+        <div className="bg-gradient-to-br from-purple-50 via-indigo-50 to-purple-50 dark:from-purple-900/20 dark:via-indigo-900/20 dark:to-purple-900/20 rounded-3xl p-8 lg:p-10 shadow-xl border border-purple-100 dark:border-purple-500/20">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-dark-text-primary mb-3">
               Wie funktioniert das Training?
             </h2>
-            <p className="text-gray-600 text-lg">
+            <p className="text-gray-600 dark:text-dark-text-secondary text-lg">
               In 3 einfachen Schritten starten
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 text-center border border-purple-100">
-              <div className="w-14 h-14 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <div className="bg-white/60 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-6 text-center border border-purple-100 dark:border-purple-500/20">
+              <div className="w-14 h-14 bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                 <span className="text-2xl font-black text-white">1</span>
               </div>
-              <h3 className="font-bold text-gray-900 mb-2 text-lg">
+              <h3 className="font-bold text-gray-900 dark:text-dark-text-primary mb-2 text-lg">
                 Bereich wählen
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-600 dark:text-dark-text-secondary text-sm leading-relaxed">
                 Klicken Sie auf Hören oder Sprechen
               </p>
             </div>
 
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 text-center border border-purple-100">
-              <div className="w-14 h-14 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <div className="bg-white/60 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-6 text-center border border-purple-100 dark:border-purple-500/20">
+              <div className="w-14 h-14 bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                 <span className="text-2xl font-black text-white">2</span>
               </div>
-              <h3 className="font-bold text-gray-900 mb-2 text-lg">
+              <h3 className="font-bold text-gray-900 dark:text-dark-text-primary mb-2 text-lg">
                 Modus wählen
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-600 dark:text-dark-text-secondary text-sm leading-relaxed">
                 Übung, Training oder Prüfung
               </p>
             </div>
 
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 text-center border border-purple-100">
-              <div className="w-14 h-14 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <div className="bg-white/60 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-6 text-center border border-purple-100 dark:border-purple-500/20">
+              <div className="w-14 h-14 bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                 <span className="text-2xl font-black text-white">3</span>
               </div>
-              <h3 className="font-bold text-gray-900 mb-2 text-lg">Üben</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <h3 className="font-bold text-gray-900 dark:text-dark-text-primary mb-2 text-lg">
+                Üben
+              </h3>
+              <p className="text-gray-600 dark:text-dark-text-secondary text-sm leading-relaxed">
                 Mit Feedback besser werden
               </p>
             </div>
