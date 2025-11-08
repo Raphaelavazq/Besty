@@ -55,16 +55,6 @@ export default function ThemeToggle() {
         {/* Glow effect */}
         <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-400 to-indigo-400 opacity-0 group-hover:opacity-20 dark:group-hover:opacity-30 transition-opacity duration-200 blur-xl"></div>
       </button>
-
-      {/* Debug labels */}
-      <div className="text-center">
-        <span className="text-[9px] text-white/60 font-mono block">
-          Store: {theme}
-        </span>
-        <span className="text-[9px] text-white/60 font-mono block">
-          HTML: {htmlHasDark ? "dark" : "light"}
-        </span>
-      </div>
     </div>
   );
 }

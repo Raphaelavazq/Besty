@@ -15,11 +15,15 @@ import {
   MessageSquare,
   HelpCircle,
   Settings,
+  Moon,
+  Sun,
 } from "lucide-react";
-import ThemeToggle from "../ThemeToggle";
+import { useStore } from "../../store/useStore";
 
 export default function DashboardShell({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const theme = useStore((state) => state.preferences.theme);
+  const toggleTheme = useStore((state) => state.toggleTheme);
 
   const sidebarItems = [
     {
@@ -159,12 +163,22 @@ export default function DashboardShell({ children }) {
                 )}
               </Link>
             ))}
-          </nav>
 
-          {/* Theme Toggle */}
-          <div className="px-4 pb-3">
-            <ThemeToggle />
-          </div>
+            {/* Theme Toggle Button */}
+            <button
+              onClick={toggleTheme}
+              className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium rounded-xl transition-all duration-200 text-white/80 hover:bg-white dark:hover:bg-white/20 hover:text-purple-700 dark:hover:text-purple-300 hover:shadow-md"
+            >
+              <div className="flex items-center">
+                {theme === "dark" ? (
+                  <Moon size={18} className="mr-3" />
+                ) : (
+                  <Sun size={18} className="mr-3" />
+                )}
+                <span>{theme === "dark" ? "Dark Mode" : "Light Mode"}</span>
+              </div>
+            </button>
+          </nav>
 
           {/* Attribution Footer */}
           <div className="px-4 pb-3 pt-3 border-t border-white/10 dark:border-white/5">

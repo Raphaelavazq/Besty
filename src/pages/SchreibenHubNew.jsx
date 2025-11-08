@@ -302,8 +302,8 @@ export default function SchreibenHubNew() {
                           1
                         </div>
                         <div className="dark:text-white">
-                          <strong className="dark:text-white">Anrede:</strong> Liebe/Lieber [Name], Hallo
-                          [Name]
+                          <strong className="dark:text-white">Anrede:</strong>{" "}
+                          Liebe/Lieber [Name], Hallo [Name]
                         </div>
                       </div>
                       <div className="flex gap-3">
@@ -311,7 +311,10 @@ export default function SchreibenHubNew() {
                           2
                         </div>
                         <div className="dark:text-white">
-                          <strong className="dark:text-white">Einleitung:</strong> Ich schreibe dir, weil...
+                          <strong className="dark:text-white">
+                            Einleitung:
+                          </strong>{" "}
+                          Ich schreibe dir, weil...
                         </div>
                       </div>
                       <div className="flex gap-3">
@@ -319,8 +322,10 @@ export default function SchreibenHubNew() {
                           3
                         </div>
                         <div className="dark:text-white">
-                          <strong className="dark:text-white">Hauptteil:</strong> Alle 3 Inhaltspunkte (je 1
-                          Absatz)
+                          <strong className="dark:text-white">
+                            Hauptteil:
+                          </strong>{" "}
+                          Alle 3 Inhaltspunkte (je 1 Absatz)
                         </div>
                       </div>
                       <div className="flex gap-3">
@@ -328,8 +333,8 @@ export default function SchreibenHubNew() {
                           4
                         </div>
                         <div className="dark:text-white">
-                          <strong className="dark:text-white">Schluss:</strong> Ich freue mich auf deine
-                          Antwort!
+                          <strong className="dark:text-white">Schluss:</strong>{" "}
+                          Ich freue mich auf deine Antwort!
                         </div>
                       </div>
                       <div className="flex gap-3">
@@ -337,8 +342,10 @@ export default function SchreibenHubNew() {
                           5
                         </div>
                         <div className="dark:text-white">
-                          <strong className="dark:text-white">Grußformel:</strong> Liebe Grüße, Bis bald,
-                          Viele Grüße
+                          <strong className="dark:text-white">
+                            Grußformel:
+                          </strong>{" "}
+                          Liebe Grüße, Bis bald, Viele Grüße
                         </div>
                       </div>
                     </div>
