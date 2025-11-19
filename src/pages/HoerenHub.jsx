@@ -146,24 +146,18 @@ export default function HoerenHub() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary">
-      {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-purple-600 via-indigo-700 to-purple-800 dark:from-purple-700 dark:via-indigo-800 dark:to-purple-900">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15),transparent_50%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.08),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.05),transparent_50%)]"></div>
+      {/* Hero Section - Full Viewport with Glass Layer */}
+      <div className="relative overflow-hidden bg-gradient-to-br from-purple-600 via-indigo-600 to-purple-700 dark:from-purple-900 dark:via-indigo-950 dark:to-purple-950 min-h-screen flex items-center p-4 sm:p-8 lg:p-12">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent_50%)]"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
-          {/* Back Button - Icon only */}
-          <Link
-            to="/tests"
-            className="inline-flex items-center justify-center w-10 h-10 mb-8 bg-white/10 hover:bg-white/20 dark:bg-white/5 dark:hover:bg-white/10 backdrop-blur-sm rounded-full transition-all duration-200 hover:scale-110 active:scale-95 group"
-            aria-label="Zurück zu Tests"
-          >
-            <ArrowLeft className="w-5 h-5 text-white group-hover:-translate-x-0.5 transition-transform duration-200" />
-          </Link>
+        {/* Full Glass Container */}
+        <div className="absolute inset-4 sm:inset-8 lg:inset-12 bg-purple-500/10 backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-white/20 shadow-2xl"></div>
 
-          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+        <div className="relative max-w-7xl mx-auto w-full z-10">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-6 sm:gap-8 lg:gap-12">
             {/* Lottie Animation */}
-            <div className="w-40 h-40 lg:w-48 lg:h-48 flex-shrink-0">
+            <div className="w-32 h-32 sm:w-40 sm:h-40 lg:w-80 lg:h-80 flex-shrink-0 flex items-center justify-center">
               <DotLottieReact
                 src="https://lottie.host/4d3e31f5-81a0-4a2f-ae91-4005e44d6183/yN5pIHb42r.lottie"
                 loop
@@ -173,27 +167,39 @@ export default function HoerenHub() {
             </div>
 
             {/* Text Content */}
-            <div className="text-center lg:text-left flex-1">
-              <h1 className="text-5xl lg:text-6xl font-black text-white mb-4 tracking-tight">
+            <div className="text-center lg:text-left flex-1 px-2 sm:px-0">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 sm:mb-6 lg:mb-8 tracking-tight leading-tight">
                 DTZ Hören
               </h1>
-              <p className="text-xl lg:text-2xl text-white/90 font-light mb-4">
-                Hörverstehen trainieren
-              </p>
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-white/80 text-sm">
-                <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4" />
-                  <span>25 Minuten</span>
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 text-white/80 text-xs sm:text-sm mb-5 sm:mb-6 lg:mb-8">
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  <span className="font-semibold">25 Minuten</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Target className="w-4 h-4" />
-                  <span>20 Punkte</span>
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <Target className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  <span className="font-semibold">20 Punkte</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Headphones className="w-4 h-4" />
-                  <span>3 Teile</span>
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <Headphones className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  <span className="font-semibold">3 Teile</span>
                 </div>
               </div>
+
+              {/* CTA Button */}
+              <Link to="/tests/hoeren/training">
+                <button className="inline-flex items-center gap-2 bg-white dark:bg-white/10 text-purple-700 dark:text-purple-400 px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base lg:text-lg shadow-2xl hover:shadow-3xl hover:-translate-y-1 transition-all duration-200 hover:bg-purple-50 dark:hover:bg-white/20 border-2 border-transparent dark:border-purple-500/30 w-full sm:w-auto">
+                  <span>Jetzt üben</span>
+                  <ArrowRight size={16} className="sm:w-5 sm:h-5" />
+                </button>
+              </Link>
+            </div>
+          </div>
+
+          {/* Scroll Indicator - Centered Below Content - Hidden on Mobile */}
+          <div className="hidden sm:flex justify-center mt-8 lg:mt-12 animate-bounce">
+            <div className="w-6 h-10 border-2 border-white/40 rounded-full flex items-start justify-center p-1">
+              <div className="w-1 h-2 bg-white/60 rounded-full animate-pulse"></div>
             </div>
           </div>
         </div>
@@ -203,11 +209,11 @@ export default function HoerenHub() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         {/* Prüfungsstruktur - Clean Timeline Design */}
         <div className="mb-16">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-400 dark:to-indigo-400 bg-clip-text text-transparent mb-3 tracking-tight">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-400 dark:to-indigo-400 bg-clip-text text-transparent mb-2 sm:mb-3 tracking-tight leading-tight pb-2">
               Prüfungsstruktur
             </h2>
-            <p className="text-slate-600 dark:text-dark-text-secondary text-lg lg:text-xl leading-relaxed font-light">
+            <p className="text-slate-600 dark:text-dark-text-secondary text-base sm:text-lg lg:text-xl leading-relaxed font-light">
               3 Teile • 25 Minuten • 20 Punkte
             </p>
           </div>

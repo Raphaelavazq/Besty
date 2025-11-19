@@ -41,6 +41,11 @@ import ThemeGallery from "./pages/ThemeGallery";
 import ThemeDetail from "./features/themes/ThemeDetail";
 import ThemeQuiz from "./features/themes/ThemeQuiz";
 
+// Einbürgerungstest system
+import EinbuergerungstestHub from "./features/einbuergerungstest/EinbuergerungstestHub";
+import Fragenkatalog from "./features/einbuergerungstest/Fragenkatalog";
+import ExamSimulator from "./features/einbuergerungstest/ExamSimulator";
+
 // Placeholder component for coming soon pages
 const ComingSoon = ({ title }) => (
   <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 flex items-center justify-center p-6">
@@ -336,6 +341,40 @@ function App() {
         element={
           <HoverSidebarShell>
             <About />
+          </HoverSidebarShell>
+        }
+      />
+
+      {/* Einbürgerungstest */}
+      <Route
+        path="/einbuergerungstest"
+        element={
+          <HoverSidebarShell>
+            <EinbuergerungstestHub />
+          </HoverSidebarShell>
+        }
+      />
+      <Route
+        path="/einbuergerungstest/fragenkatalog"
+        element={
+          <HoverSidebarShell>
+            <Fragenkatalog />
+          </HoverSidebarShell>
+        }
+      />
+      <Route
+        path="/einbuergerungstest/probetest"
+        element={
+          <HoverSidebarShell>
+            <ExamSimulator mode="probetest" />
+          </HoverSidebarShell>
+        }
+      />
+      <Route
+        path="/einbuergerungstest/training"
+        element={
+          <HoverSidebarShell>
+            <ExamSimulator mode="practice" />
           </HoverSidebarShell>
         }
       />

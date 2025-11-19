@@ -635,18 +635,10 @@ All designs follow **Besty Design Standards** from `docs/#DESIGN_SYSTEM.md`:
 
 ```css
 /* Primary Colors */
---purple-600: #8B5CF6
---indigo-600: #6366F1
---purple-50: #FAF5FF
-
-/* Success/Error */
---green-500: #22C55E
---red-500: #EF4444
-
-/* Dark Mode */
---dark-bg-primary: #0A0118
---dark-bg-secondary: #1A0F2E
---dark-text-primary: #F9F5FF
+--purple-600: #8b5cf6 --indigo-600: #6366f1 --purple-50: #faf5ff
+  /* Success/Error */ --green-500: #22c55e --red-500: #ef4444 /* Dark Mode */
+  --dark-bg-primary: #0a0118 --dark-bg-secondary: #1a0f2e
+  --dark-text-primary: #f9f5ff;
 ```
 
 ### Typography Scale
@@ -713,4 +705,4 @@ xl:        1280px+ (Large desktop)
 
 ---
 
-*All designs follow Besty standards for consistency across the app!* 🎨
+_All designs follow Besty standards for consistency across the app!_ 🎨

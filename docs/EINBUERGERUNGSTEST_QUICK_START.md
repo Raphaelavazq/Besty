@@ -13,15 +13,15 @@ A modern trainer for the German citizenship test (Einbürgerungstest) that beats
 
 ## Why We'll Be Better
 
-| Feature | BAMF Official | Our Version |
-|---------|--------------|-------------|
-| Design | ❌ 2000s UI | ✅ Modern Besty design |
-| Mobile | ❌ Not optimized | ✅ Mobile-first |
-| Dark Mode | ❌ No | ✅ Yes |
-| Progress Tracking | ❌ No | ✅ Full stats |
-| Smart Learning | ❌ No | ✅ Spaced repetition |
-| Bookmarks | ❌ No | ✅ Yes |
-| Practice Modes | ❌ Linear only | ✅ Multiple modes |
+| Feature           | BAMF Official    | Our Version            |
+| ----------------- | ---------------- | ---------------------- |
+| Design            | ❌ 2000s UI      | ✅ Modern Besty design |
+| Mobile            | ❌ Not optimized | ✅ Mobile-first        |
+| Dark Mode         | ❌ No            | ✅ Yes                 |
+| Progress Tracking | ❌ No            | ✅ Full stats          |
+| Smart Learning    | ❌ No            | ✅ Spaced repetition   |
+| Bookmarks         | ❌ No            | ✅ Yes                 |
+| Practice Modes    | ❌ Linear only   | ✅ Multiple modes      |
 
 ## Technical Stack
 
@@ -70,6 +70,7 @@ public/data/einbuergerungstest/
 ## Implementation Phases
 
 ### Phase 1: MVP (Week 1) ✅ START HERE
+
 - [ ] Create questions.json with 50 test questions
 - [ ] Build EinbuergerungstestHub landing page
 - [ ] Build ExamSimulator (basic 33-question test)
@@ -78,6 +79,7 @@ public/data/einbuergerungstest/
 **Goal**: Take a practice exam
 
 ### Phase 2: Full Dataset (Week 2)
+
 - [ ] Add all 310 questions
 - [ ] Add Bundesland selection
 - [ ] Add explanations and categories
@@ -85,6 +87,7 @@ public/data/einbuergerungstest/
 **Goal**: Complete question database
 
 ### Phase 3: Enhanced UX (Week 3)
+
 - [ ] Question browser with filters
 - [ ] Results screen with charts
 - [ ] Mobile optimization
@@ -93,6 +96,7 @@ public/data/einbuergerungstest/
 **Goal**: Beautiful & usable
 
 ### Phase 4: Smart Features (Week 4)
+
 - [ ] Progress tracking
 - [ ] Weak area identification
 - [ ] Spaced repetition
@@ -101,6 +105,7 @@ public/data/einbuergerungstest/
 **Goal**: Intelligent learning
 
 ### Phase 5: Polish (Week 5)
+
 - [ ] Accessibility audit
 - [ ] Performance optimization
 - [ ] User testing
@@ -130,6 +135,7 @@ public/data/einbuergerungstest/
 ## Data Acquisition Options
 
 ### Option A: Manual Entry (RECOMMENDED)
+
 - Use official BAMF catalog
 - Copy questions to spreadsheet
 - Convert to JSON
@@ -139,6 +145,7 @@ public/data/einbuergerungstest/
 **Con**: Time-consuming
 
 ### Option B: Scraping
+
 - Write Playwright script
 - Navigate BAMF site
 - Extract questions
@@ -150,6 +157,7 @@ public/data/einbuergerungstest/
 ## Design Patterns to Follow
 
 ### From Besty
+
 - ✅ Glassmorphism cards
 - ✅ Purple/indigo gradients
 - ✅ Large touch targets (44px min)
@@ -157,6 +165,7 @@ public/data/einbuergerungstest/
 - ✅ Dark mode support
 
 ### From DTZ Hören/Lesen
+
 - ✅ Progress indicators
 - ✅ Question navigation
 - ✅ Results with category breakdown
@@ -183,6 +192,7 @@ public/data/einbuergerungstest/
 ## Dashboard Navigation
 
 Add to sidebar:
+
 ```javascript
 {
   name: "Einbürgerungstest",
@@ -195,12 +205,14 @@ Add to sidebar:
 ## Success Metrics
 
 **MVP Success**:
+
 - Can take full 33-question exam
 - Shows correct/incorrect immediately
 - Displays results with score
 - Mobile-friendly
 
 **Launch Success**:
+
 - All 310 questions loaded
 - Bundesland selection works
 - Progress tracking works

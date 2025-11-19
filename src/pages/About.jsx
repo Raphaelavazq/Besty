@@ -43,6 +43,13 @@ export default function About() {
               Moderne, strukturierte Prüfungsvorbereitung für alle vier
               Bereiche: Hören, Lesen, Schreiben und Sprechen
             </p>
+
+            {/* Scroll Indicator - Below Text - Hidden on Mobile */}
+            <div className="hidden sm:flex justify-center mt-8 animate-bounce">
+              <div className="w-6 h-10 border-2 border-purple-300 dark:border-purple-500 rounded-full flex items-start justify-center p-1">
+                <div className="w-1 h-2 bg-purple-400 dark:bg-purple-500 rounded-full animate-pulse"></div>
+              </div>
+            </div>
           </div>
         </div>
 

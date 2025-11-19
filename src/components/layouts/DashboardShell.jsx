@@ -17,6 +17,7 @@ import {
   Settings,
   Moon,
   Sun,
+  GraduationCap,
 } from "lucide-react";
 import { useStore } from "../../store/useStore";
 
@@ -55,6 +56,12 @@ export default function DashboardShell({ children }) {
       name: "Sprechen",
       icon: MessageSquare,
       href: "/tests/sprechen",
+      available: true,
+    },
+    {
+      name: "Einbürgerungstest",
+      icon: GraduationCap,
+      href: "/einbuergerungstest",
       available: true,
     },
     {

@@ -17,6 +17,7 @@ import {
   User,
   HelpCircle,
   BarChart3,
+  BookOpen,
 } from "lucide-react";
 
 export default function BareShell({ children }) {
@@ -41,6 +42,12 @@ export default function BareShell({ children }) {
       icon: GraduationCap,
       href: "/study",
       active: location.pathname === "/study",
+    },
+    {
+      name: "Einbürgerungstest",
+      icon: GraduationCap,
+      href: "/einbuergerungstest",
+      active: location.pathname.startsWith("/einbuergerungstest"),
     },
     {
       name: "Progress",

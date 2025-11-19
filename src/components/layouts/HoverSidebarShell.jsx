@@ -15,6 +15,7 @@ import {
   MessageSquare,
   HelpCircle,
   Settings,
+  GraduationCap,
 } from "lucide-react";
 
 export default function HoverSidebarShell({ children }) {
@@ -61,6 +62,12 @@ export default function HoverSidebarShell({ children }) {
       icon: MessageSquare,
       href: "/tests/sprechen",
       active: location.pathname.startsWith("/tests/sprechen"),
+    },
+    {
+      name: "Einbürgerungstest",
+      icon: GraduationCap,
+      href: "/einbuergerungstest",
+      active: location.pathname.startsWith("/einbuergerungstest"),
     },
     {
       name: "About",

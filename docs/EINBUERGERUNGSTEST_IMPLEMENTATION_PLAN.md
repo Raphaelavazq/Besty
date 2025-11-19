@@ -7,6 +7,7 @@
 **Target Audience**: People preparing for German citizenship naturalization test (B1 level required)
 
 **Test Structure** (Official BAMF):
+
 - **310 total questions**: 300 general + 10 state-specific (Bundesland)
 - **Exam format**: 33 multiple-choice questions (30 general + 3 state-specific)
 - **Passing score**: 17+ correct answers (51.5%)
@@ -20,13 +21,16 @@
 ### Existing Solutions
 
 #### BAMF Official Trainer (https://oet.bamf.de)
+
 **Pros:**
+
 - Official source
 - All 310 questions available
 - Free access
 - State selection
 
 **Cons:**
+
 - ❌ Outdated UI (early 2000s design)
 - ❌ No dark mode
 - ❌ Not mobile-optimized
@@ -36,6 +40,7 @@
 - ❌ No modern features (bookmarks, notes, statistics)
 
 #### Other Platforms Analyzed
+
 - **einbuergerungstest-online.de**: Better UI but ads, limited free access
 - **Apps (iOS/Android)**: Offline access but often paid, inconsistent UX
 - **YouTube channels**: Good for visual learners but no interactive practice
@@ -60,6 +65,7 @@
 **Solution: Structured JSON with Compression**
 
 #### Option 1: Single JSON File (RECOMMENDED)
+
 ```json
 {
   "metadata": {
@@ -73,9 +79,7 @@
     "Geschichte und Verantwortung",
     "Mensch und Gesellschaft"
   ],
-  "bundeslaender": [
-    "Baden-Württemberg", "Bayern", "Berlin", /* ... */
-  ],
+  "bundeslaender": ["Baden-Württemberg", "Bayern", "Berlin" /* ... */],
   "questions": [
     {
       "id": 1,
@@ -99,12 +103,7 @@
       "bundesland": "Berlin",
       "category": "Berlin",
       "question": "Welches Bundesland ist ein Stadtstaat?",
-      "options": [
-        "Nordrhein-Westfalen",
-        "Bayern",
-        "Berlin",
-        "Hessen"
-      ],
+      "options": ["Nordrhein-Westfalen", "Bayern", "Berlin", "Hessen"],
       "correctAnswer": 2,
       "explanation": "Berlin ist neben Hamburg und Bremen einer von drei deutschen Stadtstaaten.",
       "difficulty": "medium",
@@ -117,10 +116,11 @@
 **File Size Estimate**: ~500-700 KB (reasonable for modern web)
 
 #### Option 2: Split by Category (If needed)
+
 ```
 /public/data/einbuergerungstest/
   ├── general-politik.json         (~150 questions)
-  ├── general-geschichte.json      (~100 questions)  
+  ├── general-geschichte.json      (~100 questions)
   ├── general-gesellschaft.json    (~50 questions)
   └── bundeslaender/
       ├── berlin.json              (10 questions)
@@ -215,6 +215,7 @@ scripts/
 ### Hub Page Design
 
 **Hero Section:**
+
 ```
 ┌─────────────────────────────────────────┐
 │  [Besty Animation]                      │
@@ -231,6 +232,7 @@ scripts/
 ```
 
 **Features Section:**
+
 - 🎯 Exam Simulation (33 questions, 60 min timer)
 - 📚 Browse All Questions (310 with search/filter)
 - 💪 Practice Mode (Custom sets, difficulty levels)
@@ -260,6 +262,7 @@ scripts/
 ```
 
 **After Answer Selection:**
+
 ```
 ┌─────────────────────────────────────────┐
 │ ✅ Richtig! / ❌ Leider falsch          │
@@ -277,6 +280,7 @@ scripts/
 ### Results Screen Design
 
 **Exam Mode:**
+
 ```
 ┌─────────────────────────────────────────┐
 │         🎉 Bestanden! / 😔 Nicht bestanden │
@@ -303,9 +307,11 @@ scripts/
 ## 🎯 Core Features
 
 ### 1. Exam Simulator (Priority 1)
+
 **User Story**: "I want to take a realistic practice exam"
 
 **Features**:
+
 - Select Bundesland first
 - 33 random questions (30 general + 3 state-specific)
 - 60-minute countdown timer
@@ -315,6 +321,7 @@ scripts/
 - Option to review mistakes
 
 **State Management**:
+
 ```javascript
 {
   mode: 'exam',
@@ -329,9 +336,11 @@ scripts/
 ```
 
 ### 2. Question Browser (Priority 1)
+
 **User Story**: "I want to study all questions systematically"
 
 **Features**:
+
 - View all 310 questions
 - Filter by category, difficulty, Bundesland
 - Search by keyword
@@ -341,6 +350,7 @@ scripts/
 - Progress indicator (e.g., "studied 142/310")
 
 **Filters**:
+
 ```javascript
 {
   category: ['Politik', 'Geschichte', 'Gesellschaft'],
@@ -353,9 +363,11 @@ scripts/
 ```
 
 ### 3. Practice Mode (Priority 2)
+
 **User Story**: "I want to practice specific categories"
 
 **Features**:
+
 - Choose category
 - Choose number of questions (10, 20, 50, all)
 - Choose difficulty
@@ -364,9 +376,11 @@ scripts/
 - Can review all answers at end
 
 ### 4. Progress Dashboard (Priority 2)
+
 **User Story**: "I want to track my learning progress"
 
 **Metrics to Track**:
+
 - Total questions studied
 - Exam simulation results history
 - Success rate per category
@@ -400,9 +414,11 @@ scripts/
 ```
 
 ### 5. Bundesland Selection (Priority 1)
+
 **User Story**: "I need questions for my specific state"
 
 **Implementation**:
+
 - Dropdown/modal to select state
 - Persist in localStorage
 - Can change anytime
@@ -414,36 +430,45 @@ scripts/
 ## 💾 Data Acquisition Strategy
 
 ### Option A: Manual Data Entry (RECOMMENDED)
+
 **Pros**:
+
 - ✅ Legal (no scraping)
 - ✅ Quality controlled
 - ✅ Official BAMF source
 - ✅ Can add explanations/tags
 
 **Cons**:
+
 - ⏱️ Time-consuming (but only once)
 
 **Process**:
+
 1. Access BAMF official question catalog
 2. Create spreadsheet with all 310 questions
 3. Convert to JSON with script
 4. Add metadata (categories, difficulty, tags)
 
 ### Option B: Scrape BAMF Website
+
 **Pros**:
+
 - ⚡ Fast automation
 
 **Cons**:
+
 - ⚠️ Legal gray area
 - 🔧 May require maintenance if site changes
 
 **Process**:
+
 1. Create `scripts/fetch-einbuergerungstest.js`
 2. Use Playwright/Puppeteer to navigate BAMF site
 3. Extract questions, options, correct answers
 4. Generate JSON file
 
 ### Option C: Use Existing Open Dataset
+
 **Research Needed**: Check if GitHub/Kaggle has pre-compiled BAMF datasets
 
 **If found**: Verify accuracy, add license attribution
@@ -453,6 +478,7 @@ scripts/
 ## 🛠️ Implementation Phases
 
 ### Phase 1: Foundation (Week 1)
+
 **Goal**: Get basic question display working
 
 - [ ] Create data structure (questions.json)
@@ -466,6 +492,7 @@ scripts/
 **Deliverable**: Can take a 33-question practice exam
 
 ### Phase 2: Full Dataset (Week 2)
+
 **Goal**: Complete all 310 questions
 
 - [ ] Complete all general questions (300)
@@ -478,6 +505,7 @@ scripts/
 **Deliverable**: Full question database ready
 
 ### Phase 3: Enhanced UX (Week 3)
+
 **Goal**: Make it beautiful and usable
 
 - [ ] Create `QuestionBrowser.jsx`
@@ -491,6 +519,7 @@ scripts/
 **Deliverable**: Professional-looking trainer
 
 ### Phase 4: Smart Features (Week 4)
+
 **Goal**: Add intelligence
 
 - [ ] Create `ProgressDashboard.jsx`
@@ -503,6 +532,7 @@ scripts/
 **Deliverable**: Fully-featured learning platform
 
 ### Phase 5: Polish & Launch (Week 5)
+
 **Goal**: Production ready
 
 - [ ] Accessibility audit
@@ -520,18 +550,21 @@ scripts/
 ## 📱 Mobile Considerations
 
 ### Gestures
+
 - **Swipe left**: Next question
 - **Swipe right**: Previous question (if allowed)
 - **Tap option**: Select answer
 - **Long press**: Bookmark question
 
 ### Layout
+
 - Stack options vertically (easier to tap)
 - Fixed bottom navigation
 - Collapsible header on scroll
 - Pull-to-refresh in browser mode
 
 ### Performance
+
 - Lazy load images (if any)
 - Virtual scrolling for 310 questions
 - Prefetch next question
@@ -542,16 +575,19 @@ scripts/
 ## 🎓 Learning Science Features
 
 ### Spaced Repetition
+
 - Show questions again based on:
   - ❌ Answered incorrectly → Show in 1 day
   - ✅ Answered correctly → Show in 7 days
   - 🔄 Reviewed multiple times → Show in 30 days
 
 ### Adaptive Difficulty
+
 - If user struggles with "Geschichte" → Show more history questions
 - If user excels at "Politik" → Mix in harder variants
 
 ### Gamification
+
 - Streaks (days studied in a row)
 - Badges (100 questions studied, perfect exam, etc.)
 - Leaderboard (optional, privacy-respecting)
@@ -561,6 +597,7 @@ scripts/
 ## 🔒 Privacy & Data
 
 ### What to Store Locally
+
 - Selected Bundesland
 - Progress data
 - Exam history
@@ -568,10 +605,12 @@ scripts/
 - Settings (dark mode, notifications)
 
 ### What NOT to Store
+
 - Personal information
 - Email/name (anonymous use)
 
 ### GDPR Compliance
+
 - No cookies (use localStorage only)
 - No analytics (or privacy-first like Plausible)
 - No external tracking
@@ -582,18 +621,21 @@ scripts/
 ## 🚀 Launch Strategy
 
 ### Beta Testing
+
 1. Internal testing with DTZ students
 2. Gather feedback on UX
 3. Validate question accuracy
 4. Test on multiple devices
 
 ### Marketing
+
 - Blog post: "New: Einbürgerungstest Trainer"
 - Social media (Twitter, LinkedIn)
 - German learning forums (Reddit r/German)
 - Partner with integration courses
 
 ### Success Metrics
+
 - Usage: X exams taken per week
 - Quality: Average score improvement
 - Engagement: Return rate after 1 week
@@ -604,16 +646,19 @@ scripts/
 ## 📚 Resources & References
 
 ### Official Sources
+
 - **BAMF Official Catalog**: https://oet.bamf.de
 - **Practice Test**: https://www.bamf.de/einbuergerungstest
 - **Official Rules**: Bundesamt für Migration und Flüchtlinge
 
 ### Technical Inspiration
+
 - Duolingo (gamification, progress tracking)
 - Quizlet (study modes, spaced repetition)
 - Kahoot (engaging question format)
 
 ### Design References
+
 - Current Besty design system
 - Material Design 3 (component patterns)
 - Apple Human Interface Guidelines (mobile)
@@ -623,6 +668,7 @@ scripts/
 ## 💡 Future Enhancements
 
 ### V2 Features (After Launch)
+
 - [ ] Audio pronunciation of questions
 - [ ] Detailed explanations with links to Learn more
 - [ ] Community discussion per question
@@ -631,6 +677,7 @@ scripts/
 - [ ] Multi-language support (for German learners)
 
 ### Integration Opportunities
+
 - Link to relevant DTZ vocabulary themes
 - Connect with Besty's existing B1 content
 - Cross-promote with Lesen/Schreiben practice
@@ -640,22 +687,27 @@ scripts/
 ## ✅ Decision Points for Review
 
 ### 1. Data Source
+
 - **Recommend**: Manual entry from BAMF official site
 - **Alternative**: Scraping with legal review
 
 ### 2. File Structure
+
 - **Recommend**: Single `questions.json` file (~600 KB)
 - **Alternative**: Split by category if performance issues
 
 ### 3. State Management
+
 - **Recommend**: Zustand store with persist
 - **Alternative**: Context API + localStorage
 
 ### 4. Mobile Strategy
+
 - **Recommend**: Responsive web (mobile-first)
 - **Alternative**: Consider PWA for offline
 
 ### 5. Phase Priority
+
 - **Phase 1-2**: MVP (basic exam simulator)
 - **Phase 3-4**: Enhanced UX
 - **Phase 5**: Polish & extras
@@ -665,6 +717,7 @@ scripts/
 ## 📊 Success Criteria
 
 **MVP is successful when**:
+
 - ✅ User can select their Bundesland
 - ✅ User can take realistic 33-question exam
 - ✅ User can browse all 310 questions
@@ -673,6 +726,7 @@ scripts/
 - ✅ Questions are accurate (verified against BAMF)
 
 **Feature is production-ready when**:
+
 - ✅ All 310 questions loaded with explanations
 - ✅ Progress tracking works reliably
 - ✅ Zero critical bugs
@@ -694,6 +748,7 @@ scripts/
 ---
 
 **Questions for Discussion**:
+
 1. Should we scrape BAMF or manually enter questions?
 2. Any specific Bundesland to prioritize (Berlin for you)?
 3. Want to include audio/video explanations in V1?
@@ -701,4 +756,4 @@ scripts/
 
 ---
 
-*This plan follows Besty's proven pattern: DTZ Hören, Lesen, Schreiben, Sprechen — now Einbürgerungstest completes the suite for comprehensive German integration exam preparation.* 🇩🇪
+_This plan follows Besty's proven pattern: DTZ Hören, Lesen, Schreiben, Sprechen — now Einbürgerungstest completes the suite for comprehensive German integration exam preparation._ 🇩🇪
