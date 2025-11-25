@@ -110,163 +110,176 @@ export default function EinbuergerungstestProfile() {
   }
 
   return (
-    <div className="bg-gradient-to-br from-purple-600 via-indigo-600 to-purple-700 rounded-3xl p-6 sm:p-8 shadow-2xl text-white relative overflow-hidden mb-6">
+    <div className="bg-gradient-to-br from-purple-600 via-indigo-600 to-purple-700 rounded-3xl p-4 sm:p-8 shadow-2xl text-white relative overflow-hidden mb-6">
       {/* Background decorations */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
       <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
 
       <div className="relative z-10">
-        {/* Header */}
-        <div className="flex items-center justify-between mb-6">
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/30">
-              <Brain className="w-6 h-6 text-white" />
+        {/* Header - Minimal on mobile */}
+        <div className="flex items-center justify-between mb-4 sm:mb-5">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div className="w-9 h-9 sm:w-12 sm:h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/30">
+              <Brain className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
             </div>
             <div>
-              <h2 className="text-2xl font-black text-white">
+              <h2 className="text-base sm:text-2xl font-black text-white leading-tight">
                 Einbürgerungstest
               </h2>
-              <p className="text-sm text-white/90">
+              <p className="text-[10px] sm:text-sm text-white/80">
                 {user?.bundesland || "Berlin"} • 310 Fragen
               </p>
             </div>
           </div>
 
-          {/* Best Score Badge (if exams taken) */}
+          {/* Best Score Badge (if exams taken) - Hidden on mobile */}
           {stats.examsTaken > 0 && (
-            <div className="bg-white/20 backdrop-blur-md rounded-xl p-3 text-center border border-white/30">
-              <Award className="w-5 h-5 mx-auto mb-1" />
-              <div className="text-xl font-bold">{stats.bestScore}/33</div>
-              <div className="text-[10px] opacity-90">Beste</div>
+            <div className="hidden sm:flex bg-white/20 backdrop-blur-md rounded-xl p-2 sm:p-3 text-center border border-white/30 flex-col items-center">
+              <Award className="w-4 h-4 sm:w-5 sm:h-5 mb-1" />
+              <div className="text-lg sm:text-xl font-bold leading-none">
+                {stats.bestScore}/33
+              </div>
+              <div className="text-[9px] sm:text-[10px] opacity-90">Beste</div>
             </div>
           )}
         </div>
 
-        {/* Progress Bar */}
-        <div className="mb-6">
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-sm font-semibold text-white">
-              Gesamtfortschritt
+        {/* Progress Bar - More compact on mobile */}
+        <div className="mb-4 sm:mb-5">
+          <div className="flex items-center justify-between mb-1.5 sm:mb-2">
+            <span className="text-[10px] sm:text-sm font-semibold text-white/90">
+              Fortschritt
             </span>
-            <span className="text-lg font-black text-white">{progress}%</span>
+            <span className="text-sm sm:text-lg font-black text-white">
+              {progress}%
+            </span>
           </div>
-          <div className="h-3 bg-white/20 rounded-full overflow-hidden backdrop-blur-sm border border-white/30">
+          <div className="h-2 sm:h-3 bg-white/20 rounded-full overflow-hidden backdrop-blur-sm border border-white/30">
             <div
               className="h-full bg-gradient-to-r from-emerald-400 to-teal-400 transition-all duration-1000 rounded-full"
               style={{ width: `${progress}%` }}
             />
           </div>
-          <p className="text-xs text-white/90 mt-1">
-            {stats.mastered} / {stats.total} Fragen gelernt
+          <p className="text-[10px] sm:text-xs text-white/80 mt-1">
+            {stats.mastered} / {stats.total} gelernt
           </p>
         </div>
 
-        {/* Stats Grid - Clickable cards that filter questions */}
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
+        {/* Stats Grid - Show only mastered and difficulty on mobile */}
+        <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-4 sm:mb-5 sm:grid-cols-5">
+          {/* Mobile: Show only mastered, easy, hard. Tablet+: Show all 5 */}
+          <Link
+            to="/einbuergerungstest/fragenkatalog?filter=gelernt"
+            className="bg-white/10 active:bg-white/30 sm:hover:bg-white/20 backdrop-blur-sm rounded-xl p-2 sm:p-3 border border-white/20 transition-all sm:hover:-translate-y-1 sm:hover:shadow-lg cursor-pointer group text-white"
+          >
+            <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4 mb-0.5 sm:mb-1 opacity-80 group-active:scale-95 sm:group-hover:scale-110 transition-transform" />
+            <div className="text-base sm:text-xl font-bold group-active:scale-95 sm:group-hover:scale-110 transition-transform">
+              {stats.mastered}
+            </div>
+            <div className="text-[9px] sm:text-[10px] opacity-80">Gelernt</div>
+          </Link>
+
           <Link
             to="/einbuergerungstest/fragenkatalog?filter=easy"
-            className="bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl p-3 border border-white/20 transition-all hover:-translate-y-1 hover:shadow-lg cursor-pointer group text-white"
+            className="bg-white/10 active:bg-white/30 sm:hover:bg-white/20 backdrop-blur-sm rounded-xl p-2 sm:p-3 border border-white/20 transition-all sm:hover:-translate-y-1 sm:hover:shadow-lg cursor-pointer group text-white"
           >
-            <div className="flex items-center gap-2 mb-1">
-              <div className="w-2 h-2 rounded-full bg-white/60"></div>
-              <span className="text-xs opacity-80">Leicht</span>
+            <div className="flex items-center gap-1 mb-0.5 sm:mb-1">
+              <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-white/60"></div>
+              <span className="text-[9px] sm:text-xs opacity-80">Leicht</span>
             </div>
-            <div className="text-xl font-bold group-hover:scale-110 transition-transform">
+            <div className="text-base sm:text-xl font-bold group-active:scale-95 sm:group-hover:scale-110 transition-transform">
               {stats.easy}
             </div>
           </Link>
 
           <Link
-            to="/einbuergerungstest/fragenkatalog?filter=medium"
-            className="bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl p-3 border border-white/20 transition-all hover:-translate-y-1 hover:shadow-lg cursor-pointer group text-white"
+            to="/einbuergerungstest/fragenkatalog?filter=hard"
+            className="bg-white/10 active:bg-white/30 sm:hover:bg-white/20 backdrop-blur-sm rounded-xl p-2 sm:p-3 border border-white/20 transition-all sm:hover:-translate-y-1 sm:hover:shadow-lg cursor-pointer group text-white"
           >
-            <div className="flex items-center gap-2 mb-1">
-              <div className="w-2 h-2 rounded-full bg-white/60"></div>
-              <span className="text-xs opacity-80">Mittel</span>
+            <div className="flex items-center gap-1 mb-0.5 sm:mb-1">
+              <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-white/60"></div>
+              <span className="text-[9px] sm:text-xs opacity-80">Schwer</span>
             </div>
-            <div className="text-xl font-bold group-hover:scale-110 transition-transform">
+            <div className="text-base sm:text-xl font-bold group-active:scale-95 sm:group-hover:scale-110 transition-transform">
+              {stats.hard}
+            </div>
+          </Link>
+
+          {/* Hidden on mobile, shown on tablet+ */}
+          <Link
+            to="/einbuergerungstest/fragenkatalog?filter=medium"
+            className="hidden sm:flex flex-col bg-white/10 active:bg-white/30 sm:hover:bg-white/20 backdrop-blur-sm rounded-xl p-2 sm:p-3 border border-white/20 transition-all sm:hover:-translate-y-1 sm:hover:shadow-lg cursor-pointer group text-white"
+          >
+            <div className="flex items-center gap-1 mb-0.5 sm:mb-1">
+              <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-white/60"></div>
+              <span className="text-[9px] sm:text-xs opacity-80">Mittel</span>
+            </div>
+            <div className="text-base sm:text-xl font-bold group-active:scale-95 sm:group-hover:scale-110 transition-transform">
               {stats.medium}
             </div>
           </Link>
 
           <Link
-            to="/einbuergerungstest/fragenkatalog?filter=hard"
-            className="bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl p-3 border border-white/20 transition-all hover:-translate-y-1 hover:shadow-lg cursor-pointer group text-white"
-          >
-            <div className="flex items-center gap-2 mb-1">
-              <div className="w-2 h-2 rounded-full bg-white/60"></div>
-              <span className="text-xs opacity-80">Schwer</span>
-            </div>
-            <div className="text-xl font-bold group-hover:scale-110 transition-transform">
-              {stats.hard}
-            </div>
-          </Link>
-
-          <Link
-            to="/einbuergerungstest/fragenkatalog?filter=gelernt"
-            className="bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl p-3 border border-white/20 transition-all hover:-translate-y-1 hover:shadow-lg cursor-pointer group text-white"
-          >
-            <Award className="w-4 h-4 mb-1 opacity-80 group-hover:scale-110 transition-transform" />
-            <div className="text-xl font-bold group-hover:scale-110 transition-transform">
-              {stats.mastered}
-            </div>
-            <div className="text-[10px] opacity-80">Gelernt</div>
-          </Link>
-
-          <Link
             to="/einbuergerungstest/fragenkatalog?filter=marked"
-            className="bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl p-3 border border-white/20 transition-all hover:-translate-y-1 hover:shadow-lg cursor-pointer group text-white"
+            className="hidden sm:flex flex-col bg-white/10 active:bg-white/30 sm:hover:bg-white/20 backdrop-blur-sm rounded-xl p-2 sm:p-3 border border-white/20 transition-all sm:hover:-translate-y-1 sm:hover:shadow-lg cursor-pointer group text-white"
           >
-            <Bookmark className="w-4 h-4 mb-1 opacity-80 group-hover:scale-110 transition-transform" />
-            <div className="text-xl font-bold group-hover:scale-110 transition-transform">
+            <Bookmark className="w-3.5 h-3.5 sm:w-4 sm:h-4 mb-0.5 sm:mb-1 opacity-80 group-active:scale-95 sm:group-hover:scale-110 transition-transform" />
+            <div className="text-base sm:text-xl font-bold group-active:scale-95 sm:group-hover:scale-110 transition-transform">
               {stats.markedForReview}
             </div>
-            <div className="text-[10px] opacity-80">Markierte</div>
+            <div className="text-[9px] sm:text-[10px] opacity-80">Markiert</div>
           </Link>
         </div>
 
-        {/* Action Buttons */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        {/* Action Buttons - Minimal on mobile, show only 2 */}
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3">
           <Link
             to="/einbuergerungstest/fragenkatalog"
-            className="bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-xl p-4 border border-white/30 transition-all hover:-translate-y-1 hover:shadow-lg group text-white"
+            className="bg-white/20 active:bg-white/40 sm:hover:bg-white/30 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/30 transition-all sm:hover:-translate-y-1 sm:hover:shadow-lg active:scale-95 group text-white"
           >
-            <div className="flex items-center justify-between mb-2">
-              <Brain className="w-5 h-5" />
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <div className="flex items-center justify-between mb-1 sm:mb-2">
+              <Brain className="w-4 h-4 sm:w-5 sm:h-5" />
+              <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 opacity-60 group-hover:translate-x-1 transition-transform" />
             </div>
-            <div className="font-bold">Fragenkatalog</div>
-            <div className="text-xs opacity-80">Alle 310 Fragen üben</div>
-          </Link>
-
-          <Link
-            to="/einbuergerungstest/training"
-            className="bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-xl p-4 border border-white/30 transition-all hover:-translate-y-1 hover:shadow-lg group text-white"
-          >
-            <div className="flex items-center justify-between mb-2">
-              <Target className="w-5 h-5" />
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <div className="text-xs sm:text-base font-bold">Fragenkatalog</div>
+            <div className="text-[9px] sm:text-xs opacity-70 sm:opacity-80">
+              Alle Fragen
             </div>
-            <div className="font-bold">Training</div>
-            <div className="text-xs opacity-80">Zufällige Übung</div>
           </Link>
 
           <Link
             to="/einbuergerungstest/probetest"
-            className="bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-xl p-4 border border-white/30 transition-all hover:-translate-y-1 hover:shadow-lg group text-white"
+            className="bg-white/20 active:bg-white/40 sm:hover:bg-white/30 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/30 transition-all sm:hover:-translate-y-1 sm:hover:shadow-lg active:scale-95 group text-white"
           >
-            <div className="flex items-center justify-between mb-2">
-              <Award className="w-5 h-5" />
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <div className="flex items-center justify-between mb-1 sm:mb-2">
+              <Award className="w-4 h-4 sm:w-5 sm:h-5" />
+              <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 opacity-60 group-hover:translate-x-1 transition-transform" />
             </div>
-            <div className="font-bold">Probetest</div>
-            <div className="text-xs opacity-80">33 Fragen Simulation</div>
+            <div className="text-xs sm:text-base font-bold">Probetest</div>
+            <div className="text-[9px] sm:text-xs opacity-70 sm:opacity-80">
+              Simulation
+            </div>
+          </Link>
+
+          {/* Training button - Hidden on mobile to reduce clutter */}
+          <Link
+            to="/einbuergerungstest/training"
+            className="hidden sm:flex flex-col bg-white/20 active:bg-white/40 sm:hover:bg-white/30 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/30 transition-all sm:hover:-translate-y-1 sm:hover:shadow-lg active:scale-95 group text-white"
+          >
+            <div className="flex items-center justify-between mb-1 sm:mb-2">
+              <Target className="w-4 h-4 sm:w-5 sm:h-5" />
+              <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 opacity-60 group-hover:translate-x-1 transition-transform" />
+            </div>
+            <div className="text-xs sm:text-base font-bold">Training</div>
+            <div className="text-[9px] sm:text-xs opacity-70 sm:opacity-80">
+              Zufällig üben
+            </div>
           </Link>
         </div>
 
-        {/* Review Links - Minimal style */}
+        {/* Review Links - Hidden on mobile to reduce clutter */}
         {(stats.easy > 0 || stats.hard > 0) && (
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="mt-3 sm:mt-4 hidden sm:flex flex-wrap gap-2">
             {stats.easy > 0 && (
               <Link
                 to="/einbuergerungstest/fragenkatalog?filter=easy"

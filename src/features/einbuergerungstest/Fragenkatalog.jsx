@@ -256,7 +256,7 @@ function QuestionCard({ question: q, onProgressUpdate, progressData }) {
                   {q.originalNum || q.id}
                 </span>
               </div>
-              
+
               {/* Category badge - theme text with hierarchy */}
               <span className="text-xs sm:text-sm font-semibold text-purple-700 dark:text-purple-300 bg-purple-100 dark:bg-purple-900/30 px-2 py-1 sm:px-2.5 rounded">
                 {q.category}
@@ -744,7 +744,8 @@ export default function Fragenkatalog() {
                   {/* Difficulty Chips */}
                   <button
                     onClick={() => {
-                      const newValue = confidenceFilter === "easy" ? null : "easy";
+                      const newValue =
+                        confidenceFilter === "easy" ? null : "easy";
                       setConfidenceFilter(newValue);
                       if (newValue !== null) {
                         setShowMasteredOnly(false);
@@ -762,7 +763,8 @@ export default function Fragenkatalog() {
                       {
                         userProgress.filter(
                           (p) =>
-                            p.confidence_level === "easy" && p.is_mastered !== true
+                            p.confidence_level === "easy" &&
+                            p.is_mastered !== true
                         ).length
                       }
                     </span>
@@ -798,7 +800,8 @@ export default function Fragenkatalog() {
 
                   <button
                     onClick={() => {
-                      const newValue = confidenceFilter === "hard" ? null : "hard";
+                      const newValue =
+                        confidenceFilter === "hard" ? null : "hard";
                       setConfidenceFilter(newValue);
                       if (newValue !== null) {
                         setShowMasteredOnly(false);
@@ -816,7 +819,8 @@ export default function Fragenkatalog() {
                       {
                         userProgress.filter(
                           (p) =>
-                            p.confidence_level === "hard" && p.is_mastered !== true
+                            p.confidence_level === "hard" &&
+                            p.is_mastered !== true
                         ).length
                       }
                     </span>
@@ -864,7 +868,7 @@ export default function Fragenkatalog() {
                   </button>
                 </div>
               </div>
-              
+
               {/* Scroll gradient indicators - mobile only */}
               <div className="absolute top-0 left-0 bottom-1 w-6 bg-gradient-to-r from-violet-50 to-transparent pointer-events-none sm:hidden dark:from-dark-bg-primary"></div>
               <div className="absolute top-0 right-0 bottom-1 w-6 bg-gradient-to-l from-violet-50 to-transparent pointer-events-none sm:hidden dark:from-dark-bg-primary"></div>

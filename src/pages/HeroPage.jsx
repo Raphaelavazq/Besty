@@ -23,8 +23,8 @@ export default function HeroPage() {
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900 overflow-hidden">
-      {/* Background Animation - Better Fit */}
+    <div className="relative h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900 overflow-hidden flex flex-col">
+      {/* Background Animation - Optimized for mobile */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="w-full h-full max-w-4xl max-h-4xl">
           <DotLottieReact
@@ -36,13 +36,13 @@ export default function HeroPage() {
         </div>
       </div>
 
-      {/* Besty Logo - Top Left */}
+      {/* Besty Logo - Top, smaller on mobile */}
       <div
-        className={`absolute top-8 sm:top-12 md:top-16 left-8 sm:left-12 md:left-16 z-20 transform transition-all duration-1000 delay-200 ${
+        className={`relative z-20 pt-6 sm:pt-8 md:pt-12 px-6 sm:px-8 md:px-12 transform transition-all duration-1000 delay-200 ${
           showContent ? "translate-y-0 opacity-100" : "-translate-y-8 opacity-0"
         }`}
       >
-        <div className="w-28 h-12 sm:w-36 sm:h-14 md:w-44 md:h-18">
+        <div className="w-24 h-10 sm:w-32 sm:h-12 md:w-44 md:h-18">
           <svg
             viewBox="0 0 229.4 94.9"
             className="w-full h-full drop-shadow-2xl"
@@ -61,15 +61,18 @@ export default function HeroPage() {
         </div>
       </div>
 
-      {/* Call to Action Button - Bottom Right */}
+      {/* Spacer to push button to bottom */}
+      <div className="flex-1"></div>
+
+      {/* Call to Action Button - Bottom center on mobile, bottom right on desktop */}
       <div
-        className={`absolute bottom-8 sm:bottom-12 md:bottom-16 right-8 sm:right-12 md:right-16 z-20 transform transition-all duration-1000 delay-400 ${
+        className={`relative z-20 pb-6 sm:pb-8 md:pb-12 px-6 sm:px-8 md:px-12 flex justify-center sm:justify-end transform transition-all duration-1000 delay-400 ${
           showContent ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
         }`}
       >
         <button
           onClick={() => navigate("/auth/sign-in")}
-          className="bg-white/90 dark:bg-white/80 backdrop-blur-md text-purple-900 dark:text-purple-800 px-8 py-4 sm:px-10 sm:py-5 md:px-12 md:py-6 rounded-full hover:bg-white dark:hover:bg-white hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-3xl"
+          className="bg-white/90 dark:bg-white/80 backdrop-blur-md text-purple-900 dark:text-purple-800 px-8 py-3.5 sm:px-10 sm:py-4 md:px-12 md:py-5 rounded-full hover:bg-white dark:hover:bg-white hover:scale-105 active:scale-95 transition-all duration-300 shadow-2xl hover:shadow-3xl"
         >
           <span className="font-black text-base sm:text-lg md:text-xl">
             Starten

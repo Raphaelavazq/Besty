@@ -723,10 +723,10 @@ export default function AuthenticationPage() {
                       className="w-full h-full object-contain opacity-90"
                     />
                   </div>
-                  
+
                   <p className="text-white text-lg md:text-xl font-bold mt-3">
-                    {isSignUp 
-                      ? "Beginne deine Lernreise" 
+                    {isSignUp
+                      ? "Beginne deine Lernreise"
                       : "Willkommen zurück!"}
                   </p>
                 </div>
@@ -809,204 +809,204 @@ export default function AuthenticationPage() {
                     </div>
                   </div>
 
-                {isSignUp && (
-                  <input
-                    type="text"
-                    name="fullName"
-                    placeholder="Vollständiger Name"
-                    value={formData.fullName}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-900 dark:text-gray-100 font-medium transition-all duration-200"
-                  />
-                )}
-
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="E-Mail-Adresse"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  required
-                  className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-900 dark:text-gray-100 font-medium transition-all duration-200"
-                />
-
-                <div className="relative">
-                  <input
-                    type={showPassword ? "text" : "password"}
-                    name="password"
-                    placeholder="Passwort"
-                    value={formData.password}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-900 dark:text-gray-100 font-medium transition-all duration-200"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors p-1"
-                  >
-                    {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
-                  </button>
-                </div>
-
-                {isSignUp && formData.password && (
-                  <div className="space-y-2 px-1">
-                    <div className="flex justify-between text-xs font-semibold">
-                      <span className="text-gray-500 dark:text-gray-400">
-                        Passwortstärke
-                      </span>
-                      <span
-                        className={`${
-                          passwordStrength >= 75
-                            ? "text-green-600 dark:text-green-400"
-                            : passwordStrength >= 50
-                              ? "text-yellow-600 dark:text-yellow-400"
-                              : "text-red-600 dark:text-red-400"
-                        }`}
-                      >
-                        {passwordStrength >= 75
-                          ? "Stark"
-                          : passwordStrength >= 50
-                            ? "Mittel"
-                            : "Schwach"}
-                      </span>
-                    </div>
-                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
-                      <div
-                        className={`h-2 rounded-full transition-all duration-300 ${
-                          passwordStrength >= 75
-                            ? "bg-gradient-to-r from-green-500 to-emerald-500"
-                            : passwordStrength >= 50
-                              ? "bg-gradient-to-r from-yellow-500 to-orange-500"
-                              : "bg-gradient-to-r from-red-500 to-rose-500"
-                        }`}
-                        style={{ width: `${passwordStrength}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                )}
-
-                {isSignUp && (
-                  <>
-                    <div className="relative">
-                      <input
-                        type={showConfirmPassword ? "text" : "password"}
-                        name="confirmPassword"
-                        placeholder="Passwort bestätigen"
-                        value={formData.confirmPassword}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-900 dark:text-gray-100 font-medium transition-all duration-200"
-                      />
-                      <button
-                        type="button"
-                        onClick={() =>
-                          setShowConfirmPassword(!showConfirmPassword)
-                        }
-                        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors p-1"
-                      >
-                        {showConfirmPassword ? (
-                          <EyeOff size={20} />
-                        ) : (
-                          <Eye size={20} />
-                        )}
-                      </button>
-                    </div>
-
-                    <select
-                      name="bundesland"
-                      value={formData.bundesland}
+                  {isSignUp && (
+                    <input
+                      type="text"
+                      name="fullName"
+                      placeholder="Vollständiger Name"
+                      value={formData.fullName}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-900 dark:text-gray-100 font-medium appearance-none cursor-pointer transition-all duration-200"
+                      className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-900 dark:text-gray-100 font-medium transition-all duration-200"
+                    />
+                  )}
+
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="E-Mail-Adresse"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-900 dark:text-gray-100 font-medium transition-all duration-200"
+                  />
+
+                  <div className="relative">
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      name="password"
+                      placeholder="Passwort"
+                      value={formData.password}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-900 dark:text-gray-100 font-medium transition-all duration-200"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors p-1"
                     >
-                      <option value="">Bundesland auswählen</option>
-                      {bundeslaender.map((land) => (
-                        <option key={land} value={land}>
-                          {land}
-                        </option>
-                      ))}
-                    </select>
+                      {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                    </button>
+                  </div>
 
-                    <div className="space-y-4 pt-2">
-                      <label className="flex items-start gap-3 cursor-pointer group">
-                        <input
-                          type="checkbox"
-                          checked={gdprConsent}
-                          onChange={(e) => setGdprConsent(e.target.checked)}
-                          className="w-5 h-5 mt-0.5 border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 text-purple-600 cursor-pointer transition-all"
-                          required
-                        />
-                        <span className="text-sm text-gray-700 dark:text-gray-300 leading-snug">
-                          Ich akzeptiere die{" "}
-                          <Link
-                            to="/privacy"
-                            className="text-purple-600 dark:text-purple-400 hover:underline font-semibold"
-                          >
-                            Datenschutzerklärung
-                          </Link>
+                  {isSignUp && formData.password && (
+                    <div className="space-y-2 px-1">
+                      <div className="flex justify-between text-xs font-semibold">
+                        <span className="text-gray-500 dark:text-gray-400">
+                          Passwortstärke
                         </span>
-                      </label>
-
-                      <label className="flex items-start gap-3 cursor-pointer group">
-                        <input
-                          type="checkbox"
-                          checked={termsConsent}
-                          onChange={(e) => setTermsConsent(e.target.checked)}
-                          className="w-5 h-5 mt-0.5 border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 text-purple-600 cursor-pointer transition-all"
-                          required
-                        />
-                        <span className="text-sm text-gray-700 dark:text-gray-300 leading-snug">
-                          Ich akzeptiere die{" "}
-                          <Link
-                            to="/terms"
-                            className="text-purple-600 dark:text-purple-400 hover:underline font-semibold"
-                          >
-                            Nutzungsbedingungen
-                          </Link>
+                        <span
+                          className={`${
+                            passwordStrength >= 75
+                              ? "text-green-600 dark:text-green-400"
+                              : passwordStrength >= 50
+                                ? "text-yellow-600 dark:text-yellow-400"
+                                : "text-red-600 dark:text-red-400"
+                          }`}
+                        >
+                          {passwordStrength >= 75
+                            ? "Stark"
+                            : passwordStrength >= 50
+                              ? "Mittel"
+                              : "Schwach"}
                         </span>
-                      </label>
+                      </div>
+                      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
+                        <div
+                          className={`h-2 rounded-full transition-all duration-300 ${
+                            passwordStrength >= 75
+                              ? "bg-gradient-to-r from-green-500 to-emerald-500"
+                              : passwordStrength >= 50
+                                ? "bg-gradient-to-r from-yellow-500 to-orange-500"
+                                : "bg-gradient-to-r from-red-500 to-rose-500"
+                          }`}
+                          style={{ width: `${passwordStrength}%` }}
+                        ></div>
+                      </div>
                     </div>
-                  </>
-                )}
+                  )}
 
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full bg-gradient-to-r from-purple-600 via-purple-600 to-indigo-600 text-white py-4 rounded-2xl hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 font-bold text-base disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-none"
-                >
-                  {loading
-                    ? isSignUp
-                      ? "Registrierung läuft..."
-                      : "Anmeldung läuft..."
-                    : isSignUp
-                      ? "Konto erstellen"
-                      : "Anmelden"}
-                </button>
+                  {isSignUp && (
+                    <>
+                      <div className="relative">
+                        <input
+                          type={showConfirmPassword ? "text" : "password"}
+                          name="confirmPassword"
+                          placeholder="Passwort bestätigen"
+                          value={formData.confirmPassword}
+                          onChange={handleInputChange}
+                          required
+                          className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-900 dark:text-gray-100 font-medium transition-all duration-200"
+                        />
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setShowConfirmPassword(!showConfirmPassword)
+                          }
+                          className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors p-1"
+                        >
+                          {showConfirmPassword ? (
+                            <EyeOff size={20} />
+                          ) : (
+                            <Eye size={20} />
+                          )}
+                        </button>
+                      </div>
 
-                {/* Continue without account */}
-                <div className="mt-6 pt-6 border-t-2 border-gray-200 dark:border-gray-800">
+                      <select
+                        name="bundesland"
+                        value={formData.bundesland}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-900 dark:text-gray-100 font-medium appearance-none cursor-pointer transition-all duration-200"
+                      >
+                        <option value="">Bundesland auswählen</option>
+                        {bundeslaender.map((land) => (
+                          <option key={land} value={land}>
+                            {land}
+                          </option>
+                        ))}
+                      </select>
+
+                      <div className="space-y-4 pt-2">
+                        <label className="flex items-start gap-3 cursor-pointer group">
+                          <input
+                            type="checkbox"
+                            checked={gdprConsent}
+                            onChange={(e) => setGdprConsent(e.target.checked)}
+                            className="w-5 h-5 mt-0.5 border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 text-purple-600 cursor-pointer transition-all"
+                            required
+                          />
+                          <span className="text-sm text-gray-700 dark:text-gray-300 leading-snug">
+                            Ich akzeptiere die{" "}
+                            <Link
+                              to="/privacy"
+                              className="text-purple-600 dark:text-purple-400 hover:underline font-semibold"
+                            >
+                              Datenschutzerklärung
+                            </Link>
+                          </span>
+                        </label>
+
+                        <label className="flex items-start gap-3 cursor-pointer group">
+                          <input
+                            type="checkbox"
+                            checked={termsConsent}
+                            onChange={(e) => setTermsConsent(e.target.checked)}
+                            className="w-5 h-5 mt-0.5 border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 text-purple-600 cursor-pointer transition-all"
+                            required
+                          />
+                          <span className="text-sm text-gray-700 dark:text-gray-300 leading-snug">
+                            Ich akzeptiere die{" "}
+                            <Link
+                              to="/terms"
+                              className="text-purple-600 dark:text-purple-400 hover:underline font-semibold"
+                            >
+                              Nutzungsbedingungen
+                            </Link>
+                          </span>
+                        </label>
+                      </div>
+                    </>
+                  )}
+
                   <button
-                    type="button"
-                    onClick={() => {
-                      continueAsGuest();
-                      navigate("/dashboard");
-                    }}
-                    className="block w-full py-3 text-center text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 font-semibold transition-all duration-200 hover:scale-105 active:scale-95"
+                    type="submit"
+                    disabled={loading}
+                    className="w-full bg-gradient-to-r from-purple-600 via-purple-600 to-indigo-600 text-white py-4 rounded-2xl hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 font-bold text-base disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-none"
                   >
-                    Ohne Konto fortfahren →
+                    {loading
+                      ? isSignUp
+                        ? "Registrierung läuft..."
+                        : "Anmeldung läuft..."
+                      : isSignUp
+                        ? "Konto erstellen"
+                        : "Anmelden"}
                   </button>
-                  <p className="mt-2 text-xs text-gray-500 dark:text-gray-500 text-center font-medium">
-                    ⚠️ Dein Fortschritt wird nicht gespeichert
-                  </p>
-                </div>
-              </form>
+
+                  {/* Continue without account */}
+                  <div className="mt-6 pt-6 border-t-2 border-gray-200 dark:border-gray-800">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        continueAsGuest();
+                        navigate("/dashboard");
+                      }}
+                      className="block w-full py-3 text-center text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 font-semibold transition-all duration-200 hover:scale-105 active:scale-95"
+                    >
+                      Ohne Konto fortfahren →
+                    </button>
+                    <p className="mt-2 text-xs text-gray-500 dark:text-gray-500 text-center font-medium">
+                      ⚠️ Dein Fortschritt wird nicht gespeichert
+                    </p>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 }
