@@ -1030,26 +1030,44 @@ export default function TrainingMode() {
         </div>
 
         {/* Question Card */}
-        <div className="bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-3xl p-6 md:p-8 shadow-xl border border-purple-100 dark:border-purple-500/30">
-          <div className="flex gap-3 mb-6">
-            <div className="w-16 h-16 flex items-center justify-center bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-2xl font-black text-xl shrink-0">
-              {currentQ.id}
-            </div>
-            <div className="flex flex-col justify-center">
-              <span className="text-xs px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full font-semibold w-fit">
-                {currentQ.category}
+        <div className="bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl border border-purple-100 dark:border-purple-500/30">
+          <div className="flex gap-3 sm:gap-4">
+            {/* Question Number - Desktop only */}
+            <div className="hidden sm:flex flex-shrink-0 w-16 h-16 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-xl items-center justify-center shadow-lg self-start">
+              <span className="text-white font-black text-lg">
+                {currentQ.id}
               </span>
-              {currentQ.bundesland && (
-                <span className="text-xs px-3 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded-full font-semibold w-fit mt-1">
-                  {currentQ.bundesland}
+            </div>
+
+            <div className="flex-1 min-w-0">
+              {/* Top Row: Number (mobile) + Badges */}
+              <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-3 sm:mb-4">
+                {/* Question Number - Mobile only */}
+                <div className="flex sm:hidden flex-shrink-0 w-8 h-8 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-lg items-center justify-center shadow-lg">
+                  <span className="text-white font-black text-sm">
+                    {currentQ.id}
+                  </span>
+                </div>
+
+                {/* Category badge */}
+                <span className="text-xs sm:text-sm font-semibold text-purple-700 dark:text-purple-300 bg-purple-100 dark:bg-purple-900/30 px-2 py-1 sm:px-2.5 rounded">
+                  {currentQ.category}
                 </span>
-              )}
+
+                {/* Bundesland badge */}
+                {currentQ.bundesland && (
+                  <span className="text-xs sm:text-sm font-semibold text-indigo-700 dark:text-indigo-300 bg-indigo-100 dark:bg-indigo-900/30 px-2 py-1 sm:px-2.5 rounded">
+                    📍 {currentQ.bundesland}
+                  </span>
+                )}
+              </div>
+
+              {/* Question text */}
+              <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-gray-900 dark:text-dark-text-primary leading-snug">
+                {currentQ.question}
+              </h2>
             </div>
           </div>
-
-          <h2 className="text-xl md:text-2xl font-bold mb-6 text-gray-900 dark:text-dark-text-primary">
-            {currentQ.question}
-          </h2>
 
           {/* Question image (if available) */}
           {currentQ.image && (
@@ -1109,7 +1127,7 @@ export default function TrainingMode() {
           {/* Rating Controls - Same as Fragenkatalog */}
           {isAuthenticated && selectedAnswer !== undefined && (
             <div className="mb-6 flex flex-wrap items-center gap-3 border-t border-gray-200 dark:border-gray-700 pt-4">
-              {/* "I Know This" Button - Prominent */}
+              {/* "I Know This" Button - Matches Fragenkatalog style */}
               <button
                 onClick={async () => {
                   const newValue = !masteredQuestions[currentIndex];
@@ -1120,17 +1138,17 @@ export default function TrainingMode() {
                   // Save immediately to database
                   await saveMastered(currentIndex, newValue);
                 }}
-                className={`px-4 py-2 text-sm font-medium rounded-xl transition-all duration-200 flex items-center gap-2 ${
+                className={`px-2.5 py-1.5 text-xs font-medium rounded-lg transition-all duration-150 flex items-center gap-1 active:scale-95 whitespace-nowrap flex-shrink-0 ${
                   masteredQuestions[currentIndex]
-                    ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md"
-                    : "bg-white/80 dark:bg-white/10 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-purple-500/30 hover:border-purple-300 hover:bg-purple-50 dark:hover:bg-purple-900/20"
+                    ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-sm"
+                    : "bg-white/80 text-slate-700 border border-slate-200/60 sm:hover:border-purple-300 sm:hover:bg-purple-50 active:border-purple-300 active:bg-purple-50"
                 }`}
               >
-                <CheckCircle className="w-4 h-4" />
+                <CheckCircle className="w-3 h-3" />
                 {masteredQuestions[currentIndex] ? "Gelernt" : "Ich kann das"}
               </button>
 
-              {/* Confidence Level Buttons - Minimal chips */}
+              {/* Confidence Level Buttons - Color coded like Fragenkatalog */}
               <div className="flex items-center gap-2">
                 <button
                   onClick={async () => {
@@ -1141,13 +1159,13 @@ export default function TrainingMode() {
                     // Save immediately to database
                     await saveConfidence(currentIndex, "easy");
                   }}
-                  className={`px-3 py-1.5 text-xs font-medium rounded-full transition-all duration-200 flex items-center gap-1.5 ${
+                  className={`px-2.5 py-1.5 text-xs font-medium rounded-lg transition-all duration-150 flex items-center gap-1 whitespace-nowrap active:scale-95 flex-shrink-0 ${
                     confidenceRatings[currentIndex] === "easy"
-                      ? "bg-purple-600 text-white shadow-sm"
-                      : "bg-white/80 dark:bg-white/10 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-purple-500/30 hover:border-purple-300 hover:bg-purple-50 dark:hover:bg-purple-900/20"
+                      ? "bg-green-500 text-white shadow-sm sm:hover:bg-green-600"
+                      : "bg-white/80 text-slate-600 border border-slate-200/60 sm:hover:border-green-300 sm:hover:bg-green-50 active:border-green-300 active:bg-green-50"
                   }`}
                 >
-                  <Smile className="w-3.5 h-3.5" />
+                  <Smile className="w-3 h-3" />
                   Leicht
                 </button>
                 <button
@@ -1159,13 +1177,13 @@ export default function TrainingMode() {
                     // Save immediately to database
                     await saveConfidence(currentIndex, "medium");
                   }}
-                  className={`px-3 py-1.5 text-xs font-medium rounded-full transition-all duration-200 flex items-center gap-1.5 ${
+                  className={`px-2.5 py-1.5 text-xs font-medium rounded-lg transition-all duration-150 flex items-center gap-1 whitespace-nowrap active:scale-95 flex-shrink-0 ${
                     confidenceRatings[currentIndex] === "medium"
-                      ? "bg-indigo-600 text-white shadow-sm"
-                      : "bg-white/80 dark:bg-white/10 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-purple-500/30 hover:border-indigo-300 hover:bg-indigo-50 dark:hover:bg-indigo-900/20"
+                      ? "bg-amber-500 text-white shadow-sm sm:hover:bg-amber-600"
+                      : "bg-white/80 text-slate-600 border border-slate-200/60 sm:hover:border-amber-300 sm:hover:bg-amber-50 active:border-amber-300 active:bg-amber-50"
                   }`}
                 >
-                  <Meh className="w-3.5 h-3.5" />
+                  <Meh className="w-3 h-3" />
                   Mittel
                 </button>
                 <button
@@ -1177,13 +1195,13 @@ export default function TrainingMode() {
                     // Save immediately to database
                     await saveConfidence(currentIndex, "hard");
                   }}
-                  className={`px-3 py-1.5 text-xs font-medium rounded-full transition-all duration-200 flex items-center gap-1.5 ${
+                  className={`px-2.5 py-1.5 text-xs font-medium rounded-lg transition-all duration-150 flex items-center gap-1 whitespace-nowrap active:scale-95 flex-shrink-0 ${
                     confidenceRatings[currentIndex] === "hard"
-                      ? "bg-slate-700 dark:bg-slate-600 text-white shadow-sm"
-                      : "bg-white/80 dark:bg-white/10 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-purple-500/30 hover:border-slate-300 hover:bg-slate-50 dark:hover:bg-slate-900/20"
+                      ? "bg-red-500 text-white shadow-sm sm:hover:bg-red-600"
+                      : "bg-white/80 text-slate-600 border border-slate-200/60 sm:hover:border-red-300 sm:hover:bg-red-50 active:border-red-300 active:bg-red-50"
                   }`}
                 >
-                  <Frown className="w-3.5 h-3.5" />
+                  <Frown className="w-3 h-3" />
                   Schwer
                 </button>
               </div>
