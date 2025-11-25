@@ -236,60 +236,62 @@ function QuestionCard({ question: q, onProgressUpdate, progressData }) {
   };
 
   return (
-    <div className="bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-purple-100 dark:border-purple-500/30">
-      <div className="flex items-start gap-4">
-        {/* Question Number - Large and prominent */}
-        <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
+    <div className="bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-lg border border-purple-100 dark:border-purple-500/30">
+      <div className="flex gap-3 sm:gap-4">
+        {/* Question Number - Only visible on desktop */}
+        <div className="hidden sm:flex flex-shrink-0 w-16 h-16 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-xl items-center justify-center shadow-lg self-start">
           <span className="text-white font-black text-lg">
             {q.originalNum || q.id}
           </span>
         </div>
 
-        <div className="flex-1">
-          {/* Top Row: Badges + Bookmark */}
-          <div className="flex items-center justify-between mb-3">
-            {/* Small badges for metadata */}
-            <div className="flex flex-wrap items-center gap-2">
-              {/* Category badge - small */}
-              <span className="text-xs font-medium text-purple-700 dark:text-purple-300 bg-purple-100 dark:bg-purple-900/30 px-2 py-0.5 rounded">
+        <div className="flex-1 min-w-0">
+          {/* Top Row: Number (mobile) + Badges + Bookmark */}
+          <div className="flex items-start justify-between mb-2 sm:mb-3 gap-2">
+            {/* Left side: Number + badges */}
+            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+              {/* Question Number - Mobile only */}
+              <div className="flex sm:hidden flex-shrink-0 w-8 h-8 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-lg items-center justify-center shadow-lg">
+                <span className="text-white font-black text-sm">
+                  {q.originalNum || q.id}
+                </span>
+              </div>
+              
+              {/* Category badge - theme text with hierarchy */}
+              <span className="text-xs sm:text-sm font-semibold text-purple-700 dark:text-purple-300 bg-purple-100 dark:bg-purple-900/30 px-2 py-1 sm:px-2.5 rounded">
                 {q.category}
               </span>
               {/* Bundesland badge for state questions */}
               {q.type !== "general" && (
-                <span className="text-xs font-medium text-indigo-700 dark:text-indigo-300 bg-indigo-100 dark:bg-indigo-900/30 px-2 py-0.5 rounded">
+                <span className="text-xs sm:text-sm font-semibold text-indigo-700 dark:text-indigo-300 bg-indigo-100 dark:bg-indigo-900/30 px-2 py-1 sm:px-2.5 rounded">
                   📍 {q.bundesland}
-                </span>
-              )}
-              {/* Mastered badge - show if marked as "Ich kann das" */}
-              {isAuthenticated && isMastered && (
-                <span className="text-xs font-medium text-white bg-gradient-to-r from-purple-600 to-indigo-600 px-2 py-0.5 rounded-full flex items-center gap-1">
-                  <CheckCircle2 className="w-3 h-3" />
-                  Gelernt
                 </span>
               )}
             </div>
 
-            {/* Bookmark Button (for authenticated users) */}
+            {/* Bookmark Button (for authenticated users) - Icon only on mobile */}
             {isAuthenticated && (
               <button
                 onClick={toggleMarkForReview}
                 disabled={loading}
-                className={`flex items-center gap-1 px-3 py-1.5 rounded-lg font-semibold text-xs transition-all ${
+                className={`flex items-center justify-center gap-1.5 px-2.5 py-1.5 sm:px-3 rounded-lg font-semibold text-xs transition-all active:scale-95 flex-shrink-0 ${
                   isMarkedForReview
-                    ? "bg-amber-500 text-white hover:bg-amber-600"
-                    : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-amber-100 dark:hover:bg-amber-900/30"
+                    ? "bg-amber-500 text-white sm:hover:bg-amber-600"
+                    : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 sm:hover:bg-amber-100 dark:sm:hover:bg-amber-900/30"
                 }`}
               >
                 <Bookmark
                   className={`w-3.5 h-3.5 ${isMarkedForReview ? "fill-current" : ""}`}
                 />
-                {isMarkedForReview ? "Markiert" : "Markieren"}
+                <span className="hidden sm:inline">
+                  {isMarkedForReview ? "Markiert" : "Markieren"}
+                </span>
               </button>
             )}
           </div>
 
-          {/* Question text */}
-          <h3 className="text-lg font-bold mb-4 text-gray-900 dark:text-dark-text-primary">
+          {/* Question text - Clear hierarchy */}
+          <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-gray-900 dark:text-dark-text-primary leading-snug">
             {q.question}
           </h3>
 
@@ -304,8 +306,8 @@ function QuestionCard({ question: q, onProgressUpdate, progressData }) {
             </div>
           )}
 
-          {/* Answer options */}
-          <div className="space-y-2">
+          {/* Answer options - Better spacing and typography hierarchy */}
+          <div className="space-y-2.5 sm:space-y-3">
             {q.options.map((option, index) => {
               const isCorrect = index === q.correctAnswer;
               const isSelected = selectedAnswer === index;
@@ -315,29 +317,29 @@ function QuestionCard({ question: q, onProgressUpdate, progressData }) {
                   key={index}
                   onClick={() => handleAnswerClick(index)}
                   disabled={showCorrect}
-                  className={`w-full p-3 rounded-xl border-2 transition-all text-left ${
+                  className={`w-full p-3.5 sm:p-4 rounded-xl border-2 transition-all text-left text-base sm:text-lg active:scale-[0.98] ${
                     showCorrect
                       ? isCorrect
                         ? "border-emerald-400 bg-emerald-50 dark:bg-emerald-900/20"
                         : isSelected
                           ? "border-rose-400 bg-rose-50 dark:bg-rose-900/20"
                           : "border-gray-200 dark:border-purple-500/30 opacity-50"
-                      : "border-purple-200 dark:border-purple-500/30 hover:border-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/20 cursor-pointer"
+                      : "border-purple-200 dark:border-purple-500/30 sm:hover:border-purple-400 sm:hover:bg-purple-50 dark:sm:hover:bg-purple-900/20 cursor-pointer active:border-purple-400 active:bg-purple-50 dark:active:bg-purple-900/20"
                   }`}
                 >
-                  <span className="font-bold text-gray-900 dark:text-white">
+                  <span className="font-black text-gray-900 dark:text-white text-lg sm:text-xl">
                     {String.fromCharCode(65 + index)})
                   </span>{" "}
-                  <span className="text-gray-900 dark:text-white">
+                  <span className="text-gray-900 dark:text-white font-medium">
                     {option}
                   </span>
                   {showCorrect && isCorrect && (
-                    <span className="ml-2 text-emerald-600 dark:text-emerald-400 font-bold">
+                    <span className="ml-2 text-emerald-600 dark:text-emerald-400 font-bold text-sm sm:text-base">
                       ✓ Richtig
                     </span>
                   )}
                   {showCorrect && isSelected && !isCorrect && (
-                    <span className="ml-2 text-rose-600 dark:text-rose-400 font-bold">
+                    <span className="ml-2 text-rose-600 dark:text-rose-400 font-bold text-sm sm:text-base">
                       ✗ Falsch
                     </span>
                   )}
@@ -346,9 +348,9 @@ function QuestionCard({ question: q, onProgressUpdate, progressData }) {
             })}
           </div>
 
-          {/* Confidence Selector - Always visible for authenticated users */}
+          {/* Confidence Selector - Minimal single line */}
           {isAuthenticated && (
-            <div className="mt-4 flex flex-wrap items-center gap-3 border-t border-gray-200 dark:border-gray-700 pt-4">
+            <div className="mt-3 sm:mt-4 flex items-center gap-1.5 sm:gap-2 border-t border-gray-200 dark:border-gray-700 pt-3 sm:pt-4 overflow-x-auto scrollbar-hide -mx-1 px-1">
               {/* Show reset button only after answering */}
               {showCorrect && (
                 <button
@@ -356,65 +358,67 @@ function QuestionCard({ question: q, onProgressUpdate, progressData }) {
                     setSelectedAnswer(null);
                     setShowCorrect(false);
                   }}
-                  className="px-4 py-2 text-sm bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-lg hover:bg-purple-200 dark:hover:bg-purple-800/30 transition-colors"
+                  className="p-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-lg sm:hover:bg-purple-200 dark:sm:hover:bg-purple-800/30 transition-colors active:scale-95 flex-shrink-0"
+                  title="Noch einmal"
                 >
-                  🔄 Noch einmal
+                  <ArrowRight className="w-3.5 h-3.5 rotate-180" />
                 </button>
               )}
 
-              {/* "I Know This" Button - Prominent */}
+              {/* "I Know This" Button - Minimal */}
               <button
                 onClick={toggleMastered}
                 disabled={loading}
-                className={`px-4 py-2 text-sm font-medium rounded-xl transition-all duration-200 flex items-center gap-2 ${
+                className={`px-2.5 py-1.5 text-xs font-medium rounded-lg transition-all duration-150 flex items-center gap-1 active:scale-95 whitespace-nowrap flex-shrink-0 ${
                   isMastered
-                    ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md"
-                    : "bg-white/80 text-slate-700 border border-slate-200 hover:border-purple-300 hover:bg-purple-50"
+                    ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-sm"
+                    : "bg-white/80 text-slate-700 border border-slate-200/60 sm:hover:border-purple-300 sm:hover:bg-purple-50 active:border-purple-300 active:bg-purple-50"
                 }`}
               >
-                <CheckCircle2 className="w-4 h-4" />
+                <CheckCircle2 className="w-3 h-3" />
                 {isMastered ? "Gelernt" : "Ich kann das"}
               </button>
 
-              {/* Confidence Level Buttons - Minimal chips */}
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => setConfidence("easy")}
-                  disabled={loading}
-                  className={`px-3 py-1.5 text-xs font-medium rounded-full transition-all duration-200 flex items-center gap-1.5 ${
-                    confidenceLevel === "easy"
-                      ? "bg-purple-600 text-white shadow-sm"
-                      : "bg-white/80 text-slate-600 border border-slate-200 hover:border-purple-300 hover:bg-purple-50"
-                  }`}
-                >
-                  <Smile className="w-3.5 h-3.5" />
-                  Leicht
-                </button>
-                <button
-                  onClick={() => setConfidence("medium")}
-                  disabled={loading}
-                  className={`px-3 py-1.5 text-xs font-medium rounded-full transition-all duration-200 flex items-center gap-1.5 ${
-                    confidenceLevel === "medium"
-                      ? "bg-indigo-600 text-white shadow-sm"
-                      : "bg-white/80 text-slate-600 border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50"
-                  }`}
-                >
-                  <Meh className="w-3.5 h-3.5" />
-                  Mittel
-                </button>
-                <button
-                  onClick={() => setConfidence("hard")}
-                  disabled={loading}
-                  className={`px-3 py-1.5 text-xs font-medium rounded-full transition-all duration-200 flex items-center gap-1.5 ${
-                    confidenceLevel === "hard"
-                      ? "bg-slate-700 text-white shadow-sm"
-                      : "bg-white/80 text-slate-600 border border-slate-200 hover:border-slate-300 hover:bg-slate-50"
-                  }`}
-                >
-                  <Frown className="w-3.5 h-3.5" />
-                  Schwer
-                </button>
-              </div>
+              {/* Divider */}
+              <div className="w-px h-5 bg-slate-200/60 self-center flex-shrink-0"></div>
+
+              {/* Confidence Level Buttons - Color coded */}
+              <button
+                onClick={() => setConfidence("easy")}
+                disabled={loading}
+                className={`px-2.5 py-1.5 text-xs font-medium rounded-lg transition-all duration-150 flex items-center gap-1 whitespace-nowrap active:scale-95 flex-shrink-0 ${
+                  confidenceLevel === "easy"
+                    ? "bg-green-500 text-white shadow-sm sm:hover:bg-green-600"
+                    : "bg-white/80 text-slate-600 border border-slate-200/60 sm:hover:border-green-300 sm:hover:bg-green-50 active:border-green-300 active:bg-green-50"
+                }`}
+              >
+                <Smile className="w-3 h-3" />
+                Leicht
+              </button>
+              <button
+                onClick={() => setConfidence("medium")}
+                disabled={loading}
+                className={`px-2.5 py-1.5 text-xs font-medium rounded-lg transition-all duration-150 flex items-center gap-1 whitespace-nowrap active:scale-95 flex-shrink-0 ${
+                  confidenceLevel === "medium"
+                    ? "bg-amber-500 text-white shadow-sm sm:hover:bg-amber-600"
+                    : "bg-white/80 text-slate-600 border border-slate-200/60 sm:hover:border-amber-300 sm:hover:bg-amber-50 active:border-amber-300 active:bg-amber-50"
+                }`}
+              >
+                <Meh className="w-3 h-3" />
+                Mittel
+              </button>
+              <button
+                onClick={() => setConfidence("hard")}
+                disabled={loading}
+                className={`px-2.5 py-1.5 text-xs font-medium rounded-lg transition-all duration-150 flex items-center gap-1 whitespace-nowrap active:scale-95 flex-shrink-0 ${
+                  confidenceLevel === "hard"
+                    ? "bg-red-500 text-white shadow-sm sm:hover:bg-red-600"
+                    : "bg-white/80 text-slate-600 border border-slate-200/60 sm:hover:border-red-300 sm:hover:bg-red-50 active:border-red-300 active:bg-red-50"
+                }`}
+              >
+                <Frown className="w-3 h-3" />
+                Schwer
+              </button>
             </div>
           )}
         </div>
@@ -681,46 +685,46 @@ export default function Fragenkatalog() {
 
   // Questions Display (after state is selected)
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary py-8 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary py-4 sm:py-8 px-4">
       <div className="max-w-4xl mx-auto">
-        {/* Header with navigation */}
-        <div className="flex justify-between items-center mb-6">
+        {/* Header with navigation - Compact on mobile */}
+        <div className="flex justify-between items-center mb-4 sm:mb-6">
           <button
             onClick={() => navigate("/einbuergerungstest")}
-            className="flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:gap-3 transition-all"
+            className="flex items-center gap-2 text-purple-600 dark:text-purple-400 sm:hover:gap-3 transition-all active:gap-3"
           >
-            <ArrowLeft className="w-5 h-5" />
-            Zurück
+            <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+            <span className="text-sm sm:text-base">Zurück</span>
           </button>
 
           {/* Change Bundesland button - only for guests */}
           {!isAuthenticated && (
             <button
               onClick={() => setSelectedBundesland(null)}
-              className="px-4 py-2 text-sm bg-white/80 dark:bg-white/10 backdrop-blur-md border border-purple-200 dark:border-purple-500/30 text-purple-600 dark:text-purple-400 rounded-xl hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-all"
+              className="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm bg-white/80 dark:bg-white/10 backdrop-blur-md border border-purple-200 dark:border-purple-500/30 text-purple-600 dark:text-purple-400 rounded-xl sm:hover:bg-purple-50 dark:sm:hover:bg-purple-900/20 transition-all active:bg-purple-50"
             >
               Bundesland ändern
             </button>
           )}
         </div>
 
-        <h1 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-2 pb-2">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-1 sm:mb-2 pb-1 sm:pb-2">
           Fragenkatalog
         </h1>
-        <p className="text-gray-600 dark:text-dark-text-secondary mb-8">
+        <p className="text-sm sm:text-base text-gray-600 dark:text-dark-text-secondary mb-4 sm:mb-8">
           310 Fragen für {selectedBundesland}
         </p>
 
-        {/* Search by question number */}
-        <div className="mb-6">
+        {/* Search by question number - Compact on mobile */}
+        <div className="mb-4 sm:mb-6">
           <div className="relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+            <Search className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
             <input
               type="text"
-              placeholder="Frage-Nummer eingeben (z.B. 25) oder Stichwort suchen..."
+              placeholder="Frage-Nummer oder Stichwort..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-2xl border border-purple-100 dark:border-purple-500/30 focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-900 dark:text-dark-text-primary"
+              className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-xl sm:rounded-2xl border border-purple-100 dark:border-purple-500/30 focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-900 dark:text-dark-text-primary text-sm sm:text-base"
             />
           </div>
           {searchTerm && (
@@ -730,135 +734,140 @@ export default function Fragenkatalog() {
           )}
         </div>
 
-        {/* Minimal App-Like Filter Chips */}
+        {/* Filter Bar - Compact mobile, spacious desktop */}
         {isAuthenticated && userProgress.length > 0 && (
-          <div className="mb-6">
-            <div className="flex flex-wrap gap-2">
-              {/* Difficulty Chips */}
-              <button
-                onClick={() => {
-                  const newValue = confidenceFilter === "easy" ? null : "easy";
-                  setConfidenceFilter(newValue);
-                  // Clear "Gelernt" when selecting difficulty
-                  if (newValue !== null) {
-                    setShowMasteredOnly(false);
-                  }
-                }}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
-                  confidenceFilter === "easy"
-                    ? "bg-purple-600 text-white shadow-md"
-                    : "bg-white/80 text-slate-600 hover:bg-purple-50 border border-slate-200"
-                }`}
-              >
-                <Smile className="w-3.5 h-3.5" />
-                <span>Leicht</span>
-                <span className="text-xs opacity-75">
-                  {
-                    userProgress.filter(
-                      (p) =>
-                        p.confidence_level === "easy" && p.is_mastered !== true
-                    ).length
-                  }
-                </span>
-              </button>
+          <div className="mb-4 sm:mb-6">
+            {/* Scrollable filter container */}
+            <div className="relative -mx-4 px-4 sm:mx-0 sm:px-0">
+              <div className="overflow-x-auto scrollbar-hide sm:overflow-visible">
+                <div className="flex gap-1.5 sm:gap-2 min-w-max sm:min-w-0 sm:flex-wrap pb-1">
+                  {/* Difficulty Chips */}
+                  <button
+                    onClick={() => {
+                      const newValue = confidenceFilter === "easy" ? null : "easy";
+                      setConfidenceFilter(newValue);
+                      if (newValue !== null) {
+                        setShowMasteredOnly(false);
+                      }
+                    }}
+                    className={`inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg sm:rounded-full text-xs sm:text-sm font-medium transition-all duration-150 active:scale-95 whitespace-nowrap ${
+                      confidenceFilter === "easy"
+                        ? "bg-purple-600 text-white shadow-sm sm:shadow-md"
+                        : "bg-white/80 text-slate-600 sm:hover:bg-purple-50 border border-slate-200/60 sm:border-slate-200 active:bg-purple-50"
+                    }`}
+                  >
+                    <Smile className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                    <span className="hidden sm:inline">Leicht</span>
+                    <span className="text-[11px] sm:text-xs font-semibold sm:opacity-75">
+                      {
+                        userProgress.filter(
+                          (p) =>
+                            p.confidence_level === "easy" && p.is_mastered !== true
+                        ).length
+                      }
+                    </span>
+                  </button>
 
-              <button
-                onClick={() => {
-                  const newValue =
-                    confidenceFilter === "medium" ? null : "medium";
-                  setConfidenceFilter(newValue);
-                  // Clear "Gelernt" when selecting difficulty
-                  if (newValue !== null) {
-                    setShowMasteredOnly(false);
-                  }
-                }}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
-                  confidenceFilter === "medium"
-                    ? "bg-purple-600 text-white shadow-md"
-                    : "bg-white/80 text-slate-600 hover:bg-purple-50 border border-slate-200"
-                }`}
-              >
-                <Meh className="w-3.5 h-3.5" />
-                <span>Mittel</span>
-                <span className="text-xs opacity-75">
-                  {
-                    userProgress.filter(
-                      (p) =>
-                        p.confidence_level === "medium" &&
-                        p.is_mastered !== true
-                    ).length
-                  }
-                </span>
-              </button>
+                  <button
+                    onClick={() => {
+                      const newValue =
+                        confidenceFilter === "medium" ? null : "medium";
+                      setConfidenceFilter(newValue);
+                      if (newValue !== null) {
+                        setShowMasteredOnly(false);
+                      }
+                    }}
+                    className={`inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg sm:rounded-full text-xs sm:text-sm font-medium transition-all duration-150 active:scale-95 whitespace-nowrap ${
+                      confidenceFilter === "medium"
+                        ? "bg-purple-600 text-white shadow-sm sm:shadow-md"
+                        : "bg-white/80 text-slate-600 sm:hover:bg-purple-50 border border-slate-200/60 sm:border-slate-200 active:bg-purple-50"
+                    }`}
+                  >
+                    <Meh className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                    <span className="hidden sm:inline">Mittel</span>
+                    <span className="text-[11px] sm:text-xs font-semibold sm:opacity-75">
+                      {
+                        userProgress.filter(
+                          (p) =>
+                            p.confidence_level === "medium" &&
+                            p.is_mastered !== true
+                        ).length
+                      }
+                    </span>
+                  </button>
 
-              <button
-                onClick={() => {
-                  const newValue = confidenceFilter === "hard" ? null : "hard";
-                  setConfidenceFilter(newValue);
-                  // Clear "Gelernt" when selecting difficulty
-                  if (newValue !== null) {
-                    setShowMasteredOnly(false);
-                  }
-                }}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
-                  confidenceFilter === "hard"
-                    ? "bg-purple-600 text-white shadow-md"
-                    : "bg-white/80 text-slate-600 hover:bg-purple-50 border border-slate-200"
-                }`}
-              >
-                <Frown className="w-3.5 h-3.5" />
-                <span>Schwer</span>
-                <span className="text-xs opacity-75">
-                  {
-                    userProgress.filter(
-                      (p) =>
-                        p.confidence_level === "hard" && p.is_mastered !== true
-                    ).length
-                  }
-                </span>
-              </button>
+                  <button
+                    onClick={() => {
+                      const newValue = confidenceFilter === "hard" ? null : "hard";
+                      setConfidenceFilter(newValue);
+                      if (newValue !== null) {
+                        setShowMasteredOnly(false);
+                      }
+                    }}
+                    className={`inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg sm:rounded-full text-xs sm:text-sm font-medium transition-all duration-150 active:scale-95 whitespace-nowrap ${
+                      confidenceFilter === "hard"
+                        ? "bg-purple-600 text-white shadow-sm sm:shadow-md"
+                        : "bg-white/80 text-slate-600 sm:hover:bg-purple-50 border border-slate-200/60 sm:border-slate-200 active:bg-purple-50"
+                    }`}
+                  >
+                    <Frown className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                    <span className="hidden sm:inline">Schwer</span>
+                    <span className="text-[11px] sm:text-xs font-semibold sm:opacity-75">
+                      {
+                        userProgress.filter(
+                          (p) =>
+                            p.confidence_level === "hard" && p.is_mastered !== true
+                        ).length
+                      }
+                    </span>
+                  </button>
 
-              {/* Divider */}
-              <div className="w-px h-8 bg-slate-200 self-center mx-1"></div>
+                  {/* Divider */}
+                  <div className="w-px h-6 sm:h-8 bg-slate-200/60 sm:bg-slate-200 self-center mx-0.5 sm:mx-1"></div>
 
-              {/* Marked Chip */}
-              <button
-                onClick={() => setShowMarkedOnly(!showMarkedOnly)}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
-                  showMarkedOnly
-                    ? "bg-indigo-600 text-white shadow-md"
-                    : "bg-white/80 text-slate-600 hover:bg-indigo-50 border border-slate-200"
-                }`}
-              >
-                <Bookmark className="w-3.5 h-3.5" />
-                <span>Markiert</span>
-                <span className="text-xs opacity-75">
-                  {userProgress.filter((p) => p.marked_for_review).length}
-                </span>
-              </button>
+                  {/* Marked Chip */}
+                  <button
+                    onClick={() => setShowMarkedOnly(!showMarkedOnly)}
+                    className={`inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg sm:rounded-full text-xs sm:text-sm font-medium transition-all duration-150 active:scale-95 whitespace-nowrap ${
+                      showMarkedOnly
+                        ? "bg-amber-500 text-white shadow-sm sm:shadow-md"
+                        : "bg-white/80 text-slate-600 sm:hover:bg-amber-50 border border-slate-200/60 sm:border-slate-200 active:bg-amber-50"
+                    }`}
+                  >
+                    <Bookmark className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                    <span className="hidden sm:inline">Markiert</span>
+                    <span className="text-[11px] sm:text-xs font-semibold sm:opacity-75">
+                      {userProgress.filter((p) => p.marked_for_review).length}
+                    </span>
+                  </button>
 
-              {/* Mastered Chip - Mutually exclusive with difficulty filters */}
-              <button
-                onClick={() => {
-                  const newValue = !showMasteredOnly;
-                  setShowMasteredOnly(newValue);
-                  // Clear difficulty filter when selecting "Gelernt"
-                  if (newValue) {
-                    setConfidenceFilter(null);
-                  }
-                }}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
-                  showMasteredOnly
-                    ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md"
-                    : "bg-white/80 text-slate-600 hover:bg-purple-50 border border-slate-200"
-                }`}
-              >
-                <CheckCircle2 className="w-3.5 h-3.5" />
-                <span>Gelernt</span>
-                <span className="text-xs opacity-75">
-                  {userProgress.filter((p) => p.is_mastered).length}
-                </span>
-              </button>
+                  {/* Mastered Chip */}
+                  <button
+                    onClick={() => {
+                      const newValue = !showMasteredOnly;
+                      setShowMasteredOnly(newValue);
+                      if (newValue) {
+                        setConfidenceFilter(null);
+                      }
+                    }}
+                    className={`inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg sm:rounded-full text-xs sm:text-sm font-medium transition-all duration-150 active:scale-95 whitespace-nowrap ${
+                      showMasteredOnly
+                        ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-sm sm:shadow-md"
+                        : "bg-white/80 text-slate-600 sm:hover:bg-purple-50 border border-slate-200/60 sm:border-slate-200 active:bg-purple-50"
+                    }`}
+                  >
+                    <CheckCircle2 className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                    <span className="hidden sm:inline">Gelernt</span>
+                    <span className="text-[11px] sm:text-xs font-semibold sm:opacity-75">
+                      {userProgress.filter((p) => p.is_mastered).length}
+                    </span>
+                  </button>
+                </div>
+              </div>
+              
+              {/* Scroll gradient indicators - mobile only */}
+              <div className="absolute top-0 left-0 bottom-1 w-6 bg-gradient-to-r from-violet-50 to-transparent pointer-events-none sm:hidden dark:from-dark-bg-primary"></div>
+              <div className="absolute top-0 right-0 bottom-1 w-6 bg-gradient-to-l from-violet-50 to-transparent pointer-events-none sm:hidden dark:from-dark-bg-primary"></div>
             </div>
 
             {/* Active filter explanation */}
@@ -905,8 +914,8 @@ export default function Fragenkatalog() {
           </div>
         )}
 
-        {/* Questions List */}
-        <div className="space-y-4">
+        {/* Questions List - Better spacing for mobile */}
+        <div className="space-y-3 sm:space-y-4">
           {filteredQuestions.map((q) => (
             <QuestionCard
               key={q.id}
