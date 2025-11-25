@@ -9,41 +9,48 @@ import {
 
 export default function Terms() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary py-12 px-4">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-purple-600 via-indigo-600 to-purple-800 py-8 md:py-12 px-4">
+      {/* Floating Orbs Background */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-400/20 rounded-full blur-3xl animate-pulse delay-500"></div>
+      </div>
+
+      <div className="max-w-4xl mx-auto relative z-10">
         {/* Back Button */}
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:gap-3 transition-all mb-8"
+          className="inline-flex items-center gap-2 text-white hover:gap-3 transition-all mb-6 md:mb-8 bg-white/20 backdrop-blur-md px-4 py-2 rounded-xl font-semibold shadow-lg border border-white/30"
         >
           <ArrowLeft className="w-5 h-5" />
-          Zurück zur Startseite
+          Zurück
         </Link>
 
         {/* Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-2xl mb-6 shadow-xl">
-            <FileText className="w-10 h-10 text-white" />
+        <div className="text-center mb-8 md:mb-12">
+          <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-white/20 backdrop-blur-md rounded-3xl mb-6 shadow-2xl border border-white/30">
+            <FileText className="w-8 h-8 md:w-10 md:h-10 text-white" />
           </div>
-          <h1 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4 pb-2">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-3 md:mb-4 tracking-tight">
             Nutzungsbedingungen
           </h1>
-          <p className="text-lg text-gray-600 dark:text-dark-text-secondary">
+          <p className="text-base md:text-lg text-white/90 font-medium">
             Allgemeine Geschäftsbedingungen (AGB)
           </p>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+          <p className="text-sm text-white/80 mt-2">
             Letzte Aktualisierung: November 2025
           </p>
         </div>
 
         {/* Content */}
-        <div className="bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-xl border border-purple-100 dark:border-purple-500/30 space-y-8">
+        <div className="bg-white dark:bg-gray-900 rounded-3xl p-6 md:p-8 lg:p-12 shadow-2xl space-y-6 md:space-y-8">
           {/* Introduction */}
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-dark-text-primary mb-4">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4">
               1. Geltungsbereich
             </h2>
-            <p className="text-gray-700 dark:text-dark-text-secondary leading-relaxed">
+            <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
               Diese Nutzungsbedingungen gelten für die Nutzung von{" "}
               <strong>B1 Bestie</strong>, einer Online-Lernplattform für die
               deutsche Sprache und den Einbürgerungstest. Durch die
@@ -54,30 +61,30 @@ export default function Terms() {
 
           {/* Service Description */}
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-dark-text-primary mb-4">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4">
               2. Leistungsbeschreibung
             </h2>
-            <p className="text-gray-700 dark:text-dark-text-secondary leading-relaxed mb-4">
+            <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
               B1 Bestie ist eine <strong>kostenlose Bildungsplattform</strong>{" "}
               und bietet:
             </p>
-            <div className="space-y-2">
-              <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700 dark:text-dark-text-secondary">
+            <div className="space-y-2 md:space-y-3">
+              <div className="flex items-start gap-2 md:gap-3">
+                <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5" />
+                <span className="text-sm md:text-base text-gray-700 dark:text-gray-300">
                   Übungsmaterial für Deutsch auf B1-Niveau (Hören, Lesen,
                   Schreiben, Sprechen)
                 </span>
               </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700 dark:text-dark-text-secondary">
+              <div className="flex items-start gap-2 md:gap-3">
+                <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5" />
+                <span className="text-sm md:text-base text-gray-700 dark:text-gray-300">
                   460 offizielle Fragen für den Einbürgerungstest
                 </span>
               </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700 dark:text-dark-text-secondary">
+              <div className="flex items-start gap-2 md:gap-3">
+                <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5" />
+                <span className="text-sm md:text-base text-gray-700 dark:text-gray-300">
                   Fortschrittsverfolgung und Lernstatistiken
                 </span>
               </div>

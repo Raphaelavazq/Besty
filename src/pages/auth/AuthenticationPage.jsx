@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react";
 import { gsap } from "gsap";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { useAuthStore } from "../../store/useAuthStore";
 import { supabase } from "../../lib/supabase";
 
@@ -273,24 +274,37 @@ export default function AuthenticationPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary">
-      {/* Back Button - Fixed Position */}
+      {/* Back Button - Fixed Position - White on mobile gradient, purple on desktop */}
       <Link
         to="/"
-        className="fixed top-4 left-4 md:top-6 md:left-6 z-50 bg-purple-600 text-white px-4 py-2 rounded-lg font-bold text-sm hover:bg-purple-700 transition-colors shadow-lg"
+        className="fixed top-4 left-4 md:top-6 md:left-6 z-50 lg:bg-purple-600 lg:text-white bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-lg font-bold text-sm lg:hover:bg-purple-700 hover:bg-white/30 transition-colors shadow-lg border border-white/30 lg:border-transparent"
       >
         ← Zurück
       </Link>
 
-      {/* Besty Logo - Top Right */}
+      {/* Besty Logo - Top Right - White on mobile, changes on desktop */}
       <div className="fixed top-4 right-4 md:top-6 md:right-6 z-50">
         <div className="w-24 h-10 sm:w-28 sm:h-12 md:w-32 md:h-14">
           <svg
             viewBox="0 0 229.4 94.9"
             className="w-full h-full drop-shadow-lg"
           >
+            {/* Mobile: Always white, Desktop: Purple on sign-up, white on sign-in */}
             <text
               x="0"
               y="74.5"
+              className="lg:hidden"
+              fill="#ffffff"
+              fontFamily="AglonemaRegular, Aglonema, sans-serif"
+              fontSize="93.3"
+              fontWeight="normal"
+            >
+              Besty
+            </text>
+            <text
+              x="0"
+              y="74.5"
+              className="hidden lg:block"
               fill={isSignUp ? "#7c3aed" : "#ffffff"}
               fontFamily="AglonemaRegular, Aglonema, sans-serif"
               fontSize="93.3"
@@ -684,81 +698,116 @@ export default function AuthenticationPage() {
           </div>
         </div>
 
-        {/* Mobile Layout - Single Column */}
-        <div className="lg:hidden min-h-screen flex flex-col">
-          {/* Mobile Header with Toggle */}
-          <div className="bg-gradient-to-br from-purple-600 to-indigo-600 text-white p-6 pt-16">
-            <div className="max-w-sm mx-auto text-center">
-              <h2 className="text-2xl font-bold mb-4 text-white">
-                {isSignUp ? "Konto erstellen" : "Willkommen zurück!"}
-              </h2>
-              <p className="text-white/90 mb-6 text-sm">
-                {isSignUp
-                  ? "Erstelle ein Konto und beginne deine Lernreise"
-                  : "Melde dich an und setze dein Lernen fort"}
-              </p>
-              <button
-                onClick={toggleMode}
-                className="px-6 py-2 border-2 border-white text-white rounded-full hover:bg-white hover:text-purple-600 transition-all duration-300 font-bold text-sm uppercase tracking-wide"
-              >
-                {isSignUp ? "Hast du bereits ein Konto?" : "Neu hier?"}
-              </button>
-            </div>
+        {/* Mobile & Tablet Layout - App-Style Experience */}
+        <div className="lg:hidden min-h-screen relative overflow-hidden">
+          {/* Animated Background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-indigo-600 to-purple-800">
+            {/* Floating Orbs */}
+            <div className="absolute top-20 left-10 w-72 h-72 bg-purple-400/30 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-400/20 rounded-full blur-3xl animate-pulse delay-500"></div>
           </div>
 
-          {/* Mobile Form Container */}
-          <div className="flex-1 bg-white dark:bg-dark-bg-secondary p-6">
-            <div className="max-w-sm mx-auto">
-              <h2 className="text-xl text-gray-800 dark:text-dark-text-primary font-bold mb-6 text-center">
-                {isSignUp ? "Registrieren" : "Anmelden"}
-              </h2>
-
-              <form onSubmit={handleSubmit} className="space-y-4">
-                {error && (
-                  <div className="bg-rose-50 dark:bg-rose-900/20 border border-rose-200 dark:border-rose-500/30 rounded-lg p-3 text-rose-700 dark:text-rose-300 text-sm font-medium">
-                    {error}
+          {/* Content Container */}
+          <div className="relative z-10 min-h-screen flex flex-col">
+            {/* Top Section - Lottie Animation & Logo */}
+            <div className="flex-shrink-0 pt-8 pb-6 px-6">
+              <div className="max-w-md mx-auto text-center">
+                {/* Lottie Animation */}
+                <div className="mb-4 animate-fade-in">
+                  <div className="w-48 h-48 md:w-56 md:h-56 mx-auto relative">
+                    <DotLottieReact
+                      src="https://lottie.host/e625cdca-0dac-4776-a55e-0b437f54c0a7/diw9hO8Z3c.lottie"
+                      loop
+                      autoplay
+                      className="w-full h-full object-contain opacity-90"
+                    />
                   </div>
-                )}
-
-                {/* Google Sign In Button */}
-                <button
-                  type="button"
-                  onClick={handleGoogleSignIn}
-                  disabled={loading}
-                  className="w-full flex items-center justify-center gap-3 px-4 py-3 bg-white dark:bg-white/10 border-2 border-gray-300 dark:border-gray-600 rounded-lg font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/20 hover:border-purple-400 dark:hover:border-purple-500 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-sm"
-                >
-                  <svg className="w-5 h-5" viewBox="0 0 24 24">
-                    <path
-                      fill="#4285F4"
-                      d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-                    />
-                    <path
-                      fill="#34A853"
-                      d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-                    />
-                    <path
-                      fill="#FBBC05"
-                      d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
-                    />
-                    <path
-                      fill="#EA4335"
-                      d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-                    />
-                  </svg>
-                  Mit Google anmelden
-                </button>
-
-                {/* Divider */}
-                <div className="relative my-4">
-                  <div className="absolute inset-0 flex items-center">
-                    <div className="w-full border-t border-gray-300 dark:border-gray-600"></div>
-                  </div>
-                  <div className="relative flex justify-center text-sm">
-                    <span className="px-4 bg-white dark:bg-dark-bg-secondary text-gray-500 dark:text-gray-400 font-medium">
-                      oder mit E-Mail
-                    </span>
-                  </div>
+                  
+                  <p className="text-white text-lg md:text-xl font-bold mt-3">
+                    {isSignUp 
+                      ? "Beginne deine Lernreise" 
+                      : "Willkommen zurück!"}
+                  </p>
                 </div>
+              </div>
+            </div>
+
+            {/* Bottom Sheet - Form Container */}
+            <div className="flex-1 bg-white dark:bg-gray-900 rounded-t-[2.5rem] shadow-2xl overflow-hidden animate-slide-up">
+              <div className="max-w-md mx-auto px-6 py-8">
+                {/* Mode Toggle Pills */}
+                <div className="flex gap-2 mb-8 p-1.5 bg-gray-100 dark:bg-gray-800 rounded-2xl">
+                  <button
+                    type="button"
+                    onClick={() => isSignUp && toggleMode()}
+                    className={`flex-1 py-3 rounded-xl font-bold text-sm transition-all duration-300 ${
+                      !isSignUp
+                        ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg"
+                        : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
+                    }`}
+                  >
+                    Anmelden
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => !isSignUp && toggleMode()}
+                    className={`flex-1 py-3 rounded-xl font-bold text-sm transition-all duration-300 ${
+                      isSignUp
+                        ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg"
+                        : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
+                    }`}
+                  >
+                    Registrieren
+                  </button>
+                </div>
+
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  {error && (
+                    <div className="bg-rose-50 dark:bg-rose-900/20 border-l-4 border-rose-500 rounded-xl p-4 text-rose-700 dark:text-rose-300 text-sm font-medium animate-shake">
+                      {error}
+                    </div>
+                  )}
+
+                  {/* Google Sign In Button */}
+                  <button
+                    type="button"
+                    onClick={handleGoogleSignIn}
+                    disabled={loading}
+                    className="w-full flex items-center justify-center gap-3 px-5 py-4 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-750 hover:border-purple-300 dark:hover:border-purple-500 hover:shadow-lg active:scale-[0.98] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    <svg className="w-6 h-6" viewBox="0 0 24 24">
+                      <path
+                        fill="#4285F4"
+                        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                      />
+                      <path
+                        fill="#34A853"
+                        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                      />
+                      <path
+                        fill="#FBBC05"
+                        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                      />
+                      <path
+                        fill="#EA4335"
+                        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                      />
+                    </svg>
+                    <span>Mit Google anmelden</span>
+                  </button>
+
+                  {/* Divider */}
+                  <div className="relative my-6">
+                    <div className="absolute inset-0 flex items-center">
+                      <div className="w-full border-t-2 border-gray-200 dark:border-gray-700"></div>
+                    </div>
+                    <div className="relative flex justify-center text-sm">
+                      <span className="px-4 bg-white dark:bg-gray-900 text-gray-500 dark:text-gray-400 font-semibold">
+                        oder mit E-Mail
+                      </span>
+                    </div>
+                  </div>
 
                 {isSignUp && (
                   <input
@@ -768,7 +817,7 @@ export default function AuthenticationPage() {
                     value={formData.fullName}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-white dark:bg-white/5 border-2 border-purple-200 dark:border-purple-500/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-900 dark:text-dark-text-primary font-medium text-sm"
+                    className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-900 dark:text-gray-100 font-medium transition-all duration-200"
                   />
                 )}
 
@@ -779,7 +828,7 @@ export default function AuthenticationPage() {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-white dark:bg-white/5 border-2 border-purple-200 dark:border-purple-500/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-900 dark:text-dark-text-primary font-medium text-sm"
+                  className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-900 dark:text-gray-100 font-medium transition-all duration-200"
                 />
 
                 <div className="relative">
@@ -790,30 +839,30 @@ export default function AuthenticationPage() {
                     value={formData.password}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-white dark:bg-white/5 border-2 border-purple-200 dark:border-purple-500/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-900 dark:text-dark-text-primary font-medium text-sm"
+                    className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-900 dark:text-gray-100 font-medium transition-all duration-200"
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors p-1"
                   >
-                    {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                    {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                   </button>
                 </div>
 
                 {isSignUp && formData.password && (
-                  <div className="space-y-1">
-                    <div className="flex justify-between text-xs">
-                      <span className="text-gray-600 dark:text-gray-400 font-medium">
+                  <div className="space-y-2 px-1">
+                    <div className="flex justify-between text-xs font-semibold">
+                      <span className="text-gray-500 dark:text-gray-400">
                         Passwortstärke
                       </span>
                       <span
-                        className={`font-bold ${
+                        className={`${
                           passwordStrength >= 75
-                            ? "text-green-600"
+                            ? "text-green-600 dark:text-green-400"
                             : passwordStrength >= 50
-                              ? "text-yellow-600"
-                              : "text-red-600"
+                              ? "text-yellow-600 dark:text-yellow-400"
+                              : "text-red-600 dark:text-red-400"
                         }`}
                       >
                         {passwordStrength >= 75
@@ -823,14 +872,14 @@ export default function AuthenticationPage() {
                             : "Schwach"}
                       </span>
                     </div>
-                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1">
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
                       <div
-                        className={`h-1 rounded-full transition-all duration-300 ${
+                        className={`h-2 rounded-full transition-all duration-300 ${
                           passwordStrength >= 75
-                            ? "bg-green-500"
+                            ? "bg-gradient-to-r from-green-500 to-emerald-500"
                             : passwordStrength >= 50
-                              ? "bg-yellow-500"
-                              : "bg-red-500"
+                              ? "bg-gradient-to-r from-yellow-500 to-orange-500"
+                              : "bg-gradient-to-r from-red-500 to-rose-500"
                         }`}
                         style={{ width: `${passwordStrength}%` }}
                       ></div>
@@ -848,19 +897,19 @@ export default function AuthenticationPage() {
                         value={formData.confirmPassword}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 bg-white dark:bg-white/5 border-2 border-purple-200 dark:border-purple-500/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-900 dark:text-dark-text-primary font-medium text-sm"
+                        className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-900 dark:text-gray-100 font-medium transition-all duration-200"
                       />
                       <button
                         type="button"
                         onClick={() =>
                           setShowConfirmPassword(!showConfirmPassword)
                         }
-                        className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+                        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors p-1"
                       >
                         {showConfirmPassword ? (
-                          <EyeOff size={18} />
+                          <EyeOff size={20} />
                         ) : (
-                          <Eye size={18} />
+                          <Eye size={20} />
                         )}
                       </button>
                     </div>
@@ -870,7 +919,7 @@ export default function AuthenticationPage() {
                       value={formData.bundesland}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-white dark:bg-white/5 border-2 border-purple-200 dark:border-purple-500/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-900 dark:text-dark-text-primary font-medium text-sm appearance-none cursor-pointer"
+                      className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-900 dark:text-gray-100 font-medium appearance-none cursor-pointer transition-all duration-200"
                     >
                       <option value="">Bundesland auswählen</option>
                       {bundeslaender.map((land) => (
@@ -880,16 +929,16 @@ export default function AuthenticationPage() {
                       ))}
                     </select>
 
-                    <div className="space-y-3 text-xs">
-                      <label className="flex items-start gap-2 cursor-pointer">
+                    <div className="space-y-4 pt-2">
+                      <label className="flex items-start gap-3 cursor-pointer group">
                         <input
                           type="checkbox"
                           checked={gdprConsent}
                           onChange={(e) => setGdprConsent(e.target.checked)}
-                          className="w-4 h-4 mt-0.5 border-2 border-purple-300 dark:border-purple-500/30 rounded focus:ring-2 focus:ring-purple-200 text-purple-600 cursor-pointer"
+                          className="w-5 h-5 mt-0.5 border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 text-purple-600 cursor-pointer transition-all"
                           required
                         />
-                        <span className="text-gray-700 dark:text-dark-text-secondary">
+                        <span className="text-sm text-gray-700 dark:text-gray-300 leading-snug">
                           Ich akzeptiere die{" "}
                           <Link
                             to="/privacy"
@@ -900,15 +949,15 @@ export default function AuthenticationPage() {
                         </span>
                       </label>
 
-                      <label className="flex items-start gap-2 cursor-pointer">
+                      <label className="flex items-start gap-3 cursor-pointer group">
                         <input
                           type="checkbox"
                           checked={termsConsent}
                           onChange={(e) => setTermsConsent(e.target.checked)}
-                          className="w-4 h-4 mt-0.5 border-2 border-purple-300 dark:border-purple-500/30 rounded focus:ring-2 focus:ring-purple-200 text-purple-600 cursor-pointer"
+                          className="w-5 h-5 mt-0.5 border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 text-purple-600 cursor-pointer transition-all"
                           required
                         />
-                        <span className="text-gray-700 dark:text-dark-text-secondary">
+                        <span className="text-sm text-gray-700 dark:text-gray-300 leading-snug">
                           Ich akzeptiere die{" "}
                           <Link
                             to="/terms"
@@ -925,7 +974,7 @@ export default function AuthenticationPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-3 rounded-lg hover:shadow-lg hover:-translate-y-0.5 transition-all font-bold disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 text-sm"
+                  className="w-full bg-gradient-to-r from-purple-600 via-purple-600 to-indigo-600 text-white py-4 rounded-2xl hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 font-bold text-base disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-none"
                 >
                   {loading
                     ? isSignUp
@@ -937,18 +986,18 @@ export default function AuthenticationPage() {
                 </button>
 
                 {/* Continue without account */}
-                <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+                <div className="mt-6 pt-6 border-t-2 border-gray-200 dark:border-gray-800">
                   <button
                     type="button"
                     onClick={() => {
                       continueAsGuest();
                       navigate("/dashboard");
                     }}
-                    className="block w-full py-3 text-center text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition-colors text-sm"
+                    className="block w-full py-3 text-center text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 font-semibold transition-all duration-200 hover:scale-105 active:scale-95"
                   >
                     Ohne Konto fortfahren →
                   </button>
-                  <p className="mt-2 text-xs text-gray-500 dark:text-gray-500 text-center">
+                  <p className="mt-2 text-xs text-gray-500 dark:text-gray-500 text-center font-medium">
                     ⚠️ Dein Fortschritt wird nicht gespeichert
                   </p>
                 </div>
@@ -957,6 +1006,7 @@ export default function AuthenticationPage() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
