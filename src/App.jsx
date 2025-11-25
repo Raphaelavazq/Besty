@@ -45,6 +45,18 @@ import ThemeQuiz from "./features/themes/ThemeQuiz";
 import EinbuergerungstestHub from "./features/einbuergerungstest/EinbuergerungstestHub";
 import Fragenkatalog from "./features/einbuergerungstest/Fragenkatalog";
 import ExamSimulator from "./features/einbuergerungstest/ExamSimulator";
+import TrainingMode from "./features/einbuergerungstest/TrainingMode";
+
+// Authentication
+import AuthenticationPage from "./pages/auth/AuthenticationPage";
+import AuthCallback from "./pages/auth/AuthCallback";
+
+// Legal pages
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+
+// Settings
+import Settings from "./pages/Settings";
 
 // Placeholder component for coming soon pages
 const ComingSoon = ({ title }) => (
@@ -68,6 +80,18 @@ function App() {
     <Routes>
       {/* Hero page without layout */}
       <Route path="/" element={<HeroPage />} />
+
+      {/* Authentication pages without layout */}
+      <Route path="/auth/sign-up" element={<AuthenticationPage />} />
+      <Route path="/auth/sign-in" element={<AuthenticationPage />} />
+      <Route path="/auth/callback" element={<AuthCallback />} />
+
+      {/* Legal pages without layout */}
+      <Route path="/privacy" element={<Privacy />} />
+      <Route path="/terms" element={<Terms />} />
+
+      {/* Settings page without layout */}
+      <Route path="/settings" element={<Settings />} />
 
       {/* Dashboard with always-visible sidebar (DashboardShell applied in component) */}
       <Route path="/dashboard" element={<Dashboard />} />
@@ -374,7 +398,7 @@ function App() {
         path="/einbuergerungstest/training"
         element={
           <HoverSidebarShell>
-            <ExamSimulator mode="practice" />
+            <TrainingMode />
           </HoverSidebarShell>
         }
       />

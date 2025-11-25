@@ -1,243 +1,299 @@
 # 🎓 B1 Bestie - DTZ B1 Exam Preparation App
 
-A modern, AI-powered web application for preparing for the DTZ (Deutsch-Test für Zuwanderer) B1 examination.
+A modern, AI-powered web application for preparing for the **DTZ (Deutsch-Test für Zuwanderer) B1 examination** and the **German Citizenship Test (Einbürgerungstest)**.
 
 ![B1 Bestie Preview](https://img.shields.io/badge/DTZ%20B1-Exam%20Prep-purple?style=for-the-badge)
 ![React](https://img.shields.io/badge/React-18-blue?style=flat-square&logo=react)
+![Supabase](https://img.shields.io/badge/Supabase-DB-3ECF8E?style=flat-square&logo=supabase)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-06B6D4?style=flat-square&logo=tailwindcss)
 ![Vite](https://img.shields.io/badge/Vite-Build-646CFF?style=flat-square&logo=vite)
 
 ---
 
-## 🚀 Quick Deploy (Required for AI Features)
+## 📚 Documentation
 
-**⚠️ IMPORTANT:** AI features (Schreiben correction, Dialogue chat, TTS) only work when deployed to Vercel!
+- **[PROJECT_DOCS.md](./PROJECT_DOCS.md)** - Complete technical documentation (START HERE!)
+- **[#DEVELOPMENT_STANDARDS.md](./#DEVELOPMENT_STANDARDS.md)** - Design system and coding standards
+- **[supabase-schema.sql](./supabase-schema.sql)** - Complete database schema
+- **[OFFICIAL-DTZ-STRUCTURE.md](./OFFICIAL-DTZ-STRUCTURE.md)** - Official DTZ exam structure
+- **[Z_INDEX_HIERARCHY.md](./Z_INDEX_HIERARCHY.md)** - UI layer management
+
+---
+
+## 🚀 Quick Deploy
+
+**Deployment is required for AI features** (Schreiben correction, Sprechen dialogue, TTS/STT)
+
+### 1. Set Up Supabase
+
+1. Create project at [supabase.com](https://supabase.com)
+2. Run SQL from `supabase-schema.sql` in SQL Editor
+3. Copy your Project URL and Anon Key
+
+### 2. Deploy to Vercel
 
 ```bash
-# 1. Push to GitHub
+# Push to GitHub
 git push origin main
 
-# 2. Deploy on Vercel (https://vercel.com)
-# 3. Add environment variable: OPENAI_API_KEY
-# 4. Done! Test at your-app.vercel.app
+# Deploy at vercel.com
+# Add these environment variables in Vercel dashboard:
+VITE_SUPABASE_URL=https://xxx.supabase.co
+VITE_SUPABASE_ANON_KEY=eyJxxx...
+OPENAI_API_KEY=sk-xxx...
 ```
 
-📖 **See `DEPLOY.md` for detailed instructions**
+### 3. Test Production
+
+- ✅ Authentication works
+- ✅ Progress saves to database
+- ✅ Images display (10 Einbürgerungstest questions)
+- ✅ Dark mode toggle works
+- ✅ Mobile responsive
+
+📖 **Full deployment guide in [PROJECT_DOCS.md](./PROJECT_DOCS.md)**
 
 ---
 
 ## ✨ Features
 
-### 🎨 Modern Design
+### �️ **Einbürgerungstest (Citizenship Test)**
 
-- **Viewport-locked** single-page application
-- **Purple/Indigo gradient** theme with glass-morphism effects
-- **Responsive design** optimized for all devices
-- **Smooth animations** and micro-interactions
+- **460 questions** (300 general + 160 state-specific)
+- **Complete question catalog** with search and filters
+- **Training modes**: Quick test, by theme, difficult questions, custom amounts
+- **Exam simulator**: Real 33-question exam with 60-minute timer
+- **Progress tracking**: Confidence ratings (� Easy, 🤔 Medium, 😓 Hard)
+- **"Ich kann das" mastered status** for questions you know
+- **10 visual questions** with images (coats of arms, flags, buildings, maps)
+- **Statistics dashboard** with performance analytics
 
-### 📚 Comprehensive Content
+### 🎧 **Hören (Listening)**
 
-- Complete **DTZ B1 exam preparation** materials
-- **Four skill areas**: Hören (Listening), Lesen (Reading), Schreiben (Writing), Sprechen (Speaking)
-- **Thematic organization** with subject-specific content
-- **Test simulations** with full and quick test modes
+- Audio-based exercises with timestamp navigation
+- Question bank with audio synchronization
+- Progress tracking for listening comprehension
 
-### 🛠️ Technical Excellence
+### 📖 **Lesen (Reading)**
 
-- **React 18** with modern hooks and patterns
-- **React Router** with v7 future flags
-- **Tailwind CSS** for consistent styling
-- **Zustand** for state management
-- **Vite** for lightning-fast development
+- Reading comprehension exercises
+- Text-based questions with answers
 
-## 🚀 Quick Start
+### ✍️ **Schreiben (Writing)**
+
+- AI-powered correction feedback (OpenAI GPT-4)
+- Formal and informal email practice
+- Real-time suggestions and scoring
+
+### � **Sprechen (Speaking)**
+
+- AI dialogue practice with voice recognition
+- Text-to-Speech (TTS) and Speech-to-Text (STT)
+- Interactive conversation scenarios
+
+### 🎨 **Modern Design**
+
+- **Dark mode** with smooth transitions
+- **Glass-morphism** UI with purple/indigo gradients
+- **Mobile-first** responsive design
+- **Touch-friendly** 44px minimum targets
+- **WCAG AA** accessibility compliance
+
+### 🔐 **User System**
+
+- **Supabase authentication** (email/password + OAuth)
+- **Guest mode** for browsing without account
+- **Progress persistence** across devices
+- **Row Level Security** (users only see their data)
+
+## � Local Development
 
 ### Prerequisites
 
 - Node.js 18+
 - npm or yarn
 
-### Installation
+### Quick Start
 
-1. **Clone the repository**
+```bash
+# 1. Clone repository
+git clone https://github.com/Raphaelavazq/Besty.git
+cd Besty
 
-   ```bash
-   git clone https://github.com/Raphaelavazq/Besty.git
-   cd Besty
-   ```
+# 2. Install dependencies
+npm install
 
-2. **Install dependencies**
+# 3. Start development servers (RECOMMENDED)
+./start-dev.sh
 
-   ```bash
-   npm install
-   ```
+# OR manually:
+# Terminal 1: cd server && node index.js
+# Terminal 2: CI=true npm run dev
 
-3. **Start development servers** ⚡
+# 4. Open browser
+http://127.0.0.1:3003
+```
 
-   **RECOMMENDED - Use the automated startup script:**
+### Environment Variables (Optional for Local Dev)
 
-   ```bash
-   ./start-dev.sh
-   ```
+Create `.env` file in project root:
 
-   This script:
-   - ✅ Cleans up zombie processes automatically
-   - ✅ Starts backend (port 3001) and frontend (port 3003)
-   - ✅ Runs health checks to verify servers are ready
-   - ✅ Enables CI mode to prevent Vite freezing
-   - ✅ Provides PIDs for easy shutdown
-   - ✅ Logs to `/tmp/backend.log` and `/tmp/vite.log`
-
-   **Manual alternative** (if script fails):
-
-   ```bash
-   # Terminal 1 - Backend
-   cd backend
-   node server.js
-
-   # Terminal 2 - Frontend
-   CI=true npm run dev
-   ```
-
-4. **Open in browser**
-
-   ```
-   http://127.0.0.1:3003
-   ```
-
-5. **Stop servers**
-   ```bash
-   # Use PIDs from start-dev.sh output, or:
-   killall -9 node npm
-   ```
+```bash
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=eyJxxx...your-anon-key
+# Without these, app runs in guest mode (no progress saving)
+```
 
 ### Troubleshooting
 
-**If servers freeze or show "loading forever":**
+**Servers freeze?**
 
 ```bash
-# Check logs
-tail -f /tmp/backend.log
-tail -f /tmp/vite.log
-
-# Check for frozen processes (status "TN")
-ps aux | grep -E '[n]ode' | grep -v "Code Helper"
-
-# Full reset
 killall -9 node npm && ./start-dev.sh
 ```
 
-See `FULL_STACK_AUDIT_REPORT.md` for comprehensive troubleshooting guide.
+**Port already in use?**
+
+```bash
+lsof -ti:3003 | xargs kill -9
+```
+
+📖 **Full troubleshooting guide in [PROJECT_DOCS.md](./PROJECT_DOCS.md)**
 
 ## 📁 Project Structure
 
 ```
 Besty/
 ├── src/
-│   ├── components/          # Reusable UI components
-│   │   ├── Layout.jsx      # Main app layout with navigation
-│   │   ├── AudioPlayer.jsx # Audio playback component
-│   │   └── ...
-│   ├── pages/              # Route components
-│   │   ├── Dashboard.jsx   # Main dashboard
-│   │   ├── Tests.jsx       # Test selection page
-│   │   └── ...
-│   ├── store/              # State management
-│   └── App.jsx             # Root component
+│   ├── features/
+│   │   └── einbuergerungstest/
+│   │       ├── EinbuergerungstestHub.jsx    # Main hub
+│   │       ├── Fragenkatalog.jsx            # 460 questions catalog
+│   │       ├── TrainingMode.jsx             # Practice modes
+│   │       └── ExamSimulator.jsx            # 33-question exam
+│   ├── components/
+│   │   ├── dashboard/                       # Dashboard widgets
+│   │   ├── layouts/                         # Layout components
+│   │   └── AudioPlayerNew.jsx               # Audio playback
+│   ├── pages/                               # Route pages
+│   ├── store/                               # Zustand state
+│   │   └── useAuthStore.js                  # Auth state
+│   ├── lib/
+│   │   └── supabase.js                      # DB client
+│   └── App.jsx                              # Root + routing
 ├── public/
-│   └── data/               # JSON data files
-│       ├── content.json    # Main content structure
-│       ├── tests.json      # Test definitions
-│       └── themes.json     # Subject themes
-└── package.json
+│   ├── data/
+│   │   └── einbuergerungstest/
+│   │       └── questions.json               # 460 questions with images
+│   ├── images/
+│   │   └── einbuergerungstest/             # 10 exam images
+│   └── audio/                               # Audio files (not in repo)
+├── api/                                     # Vercel serverless functions
+├── server/                                  # Local dev backend
+├── supabase-schema.sql                      # Database schema
+└── vercel.json                              # Deployment config
 ```
 
-## 🎯 Usage
+## 🔧 Tech Stack
 
-### Dashboard
+| Category       | Technology                              |
+| -------------- | --------------------------------------- |
+| **Frontend**   | React 18, Vite, Tailwind CSS            |
+| **State**      | Zustand (global), React hooks (local)   |
+| **Routing**    | React Router v6                         |
+| **Database**   | Supabase (PostgreSQL)                   |
+| **Auth**       | Supabase Auth (email + OAuth)           |
+| **AI**         | OpenAI GPT-4 (text), Whisper (STT), TTS |
+| **Deployment** | Vercel (frontend + serverless)          |
+| **Icons**      | Lucide React                            |
+| **Animations** | GSAP, Lottie                            |
 
-- **Quick access** to full tests and practice sessions
-- **Subject selection** (Hören, Lesen, Schreiben, Sprechen)
-- **Theme browsing** for focused study
-
-### Test Modes
-
-- **Volltest**: Complete DTZ B1 simulation
-- **Schnelltest**: Quick practice rounds
-- **Subject-specific**: Focus on individual skills
-
-### Navigation
-
-- **Fixed header** with responsive navigation
-- **Mobile-optimized** menu for smaller screens
-- **Smooth transitions** between sections
-
-## 🔧 Development
-
-### Scripts
+## 🛠️ Available Scripts
 
 ```bash
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run preview      # Preview production build
-npm run lint         # Run ESLint
+# Development
+npm run dev                # Start dev server (port 3003)
+./start-dev.sh            # Automated startup with health checks
+
+# Content Management
+npm run scan-audio        # Regenerate audio catalog
+npm run build-questions   # Build question JSON
+npm run prepare-content   # Run all content scripts
+
+# Production
+npm run build             # Build for production
+npm run preview           # Preview production build
+npm run lint              # Run ESLint
+
+# Testing
+# (Add test scripts here when tests are implemented)
 ```
 
-### Environment Setup
+## �️ Database Schema
 
-The app uses Vite for development with hot module replacement (HMR).
+**4 main tables** (see `supabase-schema.sql` for complete schema):
 
-## 📦 Build & Deployment
+1. **`profiles`** - User accounts with bundesland (determines exam questions)
+2. **`question_progress`** - Individual progress for all 460 questions
+3. **`exam_simulations`** - Complete exam results with detailed data
+4. **`study_sessions`** - Activity tracking across all features
 
-### Production Build
+**Security**: Row Level Security (RLS) enabled on all tables - users can only access their own data.
 
-```bash
-npm run build
-```
+## 🎯 Key Achievements
 
-### Deployment Options
+- ✅ **460 Einbürgerungstest questions** with full progress tracking
+- ✅ **Performance optimized**: Reduced API calls from 460 to 1 (99.8% reduction)
+- ✅ **Dark mode** with complete theme support
+- ✅ **Mobile-first** responsive design (tested iOS/Android)
+- ✅ **Accessibility** WCAG AA compliant
+- ✅ **Production ready** - Successfully deployed on Vercel
+- ✅ **Image support** for 10 visual questions (coats of arms, flags, maps)
+- ✅ **Real-time sync** with Supabase database
 
-- **Vercel** (recommended) - includes vercel.json config
-- **Netlify** - static site deployment
-- **GitHub Pages** - for demo versions
+## 🐛 Known Issues & Roadmap
 
-## 🎵 Audio Content
+### Current Status
 
-> **Note**: Audio files are excluded from the repository due to size constraints.
+- ✅ All core features working
+- ✅ No critical bugs
+- ⚠️ Bundle size is large (2.7 MB) - consider code splitting
 
-To add audio content locally:
+### Future Enhancements
 
-1. Create `public/audio/hoeren/` directory
-2. Add MP3 files for listening exercises
-3. Update audio references in JSON data files
+- [ ] Route-based code splitting (reduce bundle size)
+- [ ] Image optimization (compress 2.4 MB images)
+- [ ] Spaced repetition algorithm for review scheduling
+- [ ] Offline mode with service worker
+- [ ] Social features (study groups, leaderboards)
+- [ ] Native mobile apps (React Native)
 
-See `AUDIO-GUIDE.md` for detailed instructions.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+See [PROJECT_DOCS.md](./PROJECT_DOCS.md) for complete roadmap.
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License - see [LICENSE](LICENSE) file for details.
 
-## 🌟 Acknowledgments
+## 🙏 Acknowledgments
 
-- **DTZ B1 Exam Content** - Based on official German language testing standards
-- **React Community** - For excellent documentation and tools
-- **Tailwind CSS** - For the utility-first CSS framework
-- **Lucide Icons** - For beautiful, consistent icons
+- **BAMF** - Official Einbürgerungstest questions
+- **Telc** - DTZ B1 exam structure and content
+- **Supabase** - Excellent PostgreSQL + Auth platform
+- **Vercel** - Seamless deployment experience
+- **React Community** - Amazing ecosystem and tools
 
 ## 📧 Contact
 
 **Rafaela Vaz** - [@Raphaelavazq](https://github.com/Raphaelavazq)
 
-Project Link: [https://github.com/Raphaelavazq/Besty](https://github.com/Raphaelavazq/Besty)
+**Project**: [github.com/Raphaelavazq/Besty](https://github.com/Raphaelavazq/Besty)
 
 ---
 
-Made with ❤️ for German learners 🇩🇪
+<div align="center">
+
+**Made with ❤️ for German learners 🇩🇪**
+
+[⭐ Star this repo](https://github.com/Raphaelavazq/Besty) | [📖 Read Docs](./PROJECT_DOCS.md) | [🐛 Report Bug](https://github.com/Raphaelavazq/Besty/issues)
+
+</div>

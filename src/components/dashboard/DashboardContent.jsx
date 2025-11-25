@@ -8,8 +8,11 @@ import { Link } from "react-router-dom";
 import { Headphones, Eye, PenTool, FileText, ArrowRight } from "lucide-react";
 import { allThemes } from "../../features/themes/themesData";
 import * as LucideIcons from "lucide-react";
+import { useAuthStore } from "../../store/useAuthStore";
+import EinbuergerungstestProfile from "./EinbuergerungstestProfile";
 
 export default function DashboardContent() {
+  const { isAuthenticated } = useAuthStore();
   const examParts = [
     {
       title: "Hören",
@@ -55,6 +58,8 @@ export default function DashboardContent() {
     <div className="pt-20 px-4 pb-8 sm:p-6 lg:p-8 lg:pt-8 h-screen overflow-hidden flex flex-col">
       {/* Scrollable Content */}
       <div className="flex-1 overflow-y-auto space-y-6 pr-2">
+        {/* Einbürgerungstest Profile Card (on top for authenticated users) */}
+        {isAuthenticated && <EinbuergerungstestProfile />}
         {/* Exam Parts */}
         <div>
           <h2 className="text-lg font-bold text-gray-900 dark:text-dark-text-primary mb-4">

@@ -28,7 +28,7 @@ export default function EinbuergerungstestHub() {
       id: "training",
       title: "Training",
       description:
-        "Alle 310 Fragen für dein Bundesland üben (300 allgemeine + 10 Bundesland-spezifisch)",
+        "Übungsmodi: Schnelltest • Nach Thema • Schwierige Fragen • Zufälliger Test",
       icon: Brain,
       color: "from-pink-500 to-purple-600",
       path: "/einbuergerungstest/training",

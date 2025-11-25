@@ -18,13 +18,18 @@ import {
   Moon,
   Sun,
   GraduationCap,
+  User,
+  LogOut,
+  LogIn,
 } from "lucide-react";
 import { useStore } from "../../store/useStore";
+import { useAuthStore } from "../../store/useAuthStore";
 
 export default function DashboardShell({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const theme = useStore((state) => state.preferences.theme);
   const toggleTheme = useStore((state) => state.toggleTheme);
+  const { user, isAuthenticated, isGuest, signOut } = useAuthStore();
 
   const sidebarItems = [
     {
@@ -142,6 +147,64 @@ export default function DashboardShell({ children }) {
                 </text>
               </svg>
             </div>
+          </div>
+
+          {/* User Status Section */}
+          <div className="px-4 pb-3">
+            {isAuthenticated ? (
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 mb-3">
+                <div className="flex items-center space-x-3 mb-2">
+                  <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                    <User size={20} className="text-white" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-white font-semibold text-sm truncate">
+                      {user?.fullName || "User"}
+                    </p>
+                    <p className="text-white/60 text-xs truncate">
+                      {user?.email}
+                    </p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => {
+                    signOut();
+                    setSidebarOpen(false);
+                  }}
+                  className="w-full flex items-center justify-center px-3 py-2 text-sm font-medium rounded-lg bg-white/10 text-white/90 hover:bg-white/20 transition-all duration-200"
+                >
+                  <LogOut size={16} className="mr-2" />
+                  Abmelden
+                </button>
+              </div>
+            ) : isGuest ? (
+              <div className="bg-amber-500/20 backdrop-blur-sm rounded-xl p-3 mb-3 border border-amber-400/30">
+                <div className="flex items-center space-x-2 mb-2">
+                  <User size={16} className="text-amber-300" />
+                  <p className="text-white font-semibold text-sm">Gast-Modus</p>
+                </div>
+                <p className="text-white/70 text-xs mb-2">
+                  ⚠️ Fortschritt wird nicht gespeichert
+                </p>
+                <Link
+                  to="/auth/sign-in"
+                  onClick={() => setSidebarOpen(false)}
+                  className="w-full flex items-center justify-center px-3 py-2 text-sm font-medium rounded-lg bg-white text-purple-700 hover:bg-white/90 transition-all duration-200"
+                >
+                  <LogIn size={16} className="mr-2" />
+                  Jetzt anmelden
+                </Link>
+              </div>
+            ) : (
+              <Link
+                to="/auth/sign-in"
+                onClick={() => setSidebarOpen(false)}
+                className="block w-full px-4 py-3 text-sm font-bold text-center rounded-xl bg-white text-purple-700 hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-200 mb-3"
+              >
+                <LogIn size={18} className="inline mr-2" />
+                Anmelden
+              </Link>
+            )}
           </div>
 
           {/* Navigation */}

@@ -1,23 +1,26 @@
 /**
- * SprechenHub - Redesigned to match Schreiben layout
- * Full viewport hero with direct CTA + all original content below
+ * SprechenHub
+ * Landing page for DTZ Speaking practice.
+ * Beautiful glass-morphism design with exceptional mobile UX.
+ * Maintains brand colors and design consistency.
  */
 
 import { Link } from "react-router-dom";
 import {
   MessageSquare,
   Play,
+  Info,
   Video,
+  ArrowLeft,
   Clock,
-  Target,
-  ArrowRight,
   Users,
+  Target,
   CheckCircle,
   Lightbulb,
 } from "lucide-react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
-export default function SprechenHubNew() {
+export default function SprechenHub() {
   const practiceOptions = [
     {
       id: "uebung",
@@ -63,6 +66,7 @@ export default function SprechenHubNew() {
       path: "/tests/sprechen/trainer",
     },
   ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary">
       {/* Hero Section - Full Viewport with Glass Layer */}
@@ -128,12 +132,12 @@ export default function SprechenHubNew() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         {/* Prüfungsstruktur */}
         <div className="mb-16">
-          <div className="text-center mb-8">
-            <h2 className="text-4xl lg:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-3 tracking-tight">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-2 sm:mb-3 tracking-tight leading-tight pb-2">
               Prüfungsstruktur
             </h2>
-            <p className="text-slate-600 dark:text-dark-text-secondary text-lg lg:text-xl leading-relaxed font-light">
-              3 Teile • 15 Minuten • 12 Punkte
+            <p className="text-slate-600 text-base sm:text-lg lg:text-xl leading-relaxed font-light">
+              3 Teile • 15 Minuten
             </p>
           </div>
 
@@ -145,13 +149,13 @@ export default function SprechenHubNew() {
                 <Link
                   key={info.teil}
                   to={info.path}
-                  className="group bg-white/80 dark:bg-white/5 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-purple-100 dark:border-purple-500/20 hover:shadow-3xl transition-all duration-200 hover:-translate-y-2 hover:scale-105 relative overflow-hidden"
+                  className="group bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-purple-100 dark:border-purple-500/30 hover:shadow-3xl transition-all duration-200 hover:-translate-y-2 hover:scale-105 relative overflow-hidden"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-indigo-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-indigo-600/5 dark:from-purple-400/10 dark:to-indigo-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
 
                   <div className="relative">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-200">
+                      <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-200">
                         <span className="text-2xl font-black text-white">
                           {info.teil}
                         </span>
@@ -160,26 +164,26 @@ export default function SprechenHubNew() {
                         <div className="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider mb-1">
                           Teil {info.teil}
                         </div>
-                        <div className="flex items-center gap-2 text-gray-500 dark:text-dark-text-muted text-sm">
+                        <div className="flex items-center gap-2 text-gray-500 dark:text-dark-text-secondary text-sm">
                           <Clock className="w-3 h-3" />
                           <span>{info.duration}</span>
                         </div>
                       </div>
                     </div>
 
-                    <div className="w-12 h-12 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/30 dark:to-indigo-900/30 rounded-xl flex items-center justify-center mb-4 group-hover:from-purple-100 group-hover:to-indigo-100 dark:group-hover:from-purple-900/50 dark:group-hover:to-indigo-900/50 transition-all duration-200">
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/30 dark:to-indigo-900/30 rounded-xl flex items-center justify-center mb-4 group-hover:from-purple-100 group-hover:to-indigo-100 dark:group-hover:from-purple-800/40 dark:group-hover:to-indigo-800/40 transition-all duration-200">
                       <Icon className="w-6 h-6 text-purple-600 dark:text-purple-400" />
                     </div>
 
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-dark-text-primary mb-2">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">
                       {info.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-dark-text-secondary leading-relaxed mb-4">
+                    <p className="text-gray-600 leading-relaxed mb-4">
                       {info.description}
                     </p>
 
                     <div className="flex items-center justify-end">
-                      <div className="w-10 h-10 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/30 dark:to-indigo-900/30 rounded-xl flex items-center justify-center group-hover:from-purple-600 group-hover:to-indigo-600 transition-all duration-200">
+                      <div className="w-10 h-10 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/30 dark:to-indigo-900/30 rounded-xl flex items-center justify-center group-hover:from-purple-600 group-hover:to-indigo-600 dark:group-hover:from-purple-500 dark:group-hover:to-indigo-500 transition-all duration-200">
                         <Play className="w-5 h-5 text-purple-600 dark:text-purple-400 group-hover:text-white group-hover:translate-x-1 transition-all duration-200" />
                       </div>
                     </div>
@@ -190,16 +194,17 @@ export default function SprechenHubNew() {
           </div>
         </div>
 
-        {/* Übungsoptionen */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4 tracking-tight">
+        {/* Section Title - Üben */}
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-2 sm:mb-3 tracking-tight leading-tight pb-2">
             Wie möchten Sie üben?
           </h2>
-          <p className="text-slate-600 dark:text-dark-text-secondary text-lg lg:text-xl leading-relaxed font-light">
+          <p className="text-slate-600 dark:text-dark-text-secondary text-base sm:text-lg lg:text-xl leading-relaxed font-light">
             Wählen Sie Ihren Lernweg
           </p>
         </div>
 
+        {/* Practice Options Grid */}
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8 mb-16">
           {practiceOptions.map((option) => {
             const Icon = option.icon;
@@ -207,15 +212,18 @@ export default function SprechenHubNew() {
               <Link
                 key={option.id}
                 to={option.path}
-                className="group relative bg-white/80 dark:bg-white/5 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-purple-100 dark:border-purple-500/20 hover:shadow-3xl transition-all duration-200 hover:-translate-y-2 hover:scale-105 overflow-hidden"
+                className="group relative bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-purple-100 dark:border-purple-500/30 hover:shadow-3xl transition-all duration-200 hover:-translate-y-2 hover:scale-105 overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-indigo-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+                {/* Hover Background Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-indigo-600/5 dark:from-purple-400/10 dark:to-indigo-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
 
                 <div className="relative">
-                  <div className="w-20 h-20 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200 shadow-lg">
+                  {/* Icon */}
+                  <div className="w-20 h-20 bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200 shadow-lg">
                     <Icon className="w-10 h-10 text-white" />
                   </div>
 
+                  {/* Content */}
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-dark-text-primary mb-2">
                     {option.title}
                   </h3>
@@ -226,8 +234,9 @@ export default function SprechenHubNew() {
                     {option.details}
                   </p>
 
+                  {/* Arrow Icon */}
                   <div className="mt-6 flex items-center justify-end">
-                    <div className="w-12 h-12 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/30 dark:to-indigo-900/30 rounded-xl flex items-center justify-center group-hover:from-purple-100 group-hover:to-indigo-100 dark:group-hover:from-purple-900/50 dark:group-hover:to-indigo-900/50 transition-all duration-200">
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/30 dark:to-indigo-900/30 rounded-xl flex items-center justify-center group-hover:from-purple-100 group-hover:to-indigo-100 dark:group-hover:from-purple-800/40 dark:group-hover:to-indigo-800/40 transition-all duration-200">
                       <Play className="w-5 h-5 text-purple-600 dark:text-purple-400 group-hover:translate-x-1 transition-transform duration-200" />
                     </div>
                   </div>
@@ -243,37 +252,38 @@ export default function SprechenHubNew() {
             <h2 className="text-4xl lg:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4 tracking-tight">
               Prüfungsformat & Bewertung
             </h2>
-            <p className="text-slate-600 dark:text-dark-text-secondary text-lg lg:text-xl leading-relaxed font-light">
+            <p className="text-slate-600 text-lg lg:text-xl leading-relaxed font-light">
               Was Sie wissen müssen
             </p>
           </div>
 
-          <div className="bg-white/80 dark:bg-white/5 backdrop-blur-md rounded-3xl p-8 lg:p-10 shadow-xl border border-purple-100 dark:border-purple-500/20 mb-8">
-            {/* Quick Stats */}
-            <div className="flex flex-wrap items-center justify-center gap-8 mb-10 pb-8 border-b border-purple-100 dark:border-purple-500/20">
+          {/* Single Card with All Info */}
+          <div className="bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-3xl p-8 lg:p-10 shadow-xl border border-purple-100 dark:border-purple-500/30 mb-8">
+            {/* Quick Stats Banner */}
+            <div className="flex flex-wrap items-center justify-center gap-8 mb-10 pb-8 border-b border-purple-100 dark:border-purple-500/30">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
+                <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 rounded-xl flex items-center justify-center shadow-lg">
                   <Clock className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <div className="text-2xl font-black text-gray-900 dark:text-dark-text-primary">
                     15 Min
                   </div>
-                  <div className="text-sm text-gray-600 dark:text-dark-text-muted">
+                  <div className="text-sm text-gray-600 dark:text-dark-text-secondary">
                     Gesamtdauer
                   </div>
                 </div>
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
+                <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 rounded-xl flex items-center justify-center shadow-lg">
                   <Users className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <div className="text-2xl font-black text-gray-900 dark:text-dark-text-primary">
                     2 Prüfer
                   </div>
-                  <div className="text-sm text-gray-600 dark:text-dark-text-muted">
+                  <div className="text-sm text-gray-600 dark:text-dark-text-secondary">
                     Plus Partner
                   </div>
                 </div>
@@ -284,12 +294,10 @@ export default function SprechenHubNew() {
                   <Target className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <div className="text-2xl font-black text-gray-900 dark:text-dark-text-primary">
+                  <div className="text-2xl font-black text-gray-900">
                     12 Punkte
                   </div>
-                  <div className="text-sm text-gray-600 dark:text-dark-text-muted">
-                    Maximal
-                  </div>
+                  <div className="text-sm text-gray-600">Maximal</div>
                 </div>
               </div>
             </div>
@@ -300,55 +308,53 @@ export default function SprechenHubNew() {
                 <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
                   <CheckCircle className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-dark-text-primary">
+                <h3 className="text-2xl font-bold text-gray-900">
                   Bewertungskriterien
                 </h3>
               </div>
 
               <div className="grid md:grid-cols-2 gap-3">
-                <div className="flex items-start gap-3 bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-xl p-4">
-                  <CheckCircle className="w-5 h-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4">
+                  <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <div className="font-semibold text-gray-900 dark:text-dark-text-primary mb-1">
+                    <div className="font-semibold text-gray-900 mb-1">
                       Aufgabe erfüllt
                     </div>
-                    <div className="text-sm text-gray-600 dark:text-dark-text-secondary">
+                    <div className="text-sm text-gray-600">
                       Alle Punkte behandeln
                     </div>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-xl p-4">
-                  <CheckCircle className="w-5 h-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4">
+                  <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <div className="font-semibold text-gray-900 dark:text-dark-text-primary mb-1">
+                    <div className="font-semibold text-gray-900 mb-1">
                       Flüssig sprechen
                     </div>
-                    <div className="text-sm text-gray-600 dark:text-dark-text-secondary">
+                    <div className="text-sm text-gray-600">
                       Ohne lange Pausen
                     </div>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-xl p-4">
-                  <CheckCircle className="w-5 h-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4">
+                  <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <div className="font-semibold text-gray-900 dark:text-dark-text-primary mb-1">
+                    <div className="font-semibold text-gray-900 mb-1">
                       Wortschatz & Grammatik
                     </div>
-                    <div className="text-sm text-gray-600 dark:text-dark-text-secondary">
-                      B1-Level zeigen
-                    </div>
+                    <div className="text-sm text-gray-600">B1-Level zeigen</div>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-xl p-4">
-                  <CheckCircle className="w-5 h-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4">
+                  <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <div className="font-semibold text-gray-900 dark:text-dark-text-primary mb-1">
+                    <div className="font-semibold text-gray-900 mb-1">
                       Aussprache
                     </div>
-                    <div className="text-sm text-gray-600 dark:text-dark-text-secondary">
+                    <div className="text-sm text-gray-600">
                       Verständlich und deutlich
                     </div>
                   </div>
@@ -356,57 +362,122 @@ export default function SprechenHubNew() {
               </div>
             </div>
 
-            {/* Tipps */}
+            {/* Allgemeine Tipps */}
             <div>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
                   <Lightbulb className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-dark-text-primary">
+                <h3 className="text-2xl font-bold text-gray-900">
                   Tipps für die Prüfung
                 </h3>
               </div>
 
               <div className="grid md:grid-cols-3 gap-3">
-                <div className="flex items-start gap-2 bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-xl p-4">
-                  <CheckCircle className="w-4 h-4 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
-                  <div className="text-sm text-gray-700 dark:text-dark-text-secondary">
-                    Pünktlich sein
-                  </div>
+                <div className="flex items-start gap-2 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4">
+                  <CheckCircle className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5" />
+                  <div className="text-sm text-gray-700">Pünktlich sein</div>
                 </div>
 
-                <div className="flex items-start gap-2 bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-xl p-4">
-                  <CheckCircle className="w-4 h-4 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
-                  <div className="text-sm text-gray-700 dark:text-dark-text-secondary">
-                    Ruhig bleiben
-                  </div>
+                <div className="flex items-start gap-2 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4">
+                  <CheckCircle className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5" />
+                  <div className="text-sm text-gray-700">Ruhig bleiben</div>
                 </div>
 
-                <div className="flex items-start gap-2 bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-xl p-4">
-                  <CheckCircle className="w-4 h-4 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
-                  <div className="text-sm text-gray-700 dark:text-dark-text-secondary">
-                    Weitersprechen
-                  </div>
+                <div className="flex items-start gap-2 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4">
+                  <CheckCircle className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5" />
+                  <div className="text-sm text-gray-700">Weitersprechen</div>
                 </div>
 
-                <div className="flex items-start gap-2 bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-xl p-4">
-                  <CheckCircle className="w-4 h-4 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
-                  <div className="text-sm text-gray-700 dark:text-dark-text-secondary">
+                <div className="flex items-start gap-2 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4">
+                  <CheckCircle className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5" />
+                  <div className="text-sm text-gray-700">
                     Nachfragen erlaubt
                   </div>
                 </div>
 
-                <div className="flex items-start gap-2 bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-xl p-4">
-                  <CheckCircle className="w-4 h-4 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
-                  <div className="text-sm text-gray-700 dark:text-dark-text-secondary">
-                    Mit Freunden üben
-                  </div>
+                <div className="flex items-start gap-2 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4">
+                  <CheckCircle className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5" />
+                  <div className="text-sm text-gray-700">Mit Freunden üben</div>
                 </div>
 
-                <div className="flex items-start gap-2 bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-xl p-4">
-                  <CheckCircle className="w-4 h-4 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
-                  <div className="text-sm text-gray-700 dark:text-dark-text-secondary">
-                    Videos ansehen
+                <div className="flex items-start gap-2 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4">
+                  <CheckCircle className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5" />
+                  <div className="text-sm text-gray-700">Videos ansehen</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Wichtig zu wissen */}
+        <div className="bg-gradient-to-br from-purple-50 via-indigo-50 to-purple-50 rounded-3xl p-8 lg:p-10 shadow-xl border border-purple-100">
+          <div className="flex items-start gap-4 mb-6">
+            <div className="w-14 h-14 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+              <Info className="w-7 h-7 text-white" />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                Wichtig zu wissen
+              </h3>
+              <p className="text-gray-600 dark:text-dark-text-secondary">
+                Tipps für die mündliche Prüfung
+              </p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-white/60 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-5 border border-purple-100 dark:border-purple-500/30">
+              <div className="flex items-start gap-3">
+                <Users className="w-5 h-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
+                <div>
+                  <div className="font-semibold text-gray-900 dark:text-dark-text-primary mb-1">
+                    Zu zweit
+                  </div>
+                  <div className="text-sm text-gray-600 dark:text-dark-text-secondary leading-relaxed">
+                    Mit anderem Teilnehmer üben
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/60 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-5 border border-purple-100 dark:border-purple-500/30">
+              <div className="flex items-start gap-3">
+                <Target className="w-5 h-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
+                <div>
+                  <div className="font-semibold text-gray-900 dark:text-dark-text-primary mb-1">
+                    12 Punkte
+                  </div>
+                  <div className="text-sm text-gray-600 dark:text-dark-text-secondary leading-relaxed">
+                    Maximal erreichbare Punktzahl
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/60 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-5 border border-purple-100 dark:border-purple-500/30">
+              <div className="flex items-start gap-3">
+                <MessageSquare className="w-5 h-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
+                <div>
+                  <div className="font-semibold text-gray-900 dark:text-dark-text-primary mb-1">
+                    Deutlich sprechen
+                  </div>
+                  <div className="text-sm text-gray-600 dark:text-dark-text-secondary leading-relaxed">
+                    Nicht zu schnell reden
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/60 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-5 border border-purple-100 dark:border-purple-500/30">
+              <div className="flex items-start gap-3">
+                <Video className="w-5 h-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
+                <div>
+                  <div className="font-semibold text-gray-900 dark:text-dark-text-primary mb-1">
+                    Beispiele ansehen
+                  </div>
+                  <div className="text-sm text-gray-600 dark:text-dark-text-secondary leading-relaxed">
+                    Videos zeigen, was erwartet wird
                   </div>
                 </div>
               </div>

@@ -68,7 +68,7 @@ export default function HeroPage() {
         }`}
       >
         <button
-          onClick={handleEnterApp}
+          onClick={() => navigate("/auth/sign-in")}
           className="bg-white/90 dark:bg-white/80 backdrop-blur-md text-purple-900 dark:text-purple-800 px-8 py-4 sm:px-10 sm:py-5 md:px-12 md:py-6 rounded-full hover:bg-white dark:hover:bg-white hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-3xl"
         >
           <span className="font-black text-base sm:text-lg md:text-xl">

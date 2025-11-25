@@ -1,11 +1,5 @@
 import { Link } from "react-router-dom";
-import {
-  ArrowLeft,
-  Headphones,
-  Brain,
-  Trophy,
-  Play,
-} from "lucide-react";
+import { ArrowLeft, Headphones, Brain, Trophy, Play } from "lucide-react";
 
 export default function Hoeren() {
   const practiceOptions = [
