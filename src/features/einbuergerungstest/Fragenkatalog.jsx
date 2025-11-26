@@ -735,7 +735,9 @@ export default function Fragenkatalog() {
                       <Bookmark className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                     </div>
                     <div>
-                      <p className="text-xs sm:text-sm text-white">Markierte Fragen</p>
+                      <p className="text-xs sm:text-sm text-white">
+                        Markierte Fragen
+                      </p>
                       <p className="text-2xl sm:text-3xl font-bold text-white">
                         {userProgress.filter((p) => p.marked_for_review).length}
                       </p>
@@ -748,7 +750,9 @@ export default function Fragenkatalog() {
                       <GraduationCap className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                     </div>
                     <div>
-                      <p className="text-xs sm:text-sm text-white">Gelernte Fragen</p>
+                      <p className="text-xs sm:text-sm text-white">
+                        Gelernte Fragen
+                      </p>
                       <p className="text-2xl sm:text-3xl font-bold text-white">
                         {userProgress.filter((p) => p.is_mastered).length}
                       </p>
@@ -765,7 +769,8 @@ export default function Fragenkatalog() {
                       : userProgress.filter((p) => p.is_mastered).length) /
                       310) *
                       100
-                  )}%
+                  )}
+                  %
                 </p>
               </div>
             </div>
@@ -1010,7 +1015,8 @@ export default function Fragenkatalog() {
                       Noch keine Fragen hier!
                     </h3>
                     <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 max-w-sm mx-auto leading-relaxed">
-                      Beginne Fragen zu beantworten und markiere sie nach Schwierigkeit oder als gelernt.
+                      Beginne Fragen zu beantworten und markiere sie nach
+                      Schwierigkeit oder als gelernt.
                     </p>
                     <button
                       onClick={() => navigate("/einbuergerungstest/training")}
@@ -1036,7 +1042,6 @@ export default function Fragenkatalog() {
             />
           ))}
         </div>
-
       </div>
     </div>
   );

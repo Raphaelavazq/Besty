@@ -304,7 +304,7 @@ export default function ExamSimulator({ mode = "probetest" }) {
             </h1>
             <p className="text-lg text-gray-600 dark:text-dark-text-secondary">
               {mode === "probetest"
-                ? "Offizieller Test: 33 Fragen in 60 Minuten"
+                ? "Probetest: 33 Fragen in 60 Minuten"
                 : "Alle 310 Fragen zum Üben"}
             </p>
           </div>

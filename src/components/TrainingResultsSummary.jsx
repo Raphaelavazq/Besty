@@ -4,9 +4,9 @@ import { Trophy, CheckCircle, XCircle, Target } from "lucide-react";
 
 /**
  * TrainingResultsSummary - Compact animated results for top of TrainingMode
- * 
+ *
  * Displays score with GSAP counter animations, then shows review below
- * 
+ *
  * @param {Object} props
  * @param {number} props.score - Number of correct answers
  * @param {number} props.totalQuestions - Total number of questions

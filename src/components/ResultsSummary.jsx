@@ -18,14 +18,14 @@ import {
 
 /**
  * ResultsSummary - Animated results page for test completion
- * 
+ *
  * Features:
  * - Confetti animation for passing tests
  * - GSAP number counter animations
  * - Mobile-optimized app-style layout
  * - Encouraging messages for all outcomes
  * - Clear call-to-action buttons
- * 
+ *
  * @param {Object} props
  * @param {number} props.score - Number of correct answers
  * @param {number} props.totalQuestions - Total number of questions
@@ -77,7 +77,7 @@ export default function ResultsSummary({
     // Number counter animations
     const animateCounter = (ref, endValue, duration = 1.5) => {
       if (!ref.current) return;
-      
+
       gsap.fromTo(
         ref.current,
         { textContent: 0 },
@@ -129,17 +129,13 @@ export default function ResultsSummary({
             )}
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mt-4 sm:mt-6 pb-2">
-              {isSuccess ? (
-                mode === "probetest" ? (
-                  "Bestanden! 🎉"
-                ) : (
-                  "Super gemacht! ✨"
-                )
-              ) : mode === "probetest" ? (
-                "Weiter üben! 💪"
-              ) : (
-                "Gut geübt! 📚"
-              )}
+              {isSuccess
+                ? mode === "probetest"
+                  ? "Bestanden! 🎉"
+                  : "Super gemacht! ✨"
+                : mode === "probetest"
+                  ? "Weiter üben! 💪"
+                  : "Gut geübt! 📚"}
             </h1>
 
             {/* Motivational subtitle */}

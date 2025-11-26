@@ -46,6 +46,7 @@ import EinbuergerungstestHub from "./features/einbuergerungstest/Einbuergerungst
 import Fragenkatalog from "./features/einbuergerungstest/Fragenkatalog";
 import ExamSimulator from "./features/einbuergerungstest/ExamSimulator";
 import TrainingMode from "./features/einbuergerungstest/TrainingMode";
+import HowToUse from "./features/einbuergerungstest/HowToUse";
 
 // Authentication
 import AuthenticationPage from "./pages/auth/AuthenticationPage";
@@ -399,6 +400,14 @@ function App() {
         element={
           <HoverSidebarShell>
             <TrainingMode />
+          </HoverSidebarShell>
+        }
+      />
+      <Route
+        path="/einbuergerungstest/how-to-use"
+        element={
+          <HoverSidebarShell>
+            <HowToUse />
           </HoverSidebarShell>
         }
       />
