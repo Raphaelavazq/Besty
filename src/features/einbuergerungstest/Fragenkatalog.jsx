@@ -9,6 +9,8 @@ import {
   Meh,
   Frown,
   CheckCircle2,
+  Repeat,
+  GraduationCap,
 } from "lucide-react";
 import { useAuthStore } from "../../store/useAuthStore";
 import { supabase } from "../../lib/supabase";
@@ -359,10 +361,10 @@ function QuestionCard({ question: q, onProgressUpdate, progressData }) {
                     setSelectedAnswer(null);
                     setShowCorrect(false);
                   }}
-                  className="p-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-lg sm:hover:bg-purple-200 dark:sm:hover:bg-purple-800/30 transition-colors active:scale-95 flex-shrink-0"
+                  className="p-2 bg-purple-100 dark:bg-purple-800/50 text-purple-700 dark:text-purple-200 rounded-lg sm:hover:bg-purple-200 dark:sm:hover:bg-purple-700/60 transition-colors active:scale-95 flex-shrink-0 flex items-center justify-center"
                   title="Noch einmal"
                 >
-                  <ArrowRight className="w-3.5 h-3.5 rotate-180" />
+                  <Repeat className="w-4 h-4" />
                 </button>
               )}
 
@@ -383,14 +385,16 @@ function QuestionCard({ question: q, onProgressUpdate, progressData }) {
               {/* Divider */}
               <div className="w-px h-5 bg-slate-200/60 self-center flex-shrink-0"></div>
 
-              {/* Confidence Level Buttons - Color coded */}
+              {/* Confidence Level Buttons - Color coded - Disabled when mastered */}
               <button
                 onClick={() => setConfidence("easy")}
-                disabled={loading}
+                disabled={loading || isMastered}
                 className={`px-2.5 py-1.5 text-xs font-medium rounded-lg transition-all duration-150 flex items-center gap-1 whitespace-nowrap active:scale-95 flex-shrink-0 ${
-                  confidenceLevel === "easy"
-                    ? "bg-green-500 text-white shadow-sm sm:hover:bg-green-600"
-                    : "bg-white/80 text-slate-600 border border-slate-200/60 sm:hover:border-green-300 sm:hover:bg-green-50 active:border-green-300 active:bg-green-50"
+                  isMastered
+                    ? "bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 border border-gray-200 dark:border-gray-700 cursor-not-allowed opacity-50"
+                    : confidenceLevel === "easy"
+                      ? "bg-green-500 text-white shadow-sm sm:hover:bg-green-600"
+                      : "bg-white/80 text-slate-600 border border-slate-200/60 sm:hover:border-green-300 sm:hover:bg-green-50 active:border-green-300 active:bg-green-50"
                 }`}
               >
                 <Smile className="w-3 h-3" />
@@ -398,11 +402,13 @@ function QuestionCard({ question: q, onProgressUpdate, progressData }) {
               </button>
               <button
                 onClick={() => setConfidence("medium")}
-                disabled={loading}
+                disabled={loading || isMastered}
                 className={`px-2.5 py-1.5 text-xs font-medium rounded-lg transition-all duration-150 flex items-center gap-1 whitespace-nowrap active:scale-95 flex-shrink-0 ${
-                  confidenceLevel === "medium"
-                    ? "bg-amber-500 text-white shadow-sm sm:hover:bg-amber-600"
-                    : "bg-white/80 text-slate-600 border border-slate-200/60 sm:hover:border-amber-300 sm:hover:bg-amber-50 active:border-amber-300 active:bg-amber-50"
+                  isMastered
+                    ? "bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 border border-gray-200 dark:border-gray-700 cursor-not-allowed opacity-50"
+                    : confidenceLevel === "medium"
+                      ? "bg-amber-500 text-white shadow-sm sm:hover:bg-amber-600"
+                      : "bg-white/80 text-slate-600 border border-slate-200/60 sm:hover:border-amber-300 sm:hover:bg-amber-50 active:border-amber-300 active:bg-amber-50"
                 }`}
               >
                 <Meh className="w-3 h-3" />
@@ -410,11 +416,13 @@ function QuestionCard({ question: q, onProgressUpdate, progressData }) {
               </button>
               <button
                 onClick={() => setConfidence("hard")}
-                disabled={loading}
+                disabled={loading || isMastered}
                 className={`px-2.5 py-1.5 text-xs font-medium rounded-lg transition-all duration-150 flex items-center gap-1 whitespace-nowrap active:scale-95 flex-shrink-0 ${
-                  confidenceLevel === "hard"
-                    ? "bg-red-500 text-white shadow-sm sm:hover:bg-red-600"
-                    : "bg-white/80 text-slate-600 border border-slate-200/60 sm:hover:border-red-300 sm:hover:bg-red-50 active:border-red-300 active:bg-red-50"
+                  isMastered
+                    ? "bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 border border-gray-200 dark:border-gray-700 cursor-not-allowed opacity-50"
+                    : confidenceLevel === "hard"
+                      ? "bg-red-500 text-white shadow-sm sm:hover:bg-red-600"
+                      : "bg-white/80 text-slate-600 border border-slate-200/60 sm:hover:border-red-300 sm:hover:bg-red-50 active:border-red-300 active:bg-red-50"
                 }`}
               >
                 <Frown className="w-3 h-3" />
@@ -716,6 +724,54 @@ export default function Fragenkatalog() {
           310 Fragen für {selectedBundesland}
         </p>
 
+        {/* Filter Status Bar - Shows when Markiert or Gelernt filter is active */}
+        {isAuthenticated && (showMarkedOnly || showMasteredOnly) && (
+          <div className="mb-4 sm:mb-6 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-lg">
+            <div className="flex items-center justify-between text-white">
+              <div className="flex items-center gap-3 sm:gap-4">
+                {showMarkedOnly && (
+                  <>
+                    <div className="p-2.5 sm:p-3 bg-white/20 backdrop-blur-sm rounded-xl">
+                      <Bookmark className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-xs sm:text-sm text-white">Markierte Fragen</p>
+                      <p className="text-2xl sm:text-3xl font-bold text-white">
+                        {userProgress.filter((p) => p.marked_for_review).length}
+                      </p>
+                    </div>
+                  </>
+                )}
+                {showMasteredOnly && (
+                  <>
+                    <div className="p-2.5 sm:p-3 bg-white/20 backdrop-blur-sm rounded-xl">
+                      <GraduationCap className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-xs sm:text-sm text-white">Gelernte Fragen</p>
+                      <p className="text-2xl sm:text-3xl font-bold text-white">
+                        {userProgress.filter((p) => p.is_mastered).length}
+                      </p>
+                    </div>
+                  </>
+                )}
+              </div>
+              <div className="text-right">
+                <p className="text-xs sm:text-sm text-white">von 310 Fragen</p>
+                <p className="text-lg sm:text-xl font-semibold text-white">
+                  {Math.round(
+                    ((showMarkedOnly
+                      ? userProgress.filter((p) => p.marked_for_review).length
+                      : userProgress.filter((p) => p.is_mastered).length) /
+                      310) *
+                      100
+                  )}%
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Search by question number - Compact on mobile */}
         <div className="mb-4 sm:mb-6">
           <div className="relative">
@@ -742,6 +798,28 @@ export default function Fragenkatalog() {
             <div className="relative -mx-4 px-4 sm:mx-0 sm:px-0">
               <div className="overflow-x-auto scrollbar-hide sm:overflow-visible">
                 <div className="flex gap-1.5 sm:gap-2 min-w-max sm:min-w-0 sm:flex-wrap pb-1">
+                  {/* All Questions Chip */}
+                  <button
+                    onClick={() => {
+                      setConfidenceFilter(null);
+                      setShowMasteredOnly(false);
+                      setShowMarkedOnly(false);
+                    }}
+                    className={`inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg sm:rounded-full text-xs sm:text-sm font-medium transition-all duration-150 active:scale-95 whitespace-nowrap ${
+                      !confidenceFilter && !showMasteredOnly && !showMarkedOnly
+                        ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-sm sm:shadow-md"
+                        : "bg-white/80 text-slate-600 sm:hover:bg-purple-50 border border-slate-200/60 sm:border-slate-200 active:bg-purple-50"
+                    }`}
+                  >
+                    <span>Alle</span>
+                    <span className="text-[11px] sm:text-xs font-semibold sm:opacity-75">
+                      310
+                    </span>
+                  </button>
+
+                  {/* Divider */}
+                  <div className="w-px h-6 sm:h-8 bg-slate-200/60 sm:bg-slate-200 self-center mx-0.5 sm:mx-1"></div>
+
                   {/* Difficulty Chips */}
                   <button
                     onClick={() => {
@@ -750,6 +828,7 @@ export default function Fragenkatalog() {
                       setConfidenceFilter(newValue);
                       if (newValue !== null) {
                         setShowMasteredOnly(false);
+                        setShowMarkedOnly(false);
                       }
                     }}
                     className={`inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg sm:rounded-full text-xs sm:text-sm font-medium transition-all duration-150 active:scale-95 whitespace-nowrap ${
@@ -778,6 +857,7 @@ export default function Fragenkatalog() {
                       setConfidenceFilter(newValue);
                       if (newValue !== null) {
                         setShowMasteredOnly(false);
+                        setShowMarkedOnly(false);
                       }
                     }}
                     className={`inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg sm:rounded-full text-xs sm:text-sm font-medium transition-all duration-150 active:scale-95 whitespace-nowrap ${
@@ -806,6 +886,7 @@ export default function Fragenkatalog() {
                       setConfidenceFilter(newValue);
                       if (newValue !== null) {
                         setShowMasteredOnly(false);
+                        setShowMarkedOnly(false);
                       }
                     }}
                     className={`inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg sm:rounded-full text-xs sm:text-sm font-medium transition-all duration-150 active:scale-95 whitespace-nowrap ${
@@ -832,7 +913,14 @@ export default function Fragenkatalog() {
 
                   {/* Marked Chip */}
                   <button
-                    onClick={() => setShowMarkedOnly(!showMarkedOnly)}
+                    onClick={() => {
+                      const newValue = !showMarkedOnly;
+                      setShowMarkedOnly(newValue);
+                      if (newValue) {
+                        setShowMasteredOnly(false);
+                        setConfidenceFilter(null);
+                      }
+                    }}
                     className={`inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg sm:rounded-full text-xs sm:text-sm font-medium transition-all duration-150 active:scale-95 whitespace-nowrap ${
                       showMarkedOnly
                         ? "bg-amber-500 text-white shadow-sm sm:shadow-md"
@@ -853,6 +941,7 @@ export default function Fragenkatalog() {
                       setShowMasteredOnly(newValue);
                       if (newValue) {
                         setConfidenceFilter(null);
+                        setShowMarkedOnly(false);
                       }
                     }}
                     className={`inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg sm:rounded-full text-xs sm:text-sm font-medium transition-all duration-150 active:scale-95 whitespace-nowrap ${
@@ -910,10 +999,27 @@ export default function Fragenkatalog() {
             {/* Empty state */}
             {(confidenceFilter || showMarkedOnly || showMasteredOnly) &&
               filteredQuestions.length === 0 && (
-                <div className="mt-4 text-center py-8">
-                  <p className="text-sm text-slate-500">
-                    Keine Fragen gefunden
-                  </p>
+                <div className="mt-4 px-2 sm:px-0">
+                  <div className="bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-10 border border-purple-100 dark:border-purple-500/30 shadow-lg text-center">
+                    <div className="mb-4 sm:mb-6">
+                      <div className="inline-flex p-3 sm:p-4 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl">
+                        <GraduationCap className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+                      </div>
+                    </div>
+                    <h3 className="text-lg sm:text-2xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3">
+                      Noch keine Fragen hier!
+                    </h3>
+                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 max-w-sm mx-auto leading-relaxed">
+                      Beginne Fragen zu beantworten und markiere sie nach Schwierigkeit oder als gelernt.
+                    </p>
+                    <button
+                      onClick={() => navigate("/einbuergerungstest/training")}
+                      className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-95 text-sm sm:text-base"
+                    >
+                      Jetzt starten
+                      <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                    </button>
+                  </div>
                 </div>
               )}
           </div>
@@ -931,11 +1037,6 @@ export default function Fragenkatalog() {
           ))}
         </div>
 
-        {filteredQuestions.length === 0 && (
-          <div className="text-center py-12 text-gray-500 dark:text-dark-text-secondary">
-            Keine Fragen gefunden
-          </div>
-        )}
       </div>
     </div>
   );
