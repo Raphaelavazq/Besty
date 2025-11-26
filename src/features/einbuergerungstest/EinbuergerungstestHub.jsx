@@ -10,6 +10,7 @@ import {
   Brain,
   Trophy,
   FileText,
+  HelpCircle,
 } from "lucide-react";
 import "../../styles/glassmorphism.css";
 
@@ -112,7 +113,7 @@ export default function EinbuergerungstestHub() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
           {practiceOptions.map((option) => {
             const Icon = option.icon;
             return (
@@ -152,6 +153,34 @@ export default function EinbuergerungstestHub() {
               </Link>
             );
           })}
+        </div>
+
+        {/* How to Use Card - Prominent CTA */}
+        <div className="max-w-3xl mx-auto">
+          <Link to="/einbuergerungstest/how-to-use">
+            <div className="bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-700 dark:to-indigo-700 rounded-3xl p-6 sm:p-8 text-white shadow-2xl hover:shadow-3xl hover:-translate-y-1 transition-all duration-200 border-2 border-white/20 dark:border-purple-400/30">
+              <div className="flex items-center gap-4 sm:gap-6">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <HelpCircle className="w-8 h-8 sm:w-10 sm:h-10" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-black mb-2 leading-tight text-white">
+                    Neu hier? So funktioniert's!
+                  </h3>
+                  <p className="text-white/90 text-sm sm:text-base mb-3 sm:mb-4">
+                    Vollständige Anleitung mit Tipps, Strategien und allen
+                    Funktionen erklärt
+                  </p>
+                  <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-xl">
+                    <span className="text-sm font-bold">
+                      Anleitung ansehen
+                    </span>
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
     </div>
