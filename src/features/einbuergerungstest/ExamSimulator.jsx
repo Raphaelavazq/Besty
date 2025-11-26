@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { useAuthStore } from "../../store/useAuthStore";
 import { supabase } from "../../lib/supabase";
+import ResultsSummary from "../../components/ResultsSummary";
 
 export default function ExamSimulator({ mode = "probetest" }) {
   const navigate = useNavigate();
@@ -336,166 +337,29 @@ export default function ExamSimulator({ mode = "probetest" }) {
 
   if (showResults && !reviewMode) {
     const score = calculateScore();
-    const totalAnswered = Object.keys(answers).length;
     const passed = mode === "probetest" ? score >= 17 : null; // Need 17/33 to pass official exam
-    const wrongQuestions = examQuestions.filter(
-      (q, i) => answers[i] !== undefined && answers[i] !== q.correctAnswer
-    );
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary py-12 px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-xl border border-purple-100 dark:border-purple-500/30 text-center">
-            <div className="text-6xl mb-6">
-              {mode === "probetest" ? (passed ? "🎉" : "�") : "✅"}
-            </div>
-
-            <h1 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-6 pb-2">
-              {mode === "probetest"
-                ? passed
-                  ? "Bestanden!"
-                  : "Nicht bestanden"
-                : "Training beendet"}
-            </h1>
-
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="text-7xl font-black text-purple-600 dark:text-purple-400">
-                {score}
-              </div>
-              <div className="text-3xl text-gray-400">/</div>
-              <div className="text-4xl font-bold text-gray-600 dark:text-dark-text-secondary">
-                {examQuestions.length}
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-4 mb-6">
-              <div className="bg-emerald-50 dark:bg-emerald-900/20 rounded-xl p-4 border-2 border-emerald-200 dark:border-emerald-500/30">
-                <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
-                  {score}
-                </div>
-                <div className="text-sm text-emerald-700 dark:text-emerald-300">
-                  Richtig
-                </div>
-              </div>
-
-              <div className="bg-rose-50 dark:bg-rose-900/20 rounded-xl p-4 border-2 border-rose-200 dark:border-rose-500/30">
-                <div className="text-2xl font-bold text-rose-600 dark:text-rose-400">
-                  {totalAnswered - score}
-                </div>
-                <div className="text-sm text-rose-700 dark:text-rose-300">
-                  Falsch
-                </div>
-              </div>
-
-              <div className="bg-purple-50 dark:bg-purple-900/20 rounded-xl p-4 border-2 border-purple-200 dark:border-purple-500/30">
-                <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">
-                  {Math.round((score / examQuestions.length) * 100)}%
-                </div>
-                <div className="text-sm text-purple-700 dark:text-purple-300">
-                  Erfolgsquote
-                </div>
-              </div>
-            </div>
-
-            {/* Confidence Rating Statistics */}
-            {Object.keys(confidenceRatings).length > 0 && (
-              <div className="mb-8 bg-white/60 dark:bg-white/5 rounded-2xl p-6 border border-purple-200 dark:border-purple-500/30">
-                <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-4">
-                  Schwierigkeitsgrad
-                </h3>
-                <div className="grid grid-cols-3 gap-3">
-                  <div className="text-center p-3 bg-emerald-50 dark:bg-emerald-900/20 rounded-xl border border-emerald-200 dark:border-emerald-500/30">
-                    <Smile className="w-8 h-8 mx-auto mb-1 text-emerald-600 dark:text-emerald-400" />
-                    <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
-                      {
-                        Object.values(confidenceRatings).filter(
-                          (r) => r === "easy"
-                        ).length
-                      }
-                    </div>
-                    <div className="text-xs text-emerald-700 dark:text-emerald-300 font-medium">
-                      Einfach
-                    </div>
-                  </div>
-                  <div className="text-center p-3 bg-amber-50 dark:bg-amber-900/20 rounded-xl border border-amber-200 dark:border-amber-500/30">
-                    <Meh className="w-8 h-8 mx-auto mb-1 text-amber-600 dark:text-amber-400" />
-                    <div className="text-2xl font-bold text-amber-600 dark:text-amber-400">
-                      {
-                        Object.values(confidenceRatings).filter(
-                          (r) => r === "medium"
-                        ).length
-                      }
-                    </div>
-                    <div className="text-xs text-amber-700 dark:text-amber-300 font-medium">
-                      Mittel
-                    </div>
-                  </div>
-                  <div className="text-center p-3 bg-rose-50 dark:bg-rose-900/20 rounded-xl border border-rose-200 dark:border-rose-500/30">
-                    <Frown className="w-8 h-8 mx-auto mb-1 text-rose-600 dark:text-rose-400" />
-                    <div className="text-2xl font-bold text-rose-600 dark:text-rose-400">
-                      {
-                        Object.values(confidenceRatings).filter(
-                          (r) => r === "hard"
-                        ).length
-                      }
-                    </div>
-                    <div className="text-xs text-rose-700 dark:text-rose-300 font-medium">
-                      Schwer
-                    </div>
-                  </div>
-                </div>
-                <p className="text-xs text-gray-600 dark:text-gray-400 mt-3 text-center">
-                  💡 Schwere Fragen solltest du öfter wiederholen
-                </p>
-              </div>
-            )}
-
-            {mode === "probetest" && (
-              <div className="mb-8 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl border border-purple-200 dark:border-purple-500/30">
-                <p className="text-gray-700 dark:text-dark-text-secondary">
-                  {passed
-                    ? "Herzlichen Glückwunsch! Du hast die erforderlichen 17 von 33 Fragen richtig beantwortet."
-                    : `Du brauchst mindestens 17 richtige Antworten. Weiter üben!`}
-                </p>
-              </div>
-            )}
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={() => setReviewMode(true)}
-                className="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center justify-center gap-2"
-              >
-                <Eye className="w-5 h-5" />
-                Fragen überprüfen
-              </button>
-
-              <button
-                onClick={() => {
-                  setSelectedBundesland(null);
-                  setExamQuestions([]);
-                  setCurrentIndex(0);
-                  setAnswers({});
-                  setConfidenceRatings({});
-                  setShowResults(false);
-                  setReviewMode(false);
-                  setTimeLeft(mode === "probetest" ? 60 * 60 : null);
-                  setTimerActive(false);
-                }}
-                className="px-8 py-4 bg-white dark:bg-white/10 text-purple-600 dark:text-purple-400 border-2 border-purple-600 rounded-xl font-bold hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-all"
-              >
-                Nochmal versuchen
-              </button>
-
-              <button
-                onClick={() => navigate("/einbuergerungstest")}
-                className="px-8 py-4 bg-white dark:bg-white/10 text-purple-600 dark:text-purple-400 border-2 border-purple-600 rounded-xl font-bold hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-all"
-              >
-                Zurück zur Übersicht
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ResultsSummary
+        score={score}
+        totalQuestions={examQuestions.length}
+        isPassed={passed}
+        requiredScore={17}
+        mode={mode}
+        onReview={() => setReviewMode(true)}
+        onRetry={() => {
+          setSelectedBundesland(null);
+          setExamQuestions([]);
+          setCurrentIndex(0);
+          setAnswers({});
+          setConfidenceRatings({});
+          setShowResults(false);
+          setReviewMode(false);
+          setTimeLeft(mode === "probetest" ? 60 * 60 : null);
+          setTimerActive(false);
+        }}
+        onHome={() => navigate("/einbuergerungstest")}
+      />
     );
   }
 

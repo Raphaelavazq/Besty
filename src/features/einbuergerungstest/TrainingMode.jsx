@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { useAuthStore } from "../../store/useAuthStore";
 import { supabase } from "../../lib/supabase";
+import TrainingResultsSummary from "../../components/TrainingResultsSummary";
 
 export default function TrainingMode() {
   const navigate = useNavigate();
@@ -666,55 +667,21 @@ export default function TrainingMode() {
     const percentage = Math.round((score / practiceQuestions.length) * 100);
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary py-12 px-4">
+      <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-tertiary py-8 sm:py-12 px-4">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-8 text-center pb-2">
-            Übung abgeschlossen!
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-6 sm:mb-8 text-center pb-2">
+            Übung abgeschlossen! ✨
           </h1>
 
-          <div className="bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-purple-100 dark:border-purple-500/30 mb-8">
-            <div className="text-center mb-8">
-              <Trophy className="w-20 h-20 mx-auto mb-4 text-yellow-500" />
-              <div className="flex items-center justify-center gap-4 mb-8">
-                <div className="text-7xl font-black text-purple-600 dark:text-purple-400">
-                  {score}
-                </div>
-                <div className="text-3xl text-gray-400">/</div>
-                <div className="text-4xl font-bold text-gray-600 dark:text-dark-text-secondary">
-                  {practiceQuestions.length}
-                </div>
-              </div>
+          {/* Animated Summary */}
+          <TrainingResultsSummary
+            score={score}
+            totalQuestions={practiceQuestions.length}
+          />
 
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="bg-emerald-50 dark:bg-emerald-900/20 rounded-xl p-4 border-2 border-emerald-200 dark:border-emerald-500/30">
-                  <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
-                    {score}
-                  </div>
-                  <div className="text-sm text-emerald-700 dark:text-emerald-300">
-                    Richtig
-                  </div>
-                </div>
-                <div className="bg-rose-50 dark:bg-rose-900/20 rounded-xl p-4 border-2 border-rose-200 dark:border-rose-500/30">
-                  <div className="text-2xl font-bold text-rose-600 dark:text-rose-400">
-                    {totalAnswered - score}
-                  </div>
-                  <div className="text-sm text-rose-700 dark:text-rose-300">
-                    Falsch
-                  </div>
-                </div>
-                <div className="bg-purple-50 dark:bg-purple-900/20 rounded-xl p-4 border-2 border-purple-200 dark:border-purple-500/30">
-                  <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">
-                    {percentage}%
-                  </div>
-                  <div className="text-sm text-purple-700 dark:text-purple-300">
-                    Erfolgsquote
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Review Questions */}
-            <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-dark-text-primary">
+          {/* Review Questions Section */}
+          <div className="bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-3xl p-6 sm:p-8 shadow-xl border border-purple-100 dark:border-purple-500/30 mb-8">
+            <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-gray-900 dark:text-dark-text-primary">
               Fragen überprüfen & bewerten
             </h2>
 
