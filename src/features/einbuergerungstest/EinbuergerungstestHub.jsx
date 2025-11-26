@@ -20,7 +20,7 @@ export default function EinbuergerungstestHub() {
       id: "probetest",
       title: "Probetest",
       description:
-        "Offizieller Test mit 33 zufälligen Fragen (30 allgemeine + 3 Bundesland) und 60-Minuten-Timer",
+        "Original-Fragen: 33 zufällige Fragen (30 allgemeine + 3 Bundesland) mit 60-Minuten-Timer",
       icon: Trophy,
       color: "from-purple-500 to-indigo-600",
       path: "/einbuergerungstest/probetest",
@@ -70,7 +70,7 @@ export default function EinbuergerungstestHub() {
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 text-white/80 text-xs sm:text-sm mb-5 sm:mb-6 lg:mb-8">
                 <div className="flex items-center gap-1.5 sm:gap-2">
                   <Trophy className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                  <span className="font-semibold">Offiziell 2025</span>
+                  <span className="font-semibold">BAMF-Fragen 2025</span>
                 </div>
                 <div className="flex items-center gap-1.5 sm:gap-2">
                   <FileText className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
@@ -172,9 +172,7 @@ export default function EinbuergerungstestHub() {
                     Funktionen erklärt
                   </p>
                   <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-xl">
-                    <span className="text-sm font-bold">
-                      Anleitung ansehen
-                    </span>
+                    <span className="text-sm font-bold">Anleitung ansehen</span>
                     <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>

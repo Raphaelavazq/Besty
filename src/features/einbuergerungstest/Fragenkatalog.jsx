@@ -661,7 +661,7 @@ export default function Fragenkatalog() {
             länderspezifisch) zu sehen
           </p>
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-8">
-            Offizielle BAMF-Fragen (Stand: 07.05.2025)
+            Original BAMF-Fragen (Stand: 07.05.2025)
           </p>
 
           <div className="bg-white/80 dark:bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-purple-100 dark:border-purple-500/30">
