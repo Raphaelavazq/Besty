@@ -9,7 +9,7 @@ import {
   CheckCircle,
 } from "lucide-react";
 
-export default function EinbuergerungstestInstructions() {
+export default function HowToUse() {
   const navigate = useNavigate();
 
   const steps = [
@@ -71,7 +71,7 @@ export default function EinbuergerungstestInstructions() {
           {steps.map((step, idx) => {
             const Icon = step.icon;
             const isClickable = step.path !== null;
-            
+
             const CardContent = (
               <div className="flex items-center gap-4">
                 {/* Number Badge */}
@@ -101,7 +101,7 @@ export default function EinbuergerungstestInstructions() {
                 </div>
               </div>
             );
-            
+
             return isClickable ? (
               <button
                 key={idx}
